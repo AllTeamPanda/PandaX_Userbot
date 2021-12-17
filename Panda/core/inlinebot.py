@@ -23,7 +23,7 @@ from ..helpers.functions.utube import (
     result_formatter,
     ytsearch_data,
 )
-from ..sql_helper.globals import gvarstatus
+from ..sql_helper.globals import gvarstatus, addgvar
 from . import CMD_INFO, GRP_INFO, PLG_INFO, check_owner
 from .logger import logging
 
@@ -775,10 +775,12 @@ async def on_plugin_callback_query_handler(event):
 
 async def setting(event, name, value):
     try:
-        gvarstatus(name) or value
+        addgvar(name) = value
     except BaseException:
         return await event.edit("**Maaf Gagal Menyimpan Dikarenakan ERROR**")
 
+def get_back_button(name):
+    return [Button.inline("ʙᴀᴄᴋ", data=f"{name}")]
 
 
 @PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"menuinline")))
@@ -801,10 +803,10 @@ async def on_plugin_callback_query_handler(event):
 @check_owner
 async def on_plugin_callback_query_handler(event):
     pru = event.sender_id
-    var = "CUSTOM_HELP_TEXT"
+    var = "HELP_TEXT_INLINE"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "**Silahkan Kirimkan Emoji Untuk var CUSTOM_HELP_TEXT anda**\n\nGunakan /cancel untuk membatalkan."
+            "**Silahkan Kirimkan Emoji Untuk var HELP_TEXT_INLINE anda**\n\nGunakan /cancel untuk membatalkan."
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
@@ -816,6 +818,6 @@ async def on_plugin_callback_query_handler(event):
             )
         await setting(event, var, themssg)
         await conv.send_message(
-            f"**CUSTOM_HELP_TEXT Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            f"**HELP_TEXT_INLINE Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
             buttons=get_back_button("menuinline"),
         )
