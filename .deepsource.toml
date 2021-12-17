@@ -1,0 +1,20 @@
+version = 1
+
+test_patterns = [
+    "@ilhammansiz_cmd(",
+    "    pattern=\"start\",",
+    ")   ",
+    "async def _(e):   ",
+    "    await eor(e, \"PandaX_Userbot Started\")"
+]
+
+[[analyzers]]
+name = "python"
+enabled = true
+
+  [analyzers.meta]
+  runtime_version = "3.x.x"
+
+[[analyzers]]
+name = "javascript"
+enabled = true

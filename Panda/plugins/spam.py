@@ -1,0 +1,284 @@
+import asyncio
+import base64
+
+from telethon.tl import functions, types
+from telethon.tl.functions.messages import GetStickerSetRequest
+from telethon.tl.functions.messages import ImportChatInviteRequest as Get
+
+from Panda import pandaub
+
+from ..core.managers import edit_delete, edit_or_reply
+from ..helpers.tools import media_type
+from ..helpers.utils import _pandautils
+from . import BOTLOG, BOTLOG_CHATID
+
+plugin_category = "mansiez"
+
+
+async def spam_function(event, sandy, panda, sleeptimem, sleeptimet, DelaySpam=False):
+    # sourcery no-metrics
+    counter = int(panda[0])
+    if len(panda) == 2:
+        spam_message = str(panda[1])
+        for _ in range(counter):
+            if event.reply_to_msg_id:
+                await sandy.reply(spam_message)
+            else:
+                await event.client.send_message(event.chat_id, spam_message)
+            await asyncio.sleep(sleeptimet)
+    elif event.reply_to_msg_id and sandy.media:
+        for _ in range(counter):
+            sandy = await event.client.send_file(
+                event.chat_id, sandy, caption=sandy.text
+            )
+            await _pandautils.unsavegif(event, sandy)
+            await asyncio.sleep(sleeptimem)
+        if BOTLOG:
+            if DelaySpam is not True:
+                if event.is_private:
+                    await event.client.send_message(
+                        BOTLOG_CHATID,
+                        "#SPAM\n"
+                        + f"Spam was executed successfully in [User](tg://user?id={event.chat_id}) chat with {counter} times with below message",
+                    )
+                else:
+                    await event.client.send_message(
+                        BOTLOG_CHATID,
+                        "#SPAM\n"
+                        + f"Spam was executed successfully in {event.chat.title}(`{event.chat_id}`) with {counter} times with below message",
+                    )
+            else:
+                if event.is_private:
+                    await event.client.send_message(
+                        BOTLOG_CHATID,
+                        "#DELAYSPAM\n"
+                        + f"Delay spam was executed successfully in [User](tg://user?id={event.chat_id}) chat with {counter} times with below message with delay {sleeptimet} seconds",
+                    )
+                else:
+                    await event.client.send_message(
+                        BOTLOG_CHATID,
+                        "#DELAYSPAM\n"
+                        + f"Delay spam was executed successfully in {event.chat.title}(`{event.chat_id}`) with {counter} times with below message with delay {sleeptimet} seconds",
+                    )
+
+            sandy = await event.client.send_file(BOTLOG_CHATID, sandy)
+            await _pandautils.unsavegif(event, sandy)
+        return
+    elif event.reply_to_msg_id and sandy.text:
+        spam_message = sandy.text
+        for _ in range(counter):
+            await event.client.send_message(event.chat_id, spam_message)
+            await asyncio.sleep(sleeptimet)
+    if BOTLOG:
+        if DelaySpam is not True:
+            if event.is_private:
+                await event.client.send_message(
+                    BOTLOG_CHATID,
+                    "#SPAM\n"
+                    + f"Spam was executed successfully in [User](tg://user?id={event.chat_id}) chat with {counter} messages of \n"
+                    + f"`{spam_message}`",
+                )
+            else:
+                await event.client.send_message(
+                    BOTLOG_CHATID,
+                    "#SPAM\n"
+                    + f"Spam was executed successfully in {event.chat.title}(`{event.chat_id}`) chat  with {counter} messages of \n"
+                    + f"`{spam_message}`",
+                )
+        else:
+            if event.is_private:
+                await event.client.send_message(
+                    BOTLOG_CHATID,
+                    "#DELAYSPAM\n"
+                    + f"Delay Spam was executed successfully in [User](tg://user?id={event.chat_id}) chat with delay {sleeptimet} seconds and with {counter} messages of \n"
+                    + f"`{spam_message}`",
+                )
+            else:
+                await event.client.send_message(
+                    BOTLOG_CHATID,
+                    "#DELAYSPAM\n"
+                    + f"Delay spam was executed successfully in {event.chat.title}(`{event.chat_id}`) chat with delay {sleeptimet} seconds and with {counter} messages of \n"
+                    + f"`{spam_message}`",
+                )
+
+
+@pandaub.ilhammansiz_cmd(
+    pattern="spam (.*)",
+    command=("spam", plugin_category),
+    info={
+        "header": "Floods the text in the chat !! with given number of times,",
+        "description": "Sends the replied media/message <count> times !! in the chat",
+        "usage": ["{tr}spam <count> <text>", "{tr}spam <count> reply to message"],
+        "examples": "{tr}spam 10 hi",
+    },
+)
+async def spammer(event):
+    "Floods the text in the chat !!"
+    sandy = await event.get_reply_message()
+    panda = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
+    counter = int(panda[0])
+    if counter > 50:
+        sleeptimet = 0.5
+        sleeptimem = 1
+    else:
+        sleeptimet = 0.1
+        sleeptimem = 0.3
+    await event.delete()
+    await spam_function(event, sandy, panda, sleeptimem, sleeptimet)
+
+
+@pandaub.ilhammansiz_cmd(
+    pattern="spspam$",
+    command=("spspam", plugin_category),
+    info={
+        "header": "To spam the chat with stickers.",
+        "description": "To spam chat with all stickers in that replied message sticker pack.",
+        "usage": "{tr}spspam",
+    },
+)
+async def stickerpack_spam(event):
+    "To spam the chat with stickers."
+    reply = await event.get_reply_message()
+    if not reply or media_type(reply) is None or media_type(reply) != "Sticker":
+        return await edit_delete(
+            event, "`reply to any sticker to send all stickers in that pack`"
+        )
+    hmm = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+    try:
+        stickerset_attr = reply.document.attributes[1]
+        pandaevent = await edit_or_reply(
+            event, "`Fetching details of the sticker pack, please wait..`"
+        )
+    except BaseException:
+        await edit_delete(event, "`This is not a sticker. Reply to a sticker.`", 5)
+        return
+    try:
+        get_stickerset = await event.client(
+            GetStickerSetRequest(
+                types.InputStickerSetID(
+                    id=stickerset_attr.stickerset.id,
+                    access_hash=stickerset_attr.stickerset.access_hash,
+                )
+            )
+        )
+    except Exception:
+        return await edit_delete(
+            pandaevent,
+            "`I guess this sticker is not part of any pack so i cant kang this sticker pack try kang for this sticker`",
+        )
+    try:
+        hmm = Get(hmm)
+        await event.client(hmm)
+    except BaseException:
+        pass
+    reqd_sticker_set = await event.client(
+        functions.messages.GetStickerSetRequest(
+            stickerset=types.InputStickerSetShortName(
+                short_name=f"{get_stickerset.set.short_name}"
+            )
+        )
+    )
+    for m in reqd_sticker_set.documents:
+        await event.client.send_file(event.chat_id, m)
+        await asyncio.sleep(0.7)
+    if BOTLOG:
+        if event.is_private:
+            await event.client.send_message(
+                BOTLOG_CHATID,
+                "#SPSPAM\n"
+                + f"Sticker Pack Spam was executed successfully in [User](tg://user?id={event.chat_id}) chat with pack ",
+            )
+        else:
+            await event.client.send_message(
+                BOTLOG_CHATID,
+                "#SPSPAM\n"
+                + f"Sticker Pack Spam was executed successfully in {event.chat.title}(`{event.chat_id}`) chat with pack",
+            )
+        await event.client.send_file(BOTLOG_CHATID, reqd_sticker_set.documents[0])
+
+
+@pandaub.ilhammansiz_cmd(
+    pattern="cspam (.*)",
+    command=("cspam", plugin_category),
+    info={
+        "header": "Spam the text letter by letter",
+        "description": "Spam the chat with every letter in given text as new message.",
+        "usage": "{tr}cspam <text>",
+        "examples": "{tr}cspam Catuserbot",
+    },
+)
+async def tmeme(event):
+    "Spam the text letter by letter."
+    cspam = str("".join(event.text.split(maxsplit=1)[1:]))
+    message = cspam.replace(" ", "")
+    await event.delete()
+    for letter in message:
+        await event.respond(letter)
+    if BOTLOG:
+        if event.is_private:
+            await event.client.send_message(
+                BOTLOG_CHATID,
+                "#CSPAM\n"
+                + f"Letter Spam was executed successfully in [User](tg://user?id={event.chat_id}) chat with : `{message}`",
+            )
+        else:
+            await event.client.send_message(
+                BOTLOG_CHATID,
+                "#CSPAM\n"
+                + f"Letter Spam was executed successfully in {event.chat.title}(`{event.chat_id}`) chat with : `{message}`",
+            )
+
+
+@pandaub.ilhammansiz_cmd(
+    pattern="wspam (.*)",
+    command=("wspam", plugin_category),
+    info={
+        "header": "Spam the text word by word.",
+        "description": "Spams the chat with every word in given text asnew message.",
+        "usage": "{tr}wspam <text>",
+        "examples": "{tr}wspam I am using pandauserbot",
+    },
+)
+async def tmeme(event):
+    "Spam the text word by word"
+    wspam = str("".join(event.text.split(maxsplit=1)[1:]))
+    message = wspam.split()
+    await event.delete()
+    for word in message:
+        await event.respond(word)
+    if BOTLOG:
+        if event.is_private:
+            await event.client.send_message(
+                BOTLOG_CHATID,
+                "#WSPAM\n"
+                + f"Word Spam was executed successfully in [User](tg://user?id={event.chat_id}) chat with : `{message}`",
+            )
+        else:
+            await event.client.send_message(
+                BOTLOG_CHATID,
+                "#WSPAM\n"
+                + f"Word Spam was executed successfully in {event.chat.title}(`{event.chat_id}`) chat with : `{message}`",
+            )
+
+
+@pandaub.ilhammansiz_cmd(
+    pattern="(delayspam|dspam) (.*)",
+    command=("delayspam", plugin_category),
+    info={
+        "header": "To spam the chat with count number of times with given text and given delay sleep time.",
+        "description": "For example if you see this dspam 2 10 hi. Then you will send 10 hi text messages with 2 seconds gap between each message.",
+        "usage": [
+            "{tr}delayspam <delay> <count> <text>",
+            "{tr}dspam <delay> <count> <text>",
+        ],
+        "examples": ["{tr}delayspam 2 10 hi", "{tr}dspam 2 10 hi"],
+    },
+)
+async def spammer(event):
+    "To spam with custom sleep time between each message"
+    reply = await event.get_reply_message()
+    input_str = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 2)
+    sleeptimet = sleeptimem = float(input_str[0])
+    panda = input_str[1:]
+    await event.delete()
+    await spam_function(event, reply, panda, sleeptimem, sleeptimet, DelaySpam=True)
