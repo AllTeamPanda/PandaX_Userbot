@@ -322,7 +322,7 @@ async def panda_on():
     try:
         if BOTLOG_CHATID != 0:
             await PandaBot.send_message(
-                BOTLOG_CHATID,
+                LOGS.info,
                 f"🐼 PANDA-USERBOT 🐼\n⚙️ Version 2021 [TELAH DIAKTIFKAN!]",
             )
     except Exception as e:
