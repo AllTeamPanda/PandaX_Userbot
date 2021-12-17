@@ -34,7 +34,7 @@ helpn =[
 HELP_TEXT = f"""
 **Hello 🙋\nSaya Asistennya bot: {mention}\nIni Tombol Menu Help Asisten PandaX_Userbot:**
 
-__Made in__ [🌀]({owner})\nSupport** [⚓]({support})**
+Support** [UserBotSupport]({support})**
 """
 
 
