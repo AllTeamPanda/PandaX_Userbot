@@ -327,7 +327,7 @@ print(
 )
 print("Berhasil Mengaktifkan Userbot")
 
-LOGS.info(f"🐼 PANDA-USERBOT 🐼\n⚙️ Version 2021 [TELAH DIAKTIFKAN]"
+LOGS.info(f"🐼 PANDA-USERBOT 🐼\n⚙️ Version 2021 [TELAH DIAKTIFKAN]")
 
 if len(sys.argv) not in (1, 3, 4):
     pandaub.disconnect()
