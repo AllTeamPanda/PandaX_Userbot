@@ -87,7 +87,7 @@ async def bot_start(event):
                     \n\nPowered by @TEAMSquadUserbotSupport"
         buttons = [
             (
-                Button.inline("SETTING VAR", data="menuset"),
+                Button.inline("🌀 INFO 🌀", data="menubot"),
                 Button.url(
                     "Deploy",
                     "https://heroku.com/deploy?template=https://github.com/IlhamMansiez/PandaPack",
@@ -101,7 +101,7 @@ async def bot_start(event):
                     \n\nPowered by @TEAMSquadUserbotSupport"
         buttons = [
             (
-                Button.inline("SETTING VAR", data="menuset"),
+                Button.inline("🌀 INFO 🌀", data="menubot"),
                 Button.url(
                     "Deploy",
                     "https://heroku.com/deploy?template=https://github.com/IlhamMansiez/PandaPack",
