@@ -38,7 +38,6 @@ try:
         auto_reconnect=True,
         connection_retries=None,
     )  
-    call = PyTgCalls(PandaBot)
 except Exception as e:
     print(f"STRING_SESSION - {str(e)}")
     sys.exit()
