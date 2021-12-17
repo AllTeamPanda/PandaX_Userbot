@@ -17,7 +17,6 @@ from Asisten.autogrup import autopilot
 from ..Var import Var
 from .client import PandaUserbotSession
 from telethon.sync import TelegramClient, custom, events
-from pytgcalls import PyTgCalls
 
 __version__ = "Ilham-Mansiz"
 
