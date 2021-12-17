@@ -32,5 +32,5 @@
 *   [TeamUltroid](https://github.com/TeamUltroid)
 *   [TeamUserge](https://github.com/UsergeTeam/Userge)
 *   [CatUserbot](https://github.com/sandy1709/catuserbot)
-*   [pytgcalls](https://www.google.com/url?sa=t&source=web&rct=j&url=https://github.com/pytgcalls/pytgcalls)
+*   [pytgcalls](https://github.com/MarshalX/tgcalls)
 *   Dan Lainnya
