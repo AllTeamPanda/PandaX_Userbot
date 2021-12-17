@@ -799,7 +799,7 @@ async def on_plugin_callback_query_handler(event):
                 "Membatalkan Proses Settings VAR!",
                 buttons=get_back_button("alivemenu"),
             )
-        await setit(event, var, themssg)
+        await setting(event, var, themssg)
         await conv.send_message(
             f"**CUSTOM_HELP_TEXT Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
             buttons=get_back_button("alivemenu"),
