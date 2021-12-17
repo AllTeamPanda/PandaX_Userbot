@@ -799,7 +799,7 @@ async def on_plugin_callback_query_handler(event):
         buttons=[
             [
                 Button.inline("🛠 Help 🛠", data="helpp"),
-                Button.inline("⚙ Setting ⚙", data="menuset"),
+                Button.inline("⚙ Setting ⚙", data="menuset"),],
             ],
     )
 
