@@ -7,7 +7,7 @@ import os
 import re
 import time
 from uuid import uuid4
-
+import heroku3
 from telethon import Button, types, events
 
 from youtubesearchpython import VideosSearch
@@ -63,7 +63,7 @@ from ..Config import Config
 CUSTOM_HELP_TEXT = gvarstatus("HELP_TEXT_INLINE") or  "🛠 BOT PANDA SUCCESSFULLY  🛠"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "🎴"
 
-def closeit(dat):
+def SettingVar(dat):
     def ultr(func):
         pandaub.tgbot.add_event_handler(func, CallbackQuery(data=dat))
 
@@ -541,7 +541,7 @@ async def on_plug_in_callback_query_handler(event):
 async def on_plugin_callback_query_handler(event):
     await event.edit("__Terhapus__")
 
-@closeit("vinnna")
+@SettingVar("vinnna")
 async def closet(lol):
     await lol.delete()
 
@@ -771,11 +771,17 @@ async def on_plugin_callback_query_handler(event):
 
 ## Bot setting var
 
-
+heroku_api = "https://api.heroku.com"
+if Config.HEROKU_APP_NAME is not None and Config.HEROKU_API_KEY is not None:
+    Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
+    app = Heroku.app(Config.HEROKU_APP_NAME)
+    heroku_var = app.config()
+else:
+    app = None
 
 async def setting(event, name, value):
     try:
-        addgvar(name) = value
+        heroku_var[name] = value
     except BaseException:
         return await event.edit("**Maaf Gagal Menyimpan Dikarenakan ERROR**")
 
@@ -783,30 +789,29 @@ def get_back_button(name):
     return [Button.inline("ʙᴀᴄᴋ", data=f"{name}")]
 
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"menuinline")))
-@check_owner
-async def on_plugin_callback_query_handler(event):
+@SettingVar(data=re.compile(b"menuset"))
+async def menuset(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
         buttons=[
             [
-                Button.inline("ɪɴʟɪɴᴇ ᴇᴍᴏᴊɪ", data="inmoji"),
-                Button.inline("ɪɴʟɪɴᴇ ᴘɪᴄ", data="inpics"),
+                Button.inline("Setting ALIVE_NAME", data="alivename"),
+                Button.inline("Setting CMD ʜᴀɴᴅʟᴇʀ", data="cmd"),
             ],
-            [Button.inline("ʙᴀᴄᴋ", data="apiset")],
+            [Button.inline("ʙᴀᴄᴋ", data="menuset")],
         ],
     )
 
 
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"helptext")))
-@check_owner
-async def on_plugin_callback_query_handler(event):
+@SettingVar(data=re.compile(b"alivename"))
+async def helptext(event):
+    await event.delete()
     pru = event.sender_id
-    var = "HELP_TEXT_INLINE"
+    var = "ALIVE_NAME"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "**Silahkan Kirimkan Emoji Untuk var HELP_TEXT_INLINE anda**\n\nGunakan /cancel untuk membatalkan."
+            "**Silahkan Kirimkan Namamu Untuk var ALIVE NAME anda**\n\nGunakan /cancel untuk membatalkan."
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
@@ -814,10 +819,35 @@ async def on_plugin_callback_query_handler(event):
         if themssg == "/cancel":
             return await conv.send_message(
                 "Membatalkan Proses Settings VAR!",
-                buttons=get_back_button("menuinline"),
+                buttons=get_back_button("menuset"),
             )
         await setting(event, var, themssg)
         await conv.send_message(
-            f"**HELP_TEXT_INLINE Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
-            buttons=get_back_button("menuinline"),
+            f"**ALIVE NAME Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("menuset"),
+        )
+
+
+
+@SettingVar(data=re.compile(b"cmd"))
+async def helptext(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "COMMAND_HAND_LER"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan tanda perintah bot Untuk var COMMAND_HAND_LER anda\nContoh .!?**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("menuset"),
+            )
+        await setting(event, var, themssg)
+        await conv.send_message(
+            f"**COMMAND_HAND_LER Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("menuset"),
         )
