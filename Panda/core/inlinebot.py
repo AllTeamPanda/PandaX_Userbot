@@ -63,7 +63,7 @@ from ..Config import Config
 CUSTOM_HELP_TEXT = gvarstatus("HELP_TEXT_INLINE") or  "🛠 BOT PANDA SUCCESSFULLY  🛠"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "🎴"
 
-def SettingVar(dat):
+def settingvar(dat):
     def ultr(func):
         pandaub.tgbot.add_event_handler(func, CallbackQuery(data=dat))
 
@@ -541,7 +541,7 @@ async def on_plug_in_callback_query_handler(event):
 async def on_plugin_callback_query_handler(event):
     await event.edit("__Terhapus__")
 
-@SettingVar("vinnna")
+@settingvar("vinnna")
 async def closet(lol):
     await lol.delete()
 
@@ -789,7 +789,7 @@ def get_back_button(name):
     return [Button.inline("ʙᴀᴄᴋ", data=f"{name}")]
 
 
-@SettingVar(data=re.compile(b"menuset"))
+@settingvar(data=re.compile(b"menuset"))
 async def menuset(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
@@ -804,7 +804,7 @@ async def menuset(event):
 
 
 
-@SettingVar(data=re.compile(b"alivename"))
+@settingvar(data=re.compile(b"alivename"))
 async def helptext(event):
     await event.delete()
     pru = event.sender_id
@@ -829,7 +829,7 @@ async def helptext(event):
 
 
 
-@SettingVar(data=re.compile(b"cmd"))
+@settingvar(data=re.compile(b"cmd"))
 async def helptext(event):
     await event.delete()
     pru = event.sender_id
