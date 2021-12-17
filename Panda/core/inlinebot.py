@@ -197,12 +197,12 @@ def paginate_help(
                     Button.inline(
                         "« Pʀᴇᴠɪᴏᴜs", data=f"{prefix}_prev({modulo_page})_plugin"
                     ),
-                    Button.inline("⚙️ Main Menu", data="mainmenu"),
+                    Button.inline("🛠 Main Menu 🛠", data="mainmenu"),
                     Button.inline("Nᴇxᴛ ", data=f"{prefix}_next({modulo_page})_plugin"),
                 )
             ]
         else:
-            pairs = pairs + [(Button.inline("⚙️ Main Menu", data="mainmenu"),)]
+            pairs = pairs + [(Button.inline("🛠 Main Menu 🛠", data="mainmenu"),)]
     else:
         if len(pairs) > number_of_rows:
             pairs = pairs[
@@ -252,7 +252,7 @@ async def inline_handler(event):  # sourcery no-metrics
             buttons = [
                 (
                     Button.inline("Stats", data="stats"),
-                    Button.url("Repo", "https://github.com/ilhammansiz/PandaUserbot"),
+                    Button.url("Repo", "https://github.com/ilhammansiz/PandaX_Userbot"),
                 )
             ]
             PANDA_IMG = Config.ALIVE_PIC or None
@@ -694,7 +694,7 @@ async def on_plug_in_callback_query_handler(event):
                 "« Bᴀᴄᴋ » ",
                 data=f"back_command_{category}_{pgno}_{category_plugins}_{category_pgno}",
             ),
-            Button.inline("⚙️ Main Menu", data="mainmenu"),
+            Button.inline("🛠 Main Menu 🛠", data="mainmenu"),
         )
     ]
     text = f"**꧁༺ Panda Userbot ༻꧂\n\n༺🐼༻ Command :** `{tr}{cmd}`\
