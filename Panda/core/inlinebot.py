@@ -775,7 +775,7 @@ async def on_plugin_callback_query_handler(event):
 
 async def setting(event, name, value):
     try:
-        gvarstatus[name] or value
+        gvarstatus(name) or value
     except BaseException:
         return await event.edit("**Maaf Gagal Menyimpan Dikarenakan ERROR**")
 
