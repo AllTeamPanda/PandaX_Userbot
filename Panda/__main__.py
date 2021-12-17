@@ -318,17 +318,6 @@ for module_name in ALL_MODULES:
 
 
 
-async def panda_on():
-    try:
-        if BOTLOG_CHATID != 0:
-            await PandaBot.send_message(
-                LOGS.info,
-                f"🐼 PANDA-USERBOT 🐼\n⚙️ Version 2021 [TELAH DIAKTIFKAN!]",
-            )
-    except Exception as e:
-        LOGS.info(str(e))
- 
-    
 
 print("🛠 Sedang memperoses.....")
 print("Yay BOT PANDA USERBOT MENYALA.!!!")
@@ -338,7 +327,7 @@ print(
 )
 print("Berhasil Mengaktifkan Userbot")
 
-PandaBot.loop.run_until_complete(panda_on())
+LOGS.info(f"🐼 PANDA-USERBOT 🐼\n⚙️ Version 2021 [TELAH DIAKTIFKAN]"
 
 if len(sys.argv) not in (1, 3, 4):
     pandaub.disconnect()
