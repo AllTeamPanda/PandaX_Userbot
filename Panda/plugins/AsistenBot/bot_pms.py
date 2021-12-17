@@ -81,13 +81,13 @@ async def bot_start(event):
         return
     reply_to = await reply_id(event)
     if chat.id != Config.OWNER_ID:
-        start_msg = f"Hey! 🐼{_format.mentionuser(chat.first_name , chat.id)},\
-                    \nI am {_format.mentionuser(user.first_name , user.id)}'s assistant bot.\
-                    \nYou can contact to my master from here.\
-                    \n\nPowered by [Pandauserbot](https://t.me/TEAMSquadUserbotSupport)"
+        start_msg = f"Hey 🙋 {_format.mentionuser(chat.first_name , chat.id)},\
+                    \nSaya {_format.mentionuser(user.first_name , user.id)}' Assistant_bot.\
+                    \nKamu Bisa Setting saya disini dan Daftar menu perintah Saya sebagai Asistantmu.\
+                    \n\nPowered by @TEAMSquadUserbotSupport"
         buttons = [
             (
-                Button.url("Repo", "https://github.com/IlhamMansiez/PandaUserbot"),
+                Button.inline("SETTING VAR", data="menuset"),
                 Button.url(
                     "Deploy",
                     "https://heroku.com/deploy?template=https://github.com/IlhamMansiez/PandaPack",
@@ -95,13 +95,13 @@ async def bot_start(event):
             )
         ]
     else:
-        start_msg = f"Hey! 🐼{_format.mentionuser(chat.first_name , chat.id)},\
-                    \nI am {_format.mentionuser(user.first_name , user.id)}'s assistant bot.\
-                    \nYou can contact to my master from here.\
-                    \n\nPowered by [Pandauserbot](https://t.me/TEAMSquadUserbotSupport)"
+        start_msg = f"Hey 🙋 {_format.mentionuser(chat.first_name , chat.id)},\
+                    \nSaya {_format.mentionuser(user.first_name , user.id)}' Assistant_bot.\
+                    \nKamu Bisa Setting saya disini dan Daftar menu perintah Saya sebagai Asistantmu.\
+                    \n\nPowered by @TEAMSquadUserbotSupport"
         buttons = [
             (
-                Button.url("Repo", "https://github.com/IlhamMansiez/PandaUserbot"),
+                Button.inline("SETTING VAR", data="menuset"),
                 Button.url(
                     "Deploy",
                     "https://heroku.com/deploy?template=https://github.com/IlhamMansiez/PandaPack",
