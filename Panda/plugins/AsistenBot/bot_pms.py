@@ -90,7 +90,7 @@ async def bot_start(event):
                 Button.inline("🌀 INFO 🌀", data="menubot"),
                 Button.url(
                     "Deploy",
-                    "https://heroku.com/deploy?template=https://github.com/IlhamMansiez/PandaPack",
+                    "https://heroku.com/deploy?template=https://github.com/IlhamMansiz/PandaPack",
                 ),
             )
         ]
@@ -104,7 +104,7 @@ async def bot_start(event):
                 Button.inline("🌀 INFO 🌀", data="menubot"),
                 Button.url(
                     "Deploy",
-                    "https://heroku.com/deploy?template=https://github.com/IlhamMansiez/PandaPack",
+                    "https://heroku.com/deploy?template=https://github.com/IlhamMansiz/PandaPack",
                 ),
             )
         ]
