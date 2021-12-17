@@ -789,8 +789,9 @@ def get_back_button(name):
     return [Button.inline("ʙᴀᴄᴋ", data=f"{name}")]
 
 
-@settingvar(data=re.compile(b"menuset"))
-async def menuset(event):
+@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"menuset")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
         buttons=[
@@ -804,9 +805,9 @@ async def menuset(event):
 
 
 
-@settingvar(data=re.compile(b"alivename"))
-async def helptext(event):
-    await event.delete()
+@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"alivename")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
     pru = event.sender_id
     var = "ALIVE_NAME"
     async with event.client.conversation(pru) as conv:
@@ -829,9 +830,9 @@ async def helptext(event):
 
 
 
-@settingvar(data=re.compile(b"cmd"))
-async def helptext(event):
-    await event.delete()
+@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"cmd")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
     pru = event.sender_id
     var = "COMMAND_HAND_LER"
     async with event.client.conversation(pru) as conv:
