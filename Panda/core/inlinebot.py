@@ -784,7 +784,6 @@ async def setting(event, name, value):
 @PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"helptext")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
-    await event.delete()
     pru = event.sender_id
     var = "CUSTOM_HELP_TEXT"
     async with event.client.conversation(pru) as conv:
