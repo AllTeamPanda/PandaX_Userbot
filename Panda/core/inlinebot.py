@@ -8,7 +8,7 @@ import re
 import time
 from uuid import uuid4
 
-from telethon import Button, types
+from telethon import Button, types, events
 
 from youtubesearchpython import VideosSearch
 from telethon.events import CallbackQuery, InlineQuery
@@ -81,7 +81,7 @@ def main_menu():
         (
             Button.inline(
                 f"💎 𝙸𝚗𝚏𝚘",
-                data="helptext",
+                data="check",
             ),
         ),
         (
@@ -781,6 +781,22 @@ async def setting(event, name, value):
 
 
 
+@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"menuinline")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
+    await event.edit(
+        "**Silahkan Pilih VAR yang ingin anda Setting**",
+        buttons=[
+            [
+                Button.inline("ɪɴʟɪɴᴇ ᴇᴍᴏᴊɪ", data="inmoji"),
+                Button.inline("ɪɴʟɪɴᴇ ᴘɪᴄ", data="inpics"),
+            ],
+            [Button.inline("ʙᴀᴄᴋ", data="apiset")],
+        ],
+    )
+
+
+
 @PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"helptext")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
@@ -796,10 +812,10 @@ async def on_plugin_callback_query_handler(event):
         if themssg == "/cancel":
             return await conv.send_message(
                 "Membatalkan Proses Settings VAR!",
-                buttons=get_back_button("alivemenu"),
+                buttons=get_back_button("menuinline"),
             )
         await setting(event, var, themssg)
         await conv.send_message(
             f"**CUSTOM_HELP_TEXT Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
-            buttons=get_back_button("alivemenu"),
+            buttons=get_back_button("menuinline"),
         )
