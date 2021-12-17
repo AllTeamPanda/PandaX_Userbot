@@ -81,7 +81,7 @@ def main_menu():
         (
             Button.inline(
                 f"💎 𝙸𝚗𝚏𝚘",
-                data="check",
+                data="helptext",
             ),
         ),
         (
@@ -765,3 +765,42 @@ async def on_plugin_callback_query_handler(event):
             Button.inline("🛠 MENU HELP 🛠", data="helpbot"),
         ],
     )
+
+
+
+
+## Bot setting var
+
+
+
+async def setting(event, name, value):
+    try:
+        gvarstatus[name] or value
+    except BaseException:
+        return await event.edit("**Maaf Gagal Menyimpan Dikarenakan ERROR**")
+
+
+
+@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"helptext")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "CUSTOM_HELP_TEXT"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Emoji Untuk var CUSTOM_HELP_TEXT anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("alivemenu"),
+            )
+        await setit(event, var, themssg)
+        await conv.send_message(
+            f"**CUSTOM_HELP_TEXT Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("alivemenu"),
+        )
