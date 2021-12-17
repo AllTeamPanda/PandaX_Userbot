@@ -789,6 +789,20 @@ def get_back_button(name):
     return [Button.inline("ʙᴀᴄᴋ", data=f"{name}")]
 
 
+
+
+@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"menubot")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
+    await event.edit(
+        "**Daftar Help & Setting Asisten**",
+        buttons=[
+            [
+                Button.inline("🛠 Help 🛠", data="helpp"),
+                Button.inline("⚙ Setting ⚙", data="menuset"),
+            ],
+    )
+
 @PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"menuset")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
@@ -796,10 +810,10 @@ async def on_plugin_callback_query_handler(event):
         "**Silahkan Pilih VAR yang ingin anda Setting**",
         buttons=[
             [
-                Button.inline("Setting ALIVE_NAME", data="alivename"),
-                Button.inline("Setting CMD ʜᴀɴᴅʟᴇʀ", data="cmd"),
+                Button.inline("ᴀʟɪᴠᴇ ɴᴀᴍᴇ", data="alivename"),
+                Button.inline("ʜᴀɴᴅʟᴇʀ", data="cmd"),
             ],
-            [Button.inline("ʙᴀᴄᴋ", data="menuset")],
+            [Button.inline("ʙᴀᴄᴋ", data="menubot")],
         ],
     )
 
