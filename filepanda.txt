@@ -1,7 +1,7 @@
 python-decouple==3.3
 cloudscraper
 psycopg2-binary
-py-tgcalls==0.8.1
+pytgcalls==3.0.0.dev19
 pyyaml==5.4.1
 countryinfo
 git+https://github.com/ilhammansiz/Panda_AsistenBot
