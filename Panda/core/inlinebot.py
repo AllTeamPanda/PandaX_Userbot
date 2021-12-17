@@ -792,7 +792,6 @@ def get_back_button(name):
 
 
 @PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"menubot")))
-@check_owner
 async def on_plugin_callback_query_handler(event):
     await event.edit(
         "**Daftar Help & Setting Asisten**",
