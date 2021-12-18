@@ -30,7 +30,7 @@ from Panda.sql_helper.bot_pms_sql import (
 from Panda.sql_helper.bot_starters import add_starter_to_db, get_starter_details
 from Panda.sql_helper.globals import delgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
-from .botmanagers import ban_user_from_bot
+from .botdata import ban_user_from_bot
 
 LOGS = logging.getLogger(__name__)
 
