@@ -4,7 +4,7 @@
 
 import sys
 import os
-os.system("pip3 install --no-cache-dir -r filepanda.txt")
+os.system("pip3 install --no-cache-dir -r PandaVersion/Panda/Mansiez.txt")
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
