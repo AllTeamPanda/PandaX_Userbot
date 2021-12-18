@@ -15,36 +15,23 @@ from telethon.tl.types import ChatBannedRights
 class Config(object):
     LOGGER = True
 
-    # MUST NEEDED VARS
-    # set this value with your name
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
-    # Get the values for following 2 from my.telegram.org
     APP_ID = int(os.environ.get("API_ID", 6))
     API_HASH = os.environ.get("API_HASH") or None
-    # Datbase url heroku sets it automatically else get this from elephantsql
     DB_URI = os.environ.get("DATABASE_URL", None)
-    # panda
-
     PYROGRAM_SESSION = os.environ.get("PYROGRAM_SESSION", None)
     STRING_SESSION = os.environ.get(
         "SESSION", None
     )
-    # Telegram BOT Token and bot username from @BotFather
     TG_BOT_TOKEN = os.environ.get("BOT_TOKEN") or os.environ.get(
         "TG_BOT_TOKEN_BF_HER", None
     )
     TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
-    # get this value from http://www.timezoneconverter.com/cgi-bin/findzone.tzc
     TZ = os.environ.get("TZ", "Asia/Jakarta")
-    # set this with required cat repo link
     UPSTREAM_REPO = os.environ.get(
         "UPSTREAM_REPO", "https://github.com/ilhammansiz/PandaX_Userbot.git"
     )
-
-    # BASIC and MAIN CONFIG VARS
-    # for profile default name
     AUTONAME = os.environ.get("AUTONAME", None)
-    # Set this value with group id of private group(can be found this value by .id)
     PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
     # Set this value same as PRIVATE_GROUP_BOT_API_ID if you need pmgaurd
     PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID") or 0)
@@ -144,39 +131,29 @@ class Config(object):
     GENIUS_API_TOKEN = os.environ.get("GENIUS_API_TOKEN", None)
     # Get your own API key from https://www.remove.bg/
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
-    # Google Drive plugin https://telegra.ph/G-Drive-guide-for-catuserbot-01-01
     G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
     G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
     G_DRIVE_FOLDER_ID = os.environ.get("G_DRIVE_FOLDER_ID", None)
     G_DRIVE_DATA = os.environ.get("G_DRIVE_DATA", None)
     G_DRIVE_INDEX_LINK = os.environ.get("G_DRIVE_INDEX_LINK", None)
-    # For transfer channel 2 step verification code of telegram
     TG_2STEP_VERIFICATION_CODE = os.environ.get("TG_2STEP_VERIFICATION_CODE", None)
-    # JustWatch Country for watch plugin
     WATCH_COUNTRY = os.environ.get("WATCH_COUNTRY", "IN")
-    # Last.fm plugin  https://telegra.ph/Guide-for-LASTFM-02-03
     BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
     LASTFM_API = os.environ.get("LASTFM_API", None)
     LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
     LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME", None)
     LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", None)
-    # SpamWatch API you can get it from get api from http://t.me/SpamWatchBot?start=token
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
-    # can get from https://coffeehouse.intellivoid.net/
+    
     RANDOM_STUFF_API_KEY = os.environ.get("RANDOM_STUFF_API_KEY", None)
-    # github vars
     GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
     GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
-    # Deepai value can get from https://deepai.org/
     DEEP_AI = os.environ.get("DEEP_AI", None)
     ALLOW_NSFW = os.environ.get("ALLOW_NSFW", "False")
-
-    # DO NOT EDIT BELOW THIS LINE IF YOU DO NOT KNOW WHAT YOU ARE DOING
-    # TG API limit. A message can have maximum 4096 characters!
     MAX_MESSAGE_SIZE_LIMIT = 4095
-    # specify LOAD and NO_LOAD
+    
     LOAD = []
-    # warn mode for anti flood
+    
     ANTI_FLOOD_WARN_MODE = ChatBannedRights(
         until_date=None, view_messages=None, send_messages=True
     )
@@ -184,16 +161,16 @@ class Config(object):
     CHROME_DRIVER = os.environ.get(
         "CHROME_DRIVER", "/app/.chromedriver/bin/chromedriver"
     )
-    # for sed plugin
+    
     GROUP_REG_SED_EX_BOT_S = os.environ.get(
         "GROUP_REG_SED_EX_BOT_S", r"(regex|moku|BananaButler_|rgx|l4mR)bot"
     )
-    # time.py
+    
     COUNTRY = str(os.environ.get("COUNTRY", ""))
     TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
-    # For updater plugin
+    
     UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "PandaUserbot")
-    # dont touch this at all
+    
     SUDO_USERS: Set[int] = set()
     PANDAUBLOGO = None
 
