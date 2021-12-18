@@ -71,7 +71,7 @@ vcsi
 wand
 wget
 wikipedia
-telethon>=1.21.1
+Telethon==1.24.0
 telethon-session-sqlalchemy
 youtube-search-python==1.4.7
 youtube_dl==2021.6.6
