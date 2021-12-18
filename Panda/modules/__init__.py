@@ -330,7 +330,7 @@ class Player:
 def PandaVc_cmd(dec, **kwargs):
     def ult(func):
         kwargs["func"] = lambda e: not e.is_private and not e.via_bot_id and not e.fwd_from
-        handler = "/"
+        handler = HNDLR or "/"
         kwargs["pattern"] = re.compile(f"\\{handler}" + dec)
         from_users = VC_AUTHS()
         kwargs["from_users"] = from_users
