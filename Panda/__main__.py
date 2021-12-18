@@ -317,8 +317,13 @@ for module_name in ALL_MODULES:
     imported_module = import_module("Panda.modules." + module_name)
 
 
-
-
+async def join():
+    try:
+        await PandaBot(JoinChannelRequest("@UserbotTEAM_Tutorial"))
+    except BaseException:
+        pass
+    
+PandaBot.loop.run_until_complete(join())
 print("🛠 Sedang memperoses.....")
 print("Yay BOT PANDA USERBOT MENYALA.!!!")
 print(
