@@ -119,6 +119,16 @@ async def make_gif(event, reply, quality=None, fps=None):
     return result_p
 
 
+# Copyright (C) 2021 TeamUltroid <https://github.com/TeamUltroid/Ultroid>
+# Recode by @diemmmmmmmmmm
+# FROM Panda-Userbot <https://github.com/ilhammansiz/PandaX_Userbot>
+
+# Version sql
+#Panda Userbot
+
+
+
+
 import asyncio
 import os
 import re
@@ -135,7 +145,7 @@ from telethon.tl import functions, types
 from telethon.utils import get_display_name
 from youtube_dl import YoutubeDL
 from youtubesearchpython import Playlist, ResultMode, Video, VideosSearch
-
+from Panda import LOGS, PandaBot
 from Panda.utils.tools import (
     bash,
     downloader,
@@ -163,7 +173,7 @@ LOG_CHANNEL = int(Config.PRIVATE_GROUP_BOT_API_ID)
 ACTIVE_CALLS, VC_QUEUE = [], {}
 MSGID_CACHE, VIDEO_ON = {}, {}
 CLIENTS = {}
-vcClient = PandaBot
+vcClient = PandaBot.tgbot
 
 def sudoers():
     return _sudousers_list()
@@ -201,8 +211,7 @@ class Player:
 
     async def make_vc_active(self):
         try:
-            await vcClient(
-                functions.phone.CreateGroupCallRequest(
+            await vcClient(CreateGroupCallRequest(
                     self._chat, title="🎧 PandaX Music 🎶"
                 )
             )
@@ -265,7 +274,7 @@ class Player:
             if MSGID_CACHE.get(chat_id):
                 await MSGID_CACHE[chat_id].delete()
                 del MSGID_CACHE[chat_id]
-            xx = await vcClient.send_message(
+            xx = await PandaBot.send_message(
                 self._current_chat,
                 "<strong>🎧 Now playing #{}: <a href={}>{}</a>\n⏰ Duration:</strong> <code>{}</code>\n👤 <strong>Requested by:</strong> {}".format(
                     pos, link, title, dur, from_user
@@ -282,13 +291,13 @@ class Player:
         except (IndexError, KeyError):
             await self.group_call.stop()
             del CLIENTS[self._chat]
-            await vcClient.send_message(
+            await PandaBot.send_message(
                 self._current_chat,
                 f"• Successfully Left Vc : <code>{chat_id}</code> •",
                 parse_mode="html",
             )
         except Exception:
-            await vcClient.send_message(
+            await PandaBot.send_message(
                 self._current_chat,
                 f"<strong>ERROR:</strong> <code>{format_exc()}</code>",
                 parse_mode="html",
@@ -417,7 +426,7 @@ async def download(query):
     link = data["link"]
     dl = await get_stream_link(link)
     title = data["title"]
-    duration = data.get("duration") or "♾"
+    duration = data["duration"]
     thumb = f"https://i.ytimg.com/vi/{data['id']}/hqdefault.jpg"
     return dl, thumb, title, link, duration
 
@@ -492,7 +501,7 @@ async def file_download(event, reply, fast_download=True):
     title = reply.file.title or reply.file.name or str(time()) + ".mp4"
     if fast_download:
         dl = await downloader(
-            "PandaVersion/downloads/" + reply.file.name,
+            "Panda/core/downloads/" + reply.file.name,
             reply.media.document,
             event,
             time(),
@@ -503,8 +512,7 @@ async def file_download(event, reply, fast_download=True):
         dl = await reply.download_media()
     duration = time_formatter(reply.file.duration * 1000) if reply.file.duration else "🤷‍♂️"
     if reply.document.thumbs:
-        thumb = await reply.download_media("PandaVersion/downloads/", thumb=-1)
+        thumb = await reply.download_media("Panda/core/downloads/", thumb=-1)
     return dl, thumb, title, reply.message_link, duration
-
 
 
