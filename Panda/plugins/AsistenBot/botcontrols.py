@@ -17,7 +17,7 @@ from Panda.sql_helper.bot_blacklists import check_is_black_list, get_all_bl_user
 from Panda.sql_helper.bot_starters import del_starter_from_db, get_all_starters
 from Panda.sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
-from .botmanagers import (
+from .botdata import (
     ban_user_from_bot,
     get_user_and_reason,
     progress_str,
