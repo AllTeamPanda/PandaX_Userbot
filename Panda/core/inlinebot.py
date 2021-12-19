@@ -811,6 +811,7 @@ async def on_plugin_callback_query_handler(event):
             [
                 Button.inline("ᴀʟɪᴠᴇ ɴᴀᴍᴇ", data="alivename"),
                 Button.inline("ʜᴀɴᴅʟᴇʀ", data="cmd"),
+                Button.inline("LOGO HELP", data="helplogo"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="menubot")],
         ],
@@ -865,3 +866,27 @@ async def on_plugin_callback_query_handler(event):
             f"**COMMAND_HAND_LER Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
             buttons=get_back_button("menuset"),
         )
+
+@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"helplogo")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
+    pru = event.sender_id
+    var = "PANDA_HELP_LOGO"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan tanda perintah bot Untuk var LOGO HELP anda\nContoh link gambar telegraph**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("menuset"),
+            )
+        await setting(event, var, themssg)
+        await conv.send_message(
+            f"**Help logo Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("menuset"),
+        )
+
