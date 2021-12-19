@@ -4,12 +4,13 @@ import os
 import aiohttp
 import urllib3
 from Panda.sql_helper.globals import addgvar, delgvar, gvarstatus
-from . import edit_delete, edit_or_reply, pandaub
+from . import edit_delete, edit_or_reply, PandaBot
 from Panda.events import register
+from Panda.core.client import Pandavc
 
 
 
-@register(outgoing=True, pattern="^.getdb$")
+@PandaBot.on(Pandavc(outgoing=True, pattern=r"getdb ?(.*)"))
 async def getsql(event):
     var_ = event.pattern_match.group(1).upper()
     xxnx = await edit_or_reply(event, f"**Getting variable** `{var_}`")
@@ -27,7 +28,8 @@ async def getsql(event):
     )
 
 
-@register(outgoing=True, pattern="^.setdb$")
+
+@PandaBot.on(Pandavc(outgoing=True, pattern=r"setdb ?(.*)"))
 async def setsql(event):
     hel_ = event.pattern_match.group(1)
     var_ = hel_.split(" ")[0].upper()
@@ -45,7 +47,8 @@ async def setsql(event):
     await xxnx.edit(f"**Variable** `{var_}` **successfully added with value** `{valu}`")
 
 
-@register(outgoing=True, pattern="^.dwldb$")
+
+@PandaBot.on(Pandavc(outgoing=True, pattern=r"deldb ?(.*)"))
 async def delsql(event):
     var_ = event.pattern_match.group(1).upper()
     xxnx = await edit_or_reply(event, f"**Deleting Variable** `{var_}`")
