@@ -62,4 +62,5 @@ Thanks 🙏🏻
 *   [TeamUserge](https://github.com/UsergeTeam/Userge)
 *   [CatUserbot](https://github.com/sandy1709/catuserbot)
 *   [pytgcalls](https://github.com/MarshalX/tgcalls)
+*   [PandaX_Userbot](https://github.com/ilhammansiz/PandaX_Userbot)
 *   Dan Lainnya
