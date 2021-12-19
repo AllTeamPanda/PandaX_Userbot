@@ -3,11 +3,12 @@ Panda_Userbot adalah userbot Telegram modular yang berjalan di Python3 dengan da
 Berbasis [Cat](https://github.com/sandy1709/catuserbot) ➡ [Ultroid](https://github.com/TeamUltroid/Ultroid) ➡ [Userge](https://github.com/UsergeTeam/Userge) & [Uniborg](https://github.com/udf/uniborg) userbot. Saya membuat repository ini untuk memilih dan menambahkan beberapa modul yang saya butuhkan dengan banyak perubahan, fitur dan modul.
 
 ## Warning
+```
 Saya tidak bertanggung jawab atas penyalahgunaan bot ini.
 Bot ini dimaksudkan untuk bersenang-senang sekaligus membantu Anda
 mengelola grup secara efisien dan mengotomatiskan beberapa hal yang membosankan.
 Gunakan bot ini dengan risiko Anda
-
+```
 <img src="https://media.giphy.com/media/7LM3Nd9MvnWFO/giphy.gif">
 
 <a href="https://heroku.com/deploy?template=https://github.com/IlhamMansiz/Pandapack" rel="nofollow" style="background-color: initial; box-sizing: border-box; color: #0366d6; text-decoration-line: none;"><img alt="Deploy" data-canonical-src="https://www.herokucdn.com/deploy/button.svg" src="https://camo.githubusercontent.com/83b0e95b38892b49184e07ad572c94c8038323fb/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e737667" style="border-style: none; box-sizing: initial; max-width: 100%;" /></a></div>
@@ -29,6 +30,25 @@ Gunakan bot ini dengan risiko Anda
 <p align="left">
   <a href="https://github.com/ilhammansiz/PandaX_Userbot/blob/PandaUserbot/LICENSE"><img src="https://img.shields.io/github/license/ilhammansiz/PandaX_Userbot?&style=social&logo=github">
   </a></p>
+
+## Bagaimana Cara Deploy?
+
+```
+ 🛠 CARA DEPLOY 🛠
+
+  > Pertama Dapatkan API_KE & API_HASH Di my.telegram.org (Wajib)
+
+  > Dapatkan String Session Di Termux ➡ Atau disini [Web](https://replit.com/@ilhammansiz/UserbotSessionTEAM#userbotString.py]  ➡ [ViaBot](https://t.me/TeamUserbotSession_bot)(Wajib)
+
+  > Next Tekan Tombol Deploy DiAtas
+
+  > Isi Datanya Lalu Tekan Deploy Lagi (Isi Data liat Tutorial disini [Tutorial](https://t.me/UserbotTEAM_Tutorial)
+
+  > Terakhir Hidupkan Dyno Lalu Check Logs (settings -> view logs) Jika Berhasil Enjoy :)
+
+Thanks 🙏🏻
+
+```
 
 ## Support
    <a href="https://t.me/UserbotTEAM_Tutorial"><img src="https://img.shields.io/badge/Channel%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
