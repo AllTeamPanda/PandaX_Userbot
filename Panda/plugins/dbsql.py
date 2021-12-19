@@ -6,7 +6,7 @@ import urllib3
 from Panda.sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import edit_delete, edit_or_reply, pandaub
 
-
+plugin_category = "ilham"
 
 
 @pandaub.ilhammansiz_cmd(
