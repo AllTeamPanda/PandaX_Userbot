@@ -44,7 +44,7 @@ async def amireallyalive(event):
     PANDA_IMG = gvarstatus("ALIVE_PIC")
     if PANDA_IMG:
         [x for x in PANDA_IMG.split()]
-        A_IMG = list(CAT)
+        A_IMG = list(PANDA_IMG)
         PIC = random.choice(A_IMG)
         panda_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         panda_caption += f"**{EMOJI} Database :** `{check_sgnirts}`\n"
