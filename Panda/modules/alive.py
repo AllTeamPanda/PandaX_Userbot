@@ -39,7 +39,7 @@ async def amireallyalive(event):
     reply_to_id = await reply_id(event)
     uptime = await get_readable_time((time.time() - StartTime))
     _, check_sgnirts = check_data_base_heal_th()
-    EMOJI = gvarstatus("ALIVE_EMOJI") or "  🎨 "
+    EMOJI = gvarstatus("ALIVE_EMOJI") or "🎨"
     CUSTOM_ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "🐼 Alive Panda 🐼"
     PANDA_IMG = gvarstatus("ALIVE_PIC")
     if PANDA_IMG:
