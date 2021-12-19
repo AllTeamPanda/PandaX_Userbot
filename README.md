@@ -33,7 +33,7 @@ Gunakan bot ini dengan risiko Anda
 
 ## Bagaimana Cara Deploy?
 
-```
+f```
  🛠 CARA DEPLOY 🛠
 
   > Pertama Dapatkan API_KE & API_HASH Di my.telegram.org (Wajib)
