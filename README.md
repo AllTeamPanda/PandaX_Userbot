@@ -57,7 +57,6 @@ Thanks 🙏🏻
 ## ☑ CREDITS
   THANKS YOU VERRY MUCH FOR ALL
 *   [Telethon](https://github.com/LonamiWebs/Telethon)
-*   [Pyrogram](https://github.com/pyrogram/pyrogram)
 *   [TeamUltroid](https://github.com/TeamUltroid)
 *   [TeamUserge](https://github.com/UsergeTeam/Userge)
 *   [CatUserbot](https://github.com/sandy1709/catuserbot)
