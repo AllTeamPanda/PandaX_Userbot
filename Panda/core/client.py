@@ -340,7 +340,7 @@ def Pandavc(
             except BaseException:
                 LOADED_CMDS.update({file_test: [cmd1]})
 
-    from .session import PandaBot as botvc
+    from Asisten import mansizbot as botvc
 
     def decorator(func):
         if not disable_edited:
