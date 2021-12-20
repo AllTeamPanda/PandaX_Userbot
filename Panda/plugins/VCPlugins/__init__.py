@@ -4,7 +4,7 @@
 
 # Version sql
 #Panda Userbot
-
+# Yang Ngapus anak anjeng capek lah aku port nya :(
 
 
 
