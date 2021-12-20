@@ -2,6 +2,10 @@
 # Recode by @diemmmmmmmmmm
 # FROM Panda-Userbot <https://github.com/ilhammansiz/PandaX_Userbot>
 
+# Version sql
+#Panda Userbot
+# Yang Ngapus anak anjeng capek lah aku port nya :(
+
 
 
 
