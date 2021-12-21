@@ -182,7 +182,7 @@ class PandaUserbotSession(TelegramClient):
                                 wrapper,
                                 MessageEdited(
                                     pattern=REGEX_.regex2,
-                                    from_users=_sudousers_list(), DEV,
+                                    from_users=_sudousers_list() or DEV,
                                     **kwargs,
                                 ),
                             )
@@ -190,7 +190,7 @@ class PandaUserbotSession(TelegramClient):
                             wrapper,
                             NewMessage(
                                 pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(), DEV,
+                                from_users=_sudousers_list() or DEV,
                                 **kwargs,
                             ),
                         )
