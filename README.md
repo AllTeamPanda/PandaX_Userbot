@@ -1,4 +1,4 @@
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=ilhammansiz/PandaX_Userbot&label=Profile%20views&color=0e75b6&style=plastic" alt="ilhammansiz/PandaX_Userbot" /> </p>
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=ilhammansiz&label=Profile%20views&color=0e75b6&style=plastic" alt="ilhammansiz" /> </p>
 
 Panda_Userbot adalah userbot Telegram modular yang berjalan di Python3 dengan database sqlalchemy.
 
