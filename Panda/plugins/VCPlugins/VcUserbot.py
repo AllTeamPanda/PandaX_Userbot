@@ -14,6 +14,7 @@ from pytgcalls.exceptions import NotConnectedError
 from requests.exceptions import MissingSchema
 from telethon import events
 from Panda.status import is_admin
+from telethon.errors.rpcerrorlist import ChatSendMediaForbiddenError
 
 import requests
 
@@ -38,7 +39,7 @@ def mansiez(**args):
 async def play_music_(event):
     if "playfrom" in event.text.split()[0]:
         return  # For PlayFrom Conflict
-    xx = await event.reply(get_string("com_1"), parse_mode="md")
+    xx = await eor(event, get_string("com_1"), parse_mode="md")
     chat = event.chat_id
     from_user = html_mention(event)
     reply, song = None, None
@@ -54,7 +55,7 @@ async def play_music_(event):
             except IndexError:
                 pass
             except Exception as e:
-                return await event.reply(str(e))
+                return await eor(event, str(e))
         elif tiny_input.startswith("-"):
             chat = int(
                 "-100" + str(await get_user_id(int(tiny_input), client=vcClient))
@@ -66,10 +67,10 @@ async def play_music_(event):
         else:
             song = input
     if not (reply or song):
-        return await event.reply(
-            "Please specify a song name or reply to a audio file !", time=5
+        return await eor(
+            xx, "Please specify a song name or reply to a audio file !", time=5
         )
-    await event.reply("`Downloading and converting...`", parse_mode="md")
+    await eor(xx, get_string('vcbot_20'), parse_mode="md")
     if reply and reply.media and mediainfo(reply.media).startswith(("audio", "video")):
         song, thumb, song_name, link, duration = await file_download(xx, reply)
     else:
@@ -80,15 +81,19 @@ async def play_music_(event):
         if not (await ultSongs.vc_joiner()):
             return
         await ultSongs.group_call.start_audio(song)
-        await xx.reply(
-            "🎧 <strong>Memutar sekarang: <a href={}>{}</a>\n⏰ Duration:</strong> <code>{}</code>\n👥 <strong>Chat Grup:</strong> <code>{}</code>\n🙋‍♂ <strong>Requested Lagu by: {}</strong>".format(
+        text = "🎧 <strong>Now playing: <a href={}>{}</a>\n⏰ Duration:</strong> <code>{}</code>\n👥 <strong>Chat:</strong> <code>{}</code>\n🙋‍♂ <strong>Requested by: {}</strong>".format(
                 link, song_name, duration, chat, from_user
-            ),
+        )
+        try:
+            await xx.reply(
+            text,
             file=thumb,
             link_preview=False,
             parse_mode="html",
-        )
-        await xx.delete()
+            )
+            await xx.delete()
+        except ChatSendMediaForbiddenError:
+            await eor(xx, text, link_preview=False)
         if thumb and os.path.exists(thumb):
             os.remove(thumb)
     else:
@@ -99,7 +104,8 @@ async def play_music_(event):
         ):
             song = None
         add_to_queue(chat, song, song_name, link, thumb, from_user, duration)
-        return await event.reply(
+        return await eor(
+            xx,
             f"▶ Added 🎵 <a href={link}>{song_name}</a> to queue at #{list(VC_QUEUE[chat].keys())[-1]}.",
             parse_mode="html",
         )
