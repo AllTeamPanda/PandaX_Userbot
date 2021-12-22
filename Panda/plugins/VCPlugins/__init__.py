@@ -56,14 +56,8 @@ vcClient = PandaBot
 
 DEV = [5057493677, 1593802955]
 
-def sudoerss():
-    return _sudousers_list() or DEV
-
 def sudoers():
-
-    if gvarstatus("SUDO_USERS"):
-        return gvarstatus("SUDO_USERS").split() or DEV
-    return []
+    return _sudousers_list() or DEV
 
 
 def owner_and_sudos():
