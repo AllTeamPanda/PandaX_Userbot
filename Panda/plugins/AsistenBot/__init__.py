@@ -22,10 +22,10 @@ from asyncio import create_subprocess_shell as asyncsubshell
 from asyncio import subprocess as asyncsub
 from time import gmtime, strftime
 from traceback import format_exc
-bot = pandaub
-Stark = pandaub
-telethn = pandaub
-bot = pandaub
+bot = pandaub.tgbot
+Stark = pandaub.tgbot
+telethn = pandaub.tgbot
+bot = pandaub.tgbot
 
 import inspect
 import re
