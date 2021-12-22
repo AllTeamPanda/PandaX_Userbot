@@ -35,7 +35,6 @@ def mansiez(**args):
     return decorator
 
 @mansiez(pattern="/play ?(.*)")
-@is_admin
 async def play_music_(event):
     if "playfrom" in event.text.split()[0]:
         return  # For PlayFrom Conflict
