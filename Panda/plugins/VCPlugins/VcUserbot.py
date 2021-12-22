@@ -13,6 +13,7 @@ from . import *
 from pytgcalls.exceptions import NotConnectedError
 from requests.exceptions import MissingSchema
 from telethon import events
+from Panda.status import is_admin
 
 import requests
 
@@ -33,11 +34,12 @@ def mansiez(**args):
 
     return decorator
 
-@PandaVc_cmd("play")
+@mansiez(pattern="/play ?(.*)")
+@is_admin
 async def play_music_(event):
     if "playfrom" in event.text.split()[0]:
         return  # For PlayFrom Conflict
-    xx = await eor(event, get_string("com_1"), parse_mode="md")
+    xx = await event.reply(get_string("com_1"), parse_mode="md")
     chat = event.chat_id
     from_user = html_mention(event)
     reply, song = None, None
@@ -53,7 +55,7 @@ async def play_music_(event):
             except IndexError:
                 pass
             except Exception as e:
-                return await eor(event, str(e))
+                return await event.reply(str(e))
         elif tiny_input.startswith("-"):
             chat = int(
                 "-100" + str(await get_user_id(int(tiny_input), client=vcClient))
@@ -65,10 +67,10 @@ async def play_music_(event):
         else:
             song = input
     if not (reply or song):
-        return await eor(
-            xx, "Please specify a song name or reply to a audio file !", time=5
+        return await event.reply(
+            "Please specify a song name or reply to a audio file !", time=5
         )
-    await eor(xx, "`Downloading and converting...`", parse_mode="md")
+    await event.reply("`Downloading and converting...`", parse_mode="md")
     if reply and reply.media and mediainfo(reply.media).startswith(("audio", "video")):
         song, thumb, song_name, link, duration = await file_download(xx, reply)
     else:
@@ -98,8 +100,7 @@ async def play_music_(event):
         ):
             song = None
         add_to_queue(chat, song, song_name, link, thumb, from_user, duration)
-        return await eor(
-            xx,
+        return await event.reply(
             f"▶ Added 🎵 <a href={link}>{song_name}</a> to queue at #{list(VC_QUEUE[chat].keys())[-1]}.",
             parse_mode="html",
         )
