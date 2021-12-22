@@ -14,7 +14,6 @@ Stark = PandaBot.tgbot
 from Panda.modules import mention
 from . import mansiez
 
-@mansiez(pattern="/moon ?(.*)")
 
 BOT = "𝑨𝒔𝒔𝒊𝒔𝒕𝒂𝒏𝒕"
 X = "https://telegra.ph/file/695cb726224d2a7037399.jpg"
