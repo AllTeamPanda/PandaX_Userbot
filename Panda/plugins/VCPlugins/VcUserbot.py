@@ -155,7 +155,7 @@ async def join_(event):
         try:
             chat = int("-100" + str((await vcClient.get_entity(chat)).id))
         except Exception as e:
-            return await eor(event, "**ERROR:**\n{}".format(str(e)))
+            return await event.reply("**ERROR:**\n{}".format(str(e)))
     else:
         chat = event.chat_id
     ultSongs = Player(chat, event)
