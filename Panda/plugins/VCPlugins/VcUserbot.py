@@ -34,7 +34,7 @@ def mansiez(**args):
 
     return decorator
 
-@mansiez(pattern="/play ?(.*)")
+@PandaVc_cmd("play")
 async def play_music_(event):
     if "playfrom" in event.text.split()[0]:
         return  # For PlayFrom Conflict
