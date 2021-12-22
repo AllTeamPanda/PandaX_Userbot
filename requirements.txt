@@ -71,7 +71,7 @@ vcsi
 wand
 wget
 wikipedia
-telethon>=1.21.1
+Telethon~=1.23.0
 telethon-session-sqlalchemy
 git+https://github.com/ilhammansiz/Telethon
 lyrics_extractor
