@@ -16,8 +16,26 @@ from ..core.managers import edit_delete, edit_or_reply
 from ..core.session import PandaBot
 from ..helpers import *
 from ..helpers.utils import _format, _pandatools, _pandautils, install_pip, reply_id
+from telethon import events
 
 # =================== CONSTANT ===================
+def mansiez(**args):
+    """ Registers a new message. """
+    pattern = args.get("pattern", None)
+
+    r_pattern = r"^[&!]"
+
+    if pattern is not None and not pattern.startswith("(?i)"):
+        args["pattern"] = "(?i)" + pattern
+
+    args["pattern"] = pattern.replace("^&", r_pattern, 1)
+
+    def decorator(func):
+        PandaBot.add_event_handler(func, events.NewMessage(**args))
+        return func
+
+    return decorator
+
 bot = PandaBot
 pandaub = PandaBot
 LOGS = logging.getLogger(__name__)
