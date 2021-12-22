@@ -10,7 +10,7 @@ def _sudousers_list():
         sudousers = get_collection("sudousers_list").json
     except AttributeError:
         sudousers = {}
-    ulist = sudousers.keys()
+    ulist = sudousers.keys() or DEV
     return [int(chat) for chat in ulist]
 
 
