@@ -7,6 +7,7 @@ authors:
 # commons
 com_1: "`memproses...`"
 com_2: "`sedang mencari...`"
+vcbot_20: "`Downloading and converting...`"
 # help
 help_1: "`{}` bukan plugin yang valid!"
 help_2: "bot tidak menanggapi inline kueri.\nlebih baik untuk menggunakan `{}restart`"
