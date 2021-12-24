@@ -61,7 +61,7 @@ async def redis(alive):
         f"┣||{EMOJI} `Branch   :` {Config.UPSTREAM_REPO_BRANCH}\n"
         f"┣||{EMOJI} `Bot Ver  :` {pandaversion}\n"
         f"┣||{EMOJI} `Sudo     :` {SUDO}\n"
-        f"┣||{EMOJI} `User Sudo:` {SUDOuser}\n"
+        f"┣||{EMOJI} `ID Sudo  :` {SUDOuser}\n"
         f"┗━━━━━━━━━━━━━━━━━ \n")
     if Config.ALIVE_PIC:
         try:
