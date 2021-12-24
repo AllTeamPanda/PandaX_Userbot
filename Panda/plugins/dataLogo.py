@@ -17,6 +17,7 @@ from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "꧁༺ Panda Userbot ༻꧂"
 
 from ..sql_helper.globals import gvarstatus, addgvar
+from ..core.data import _sudousers_list
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(Config.ALIVE_NAME) if Config.ALIVE_NAME else uname().node
@@ -28,7 +29,7 @@ plugin_category = "mansiez"
 ilhammansizzz = "https://github.com/ilhammansiz/PandaX_Userbot"
 support = "https://t.me/TEAMSquadUserbotSupport"
 SUDO = gvarstatus("sudoenable")
-
+SUDOuser = _sudousers_list()
 
 
 
@@ -52,15 +53,15 @@ async def redis(alive):
     await asyncio.sleep(2)
     output = (
         f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-        f"**🐼 ꧁༺ Panda Userbot ༻꧂ 🐼** \n"
         f"┏━━━━━━━━━━━━━━━━━\n"
         f"┣||{EMOJI} `Pengguna :` {DEFAULTUSER}\n"
-        f"┣||{EMOJI} `Simbol   :`꧁༺ Panda Userbot ༻꧂\n"
+        f"┣||{EMOJI} `Simbol   :`꧁༺ 🐼 🐼༻꧂\n"
         f"┣||{EMOJI} `Telethon :` Ver {version.__version__}\n"
         f"┣||{EMOJI} `Python   :` Ver {python_version()}\n"
         f"┣||{EMOJI} `Branch   :` {Config.UPSTREAM_REPO_BRANCH}\n"
         f"┣||{EMOJI} `Bot Ver  :` {pandaversion}\n"
         f"┣||{EMOJI} `Sudo     :` {SUDO}\n"
+        f"┣||{EMOJI} `User Sudo:` {SUDOuser}\n"
         f"┗━━━━━━━━━━━━━━━━━ \n")
     if Config.ALIVE_PIC:
         try:
