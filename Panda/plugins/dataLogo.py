@@ -2,6 +2,9 @@ import time
 from platform import python_version, uname
 
 from telethon import version
+import asyncio
+from asyncio import create_subprocess_exec as asyncrunapp
+from asyncio.subprocess import PIPE as asyncPIPE
 
 from Panda import StartTime, pandaub, pandaversion
 
@@ -26,6 +29,9 @@ ilhammansizzz = "https://github.com/ilhammansiz/PandaX_Userbot"
 support = "https://t.me/TEAMSquadUserbotSupport"
 SUDO = gvarstatus("sudoenable")
 
+
+
+
 @pandaub.ilhammansiz_cmd(
     pattern="alive$",
     command=("alive", plugin_category),
@@ -37,40 +43,39 @@ SUDO = gvarstatus("sudoenable")
         ],
     },
 )
-async def amireallyalive(event):
-    "A kind of showing bot details"
-    reply_to_id = await reply_id(event)
+async def redis(alive):
+    user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    _, check_sgnirts = check_data_base_heal_th()
+    await alive.edit("꧁༺ Panda Userbot ༻꧂")
+    await alive.edit("꧁༺ Userbot ༻꧂")
+    await alive.edit("🎰")
+    await asyncio.sleep(2)
+    output = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
+             f"**🐼 ꧁༺ Panda Userbot ༻꧂ 🐼** \n"
+             f"┏━━━━━━━━━━━━━━━━━\n"
+             f"┣||{EMOJI} `Pengguna :` {DEFAULTUSER}\n"
+             f"┣||{EMOJI} `Simbol   :`꧁༺ Panda Userbot ༻꧂\n"
+             f"┣||{EMOJI} `Telethon :` Ver {version.__version__}\n"
+             f"┣||{EMOJI} `Python   :` Ver {python_version()}\n"
+             f"┣||{EMOJI} `Branch   :` {Config.UPSTREAM_REPO_BRANCH}\n"
+             f"┣||{EMOJI} `Bot Ver  :` {pandaversion}\n"
+             f"┣||{EMOJI} `Sudo     :` {SUDO}\n"
+             f"┗━━━━━━━━━━━━━━━━━ \n"
     if Config.ALIVE_PIC:
-        panda_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-        panda_caption += f"**🐼 PANDA USERBOT 🐼** \n"
-        panda_caption += f"┏━━━━━━━━━━━━━━━━━\n"
-        panda_caption += f"┣||{EMOJI} `Pengguna :` {DEFAULTUSER}\n"
-        panda_caption += f"┣||{EMOJI} `Simbol   :`꧁༺ Panda Userbot ༻꧂\n"
-        panda_caption += f"┣||{EMOJI} `Telethon :` Ver {version.__version__}\n"
-        panda_caption += f"┣||{EMOJI} `Python   :` Ver {python_version()}\n"
-        panda_caption += f"┣||{EMOJI} `Branch   :` {Config.UPSTREAM_REPO_BRANCH}\n"
-        panda_caption += f"┣||{EMOJI} `Bot Ver  :` {pandaversion}\n"
-        panda_caption += f"┣||{EMOJI} `Sudo     :` {SUDO}\n"
-        panda_caption += f"┗━━━━━━━━━━━━━━━━━ \n"
-        await event.client.send_file(
-            event.chat_id, Config.ALIVE_PIC, caption=panda_caption, reply_to=reply_to_id
-        )
+        try:
+            logo = Config.ALIVE_PIC
+            await alive.delete()
+            msg = await pandaub.send_file(alive.chat_id, logo, caption=output)
+            await asyncio.sleep(500)
+            await msg.delete()
+        except BaseException:
+            await alive.edit(
+                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
+                "\nPastikan Tautan Yang Anda Gunakan Valid`"
+            )
+            await asyncio.sleep(100)
+            await alive.delete()
     else:
-        await event.delete()
-        return
-        await edit_or_reply(
-            event,
-            f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-            f"**🐼 PANDA USERBOT 🐼** \n"
-            f"┏━━━━━━━━━━━━━━━━━ \n"
-            f"┣||{EMOJI} `Pengguna :` {DEFAULTUSER}\n"
-            f"┣||{EMOJI} `Simbol   :`꧁༺ Panda Userbot ༻꧂\n"
-            f"┣||{EMOJI} `Telethon :` Ver {version.__version__}\n"
-            f"┣||{EMOJI} `Python   :` Ver {python_version()}\n"
-            f"┣||{EMOJI} `Branch   :` {Config.UPSTREAM_REPO_BRANCH}\n"
-            f"┣||{EMOJI} `Bot Ver  :` {pandaversion}\n"
-            f"┣||{EMOJI} `Sudo     :` {SUDO}\n"
-            f"┗━━━━━━━━━━━━━━━━━ \n",
-        )
+        await alive.edit(output)
+        await asyncio.sleep(100)
+        await alive.delete()
