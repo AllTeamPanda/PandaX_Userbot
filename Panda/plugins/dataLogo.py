@@ -46,7 +46,7 @@ async def amireallyalive(event):
         panda_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         panda_caption += f"**🐼 PANDA USERBOT 🐼** \n"
         panda_caption += f"┏━━━━━━━━━━━━━━━━━\n"
-        panda_caption += f"┣|{EMOJI} `Pengguna :` {DEFAULTUSER}\n"
+        panda_caption += f"┣||{EMOJI} `Pengguna :` {DEFAULTUSER}\n"
         panda_caption += f"┣||{EMOJI} `Simbol   :`꧁༺ Panda Userbot ༻꧂\n"
         panda_caption += f"┣||{EMOJI} `Telethon :` Ver {version.__version__}\n"
         panda_caption += f"┣||{EMOJI} `Python   :` Ver {python_version()}\n"
