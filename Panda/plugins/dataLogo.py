@@ -9,6 +9,7 @@ from ..Config import Config
 from ..core.managers import edit_or_reply
 from ..helpers.functions import check_data_base_heal_th, get_readable_time
 from ..helpers.utils import reply_id
+from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 
 CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "🐼 BOT PANDA SUCCESSFULLY 🐼"
 
@@ -23,7 +24,7 @@ plugin_category = "mansiez"
 
 ilhammansizzz = "https://github.com/ilhammansiz/PandaX_Userbot"
 support = "https://t.me/TEAMSquadUserbotSupport"
-
+SUDO = gvarstatus
 
 @pandaub.ilhammansiz_cmd(
     pattern="alive$",
