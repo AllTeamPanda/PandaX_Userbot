@@ -57,7 +57,6 @@ async def amireallyalive(event):
         await event.client.send_file(
             event.chat_id, Config.ALIVE_PIC, caption=panda_caption, reply_to=reply_to_id
         )
-        await event.delete()
     else:
         await event.delete()
         return
