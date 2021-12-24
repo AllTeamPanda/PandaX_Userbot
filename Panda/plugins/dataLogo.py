@@ -17,11 +17,11 @@ from ..sql_helper.globals import gvarstatus, addgvar
 # ================= CONSTANT =================
 DEFAULTUSER = str(Config.ALIVE_NAME) if Config.ALIVE_NAME else uname().node
 # ============================================
-EMOJI = addgvar(EMOJI, "🚏")
+EMOJI = gvarstatus("EMOJI") or "🎨"
 
 plugin_category = "mansiez"
 
-ilhammansizzz = "https://github.com/ilhammansiz/PandaUserbot"
+ilhammansizzz = "https://github.com/ilhammansiz/PandaX_Userbot"
 support = "https://t.me/TEAMSquadUserbotSupport"
 
 
