@@ -44,7 +44,7 @@ SUDO = gvarstatus("sudoenable")
     },
 )
 async def redis(alive):
-    user = await bot.get_me()
+    user = await pandaub.get_me()
     await get_readable_time((time.time() - StartTime))
     await alive.edit("꧁༺ Panda Userbot ༻꧂")
     await alive.edit("꧁༺ Userbot ༻꧂")
