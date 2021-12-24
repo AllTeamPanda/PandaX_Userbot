@@ -50,17 +50,18 @@ async def redis(alive):
     await alive.edit("꧁༺ Userbot ༻꧂")
     await alive.edit("🎰")
     await asyncio.sleep(2)
-    output = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-             f"**🐼 ꧁༺ Panda Userbot ༻꧂ 🐼** \n"
-             f"┏━━━━━━━━━━━━━━━━━\n"
-             f"┣||{EMOJI} `Pengguna :` {DEFAULTUSER}\n"
-             f"┣||{EMOJI} `Simbol   :`꧁༺ Panda Userbot ༻꧂\n"
-             f"┣||{EMOJI} `Telethon :` Ver {version.__version__}\n"
-             f"┣||{EMOJI} `Python   :` Ver {python_version()}\n"
-             f"┣||{EMOJI} `Branch   :` {Config.UPSTREAM_REPO_BRANCH}\n"
-             f"┣||{EMOJI} `Bot Ver  :` {pandaversion}\n"
-             f"┣||{EMOJI} `Sudo     :` {SUDO}\n"
-             f"┗━━━━━━━━━━━━━━━━━ \n"
+    output = (
+        f"**{CUSTOM_ALIVE_TEXT}**\n\n"
+        f"**🐼 ꧁༺ Panda Userbot ༻꧂ 🐼** \n"
+        f"┏━━━━━━━━━━━━━━━━━\n"
+        f"┣||{EMOJI} `Pengguna :` {DEFAULTUSER}\n"
+        f"┣||{EMOJI} `Simbol   :`꧁༺ Panda Userbot ༻꧂\n"
+        f"┣||{EMOJI} `Telethon :` Ver {version.__version__}\n"
+        f"┣||{EMOJI} `Python   :` Ver {python_version()}\n"
+        f"┣||{EMOJI} `Branch   :` {Config.UPSTREAM_REPO_BRANCH}\n"
+        f"┣||{EMOJI} `Bot Ver  :` {pandaversion}\n"
+        f"┣||{EMOJI} `Sudo     :` {SUDO}\n"
+        f"┗━━━━━━━━━━━━━━━━━ \n")
     if Config.ALIVE_PIC:
         try:
             logo = Config.ALIVE_PIC
