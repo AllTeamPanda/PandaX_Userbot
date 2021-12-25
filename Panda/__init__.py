@@ -9,7 +9,6 @@ import os
 import time
 import heroku3
 
-from .Config import Config
 from .core.logger import logging
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
@@ -88,7 +87,7 @@ petercordpanda_bot = pandaub
 StartTime = time.time()
 pandaversion = "3.0.3"
 
-
+from .Config import Config
 
 if Config.UPSTREAM_REPO == "PANDA_USERBOT":
     UPSTREAM_REPO_URL = "https://github.com/ilhammansiz/PandaX_Userbot"
