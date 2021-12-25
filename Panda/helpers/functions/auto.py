@@ -203,10 +203,6 @@ async def autobot():
             await mansizbot.send_message(
             bf, f"PandaX_Userbot Assistant\n\nBy ~ @diemmmmmmmmmm\nSupport ~ @TEAMSquadUserbotSupport ",
             )
-            if gvarstatus("TOKENBOT") is not None:
-                addgvar("TOKENBOT", token)
-            if gvarstatus("USERBOT") is not None:
-                addgvar("USERBOT", f"@{username}")
             LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
         else:
             LOGS.info(
@@ -242,13 +238,14 @@ async def autobot():
         await mansizbot.send_message(
         bf, f"PandaX_Userbot Assistant\n\nBy ~ @diemmmmmmmmmm\nSupport ~ @TEAMSquadUserbotSupport ",
         )
-        if gvarstatus("TOKENBOT") is not None:
-            addgvar("TOKENBOT", token)
-        if gvarstatus("USERBOT") is not None:
-            addgvar("USERBOT", f"@{username}")
         LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
     else:
         LOGS.info(
             f"Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot."
         )
         exit(1)
+
+
+Tokenbot = gvarstatus("TOKENBOT") or token
+Userbot = gvarstatus("USERBOT") or f"@{username}"
+                
