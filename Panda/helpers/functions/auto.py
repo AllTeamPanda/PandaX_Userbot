@@ -308,13 +308,13 @@ async def autobot():
             LOGS.info(
                 "You Are in Too Many Channels & Groups , Leave some And Restart The Bot"
             )
-        exit(1)
+            exit(1)
         except BaseException as er:
             LOGS.info(er)
             LOGS.info(
                 "Something Went Wrong , Create A Group and set its id on config var LOG_CHANNEL."
             )
-        exit(1)
+            exit(1)
         rights = ChatAdminRights(
             add_admins=True,
             invite_users=True,
