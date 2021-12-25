@@ -1,5 +1,4 @@
 from Panda.sql_helper.globals import gvarstatus, addgvar
-from Panda import PandaBot as mansizbot
 import asyncio
 from urllib.request import urlretrieve
 
@@ -58,6 +57,8 @@ LOG_CHANNEL = config("LOG_CHANNEL", default=0, cast=int)
 
 
 async def autogrup():
+    from Panda import PandaBot as mansizbot
+
     await mansizbot.start()
     if LOG_CHANNEL:
         (LOG_CHANNEL, str(LOG_CHANNEL))
@@ -113,6 +114,8 @@ async def autogrup():
 
 
 async def autobot():
+    from Panda import PandaBot as mansizbot
+
     await mansizbot.start()
     if BOT_TOKEN:
         (BOT_TOKEN, str(BOT_TOKEN))
