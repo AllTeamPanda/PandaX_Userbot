@@ -1,7 +1,7 @@
 from telethon import functions
 
-from Panda import pandaub, Bot
-
+from Panda import pandaub
+Bot = pandaub
 from ..Config import Config
 from ..core import CMD_INFO, GRP_INFO, PLG_INFO
 from ..core.managers import edit_delete, edit_or_reply
