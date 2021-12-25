@@ -64,6 +64,18 @@ class Config(object):
     TG_BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
     TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
     PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
+    HEROKU_API_KEY = os.environ.get("HEROKU_API", None)
+    HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
+    
+
+Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
+heroku_api = "https://api.heroku.com"
+app = Heroku.app(Config.HEROKU_APP_NAME)
+var = app.config()
+ilhammansiezzzz = "BOT_TOKEN"
+botusername = "TG_BOT_USERNAME"
+ilhammansiezzzzzz = "PRIVATE_GROUP_BOT_API_ID"
+
 
 async def autogrup():
     from Panda import PandaBot as mansizbot
@@ -203,7 +215,52 @@ async def autobot():
             await mansizbot.send_message(
             bf, f"PandaX_Userbot Assistant\n\nBy ~ @diemmmmmmmmmm\nSupport ~ @TEAMSquadUserbotSupport ",
             )
-            LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
+            LOGS.info(f"Ok, Sekarang Buat grupnya ya bangsat")
+            try:
+                r = await mansizbot(
+                    CreateChannelRequest(
+                        title="🛠 BOTLOG & SETTING 🛠",
+                        about="Ini adalah sebuah grup yang dibuat otomatis untuk mengatur bot saat erorr ...\n\n Join @TeamSquadUserbotSuport",
+                        megagroup=True,
+                    ),
+                )
+            except ChannelsTooMuchError:
+                LOGS.info(
+                    "You Are in Too Many Channels & Groups , Leave some And Restart The Bot"
+                )
+                exit(1)
+            except BaseException as er:
+                LOGS.info(er)
+                LOGS.info(
+                    "Something Went Wrong , Create A Group and set its id on config var LOG_CHANNEL."
+                )
+                exit(1)
+           rights = ChatAdminRights(
+                add_admins=True,
+                invite_users=True,
+                change_info=True,
+                ban_users=True,
+                delete_messages=True,
+                pin_messages=True,
+                anonymous=False,
+                manage_call=True,
+            )
+            chat = r.chats[0]
+            chat_id = chat.id
+            await mansizbot(EditAdminRequest(chat_id, f"@{username}", rights, "Assistant"))
+            photo = await download_file(
+                "https://telegra.ph/file/da037f0eaeaa1423eea49.jpg", "channelphoto.jpg"
+           )
+            ll = await mansizbot.upload_file(photo)
+            await mansizbot(EditPhotoRequest(chat_id, InputChatUploadedPhoto(ll)))
+            os.remove(photo)
+            if not str(chat_id).startswith("-100"):
+               var[ilhammansiezzzzzz] = "-100" + str(chat_id)
+           else:
+               var[ilhammansiezzzzzz] = str(chat_id)
+               var[ilhammansiezzzz] = token
+               var[botusername] = f"@{username}"
+            LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username} dan grup")
         else:
             LOGS.info(
                 f"Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot."
@@ -238,14 +295,54 @@ async def autobot():
         await mansizbot.send_message(
         bf, f"PandaX_Userbot Assistant\n\nBy ~ @diemmmmmmmmmm\nSupport ~ @TEAMSquadUserbotSupport ",
         )
+        LOGS.info("🛠 MEMBUAT Grup Pribadi HARAP TUNGU !!")
+        try:
+            r = await mansizbot(
+                CreateChannelRequest(
+                    title="🛠 BOTLOG & SETTING 🛠",
+                    about="Ini adalah sebuah grup yang dibuat otomatis untuk mengatur bot saat erorr ...\n\n Join @TeamSquadUserbotSuport",
+                    megagroup=True,
+                ),
+            )
+        except ChannelsTooMuchError:
+        LOGS.info(
+            "You Are in Too Many Channels & Groups , Leave some And Restart The Bot"
+        )
+        exit(1)
+        except BaseException as er:
+        LOGS.info(er)
+        LOGS.info(
+            "Something Went Wrong , Create A Group and set its id on config var LOG_CHANNEL."
+        )
+        exit(1)
+        rights = ChatAdminRights(
+            add_admins=True,
+            invite_users=True,
+            change_info=True,
+            ban_users=True,
+            delete_messages=True,
+            pin_messages=True,
+            anonymous=False,
+            manage_call=True,
+        )
+        chat = r.chats[0]
+        chat_id = chat.id
+        await mansizbot(EditAdminRequest(chat_id, TG_BOT_USERNAME, rights, "Assistant"))
+        photo = await download_file(
+            "https://telegra.ph/file/da037f0eaeaa1423eea49.jpg", "channelphoto.jpg"
+        )
+        ll = await mansizbot.upload_file(photo)
+        await mansizbot(EditPhotoRequest(chat_id, InputChatUploadedPhoto(ll)))
+        os.remove(photo)
+        if not str(chat_id).startswith("-100"):
+            var[ilhammansiezzzzzz] = "-100" + str(chat_id)
+        else:
+            var[ilhammansiezzzzzz] = str(chat_id)
+            var[ilhammansiezzzz] = token
+            var[botusername] = f"@{username}"
         LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
     else:
         LOGS.info(
             f"Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot."
         )
         exit(1)
-
-
-Tokenbot = gvarstatus("TOKENBOT") or token
-Userbot = gvarstatus("USERBOT") or f"@{username}"
-                
