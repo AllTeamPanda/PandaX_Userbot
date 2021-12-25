@@ -23,7 +23,6 @@ LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
-from .helpers.functions.auto import autogrup, autobot
 from .Var import Var
 from Panda.core.client import PandaUserbotSession
 
@@ -51,10 +50,11 @@ except Exception as e:
     print(f"STRING_SESSION - {str(e)}")
     sys.exit()
 
+
+from .helpers.functions.auto import autogrup, autobot, Tokenbot, Userbot
+
 if not BOT_TOKEN:
     PandaBot.loop.run_until_complete(autobot())
-
-from .Config import Config
 
 PandaBot.tgbot = tgbot = PandaUserbotSession(
     session="BOT_TOKEN",
@@ -65,7 +65,7 @@ PandaBot.tgbot = tgbot = PandaUserbotSession(
     connection=ConnectionTcpAbridged,
     auto_reconnect=True,
     connection_retries=None,
-).start(bot_token=BOT_TOKEN)
+).start(bot_token=Tokenbot)
 
 if not LOG_CHANNEL:
     PandaBot.loop.run_until_complete(autogrup())
@@ -87,6 +87,7 @@ petercordpanda_bot = pandaub
 StartTime = time.time()
 pandaversion = "3.0.3"
 
+from .Config import Config
 
 if Config.UPSTREAM_REPO == "PANDA_USERBOT":
     UPSTREAM_REPO_URL = "https://github.com/ilhammansiz/PandaX_Userbot"
