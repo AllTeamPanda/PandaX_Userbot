@@ -2,4 +2,6 @@
 ## Panda Userbot
 
 
-from Panda import *
+from Panda import PandaBot
+Bot = PandaBot
+Stark = PandaBot
