@@ -54,7 +54,7 @@ except Exception as e:
 if not BOT_TOKEN:
     PandaBot.loop.run_until_complete(autobot())
 
-from .helpers.functions.auto import TOKENBOT
+from .Config import Config
 
 PandaBot.tgbot = tgbot = PandaUserbotSession(
     session="BOT_TOKEN",
@@ -65,7 +65,7 @@ PandaBot.tgbot = tgbot = PandaUserbotSession(
     connection=ConnectionTcpAbridged,
     auto_reconnect=True,
     connection_retries=None,
-).start(bot_token=TOKENBOT)
+).start(bot_token=Config.TG_BOT_TOKEN)
 
 if not LOG_CHANNEL:
     PandaBot.loop.run_until_complete(autogrup())
@@ -87,7 +87,6 @@ petercordpanda_bot = pandaub
 StartTime = time.time()
 pandaversion = "3.0.3"
 
-from .Config import Config
 
 if Config.UPSTREAM_REPO == "PANDA_USERBOT":
     UPSTREAM_REPO_URL = "https://github.com/ilhammansiz/PandaX_Userbot"
