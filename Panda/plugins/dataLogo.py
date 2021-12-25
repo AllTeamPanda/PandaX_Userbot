@@ -22,7 +22,7 @@ from ..core.data import _sudousers_list
 # ================= CONSTANT =================
 DEFAULTUSER = str(Config.ALIVE_NAME) if Config.ALIVE_NAME else uname().node
 # ============================================
-EMOJI = gvarstatus("EMOJI") or "🎨"
+EMOJI = gvarstatus("EMOJI") or "🛠"
 NAME = gvarstatus("NAME") or DEFAULTUSER
 
 plugin_category = "mansiez"
