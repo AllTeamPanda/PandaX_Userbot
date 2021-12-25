@@ -20,7 +20,7 @@ from ..helpers.utils.utils import runcmd
 from ..sql_helper.globals import gvarstatus
 from . import BOT_INFO, CMD_INFO, GRP_INFO, LOADED_CMDS, PLG_INFO
 from .cmdinfo import _format_about
-from .data import _sudousers_list, blacklist_chats_list, sudo_enabled_cmds
+from .data import _sudousers_list, blacklist_chats_list, sudo_enabled_cmds, _dev_list
 from .events import MessageEdited, NewMessage
 from .fasttelethon import download_file, upload_file
 from .logger import logging
@@ -185,7 +185,7 @@ class PandaUserbotSession(TelegramClient):
                             wrapper,
                             MessageEdited(
                                 pattern=REGEX_.dev,
-                                from_users=DEV,
+                                from_users=_dev_list() or DEV,
                                 **kwargs,
                             ),
                         )
@@ -193,7 +193,7 @@ class PandaUserbotSession(TelegramClient):
                             wrapper,
                             NewMessage(
                             pattern=REGEX_.dev,
-                            from_users=DEV,
+                            from_users=_dev_list() or DEV,
                             **kwargs,
                         ),
                     )
