@@ -57,7 +57,7 @@ LOG_CHANNEL = config("LOG_CHANNEL", default=0, cast=int)
 
 
 async def autogrup():
-    from Panda import PandaBot as mansizbot
+    from Panda import LOGS, PandaBot as mansizbot
 
     await mansizbot.start()
     if LOG_CHANNEL:
@@ -114,7 +114,7 @@ async def autogrup():
 
 
 async def autobot():
-    from Panda import PandaBot as mansizbot
+    from Panda import LOGS, PandaBot as mansizbot
 
     await mansizbot.start()
     if BOT_TOKEN:
