@@ -23,8 +23,7 @@ LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
-from Asisten.autobot import autobot, autousername, setbot, autogrup
-from Asisten.autogrup import autopilot
+from .helpers.functions.auto import autogrup, autobot
 from .Var import Var
 from Panda.core.client import PandaUserbotSession
 
@@ -55,9 +54,7 @@ except Exception as e:
 if not BOT_TOKEN:
     PandaBot.loop.run_until_complete(autobot())
 
-if not LOG_CHANNEL:
-    PandaBot.loop.run_until_complete(autogrup())
-
+from .helpers.functions.auto import TOKENBOT
 
 PandaBot.tgbot = tgbot = PandaUserbotSession(
     session="BOT_TOKEN",
@@ -68,7 +65,10 @@ PandaBot.tgbot = tgbot = PandaUserbotSession(
     connection=ConnectionTcpAbridged,
     auto_reconnect=True,
     connection_retries=None,
-).start(bot_token=BOT_TOKEN)
+).start(bot_token=TOKENBOT)
+
+if not LOG_CHANNEL:
+    PandaBot.loop.run_until_complete(autogrup())
 
 
 __version__ = "3.0.0"
