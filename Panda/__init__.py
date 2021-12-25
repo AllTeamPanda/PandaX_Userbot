@@ -71,11 +71,6 @@ PandaBot.tgbot = tgbot = PandaUserbotSession(
     connection_retries=None,
 ).start(bot_token=BOT_TOKEN)
 
-Bot = PandaBot
-pandabot = PandaBot
-Stark = PandaBot
-
-
 
 __version__ = "3.0.0"
 __license__ = "GNU Affero General Public License v3.0"
