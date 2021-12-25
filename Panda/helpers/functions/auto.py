@@ -235,7 +235,7 @@ async def autobot():
                     "Something Went Wrong , Create A Group and set its id on config var LOG_CHANNEL."
                 )
                 exit(1)
-           rights = ChatAdminRights(
+            rights = ChatAdminRights(
                 add_admins=True,
                 invite_users=True,
                 change_info=True,
