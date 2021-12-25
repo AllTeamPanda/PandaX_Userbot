@@ -75,9 +75,11 @@ except Exception:
 LOGSPAMMER = os.environ.get("LOGSPAMMER", "False")
 
 
-async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "```🐼PANDA-USERBOT🐼\nMENYALA```")
-    return
+class Auto(object):
+    LOGGER = True
+
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
+    
 
 
 # Global Configiables
