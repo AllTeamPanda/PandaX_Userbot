@@ -23,6 +23,7 @@ from ..core.data import _sudousers_list
 DEFAULTUSER = str(Config.ALIVE_NAME) if Config.ALIVE_NAME else uname().node
 # ============================================
 EMOJI = gvarstatus("EMOJI") or "🎨"
+NAME = gvarstatus("NAME") or DEFAULTUSER
 
 plugin_category = "mansiez"
 
@@ -54,7 +55,7 @@ async def redis(alive):
     output = (
         f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         f"┏━━━━━━━━━━━━━━━━━\n"
-        f"┣||{EMOJI} `Pengguna :` {DEFAULTUSER}\n"
+        f"┣||{EMOJI} `Pengguna :` {NAME}\n"
         f"┣||{EMOJI} `Simbol   :`༺🐼༻\n"
         f"┣||{EMOJI} `Telethon :` {version.__version__}\n"
         f"┣||{EMOJI} `Python   :` {python_version()}\n"
