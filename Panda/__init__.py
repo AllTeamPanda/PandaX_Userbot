@@ -65,7 +65,7 @@ PandaBot.tgbot = tgbot = PandaUserbotSession(
     connection=ConnectionTcpAbridged,
     auto_reconnect=True,
     connection_retries=None,
-).start(bot_token=Config.TG_BOT_TOKEN)
+).start(bot_token=gvarstatus("TOKENBOT"))
 
 if not LOG_CHANNEL:
     PandaBot.loop.run_until_complete(autogrup())
