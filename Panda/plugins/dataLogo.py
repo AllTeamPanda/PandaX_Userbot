@@ -22,7 +22,7 @@ from ..core.data import _sudousers_list
 # ================= CONSTANT =================
 DEFAULTUSER = str(Config.ALIVE_NAME) if Config.ALIVE_NAME else uname().node
 # ============================================
-EMOJI = gvarstatus("EMOJI") or "🛠"
+EMOJI = gvarstatus("EMOJI") or "🎨"
 NAME = gvarstatus("NAME") or DEFAULTUSER
 
 plugin_category = "mansiez"
@@ -31,7 +31,7 @@ ilhammansizzz = "https://github.com/ilhammansiz/PandaX_Userbot"
 support = "https://t.me/TEAMSquadUserbotSupport"
 SUDO = gvarstatus("sudoenable")
 SUDOuser = _sudousers_list()
-
+User = gvarstatus("NAME")
 
 
 @pandaub.ilhammansiz_cmd(
@@ -55,7 +55,7 @@ async def redis(alive):
     output = (
         f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         f"┏━━━━━━━━━━━━━━━━━\n"
-        f"┣||{EMOJI} `Pengguna :` {NAME}\n"
+        f"┣||{EMOJI} `Pengguna :` {User}\n"
         f"┣||{EMOJI} `Simbol   :`༺🐼༻\n"
         f"┣||{EMOJI} `Telethon :` {version.__version__}\n"
         f"┣||{EMOJI} `Python   :` {python_version()}\n"
