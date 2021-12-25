@@ -59,6 +59,7 @@ LOGS = getLogger("PandaUserbot")
 
 async def autogrup():
     from Panda import PandaBot as mansizbot
+    from Panda.Config import Config
 
     await mansizbot.start()
     if LOG_CHANNEL:
@@ -106,9 +107,9 @@ async def autogrup():
     await mansizbot(EditPhotoRequest(chat_id, InputChatUploadedPhoto(ll)))
     os.remove(photo)
     if not str(chat_id).startswith("-100"):
-        LOGBOT = gvarstatus("BOTLOG") or "-100" + str(chat_id)
+        Config.PRIVATE_GROUP_BOT_API_ID = gvarstatus("BOTLOG") or "-100" + str(chat_id)
     else:
-        LOGBOT = gvarstatus("BOTLOG") or str(chat_id)
+        Config.PRIVATE_GROUP_BOT_API_ID = gvarstatus("BOTLOG") or str(chat_id)
 
 
 
@@ -116,6 +117,7 @@ async def autogrup():
 
 async def autobot():
     from Panda import PandaBot as mansizbot
+    from Panda.Config import Config
 
     await mansizbot.start()
     if BOT_TOKEN:
@@ -195,8 +197,8 @@ async def autobot():
             await mansizbot.send_message(
             bf, f"PandaX_Userbot Assistant\n\nBy ~ @diemmmmmmmmmm\nSupport ~ @TEAMSquadUserbotSupport ",
             )
-            TOKENBOT = gvarstatus("TOKENBOT") or token
-            USERBOT = gvarstatus("USERBOT") or f"@{username}"
+            Config.TG_BOT_TOKEN = gvarstatus("TOKENBOT") or token
+            Config.TG_BOT_USERNAME = gvarstatus("USERBOT") or f"@{username}"
             LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
         else:
             LOGS.info(
@@ -232,8 +234,8 @@ async def autobot():
         await mansizbot.send_message(
         bf, f"PandaX_Userbot Assistant\n\nBy ~ @diemmmmmmmmmm\nSupport ~ @TEAMSquadUserbotSupport ",
         )
-        TOKENBOT = gvarstatus("TOKENBOT") or token
-        USERBOT = gvarstatus("USERBOT") or f"@{username}"
+        Config.TG_BOT_TOKEN = gvarstatus("TOKENBOT") or token
+        Config.TG_BOT_USERNAME = gvarstatus("USERBOT") or f"@{username}"
         LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
     else:
         LOGS.info(
