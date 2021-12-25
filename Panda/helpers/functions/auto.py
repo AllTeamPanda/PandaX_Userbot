@@ -53,11 +53,12 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
 LOG_CHANNEL = config("LOG_CHANNEL", default=0, cast=int)
 
+from logging import getLogger
 
-
+LOGS = getLogger("PandaUserbot")
 
 async def autogrup():
-    from Panda import LOGS, PandaBot as mansizbot
+    from Panda import PandaBot as mansizbot
 
     await mansizbot.start()
     if LOG_CHANNEL:
@@ -114,7 +115,7 @@ async def autogrup():
 
 
 async def autobot():
-    from Panda import LOGS, PandaBot as mansizbot
+    from Panda import PandaBot as mansizbot
 
     await mansizbot.start()
     if BOT_TOKEN:
