@@ -106,9 +106,9 @@ async def autogrup():
     await mansizbot(EditPhotoRequest(chat_id, InputChatUploadedPhoto(ll)))
     os.remove(photo)
     if not str(chat_id).startswith("-100"):
-        LOGBOT = gvarstatus(BOTLOG) or "-100" + str(chat_id)
+        LOGBOT = gvarstatus("BOTLOG") or "-100" + str(chat_id)
     else:
-        LOGBOT = gvarstatus(BOTLOG) or str(chat_id)
+        LOGBOT = gvarstatus("BOTLOG") or str(chat_id)
 
 
 
@@ -195,8 +195,8 @@ async def autobot():
             await mansizbot.send_message(
             bf, f"PandaX_Userbot Assistant\n\nBy ~ @diemmmmmmmmmm\nSupport ~ @TEAMSquadUserbotSupport ",
             )
-            TOKENBOT = gvarstatus(TOKENBOT) or token
-            USERBOT = gvarstatus(USERBOT) or f"@{username}"
+            TOKENBOT = gvarstatus("TOKENBOT") or token
+            USERBOT = gvarstatus("USERBOT") or f"@{username}"
             LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
         else:
             LOGS.info(
@@ -232,8 +232,8 @@ async def autobot():
         await mansizbot.send_message(
         bf, f"PandaX_Userbot Assistant\n\nBy ~ @diemmmmmmmmmm\nSupport ~ @TEAMSquadUserbotSupport ",
         )
-        TOKENBOT = gvarstatus(TOKENBOT) or token
-        USERBOT = gvarstatus(USERBOT) or f"@{username}"
+        TOKENBOT = gvarstatus("TOKENBOT") or token
+        USERBOT = gvarstatus("USERBOT") or f"@{username}"
         LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
     else:
         LOGS.info(
