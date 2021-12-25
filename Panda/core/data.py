@@ -13,6 +13,13 @@ def _sudousers_list():
     ulist = sudousers.keys()
     return [int(chat) for chat in ulist]
 
+def _dev_list():
+    try:
+        sudousers = get_collection("dev_list").json
+    except AttributeError:
+        sudousers = {}
+    ulist = sudousers.keys()
+    return [int(chat) for chat in ulist]
 
 def _users_list():
     try:
