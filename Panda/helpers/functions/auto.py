@@ -256,8 +256,6 @@ async def autobot():
             os.remove(photo)
             if not str(chat_id).startswith("-100"):
                var[ilhammansiezzzzzz] = "-100" + str(chat_id)
-            else:
-               var[ilhammansiezzzzzz] = str(chat_id)
                var[ilhammansiezzzz] = token
                var[botusername] = f"@{username}"
             LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username} dan grup")
@@ -336,8 +334,6 @@ async def autobot():
         os.remove(photo)
         if not str(chat_id).startswith("-100"):
             var[ilhammansiezzzzzz] = "-100" + str(chat_id)
-        else:
-            var[ilhammansiezzzzzz] = str(chat_id)
             var[ilhammansiezzzz] = token
             var[botusername] = f"@{username}"
         LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
