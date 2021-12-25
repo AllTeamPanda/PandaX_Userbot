@@ -204,9 +204,9 @@ async def autobot():
             bf, f"PandaX_Userbot Assistant\n\nBy ~ @diemmmmmmmmmm\nSupport ~ @TEAMSquadUserbotSupport ",
             )
             if gvarstatus("TOKENBOT") is not None:
-            addgvar("TOKENBOT", token)
+                addgvar("TOKENBOT", token)
             if gvarstatus("USERBOT") is not None:
-            addgvar("USERBOT", f"@{username}")
+                addgvar("USERBOT", f"@{username}")
             LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
         else:
             LOGS.info(
@@ -243,9 +243,9 @@ async def autobot():
         bf, f"PandaX_Userbot Assistant\n\nBy ~ @diemmmmmmmmmm\nSupport ~ @TEAMSquadUserbotSupport ",
         )
         if gvarstatus("TOKENBOT") is not None:
-        addgvar("TOKENBOT", token)
+            addgvar("TOKENBOT", token)
         if gvarstatus("USERBOT") is not None:
-        addgvar("USERBOT", f"@{username}")
+            addgvar("USERBOT", f"@{username}")
         LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
     else:
         LOGS.info(
