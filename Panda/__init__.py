@@ -51,7 +51,7 @@ except Exception as e:
     sys.exit()
 
 
-from .helpers.functions.auto import autogrup, autobot, Tokenbot, Userbot
+from .helpers.functions.auto import autogrup, autobot
 
 if not BOT_TOKEN:
     PandaBot.loop.run_until_complete(autobot())
@@ -65,10 +65,8 @@ PandaBot.tgbot = tgbot = PandaUserbotSession(
     connection=ConnectionTcpAbridged,
     auto_reconnect=True,
     connection_retries=None,
-).start(bot_token=Tokenbot)
+).start(bot_token=BOT_TOKEN)
 
-if not LOG_CHANNEL:
-    PandaBot.loop.run_until_complete(autogrup())
 
 
 __version__ = "3.0.0"
