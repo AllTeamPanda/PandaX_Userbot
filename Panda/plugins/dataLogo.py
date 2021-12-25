@@ -55,7 +55,7 @@ async def redis(alive):
     output = (
         f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         f"┏━━━━━━━━━━━━━━━━━\n"
-        f"┣||{EMOJI} `Pengguna :` {User}\n"
+        f"┣||{EMOJI} `Pengguna :` {NAME}\n"
         f"┣||{EMOJI} `Simbol   :`༺🐼༻\n"
         f"┣||{EMOJI} `Telethon :` {version.__version__}\n"
         f"┣||{EMOJI} `Python   :` {python_version()}\n"
