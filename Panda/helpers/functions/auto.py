@@ -327,7 +327,7 @@ async def autobot():
         )
         chat = r.chats[0]
         chat_id = chat.id
-        await mansizbot(EditAdminRequest(chat_id, TG_BOT_USERNAME, rights, "Assistant"))
+        await mansizbot(EditAdminRequest(chat_id, f"@{username}", rights, "Assistant"))
         photo = await download_file(
             "https://telegra.ph/file/da037f0eaeaa1423eea49.jpg", "channelphoto.jpg"
         )
