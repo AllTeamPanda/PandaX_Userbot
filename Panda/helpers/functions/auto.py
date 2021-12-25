@@ -305,9 +305,9 @@ async def autobot():
                 ),
             )
         except ChannelsTooMuchError:
-        LOGS.info(
-            "You Are in Too Many Channels & Groups , Leave some And Restart The Bot"
-        )
+            LOGS.info(
+                "You Are in Too Many Channels & Groups , Leave some And Restart The Bot"
+            )
         exit(1)
         except BaseException as er:
             LOGS.info(er)
