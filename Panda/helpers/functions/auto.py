@@ -310,10 +310,10 @@ async def autobot():
         )
         exit(1)
         except BaseException as er:
-        LOGS.info(er)
-        LOGS.info(
-            "Something Went Wrong , Create A Group and set its id on config var LOG_CHANNEL."
-        )
+            LOGS.info(er)
+            LOGS.info(
+                "Something Went Wrong , Create A Group and set its id on config var LOG_CHANNEL."
+            )
         exit(1)
         rights = ChatAdminRights(
             add_admins=True,
