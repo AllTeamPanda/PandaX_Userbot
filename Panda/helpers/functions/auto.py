@@ -114,9 +114,9 @@ async def autogrup():
     await mansizbot(EditPhotoRequest(chat_id, InputChatUploadedPhoto(ll)))
     os.remove(photo)
     if not str(chat_id).startswith("-100"):
-        Config.PRIVATE_GROUP_BOT_API_ID = gvarstatus("BOTLOG") or "-100" + str(chat_id)
+        Config.PRIVATE_GROUP_BOT_API_ID = "-100" + str(chat_id)
     else:
-        Config.PRIVATE_GROUP_BOT_API_ID = gvarstatus("BOTLOG") or str(chat_id)
+        Config.PRIVATE_GROUP_BOT_API_ID = str(chat_id)
 
 
 
@@ -203,8 +203,10 @@ async def autobot():
             await mansizbot.send_message(
             bf, f"PandaX_Userbot Assistant\n\nBy ~ @diemmmmmmmmmm\nSupport ~ @TEAMSquadUserbotSupport ",
             )
-            Config.TG_BOT_TOKEN = gvarstatus("TOKENBOT") or token
-            Config.TG_BOT_USERNAME = gvarstatus("USERBOT") or f"@{username}"
+            if gvarstatus("TOKENBOT") is not None:
+            addgvar("TOKENBOT", token)
+            if gvarstatus("USERBOT") is not None:
+            addgvar("USERBOT", f"@{username}")
             LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
         else:
             LOGS.info(
@@ -240,8 +242,10 @@ async def autobot():
         await mansizbot.send_message(
         bf, f"PandaX_Userbot Assistant\n\nBy ~ @diemmmmmmmmmm\nSupport ~ @TEAMSquadUserbotSupport ",
         )
-        Config.TG_BOT_TOKEN = gvarstatus("TOKENBOT") or token
-        Config.TG_BOT_USERNAME = gvarstatus("USERBOT") or f"@{username}"
+        if gvarstatus("TOKENBOT") is not None:
+        addgvar("TOKENBOT", token)
+        if gvarstatus("USERBOT") is not None:
+        addgvar("USERBOT", f"@{username}")
         LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
     else:
         LOGS.info(
