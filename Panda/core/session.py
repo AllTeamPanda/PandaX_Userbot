@@ -16,7 +16,6 @@ from Asisten.autobot import autobot, autousername, setbot, autogrup
 from Asisten.autogrup import autopilot
 from ..Var import Var
 from .client import PandaUserbotSession
-from telethon.sync import TelegramClient, custom, events
 
 __version__ = "Ilham-Mansiz"
 
@@ -42,13 +41,6 @@ except Exception as e:
     print(f"STRING_SESSION - {str(e)}")
     sys.exit()
 
-
-
-if not BOT_TOKEN:
-    PandaBot.loop.run_until_complete(autobot())
-
-if not LOG_CHANNEL:
-    PandaBot.loop.run_until_complete(autogrup())
 
 
 PandaBot.tgbot = tgbot = PandaUserbotSession(
