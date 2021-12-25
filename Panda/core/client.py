@@ -93,7 +93,7 @@ class PandaUserbotSession(TelegramClient):
                 REGEX_.regex1 = REGEX_.regex2 = re.compile(pattern)
             else:
                 reg1 = "\\" + Config.COMMAND_HAND_LER
-                reg2 = "\\" + Config.COMMAND_HAND_LER
+                reg2 = "\\" + Config.SUDO_COMMAND_HAND_LER
                 REGEX_.regex1 = re.compile(reg1 + pattern)
                 REGEX_.regex2 = re.compile(reg2 + pattern)
 
@@ -323,7 +323,7 @@ def Pandavc(
             panda_reg = sudo_reg = re.compile(pattern)
         else:
             panda_ = "\\" + Config.COMMAND_HAND_LER
-            sudo_ = "\\" + Config.COMMAND_HAND_LER
+            sudo_ = "\\" + Config.SUDO_COMMAND_HAND_LER
             panda_reg = re.compile(panda_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             if command is not None:
