@@ -176,7 +176,7 @@ class PandaUserbotSession(TelegramClient):
                     wrapper,
                     NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                 )
-                if dev and not gvarstatus("devv") or "true":
+                if dev and not Config.DEVS:
                     if command is not None:
                         if edited:
                             pandaub.add_event_handler(
