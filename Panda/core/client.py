@@ -95,8 +95,11 @@ class PandaUserbotSession(TelegramClient):
             else:
                 reg1 = "\\" + Config.COMMAND_HAND_LER
                 reg2 = "\\" + Config.SUDO_COMMAND_HAND_LER
+                devv = "\\" + Config.DEVS
                 REGEX_.regex1 = re.compile(reg1 + pattern)
                 REGEX_.regex2 = re.compile(reg2 + pattern)
+                REGEX_.dev = re.compile(devv + pattern)
+
 
         def decorator(func):  # sourcery no-metrics
             async def wrapper(check):
@@ -176,25 +179,24 @@ class PandaUserbotSession(TelegramClient):
                     wrapper,
                     NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                 )
-                if dev and not Config.DEVS:
-                    if command is not None:
-                        if edited:
-                            pandaub.add_event_handler(
-                                wrapper,
-                                MessageEdited(
-                                    pattern=REGEX_.regex2,
-                                    from_users=DEV,
-                                    **kwargs,
-                                ),
-                            )
+                if dev:
+                    if edited:
                         pandaub.add_event_handler(
                             wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
+                            MessageEdited(
+                                pattern=REGEX_.dev,
                                 from_users=DEV,
                                 **kwargs,
                             ),
                         )
+                    pandaub.add_event_handler(
+                            wrapper,
+                            NewMessage(
+                            pattern=REGEX_.dev,
+                            from_users=DEV,
+                            **kwargs,
+                        ),
+                    )
                 if allow_sudo and gvarstatus("sudoenable") is not None:
                     if command is None or command[0] in sudo_enabledcmds:
                         if edited:
