@@ -4,5 +4,4 @@ psycopg2-binary
 pytgcalls==3.0.0.dev19
 pyyaml==5.4.1
 countryinfo
-git+https://github.com/ilhammansiz/Panda_AsistenBot
 emoji-country-flag
