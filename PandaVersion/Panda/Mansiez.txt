@@ -1,7 +1,3 @@
-python-decouple==3.3
-cloudscraper
-psycopg2-binary
+
+
 pytgcalls==3.0.0.dev19
-pyyaml==5.4.1
-countryinfo
-emoji-country-flag
