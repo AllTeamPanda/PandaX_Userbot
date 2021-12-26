@@ -142,36 +142,23 @@ for name in files:
             LOGS.info(f"gagal membuka file {shortname} karena terjadi kesalahan {e}")
             LOGS.info(f"{e.args}")
 
-path = "Panda/modules/*.py"
-files = glob.glob(path)
-files.sort()
-for name in files:
-    with open(name) as f:
-        path1 = Path(f.name)
-        shortname = path1.stem
-        try:
-            if shortname.replace(".py", "") not in Config.NO_LOAD:
-                flag = True
-                check = 0
-                while flag:
-                    try:
-                        load_modules(
-                            shortname.replace(".py", ""),
-                            plugin_path="Panda/modules",
-                        )
-                        break
-                    except ModuleNotFoundError as e:
-                        install_pip(e.name)
-                        check += 1
-                        if check > 5:
-                            break
+from importlib import import_module
 
-            else:
-                os.remove(Path(f"Panda/modules/{shortname}.py"))
-        except Exception as e:
-            os.remove(Path(f"Panda/modules/{shortname}.py"))
-            LOGS.info(f"gagal membuka file {shortname} karena terjadi kesalahan {e}")
-            LOGS.info(f"{e.args}")
+from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
+
+from Panda import LOGS, PandaBot
+from Panda.modules import ALL_MODULES
+
+
+INVALID_PH = (
+    "\nERROR: The Phone No. entered is INVALID"
+    "\n Tip: Use Country Code along with number."
+    "\n or check your phone number and try again !"
+)
+
+
+for module_name in ALL_MODULES:
+    imported_module = import_module("Panda.modules." + module_name)
 
 async def join():
     try:
