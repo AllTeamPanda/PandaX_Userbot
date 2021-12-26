@@ -49,7 +49,7 @@ except Exception as e:
     sys.exit()
 
 
-from .helpers.functions.auto import autogrup, autobot
+from .helpers.functions.auto import autobot
 
 if not BOT_TOKEN:
     PandaBot.loop.run_until_complete(autobot())
