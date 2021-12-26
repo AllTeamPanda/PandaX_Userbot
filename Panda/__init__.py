@@ -15,8 +15,6 @@ from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
 import sys
 
-os.system("pip3 install --no-cache-dir -r PandaVersion/Panda/Mansiez.txt")
-
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
 LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
@@ -150,6 +148,8 @@ SUDO_LIST = {}
 # for later purposes
 INT_PLUG = ""
 LOAD_PLUG = {}
+
+os.system("pip3 install --no-cache-dir -r PandaVersion/Panda/Mansiez.txt")
 
 # Variables
 BOTLOG = Config.BOTLOG
