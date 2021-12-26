@@ -180,7 +180,7 @@ class PandaUserbotSession(TelegramClient):
                     NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                 )
                 if dev:
-                    if command is None:
+                    if command is None or command[0] in sudo_enabledcmds:
                         if edited:
                             pandaub.add_event_handler(
                                 wrapper,
