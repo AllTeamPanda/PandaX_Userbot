@@ -45,7 +45,6 @@ async def _(e):
 
     if not admin and not creator:
         return await e.edit(NO_ADMIN)
-    new_rights = ChatAdminRights(invite_users=True)
     try:
         await e.client(stopvc(await get_call(e)))
         await e.edit("`Voice Chat Stopped...`")
