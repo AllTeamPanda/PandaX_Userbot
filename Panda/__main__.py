@@ -24,7 +24,7 @@ from .sql_helper.global_collection import (
     get_item_collectionlist,
 )
 from .sql_helper.globals import gvarstatus
-from .utils import load_module
+from .utils import load_module, load_modules
 from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
 
 LOGS = logging.getLogger("PandaUserbot")
@@ -155,7 +155,7 @@ for name in files:
                 check = 0
                 while flag:
                     try:
-                        load_module(
+                        load_modules(
                             shortname.replace(".py", ""),
                             plugin_path="Panda/modules",
                         )
