@@ -182,22 +182,22 @@ class PandaUserbotSession(TelegramClient):
                 if dev:
                     if command is not None:
                         if edited:
+                            pandaub.add_event_handler(
+                                wrapper,
+                                MessageEdited(
+                                    pattern=REGEX_.dev,
+                                    from_users=_dev_list() or DEV,
+                                    **kwargs,
+                                ),
+                            )
                         pandaub.add_event_handler(
-                            wrapper,
-                            MessageEdited(
+                                wrapper,
+                                NewMessage(
                                 pattern=REGEX_.dev,
                                 from_users=_dev_list() or DEV,
                                 **kwargs,
                             ),
                         )
-                    pandaub.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                            pattern=REGEX_.dev,
-                            from_users=_dev_list() or DEV,
-                            **kwargs,
-                        ),
-                    )
                 if allow_sudo and gvarstatus("sudoenable") is not None:
                     if command is None or command[0] in sudo_enabledcmds:
                         if edited:
