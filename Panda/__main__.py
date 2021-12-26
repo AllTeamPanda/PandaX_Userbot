@@ -165,7 +165,8 @@ async def join():
         await PandaBot(JoinChannelRequest("@UserbotTEAM_Tutorial"))
     except BaseException:
         pass
-    
+
+PandaBot.loop.run_until_complete(setup_bot())    
 PandaBot.loop.run_until_complete(join())
 print("🛠 Sedang memperoses.....")
 print("Yay BOT PANDA USERBOT MENYALA.!!!")
