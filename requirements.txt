@@ -77,6 +77,7 @@ git+https://github.com/ilhammansiz/Telethon
 lyrics_extractor
 youtube-search-python==1.4.7
 youtube_dl==2021.6.6
-
-
-
+psycopg2-binary
+pyyaml==5.4.1
+countryinfo
+emoji-country-flag
