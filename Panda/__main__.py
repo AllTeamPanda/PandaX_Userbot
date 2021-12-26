@@ -47,6 +47,7 @@ async def setup_bot():
         LOGS.error(f"STRING_SESSION - {str(e)}")
         sys.exit()
 
+PandaBot.loop.run_until_complete(setup_bot())
 
 path = "Panda/plugins/*.py"
 files = glob.glob(path)
@@ -178,7 +179,7 @@ async def join():
     except BaseException:
         pass
 
-PandaBot.loop.run_until_complete(setup_bot())    
+    
 PandaBot.loop.run_until_complete(join())
 print("🛠 Sedang memperoses.....")
 print("Yay BOT PANDA USERBOT MENYALA.!!!")
@@ -188,7 +189,7 @@ print(
 )
 print("Berhasil Mengaktifkan Userbot")
 
-LOGS.info(f"🐼 PANDA-USERBOT 🐼\n⚙️ Version 2021 [TELAH DIAKTIFKAN]")
+LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version 2021 [TELAH DIAKTIFKAN]")
 
 if len(sys.argv) not in (1, 3, 4):
     pandaub.disconnect()
