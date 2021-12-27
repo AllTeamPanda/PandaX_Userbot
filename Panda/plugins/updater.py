@@ -30,10 +30,10 @@ HEROKU_API_KEY = Config.HEROKU_API_KEY or None
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
-UPSTREAM_REPO_BRANCH = "master"
+UPSTREAM_REPO_BRANCH = "PandaUserbot"
 
 REPO_REMOTE_NAME = "temponame"
-IFFUCI_ACTIVE_BRANCH_NAME = "master"
+IFFUCI_ACTIVE_BRANCH_NAME = "PandaUserbot"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
 RESTARTING_APP = "re-starting heroku application"
@@ -271,7 +271,7 @@ async def upstream(event):
 )
 async def upstream(event):
     event = await edit_or_reply(event, "`Pulling the PandaPack repo wait a sec ....`")
-    off_repo = "https://github.com/ilhammansiz/PandaPack"
+    off_repo = "https://github.com/ilhammansiz/DEPLOY"
     os.chdir("/app")
     await _pandautils.runcmd(f"rm -rf .git")
     try:
@@ -288,7 +288,7 @@ async def upstream(event):
         repo = Repo.init()
         origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
-        repo.create_head("master", origin.refs.master)
+        repo.create_head("PandaUserbot", origin.refs.master)
         repo.heads.master.set_tracking_branch(origin.refs.master)
         repo.heads.master.checkout(True)
     try:
