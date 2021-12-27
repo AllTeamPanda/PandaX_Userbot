@@ -69,7 +69,7 @@ PandaBot.tgbot = tgbot = PandaUserbotSession(
 
 __version__ = "3.0.0"
 __license__ = "GNU Affero General Public License v3.0"
-__author__ = "PandaUserBot <https://github.com/ilhammansiz/PandaUserbot>"
+__author__ = "PandaUserBot <https://github.com/ilhammansiz/PandaX_Userbot>"
 __copyright__ = "PandaUserBot Copyright (C) 2020 - 2021  " + __author__
 
 PandaBot.version = __version__
