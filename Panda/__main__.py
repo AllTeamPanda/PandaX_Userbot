@@ -162,7 +162,7 @@ for module_name in ALL_MODULES:
 
 async def join():
     try:
-        await PandaBot(JoinChannelRequest("@UserbotTEAM_Tutorial"))
+        await PandaBot(JoinChannelRequest("@PandaUserbot"))
     except BaseException:
         pass
 
