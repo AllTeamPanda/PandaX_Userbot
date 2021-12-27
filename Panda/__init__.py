@@ -54,18 +54,17 @@ from .helpers.functions.auto import autobot
 if not BOT_TOKEN:
     PandaBot.loop.run_until_complete(autobot())
 
-PandaBot.tgbot = tgbot = PandaUserbotSession(
-    session="BOT_TOKEN",
-    api_id=Var.APP_ID,
-    api_hash=Var.API_HASH,
-    loop=loop,
-    app_version=__version__,
-    connection=ConnectionTcpAbridged,
-    auto_reconnect=True,
-    connection_retries=None,
-).start(bot_token=BOT_TOKEN)
-
-
+if BOT_TOKEN is not None:
+    PandaBot.tgbot = tgbot = PandaUserbotSession(
+        "BOT_TOKEN",
+        api_id=Var.APP_ID,
+        api_hash=Var.API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    ).start(bot_token=BOT_TOKEN)
+else:
+    PandaBot.tgbot = tgbot = None
 
 __version__ = "3.0.0"
 __license__ = "GNU Affero General Public License v3.0"
