@@ -2,4 +2,4 @@ build:
   docker: 
       pandauserbot: Dockerfile
 run:
-   pandauserbot: python3 Panda
+   pandauserbot: python3 bot.py
