@@ -1,1 +1,1 @@
-pandauserbot: python3 Panda
+pandauserbot: python3 bot.py
