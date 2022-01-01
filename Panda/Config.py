@@ -11,6 +11,7 @@ class Config(object):
     API_HASH = os.environ.get("API_HASH") or None
     DB_URI = os.environ.get("DATABASE_URL", None)
     PYROGRAM_SESSION = os.environ.get("PYROGRAM_SESSION", None)
+    MONGO_URI = os.environ.get("MONGO_URI", None)
     STRING_SESSION = os.environ.get(
         "SESSION", None
     )
