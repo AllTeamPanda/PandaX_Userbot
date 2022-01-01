@@ -70,8 +70,7 @@ __license__ = "GNU Affero General Public License v3.0"
 __author__ = "PandaUserBot <https://github.com/ilhammansiz/PandaX_Userbot>"
 __copyright__ = "PandaUserBot Copyright (C) 2020 - 2021  " + __author__
 
-PandaBot.version = __version__
-PandaBot.tgbot.version = __version__
+
 LOGS = logging.getLogger("PandaUserbot")
 bot = PandaBot
 pandaub = PandaBot
