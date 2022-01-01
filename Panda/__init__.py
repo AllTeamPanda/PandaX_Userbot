@@ -21,7 +21,7 @@ LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
-from .utils.database import PandaBASE
+from .utils.database.base import PandaBASE
 from .Var import Var
 from Panda.core.client import PandaUserbotSession
 
