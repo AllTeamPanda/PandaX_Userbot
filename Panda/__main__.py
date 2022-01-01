@@ -37,12 +37,12 @@ pandaub = PandaBot
 
 async def setup_bot():
     try:
-        await pandaub.start()
-        await pandaub.start(bot_token=Config.TG_BOT_USERNAME)
-        pandaub.me = await pandaub.get_me()
-        pandaub.uid = pandaub.tgbot.uid = utils.get_peer_id(pandaub.me)
+        await PandaBot.start()
+        await PandaBot.start(bot_token=Config.TG_BOT_USERNAME)
+        PandaBot.me = await PandaBot.get_me()
+        PandaBot.uid = PandaBot.tgbot.uid = utils.get_peer_id(PandaBot.me)
         if Config.OWNER_ID == 0:
-            Config.OWNER_ID = utils.get_peer_id(pandaub.me)
+            Config.OWNER_ID = utils.get_peer_id(PandaBot.me)
     except Exception as e:
         LOGS.error(f"STRING_SESSION - {str(e)}")
         sys.exit()
@@ -146,7 +146,6 @@ from importlib import import_module
 
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 
-from Panda import LOGS, PandaBot
 from Panda.modules import ALL_MODULES
 
 
@@ -179,6 +178,6 @@ print("Berhasil Mengaktifkan Userbot")
 LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version 2021 [TELAH DIAKTIFKAN]")
 
 if len(sys.argv) not in (1, 3, 4):
-    pandaub.disconnect()
+    PandaBot.disconnect()
 else:
-    pandaub.run_until_disconnected()
+    PandaBot.run_until_disconnected()
