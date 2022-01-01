@@ -29,10 +29,9 @@ __version__ = "Ilham-Mansiz"
 loop = None
 
 if Var.STRING_SESSION:
-    session = StringSession(Var.STRING_SESSION)
+    session = StringSession(str(Var.STRING_SESSION))
 else:
     session = "pandauserbot"
-
 try:
     PandaBot = PandaUserbotSession(
         session=session,
