@@ -10,7 +10,7 @@ import time
 import heroku3
 
 from .core.logger import logging
-from .sql_helper.globals import addgvar, delgvar, gvarstatus
+from .sql_helper.globals import addgvar, delgvar, gvarstatus, PandaBASE
 
 
 import sys
@@ -21,7 +21,6 @@ LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
-from .utils.database.base import PandaBASE
 from .Var import Var
 from Panda.core.client import PandaUserbotSession
 
