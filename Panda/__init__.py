@@ -146,7 +146,6 @@ SUDO_LIST = {}
 INT_PLUG = ""
 LOAD_PLUG = {}
 
-os.system("pip3 install --no-cache-dir -r PandaVersion/Panda/Mansiez.txt")
 
 # Variables
 BOTLOG = Config.BOTLOG
