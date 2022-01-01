@@ -23,9 +23,11 @@ from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from .Var import Var
 from Panda.core.client import PandaUserbotSession
+from Panda.utils.database import PandaBASE
 
 __version__ = "Ilham-Mansiz"
 
+Base = PandaBASE()
 loop = None
 
 if Var.STRING_SESSION:
