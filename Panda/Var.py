@@ -11,13 +11,10 @@ class Var(object):
     LOGGER = True
 
 
-    APP_ID = (
-        int(sys.argv[1]) if len(sys.argv) > 1 else config("APP_ID", default=6, cast=int)
-    )
-    API_HASH = (
-        sys.argv[2]
-        if len(sys.argv) > 2
-        else config("API_HASH", default="eb06d4abfb49dc3eeb1aeb98ae0f581e")
-    )
+    
+    APP_ID = int(os.environ.get("API_ID", 6))
+    API_HASH = os.environ.get("API_HASH") or None
+    STRING_SESSION = os.environ.get(
+        "SESSION", None)
     STRING_SESSION = sys.argv[3] if len(sys.argv) > 3 else config("SESSION", default=None)
     MONGO_URI = config("MONGO_URI", default=None)
