@@ -17,7 +17,7 @@ class Config(object):
     TG_BOT_TOKEN = os.environ.get("BOT_TOKEN") or os.environ.get(
         "TG_BOT_TOKEN_BF_HER", None
     )
-    TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
+    TG_BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
     TZ = os.environ.get("TZ", "Asia/Jakarta")
     UPSTREAM_REPO = os.environ.get(
         "UPSTREAM_REPO", "https://github.com/ilhammansiz/PandaX_Userbot.git"
