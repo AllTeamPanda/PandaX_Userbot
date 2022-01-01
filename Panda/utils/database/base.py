@@ -5,7 +5,7 @@
 import os
 import sys
 from Panda.Var import Var
-from .core.logger import logging
+import logging
 
 try:
     from pymongo import MongoClient
