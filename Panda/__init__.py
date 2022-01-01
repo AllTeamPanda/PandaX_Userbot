@@ -114,6 +114,7 @@ def PandaBASE():
 
 __version__ = "Ilham-Mansiz"
 
+base = PandaBASE()
 
 loop = None
 
