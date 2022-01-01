@@ -16,9 +16,8 @@ from dotenv import find_dotenv, load_dotenv
 load_dotenv(find_dotenv())
 
 
-class Var(object):
 
-    MONGO_URI = config("MONGO_URI", default=None)
+MONGO_URI = config("MONGO_URI", default=None)
 
 
 
@@ -108,5 +107,5 @@ class MongoDB:
 
 
 def PandaBASE():
-    if MongoClient and Var.MONGO_URI:
-        return MongoDB(Var.MONGO_URI)
+    if MongoClient and MONGO_URI:
+        return MongoDB(MONGO_URI)
