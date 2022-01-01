@@ -6,7 +6,7 @@ import asyncio
 from asyncio import create_subprocess_exec as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 
-from Panda import StartTime, pandaub, pandaversion, get_key, set_key
+from Panda import StartTime, pandaub, pandaversion
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
@@ -35,10 +35,7 @@ User = gvarstatus("NAME")
 Bot = gvarstatus("USERBOT")
 
 
-if not get_key("NAME"):
-    set_key("NAME", DEFAULTUSER)
 
-y = get_key("NAME")
 
 @pandaub.ilhammansiz_cmd(
     pattern="alive$",
@@ -61,7 +58,7 @@ async def redis(alive):
     output = (
         f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         f"┏━━━━━━━━━━━━━━━━━\n"
-        f"┣||{EMOJI} `Pengguna :` {y}\n"
+        f"┣||{EMOJI} `Pengguna :` {NAME}\n"
         f"┣||{EMOJI} `Simbol   :`༺🐼༻\n"
         f"┣||{EMOJI} `Telethon :` {version.__version__}\n"
         f"┣||{EMOJI} `Python   :` {python_version()}\n"
