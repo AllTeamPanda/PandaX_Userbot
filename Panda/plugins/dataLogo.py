@@ -6,7 +6,7 @@ import asyncio
 from asyncio import create_subprocess_exec as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 
-from Panda import StartTime, pandaub, pandaversion, base
+from Panda import StartTime, pandaub, pandaversion, get_key, set_key
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
@@ -35,10 +35,10 @@ User = gvarstatus("NAME")
 Bot = gvarstatus("USERBOT")
 
 
-if not base.get_key("NAME"):
-    base.set_key("NAME", DEFAULTUSER)
+if not get_key("NAME"):
+    set_key("NAME", DEFAULTUSER)
 
-y = base.get_key("NAME")
+y = get_key("NAME")
 
 @pandaub.ilhammansiz_cmd(
     pattern="alive$",
