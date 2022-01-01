@@ -5,13 +5,14 @@
 import os
 import sys
 from Panda.Var import Var
-from Panda import LOGS
+from .core.logger import logging
 
 try:
     from pymongo import MongoClient
 except ImportError:
     MongoClient = None
 
+LOGS = logging.getLogger("PandaUserbot")
 
 
 def get_data(self_, key):
