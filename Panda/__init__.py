@@ -8,7 +8,7 @@ import os
 
 import time
 import heroku3
-from .utils.database import PandaBASE
+
 from .core.logger import logging
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
@@ -26,7 +26,6 @@ from Panda.core.client import PandaUserbotSession
 
 __version__ = "Ilham-Mansiz"
 
-base = PandaBASE()
 
 loop = None
 
