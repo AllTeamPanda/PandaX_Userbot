@@ -46,7 +46,7 @@ class Config(object):
     )
 
     PANDA_HELP_LOGO = os.environ.get(
-        "PANDA_HELP_LOGO", "https://telegra.ph/file/0c571ae6dcb68ea2bdf49.jpg"
+        "PANDA_HELP_LOGO", None
     )
     UB_BLACK_LIST_CHAT = {
         int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", "").split()
