@@ -1,7 +1,7 @@
-# ILHAM MANSIEZ
+# recode ILHAM MANSIEZ
 # PANDA USERBOT
 # copyright Cat userbot
-# credits cat userbot
+# From cat userbot
 
 import datetime
 import inspect
@@ -44,7 +44,6 @@ class REGEX:
 REGEX_ = REGEX()
 sudo_enabledcmds = sudo_enabled_cmds()
 
-class PandaUserbotSession(TelegramClient):
     def ilhammansiz_cmd(
         self: TelegramClient,
         pattern: str or tuple = None,
