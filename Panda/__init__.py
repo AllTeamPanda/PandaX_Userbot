@@ -10,7 +10,7 @@ import time
 import heroku3
 
 from .core.logger import logging
-from .sql_helper.globals import addgvar, delgvar, gvarstatus, PandaBASE
+from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
 
 import sys
@@ -22,13 +22,11 @@ LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from .Var import Var
-from Panda.core.client import PandaUserbotSession
+from telethon.sync import TelegramClient, custom, events
 
 
 
-__version__ = "Ilham-Mansiz"
-
-base = PandaBASE()
+__version__ = "2021.01"
 
 loop = None
 
@@ -37,7 +35,7 @@ if Var.STRING_SESSION:
 else:
     session = "pandauserbot"
 try:
-    PandaBot = PandaUserbotSession(
+    PandaBot = TelegramClient(
         session=session,
         api_id=Var.APP_ID,
         api_hash=Var.API_HASH,
@@ -58,7 +56,7 @@ if not BOT_TOKEN:
     PandaBot.loop.run_until_complete(autobot())
 
 if BOT_TOKEN is not None:
-    PandaBot.tgbot = tgbot = PandaUserbotSession(
+    PandaBot.tgbot = tgbot = TelegramClient(
         "BOT_TOKEN",
         api_id=Var.APP_ID,
         api_hash=Var.API_HASH,
