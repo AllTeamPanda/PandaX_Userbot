@@ -44,6 +44,7 @@ class REGEX:
 REGEX_ = REGEX()
 sudo_enabledcmds = sudo_enabled_cmds()
 
+class PandaUserbotSession(TelegramClient):
     def ilhammansiz_cmd(
         self: TelegramClient,
         pattern: str or tuple = None,
