@@ -11,7 +11,7 @@ import heroku3
 
 from .core.logger import logging
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
-
+from .core.client import PandaUserbotSession
 
 import sys
 
@@ -35,7 +35,7 @@ if Var.STRING_SESSION:
 else:
     session = "pandauserbot"
 try:
-    PandaBot = TelegramClient(
+    PandaBot = PandaUserbotSession(
         session=session,
         api_id=Var.APP_ID,
         api_hash=Var.API_HASH,
@@ -56,7 +56,7 @@ if not BOT_TOKEN:
     PandaBot.loop.run_until_complete(autobot())
 
 if BOT_TOKEN is not None:
-    PandaBot.tgbot = tgbot = TelegramClient(
+    PandaBot.tgbot = tgbot = PandaUserbotSession(
         "BOT_TOKEN",
         api_id=Var.APP_ID,
         api_hash=Var.API_HASH,
