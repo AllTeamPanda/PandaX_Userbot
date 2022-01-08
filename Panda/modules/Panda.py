@@ -5,7 +5,6 @@ from telethon import events
 
 from Panda import PandaBot
 
-from Panda.core.client import ilhammansiz_cmd
 plugin_category = "ilham"
 
 
