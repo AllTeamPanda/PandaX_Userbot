@@ -66,7 +66,7 @@ async def redis(alive):
         f"┗━━━━━━━━━━━━━━━━━ \n")
     if Config.ALIVE_PIC:
         try:
-            logo = Config.ALIVE_PIC or "https://telegra.ph/file/5650f059f41e278937f35.jpg"
+            logo = Config.ALIVE_PIC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/5650f059f41e278937f35.jpg"
             await alive.delete()
             msg = await pandaub.send_file(alive.chat_id, logo, caption=output)
             await asyncio.sleep(500)
