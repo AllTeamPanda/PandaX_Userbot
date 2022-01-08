@@ -1,4 +1,4 @@
-from telethon import events, Button, types
+from telethon import Button, events
 from Panda import PandaBot
 from Panda.status import is_admin
 Stark = PandaBot.tgbot

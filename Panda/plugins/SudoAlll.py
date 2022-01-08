@@ -1,9 +1,6 @@
 from collections import deque
 
 import asyncio
-import requests
-from telethon import events, Button
-import time
 from . import mansiez
 
 @mansiez(pattern="&moon ?(.*)")

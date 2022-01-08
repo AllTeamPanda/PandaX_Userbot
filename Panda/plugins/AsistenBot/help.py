@@ -1,7 +1,4 @@
 from telethon import events, Button
-from Configs import Config
-from Panda.status import is_admin
-from telethon.utils import get_display_name
 from Panda import PandaBot
 bot = PandaBot.tgbot
 X = "https://telegra.ph/file/695cb726224d2a7037399.jpg"

@@ -3,7 +3,6 @@ import cv2
 import os
 from . import ilhammansiz
 from Panda import PandaBot 
-from telethon import *
 bot = PandaBot.tgbot
 
 @ilhammansiz(pattern="/tiny(?: |$)(.*)", disable_errors=True)

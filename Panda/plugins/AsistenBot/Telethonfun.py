@@ -3,8 +3,6 @@ import os
 from asyncio import sleep
 from datetime import datetime
 
-import html2text
-import requests
 from bing_image_downloader import downloader
 from requests import get, post
 from telethon.tl import functions, types

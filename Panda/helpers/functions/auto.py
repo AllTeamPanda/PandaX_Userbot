@@ -1,31 +1,24 @@
-from Panda.sql_helper.globals import gvarstatus, addgvar
 import asyncio
-from urllib.request import urlretrieve
 
 
 import os
 from random import randint
-from urllib.request import urlretrieve
 import heroku3
-from telethon.tl.functions.users import GetFullUserRequest
 from decouple import config
 from dotenv import find_dotenv, load_dotenv
 load_dotenv(find_dotenv())
 
 
 from telethon.errors.rpcerrorlist import ChannelsTooMuchError
-from telethon.tl.custom import Button
 from telethon.tl.functions.channels import (
     CreateChannelRequest,
     EditAdminRequest,
     EditPhotoRequest,
-    JoinChannelRequest,
 )
 from telethon.tl.functions.contacts import UnblockRequest
 from telethon.tl.types import (
     ChatAdminRights,
     InputChatUploadedPhoto,
-    InputMessagesFilterDocument,
 )
 
 try:

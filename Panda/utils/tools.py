@@ -1,5 +1,4 @@
 from telethon.tl import functions
-from telethon.helpers import _maybe_await
 
 async def create_supergroup(group_name, client, botusername, descript):
     try:
@@ -28,22 +27,12 @@ async def create_supergroup(group_name, client, botusername, descript):
         created_chat_id = int("-100" + str(created_chat_id))
     return result, created_chat_id
 
-import json
 import math
 import os
 import re
-import ssl
-import subprocess
-from json.decoder import JSONDecodeError
-from traceback import format_exc
 from telethon.tl import types
 
 import aiohttp
-import certifi
-import requests
-from PIL import Image, ImageDraw, ImageFont
-from requests.exceptions import MissingSchema
-from telethon import Button
 from telethon.utils import get_display_name
 
 import asyncio
@@ -61,9 +50,6 @@ from telethon.tl.types import (
     ChannelParticipantCreator,
     DocumentAttributeFilename,
 )
-from youtube_dl import YoutubeDL
-from youtubesearchpython import VideosSearch
-from telethon.tl.types import DocumentAttributeAudio, DocumentAttributeVideo
 
 from Panda import LOGS, bot
 from Panda.core.fasttelethon import download_file as downloadable

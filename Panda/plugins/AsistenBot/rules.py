@@ -1,7 +1,6 @@
 from Panda import PandaBot
 Stark = PandaBot.tgbot
 from telethon import events, Button
-from Configs import Config
 Meong = """
  ➖➖➖➖➖➖➖➖➖➖
 🎯 Rules :

@@ -13,7 +13,6 @@ from . import *
 from pytgcalls.exceptions import NotConnectedError
 from requests.exceptions import MissingSchema
 from telethon import events
-from Panda.status import is_admin
 from telethon.errors.rpcerrorlist import ChatSendMediaForbiddenError
 
 import requests

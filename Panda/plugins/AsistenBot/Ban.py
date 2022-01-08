@@ -109,7 +109,7 @@ async def skick(event, perm):
     us = reply_msg.sender.username
     info = await Stark.get_entity(us)   
     x = (await event.get_reply_message()).sender_id
-    zx = (await event.get_reply_message())
+    (await event.get_reply_message())
     await event.delete()
     await Stark.kick_participant(event.chat_id, x)
     await event.reply(f"Succesfully Kicked [{info.first_name}](tg://user?id={replied_user}) from {event.chat.title}")
@@ -163,7 +163,7 @@ async def sban(event, perm):
     us = reply_msg.sender.username
     info = await Stark.get_entity(us) 
     x = (await event.get_reply_message()).sender_id
-    zx = (await event.get_reply_message())
+    (await event.get_reply_message())
     await event.delete()
     await Stark(EditBannedRequest(event.chat_id, x, ChatBannedRights(until_date=None, view_messages=True)))
     await event.reply(f"Succesfully Banned [{info.first_name}](tg://user?id={replied_user}) from {event.chat.title}")

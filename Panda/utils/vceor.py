@@ -1,7 +1,6 @@
 import asyncio
-import functools
 
-from Panda.sql_helper.globals import addgvar, delgvar, gvarstatus
+from Panda.sql_helper.globals import gvarstatus
 
 
 # sudo

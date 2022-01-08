@@ -8,20 +8,16 @@ import string
 from random import choice
 import sys
 #import datetime
-from datetime import datetime
-from os import environ, execle, path, remove
+from os import environ, execle
 import platform
 import re
 import socket
-import time
 import uuid
 import psutil
 from pyrogram import __version__
-import heroku3
 from git import Repo
-from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
+from git.exc import GitCommandError, InvalidGitRepositoryError
 import requests
-from bs4 import BeautifulSoup
 from pyrogram import __version__, filters
 from pyrogram.types import (
     InlineKeyboardButton,
@@ -43,8 +39,8 @@ from Pandabot.utils.basic_helpers import (
     paginate_help,
 )
 import os
-from Pandabot.utils.assistant_helpers import _dl, download_yt
-from pyrogram.types import InputMediaDocument, InputMediaVideo, InputMediaAudio
+from Pandabot.utils.assistant_helpers import download_yt
+from pyrogram.types import InputMediaAudio, InputMediaVideo
 
 ilhammansiz = "https://telegra.ph/file/9e32d88d407f9a231e137.jpg"
 
@@ -409,7 +405,7 @@ async def cmd_buutton(client, cb):
             ]
         ]
     if Config.LOAD_UNOFFICIAL_PLUGINS:
-        total_ = len(XTRA_CMD_LIST) + len(CMD_LIST)
+        len(XTRA_CMD_LIST) + len(CMD_LIST)
         bttn = [
                 [
                     InlineKeyboardButton(

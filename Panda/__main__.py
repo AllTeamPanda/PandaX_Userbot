@@ -7,25 +7,18 @@
 import glob
 import os
 import sys
-from datetime import timedelta
 from pathlib import Path
 
-from telethon import Button, functions, types, utils
+from telethon import utils
 
 import Panda
-from Panda import BOTLOG, BOTLOG_CHATID
 
 from .Config import Config
 from .core.logger import logging
-from .core.session import PandaBot, Bot, Stark
+from .core.session import PandaBot
 from .helpers.utils import install_pip
-from .sql_helper.global_collection import (
-    del_keyword_collectionlist,
-    get_item_collectionlist,
-)
-from .sql_helper.globals import gvarstatus
-from .utils import load_module, load_modules
-from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
+from .utils import load_module
+from telethon.tl.functions.channels import JoinChannelRequest
 
 LOGS = logging.getLogger("PandaUserbot")
 
@@ -144,7 +137,6 @@ for name in files:
 
 from importlib import import_module
 
-from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 
 from Panda.modules import ALL_MODULES
 

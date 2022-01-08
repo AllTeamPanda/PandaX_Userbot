@@ -6,7 +6,7 @@ async def handler(event):
   if event.chat_id == -1001448375234:
     try:
       ok = await event.get_reply_message()
-      oo = event.chat.username
+      event.chat.username
       mad = f"@{ok.sender.username} You're going OffTopic\nYou'll now get a Warn and a Ban...\n\n➥ OffTopic [Message](https://t.me/{event.chat.username}/{ok.id}) \n➥ Reporter : @{event.sender.username}\n➥ If OffTopic message is deleted\nOffTopic message = {ok.message}"
       await client.send_message(event.chat_id, mad, link_preview=False)
     except:

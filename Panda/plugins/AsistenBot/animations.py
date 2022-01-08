@@ -1,10 +1,7 @@
 from Panda import PandaBot
 from telethon.tl.types import InputMediaDice
 import asyncio
-import requests
 from telethon import events, Button
-import time
-from Configs import Config
 from . import mansiez
 Stark = PandaBot.tgbot
 from collections import deque

@@ -3,20 +3,16 @@ from platform import python_version, uname
 
 from telethon import version
 import asyncio
-from asyncio import create_subprocess_exec as asyncrunapp
-from asyncio.subprocess import PIPE as asyncPIPE
 
 from Panda import StartTime, pandaub, pandaversion
 
 from ..Config import Config
-from ..core.managers import edit_or_reply
-from ..helpers.functions import check_data_base_heal_th, get_readable_time
-from ..helpers.utils import reply_id
-from ..sql_helper.globals import addgvar, delgvar, gvarstatus
+from ..helpers.functions import get_readable_time
+from ..sql_helper.globals import gvarstatus
 
 CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "꧁༺ Panda Userbot ༻꧂"
 
-from ..sql_helper.globals import gvarstatus, addgvar
+from ..sql_helper.globals import gvarstatus
 from ..core.data import _sudousers_list
 
 # ================= CONSTANT =================
@@ -50,7 +46,7 @@ Bot = gvarstatus("USERBOT")
     },
 )
 async def redis(alive):
-    user = await pandaub.get_me()
+    await pandaub.get_me()
     await get_readable_time((time.time() - StartTime))
     await alive.edit("꧁༺ Panda Userbot ༻꧂")
     await alive.edit("꧁༺ Userbot ༻꧂")

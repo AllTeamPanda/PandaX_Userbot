@@ -80,7 +80,7 @@ async def cmdgiv(client, cb):
 @bot.on_message(filters.command(["alive"]) & filters.incoming)
 @_check_owner_or_sudos
 async def alive(client, message):
-    lol = client.me
+    client.me
     await message.reply(
         f"`Yo ! {message.from_user.first_name} , I am Alive. Need Help ? How Are You? 🤟`"
     )
@@ -119,7 +119,7 @@ async def promote_me(client, message):
     else:
         await pablo.edit("`I Don't Have Enough Permissions To Promote!`")
         return
-    text_to_return = message.text
+    message.text
     try:
         title = message.text.split(None, 1)[1]
     except IndexError:
@@ -229,7 +229,7 @@ async def ping(client, message):
 @_check_owner_or_sudos
 async def tts_(client, message):
     stime = time.time()
-    text_to_return = message.text
+    message.text
     lol = await message.reply("Processing....")
     try:
         lang = message.text.split(None, 1)[1]
@@ -267,7 +267,7 @@ async def tts_(client, message):
 @bot.on_message(filters.command(["tr"]) & filters.incoming)
 @_check_owner_or_sudos
 async def tr(client, message):
-    text_to_return = message.text
+    message.text
     try:
         lang = message.text.split(None, 1)[1]
     except IndexError:

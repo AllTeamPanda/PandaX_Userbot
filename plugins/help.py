@@ -2,7 +2,6 @@
 
 from Pandabot import CMD_LIST, bot, XTRA_CMD_LIST
 from Pandabot.core.decorators import Config, ilhammansiz_on_cmd
-from Pandabot.core.startup_helpers import run_cmd
 from Pandabot.utils.basic_helpers import edit_or_reply, get_text
 
 

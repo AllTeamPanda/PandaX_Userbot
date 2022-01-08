@@ -23,7 +23,7 @@ from ..helpers.functions.utube import (
     result_formatter,
     ytsearch_data,
 )
-from ..sql_helper.globals import gvarstatus, addgvar
+from ..sql_helper.globals import gvarstatus
 from . import CMD_INFO, GRP_INFO, PLG_INFO, check_owner
 from .logger import logging
 

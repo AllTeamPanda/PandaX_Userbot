@@ -94,7 +94,7 @@ async def spurge(event, perm):
     if not perm.delete_messages:
          await event.reply("You are missing the following rights to use this command:CanDelMsgs!")
          return
-    start = time.perf_counter()
+    time.perf_counter()
     reply_msg = await event.get_reply_message()
     if not reply_msg:
         await event.reply(

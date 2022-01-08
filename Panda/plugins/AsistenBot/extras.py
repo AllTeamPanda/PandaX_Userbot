@@ -1,10 +1,8 @@
 
-from telethon import events, Button
+from telethon import events
 from Panda import PandaBot
 from Panda.status import is_admin
 from datetime import timedelta
-import os
-import requests
 Stark = PandaBot.tgbot
 
 @Stark.on(events.NewMessage(pattern="[!?/]spem"))

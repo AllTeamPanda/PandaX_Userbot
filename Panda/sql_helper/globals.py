@@ -1,5 +1,5 @@
 try:
-    from . import BASE, SESSION, Config, LOGS
+    from . import BASE, Config, SESSION
 except ImportError:
     raise AttributeError
 from sqlalchemy import Column, String, UnicodeText

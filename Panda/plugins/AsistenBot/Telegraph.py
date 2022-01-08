@@ -1,7 +1,6 @@
 from . import mansiez
 from Panda import PandaBot 
 TMP_DOWNLOAD_DIRECTORY = "./"
-from telethon import events
 import os
 from PIL import Image
 from datetime import datetime
@@ -39,7 +38,7 @@ async def _(event):
                 os.remove(downloaded_file_name)
             else:
                 end = datetime.now()
-                ms_two = (end - start).seconds
+                (end - start).seconds
                 os.remove(downloaded_file_name)
                 await h.edit("Uploaded to https://telegra.ph{})".format(media_urls[0]), link_preview=True)
         elif input_str == "xt":

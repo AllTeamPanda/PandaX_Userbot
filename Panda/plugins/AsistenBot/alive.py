@@ -2,13 +2,11 @@ from platform import python_version
 
 from telethon import version
 from Panda import PandaBot
-import heroku3
 from telethon import events
 from Panda import StartTime
 import time
 import datetime
-from telethon import events, Button, custom
-import re, os
+from telethon import Button, events
 bot = PandaBot
 Stark = PandaBot.tgbot
 from Panda.modules import mention

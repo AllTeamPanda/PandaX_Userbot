@@ -1,14 +1,11 @@
-import functools
 from Panda import PandaBot as pandaub
 from telethon.errors.rpcerrorlist import UserNotParticipantError
-from telethon.events import CallbackQuery, InlineQuery, NewMessage
+from telethon.events import InlineQuery
 from telethon.tl.types import (
     ChannelParticipantAdmin,
     ChannelParticipantCreator,
-    InputWebDocument,
     PeerChannel,
 )
-from telethon.utils import get_display_name
 from Panda.core.data import _sudousers_list
 
 def sudoers():

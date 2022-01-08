@@ -1,8 +1,5 @@
-from telethon import events, Button, types
+from telethon import Button, events
 from Panda import PandaBot
-from Panda.status import is_admin
-from telethon.tl.types import ChannelParticipantsAdmins
-from datetime import timedelta
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 Stark = PandaBot.tgbot

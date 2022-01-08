@@ -43,7 +43,7 @@ async def unpin(event, perm):
     if not perm.pin_messages:
        await event.reply("You are missing the following rights to use this command:CanPinMsgs.")
        return
-    chat_id = (str(event.chat_id)).replace("-100", "")
+    (str(event.chat_id)).replace("-100", "")
     ok = await Stark.get_messages(event.chat_id, ids=types.InputMessagePinned())
     await Stark.unpin_message(event.chat_id, ok)
     await event.reply(f"Successfully unpinned [this](t.me/{event.chat.username}/{ok.id}) message.", link_preview=False)
