@@ -32,7 +32,7 @@ LOGS = logging.getLogger(__name__)
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 PANDALOGO = "https://telegra.ph/file/0c571ae6dcb68ea2bdf49.jpg"
 tr = Config.COMMAND_HAND_LER
-ilhammansiez = Config.PANDA_HELP_LOGO
+ilhammansiez = Config.PANDA_HELP_LOGO or "https://telegra.ph/file/5650f059f41e278937f35.jpg"
 
 
 def getkey(val):
