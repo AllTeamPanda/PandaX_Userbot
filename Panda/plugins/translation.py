@@ -8,7 +8,7 @@ from ..core.managers import edit_delete, edit_or_reply
 from ..sql_helper.globals import addgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID, deEmojify
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 # https://github.com/ssut/py-googletrans/issues/234#issuecomment-722379788
 async def getTranslate(text, **kwargs):
