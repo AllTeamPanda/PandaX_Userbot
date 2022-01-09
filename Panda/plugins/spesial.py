@@ -21,7 +21,7 @@ spesial = [
 async def _(event):
     try:
         response = requests.get(spesial)
-        await event.client.send_file((random.choice(event.chat_id, response))
+        await event.client.send_file(random.choice(event.chat_id, response))
         await event.delete()
     except Exception:
         await event.edit("**Tidak bisa menemukan video.**")
