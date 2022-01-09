@@ -10,7 +10,7 @@ from ..Config import Config
 from ..core.managers import edit_or_reply
 from . import BOTLOG, BOTLOG_CHATID
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 
 telegraph = Telegraph()
