@@ -1,6 +1,6 @@
 from Panda import bot, pandaub
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 
 @pandaub.ilhammansiz_cmd(
