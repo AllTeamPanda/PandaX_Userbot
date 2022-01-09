@@ -34,7 +34,7 @@ from .botdata import ban_user_from_bot
 
 LOGS = logging.getLogger(__name__)
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 botusername = Config.TG_BOT_USERNAME
 
 
