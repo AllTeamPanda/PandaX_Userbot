@@ -7,7 +7,7 @@ from ..helpers.utils import _pandautils, reply_id
 from . import PandaBot 
 pandaub = PandaBot
 
-plugin_category = "ilham"
+plugin_category = "Modules"
 
 
 @PandaBot.register(
