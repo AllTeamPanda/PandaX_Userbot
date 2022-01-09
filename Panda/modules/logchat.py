@@ -13,7 +13,7 @@ from . import BOTLOG, BOTLOG_CHATID
 
 LOGS = logging.getLogger(__name__)
 
-plugin_category = "ilham"
+plugin_category = "Plugins"
 
 
 class LOG_CHATS:
