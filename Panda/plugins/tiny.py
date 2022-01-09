@@ -4,7 +4,7 @@ from PIL import Image
 
 from Panda import pandaub
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 
 @pandaub.ilhammansiz_cmd(
