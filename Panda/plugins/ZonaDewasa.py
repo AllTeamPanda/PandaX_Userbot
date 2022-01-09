@@ -10,7 +10,7 @@ from Panda import PandaBot
 from ..Config import Config
 from . import PandaBot
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 
 @PandaBot.ilhammansiz_cmd(
