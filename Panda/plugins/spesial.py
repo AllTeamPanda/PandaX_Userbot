@@ -3,7 +3,6 @@
 import random
 from Panda.events import register
 
-import requests
 
 import os
 
