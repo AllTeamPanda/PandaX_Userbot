@@ -19,7 +19,7 @@ from ..sql_helper.global_collection import (
     get_collectionlist_items,
 )
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 cmdhd = Config.COMMAND_HAND_LER
 
 LOGS = logging.getLogger(__name__)
