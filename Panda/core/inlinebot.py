@@ -197,12 +197,12 @@ def paginate_help(
                     Button.inline(
                         "« Pʀᴇᴠɪᴏᴜs", data=f"{prefix}_prev({modulo_page})_plugin"
                     ),
-                    Button.inline("🛠 Main Menu 🛠", data="mainmenu"),
+                    Button.inline("Main Menu", data="mainmenu"),
                     Button.inline("Nᴇxᴛ ", data=f"{prefix}_next({modulo_page})_plugin"),
                 )
             ]
         else:
-            pairs = pairs + [(Button.inline("🛠 Main Menu 🛠", data="mainmenu"),)]
+            pairs = pairs + [(Button.inline("Main Menu", data="mainmenu"),)]
     else:
         if len(pairs) > number_of_rows:
             pairs = pairs[
