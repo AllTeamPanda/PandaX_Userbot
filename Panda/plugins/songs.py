@@ -18,7 +18,7 @@ from ..helpers.functions import name_dl, song_dl, video_dl, yt_search
 from ..helpers.tools import media_type
 from ..helpers.utils import _pandautils, reply_id
 
-plugin_category = "ilham"
+plugin_category = "Modules"
 LOGS = logging.getLogger(__name__)
 
 # =========================================================== #
