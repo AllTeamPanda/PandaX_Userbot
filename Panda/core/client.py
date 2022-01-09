@@ -158,7 +158,7 @@ class PandaUserbotSession(TelegramClient):
                             Config.PRIVATE_GROUP_BOT_API_ID, text, link_preview=False
                         )
 
-            from .session import PandaBot as pandaub
+            from .session import PandaBot
 
             if not func.__doc__ is None:
                 CMD_INFO[command[0]].append((func.__doc__).strip())
@@ -171,18 +171,18 @@ class PandaUserbotSession(TelegramClient):
                     except BaseException:
                         LOADED_CMDS.update({command[0]: [wrapper]})
                 if edited:
-                    pandaub.add_event_handler(
+                    PandaBot.add_event_handler(
                         wrapper,
                         MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                     )
-                pandaub.add_event_handler(
+                PandaBot.add_event_handler(
                     wrapper,
                     NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                 )
                 if dev:
                     if command is None or command[0] in sudo_enabledcmds:
                         if edited:
-                            pandaub.add_event_handler(
+                            PandaBot.add_event_handler(
                                 wrapper,
                                 MessageEdited(
                                     pattern=REGEX_.dev,
@@ -190,7 +190,7 @@ class PandaUserbotSession(TelegramClient):
                                     **kwargs,
                                 ),
                             )
-                        pandaub.add_event_handler(
+                        PandaBot.add_event_handler(
                                 wrapper,
                                 NewMessage(
                                 pattern=REGEX_.dev,
@@ -201,7 +201,7 @@ class PandaUserbotSession(TelegramClient):
                 if allow_sudo and gvarstatus("sudoenable") is not None:
                     if command is None or command[0] in sudo_enabledcmds:
                         if edited:
-                            pandaub.add_event_handler(
+                            PandaBot.add_event_handler(
                                 wrapper,
                                 MessageEdited(
                                     pattern=REGEX_.regex2,
@@ -209,7 +209,7 @@ class PandaUserbotSession(TelegramClient):
                                     **kwargs,
                                 ),
                             )
-                        pandaub.add_event_handler(
+                        PandaBot.add_event_handler(
                             wrapper,
                             NewMessage(
                                 pattern=REGEX_.regex2,
@@ -225,8 +225,8 @@ class PandaUserbotSession(TelegramClient):
                 except BaseException:
                     LOADED_CMDS.update({file_test: [func]})
                 if edited:
-                    pandaub.add_event_handler(func, events.MessageEdited(**kwargs))
-                pandaub.add_event_handler(func, events.NewMessage(**kwargs))
+                    PandaBot.add_event_handler(func, events.MessageEdited(**kwargs))
+                PandaBot.add_event_handler(func, events.NewMessage(**kwargs))
             return wrapper
 
         return decorator
