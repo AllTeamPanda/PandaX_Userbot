@@ -39,8 +39,8 @@ BASE_YT_URL = "https://www.youtube.com/watch?v="
 YOUTUBE_REGEX = re.compile(
     r"(?:youtube\.com|youtu\.be)/(?:[\w-]+\?v=|embed/|v/|shorts/)?([\w-]{11})"
 )
-PATH = "./Panda/cache/ytsearch.json"
-plugin_category = "mansiez"
+PATH = "./Panda/core/ytsearch.json"
+plugin_category = "Plugins"
 
 
 @pandaub.ilhammansiz_cmd(
