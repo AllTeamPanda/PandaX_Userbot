@@ -16,7 +16,7 @@ from ..core.managers import edit_or_reply
 from ..helpers.utils import get_user_from_event, reply_id
 from . import ALIVE_NAME
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 
 async def amongus_gen(text: str, clr: int) -> str:
