@@ -17,6 +17,6 @@ spesial = [
 
 
 
-@register(incoming=True, pattern=r"^.spesial$")
+@register(outgoing=True, pattern=r"^\.spesiall(?: |$)(.*)")
 async def pocong(event):
     await bot.send_message(random.choice(event.chat_id, spesial))
