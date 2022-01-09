@@ -4,7 +4,6 @@ import random
 from Panda.events import register
 
 
-import os
 
 spesial = [
      "https://telegra.ph/file/3a128f03b625e0f1a96d1.mp4"
