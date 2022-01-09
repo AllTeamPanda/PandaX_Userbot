@@ -9,7 +9,7 @@ import requests
 
 from . import ALIVE_NAME, edit_or_reply, pandaub
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 
 @pandaub.ilhammansiz_cmd(
