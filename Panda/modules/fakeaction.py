@@ -11,7 +11,7 @@ from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import get_user_from_event
 from . import ALIVE_NAME
 
-plugin_category = "ilham"
+plugin_category = "Modules"
 
 
 @PandaBot.register(
