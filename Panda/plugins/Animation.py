@@ -4,7 +4,7 @@ from collections import deque
 from . import edit_or_reply, PandaBot
 pandaub = PandaBot
 
-plugin_category = "ilham"
+plugin_category = "Modules"
 
 
 @PandaBot.ilhammansiz_cmd(
