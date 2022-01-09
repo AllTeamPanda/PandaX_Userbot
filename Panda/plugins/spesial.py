@@ -10,7 +10,7 @@ from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 
-FONT_FILE_TO_USE = "./ulPanda/core/Voice In My Head_080621160753.otf"
+FONT_FILE_TO_USE = "./Panda/core/Voice In My Head_080621160753.otf"
 
 Spesial = [
      "https://telegra.ph/file/3a128f03b625e0f1a96d1.mp4"
