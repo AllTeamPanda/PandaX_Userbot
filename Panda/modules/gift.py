@@ -4,15 +4,16 @@ import requests
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _pandautils, reply_id
-from . import pandaub
+from . import PandaBot 
+pandaub = PandaBot
 
 plugin_category = "ilham"
 
 
-@pandaub.ilhammansiz_cmd(
+@PandaBot.register(
     pattern="gifs(?:\s|$)([\s\S]*)",
     command=("gifs", plugin_category),
-    info={
+    help={
         "header": "Sends random gifs",
         "usage": "Search and send your desire gif randomly and in bulk",
         "examples": [
