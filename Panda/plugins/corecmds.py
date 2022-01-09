@@ -13,7 +13,7 @@ from . import (
     reply_id,
 )
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 DELETE_TIMEOUT = 5
 thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
