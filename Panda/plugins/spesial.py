@@ -19,10 +19,8 @@ spesial = [
 @register(outgoing=True, pattern=r"^\.spesiall(?: |$)(.*)")
 async def _(event):
     try:
-        response = random.choice(spesial)
-        bg_ = await response.download_media()
-        await event.client.send_file(event.chat_id, bg_)
-        os.remove(bg_)
+        fpath_ = glob.glob("Panda/core/downloads/*")      
+        await event.reply(random.choice(fpath_))
         await event.delete()
     except Exception:
         await event.edit("**Tidak bisa menemukan video.**")
