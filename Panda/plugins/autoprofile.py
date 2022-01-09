@@ -1,4 +1,4 @@
-# batmanpfp and thorpfp by ilham mansiez
+# batmanpfp and thorpfp by cat userbot
 
 import asyncio
 import base64
@@ -30,7 +30,7 @@ from . import (
     pandaub,
 )
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 DEFAULTUSERBIO = DEFAULT_BIO or " ᗯᗩᏆᎢᏆᑎᏀ ᏞᏆᏦᗴ ᎢᏆᗰᗴ  "
 DEFAULTUSER = AUTONAME or Config.ALIVE_NAME
 LOGS = logging.getLogger(__name__)
