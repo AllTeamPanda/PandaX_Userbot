@@ -12,7 +12,7 @@ from telethon.tl.types import DocumentAttributeVideo
 
 from Panda import pandaub
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 from ..Config import Config
 
 
