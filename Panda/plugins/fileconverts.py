@@ -34,7 +34,7 @@ from ..helpers.functions import (
 from ..helpers.utils import _format, _pandatools, _pandautils, reply_id
 from . import make_gif
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 
 if not os.path.isdir("./temp"):
