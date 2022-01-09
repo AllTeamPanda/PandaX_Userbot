@@ -44,10 +44,10 @@ REGEX_ = REGEX()
 sudo_enabledcmds = sudo_enabled_cmds()
 
 class PandaUserbotSession(TelegramClient):
-    def ilhammansiz_cmd(
+    def register(
         self: TelegramClient,
         pattern: str or tuple = None,
-        info: Union[str, Dict[str, Union[str, List[str], Dict[str, str]]]]
+        help: Union[str, Dict[str, Union[str, List[str], Dict[str, str]]]]
         or tuple = None,
         groups_only: bool = False,
         private_only: bool = False,
@@ -83,7 +83,7 @@ class PandaUserbotSession(TelegramClient):
             except BaseException:
                 PLG_INFO.update({file_test: [command[0]]})
             if not command[0] in CMD_INFO:
-                CMD_INFO[command[0]] = [_format_about(info)]
+                CMD_INFO[command[0]] = [_format_about(help)]
         if pattern is not None:
             if (
                 pattern.startswith(r"\#")
