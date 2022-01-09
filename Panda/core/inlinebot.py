@@ -60,7 +60,7 @@ import time
 
 from ..Config import Config
 
-CUSTOM_HELP_TEXT = gvarstatus("HELP_TEXT_INLINE") or  "🛠 BOT PANDA SUCCESSFULLY  🛠"
+CUSTOM_HELP_TEXT = gvarstatus("HELP_TEXT_INLINE") or  "🛠 INLINE MENU 🛠"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "🎴"
 
 def settingvar(dat):
@@ -70,7 +70,7 @@ def settingvar(dat):
     return ultr
 
 def main_menu():
-    text = f"**{CUSTOM_HELP_TEXT}**\n\n  **Pengguna :** {Config.ALIVE_NAME}\n   📗 Plugins:** {len(GRP_INFO['mansiez'])}\n**  📙 Modules: **{len(GRP_INFO['ilham'])}**\n   ☑ Commands:** {len(CMD_INFO)}\n**"
+    text = f"**{CUSTOM_HELP_TEXT}**\n\n  **Pengguna :** {Config.ALIVE_NAME}\n   📗 Plugins:** {len(GRP_INFO['Plugins'])}\n**  📙 Modules: **{len(GRP_INFO['Modules'])}**\n   ☑ Commands:** {len(CMD_INFO)}\n**"
     buttons = [
         (
             Button.url(
