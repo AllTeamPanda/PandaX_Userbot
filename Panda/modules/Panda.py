@@ -5,7 +5,7 @@ from telethon import events
 
 from Panda import PandaBot
 
-plugin_category = "ilham"
+plugin_category = "Modules"
 
 
 @PandaBot.register(
