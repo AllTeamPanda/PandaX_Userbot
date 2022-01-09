@@ -18,4 +18,4 @@ spesial = [
 
 @register(outgoing=True, pattern=r"^\.spesiall(?: |$)(.*)")
 async def pocong(event):
-    await event.reply(random.choice(spesial))
+    await event.client.send_file(random.choice(spesial))
