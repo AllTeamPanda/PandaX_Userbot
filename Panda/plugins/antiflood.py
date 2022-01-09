@@ -7,7 +7,7 @@ from ..sql_helper import antiflood_sql as sql
 from ..utils import is_admin
 from . import edit_or_reply, pandaub
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 CHAT_FLOOD = sql.__load_flood_settings()
 
 ANTI_FLOOD_WARN_MODE = ChatBannedRights(
