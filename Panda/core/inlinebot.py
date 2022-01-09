@@ -70,7 +70,7 @@ def settingvar(dat):
     return ultr
 
 def main_menu():
-    text = f"**{CUSTOM_HELP_TEXT}**\n\n  **Pengguna :** {Config.ALIVE_NAME}\n   📗 Plugins:** {len(GRP_INFO['Plugins'])}\n**  📙 Modules: **{len(GRP_INFO['Modules'])}**\n   ☑ Commands:** {len(CMD_INFO)}\n**"
+    text = f"**{CUSTOM_HELP_TEXT}**\n\n  **Pengguna :** {Config.ALIVE_NAME}\n   Plugins:** {len(GRP_INFO['Plugins'])}\n**  Modules: **{len(GRP_INFO['Modules'])}**\n   ☑ Commands:** {len(CMD_INFO)}\n**"
     buttons = [
         (
             Button.url(
