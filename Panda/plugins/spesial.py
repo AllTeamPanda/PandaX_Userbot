@@ -3,11 +3,7 @@ from . import PandaBot
 
 plugin_category = "Plugins"
 
-import asyncio
-import os
-import urllib
 
-import requests
 
 
 spesial = [
