@@ -1,4 +1,4 @@
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 from Panda import pandaub
 
 
