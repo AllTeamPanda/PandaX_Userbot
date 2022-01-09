@@ -4,11 +4,7 @@ import random
 from Panda import bot
 from Panda.events import register
 
-import asyncio
-import os
-import urllib
 
-import requests
 
 
 spesial = [
