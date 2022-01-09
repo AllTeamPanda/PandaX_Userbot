@@ -86,11 +86,11 @@ def main_menu():
         ),
         (
             Button.inline(
-                f"📗 Plugins ({len(GRP_INFO['mansiez'])})",
+                f"📗 Plugins ({len(GRP_INFO['Plugins'])})",
                 data=f"mansiez_menu",
             ),
             Button.inline(
-                f"📙 Modules ({len(GRP_INFO['ilham'])})",
+                f"📙 Modules ({len(GRP_INFO['Modules'])})",
                 data=f"ilham_menu",
             ),
         ),
@@ -590,7 +590,7 @@ async def on_plug_in_callback_query_handler(event):
     mtype = str(event.pattern_match.group(1).decode("UTF-8"))
     category = str(event.pattern_match.group(2).decode("UTF-8"))
     pgno = int(event.pattern_match.group(3).decode("UTF-8"))
-    if mtype == "plugin":
+    if mtype == "CMD_HELP":
         buttons = paginate_help(pgno, GRP_INFO[category], category)
         text = f"**꧁༺ Panda Userbot ༻꧂\n\n༺🐼༻ Category: **`{category}`\
         \n**༺🐼༻ Total plugins :** __{len(GRP_INFO[category])}__\
@@ -627,7 +627,7 @@ async def on_plug_in_callback_query_handler(event):
     category = str(event.pattern_match.group(1).decode("UTF-8"))
     current_page_number = int(event.data_match.group(2).decode("UTF-8"))
     htype = str(event.pattern_match.group(3).decode("UTF-8"))
-    if htype == "plugin":
+    if htype == "CMD_HELP":
         buttons = paginate_help(current_page_number - 1, GRP_INFO[category], category)
     else:
         category_plugins = str(event.pattern_match.group(4).decode("UTF-8"))
@@ -664,7 +664,7 @@ async def on_plug_in_callback_query_handler(event):
     category_pgno = event.pattern_match.group(5)
     if category_pgno:
         category_pgno = int(category_pgno.decode("UTF-8"))
-    if htype == "plugin":
+    if htype == "CMD_HELP":
         buttons = paginate_help(current_page_number + 1, GRP_INFO[category], category)
     else:
         buttons = paginate_help(
