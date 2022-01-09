@@ -270,8 +270,8 @@ async def upstream(event):
     pattern="update deploy$",
 )
 async def upstream(event):
-    event = await edit_or_reply(event, "`Pulling the PandaPack repo wait a sec ....`")
-    off_repo = "https://github.com/ilhammansiz/DEPLOY"
+    event = await edit_or_reply(event, "`Sedang Mengupdate mohon sabar kira² 5 min lah ....`")
+    off_repo = "https://github.com/PandaUserbot/Dev"
     os.chdir("/app")
     await _pandautils.runcmd(f"rm -rf .git")
     try:
