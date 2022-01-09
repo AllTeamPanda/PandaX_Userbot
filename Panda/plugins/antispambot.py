@@ -12,7 +12,7 @@ from ..utils import is_admin
 from . import BOTLOG, BOTLOG_CHATID, edit_or_reply, logging, pandaub, spamwatch
 
 LOGS = logging.getLogger(__name__)
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 if Config.ANTISPAMBOT_BAN:
 
     @pandaub.on(ChatAction())
