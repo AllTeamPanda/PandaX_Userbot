@@ -10,7 +10,7 @@ from ..core.managers import edit_delete, edit_or_reply
 from ..sql_helper import global_collectionjson as sql
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 LOGS = logging.getLogger(__name__)
 
