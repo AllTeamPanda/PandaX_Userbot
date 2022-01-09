@@ -5,7 +5,7 @@ from Panda.core.logger import logging
 
 from ..core.managers import edit_delete, edit_or_reply
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 LOGS = logging.getLogger(__name__)
 
