@@ -32,7 +32,7 @@ from ..helpers.functions import crop_and_divide
 from ..helpers.tools import media_type
 from ..helpers.utils import _pandatools
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
