@@ -10,7 +10,8 @@ from PIL import Image
 from search_engine_parser import BingSearch, GoogleSearch, YahooSearch
 from search_engine_parser.core.exceptions import NoResultsOrTrafficError
 
-from Panda import pandaub
+from Panda import PandaBot
+pandaub = PandaBot
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -59,10 +60,10 @@ async def scam(results, lim):
     return imglinks
 
 
-@pandaub.ilhammansiz_cmd(
+@PandaBot.register(
     pattern="gs ([\s\S]*)",
     command=("gs", plugin_category),
-    info={
+    help={
         "header": "Google search command.",
         "flags": {
             "-l": "for number of search results.",
@@ -142,10 +143,10 @@ async def gsearch(q_event):
         )
 
 
-@pandaub.ilhammansiz_cmd(
+@PandaBot.register(
     pattern="grs$",
     command=("grs", plugin_category),
-    info={
+    help={
         "header": "Google reverse search command.",
         "description": "reverse search replied image or sticker in google and shows results.",
         "usage": "{tr}grs",
@@ -216,10 +217,10 @@ async def _(event):
     await edit_or_reply(pandaevent, OUTPUT_STR, parse_mode="HTML", link_preview=False)
 
 
-@pandaub.ilhammansiz_cmd(
+@PandaBot.register(
     pattern="reverse(?:\s|$)([\s\S]*)",
     command=("reverse", plugin_category),
-    info={
+    help={
         "header": "Google reverse search command.",
         "description": "reverse search replied image or sticker in google and shows results. if count is not used then it send 1 image by default.",
         "usage": "{tr}reverse <count>",
@@ -287,10 +288,10 @@ async def _(img):
         )
 
 
-@pandaub.ilhammansiz_cmd(
+@PandaBot.register(
     pattern="google(?:\s|$)([\s\S]*)",
     command=("google", plugin_category),
-    info={
+    help={
         "header": "To get link for google search",
         "description": "Will show google search link as button instead of google search results try {tr}gs for google search results.",
         "usage": [
