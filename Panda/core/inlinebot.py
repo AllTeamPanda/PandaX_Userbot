@@ -87,11 +87,11 @@ def main_menu():
         (
             Button.inline(
                 f"📗 Plugins ({len(GRP_INFO['Plugins'])})",
-                data=f"mansiez_menu",
+                data=f"Plugins_menu",
             ),
             Button.inline(
                 f"📙 Modules ({len(GRP_INFO['Modules'])})",
-                data=f"ilham_menu",
+                data=f"Modules_menu",
             ),
         ),
         (
