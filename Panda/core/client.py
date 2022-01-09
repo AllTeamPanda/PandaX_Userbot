@@ -1,6 +1,5 @@
 # recode ILHAM MANSIEZ
 # PANDA USERBOT
-# copyright Cat userbot
 # From cat userbot
 
 import datetime
