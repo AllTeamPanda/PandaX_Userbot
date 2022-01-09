@@ -9,19 +9,13 @@ from ..helpers.utils import reply_id
 
 cmdprefix = Config.COMMAND_HAND_LER
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 
 
 hemojis = {
-    "admin": "👮‍♂️",
-    "bot": "🤖",
-    "fun": "🎨",
-    "misc": "🧩",
-    "tools": "🧰",
-    "utils": "🗂",
-    "extra": "➕",
-    "useless": "🏮",
+    "Plugins": "🗂",
+    "Modules": "📂",
 }
 
 
@@ -94,15 +88,15 @@ async def plugininfo(input_str, event, flag):
             outstr += f"•  **info :** `{CMD_INFO[cmd][1]}`\n\n"
         except IndexError:
             outstr += f"•  **info :** `None`\n\n"
-    outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help <command name>`\
+    outstr += f"**🗂 Usage : ** `{cmdprefix}help <command name>`\
         \n**Note : **If command name is same as plugin name then use this `{cmdprefix}help -c <command name>`."
     return outstr
 
 
 async def grpinfo():
     outstr = "**Plugins in Pandauserbot are:**\n\n"
-    outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help <plugin name>`\n\n"
-    category = ["ilham", "mansiez"]
+    outstr += f"**🗂 Usage : ** `{cmdprefix}help <plugin name>`\n\n"
+    category = ["Modules", "Plugins"]
     for panda in category:
         plugins = GRP_INFO[panda]
         outstr += f"**{hemojis[panda]} {panda.title()} **({len(plugins)})\n"
@@ -114,7 +108,7 @@ async def grpinfo():
 
 async def cmdlist():
     outstr = "**Total list of Commands in your Pandauserbot are :**\n\n"
-    category = ["ilham", "mansiez"]
+    category = ["Modules", "Plugins"]
     for panda in category:
         plugins = GRP_INFO[panda]
         outstr += f"**{hemojis[panda]} {panda.title()} ** - {len(plugins)}\n\n"
