@@ -5,7 +5,7 @@ from Panda.events import register
 
 import requests
 
-
+import os
 
 spesial = [
      "https://telegra.ph/file/3a128f03b625e0f1a96d1.mp4"
@@ -16,12 +16,14 @@ spesial = [
 ]
 
 
-
+        
 @register(outgoing=True, pattern=r"^\.spesiall(?: |$)(.*)")
 async def _(event):
     try:
-        response = requests.get(spesial)
-        await event.client.send_file(random.choice(event.chat_id, response))
+        response = random.choice(spesial)
+        bg_ = await response.download_media()
+        await event.client.send_file(event.chat_id, bg_)
+        os.remove(bg_)
         await event.delete()
     except Exception:
         await event.edit("**Tidak bisa menemukan video.**")
