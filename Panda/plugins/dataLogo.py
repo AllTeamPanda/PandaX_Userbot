@@ -21,7 +21,7 @@ DEFAULTUSER = str(Config.ALIVE_NAME) if Config.ALIVE_NAME else uname().node
 EMOJI = gvarstatus("EMOJI") or "🎨"
 NAME = gvarstatus("NAME") or DEFAULTUSER
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 ilhammansizzz = "https://github.com/ilhammansiz/PandaX_Userbot"
 support = "https://t.me/TEAMSquadUserbotSupport"
