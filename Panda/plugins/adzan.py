@@ -4,7 +4,7 @@ import requests
 
 from . import pandaub
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 
 PLACE = ""
