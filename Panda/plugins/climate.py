@@ -15,7 +15,7 @@ from ..helpers.utils import _format
 from ..sql_helper.globals import addgvar, gvarstatus
 from . import edit_or_reply, logging, pandaub, reply_id
 
-plugin_category = "mansiez"
+plugin_category = "Plugins"
 
 LOGS = logging.getLogger(__name__)
 # Get time zone of the given country. Credits: @aragon12 and @zakaryan2004.
