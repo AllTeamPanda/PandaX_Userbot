@@ -26,7 +26,7 @@ from .botdata import (
 
 LOGS = logging.getLogger(__name__)
 
-plugin_category = "mansiez"
+plugin_category = "Modules"
 botusername = Config.TG_BOT_USERNAME
 cmhd = Config.COMMAND_HAND_LER
 
