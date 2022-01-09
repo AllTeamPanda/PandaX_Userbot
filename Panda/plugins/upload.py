@@ -23,7 +23,6 @@ plugin_category = "Plugins"
 
 PATH = os.path.join("./temp", "temp_vid.mp4")
 thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
-plugin_category = "mansiez"
 downloads = pathlib.Path("./downloads/").absolute()
 NAME = "untitled"
 
