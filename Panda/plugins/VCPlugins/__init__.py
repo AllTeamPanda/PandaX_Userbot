@@ -22,7 +22,15 @@ from telethon.errors.rpcerrorlist import ParticipantJoinMissingError
 from telethon import events
 from telethon.tl import functions, types
 from telethon.utils import get_display_name
-from youtube_dl import YoutubeDL
+
+
+try:
+    from youtube_dl import YoutubeDL
+except ImportError:
+    YoutubeDL = None
+    LOGS.info("'YoutubeDL' not found!")
+
+
 from youtubesearchpython import Playlist, ResultMode, Video, VideosSearch
 from Panda import LOGS, PandaBot
 from Panda.utils.tools import (
