@@ -30,7 +30,7 @@ SUDOuser = _sudousers_list()
 User = gvarstatus("NAME")
 Bot = gvarstatus("USERBOT")
 
-
+LOGO = Config.ALIVE_PIC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/5650f059f41e278937f35.jpg"
 
 
 
@@ -64,9 +64,9 @@ async def redis(alive):
         f"┣||{EMOJI} `Sudo     :` {SUDO}\n"
         f"┣||{EMOJI} `ID Sudo  :` {SUDOuser}\n"
         f"┗━━━━━━━━━━━━━━━━━ \n")
-    if Config.ALIVE_PIC:
+    if LOGO:
         try:
-            logo = Config.ALIVE_PIC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/5650f059f41e278937f35.jpg"
+            logo = LOGO
             await alive.delete()
             msg = await pandaub.send_file(alive.chat_id, logo, caption=output)
             await asyncio.sleep(500)
