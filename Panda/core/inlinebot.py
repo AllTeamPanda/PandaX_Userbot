@@ -86,11 +86,11 @@ def main_menu():
         ),
         (
             Button.inline(
-                f"📗 Plugins ({len(GRP_INFO['plugins'])})",
+                f"📗 Plugins ({len(GRP_INFO['Plugins'])})",
                 data=f"plugins_menu",
             ),
             Button.inline(
-                f"📙 Modules ({len(GRP_INFO['modules'])})",
+                f"📙 Modules ({len(GRP_INFO['Modules'])})",
                 data=f"modules_menu",
             ),
         ),
