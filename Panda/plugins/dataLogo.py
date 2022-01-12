@@ -74,7 +74,7 @@ async def redis(alive):
         try:
             logo = spesial
             await alive.delete()
-            msg = await pandaub.send_file(random.choice(alive.chat_id, logo, caption=output))
+            msg = await pandaub.send_file(random.choice(logo))
             await asyncio.sleep(500)
             await msg.delete()
         except BaseException:
