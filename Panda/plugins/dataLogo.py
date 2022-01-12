@@ -3,7 +3,7 @@ from platform import python_version, uname
 
 from telethon import version
 import asyncio
-
+import random
 from Panda import StartTime, pandaub, pandaversion
 
 from ..Config import Config
@@ -32,7 +32,13 @@ Bot = gvarstatus("USERBOT")
 
 LOGO = Config.ALIVE_PIC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/5650f059f41e278937f35.jpg"
 
-
+spesial = [
+     "https://telegra.ph/file/3a128f03b625e0f1a96d1.mp4"
+     "https://telegra.ph/file/fc0d6c09d8ddf89aa9772.mp4"
+     "https://telegra.ph/file/f915c7aeab2c481747163.mp4"
+     "https://telegra.ph/file/58db2cd17ea842954e605.mp4"
+     "https://telegra.ph/file/c76f67ab5288941e7e96a.mp4"
+]
 
 @pandaub.ilhammansiz_cmd(
     pattern="alive$",
@@ -68,7 +74,7 @@ async def redis(alive):
         try:
             logo = LOGO
             await alive.delete()
-            msg = await pandaub.send_file(alive.chat_id, logo, caption=output)
+            msg = await pandaub.send_file(random.choice(alive.chat_id, logo, caption=output))
             await asyncio.sleep(500)
             await msg.delete()
         except BaseException:
