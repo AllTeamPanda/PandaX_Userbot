@@ -3,7 +3,6 @@ from platform import python_version, uname
 
 from telethon import version
 import asyncio
-import random
 from Panda import StartTime, pandaub, pandaversion
 
 from ..Config import Config
