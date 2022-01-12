@@ -70,9 +70,9 @@ async def redis(alive):
         f"┣||{EMOJI} `Sudo     :` {SUDO}\n"
         f"┣||{EMOJI} `ID Sudo  :` {SUDOuser}\n"
         f"┗━━━━━━━━━━━━━━━━━ \n")
-    if LOGO:
+    if spesial:
         try:
-            logo = LOGO
+            logo = spesial
             await alive.delete()
             msg = await pandaub.send_file(random.choice(alive.chat_id, logo, caption=output))
             await asyncio.sleep(500)
