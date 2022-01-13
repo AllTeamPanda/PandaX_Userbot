@@ -568,7 +568,7 @@ async def pack_kang(event):  # sourcery no-metrics
             "{tr}gridpack -e👌 <packname>",
         ],
         "examples": [
-            "{tr}gridpack -e👌 CatUserbot",
+            "{tr}gridpack -e👌 PandaUserbot",
         ],
     },
 )
