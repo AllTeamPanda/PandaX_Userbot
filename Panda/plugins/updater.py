@@ -311,7 +311,7 @@ async def upstream(event):
     },
 )
 async def variable(var):
-    "To update to badcat( for extra masala and gali)."
+    "To update ( for extra masala and gali)."
     if Config.HEROKU_API_KEY is None:
         return await edit_delete(
             var,
