@@ -80,4 +80,3 @@ psycopg2-binary
 pyyaml==5.4.1
 countryinfo
 emoji-country-flag
-pytgcalls==3.0.0.dev19
