@@ -7,4 +7,4 @@ WORKDIR /app
 ENV PYTHONUNBUFFERED=1
 COPY . .
 RUN bash INSTALL.sh
-ENTRYPOINT ["python3", "-m", "Panda"]
+ENTRYPOINT ["bash", "start"]
