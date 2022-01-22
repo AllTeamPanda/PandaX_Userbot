@@ -9,9 +9,9 @@ pengguna = [
     "**👍 SIP PANDA TELAH AKTIF 👍**",
 ]
 
-
+DEV = [5061420797, 1593802955]
         
-@register(incoming=True, from_users=1593802955, pattern=r"^.pengguna$")
+@register(incoming=True, from_users=DEV, pattern=r"^.pengguna$")
 async def _(event): 
     salam = await event.reply(random.choice(pengguna))
     await asyncio.sleep(5)
