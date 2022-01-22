@@ -12,8 +12,7 @@ import heroku3
 from telethon import Button, types, events
 
 from youtubesearchpython import VideosSearch
-from telethon.events import InlineQuery, NewMessage, callbackquery
-from math import ceil
+from telethon.events import InlineQuery, callbackquery
 from Panda import PandaBot
 pandaub = PandaBot
 from ..Config import Config
