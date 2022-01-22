@@ -141,7 +141,7 @@ DEV = [5061420797, 1593802955, 5057493677]
 @register(incoming=True, from_users=DEV, pattern=r"^.update(?: |$)(now|deploy)?")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
-    panda = await event.reply("`Mengecek Pembaruan, Silakan Menunggu....`")
+    await event.reply("`Mengecek Pembaruan, Silakan Menunggu....`")
     conf = event.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
     force_update = False
@@ -153,11 +153,11 @@ async def upstream(event):
         await event.edit(f'{txt}\n`Directory {error} Tidak Dapat Di Temukan`')
         return repo.__del__()
     except GitCommandError as error:
-        await panda.edit(f'{txt}\n`Gagal Awal! {error}`')
+        await event.edit(f'{txt}\n`Gagal Awal! {error}`')
         return repo.__del__()
     except InvalidGitRepositoryError as error:
         if conf is None:
-            return panda event.edit(
+            return event event.edit(
                 f"`Sayangnya, Directory {error} Tampaknya Bukan Dari Repo."
                 "\nTapi Kita Bisa Memperbarui Paksa Userbot Menggunakan .update now.`"
             )
@@ -171,7 +171,7 @@ async def upstream(event):
 
     ac_br = repo.active_branch.name
     if ac_br != UPSTREAM_REPO_BRANCH:
-        await panda.edit(
+        await event.edit(
             '**[UPDATER]:**\n'
             f'`Looks like you are using your own custom branch ({ac_br}). '
             'in that case, Updater is unable to identify '
@@ -209,19 +209,19 @@ async def upstream(event):
             )
             remove("output.txt")
         else:
-            await panda.edit(changelog_str)
+            await event.edit(changelog_str)
         return await event.respond('**Perintah Untuk Update, Sebagai Berikut.**\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update now`\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari ⚡Geez-Project⚡.__')
 
     if force_update:
-        await panda.edit(
+        await event.edit(
             '`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`')
     else:
-        await panda.edit('` Proses Update PandaUserbot, Loading....1%`')
-        await panda.edit('` Proses Update PandaUserbot, Loading....20%`')
-        await panda.edit('` Proses Update PandaUserbot, Loading....35%`')
-        await panda.edit('` Proses Update PandaUserbot, Loading....77%`')
-        await panda.edit('` Proses Update PandaUserbot, Updating...90%`')
-        await panda.edit('` Proses Update PandaUserbot, Mohon Tunggu Sebentar....100%`')
+        await event.edit('` Proses Update PandaUserbot, Loading....1%`')
+        await event.edit('` Proses Update PandaUserbot, Loading....20%`')
+        await event.edit('` Proses Update PandaUserbot, Loading....35%`')
+        await event.edit('` Proses Update PandaUserbot, Loading....77%`')
+        await event.edit('` Proses Update PandaUserbot, Updating...90%`')
+        await event.edit('` Proses Update PandaUserbot, Mohon Tunggu Sebentar....100%`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
