@@ -22,7 +22,7 @@ from ..core.managers import edit_delete, edit_or_reply
 from . import BOTLOG, BOTLOG_CHATID
 
 LOGS = logging.getLogger(__name__)
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 BANNED_RIGHTS = ChatBannedRights(
     until_date=None,
