@@ -81,7 +81,7 @@ def main_menu():
         (
             Button.inline(
                 f"💎 𝙸𝚗𝚏𝚘",
-                data="helptext",
+                data="check",
             ),
         ),
         (
