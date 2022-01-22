@@ -5,7 +5,7 @@ from telethon import events
 
 from Panda import bot, pandaub
 
-plugin_category = "Modules"
+plugin_category = "modules"
 
 
 @pandaub.ilhammansiz_cmd(
