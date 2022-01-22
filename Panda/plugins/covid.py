@@ -2,7 +2,7 @@ from covid import Covid
 
 from . import pandaub
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 @pandaub.ilhammansiz_cmd(
