@@ -114,10 +114,10 @@ async def on_afk(event):  # sourcery no-metrics
         if AFK_.afk_type == "media":
             if AFK_.reason:
                 message_to_reply = (
-                    f"`┌ 🐍 AFK\n"
+                    f"┌ 🐍 AFK\n"
                     f"│┌ {mention} Sedang AFK\n"
                     f"│├ {endtime} Yang Lalu \n"
-                    f"└└ Alasan: {AFK_.reason}`"
+                    f"└└ Alasan: {AFK_.reason}"
                 )
             else:
                 message_to_reply = f"`I am AFK .\n\nAFK Since {endtime}\nReason : Not Mentioned ( ಠ ʖ̯ ಠ)`"
@@ -126,20 +126,20 @@ async def on_afk(event):  # sourcery no-metrics
         elif AFK_.afk_type == "text":
             if AFK_.msg_link and AFK_.reason:
                 message_to_reply = (
-                    f"`┌ 🙏🏻 AFK\n"
+                    f"┌ 🙏🏻 AFK\n"
                     f"│┌ {mention} Sedang AFK\n"
                     f"│├ {endtime} Yang Lalu \n"
-                    f"└└ Alasan: {AFK_.reason}`"
+                    f"└└ Alasan: {AFK_.reason}"
                 )
             elif AFK_.reason:
                 message_to_reply = (
-                    f"`┌ SAYA AFK\n"
+                    f"┌ SAYA AFK\n"
                     f"│┌ {mention} Sedang AFK\n"
                     f"│├ {endtime} Yang Lalu \n"
-                    f"└└ Alasan: {AFK_.reason}`"
+                    f"└└ Alasan: {AFK_.reason}"
                 )
             else:
-                message_to_reply = f"`I am AFK .\n\nAFK Since {endtime}\nReason : Not Mentioned ( ಠ ʖ̯ ಠ)`"
+                message_to_reply = f"`┌ SAYA AFK\n│├ {mention} Sedang AFK\n└└ Alasan : Not Mentioned ( ಠ ʖ̯ ಠ)`"
             if event.chat_id:
                 msg = await event.reply(message_to_reply)
         if event.chat_id in AFK_.last_afk_message:
