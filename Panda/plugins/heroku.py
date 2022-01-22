@@ -15,7 +15,7 @@ from Panda import pandaub
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # =================
