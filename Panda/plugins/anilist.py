@@ -26,7 +26,7 @@ from ..helpers.utils import reply_id
 
 jikan = Jikan()
 url = "https://graphql.anilist.co"
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 @pandaub.ilhammansiz_cmd(
