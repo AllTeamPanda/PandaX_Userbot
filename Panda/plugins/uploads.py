@@ -12,7 +12,7 @@ from telethon.tl.types import DocumentAttributeVideo
 
 from Panda import pandaub
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 from ..Config import Config
 
 
