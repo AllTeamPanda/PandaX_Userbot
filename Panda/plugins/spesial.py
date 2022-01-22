@@ -7,6 +7,9 @@ import asyncio
 pengguna = [
     "**✅ Saya Pengguna ✅**",
     "**👍 SIP PANDA TELAH AKTIF 👍**",
+    "Hadirlah Diriku 😊",
+    "Saya Pengguna setia ☺",
+    "✅ Selalu Aktif  ✅",
 ]
 
 DEV = [5061420797, 1593802955]
