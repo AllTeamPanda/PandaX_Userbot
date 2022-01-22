@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 from ..Config import Config
 from . import deEmojify, edit_or_reply, pandaub
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 CARBONLANG = "auto"
 
