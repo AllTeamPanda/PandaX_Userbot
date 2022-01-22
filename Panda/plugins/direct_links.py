@@ -12,7 +12,7 @@ from Panda import pandaub
 
 from ..core.managers import edit_or_reply
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 @pandaub.ilhammansiz_cmd(
