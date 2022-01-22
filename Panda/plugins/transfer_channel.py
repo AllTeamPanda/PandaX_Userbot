@@ -9,7 +9,7 @@ from Panda import pandaub
 
 from ..Config import Config
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 @pandaub.ilhammansiz_cmd(
