@@ -78,8 +78,6 @@ def main_menu():
                 "Support",
                 "https://t.me/TEAMSquadUserbotSupport",
             ),
-        ),
-        (
             Button.inline(
                 f"💎 𝙸𝚗𝚏𝚘",
                 data="check",
@@ -100,8 +98,6 @@ def main_menu():
                 f"VC Music",
                 data="vcbot",
             ),
-        ),
-        (
             Button.inline(
                 f"Menu Asisten",
                 data="bothelp",
