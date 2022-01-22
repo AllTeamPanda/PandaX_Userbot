@@ -13,8 +13,10 @@ from . import BOTLOG, BOTLOG_CHATID
 
 
 from Panda import UPSTREAM_REPO_URL
-from ..Config import Config
+from Panda.Config import Config
 from Panda.events import register
+
+
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME 
 HEROKU_API_KEY = Config.HEROKU_API_KEY 
 UPSTREAM_REPO_BRANCH = "PandaUserbot"
