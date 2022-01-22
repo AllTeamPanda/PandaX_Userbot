@@ -8,7 +8,7 @@ from PIL import Image
 
 from Panda import pandaub
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 async def grayscale(imagefile, endname):
