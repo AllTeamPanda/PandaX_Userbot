@@ -14,7 +14,7 @@ from ..sql_helper import global_collectionjson as sql
 from ..sql_helper import global_list as sqllist
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 LOGS = logging.getLogger(__name__)
 
