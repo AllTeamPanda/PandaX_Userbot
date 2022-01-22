@@ -5,7 +5,7 @@ import requests
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 from Panda import bot, pandaub
 
