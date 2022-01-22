@@ -12,7 +12,7 @@ from ..helpers.tools import media_type
 from ..helpers.utils import _pandautils
 from . import BOTLOG, BOTLOG_CHATID
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 async def spam_function(event, sandy, panda, sleeptimem, sleeptimet, DelaySpam=False):
