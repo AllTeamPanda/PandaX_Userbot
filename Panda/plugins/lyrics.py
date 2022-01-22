@@ -7,7 +7,7 @@ from Panda import pandaub
 
 from ..core.managers import edit_or_reply
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
 
