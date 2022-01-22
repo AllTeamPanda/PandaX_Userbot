@@ -2,7 +2,7 @@ from time import sleep
 
 from Panda import pandaub
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 @pandaub.ilhammansiz_cmd(
