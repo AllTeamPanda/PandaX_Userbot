@@ -10,7 +10,7 @@ from ..Config import Config
 from ..core.managers import edit_or_reply
 from . import CMD_HELP
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 # Thumbnail Utilities ported from uniborg
 # credits @spechide
