@@ -4,7 +4,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from Panda import pandaub
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 @pandaub.ilhammansiz_cmd(
