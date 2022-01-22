@@ -41,7 +41,7 @@ class REGEX:
 
 
 REGEX_ = REGEX()
-sudo_enabledcmds = sudo_enabled_cmds() or "-all"
+sudo_enabledcmds = sudo_enabled_cmds()
 
 class PandaUserbotSession(TelegramClient):
     def ilhammansiz_cmd(
