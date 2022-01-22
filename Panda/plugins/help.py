@@ -96,7 +96,7 @@ async def plugininfo(input_str, event, flag):
 async def grpinfo():
     outstr = "**Plugins in Pandauserbot are:**\n\n"
     outstr += f"**🗂 Usage : ** `{cmdprefix}help <plugin name>`\n\n"
-    category = ["Modules", "Plugins"]
+    category = ["modules", "plugins"]
     for panda in category:
         plugins = GRP_INFO[panda]
         outstr += f"**{hemojis[panda]} {panda.title()} **({len(plugins)})\n"
@@ -108,7 +108,7 @@ async def grpinfo():
 
 async def cmdlist():
     outstr = "**Total list of Commands in your Pandauserbot are :**\n\n"
-    category = ["Modules", "Plugins"]
+    category = ["modules", "plugins"]
     for panda in category:
         plugins = GRP_INFO[panda]
         outstr += f"**{hemojis[panda]} {panda.title()} ** - {len(plugins)}\n\n"
