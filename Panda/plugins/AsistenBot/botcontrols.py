@@ -1,6 +1,6 @@
 # ILHAM MANSIEZ
 # PANDA USERBOT
-# copyright cat userbot
+# from cat userbot
 import asyncio
 from datetime import datetime
 
@@ -26,7 +26,7 @@ from .botdata import (
 
 LOGS = logging.getLogger(__name__)
 
-plugin_category = "Modules"
+plugin_category = "modules"
 botusername = Config.TG_BOT_USERNAME
 cmhd = Config.COMMAND_HAND_LER
 
