@@ -1,6 +1,6 @@
 # ILHAM MANSIEZ
 # PANDA USERBOT
-# copyright catuserbot
+# from catuserbot
 
 from datetime import datetime
 from math import floor
@@ -19,7 +19,7 @@ from . import BOTLOG, BOTLOG_CHATID
 
 LOGS = logging.getLogger(__name__)
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 botusername = Config.TG_BOT_USERNAME
 
 
