@@ -2,7 +2,7 @@ from telethon import functions
 
 from ..core.managers import edit_delete, edit_or_reply
 
-plugin_category = "Modules"
+plugin_category = "modules"
 from Panda import pandaub
 
 
