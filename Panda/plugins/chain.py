@@ -2,7 +2,7 @@ from telethon.tl.functions.messages import SaveDraftRequest
 
 from . import pandaub
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 @pandaub.ilhammansiz_cmd(
