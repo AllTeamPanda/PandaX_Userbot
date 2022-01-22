@@ -4,7 +4,7 @@ import requests
 
 from . import pandaub
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 PLACE = ""
