@@ -12,7 +12,8 @@ import heroku3
 from telethon import Button, types, events
 
 from youtubesearchpython import VideosSearch
-from telethon.events import CallbackQuery, InlineQuery
+from telethon.events import InlineQuery, NewMessage, callbackquery
+from math import ceil
 from Panda import PandaBot
 pandaub = PandaBot
 from ..Config import Config
@@ -513,7 +514,7 @@ async def inline_handler(event):  # sourcery no-metrics
         await event.answer([result] if result else None)
 
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"close")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"close")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
     await event.edit(
@@ -524,7 +525,7 @@ async def on_plugin_callback_query_handler(event):
     )
 
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"dara")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
 @check_owner
 async def on_plug_in_callback_query_handler(event):
     buttons = [
@@ -533,7 +534,7 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit("❌ Pencet ❌", buttons=buttons)
 
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"vinna")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"vinna")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
     await event.edit("__Terhapus__")
@@ -542,7 +543,7 @@ async def on_plugin_callback_query_handler(event):
 async def closet(lol):
     await lol.delete()
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"check")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"check")))
 async def on_plugin_callback_query_handler(event):
     text = f"𝙿𝚕𝚞𝚐𝚒𝚗𝚜: {len(PLG_INFO)}\
         \n𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜: {len(CMD_INFO)}\
@@ -553,7 +554,7 @@ async def on_plugin_callback_query_handler(event):
     await event.answer(text, cache_time=0, alert=True)
 
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"ilhammansiz")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"ilhammansiz")))
 async def on_plugin_callback_query_handler(event):
     await event.edit(
         file=ilhammansiez,
@@ -566,7 +567,7 @@ async def on_plugin_callback_query_handler(event):
     )
 
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"(.*)_menu")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"(.*)_menu")))
 @check_owner
 async def on_plug_in_callback_query_handler(event):
     category = str(event.pattern_match.group(1).decode("UTF-8"))
@@ -578,7 +579,7 @@ async def on_plug_in_callback_query_handler(event):
 
 
 @PandaBot.tgbot.on(
-    CallbackQuery(
+    callbackquery.CallbackQuery(
         data=re.compile(b"back_([a-z]+)_([a-z]+)_([0-9]+)_?([a-z]+)?_?([0-9]+)?")
     )
 )
@@ -609,7 +610,7 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit(text, buttons=buttons)
 
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(rb"mainmenu")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(rb"mainmenu")))
 @check_owner
 async def on_plug_in_callback_query_handler(event):
     _result = main_menu()
@@ -617,7 +618,7 @@ async def on_plug_in_callback_query_handler(event):
 
 
 @PandaBot.tgbot.on(
-    CallbackQuery(data=re.compile(rb"(.*)_prev\((.+?)\)_([a-z]+)_?([a-z]+)?_?(.*)?"))
+    callbackquery.CallbackQuery(data=re.compile(rb"(.*)_prev\((.+?)\)_([a-z]+)_?([a-z]+)?_?(.*)?"))
 )
 @check_owner
 async def on_plug_in_callback_query_handler(event):
@@ -648,7 +649,7 @@ async def on_plug_in_callback_query_handler(event):
 
 
 @PandaBot.tgbot.on(
-    CallbackQuery(data=re.compile(rb"(.*)_next\((.+?)\)_([a-z]+)_?([a-z]+)?_?(.*)?"))
+    callbackquery.CallbackQuery(data=re.compile(rb"(.*)_next\((.+?)\)_([a-z]+)_?([a-z]+)?_?(.*)?"))
 )
 @check_owner
 async def on_plug_in_callback_query_handler(event):
@@ -676,7 +677,7 @@ async def on_plug_in_callback_query_handler(event):
 
 
 @PandaBot.tgbot.on(
-    CallbackQuery(data=re.compile(b"(.*)_cmdhelp_([a-z]+)_([0-9]+)_([a-z]+)_([0-9]+)"))
+    callbackquery.CallbackQuery(data=re.compile(b"(.*)_cmdhelp_([a-z]+)_([0-9]+)_([a-z]+)_([0-9]+)"))
 )
 @check_owner
 async def on_plug_in_callback_query_handler(event):
@@ -745,7 +746,7 @@ VcCmd = f"""
 
 
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"vcbot")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"vcbot")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
     await event.edit(VcCmd,
@@ -754,7 +755,7 @@ async def on_plugin_callback_query_handler(event):
         ],
     )
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"bothelp")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"bothelp")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
     await event.edit("Menu Help ASISTEN BOT",
@@ -788,7 +789,7 @@ def get_back_button(name):
 
 
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"menubot")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"menubot")))
 async def on_plugin_callback_query_handler(event):
     await event.edit(
         "**Daftar Help & Setting Asisten**",
@@ -799,7 +800,7 @@ async def on_plugin_callback_query_handler(event):
             ],
     )
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"menuset")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"menuset")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
     await event.edit(
@@ -816,7 +817,7 @@ async def on_plugin_callback_query_handler(event):
 
 
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"alivename")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"alivename")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
     pru = event.sender_id
@@ -841,7 +842,7 @@ async def on_plugin_callback_query_handler(event):
 
 
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"cmd")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"cmd")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
     pru = event.sender_id
@@ -864,7 +865,7 @@ async def on_plugin_callback_query_handler(event):
             buttons=get_back_button("menuset"),
         )
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"helplogo")))
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"helplogo")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
     pru = event.sender_id
