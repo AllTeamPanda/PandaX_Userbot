@@ -1,6 +1,6 @@
 # ILHAM MANSIEZ
 # PANDA USERBOT
-# copyright cat userbot
+#from cat userbot
 import json
 import os
 import re
