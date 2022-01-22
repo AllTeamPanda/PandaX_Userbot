@@ -1,6 +1,6 @@
 from . import edit_or_reply, pandaub
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 @pandaub.ilhammansiz_cmd(
