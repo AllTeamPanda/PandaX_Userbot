@@ -9,7 +9,7 @@ from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.tools import media_type
 from ..helpers.utils import _format
-from . import BOTLOG, BOTLOG_CHATID
+from . import BOTLOG, BOTLOG_CHATID, mention
 
 plugin_category = "plugins"
 
@@ -114,7 +114,10 @@ async def on_afk(event):  # sourcery no-metrics
         if AFK_.afk_type == "media":
             if AFK_.reason:
                 message_to_reply = (
-                    f"`┌ ❏AFK!\nAFK Since {endtime}\nReason : {AFK_.reason}`"
+                    f"`┌ 🐍 AFK\n"
+                    f"│┌ {mention} Sedang AFK\n"
+                    f"│├ {endtime} Yang Lalu \n"
+                    f"└└ Alasan: {AFK_.reason}`"
                 )
             else:
                 message_to_reply = f"`I am AFK .\n\nAFK Since {endtime}\nReason : Not Mentioned ( ಠ ʖ̯ ಠ)`"
@@ -123,11 +126,17 @@ async def on_afk(event):  # sourcery no-metrics
         elif AFK_.afk_type == "text":
             if AFK_.msg_link and AFK_.reason:
                 message_to_reply = (
-                    f"**I am AFK .\n\nAFK Since {endtime}\nReason : **{AFK_.reason}"
+                    f"`┌ 🙏🏻 AFK\n"
+                    f"│┌ {mention} Sedang AFK\n"
+                    f"│├ {endtime} Yang Lalu \n"
+                    f"└└ Alasan: {AFK_.reason}`"
                 )
             elif AFK_.reason:
                 message_to_reply = (
-                    f"`I am AFK .\n\nAFK Since {endtime}\nReason : {AFK_.reason}`"
+                    f"`┌ SAYA AFK\n"
+                    f"│┌ {mention} Sedang AFK\n"
+                    f"│├ {endtime} Yang Lalu \n"
+                    f"└└ Alasan: {AFK_.reason}`"
                 )
             else:
                 message_to_reply = f"`I am AFK .\n\nAFK Since {endtime}\nReason : Not Mentioned ( ಠ ʖ̯ ಠ)`"
