@@ -16,7 +16,7 @@ from . import (
     pandaub,
 )
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 DEFAULTUSER = str(AUTONAME) if AUTONAME else str(ALIVE_NAME)
 DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "PandaUserbot By Ilham mansiez"
 
