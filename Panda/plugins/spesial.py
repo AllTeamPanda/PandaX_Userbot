@@ -16,5 +16,5 @@ pengguna = [
 async def _(event): 
     salam = await event.reply(random.choice(pengguna))
     await asyncio.sleep(5)
-    await salam.edit("Ok Segitu Info Saya ,Salam Dari Binjai"    
+    await salam.edit("Ok Segitu Info Saya ,Salam Dari Binjai")
     await salam.delete()
