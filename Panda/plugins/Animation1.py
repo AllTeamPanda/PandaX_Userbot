@@ -4,7 +4,7 @@ import asyncio
 from . import edit_or_reply, PandaBot
 pandaub = PandaBot
 
-plugin_category = "Modules"
+plugin_category = "modules"
 
 
 @PandaBot.ilhammansiz_cmd(
