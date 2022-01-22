@@ -30,7 +30,7 @@ from . import (
     pandaub,
 )
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 DEFAULTUSERBIO = DEFAULT_BIO or " ᗯᗩᏆᎢᏆᑎᏀ ᏞᏆᏦᗴ ᎢᏆᗰᗴ  "
 DEFAULTUSER = AUTONAME or Config.ALIVE_NAME
 LOGS = logging.getLogger(__name__)
