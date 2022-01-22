@@ -14,7 +14,7 @@ from Panda import pandaub
 from ..core.managers import edit_delete, edit_or_reply
 from . import deEmojify, reply_id
 
-plugin_category = "Modules"
+plugin_category = "modules"
 
 
 @pandaub.ilhammansiz_cmd(
