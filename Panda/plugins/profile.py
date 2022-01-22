@@ -14,7 +14,7 @@ from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
 
 LOGS = logging.getLogger(__name__)
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 # ====================== CONSTANT ===============================
