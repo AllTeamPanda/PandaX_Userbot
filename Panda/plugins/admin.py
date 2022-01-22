@@ -1,9 +1,5 @@
 from asyncio import sleep
-import io
-import os
-import re
 import sys
-import urllib
 from os import environ, execle
 from telethon import functions
 from telethon.errors import (
