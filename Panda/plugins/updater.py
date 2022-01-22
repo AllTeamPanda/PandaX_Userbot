@@ -19,14 +19,14 @@ from ..sql_helper.global_collection import (
     get_collectionlist_items,
 )
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 cmdhd = Config.COMMAND_HAND_LER
 
 LOGS = logging.getLogger(__name__)
 # -- Constants -- #
 
-HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
-HEROKU_API_KEY = Config.HEROKU_API_KEY or None
+HEROKU_APP_NAME = Config.HEROKU_APP_NAME 
+HEROKU_API_KEY = Config.HEROKU_API_KEY 
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
