@@ -10,7 +10,7 @@ from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import _pandatools, media_type, progress, reply_id
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 FF_MPEG_DOWN_LOAD_MEDIA_PATH = os.path.join(
