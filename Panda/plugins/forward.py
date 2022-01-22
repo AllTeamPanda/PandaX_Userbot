@@ -8,7 +8,7 @@ from Panda.core.logger import logging
 from ..Config import Config
 from ..core.managers import edit_or_reply
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 LOGS = logging.getLogger(__name__)
 
