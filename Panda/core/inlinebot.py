@@ -102,7 +102,7 @@ def main_menu():
         ),
         (
             Button.inline(
-                f"🛠 Help BOT Asisten 🛠",
+                f"Menu Asisten",
                 data="bothelp",
             ),
         ),
