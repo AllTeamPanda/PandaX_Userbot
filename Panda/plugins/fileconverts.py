@@ -1,4 +1,5 @@
 # by ilham mansiez
+#from catuserbot
 import asyncio
 import base64
 import io
@@ -34,7 +35,7 @@ from ..helpers.functions import (
 from ..helpers.utils import _format, _pandatools, _pandautils, reply_id
 from . import make_gif
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 if not os.path.isdir("./temp"):
