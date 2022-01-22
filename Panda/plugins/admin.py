@@ -64,7 +64,7 @@ LOGS = logging.getLogger(__name__)
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 # ================================================
 
 
