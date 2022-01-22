@@ -7,7 +7,7 @@ import traceback
 from ..helpers.utils import _format
 from . import *
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 @pandaub.ilhammansiz_cmd(
