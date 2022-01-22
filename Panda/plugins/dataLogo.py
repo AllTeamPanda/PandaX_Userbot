@@ -8,7 +8,7 @@ from Panda import StartTime, pandaub, pandaversion
 from ..Config import Config
 from ..helpers.functions import get_readable_time
 from ..sql_helper.globals import gvarstatus
-
+from pytgcalls import __version__
 CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "꧁༺ Panda Userbot ༻꧂"
 
 from ..sql_helper.globals import gvarstatus
@@ -54,14 +54,14 @@ async def redis(alive):
     output = (
         f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         f"┏━━━━━━━━━━━━━━━━━\n"
-        f"┣||{EMOJI} `Pengguna :` {NAME}\n"
-        f"┣||{EMOJI} `Simbol   :`༺🐼༻\n"
-        f"┣||{EMOJI} `Telethon :` {version.__version__}\n"
-        f"┣||{EMOJI} `Python   :` {python_version()}\n"
-        f"┣||{EMOJI} `Branch   :` {Config.UPSTREAM_REPO_BRANCH}\n"
-        f"┣||{EMOJI} `Bot Ver  :` {pandaversion}\n"
-        f"┣||{EMOJI} `Sudo     :` {SUDO}\n"
-        f"┣||{EMOJI} `ID Sudo  :` {SUDOuser}\n"
+        f"┣||🚹 `Pengguna :` {NAME}\n"
+        f"┣||✍ `Telethon :` {version.__version__}\n"
+        f"┣||🐍 `Python   :` {python_version()}\n"
+        f"┣||👾 `pytgcalls Version :` {__version__}\n"
+        f"┣||⏳ `Branch   :` {Config.UPSTREAM_REPO_BRANCH}\n"
+        f"┣||🚀 `Bot Version  :` {pandaversion}\n"
+        f"┣||✅ `Sudo     :` {SUDO}\n"
+        f"┣||👥 `ID Sudo  :` {SUDOuser}\n"
         f"┗━━━━━━━━━━━━━━━━━ \n")
     if LOGO:
         try:
