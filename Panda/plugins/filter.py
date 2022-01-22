@@ -12,7 +12,7 @@ from ..sql_helper.filter_sql import (
 )
 from . import BOTLOG, BOTLOG_CHATID
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 @pandaub.ilhammansiz_cmd(incoming=True)
