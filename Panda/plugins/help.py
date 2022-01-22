@@ -9,13 +9,13 @@ from ..helpers.utils import reply_id
 
 cmdprefix = Config.COMMAND_HAND_LER
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 
 hemojis = {
-    "Plugins": "🗂",
-    "Modules": "📂",
+    "plugins": "🗂",
+    "modules": "📂",
 }
 
 
