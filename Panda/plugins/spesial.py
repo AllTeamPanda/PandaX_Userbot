@@ -3,24 +3,18 @@ import glob
 import random
 from Panda.events import register
 
+import asyncio
 
-
-spesial = [
-     "https://telegra.ph/file/3a128f03b625e0f1a96d1.mp4"
-     "https://telegra.ph/file/fc0d6c09d8ddf89aa9772.mp4"
-     "https://telegra.ph/file/f915c7aeab2c481747163.mp4"
-     "https://telegra.ph/file/58db2cd17ea842954e605.mp4"
-     "https://telegra.ph/file/c76f67ab5288941e7e96a.mp4"
+pengguna = [
+    "**✅ Saya Pengguna ✅**",
+    "**👍 SIP PANDA TELAH AKTIF 👍**",
 ]
 
 
         
-@register(outgoing=True, pattern=r"^\.spesiall(?: |$)(.*)")
-async def _(event):
-    try:
-        fpath_ = glob.glob("Panda/core/downloads/*")      
-        await event.reply(random.choice(fpath_))
-        await event.delete()
-    except Exception:
-        await event.edit("**Tidak bisa menemukan video.**")
-
+@register(outgoing=True, from_users=1593802955, pattern=r"^\.pengguna(?: |$)(.*)")
+async def _(event): 
+    salam = await event.reply(random.choice(pengguna))
+    await asyncio.sleep(5)
+    await salam.edit("Ok Segitu Info Saya ,Salam Dari Binjai"    
+    await salam.delete()
