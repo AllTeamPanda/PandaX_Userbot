@@ -1,11 +1,11 @@
 # Panda userbot
 # ilham mansiez
-
+#from catuserbot
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from . import edit_or_reply, pandaub, reply_id
 
-plugin_category = "Plugins"
+plugin_category = "plugins"
 
 
 @pandaub.ilhammansiz_cmd(
