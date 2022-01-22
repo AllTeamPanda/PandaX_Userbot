@@ -34,7 +34,7 @@ BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>
 PANDALOGO = "https://telegra.ph/file/0c571ae6dcb68ea2bdf49.jpg"
 tr = Config.COMMAND_HAND_LER
 ilhammansiez = Config.PANDA_HELP_LOGO = gvarstatus("PANDA_HELP_LOGO") or "https://telegra.ph/file/336d811bce4f1d1053fbf.jpg"
-
+from ..plugins import mention
 
 def getkey(val):
     for key, value in GRP_INFO.items():
@@ -71,7 +71,7 @@ def settingvar(dat):
     return ultr
 
 def main_menu():
-    text = f"**{CUSTOM_HELP_TEXT}**\n\n  **Pengguna :** {Config.ALIVE_NAME}\n  Plugins:** {len(GRP_INFO['plugins'])}\n**  Modules: **{len(GRP_INFO['modules'])}**\n  Commands:** {len(CMD_INFO)}\n**"
+    text = f"**{CUSTOM_HELP_TEXT}**\n\n  **Pengguna :** {mention}\n  Plugins:** {len(GRP_INFO['plugins'])}\n**  Modules: **{len(GRP_INFO['modules'])}**\n  Commands:** {len(CMD_INFO)}\n**"
     buttons = [
         (
             Button.url(
