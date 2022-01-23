@@ -691,7 +691,7 @@ async def on_plug_in_callback_query_handler(event):
                 "« Bᴀᴄᴋ » ",
                 data=f"back_command_{category}_{pgno}_{category_plugins}_{category_pgno}",
             ),
-            Button.inline("🛠 Main Menu 🛠", data="mainmenu"),
+            Button.inline("Main Menu", data="mainmenu"),
         )
     ]
     text = f"**꧁༺ Panda Userbot ༻꧂\n\n༺🐼༻ Command :** `{tr}{cmd}`\
@@ -750,7 +750,7 @@ VcCmd = f"""
 async def on_plugin_callback_query_handler(event):
     await event.edit(VcCmd,
         buttons=[
-            Button.inline("MENU UTAMA", data="mainmenu"),
+            Button.inline("Menu Utama", data="mainmenu"),
         ],
     )
 
@@ -759,7 +759,7 @@ async def on_plugin_callback_query_handler(event):
 async def on_plugin_callback_query_handler(event):
     await event.edit("Menu Help ASISTEN BOT",
         buttons=[
-            Button.inline("🛠 MENU HELP 🛠", data="helpbot"),
+            Button.inline("Menu Utama", data="helpbot"),
         ],
     )
 
@@ -794,7 +794,7 @@ async def on_plugin_callback_query_handler(event):
         "**Daftar Help & Setting Asisten**",
         buttons=[
             [
-                Button.inline("🛠 Help 🛠", data="helpp"),
+                Button.inline("Help", data="helpp"),
                 Button.inline("⚙ Setting ⚙", data="menuset"),],
             ],
     )
