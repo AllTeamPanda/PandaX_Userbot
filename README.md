@@ -23,11 +23,11 @@ Gunakan bot ini dengan risiko Anda
 
 [![PR Closed](https://img.shields.io/github/issues-pr-closed/ilhammansiz/PandaX_Userbot?&style=flat-square&logo=github)](https://github.com/ilhammansiz/PandaX_Userbot/pulls?q=is:closed)
 [![GitHub stars](https://img.shields.io/github/stars/ilhammansiz/pandax_userbot?&style=flat-square&logo=github)](https://github.com/ilhammansiz/pandax_Userbot/stargazers)
+[![Forks](https://img.shields.io/github/forks/ilhammansiz/PandaX_Userbot?style=flat-square&color=orange)](https://github.com/ilhammansiz/PandaX_Userbot/fork)
 
 <a href="https://travis-ci.com/ilhammansiz/PandaX_Userbot.svg?branch=PandaUserbot" /></a>
     <a href="https://app.codacy.com/gh/ilhammansiz/PandaX_Userbot/dashboard"> <img src="https://img.shields.io/codacy/grade/a8f0747a964e4712818a28d2a7f4edd3?color=blue&logo=codacy&style=for-the-badge" alt="Codacy" /></a>
     <a href="https://github.com/ilhammansiz/PandaX_Userbot"> <img src="https://img.shields.io/github/repo-size/ilhammansiz/PandaX_Userbot?logo=github&style=for-the-badge" /></a>
-    <a href="https://github.com/ilhammansiz/PandaX_Userbot/network/members"> <img src="https://img.shields.io/github/forks/ilhammansiz/PandaX_Userbot-Bot?logo=github&style=for-the-badge" /></a>
     
 <p align="left">
   <a href="https://github.com/ilhammansiz/PandaX_Userbot/blob/PandaUserbot/LICENSE"><img src="https://img.shields.io/github/license/ilhammansiz/PandaX_Userbot?&style=social&logo=github">
