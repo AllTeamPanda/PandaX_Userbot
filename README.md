@@ -20,6 +20,7 @@ Gunakan bot ini dengan risiko Anda
 [![GitHub contributors](https://img.shields.io/github/contributors/mrxxp/PandaX_Userbot?&style=plastic&logo=github)](https://GitHub.com/mrxxp/PandaX_Userbot/graphs/contributors/)
 <p align="justify">
 <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
+[![Python](https://img.shields.io/badge/Python-v3.9.9-blue)](https://www.python.org/)
 
 [![PR Closed](https://img.shields.io/github/issues-pr-closed/ilhammansiz/PandaX_Userbot?&style=flat-square&logo=github)](https://github.com/ilhammansiz/PandaX_Userbot/pulls?q=is:closed)
 [![GitHub stars](https://img.shields.io/github/stars/ilhammansiz/pandax_userbot?&style=flat-square&logo=github)](https://github.com/ilhammansiz/pandax_Userbot/stargazers)
