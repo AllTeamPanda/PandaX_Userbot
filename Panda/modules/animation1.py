@@ -171,8 +171,9 @@ async def _(event):
 
 
 from platform import uname
-from Panda import ALIVE_NAME
+from Panda.Config import Config
 
+ALIVE_NAME = Config.ALIVE_NAME
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
