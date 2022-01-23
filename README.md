@@ -24,6 +24,7 @@ Gunakan bot ini dengan risiko Anda
 [![PR Closed](https://img.shields.io/github/issues-pr-closed/ilhammansiz/PandaX_Userbot?&style=flat-square&logo=github)](https://github.com/ilhammansiz/PandaX_Userbot/pulls?q=is:closed)
 [![GitHub stars](https://img.shields.io/github/stars/ilhammansiz/pandax_userbot?&style=flat-square&logo=github)](https://github.com/ilhammansiz/pandax_Userbot/stargazers)
 [![Forks](https://img.shields.io/github/forks/ilhammansiz/PandaX_Userbot?style=flat-square&color=orange)](https://github.com/ilhammansiz/PandaX_Userbot/fork)
+[![Size](https://img.shields.io/github/repo-size/ilhammansiz/PandaX_Userbot?style=flat-square&color=green)](https://github.com/ilhammansiz/PandaX_Userbot/)   
 
 <p align="left">
   <a href="https://github.com/ilhammansiz/PandaX_Userbot/blob/PandaUserbot/LICENSE"><img src="https://img.shields.io/github/license/ilhammansiz/PandaX_Userbot?&style=social&logo=github">
