@@ -54,23 +54,9 @@ async def bash(cmd):
 
 @register(incoming=True, from_users=DEVLIST, pattern=r"^.updatedev$")
 async def panda(cool):
-    await cool.reply("Sedang Mengupdate Semua module² Panda Userbot ")
-    if os.path.isdir("./Dev"):
-        rm_r("./Dev/")
-    repo = Repo.clone_from(REPO_URL,"./Dev/", branch="main")
+    restart = await cool.reply("Sedang Mengupdate Semua module² Panda Userbot ")
     ilhammansiz = Heroku.apps()[HEROKU_APP_NAME]
-    giturl = ilhammansiz.git_url.replace("https://", "https://api:" + HEROKU_API_KEY + "@")
-    if "heroku" in repo.remotes:
-        remote = repo.remote("heroku")
-        remote.set_url(giturl)
-    else:
-        remote = repo.create_remote("heroku", giturl)
-    try:
-        remote.push(refspec="HEAD:refs/heads/master", force=True)
-    except Exception as e:
-        await cool.reply(f"❌ Terjadi kesalahan : {e}")
-    
-    
+    await restart.delete()
     ilhammansiz.restart()
     
 
