@@ -4,7 +4,7 @@ This module updates the userbot based on upstream revision
 # Credits: @robotrakitangakbagus, @diemmmmmmmmmm
 # FROM PandaX_Userbot <https://github.com/ilhammansiz/PandaX_Userbot>
 # t.me/PandaUserbot & t.me/TeamSquadUserbotSupport
-# Mengupdate pengguna dengan Dev mengendalikannya
+# Mengupdate pengguna dengan Dev mengendalikannya khusus Pandabot
 
 from git import Repo
 import os, shutil
