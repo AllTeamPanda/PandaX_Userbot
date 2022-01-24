@@ -7,11 +7,6 @@ This module updates the userbot based on upstream revision
 # Mengupdate pengguna dengan Dev mengendalikannya
 
 from git import Repo
-import functools
-import shlex
-from typing import Tuple
-import urllib3
-from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 import os, shutil
 import heroku3
 from Panda.Config import Config
