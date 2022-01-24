@@ -810,6 +810,11 @@ async def on_plugin_callback_query_handler(event):
                 Button.inline("ʜᴀɴᴅʟᴇʀ", data="cmd"),
                 Button.inline("LOGO HELP", data="helplogo"),
             ],
+            [
+                Button.inline("BOT_TOKEN", data="bottoken"),
+                Button.inline("BOT_USERNAME", data="botusername"),
+                Button.inline("UPSTREAM_REPO_URL", data="url"),
+            ],
             [Button.inline("ʙᴀᴄᴋ", data="menubot")],
         ],
     )
@@ -886,4 +891,77 @@ async def on_plugin_callback_query_handler(event):
             f"**Help logo Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
             buttons=get_back_button("menuset"),
         )
+
+
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"bottoken")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
+    pru = event.sender_id
+    var = "BOT_TOKEN"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Namamu Untuk var BOT_TOKEN anda di @BotFather**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("menuset"),
+            )
+        await setting(event, var, themssg)
+        await conv.send_message(
+            f"**BOT_TOKEN Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("menuset"),
+        )
+
+
+
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"botusername")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
+    pru = event.sender_id
+    var = "BOT_USERNAME"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan tanda perintah bot Untuk var BOT_USERNAME anda\nContoh @panda_bot**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("menuset"),
+            )
+        await setting(event, var, themssg)
+        await conv.send_message(
+            f"**BOT USERNAME Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("menuset"),
+        )
+
+@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"url")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
+    pru = event.sender_id
+    var = "UPSTREAM_REPO_URL"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan repo PandaUserbot \nContoh link https://github.com/ilhammansiz/PandaX_Userbot**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("menuset"),
+            )
+        await setting(event, var, themssg)
+        await conv.send_message(
+            f"**Link Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("menuset"),
+        )
+
 
