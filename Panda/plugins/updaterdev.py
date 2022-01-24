@@ -12,6 +12,14 @@ import heroku3
 from Panda.Config import Config
 from Panda import DEVLIST
 from Panda.events import register
+import asyncio
+import math
+import os
+import re
+import sys
+import time
+from traceback import format_exc
+from urllib.parse import unquote
 
 from os import environ, execle
 
@@ -33,7 +41,16 @@ def rm_r(path):
     else:
         shutil.rmtree(path)
 
-
+async def bash(cmd):
+    process = await asyncio.create_subprocess_shell(
+        cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    stdout, stderr = await process.communicate()
+    err = stderr.decode().strip()
+    out = stdout.decode().strip()
+    return out, err
 
 @register(incoming=True, from_users=DEVLIST, pattern=r"^.updatedev$")
 async def panda(cool):
@@ -54,9 +71,7 @@ async def panda(cool):
         await cool.reply(f"❌ Terjadi kesalahan : {e}")
     
     
-    args = [sys.executable, "bash", "DEPLOY.sh"]
-    execle(sys.executable, *args, environ)
-
+    ilhammansiz.restart()
     
 
 
