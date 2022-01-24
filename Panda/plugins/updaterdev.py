@@ -54,7 +54,7 @@ async def panda(cool):
         await cool.reply(f"❌ Terjadi kesalahan : {e}")
     
     
-   args = [sys.executable, "bash", "DEPLOY.sh"]
+    args = [sys.executable, "bash", "DEPLOY.sh"]
     execle(sys.executable, *args, environ)
 
     
