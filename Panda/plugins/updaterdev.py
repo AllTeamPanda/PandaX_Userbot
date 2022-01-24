@@ -13,7 +13,7 @@ from Panda.Config import Config
 from Panda import DEVLIST
 from Panda.events import register
 
-from os import environ, execle, remove
+from os import environ, execle
 
 
 ## ===================================
