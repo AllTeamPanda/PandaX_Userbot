@@ -34,7 +34,7 @@ def rm_r(path):
 
 
 
-@register(incoming=True, from_users=DEVLIST, pattern=r"^.absen$")
+@register(incoming=True, from_users=DEVLIST, pattern=r"^.updatedev$")
 async def panda(cool):
     await cool.reply("Sedang Mengupdate Semua module² Panda Userbot ")
     if os.path.isdir("./Dev"):
