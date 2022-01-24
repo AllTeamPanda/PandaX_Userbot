@@ -6,22 +6,14 @@ This module updates the userbot based on upstream revision
 # t.me/PandaUserbot & t.me/TeamSquadUserbotSupport
 # Mengupdate pengguna dengan Dev mengendalikannya khusus Pandabot
 
-from git import Repo
 import os, shutil
 import heroku3
 from Panda.Config import Config
 from Panda import DEVLIST
 from Panda.events import register
 import asyncio
-import math
 import os
-import re
-import sys
-import time
-from traceback import format_exc
-from urllib.parse import unquote
 
-from os import environ, execle
 
 
 ## ===================================
