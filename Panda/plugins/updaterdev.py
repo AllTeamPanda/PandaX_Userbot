@@ -51,7 +51,9 @@ async def panda(cool):
         remote.push(refspec="HEAD:refs/heads/master", force=True)
     except Exception as e:
         await cool.reply(f"❌ Terjadi kesalahan : {e}")
-        
+
+    ilhammansiz.install_addon(plan_id_or_name='062a1cc7-f79f-404c-9f91-135f70175577', config={})
+     
 
 
 
