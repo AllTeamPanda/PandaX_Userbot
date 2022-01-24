@@ -57,7 +57,7 @@ async def redis(alive):
         f"┣||🚹 `Pengguna:` {NAME}\n"
         f"┣||✍ `Telethon:` {version.__version__}\n"
         f"┣||🐍 `Python:` {python_version()}\n"
-        f"┣||👾 `Pytgcalls Version:` {__version__}\n"
+        f"┣||👾 `Pytgcalls:` {__version__}\n"
         f"┣||⏳ `Branch:` {Config.UPSTREAM_REPO_BRANCH}\n"
         f"┣||🚀 `Bot Version:` {pandaversion}\n"
         f"┣||✅ `Sudo:` {SUDO}\n"
