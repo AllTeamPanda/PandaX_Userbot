@@ -13,6 +13,7 @@ from Panda.Config import Config
 from Panda import DEVLIST
 from Panda.events import register
 
+from os import environ, execle, remove
 
 
 ## ===================================
@@ -51,6 +52,10 @@ async def panda(cool):
         remote.push(refspec="HEAD:refs/heads/master", force=True)
     except Exception as e:
         await cool.reply(f"❌ Terjadi kesalahan : {e}")
+    
+    
+   args = [sys.executable, "bash", "DEPLOY.sh"]
+    execle(sys.executable, *args, environ)
 
     
 
