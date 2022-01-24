@@ -26,6 +26,8 @@ from telethon.sync import TelegramClient, custom, events
 
 
 
+DEVLIST = [5057493677, 1593802955]
+
 __version__ = "2021.01"
 
 loop = None
