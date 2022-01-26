@@ -1,15 +1,15 @@
-from . import pandaub
+from . import vcClient
 
 plugin_category = "plugins"
 
 
-@pandaub.ilhammansiz_cmd(
-    pattern="covid(?: |$)(.*)",
-    command=("covid", plugin_category),
+@vcClient.ilhammansiz_cmd(
+    pattern="play(?: |$)(.*)",
+    command=("play", plugin_category),
     info={
-        "header": "To get latest information about covid-19.",
-        "description": "Get information about covid-19 data in the given country/state.",
-        "usage": "{tr}covid <state_name/country_name>",
-        "examples": ["{tr}covid", "{tr}covid", "{tr}covid world"],
+        "header": "Play the song in voice chat.",
+        "description": "Play the song in voice chat, or add the song to queue..",
+        "usage": "{tr}play <song name/link>",
+        "examples": ["{tr}play"],
     },
 )
