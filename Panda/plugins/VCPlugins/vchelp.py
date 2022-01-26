@@ -1,9 +1,9 @@
-from . import vcClient
+from Panda import PandaBot
 
 plugin_category = "plugins"
 
 
-@vcClient.ilhammansiz_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern="play(?: |$)(.*)",
     command=("play", plugin_category),
     info={
