@@ -34,7 +34,7 @@ def mansiez(**args):
 
     return decorator
 
-plugin_category = "plugins"
+plugin_category = "music"
 
 
 
