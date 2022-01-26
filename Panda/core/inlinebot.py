@@ -487,7 +487,7 @@ async def inline_handler(event):  # sourcery no-metrics
                 ),
                 Button.url(
                     "Deploy",
-                    "https://heroku.com/deploy?template=https://github.com/ilhammansiez/PandaX_Userbot",
+                    "https://t.me/PandaUserbot/13",
                 ),
             )
         ]
