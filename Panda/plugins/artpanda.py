@@ -109,47 +109,6 @@ async def gn(event):
     await edit_or_reply(event, X)
 
 
-@pandaub.ilhammansiz_cmd(
-    pattern="gm$",
-    command=("gm", plugin_category),
-    info={
-        "header": "Good morning random strings.",
-        "usage": "{tr}gm",
-    },
-)
-async def morning(morning):
-    "Good morning random strings."
-    txt = random.choice(pandamemes.GDMORNING)
-    await edit_or_reply(morning, txt)
-
-
-@pandaub.ilhammansiz_cmd(
-    pattern="gnoon$",
-    command=("gnoon", plugin_category),
-    info={
-        "header": "Good afternoon random strings.",
-        "usage": "{tr}gnoon",
-    },
-)
-async def noon(noon):
-    "Good afternoon random strings."
-    txt = random.choice(pandamemes.GDNOON)
-    await edit_or_reply(noon, txt)
-
-
-@pandaub.ilhammansiz_cmd(
-    pattern="gn$",
-    command=("gn", plugin_category),
-    info={
-        "header": "Good night random strings.",
-        "usage": "{tr}gm",
-    },
-)
-async def night(night):
-    "Good night random strings."
-    txt = random.choice(pandamemes.GDNIGHT)
-    await edit_or_reply(night, txt)
-
 
 @pandaub.ilhammansiz_cmd(
     pattern="gmg$",
