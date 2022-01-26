@@ -34,7 +34,20 @@ def mansiez(**args):
 
     return decorator
 
+plugin_category = "plugins"
 
+
+
+@vcClient.ilhammansiz_cmd(
+    pattern="splay(?: |$)(.*)",
+    command=("play", plugin_category),
+    info={
+        "header": "Play the song in voice chat.",
+        "description": "Play the song in voice chat, or add the song to queue..",
+        "usage": "{tr}play <song name/link>",
+        "examples": ["{tr}play"],
+    },
+)
 @PandaVc_cmd("play")
 async def play_music_(event):
     if "playfrom" in event.text.split()[0]:
