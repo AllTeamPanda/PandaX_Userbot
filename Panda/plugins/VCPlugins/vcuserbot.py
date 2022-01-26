@@ -43,8 +43,8 @@ plugin_category = "plugins"
     info={
         "header": "Play the song in voice chat.",
         "description": "Play the song in voice chat, or add the song to queue..",
-        "usage": "`{tr}play <song name/link>`",
-        "examples": ["`{tr}play pujaan hati`"],
+        "usage": "{tr}play <song name/link>",
+        "examples": ["{tr}play pujaan hati"],
     },
 )
 @PandaVc_cmd("play")
@@ -128,8 +128,8 @@ async def play_music_(event):
     info={
         "header": "Play music from channel files at current chat...",
         "description": "Play music from channel files at current chat....",
-        "usage": "`{tr}playfrom <channel username> ; <limit>`",
-        "examples": ["`{tr}playfrom <@userbot> ; <100>`"],
+        "usage": "{tr}playfrom <channel username> ; <limit>",
+        "examples": ["{tr}playfrom <@userbot> ; <100>"],
     },
 )
 @PandaVc_cmd("playfrom")
@@ -190,6 +190,15 @@ async def play_music_(event):
                 )
                 send_message = False
 
+@vcClient.ilhammansiz_cmd(
+    command=("joinvc", plugin_category),
+    info={
+        "header": "Join the voice chat....",
+        "description": "Join the voice chat....",
+        "usage": "{tr}joinvc",
+        "examples": ["{tr}joinvc"],
+    },
+)
 @PandaVc_cmd("joinvc")
 async def join_(event):
     if len(event.text.split()) > 1:
@@ -207,7 +216,15 @@ async def join_(event):
         await ultSongs.vc_joiner()
 
 
-
+@vcClient.ilhammansiz_cmd(
+    command=("leavevc", plugin_category),
+    info={
+        "header": "Leave vc the voice chat....",
+        "description": "Leave vc the voice chat....",
+        "usage": "{tr}leavevc",
+        "examples": ["{tr}leavevc"],
+    },
+)
 @PandaVc_cmd("(leavevc|stopvc)")
 async def leaver(event):
     if len(event.text.split()) > 1:
@@ -229,6 +246,16 @@ async def leaver(event):
     await eor(event, "` Berhasil Turun voice chat.`")
 
 
+
+@vcClient.ilhammansiz_cmd(
+    command=("rejoin", plugin_category),
+    info={
+        "header": "Re-join the voice chat, incase of errors.",
+        "description": "Re-join the voice chat, incase of errors....",
+        "usage": "{tr}rejoin",
+        "examples": ["{tr}rejoin"],
+    },
+)
 @PandaVc_cmd("rejoin")
 async def rejoiner(event):
     if len(event.text.split()) > 1:
@@ -249,7 +276,15 @@ async def rejoiner(event):
     await eor(event, "`Re-joining this voice chat.`")
 
 
-
+@vcClient.ilhammansiz_cmd(
+    command=("queue", plugin_category),
+    info={
+        "header": "List the songs in queue..",
+        "description": "List the songs in queue.....",
+        "usage": "{tr}queue",
+        "examples": ["{tr}queue"],
+    },
+)
 @PandaVc_cmd("queue")
 async def queue(event):
     if len(event.text.split()) > 1:
@@ -267,6 +302,17 @@ async def queue(event):
         return await eor(event, "• Nothing in queue!")
     await eor(event, "• <strong>Queue:</strong>\n\n{}".format(q), parse_mode="html")
 
+
+
+@vcClient.ilhammansiz_cmd(
+    command=("radio", plugin_category),
+    info={
+        "header": "Stream Live Radio m3u8 links..",
+        "description": "Stream Live Radio m3u8 links.....",
+        "usage": "{tr}radio <link>",
+        "examples": ["{tr}radio <link>"],
+    },
+)
 @PandaVc_cmd("radio")
 async def radio_mirchi(e):
     xx = await eor(e, get_string("com_1"))
@@ -298,7 +344,15 @@ async def radio_mirchi(e):
     )
     await xx.delete()
 
-
+@vcClient.ilhammansiz_cmd(
+    command=("ytlive", plugin_category),
+    info={
+        "header": "Stream Live YouTube..",
+        "description": "Stream Live YouTube.....",
+        "usage": "{tr}ytlive <link>",
+        "examples": ["{tr}ytlive <link>"],
+    },
+)
 @PandaVc_cmd("(live|ytlive)")
 async def live_stream(e):
     xx = await eor(e, get_string("com_1"))
@@ -340,6 +394,15 @@ async def live_stream(e):
     await xx.delete()
     await ultSongs.group_call.start_audio(file)
 
+@vcClient.ilhammansiz_cmd(
+    command=("skip", plugin_category),
+    info={
+        "header": "Skip the current song and play the next in queue, if any...",
+        "description": "Skip the current song and play the next in queue, if any......",
+        "usage": "{tr}skip",
+        "examples": ["{tr}skip"],
+    },
+)
 @PandaVc_cmd("skip")
 async def skipper(event):
     if len(event.text.split()) > 1:
@@ -355,6 +418,15 @@ async def skipper(event):
     ultSongs = Player(chat, event)
     await ultSongs.play_from_queue()
 
+@vcClient.ilhammansiz_cmd(
+    command=("mutevc", plugin_category),
+    info={
+        "header": "Mute playback....",
+        "description": "Mute playback.......",
+        "usage": "{tr}mutevc",
+        "examples": ["{tr}mutevc"],
+    },
+)
 @PandaVc_cmd("mutevc")
 async def mute(event):
     if len(event.text.split()) > 1:
@@ -371,7 +443,15 @@ async def mute(event):
     await ultSongs.group_call.set_is_mute(True)
     await eor(event, "`Muted playback in this chat.`")
 
-
+@vcClient.ilhammansiz_cmd(
+    command=("unmutevc", plugin_category),
+    info={
+        "header": "Unmute playback....",
+        "description": "Unmute playback.......",
+        "usage": "{tr}unmutevc",
+        "examples": ["{tr}unmutevc"],
+    },
+)
 @PandaVc_cmd("unmutevc")
 async def unmute(event):
     if len(event.text.split()) > 1:
@@ -388,7 +468,15 @@ async def unmute(event):
     await ultSongs.group_call.set_is_mute(False)
     await eor(event, "`UnMuted playback in this chat.`")
 
-
+@vcClient.ilhammansiz_cmd(
+    command=("pausevc", plugin_category),
+    info={
+        "header": "Pause playback....",
+        "description": "Pause playback.......",
+        "usage": "{tr}pausevc",
+        "examples": ["{tr}pausevc"],
+    },
+)
 @PandaVc_cmd("pausevc")
 async def pauser(event):
     if len(event.text.split()) > 1:
@@ -405,7 +493,15 @@ async def pauser(event):
     await ultSongs.group_call.set_pause(True)
     await eor(event, "`Paused playback in this chat.`")
 
-
+@vcClient.ilhammansiz_cmd(
+    command=("resumevc", plugin_category),
+    info={
+        "header": "Resume playback....",
+        "description": "Resume playback.......",
+        "usage": "{tr}resumevc",
+        "examples": ["{tr}resumevc"],
+    },
+)
 @PandaVc_cmd("resumevc")
 async def resumer(event):
     if len(event.text.split()) > 1:
@@ -422,7 +518,15 @@ async def resumer(event):
     await ultSongs.group_call.set_pause(False)
     await eor(event, "`Resumed playback in this chat.`")
 
-
+@vcClient.ilhammansiz_cmd(
+    command=("replay", plugin_category),
+    info={
+        "header": "Re-play the current song from the beginning.....",
+        "description": "Re-play the current song from the beginning........",
+        "usage": "{tr}replay",
+        "examples": ["{tr}replay"],
+    },
+)
 @PandaVc_cmd("replay")
 async def replayer(event):
     if len(event.text.split()) > 1:
@@ -439,6 +543,15 @@ async def replayer(event):
     ultSongs.group_call.restart_playout()
     await eor(event, "`Re-playing the current song.`")
 
+@vcClient.ilhammansiz_cmd(
+    command=("videoplay", plugin_category),
+    info={
+        "header": "Stream Videos in chat. you can use remotely toolike {tr}videoplay @chat <input/reply>.....",
+        "description": "Stream Videos in chat. you can use remotely ........",
+        "usage": "{tr}videoplay <song name/url/m3u8 links/reply to video>",
+        "examples": ["{tr}videoplay pujaan hati"],
+    },
+)
 @PandaVc_cmd("videoplay")
 async def video_c(event):
     xx = await eor(event, get_string("com_1"))
@@ -511,7 +624,15 @@ async def video_c(event):
     await ultSongs.group_call.start_video(song, with_audio=True)
     await xx.delete()
 
-
+@vcClient.ilhammansiz_cmd(
+    command=("volume", plugin_category),
+    info={
+        "header": "Put number between 1 to 100....",
+        "description": "Put number between 1 to 100.......",
+        "usage": "{tr}volume <number>",
+        "examples": ["{tr}volume <70>"],
+    },
+)
 @PandaVc_cmd("volume")
 async def volume_setter(event):
     if len(event.text.split()) > 1:
@@ -545,7 +666,15 @@ async def volume_setter(event):
         return await eor(event, "• Volume Changed to `{}%` •".format(vol))
 
 
-
+@vcClient.ilhammansiz_cmd(
+    command=("ytplaylist", plugin_category),
+    info={
+        "header": "play whole playlist in voice chat...",
+        "description": "play whole playlist in voice chat.......",
+        "usage": "{tr}ytplaylist <playlist link>",
+        "examples": ["{tr}ytplaylist <playlist link>"],
+    },
+)
 @PandaVc_cmd("ytplaylist")
 async def live_stream(e):
     xx = await eor(e, get_string("com_1"))
