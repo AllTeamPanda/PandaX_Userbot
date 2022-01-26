@@ -39,13 +39,12 @@ plugin_category = "plugins"
 
 
 @vcClient.ilhammansiz_cmd(
-    pattern="splay(?: |$)(.*)",
     command=("play", plugin_category),
     info={
         "header": "Play the song in voice chat.",
         "description": "Play the song in voice chat, or add the song to queue..",
-        "usage": "{tr}play <song name/link>",
-        "examples": ["{tr}play"],
+        "usage": "`{tr}play <song name/link>`",
+        "examples": ["`{tr}play pujaan hati`"],
     },
 )
 @PandaVc_cmd("play")
@@ -124,6 +123,15 @@ async def play_music_(event):
         )
 
 
+@vcClient.ilhammansiz_cmd(
+    command=("playfrom", plugin_category),
+    info={
+        "header": "Play music from channel files at current chat...",
+        "description": "Play music from channel files at current chat....",
+        "usage": "`{tr}playfrom <channel username> ; <limit>`",
+        "examples": ["`{tr}playfrom <@userbot> ; <100>`"],
+    },
+)
 @PandaVc_cmd("playfrom")
 async def play_music_(event):
     msg = await eor(event, get_string("com_1"))
