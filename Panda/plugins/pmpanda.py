@@ -24,19 +24,8 @@ LOGS = logging.getLogger(__name__)
 cmdhd = Config.COMMAND_HAND_LER
 
 
-# https://github.com/mrismanaziz/Man-Userbot/blob/Man-Userbot/userbot/modules/pmpermit.py
 
-MSG = (
-    "╔════════════════════╗\n"
-    "    ✅ 𝗡𝗢 𝗦𝗣𝗔𝗠 𝗣𝗟𝗘𝗔𝗦𝗘 ✅\n"
-    "╚════════════════════╝\n"
-    "• Saya belum menyetujui anda untuk PM.\n"
-    "• Tunggu sampai saya menyetujui PM anda.\n"
-    "• Jangan Spam Chat atau anda akan otomatis diblokir.\n"
-    "╔════════════════════╗\n"
-    "    𝗣𝗲𝘀𝗮𝗻 𝗢𝘁𝗼𝗺𝗮𝘁𝗶𝘀 𝗕𝘆 -𝗨𝘀𝗲𝗿𝗕𝗼𝘁\n"
-    "╚════════════════════╝\n"
-)
+
 
 
 async def do_pm_permit_action(event, chat):  # sourcery no-metrics
@@ -171,7 +160,7 @@ async def do_pm_options_action(event, chat):
     except AttributeError:
         PMMESSAGE_CACHE = {}
     if str(chat.id) not in PM_WARNS:
-        text = f"{USER_BOT_NO_WARN}"
+        text = "╔════════════════════╗\n✅ 𝗡𝗢 𝗦𝗣𝗔𝗠 𝗣𝗟𝗘𝗔𝗦𝗘 ✅\n╚════════════════════╝\n• Saya belum menyetujui anda untuk PM.\n• Tunggu sampai saya menyetujui PM anda.\n• Jangan Spam Chat atau anda akan otomatis diblokir.\n╔════════════════════╗\n𝗣𝗲𝘀𝗮𝗻 𝗢𝘁𝗼𝗺𝗮𝘁𝗶𝘀 𝗕𝘆 -𝗨𝘀𝗲𝗿𝗕𝗼𝘁\n╚════════════════════╝\n"
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
         sql.del_collection("pmwarns")
