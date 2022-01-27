@@ -33,7 +33,7 @@ from Panda.helpers.functions.utube import (
     yt_search_btns,
 )
 from Panda.plugins import BOTLOG_CHATID
-
+pandaub = PandaBot
 LOGS = logging.getLogger(__name__)
 BASE_YT_URL = "https://www.youtube.com/watch?v="
 YOUTUBE_REGEX = re.compile(
@@ -43,7 +43,7 @@ PATH = "./Panda/core/ytsearch.json"
 plugin_category = "plugins"
 
 
-@pandaub.ilhammansiz_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern="iytdl(?: |$)(.*)",
     command=("iytdl", plugin_category),
     info={
@@ -74,7 +74,7 @@ async def iytdl_inline(event):
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
 
 
-@pandaub.tgbot.on(
+@PandaBot.tgbot.on(
     CallbackQuery(
         data=re.compile(b"^ytdl_download_(.*)_([\d]+|mkv|mp4|mp3)(?:_(a|v))?")
     )
@@ -169,7 +169,7 @@ async def ytdl_download_callback(c_q: CallbackQuery):  # sourcery no-metrics
     )
 
 
-@pandaub.tgbot.on(
+@PandaBot.tgbot.on(
     CallbackQuery(data=re.compile(b"^ytdl_(listall|back|next|detail)_([a-z0-9]+)_(.*)"))
 )
 @check_owner
