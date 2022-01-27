@@ -10,7 +10,7 @@ from datetime import datetime
 
 from telethon.errors import BadRequestError, FloodWaitError, ForbiddenError
 
-from Panda import PandaBot as pandaub
+from Panda import PandaBot 
 
 from Panda.Config import Config
 from Panda.core.logger import logging
@@ -27,7 +27,7 @@ from .botdata import (
     progress_str,
     unban_user_from_bot,
 )
-
+pandaub = PandaBot
 LOGS = logging.getLogger(__name__)
 
 plugin_category = "modules"
@@ -38,7 +38,7 @@ cmhd = Config.COMMAND_HAND_LER
 
 
 
-@pandaub.bot_cmd(
+@PandaBot.bot_cmd(
     pattern=f"^/broadcast$",
     from_users=Config.OWNER_ID,
 )
@@ -96,7 +96,7 @@ async def bot_broadcast(event):
     await br_cast.edit(b_info, parse_mode="html")
 
 
-@pandaub.ilhammansiz_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern=f"bot_users$",
     command=("bot_users", plugin_category),
     info={
@@ -116,7 +116,7 @@ async def ban_starters(event):
     await edit_or_reply(event, msg)
 
 
-@pandaub.bot_cmd(
+@PandaBot.bot_cmd(
     pattern=f"^/ban\s+(.*)",
     from_users=Config.OWNER_ID,
 )
@@ -151,7 +151,7 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@pandaub.bot_cmd(
+@PandaBot.bot_cmd(
     pattern=f"^/unban(?: |$)(.*)",
     from_users=Config.OWNER_ID,
 )
@@ -178,7 +178,7 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@pandaub.ilhammansiz_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern=f"bblist$",
     command=("bblist", plugin_category),
     info={
@@ -198,7 +198,7 @@ async def ban_starters(event):
     await edit_or_reply(event, msg)
 
 
-@pandaub.ilhammansiz_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern=f"bot_antif (on|off)$",
     command=("bot_antif", plugin_category),
     info={
