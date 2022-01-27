@@ -1,7 +1,10 @@
-# ILHAM MANSIEZ
+# from https://github.com/sandy1709/catuserbot
+# Recode by ILHAM MANSIEZ
 # PANDA USERBOT
 # TENTANG AKU DAN DIA
-# copyright cat userbot
+
+
+
 import re
 from collections import defaultdict
 from datetime import datetime
@@ -84,7 +87,7 @@ async def bot_start(event):
         start_msg = f"Hey 🙋 {_format.mentionuser(chat.first_name , chat.id)},\
                     \nSaya {_format.mentionuser(user.first_name , user.id)}' Assistant_bot.\
                     \nKamu Bisa Setting saya disini dan Daftar menu perintah Saya sebagai Asistantmu.\
-                    \n\nPowered by @TEAMSquadUserbotSupport"
+                    \n\nPowered by @PandaUserbot"
         buttons = [
             (
                 Button.inline("🌀 INFO 🌀", data="menubot"),
@@ -98,13 +101,13 @@ async def bot_start(event):
         start_msg = f"Hey 🙋 {_format.mentionuser(chat.first_name , chat.id)},\
                     \nSaya {_format.mentionuser(user.first_name , user.id)}' Assistant_bot.\
                     \nKamu Bisa Setting saya disini dan Daftar menu perintah Saya sebagai Asistantmu.\
-                    \n\nPowered by @TEAMSquadUserbotSupport"
+                    \n\nPowered by @PandaUserbot"
         buttons = [
             (
                 Button.inline("🌀 INFO 🌀", data="menubot"),
                 Button.url(
                     "Deploy",
-                    "https://heroku.com/deploy?template=https://github.com/IlhamMansiz/PandaPack",
+                    "https://t.me/PandaUserbot/13",
                 ),
             )
         ]
