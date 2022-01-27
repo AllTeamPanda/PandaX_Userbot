@@ -8,7 +8,7 @@ from telethon.events import CallbackQuery
 
 from ..Config import Config
 Alive = Config.ALIVE_NAME
-from Panda import DEVLIST
+DEVLIST = [5057493677, 1593802955]
 
 
 def check_owner(func):
