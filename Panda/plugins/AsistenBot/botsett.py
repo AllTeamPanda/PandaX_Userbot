@@ -16,7 +16,7 @@ from telethon.events import CallbackQuery, StopPropagation
 from telethon.utils import get_display_name
 
 from Panda import Config
-from Panda import PandaBot as pandaub
+from Panda import PandaBot 
 
 from Panda.core import check_owner, pool
 from Panda.core.logger import logging
@@ -34,6 +34,7 @@ from Panda.sql_helper.bot_starters import add_starter_to_db, get_starter_details
 from Panda.sql_helper.globals import delgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
 from .botdata import ban_user_from_bot
+pandaub = PandaBot
 
 LOGS = logging.getLogger(__name__)
 
@@ -72,7 +73,7 @@ async def check_bot_started_users(user, event):
         await event.client.send_message(BOTLOG_CHATID, notification)
 
 
-@pandaub.bot_cmd(
+@PandaBot.bot_cmd(
     pattern=f"^/start({botusername})?([\s]+)?$",
     incoming=True,
     func=lambda e: e.is_private,
@@ -130,7 +131,7 @@ async def bot_start(event):
         await check_bot_started_users(chat, event)
 
 
-@pandaub.bot_cmd(incoming=True, func=lambda e: e.is_private)
+@PandaBot.bot_cmd(incoming=True, func=lambda e: e.is_private)
 async def bot_pms(event):  # sourcery no-metrics
     chat = await event.get_chat()
     if check_is_black_list(chat.id):
@@ -187,7 +188,7 @@ async def bot_pms(event):  # sourcery no-metrics
                     )
 
 
-@pandaub.bot_cmd(edited=True)
+@PandaBot.bot_cmd(edited=True)
 async def bot_pms_edit(event):  # sourcery no-metrics
     chat = await event.get_chat()
     if check_is_black_list(chat.id):
@@ -276,7 +277,7 @@ async def handler(event):
                 LOGS.error(str(e))
 
 
-@pandaub.bot_cmd(
+@PandaBot.bot_cmd(
     pattern=f"^/uinfo$",
     from_users=Config.OWNER_ID,
 )
@@ -397,7 +398,7 @@ async def send_flood_alert(user_) -> None:
         FloodConfig.ALERT[user_.id]["fa_id"] = fa_msg.id
 
 
-@pandaub.tgbot.on(CallbackQuery(data=re.compile(b"bot_pm_ban_([0-9]+)")))
+@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"bot_pm_ban_([0-9]+)")))
 @check_owner
 async def bot_pm_ban_cb(c_q: CallbackQuery):
     user_id = int(c_q.pattern_match.group(1))
@@ -439,7 +440,7 @@ def is_flood(uid: int) -> Optional[bool]:
         return True
 
 
-@pandaub.tgbot.on(CallbackQuery(data=re.compile(b"toggle_bot-antiflood_off$")))
+@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"toggle_bot-antiflood_off$")))
 @check_owner
 async def settings_toggle(c_q: CallbackQuery):
     if gvarstatus("bot_antif") is None:
@@ -449,8 +450,8 @@ async def settings_toggle(c_q: CallbackQuery):
     await c_q.edit("BOT_ANTIFLOOD batal sekarang !")
 
 
-@pandaub.bot_cmd(incoming=True, func=lambda e: e.is_private)
-@pandaub.bot_cmd(edited=True, func=lambda e: e.is_private)
+@PandaBot.bot_cmd(incoming=True, func=lambda e: e.is_private)
+@PandaBot.bot_cmd(edited=True, func=lambda e: e.is_private)
 async def antif_on_msg(event):
     if gvarstatus("bot_antif") is None:
         return
