@@ -205,10 +205,15 @@ async def do_pm_enquire_action(event, chat):
     except AttributeError:
         PMMESSAGE_CACHE = {}
     if str(chat.id) not in PM_WARNS:
-        text = """__Hey! Have some patience. My master has not seen your message yet. \
-My master usually responds to people, though idk about some exceptional users.__
-__My master will respond when he/she comes online, if he/she wants to.__
-**Please do not spam unless you wish to be blocked and reported.**"""
+        text = f"""╔════════════════════╗\n
+                     ✅ 𝗡𝗢 𝗦𝗣𝗔𝗠 𝗣𝗟𝗘𝗔𝗦𝗘 ✅\n
+                   ╚════════════════════╝\n
+                   • Saya belum menyetujui anda untuk PM.\n
+                   • Tunggu sampai saya menyetujui PM anda.\n
+                   • Jangan Spam Chat atau anda akan otomatis diblokir.\n
+                   ╔════════════════════╗\n
+                     𝗣𝗲𝘀𝗮𝗻 𝗢𝘁𝗼𝗺𝗮𝘁𝗶𝘀 𝗕𝘆 -𝗨𝘀𝗲𝗿𝗕𝗼𝘁\n
+                   ╚════════════════════╝\n"""
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
         sql.del_collection("pmwarns")
