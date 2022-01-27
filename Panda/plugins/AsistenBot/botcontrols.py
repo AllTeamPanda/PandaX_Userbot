@@ -1,6 +1,10 @@
-# ILHAM MANSIEZ
-# PANDA USERBOT
-# from cat userbot
+
+# From https://github.com/sandy1709/catuserbot
+#recode by ilham mansiz
+#Panda Userbot
+
+
+
 import asyncio
 from datetime import datetime
 
