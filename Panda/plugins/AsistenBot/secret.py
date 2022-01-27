@@ -1,16 +1,16 @@
 # ILHAM MANSIEZ
 # PANDA USERBOT
-#from cat userbot
+
 import json
 import os
 import re
 
 from telethon.events import CallbackQuery
 
-from Panda import PandaBot as pandaub
+from Panda import PandaBot 
+pandaub = PandaBot
 
-
-@pandaub.tgbot.on(CallbackQuery(data=re.compile(b"secret_(.*)")))
+@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"secret_(.*)")))
 async def on_plug_in_callback_query_handler(event):
     timestamp = int(event.pattern_match.group(1).decode("UTF-8"))
     if os.path.exists("./Panda/secrets.txt"):
