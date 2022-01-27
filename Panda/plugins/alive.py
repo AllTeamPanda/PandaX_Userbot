@@ -26,8 +26,6 @@ ilhammansizzz = "https://github.com/ilhammansiz/PandaX_Userbot"
 support = "https://t.me/TEAMSquadUserbotSupport"
 SUDO = gvarstatus("sudoenable")
 SUDOuser = _sudousers_list()
-User = gvarstatus("NAME")
-Bot = gvarstatus("USERBOT")
 
 LOGO = Config.ALIVE_PIC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/5650f059f41e278937f35.jpg"
 
