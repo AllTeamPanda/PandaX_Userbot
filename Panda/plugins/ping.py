@@ -2,7 +2,7 @@ import asyncio
 from datetime import datetime
 
 from Panda import pandaub
-
+from . import mention
 from ..core.managers import edit_or_reply
 
 plugin_category = "plugins"
@@ -40,5 +40,5 @@ async def _(event):
         await pandaevent.edit(
             f"┏━《 **𝗣 𝗔 𝗡 𝗗 𝗔** 》━\n"
             f"┣➠  __Ping:__ `{ms} ms`\n"
-            f"┗➠ 𝗣 𝗔 𝗡 𝗗 𝗔 𝗨𝗦𝗘𝗥𝗕𝗢𝗧 "
+            f"┗➠ 𝗢𝘄𝗻𝗲𝗿𝘀: {mention} "
         )
