@@ -1,6 +1,7 @@
-# Ilham mansiez
+
+# from https://github.com/sandy1709/catuserbot
+# recode by Ilham mansiez
 # Panda Userbot
-#from CatUserbot
 
 import json
 import math
