@@ -1,6 +1,7 @@
-# ILHAM MANSIEZ
+# from https://github.com/sandy1709/catuserbot
+# recode by ilham mansiz
 # PANDA USERBOT
-# from catuserbot
+
 
 from datetime import datetime
 from math import floor
