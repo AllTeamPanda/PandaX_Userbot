@@ -1,7 +1,6 @@
 
 import random
 from Panda.events import register
-from Panda.Config import Config
 import asyncio
 
 pengguna = [
