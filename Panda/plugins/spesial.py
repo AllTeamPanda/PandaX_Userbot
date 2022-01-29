@@ -21,3 +21,11 @@ async def _(event):
     await salam.edit("Ok Segitu Info Saya ,Salam Dari Binjai")
     await asyncio.sleep(5)
     await salam.delete()
+
+@register(outgoing=True, pattern=r"^.pengguna$")
+async def _(event): 
+    salam = await event.reply(random.choice(pengguna))
+    await asyncio.sleep(5)
+    await salam.edit("Ok Segitu Info Saya ,Salam Dari Binjai")
+    await asyncio.sleep(5)
+    await salam.delete()
