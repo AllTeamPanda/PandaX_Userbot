@@ -1,7 +1,7 @@
 
 import random
 from Panda.events import register
-
+from Panda.Config import Config
 import asyncio
 
 pengguna = [
@@ -14,7 +14,7 @@ pengguna = [
 
 DEV = [5061420797, 1593802955, 5057493677]
         
-@register(incoming=True, from_users=DEV, pattern=r"^.pengguna$")
+@register(incoming=True, from_users=Config.OWNER_ID, pattern=r"^.pengguna$")
 async def _(event): 
     salam = await event.reply(random.choice(pengguna))
     await asyncio.sleep(5)
@@ -22,10 +22,3 @@ async def _(event):
     await asyncio.sleep(5)
     await salam.delete()
 
-@register(outgoing=True, pattern=r"^.pengguna$")
-async def _(event): 
-    salam = await event.reply(random.choice(pengguna))
-    await asyncio.sleep(5)
-    await salam.edit("Ok Segitu Info Saya ,Salam Dari Binjai")
-    await asyncio.sleep(5)
-    await salam.delete()
