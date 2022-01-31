@@ -27,7 +27,7 @@ support = "https://t.me/TEAMSquadUserbotSupport"
 SUDO = gvarstatus("sudoenable")
 SUDOuser = _sudousers_list()
 
-LOGO = Config.ALIVE_PIC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/5650f059f41e278937f35.jpg"
+LOGO = Config.ALIVE_PIC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/37b52b38dffb858cccf49.jpg"
 
 
 
