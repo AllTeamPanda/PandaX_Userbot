@@ -19,7 +19,7 @@ DEFAULTUSER = str(Config.ALIVE_NAME) if Config.ALIVE_NAME else uname().node
 # ============================================
 EMOJI = gvarstatus("EMOJI") or "🎨"
 NAME = gvarstatus("NAME") or DEFAULTUSER
-from git import Repo
+
 plugin_category = "plugins"
 
 ilhammansizzz = "https://github.com/ilhammansiz/PandaX_Userbot"
@@ -29,8 +29,6 @@ SUDOuser = _sudousers_list()
 
 LOGO = Config.ALIVE_PIC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/37b52b38dffb858cccf49.jpg"
 
-repo = Repo()
-branch = repo.active_branch.name
 
 
 @pandaub.ilhammansiz_cmd(
@@ -58,8 +56,8 @@ async def redis(alive):
         f"┣||✍ `Telethon:` {version.__version__}\n"
         f"┣||🐍 `Python:` {python_version()}\n"
         f"┣||👾 `Pytgcalls:` {__version__}\n"
-        f"┣||⏳ `Branch:` {branch}\n"
-        f"┣||🚀 `Bot Version:` {pandaversion}@{branch}\n"
+        f"┣||⏳ `Branch:` PandaUserbot\n"
+        f"┣||🚀 `Bot Version:` {pandaversion}@PandaUserbot\n"
         f"┣||✅ `Sudo:` {SUDO}\n"
         f"┣||👥 `ID Sudo:` {SUDOuser}\n"
         f"┗━━━━━━━━━━━━━━━━━ \n")
