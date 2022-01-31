@@ -12,7 +12,7 @@ mengelola grup secara efisien dan mengotomatiskan beberapa hal yang membosankan.
 Gunakan bot ini dengan risiko Anda
 ```
 ## TUTORIAL DEPLOY Klik Disini👇🏻👇🏻
-![TUTORIAL](https://t.me/UserbotTEAM_Tutorial/25)
+[TUTORIAL](https://t.me/UserbotTEAM_Tutorial/25)
  
 <img src="https://media.giphy.com/media/7LM3Nd9MvnWFO/giphy.gif">
 
