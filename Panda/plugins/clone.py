@@ -18,7 +18,7 @@ from . import (
 
 plugin_category = "plugins"
 DEFAULTUSER = str(AUTONAME) if AUTONAME else str(ALIVE_NAME)
-DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "PandaUserbot By Ilham mansiez"
+DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else ""
 
 
 @pandaub.ilhammansiz_cmd(
