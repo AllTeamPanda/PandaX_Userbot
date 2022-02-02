@@ -17,6 +17,7 @@ from Panda.Config import Config
 from PandaXBahasa import get_string
 plugin_category = "modules"
 
+
 def get_msg_button(texts: str):
     btn = []
     for z in re.findall("\\[(.*?)\\|(.*?)\\]", texts):
