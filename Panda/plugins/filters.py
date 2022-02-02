@@ -1,3 +1,6 @@
+# Copyright (C) 2021-2022 TeamUltroid
+# Recode by Ilham Mansiz
+
 import os
 import re
 
