@@ -16,7 +16,7 @@ from telethon.tl.types import Message
 from Panda.Config import Config
 from PandaXBahasa import get_string
 plugin_category = "modules"
-
+from Panda.events import register
 
 def get_msg_button(texts: str):
     btn = []
@@ -97,6 +97,7 @@ async def something(e, msg, media, button, reply=True, chat=None):
         "usage": "{tr}addfilter <word><reply to a message>",
     },
 )
+@register(outgoing=True, pattern=r"^.addfilter (.*)")
 async def af(e):
     wrd = (e.pattern_match.group(1)).lower()
     wt = await e.get_reply_message()
@@ -143,6 +144,8 @@ async def af(e):
         "usage": "{tr}remfilters",
     },
 )
+
+@register(outgoing=True, pattern=r"^.remfilters (.*)")
 async def rf(e):
     wrd = (e.pattern_match.group(1)).lower()
     chat = e.chat_id
@@ -160,6 +163,7 @@ async def rf(e):
         "usage": "{tr}listfilter <keyword>",
     },
 )
+@register(outgoing=True, pattern=r"^.listfilter (.*)")
 async def lsnote(e):
     x = list_filter(e.chat_id)
     if x:
