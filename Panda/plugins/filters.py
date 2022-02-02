@@ -3,20 +3,14 @@ import re
 
 from telethon import Button, events
 
-from traceback import format_exc
-import json
-import math
-import aiohttp
 from telegraph import upload_file as uf
 from telethon.tl.types import User
 from telethon.utils import pack_bot_file_id
 from Panda.utils.tools import mediainfo
 from ..sql_helper.globals import add_filter, get_filter, list_filter, rem_filter, gvarstatus
 from Panda import PandaBot
-from telethon.tl.types import InputWebDocument, Message
-from telethon.utils import resolve_bot_file_id
+from telethon.tl.types import Message
 from Panda.Config import Config
-from Panda.utils.vceor import eor, eod
 from PandaXBahasa import get_string
 plugin_category = "modules"
 
