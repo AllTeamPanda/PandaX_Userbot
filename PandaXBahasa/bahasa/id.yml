@@ -191,3 +191,13 @@ wrd_3: "**Kata** - `{}`\n\n**Antonim** - \n"
 ast_1: "pilih api key yang ingin anda setel."
 ast_2: "**remove.bg API**\nMasukkan API key Anda dari remove.bg.\n\nGunakan /cancel untuk membatalkan."
 ast_3: "Assalamualaikum, {} silahkan telusuri opsi berikut:"
+
+
+# filter
+flr_1: "`Masukan keyword perintah ini untuk ditetapkan sebagai filter dan balas...`"
+flr_2: "Daftar Filter Yang Aktif Disini adalah\n\n"
+flr_3: "`Berikan filter untuk dihapus..`"
+flr_4: "**Berhasil Menyimpan Filter** `{}`"
+flr_5: "**Berhasil Menghapus Filter** `{}`"
+flr_6: "Tidak Ada Filter Apapun Disini"
+
