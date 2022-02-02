@@ -25,7 +25,7 @@ plugin_category = "modules"
             "{tr}f <action>",
             "{tr}f",
         ],
-        "examples": "{tr}scam photo 300",
+        "examples": "{tr}f photo 300",
         "actions": [
             "typing",
             "contact",
