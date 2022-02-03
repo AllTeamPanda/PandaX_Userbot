@@ -222,7 +222,7 @@ async def _(event):
         await edit_delete(mone, str(e), parse_mode=_format.parse_pre)
 
 
-@catub.cat_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern="mvto(?:\s|$)([\s\S]*)",
     command=("mvto", plugin_category),
     info={
