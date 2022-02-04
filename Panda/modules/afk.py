@@ -120,9 +120,7 @@ async def on_afk(event):  # sourcery no-metrics
                     f"└└ Alasan: {AFK_.reason}"
                 )
             else:
-                message_to_reply = f"I am AFK .\n\n"
-                                   f"AFK Since {endtime}\n"
-                                   f"Reason : Not Mentioned ( ಠ ʖ̯ ಠ)"
+                message_to_reply = f"I am AFK .\n\nAFK Since {endtime}\nReason : Not Mentioned ( ಠ ʖ̯ ಠ)"
             if event.chat_id:
                 msg = await event.reply(message_to_reply, file=AFK_.media_afk.media)
         elif AFK_.afk_type == "text":
