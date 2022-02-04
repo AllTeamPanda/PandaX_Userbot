@@ -1,20 +1,172 @@
+# Copyright (C) 2021-2022 TeamUltroid
+#
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# PLease read the GNU Affero General Public License in
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+# Recode ilhammansiz
+
 import asyncio
 import os
 import random
-from urllib.parse import quote_plus
-
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-
-from ..Config import Config
-from . import deEmojify, edit_or_reply, pandaub
-
+from carbonnow import Carbon
+from Panda.utils.tools import inline_mention
+from Panda.utils.vceor import eor, eod
+from Panda import PandaBot
 plugin_category = "plugins"
 
-CARBONLANG = "auto"
+all_col = [
+    "Black",
+    "Navy",
+    "DarkBlue",
+    "MediumBlue",
+    "Blue",
+    "DarkGreen",
+    "Green",
+    "Teal",
+    "DarkCyan",
+    "DeepSkyBlue",
+    "DarkTurquoise",
+    "MediumSpringGreen",
+    "Lime",
+    "SpringGreen",
+    "Aqua",
+    "Cyan",
+    "MidnightBlue",
+    "DodgerBlue",
+    "LightSeaGreen",
+    "ForestGreen",
+    "SeaGreen",
+    "DarkSlateGray",
+    "DarkSlateGrey",
+    "LimeGreen",
+    "MediumSeaGreen",
+    "Turquoise",
+    "RoyalBlue",
+    "SteelBlue",
+    "DarkSlateBlue",
+    "MediumTurquoise",
+    "Indigo  ",
+    "DarkOliveGreen",
+    "CadetBlue",
+    "CornflowerBlue",
+    "RebeccaPurple",
+    "MediumAquaMarine",
+    "DimGray",
+    "DimGrey",
+    "SlateBlue",
+    "OliveDrab",
+    "SlateGray",
+    "SlateGrey",
+    "LightSlateGray",
+    "LightSlateGrey",
+    "MediumSlateBlue",
+    "LawnGreen",
+    "Chartreuse",
+    "Aquamarine",
+    "Maroon",
+    "Purple",
+    "Olive",
+    "Gray",
+    "Grey",
+    "SkyBlue",
+    "LightSkyBlue",
+    "BlueViolet",
+    "DarkRed",
+    "DarkMagenta",
+    "SaddleBrown",
+    "DarkSeaGreen",
+    "LightGreen",
+    "MediumPurple",
+    "DarkViolet",
+    "PaleGreen",
+    "DarkOrchid",
+    "YellowGreen",
+    "Sienna",
+    "Brown",
+    "DarkGray",
+    "DarkGrey",
+    "LightBlue",
+    "GreenYellow",
+    "PaleTurquoise",
+    "LightSteelBlue",
+    "PowderBlue",
+    "FireBrick",
+    "DarkGoldenRod",
+    "MediumOrchid",
+    "RosyBrown",
+    "DarkKhaki",
+    "Silver",
+    "MediumVioletRed",
+    "IndianRed ",
+    "Peru",
+    "Chocolate",
+    "Tan",
+    "LightGray",
+    "LightGrey",
+    "Thistle",
+    "Orchid",
+    "GoldenRod",
+    "PaleVioletRed",
+    "Crimson",
+    "Gainsboro",
+    "Plum",
+    "BurlyWood",
+    "LightCyan",
+    "Lavender",
+    "DarkSalmon",
+    "Violet",
+    "PaleGoldenRod",
+    "LightCoral",
+    "Khaki",
+    "AliceBlue",
+    "HoneyDew",
+    "Azure",
+    "SandyBrown",
+    "Wheat",
+    "Beige",
+    "WhiteSmoke",
+    "MintCream",
+    "GhostWhite",
+    "Salmon",
+    "AntiqueWhite",
+    "Linen",
+    "LightGoldenRodYellow",
+    "OldLace",
+    "Red",
+    "Fuchsia",
+    "Magenta",
+    "DeepPink",
+    "OrangeRed",
+    "Tomato",
+    "HotPink",
+    "Coral",
+    "DarkOrange",
+    "LightSalmon",
+    "Orange",
+    "LightPink",
+    "Pink",
+    "Gold",
+    "PeachPuff",
+    "NavajoWhite",
+    "Moccasin",
+    "Bisque",
+    "MistyRose",
+    "BlanchedAlmond",
+    "PapayaWhip",
+    "LavenderBlush",
+    "SeaShell",
+    "Cornsilk",
+    "LemonChiffon",
+    "FloralWhite",
+    "Snow",
+    "Yellow",
+    "LightYellow",
+    "Ivory",
+    "White",
+]
 
 
-@pandaub.ilhammansiz_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern="carbon(?: |$)(.*)",
     command=("carbon", plugin_category),
     info={
@@ -25,534 +177,67 @@ CARBONLANG = "auto"
         ],
     },
 )
-async def carbon_api(event):
-    """A Wrapper for carbon.now.sh"""
-    await event.edit("`Processing..`")
-    CARBON = "https://carbon.now.sh/?l={lang}&code={code}"
-    textx = await event.get_reply_message()
-    pcode = event.text
-    if pcode[8:]:
-        pcode = str(pcode[8:])
-    elif textx:
-        pcode = str(textx.message)
-    pcode = deEmojify(pcode)
-    code = quote_plus(pcode)
-    panda = await edit_or_reply(event, "`Carbonizing...\n25%`")
-    url = CARBON.format(code=code, lang=CARBONLANG)
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.binary_location = Config.CHROME_BIN
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
-    prefs = {"download.default_directory": "./"}
-    chrome_options.add_experimental_option("prefs", prefs)
-    driver = webdriver.Chrome(
-        executable_path=Config.CHROME_DRIVER, options=chrome_options
-    )
-    driver.get(url)
-    await panda.edit("`Be Patient...\n50%`")
-    download_path = "./"
-    driver.command_executor._commands["send_command"] = (
-        "POST",
-        "/session/$sessionId/chromium/send_command",
-    )
-    params = {
-        "cmd": "Page.setDownloadBehavior",
-        "params": {"behavior": "allow", "downloadPath": download_path},
-    }
-    driver.execute("send_command", params)
-    driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
-
-    await panda.edit("`Processing..\n75%`")
-
-    await asyncio.sleep(2)
-    await panda.edit("`Done Dana Done...\n100%`")
-    file = "./carbon.png"
-    await panda.edit("`Uploading..`")
-    await event.client.send_file(
-        event.chat_id,
-        file,
-        caption="Here's your carbon",
-        force_document=True,
-        reply_to=event.message.reply_to_msg_id,
-    )
-    os.remove("./carbon.png")
-    driver.quit()
-
-    await panda.delete()
-
-
-@pandaub.ilhammansiz_cmd(
-    pattern="krb(?: |$)(.*)",
-    command=("krb", plugin_category),
-    info={
-        "header": "Carbon generators for given text. each time gives  random style. You can also use patcicular style by using semicolon after text and name",
-        "usage": [
-            "{tr}krb <text>",
-            "{tr}krb <reply to text>",
-            "{tr}krb <text> ; <style name>",
-        ],
-    },
-)
-async def carbon_api(event):
-    """A Wrapper for carbon.now.sh"""
-    panda = await edit_or_reply(event, "`Processing....`")
-    CARBON = "https://carbon.now.sh/?l={lang}&code={code}"
-    textx = await event.get_reply_message()
-    pcode = event.text
-    if pcode[5:]:
-        pcodee = str(pcode[5:])
-        if ";" in pcodee:
-            pcode, skeme = pcodee.split(";")
+async def crbn(event):
+    xxxx = await event.eor("Memproses...")
+    te = event.text
+    col = random.choice(all_col) if te[1] == "r" else "White"
+    if event.reply_to_msg_id:
+        temp = await event.get_reply_message()
+        if temp.media:
+            b = await event.client.download_media(temp)
+            with open(b) as a:
+                code = a.read()
+            os.remove(b)
         else:
-            pcode = pcodee
-            skeme = None
-    elif textx:
-        pcode = str(textx.message)
-        skeme = None
-    pcode = pcode.strip()
-    skeme = skeme.strip()
-    pcode = deEmojify(pcode)
-    code = quote_plus(pcode)
-    await panda.edit("`Meking Carbon...`\n`25%`")
-    url = CARBON.format(code=code, lang=CARBONLANG)
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.binary_location = Config.CHROME_BIN
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
-    prefs = {"download.default_directory": "./"}
-    chrome_options.add_experimental_option("prefs", prefs)
-    driver = webdriver.Chrome(
-        executable_path=Config.CHROME_DRIVER, options=chrome_options
-    )
-    driver.get(url)
-    await panda.edit("`Be Patient...\n50%`")
-    download_path = "./"
-    driver.command_executor._commands["send_command"] = (
-        "POST",
-        "/session/$sessionId/chromium/send_command",
-    )
-    params = {
-        "cmd": "Page.setDownloadBehavior",
-        "params": {"behavior": "allow", "downloadPath": download_path},
-    }
-    driver.execute("send_command", params)
-    driver.find_element_by_xpath(
-        "/html/body/div[1]/main/div[3]/div[2]/div[1]/div[1]/div/span[2]"
-    ).click()
-    if skeme is not None:
-        k_skeme = driver.find_element_by_xpath(
-            "/html/body/div[1]/main/div[3]/div[2]/div[1]/div[1]/div/span[2]/input"
-        )
-        k_skeme.send_keys(skeme)
-        k_skeme.send_keys(Keys.DOWN)
-        k_skeme.send_keys(Keys.ENTER)
+            code = temp.message
     else:
-        color_scheme = str(random.randint(1, 29))
-        driver.find_element_by_id(("downshift-0-item-" + color_scheme)).click()
-    driver.find_element_by_id("export-menu").click()
-    driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
-    driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
-    await panda.edit("`Processing..\n75%`")
-
-    await asyncio.sleep(2.5)
-    color_name = driver.find_element_by_xpath(
-        "/html/body/div[1]/main/div[3]/div[2]/div[1]/div[1]/div/span[2]/input"
-    ).get_attribute("value")
-    await panda.edit("`Done Dana Done...\n100%`")
-    file = "./carbon.png"
-    await panda.edit("`Uploading..`")
-    await event.client.send_file(
-        event.chat_id,
-        file,
-        caption=f"`Here's your carbon!` \n**Colour Scheme: **`{color_name}`",
-        force_document=True,
-        reply_to=event.message.reply_to_msg_id,
+        try:
+            code = event.text.split(" ", maxsplit=1)[1]
+        except IndexError:
+            return await eor(xxxx, "Sedang Mencari...")
+    xx = await Carbon(code=code, file_name="panda_carbon", backgroundColor=col)
+    await xxxx.delete()
+    await event.reply(
+        f"Carbonised by {inline_mention(event.sender)}",
+        file=xx,
     )
-    os.remove("./carbon.png")
-    driver.quit()
-    await panda.delete()
 
 
-@pandaub.ilhammansiz_cmd(
-    pattern="kar1(?: |$)(.*)",
-    command=("kar1", plugin_category),
+@PandaBot.ilhammansiz_cmd(
+    pattern="ccarbon(?: |$)(.*)",
+    command=("ccarbon", plugin_category),
     info={
         "header": "Carbon generators for given text (Fixed style)",
         "usage": [
-            "{tr}kar1 <text>",
-            "{tr}kar1 <reply to text>",
+            "{tr}ccarbon <text>",
+            "{tr}ccarbon <reply to text>",
         ],
     },
 )
-async def carbon_api(event):
-    """A Wrapper for carbon.now.sh"""
-    panda = await edit_or_reply(event, "🔲🔲🔲🔲🔲")
-    CARBON = "https://carbon.now.sh/?bg=rgba(249%2C237%2C212%2C0)&t=synthwave-84&wt=none&l=application%2Fjson&ds=true&dsyoff=20px&dsblur=0px&wc=true&wa=true&pv=56px&ph=0px&ln=false&fl=1&fm=IBM%20Plex%20Mono&fs=14.5px&lh=153%25&si=false&es=4x&wm=false&code={code}"
-    textx = await event.get_reply_message()
-    pcode = event.text
-    if pcode[6:]:
-        pcode = str(pcode[6:])
-    elif textx:
-        pcode = str(textx.message)
-    code = quote_plus(pcode)
-    url = CARBON.format(code=code, lang=CARBONLANG)
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.binary_location = Config.CHROME_BIN
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
-    prefs = {"download.default_directory": "./"}
-    chrome_options.add_experimental_option("prefs", prefs)
-    await panda.edit("🔳🔳🔲🔲🔲")
-
-    driver = webdriver.Chrome(
-        executable_path=Config.CHROME_DRIVER, options=chrome_options
+async def crbn(event):
+    match = event.pattern_match.group(1)
+    if not match:
+        return await event.eor("Memproses...")
+    msg = await event.eor("Memproses...")
+    if event.reply_to_msg_id:
+        temp = await event.get_reply_message()
+        if temp.media:
+            b = await event.client.download_media(temp)
+            with open(b) as a:
+                code = a.read()
+            os.remove(b)
+        else:
+            code = temp.message
+    else:
+        try:
+            match = match.split(" ", maxsplit=1)
+            code = match[1]
+            match = match[0]
+        except IndexError:
+            return await eor(msg, "Sedang Mencari...")
+    xx = await Carbon(code=code, backgroundColor=match)
+    await msg.delete()
+    await event.reply(
+        f"Carbonised by {inline_mention(event.sender)}",
+        file=xx,
     )
-    driver.get(url)
-    download_path = "./"
-    driver.command_executor._commands["send_command"] = (
-        "POST",
-        "/session/$sessionId/chromium/send_command",
-    )
-    params = {
-        "cmd": "Page.setDownloadBehavior",
-        "params": {"behavior": "allow", "downloadPath": download_path},
-    }
-    driver.execute("send_command", params)
-
-    driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
-    await asyncio.sleep(2)
-    await panda.edit("🔳🔳🔳🔲🔲")
-    await asyncio.sleep(2)
-    await panda.edit("🔳🔳🔳🔳🔳")
-    file = "./carbon.png"
-    await panda.edit("☣️Karbon1 Completed, Uploading Karbon☣️")
-    await event.client.send_file(
-        event.chat_id,
-        file,
-        force_document=True,
-        reply_to=event.message.reply_to_msg_id,
-    )
-    os.remove("./carbon.png")
-
-    await panda.delete()
-
-
-@pandaub.ilhammansiz_cmd(
-    pattern="kar2(?: |$)(.*)",
-    command=("kar2", plugin_category),
-    info={
-        "header": "Carbon generators for given text (Fixed style)",
-        "usage": [
-            "{tr}kar2 <text>",
-            "{tr}kar2 <reply to text>",
-        ],
-    },
-)
-async def carbon_api(event):
-    """A Wrapper for carbon.now.sh"""
-    panda = await edit_or_reply(event, "📛📛📛📛📛")
-    CARBON = "https://carbon.now.sh/?bg=rgba(239%2C40%2C44%2C1)&t=one-light&wt=none&l=application%2Ftypescript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code={code}"
-    textx = await event.get_reply_message()
-    pcode = event.text
-    if pcode[6:]:
-        pcode = str(pcode[6:])
-    elif textx:
-        pcode = str(textx.message)
-    code = quote_plus(pcode)
-    url = CARBON.format(code=code, lang=CARBONLANG)
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.binary_location = Config.CHROME_BIN
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
-    prefs = {"download.default_directory": "./"}
-    chrome_options.add_experimental_option("prefs", prefs)
-    await cat.edit("🔘🔘📛📛📛")
-    driver = webdriver.Chrome(
-        executable_path=Config.CHROME_DRIVER, options=chrome_options
-    )
-    driver.get(url)
-    download_path = "./"
-    driver.command_executor._commands["send_command"] = (
-        "POST",
-        "/session/$sessionId/chromium/send_command",
-    )
-    params = {
-        "cmd": "Page.setDownloadBehavior",
-        "params": {"behavior": "allow", "downloadPath": download_path},
-    }
-    driver.execute("send_command", params)
-    driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
-    await asyncio.sleep(2)
-    await panda.edit("🔘🔘🔘📛📛")
-    await asyncio.sleep(2)
-    await panda.edit("🔘🔘🔘🔘🔘")
-    file = "./carbon.png"
-    await panda.edit("☣️Karbon2 Completed, Uploading Karbon☣️")
-    await event.client.send_file(
-        event.chat_id,
-        file,
-        caption=f"Here's your Karbon2",
-        force_document=True,
-        reply_to=event.message.reply_to_msg_id,
-    )
-
-    os.remove("./carbon.png")
-
-    await panda.delete()
-
-
-@pandaub.ilhammansiz_cmd(
-    pattern="kar3(?: |$)(.*)",
-    command=("kar3", plugin_category),
-    info={
-        "header": "Carbon generators for given text (Fixed style)",
-        "usage": [
-            "{tr}kar3 <text>",
-            "{tr}kar3 <reply to text>",
-        ],
-    },
-)
-async def carbon_api(event):
-    """A Wrapper for carbon.now.sh"""
-    panda = await edit_or_reply(event, "🎛🎛🎛🎛🎛")
-    CARBON = "https://carbon.now.sh/?bg=rgba(74%2C144%2C226%2C1)&t=material&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira%20Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code={code}"
-    textx = await event.get_reply_message()
-    pcode = event.text
-    if pcode[6:]:
-        pcode = str(pcode[6:])
-    elif textx:
-        pcode = str(textx.message)
-    code = quote_plus(pcode)
-    url = CARBON.format(code=code, lang=CARBONLANG)
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.binary_location = Config.CHROME_BIN
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
-    prefs = {"download.default_directory": "./"}
-    chrome_options.add_experimental_option("prefs", prefs)
-    await panda.edit("🔵🔵🎛🎛🎛")
-
-    driver = webdriver.Chrome(
-        executable_path=Config.CHROME_DRIVER, options=chrome_options
-    )
-    driver.get(url)
-    download_path = "./"
-    driver.command_executor._commands["send_command"] = (
-        "POST",
-        "/session/$sessionId/chromium/send_command",
-    )
-    params = {
-        "cmd": "Page.setDownloadBehavior",
-        "params": {"behavior": "allow", "downloadPath": download_path},
-    }
-    driver.execute("send_command", params)
-
-    driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
-    await asyncio.sleep(2)
-    await panda.edit("🔵🔵🔵🎛🎛")
-
-    await asyncio.sleep(2)
-
-    await panda.edit("🔵🔵🔵🔵🔵")
-    file = "./carbon.png"
-    await panda.edit("☣️Karbon3 Completed, Uploading Karbon⬆️")
-    await event.client.send_file(
-        event.chat_id,
-        file,
-        caption=f"Here's your Karbon3",
-        force_document=True,
-        reply_to=event.message.reply_to_msg_id,
-    )
-
-    os.remove("./carbon.png")
-
-    await panda.delete()
-
-
-@pandaub.ilhammansiz_cmd(
-    pattern="kar4(?: |$)(.*)",
-    command=("kar4", plugin_category),
-    info={
-        "header": "Carbon generators for given text (Fixed style)",
-        "usage": [
-            "{tr}kar4 <text>",
-            "{tr}kar4 <reply to text>",
-        ],
-    },
-)
-async def carbon_api(event):
-    """A Wrapper for carbon.now.sh"""
-    panda = await edit_or_reply(event, "🌚🌚🌚🌚🌚")
-    CARBON = "https://carbon.now.sh/?bg=rgba(29%2C40%2C104%2C1)&t=one-light&wt=none&l=application%2Ftypescript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code={code}"
-    textx = await event.get_reply_message()
-    pcode = event.text
-    if pcode[6:]:
-        pcode = str(pcode[6:])
-    elif textx:
-        pcode = str(textx.message)
-    code = quote_plus(pcode)
-    url = CARBON.format(code=code, lang=CARBONLANG)
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.binary_location = Config.CHROME_BIN
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
-    prefs = {"download.default_directory": "./"}
-    chrome_options.add_experimental_option("prefs", prefs)
-    await panda.edit("🌝🌝🌚🌚🌚")
-
-    driver = webdriver.Chrome(
-        executable_path=Config.CHROME_DRIVER, options=chrome_options
-    )
-    driver.get(url)
-    download_path = "./"
-    driver.command_executor._commands["send_command"] = (
-        "POST",
-        "/session/$sessionId/chromium/send_command",
-    )
-    params = {
-        "cmd": "Page.setDownloadBehavior",
-        "params": {"behavior": "allow", "downloadPath": download_path},
-    }
-    driver.execute("send_command", params)
-
-    driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
-    await asyncio.sleep(2)
-    await panda.edit("🌝🌝🌝🌚🌚")
-
-    await asyncio.sleep(2)
-
-    await panda.edit("🌝🌝🌝🌝🌝")
-    file = "./carbon.png"
-    await panda.edit("✅Karbon4 Completed, Uploading Karbon✅")
-    await event.client.send_file(
-        event.chat_id,
-        file,
-        caption=f"Here's your Karbon4 ",
-        force_document=True,
-        reply_to=event.message.reply_to_msg_id,
-    )
-
-    os.remove("./carbon.png")
-
-    await panda.delete()
-
-
-@pandaub.ilhammansiz_cmd(
-    pattern="kargb(?: |$)(.*)",
-    command=("kargb", plugin_category),
-    info={
-        "header": "Carbon generators for given text (random from some selected themes)",
-        "usage": [
-            "{tr}kargb <text>",
-            "{tr}kargb <reply to text>",
-        ],
-    },
-)
-async def carbon_api(event):
-    """A Wrapper for carbon.now.sh"""
-    RED = random.randint(0, 256)
-    GREEN = random.randint(0, 256)
-    BLUE = random.randint(0, 256)
-    THEME = [
-        "3024-night",
-        "a11y-dark",
-        "blackboard",
-        "base16-dark",
-        "base16-light",
-        "cobalt",
-        "dracula",
-        "duotone-dark",
-        "hopscotch",
-        "lucario",
-        "material",
-        "monokai",
-        "night-owl",
-        "nord",
-        "oceanic-next",
-        "one-light",
-        "one-dark",
-        "panda-syntax",
-        "paraiso-dark",
-        "seti",
-        "shades-of-purple",
-        "solarized",
-        "solarized%20light",
-        "synthwave-84",
-        "twilight",
-        "verminal",
-        "vscode",
-        "yeti",
-        "zenburn",
-    ]
-    CUNTHE = random.randint(0, len(THEME) - 1)
-    The = THEME[CUNTHE]
-    panda = await edit_or_reply(event, "⬜⬜⬜⬜⬜")
-    CARBON = "https://carbon.now.sh/?bg=rgba({R}%2C{G}%2C{B}%2C1)&t={T}&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira%20Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code={code}"
-    textx = await event.get_reply_message()
-    pcode = event.text
-    if pcode[7:]:
-        pcode = str(pcode[7:])
-    elif textx:
-        pcode = str(textx.message)
-    code = quote_plus(pcode)
-    url = CARBON.format(code=code, R=RED, G=GREEN, B=BLUE, T=The, lang=CARBONLANG)
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.binary_location = Config.CHROME_BIN
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
-    prefs = {"download.default_directory": "./"}
-    chrome_options.add_experimental_option("prefs", prefs)
-    await panda.edit("⬛⬛⬜⬜⬜")
-
-    driver = webdriver.Chrome(
-        executable_path=Config.CHROME_DRIVER, options=chrome_options
-    )
-    driver.get(url)
-    download_path = "./"
-    driver.command_executor._commands["send_command"] = (
-        "POST",
-        "/session/$sessionId/chromium/send_command",
-    )
-    params = {
-        "cmd": "Page.setDownloadBehavior",
-        "params": {"behavior": "allow", "downloadPath": download_path},
-    }
-    driver.execute("send_command", params)
-    driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
-    await asyncio.sleep(2)
-    await panda.edit("⬛⬛⬛⬜⬜")
-
-    await asyncio.sleep(2)
-    await panda.edit("⬛⬛⬛⬛⬛")
-    file = "./carbon.png"
-    await panda.edit("✅RGB Karbon Completed, Uploading Karbon✅")
-    await event.client.send_file(
-        event.chat_id,
-        file,
-        caption=f"Here's your karbonrgb",
-        force_document=True,
-        reply_to=event.message.reply_to_msg_id,
-    )
-    os.remove("./carbon.png")
-    await panda.delete()
