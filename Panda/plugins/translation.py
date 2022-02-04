@@ -86,7 +86,7 @@ async def translateme(trans):
         return await edit_or_reply(
             trans, "`Give a text or reply to a message to translate!`"
         )
-    TRT_LANG = gvarstatus("TRT_LANG") or "en"
+    TRT_LANG = gvarstatus("TRT_LANG") or "id"
     try:
         reply_text = await getTranslate(deEmojify(message), dest=TRT_LANG)
     except ValueError:
