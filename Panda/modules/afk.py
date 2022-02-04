@@ -139,9 +139,7 @@ async def on_afk(event):  # sourcery no-metrics
                     f"└└ Alasan: {AFK_.reason}"
                 )
             else:
-                message_to_reply = f"┌ SAYA AFK\n"
-                                   f"│├ {mention} Sedang AFK\n"
-                                   f"└└ Alasan : Not Mentioned ( ಠ ʖ̯ ಠ)"
+                message_to_reply = f"┌ SAYA AFK\n│├ Sedang AFK\n└└ Alasan : Not Mentioned ( ಠ ʖ̯ ಠ)"
             if event.chat_id:
                 msg = await event.reply(message_to_reply)
         if event.chat_id in AFK_.last_afk_message:
