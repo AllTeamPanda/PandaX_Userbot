@@ -177,9 +177,10 @@ all_col = [
     },
 )
 async def crbn(event):
+    from_user = inline_mention(event.sender)
     xxxx = await edit_or_reply(event, "`Processing...`")
     te = event.text
-    col = random.choice(all_col) if te[1] == "r" else "White"
+    col = random.choice(all_col) if te[1] == "r" else None
     if event.reply_to_msg_id:
         temp = await event.get_reply_message()
         if temp.media:
@@ -196,12 +197,16 @@ async def crbn(event):
             return await edit_delete(
                 xxxx, "**Balas ke pesan atau file yang dapat dibaca**", 30
             )
-    xx = await Carbon(code=code, file_name="panda_carbon", backgroundColor=col)
+    carbon = Carbon(
+        base_url="https://carbonara.vercel.app/api/cook", code=code, background=col
+    )
+    xx = await carbon.memorize("carbon_")
     await xxxx.delete()
     await event.reply(
-        f"Carbonised by {inline_mention(event.sender)}",
+        f"**Carbonised by** {from_user}",
         file=xx,
     )
+
 
 
 @PandaBot.ilhammansiz_cmd(
@@ -216,6 +221,7 @@ async def crbn(event):
     },
 )
 async def crbn(event):
+    from_user = inline_mention(event.sender)
     match = event.pattern_match.group(1)
     if not match:
         return await edit_or_reply(
@@ -237,12 +243,18 @@ async def crbn(event):
             code = match[1]
             match = match[0]
         except IndexError:
-            return edit_delete(
+            return await edit_delete(
                 msg, "**Balas pesan atau file yang dapat dibaca**", 30
             )
-    xx = await Carbon(code=code, backgroundColor=match)
+    carbon = Carbon(
+        base_url="https://carbonara.vercel.app/api/cook", code=code, background=match
+    )
+    try:
+        xx = await carbon.memorize("carbon_")
+    except Exception as er:
+        return await msg.edit(str(er))
     await msg.delete()
     await event.reply(
-        f"Carbonised by {inline_mention(event.sender)}",
+        f"**Carbonised by** {from_user}",
         file=xx,
     )
