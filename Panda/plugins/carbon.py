@@ -5,12 +5,11 @@
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 # Recode ilhammansiz
 
-import asyncio
 import os
 import random
 from carbonnow import Carbon
 from Panda.utils.tools import inline_mention
-from Panda.utils.vceor import eor, eod
+from Panda.utils.vceor import eor
 from Panda import PandaBot
 plugin_category = "plugins"
 
