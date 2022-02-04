@@ -9,7 +9,7 @@ import os
 import random
 from carbonnow import Carbon
 from Panda.utils.tools import inline_mention
-from Panda.utils.vceor import eor
+from ..core.managers import edit_delete, edit_or_reply
 from Panda import PandaBot
 plugin_category = "plugins"
 
@@ -177,7 +177,7 @@ all_col = [
     },
 )
 async def crbn(event):
-    xxxx = await event.eor("Memproses...")
+    xxxx = await edit_or_reply(event, "`Processing...`")
     te = event.text
     col = random.choice(all_col) if te[1] == "r" else "White"
     if event.reply_to_msg_id:
@@ -193,7 +193,9 @@ async def crbn(event):
         try:
             code = event.text.split(" ", maxsplit=1)[1]
         except IndexError:
-            return await eor(xxxx, "Sedang Mencari...")
+            return await edit_delete(
+                xxxx, "**Balas ke pesan atau file yang dapat dibaca**", 30
+            )
     xx = await Carbon(code=code, file_name="panda_carbon", backgroundColor=col)
     await xxxx.delete()
     await event.reply(
@@ -216,8 +218,10 @@ async def crbn(event):
 async def crbn(event):
     match = event.pattern_match.group(1)
     if not match:
-        return await event.eor("Memproses...")
-    msg = await event.eor("Memproses...")
+        return await edit_or_reply(
+            event, "**Berikan Warna Custom untuk Membuat Carbon**"
+        )
+    msg = await edit_or_reply(event, "`Processing...`")
     if event.reply_to_msg_id:
         temp = await event.get_reply_message()
         if temp.media:
@@ -233,7 +237,9 @@ async def crbn(event):
             code = match[1]
             match = match[0]
         except IndexError:
-            return await eor(msg, "Sedang Mencari...")
+            return edit_delete(
+                msg, "**Balas pesan atau file yang dapat dibaca**", 30
+            )
     xx = await Carbon(code=code, backgroundColor=match)
     await msg.delete()
     await event.reply(
