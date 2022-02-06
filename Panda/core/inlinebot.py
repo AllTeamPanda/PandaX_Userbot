@@ -519,8 +519,7 @@ async def inline_handler(event):  # sourcery no-metrics
 async def on_plugin_callback_query_handler(event):
     await event.edit(
         buttons=[
-            Button.inline("❌ Hapus semua ❌", data="dara"),
-            Button.inline("MENU UTAMA", data="mainmenu"),
+            Button.inline("Menu Utama", data="mainmenu"),
         ],
     )
 
