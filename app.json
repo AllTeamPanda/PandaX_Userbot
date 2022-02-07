@@ -1,0 +1,67 @@
+{
+  "name": "Pandauserbot",
+  "description": "A simple Telegram userbot based on Telethon . Maintained by IlhamMansiez ",
+  "logo": "https://telegra.ph/file/3cfda2e8353bb1569cc79.jpg",
+    "keywords": [
+    "telegram"
+  ],
+  "repository": "https://github.com/ilhammansiz/PandaX_Userbot",
+  "website": "#TODO",
+  "success_url": "#TODO",
+  "env": {
+    "ALIVE_NAME": {
+      "description": "give your name",
+      "value": ""
+    },
+    "API_ID": {
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    },
+    "SESSION": {
+      "description": "Ambil string session TELETHON KETIKA MENGAMBIL KETIK T",
+      "value": "",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Token bot ambil di @Botfather",
+      "value": "",
+      "required": true
+    },
+    "BOT_USERNAME": {
+      "description": "Username bot di @Botfather",
+      "value": "",
+      "required": true
+    },
+    "PRIVATE_GROUP_BOT_API_ID": {
+      "description": "Buatlah grup telegram publik lalu masukan @MissRose_bot ketik /id, masukan id grup nya disini. contoh: -1001473548xxx",
+      "value": "Isi id grup",
+      "required": true
+    },
+    "HEROKU_API": {
+      "description": "Required for updating the bot and other stuff get it from https://dashboard.heroku.com/account",
+      "value": "",
+      "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "description": "YOUR app name ",
+      "value": "",
+      "required": true
+    }
+  },
+  "addons": [{
+    "plan": "heroku-postgresql",
+    "options": {
+      "version": "12"
+    }
+  }],
+    "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
