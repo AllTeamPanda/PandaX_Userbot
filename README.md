@@ -18,7 +18,7 @@ Gunakan bot ini dengan risiko Anda
 
 ## Deploy Di heroku via Web 👇🏻
 ## Jika tidak bisa dideploy via web silahkan fork 
-## Jika anda ingin fork dan mengedit file fork & ganti link githubnya di start.sh Terimakasih😘
+## Jika anda ingin fork dan mengedit file fork silahkan ganti link githubnya di start.sh Terimakasih😘
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 [![GitHub issues](https://img.shields.io/github/issues/ilhammansiz/PandaX_Userbot?&style=plastic&logo=github)](https://github.com/ilhammansiz/PandaX_Userbot/issues)
