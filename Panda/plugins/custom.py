@@ -53,6 +53,8 @@ async def custom_pandauserbot(event):
     input_str = event.pattern_match.group(1)
     if input_str == "pmpermit":
         addgvar("pmpermit_txt", text)
+    if input_str == "ALIVE_NAME":
+        addgvar("ALIVE_NAME", text)
     if input_str == "pmblock":
         addgvar("pmblock", text)
     if input_str == "pmpic":
