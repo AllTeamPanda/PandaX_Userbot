@@ -14,7 +14,7 @@ extractor = URLExtract()
 
 
 @pandaub.ilhammansiz_cmd(
-    pattern="custom (pmpermit|pmblock|pmpic)$",
+    pattern="custom (pmpermit|pmblock|pmpic|ALIVE_NAME)$",
     command=("custom", plugin_category),
     info={
         "header": "To customize your PandaUserbot.",
@@ -66,7 +66,7 @@ async def custom_pandauserbot(event):
 
 
 @pandaub.ilhammansiz_cmd(
-    pattern="delcustom (pmpermit|pmblock|pmpic)$",
+    pattern="delcustom (pmpermit|pmblock|pmpic|ALIVE_NAME)$",
     command=("delcustom", plugin_category),
     info={
         "header": "To delete costomization of your PandaUserbot.",
