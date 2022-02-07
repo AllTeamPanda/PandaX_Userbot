@@ -14,8 +14,10 @@ CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "꧁༺ Panda Userbot ༻꧂"
 from ..sql_helper.globals import gvarstatus
 from ..core.data import _sudousers_list
 
+ALIVE_NAME = gvarstatus("ALIVE_NAME") or Config.ALIVE_NAME
+
 # ================= CONSTANT =================
-DEFAULTUSER = str(Config.ALIVE_NAME) if Config.ALIVE_NAME else uname().node
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 EMOJI = gvarstatus("EMOJI") or "🎨"
 NAME = gvarstatus("NAME") or DEFAULTUSER
