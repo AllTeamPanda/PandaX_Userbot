@@ -1,3 +1,6 @@
+<img src="https://media.giphy.com/media/7LM3Nd9MvnWFO/giphy.gif">
+
+
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=ilhammansiz&label=Profile%20views&color=0e75b6&style=plastic" alt="ilhammansiz" /> </p>
 
 Panda_Userbot adalah userbot Telegram modular yang berjalan di Python3 dengan database sqlalchemy.
@@ -14,8 +17,6 @@ Gunakan bot ini dengan risiko Anda
 ## TUTORIAL DEPLOY VIA BOT TELEGRAM SIMPLE Klik Disini👇🏻👇🏻
 [TUTORIAL](https://t.me/UserbotTEAM_Tutorial/25)
  
-<img src="https://media.giphy.com/media/7LM3Nd9MvnWFO/giphy.gif">
-
 ## Deploy Di heroku via Web 👇🏻
 ## Jika tidak bisa dideploy via web silahkan fork 
 ## Jika anda ingin fork dan mengedit file fork silahkan ganti link githubnya di start.sh Terimakasih😘
