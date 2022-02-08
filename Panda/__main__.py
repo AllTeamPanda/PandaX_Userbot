@@ -4,14 +4,19 @@
 # ••••••••••••••••••••••√•••••••••••••√√√••••••••
 
 
+import glob
+import os
 import sys
+from pathlib import Path
 
+from telethon import utils
 
 import Panda
 
 from .Config import Config
 from .core.logger import logging
 from .core.session import PandaBot
+from .helpers.utils import install_pip
 from .utils import loads, buka, setup_bot, join
 
 LOGS = logging.getLogger("PandaUserbot")
@@ -19,7 +24,6 @@ LOGS = logging.getLogger("PandaUserbot")
 print(Panda.__copyright__)
 print("Licensed under the terms of the " + Panda.__license__)
 
-cmdhr = Config.COMMAND_HAND_LER
 pandaub = PandaBot
 
 ## Memulai ••••••••••√√√√√•••••••
