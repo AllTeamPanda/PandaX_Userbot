@@ -37,12 +37,12 @@ async def memulai():
     await loads("modules")
     await buka("VCPlugins")
     await buka("AsistenBot")
-    PandaBot.loop.run_until_complete(join())
-
+    
 
 print("🛠 Sedang memperoses.....")
 PandaBot.loop.run_until_complete(memulai())
 print("Berhasil Mengaktifkan Userbot")
+PandaBot.loop.run_until_complete(join())
 
 LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version 2021 [TELAH DIAKTIFKAN]")
 
