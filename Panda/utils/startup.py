@@ -5,13 +5,13 @@ from asyncio.exceptions import CancelledError
 from pathlib import Path
 
 import requests
-from telethon import types, utils
+from telethon import functions, types, utils
 
 from Panda import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 
 from ..Config import Config
 from ..core.logger import logging
-from ..core.session import PandaBot as pandaub
+from ..core.session import PandaBot 
 from ..helpers.utils import install_pip
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
@@ -19,7 +19,7 @@ from .tools import create_supergroup
 
 LOGS = logging.getLogger("PandaUserbot")
 cmdhr = Config.COMMAND_HAND_LER
-
+pandaub = PandaBot
 
 async def setup_bot():
     try:
@@ -32,7 +32,6 @@ async def setup_bot():
     except Exception as e:
         LOGS.error(f"STRING_SESSION - {str(e)}")
         sys.exit()
-
 
 
 
@@ -55,7 +54,7 @@ async def ipchange():
             pass
         return "ip change"
 
-async def load_plugins(folder):
+async def loads(folder):
     """
     To load plugins from the mentioned folder
     """
