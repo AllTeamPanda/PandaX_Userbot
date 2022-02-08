@@ -11,7 +11,6 @@ LOGS = Panda.core.logger.logging.getLogger("PandaUserbot")
 print(Panda.__copyright__)
 print("Licensed under the terms of the " + Panda.__license__)
 
-pandaub = PandaBot
 
 ## Memulai ••••••••••√√√√√•••••••
 
