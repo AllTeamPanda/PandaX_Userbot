@@ -1,3 +1,9 @@
+# Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
+# Import Panda Userbot
+# Recode by Ilham Mansiz
+# ••••••••••••••••••••••√•••••••••••••√√√••••••••
+
+
 import glob
 import os
 import sys
