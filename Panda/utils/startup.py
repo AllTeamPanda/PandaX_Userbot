@@ -5,7 +5,7 @@ from asyncio.exceptions import CancelledError
 from pathlib import Path
 
 import requests
-from telethon import functions, types, utils
+from telethon import types, utils
 
 from Panda import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 
