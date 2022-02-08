@@ -1,3 +1,8 @@
+# Copyright (C) 2022 Panda Userbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# Recode by Ilham Mansiz
+# ••••••••••••••••••••••√•••••••••••••√√√••••••••
+
+
 import os
 os.system("pip3 install --no-cache-dir -U -q -r PandaVersion/Panda/Mansiez.txt")
     
