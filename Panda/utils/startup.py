@@ -88,6 +88,39 @@ async def loads(folder):
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
 
 
+async def buka(folder):
+    """
+    To load plugins from the mentioned folder
+    """
+    path = f"Panda/plugins/{folder}/*.py"
+    files = glob.glob(path)
+    files.sort()
+    for name in files:
+        with open(name) as f:
+            path1 = Path(f.name)
+            shortname = path1.stem
+            try:
+                if shortname.replace(".py", "") not in Config.NO_LOAD:
+                    flag = True
+                    check = 0
+                    while flag:
+                        try:
+                            load_module(
+                                shortname.replace(".py", ""),
+                                plugin_path=f"Panda/plugins/{folder}",
+                            )
+                            break
+                        except ModuleNotFoundError as e:
+                            install_pip(e.name)
+                            check += 1
+                            if check > 5:
+                                break
+                else:
+                    os.remove(Path(f"Panda/plugins/{folder}/{shortname}.py"))
+            except Exception as e:
+                os.remove(Path(f"Panda/plugins/{folder}/{shortname}.py"))
+                LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
+
 
 
 
