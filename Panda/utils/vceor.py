@@ -1,12 +1,12 @@
+# Copyright (C) 2021-2022 TeamUltroid
+# Import Panda Userbot
+# Recode by Ilham Mansiz
+# ••••••••••••••••••••••√•••••••••••••√√√••••••••
+
+
 import asyncio
 
 from Panda.sql_helper.globals import gvarstatus
-
-
-# sudo
-
-
-
 
 
 # edit or reply
