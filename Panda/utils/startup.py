@@ -85,7 +85,7 @@ async def loads(folder):
                     os.remove(Path(f"Panda/{folder}/{shortname}.py"))
             except Exception as e:
                 os.remove(Path(f"Panda/{folder}/{shortname}.py"))
-                LOGS.info(f"unable to load {shortname} because of error {e}")
+                LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
 
 
 
