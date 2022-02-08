@@ -16,7 +16,7 @@ print("Licensed under the terms of the " + Panda.__license__)
 
 try:
     LOGS.info("Memulai PandaUserbot")
-    Panda.core.session.PandaBot.loop.run_until_complete(Panda.utils.setup_bot())
+    Panda.PandaBot.loop.run_until_complete(Panda.utils.setup_bot())
     LOGS.info("Asistant Bot berhasil")
 except Exception as e:
     LOGS.error(f"{e}")
@@ -32,13 +32,13 @@ async def memulai():
     
 
 print("🛠 Sedang memperoses.....")
-Panda.core.session.PandaBot.loop.run_until_complete(memulai())
+Panda.PandaBot.loop.run_until_complete(memulai())
 print("Berhasil Mengaktifkan Userbot")
-Panda.core.session.PandaBot.loop.run_until_complete(Panda.utils.join())
+Panda.PandaBot.loop.run_until_complete(Panda.utils.join())
 
 LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{Panda.__version__} [TELAH DIAKTIFKAN]")
 
 if len(sys.argv) not in (1, 3, 4):
-    Panda.core.session.PandaBot.disconnect()
+    Panda.PandaBot.disconnect()
 else:
-    Panda.core.session.PandaBot.run_until_disconnected()
+    Panda.PandaBot.run_until_disconnected()
