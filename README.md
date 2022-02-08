@@ -23,8 +23,8 @@ Gunakan bot ini dengan risiko Anda
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 [![GitHub issues](https://img.shields.io/github/issues/ilhammansiz/PandaX_Userbot?&style=plastic&logo=github)](https://github.com/ilhammansiz/PandaX_Userbot/issues)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ilhammansiz/PandaX_Userbot?&style=plastic&logo=github)](https://github.com/mrxxp/PandaX_Userbot/graphs/commit-activity)
-[![GitHub contributors](https://img.shields.io/github/contributors/mrxxp/PandaX_Userbot?&style=plastic&logo=github)](https://GitHub.com/mrxxp/PandaX_Userbot/graphs/contributors/)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ilhammansiz/PandaX_Userbot?&style=plastic&logo=github)](https://github.com/ilhammansiz/PandaX_Userbot/graphs/commit-activity)
+[![GitHub contributors](https://img.shields.io/github/contributors/mrxxp/PandaX_Userbot?&style=plastic&logo=github)](https://GitHub.com/ilhammansiz/PandaX_Userbot/graphs/contributors/)
 <p align="justify">
 <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
 
