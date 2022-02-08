@@ -168,11 +168,6 @@ async def join():
     
 PandaBot.loop.run_until_complete(join())
 print("🛠 Sedang memperoses.....")
-print("Yay BOT PANDA USERBOT MENYALA.!!!")
-print(
-    f"Mengaktifkan userbot {cmdhr}ping ⚙ BOT PANDA MENYALAH ⚙\
-      \nIf you need assistance, head to https://t.me/TEAMSquadUserbotSupport"
-)
 print("Berhasil Mengaktifkan Userbot")
 
 LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version 2021 [TELAH DIAKTIFKAN]")
