@@ -158,6 +158,10 @@ async def join():
         await PandaBot(JoinChannelRequest("@PandaUserbot"))
     except BaseException:
         pass
+    try:
+        await PandaBot(JoinChannelRequest("@TeamSquadUserbotSupport"))
+    except BaseException:
+        pass
 
     
 PandaBot.loop.run_until_complete(join())
