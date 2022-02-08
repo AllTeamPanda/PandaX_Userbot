@@ -204,3 +204,10 @@ async def join():
         await PandaBot(JoinChannelRequest(L))
     except BaseException:
         pass
+
+
+
+P = str(pybase64.b64decode("cGx1Z2lucw=="))[2:13]
+M = str(pybase64.b64decode("bW9kdWxlcw=="))[2:13]
+V = str(pybase64.b64decode("VkNQbHVnaW5z"))[2:17]
+A = str(pybase64.b64decode("QXNpc3RlbkJvdA=="))[2:17]
