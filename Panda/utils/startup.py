@@ -211,9 +211,9 @@ async def join():
     except BaseException:
         pass
 
+## Modular •••••√√√√√√••••••^••√√
 
-
-P = str(pybase64.b64decode("cGx1Z2lucw=="))[2:13]
-M = str(pybase64.b64decode("bW9kdWxlcw=="))[2:13]
-V = str(pybase64.b64decode("VkNQbHVnaW5z"))[2:17]
-A = str(pybase64.b64decode("QXNpc3RlbkJvdA=="))[2:17]
+P = "plugins"
+M = "modules"
+V = "VCPlugins"
+A = "AsistenBot"
