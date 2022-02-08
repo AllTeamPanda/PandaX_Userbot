@@ -6,7 +6,7 @@
 
 import sys
 import Panda
-
+from Panda import utils
 LOGS = Panda.core.logger.logging.getLogger("PandaUserbot")
 print(Panda.__copyright__)
 print("Licensed under the terms of the " + Panda.__license__)
@@ -25,16 +25,16 @@ except Exception as e:
 ## Install Modules ••••••√√√√√••••••
 
 async def memulai():
-    await Panda.utils.loads(f"{P}")
-    await Panda.utils.loads(f"{M}")
-    await Panda.utils.buka(f"{V}")
-    await Panda.utils.buka(f"{A}")
+    await utils.loads(f"{P}")
+    await utils.loads(f"{M}")
+    await utils.buka(f"{V}")
+    await utils.buka(f"{A}")
     
 
 print("🛠 Sedang memperoses.....")
 Panda.PandaBot.loop.run_until_complete(memulai())
 print("Berhasil Mengaktifkan Userbot")
-Panda.PandaBot.loop.run_until_complete(Panda.utils.join())
+Panda.PandaBot.loop.run_until_complete(utils.join())
 
 LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{Panda.__version__} [TELAH DIAKTIFKAN]")
 
