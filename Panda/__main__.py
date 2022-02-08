@@ -11,7 +11,7 @@ import Panda
 
 from .core.logger import logging
 from .core.session import PandaBot
-from .utils import loads, buka, setup_bot, join, V, A
+from .utils import loads, buka, setup_bot, join, P, M, V, A
 
 LOGS = logging.getLogger("PandaUserbot")
 
@@ -33,10 +33,10 @@ except Exception as e:
 ## Install Modules ••••••√√√√√••••••
 
 async def memulai():
-    await loads(plugins)
-    await loads(modules)
-    await buka(V)
-    await buka(A)
+    await loads(f"{P}")
+    await loads(f"{M}")
+    await buka(f"{V}")
+    await buka(f"{A}")
     
 
 print("🛠 Sedang memperoses.....")
