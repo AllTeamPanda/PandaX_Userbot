@@ -5,14 +5,9 @@
 
 
 import sys
-
-
 import Panda
-from .core.session import PandaBot
-from .utils import loads, buka, setup_bot, join, P, M, V, A
 
 LOGS = Panda.core.logger.logging.getLogger("PandaUserbot")
-
 print(Panda.__copyright__)
 print("Licensed under the terms of the " + Panda.__license__)
 
@@ -22,7 +17,7 @@ pandaub = PandaBot
 
 try:
     LOGS.info("Memulai PandaUserbot")
-    PandaBot.loop.run_until_complete(setup_bot())
+    Panda.core.session.PandaBot.loop.run_until_complete(Panda.utils.setup_bot())
     LOGS.info("Asistant Bot berhasil")
 except Exception as e:
     LOGS.error(f"{e}")
@@ -31,20 +26,20 @@ except Exception as e:
 ## Install Modules ••••••√√√√√••••••
 
 async def memulai():
-    await loads(f"{P}")
-    await loads(f"{M}")
-    await buka(f"{V}")
-    await buka(f"{A}")
+    await Panda.utils.loads(f"{P}")
+    await Panda.utils.loads(f"{M}")
+    await Panda.utils.buka(f"{V}")
+    await Panda.utils.buka(f"{A}")
     
 
 print("🛠 Sedang memperoses.....")
-PandaBot.loop.run_until_complete(memulai())
+Panda.core.session.PandaBot.loop.run_until_complete(memulai())
 print("Berhasil Mengaktifkan Userbot")
-PandaBot.loop.run_until_complete(join())
+Panda.core.session.PandaBot.loop.run_until_complete(Panda.utils.join())
 
 LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{Panda.__version__} [TELAH DIAKTIFKAN]")
 
 if len(sys.argv) not in (1, 3, 4):
-    PandaBot.disconnect()
+    Panda.core.session.PandaBot.disconnect()
 else:
-    PandaBot.run_until_disconnected()
+    Panda.core.session.PandaBot.run_until_disconnected()
