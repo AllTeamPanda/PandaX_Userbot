@@ -8,12 +8,10 @@ import sys
 
 
 import Panda
-
-from .core.logger import logging
 from .core.session import PandaBot
 from .utils import loads, buka, setup_bot, join, P, M, V, A
 
-LOGS = logging.getLogger("PandaUserbot")
+LOGS = Panda.core.logger.logging.getLogger("PandaUserbot")
 
 print(Panda.__copyright__)
 print("Licensed under the terms of the " + Panda.__license__)
