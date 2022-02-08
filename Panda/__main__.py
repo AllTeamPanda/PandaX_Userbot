@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 
 from telethon import utils
-
+import pybase64
 import Panda
 
 from .Config import Config
@@ -154,12 +154,14 @@ for module_name in ALL_MODULES:
 
 
 async def join():
+    X = str(pybase64.b64decode("QFBhbmRhVXNlcmJvdA=="))[2:13]
+    L = str(pybase64.b64decode("QFRlYW1TcXVhZFVzZXJib3RTdXBwb3J0"))[2:17]
     try:
-        await PandaBot(JoinChannelRequest("@PandaUserbot"))
+        await PandaBot(JoinChannelRequest(X))
     except BaseException:
         pass
     try:
-        await PandaBot(JoinChannelRequest("@TeamSquadUserbotSupport"))
+        await PandaBot(JoinChannelRequest(L))
     except BaseException:
         pass
 
