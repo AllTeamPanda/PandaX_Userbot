@@ -4,22 +4,15 @@
 # ••••••••••••••••••••••√•••••••••••••√√√••••••••
 
 
-import glob
-import os
 import sys
-from pathlib import Path
 
-from telethon import utils
 
 import Panda
 
 from .Config import Config
 from .core.logger import logging
 from .core.session import PandaBot
-from .helpers.utils import install_pip
 from .utils import loads, buka, setup_bot, join
-from importlib import import_module
-from Panda.modules import ALL_MODULES
 
 LOGS = logging.getLogger("PandaUserbot")
 
