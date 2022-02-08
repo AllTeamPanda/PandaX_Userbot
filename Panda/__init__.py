@@ -1,7 +1,7 @@
-# config values will be loaded from here
 # Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
-# ILHAM MANSIEZ
-# PANDA USERBOT
+# Import Panda Userbot
+# Recode by Ilham Mansiz
+# ••••••••••••••••••••••√•••••••••••••√√√••••••••
 
 
 import os
