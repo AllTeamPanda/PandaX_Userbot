@@ -10,6 +10,7 @@ from Panda import utils
 LOGS = Panda.core.logger.logging.getLogger("PandaUserbot")
 print(Panda.__copyright__)
 print("Licensed under the terms of the " + Panda.__license__)
+from .utils import P, M, V, A
 
 
 ## Memulai ••••••••••√√√√√•••••••
