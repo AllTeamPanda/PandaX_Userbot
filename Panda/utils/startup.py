@@ -23,23 +23,12 @@ cmdhr = Config.COMMAND_HAND_LER
 
 async def setup_bot():
     try:
-        await pandaub.connect()
-        config = await pandaub(functions.help.GetConfigRequest())
-        for option in config.dc_options:
-            if option.ip_address == pandaub.session.server_address:
-                if pandaub.session.dc_id != option.id:
-                    LOGS.warning(
-                        f"Fixed DC ID in session from {pandaub.session.dc_id}"
-                        f" to {option.id}"
-                    )
-                pandaub.session.set_dc(option.id, option.ip_address, option.port)
-                pandaub.session.save()
-                break
-        await pandaub.start(bot_token=Config.TG_BOT_USERNAME)
-        pandaub.me = await pandaub.get_me()
-        pandaub.uid = pandaub.tgbot.uid = utils.get_peer_id(pandaub.me)
+        await PandaBot.start()
+        await PandaBot.start(bot_token=Config.TG_BOT_USERNAME)
+        PandaBot.me = await PandaBot.get_me()
+        PandaBot.uid = PandaBot.tgbot.uid = utils.get_peer_id(PandaBot.me)
         if Config.OWNER_ID == 0:
-            Config.OWNER_ID = utils.get_peer_id(pandaub.me)
+            Config.OWNER_ID = utils.get_peer_id(PandaBot.me)
     except Exception as e:
         LOGS.error(f"STRING_SESSION - {str(e)}")
         sys.exit()
