@@ -50,47 +50,6 @@ async def setup_bot():
         sys.exit()
 
 
-async def startupmessage():
-    """
-    Start up message in telegram logger group
-    """
-    try:
-        if BOTLOG:
-            Config.PANDAUBLOGO = await pandaub.tgbot.send_file(
-                BOTLOG_CHATID,
-                "https://telegra.ph/file/3a52b78e38b4a084b0515.jpg",
-                caption="**Bot PandaUserbot Telah aktif siap dipakai.**",
-                buttons=[
-                    (Button.url("Support", "https://t.me/TEAMSquadUserbotSupport"),)
-                ],
-            )
-    except Exception as e:
-        LOGS.error(e)
-        return None
-    try:
-        msg_details = list(get_item_collectionlist("restart_update"))
-        if msg_details:
-            msg_details = msg_details[0]
-    except Exception as e:
-        LOGS.error(e)
-        return None
-    try:
-        if msg_details:
-            await pandaub.check_testcases()
-            message = await pandaub.get_messages(msg_details[0], ids=msg_details[1])
-            text = message.text + "\n\n**Ok Bot is Back and Alive.**"
-            await pandaub.edit_message(msg_details[0], msg_details[1], text)
-            if gvarstatus("restartupdate") is not None:
-                await pandaub.send_message(
-                    msg_details[0],
-                    f"{cmdhr}ping",
-                    reply_to=msg_details[1],
-                    schedule=timedelta(seconds=10),
-                )
-            del_keyword_collectionlist("restart_update")
-    except Exception as e:
-        LOGS.error(e)
-        return None
 
 
 # don't know work or not just a try in future will use sleep
@@ -111,32 +70,6 @@ async def ipchange():
         except (ConnectionError, CancelledError):
             pass
         return "ip change"
-
-
-async def add_bot_to_logger_group(chat_id):
-    """
-    To add bot to logger groups
-    """
-    bot_details = await pandaub.tgbot.get_me()
-    try:
-        await pandaub(
-            functions.messages.AddChatUserRequest(
-                chat_id=chat_id,
-                user_id=bot_details.username,
-                fwd_limit=1000000,
-            )
-        )
-    except BaseException:
-        try:
-            await pandaub(
-                functions.channels.InviteToChannelRequest(
-                    channel=chat_id,
-                    users=[bot_details.username],
-                )
-            )
-        except Exception as e:
-            LOGS.error(str(e))
-
 
 async def load_plugins(folder):
     """
@@ -172,21 +105,7 @@ async def load_plugins(folder):
                 LOGS.info(f"unable to load {shortname} because of error {e}")
 
 
-from os import environ
 
-# import logging
-from pyrogram import Client
-
-APP_ID = int(environ["APP_ID"])
-API_HASH = environ["API_HASH"]
-PROGRAM_SESSION = environ["PROGRAM_SESSION"]
-
-PLUGINS = dict(
-    root="Panda", include=["vc." + environ["PILIHAN_VCG"], "ping", "sysinfo"]
-)
-
-app = Client(PROGRAM_SESSION, APP_ID, API_HASH, plugins=PLUGINS)
-# logging.basicConfig
 
 
 async def verifyLoggerGroup():
@@ -258,85 +177,3 @@ async def verifyLoggerGroup():
 
 
 
-
-
-
-
-async def autobot():
-    await pandaub.start()
-    if Config.TG_BOT_TOKEN:
-        os.environ.get("TG_BOT_TOKEN", str(Config.TG_BOT_TOKEN))
-        return
-    if os.environ.get("TG_BOT_TOKEN):
-        return
-    LOGS.info("🛠 MEMBUAT BOT UNTUK ANDA DI @BotFather, HARAP TUNGU !!")
-    who = await pandaub.get_me()
-    name = "Panda_Userbot Assistant " + who.first_name
-    if who.username:
-        username = who.username + "_bot"
-    else:
-        username = "Panda_Userbot_" + (str(who.id))[5:] + "_bot"
-    bf = "Botfather"
-    await pandaub(UnblockRequest(bf))
-    await pandaub.send_message(bf, "/cancel")
-    await asyncio.sleep(1)
-    await pandaub.send_message(bf, "/start")
-    await asyncio.sleep(1)
-    await pandaub.send_message(bf, "/newbot")
-    await asyncio.sleep(1)
-    isdone = (await pandaub.get_messages(bf, limit=1))[0].text
-    if isdone.startswith("That I cannot do."):
-        LOGS.info(
-            "Mohon buat bot baru di @BotFather dan tambahkan var BOT_TOKEN, lalu isi token nya dan restart."
-        )
-        exit(1)
-    await pandaub.send_message(bf, name)
-    await asyncio.sleep(1)
-    isdone = (await pandaub.get_messages(bf, limit=1))[0].text
-    if not isdone.startswith("Good."):
-        await pandaub.send_message(bf, "My Assistant Bot")
-        await asyncio.sleep(1)
-        isdone = (await pandaub.get_messages(bf, limit=1))[0].text
-        if not isdone.startswith("Good."):
-            LOGS.info(
-                "Mohon buat bot baru di @BotFather dan tambahkan var BOT_TOKEN, lalu isi token nya dan restart."
-            )
-            exit(1)
-    await pandaub.send_message(bf, username)
-    await asyncio.sleep(1)
-    isdone = (await pandaub.get_messages(bf, limit=1))[0].text
-    await pandaub.send_read_acknowledge("botfather")
-    if isdone.startswith("Sorry,"):
-        ran = randint(1, 100)
-        username = "PandaX_Userbot" + (str(who.id))[6:] + str(ran) + "_bot"
-        await pandaub.send_message(bf, username)
-        await asyncio.sleep(1)
-        nowdone = (await pandaub.get_messages(bf, limit=1))[0].text
-        if nowdone.startswith("Done!"):
-            token = nowdone.split("`")[1]
-            os.environ.get("TG_BOT_TOKEN", token)
-            await pandaub.send_message(bf, "/setinline")
-            await asyncio.sleep(1)
-            await pandaub.send_message(bf, f"@{username}")
-            await asyncio.sleep(1)
-            await pandaub.send_message(bf, "menu...")
-            LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
-        else:
-            LOGS.info(
-                f"Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot."
-            )
-            exit(1)
-    elif isdone.startswith("Done!"):
-        token = isdone.split("`")[1]
-        os.environ.get("TG_BOT_TOKEN", token)
-        await pandaub.send_message(bf, "/setinline")
-        await asyncio.sleep(1)
-        await pandaub.send_message(bf, f"@{username}")
-        await asyncio.sleep(1)
-        await pandaub.send_message(bf, "menu...")
-        LOGS.info(f"SELESAI, ASSISTANT BOT ANDA SUDAH DIBUAT @{username}")
-    else:
-        LOGS.info(
-            f"Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot."
-        )
-        exit(1)
