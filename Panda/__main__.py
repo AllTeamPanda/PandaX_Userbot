@@ -44,7 +44,7 @@ PandaBot.loop.run_until_complete(memulai())
 print("Berhasil Mengaktifkan Userbot")
 PandaBot.loop.run_until_complete(join())
 
-LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version 2021 [TELAH DIAKTIFKAN]")
+LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{Panda.__version__} [TELAH DIAKTIFKAN]")
 
 if len(sys.argv) not in (1, 3, 4):
     PandaBot.disconnect()
