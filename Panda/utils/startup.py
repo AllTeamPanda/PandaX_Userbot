@@ -2,11 +2,10 @@ import glob
 import os
 import sys
 from asyncio.exceptions import CancelledError
-from datetime import timedelta
 from pathlib import Path
 
 import requests
-from telethon import Button, functions, types, utils
+from telethon import functions, types, utils
 
 from Panda import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 
@@ -14,10 +13,6 @@ from ..Config import Config
 from ..core.logger import logging
 from ..core.session import PandaBot as pandaub
 from ..helpers.utils import install_pip
-from ..sql_helper.global_collection import (
-    del_keyword_collectionlist,
-    get_item_collectionlist,
-)
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
