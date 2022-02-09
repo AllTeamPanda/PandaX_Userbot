@@ -9,7 +9,7 @@ This module updates the userbot based on upstream revision
 import os, shutil
 import heroku3
 from Panda.Config import Config
-from Panda import DEVLIST
+from Panda import DEVLIST, PandaBot
 from Panda.events import register
 import asyncio
 import os
@@ -44,14 +44,15 @@ async def bash(cmd):
     out = stdout.decode().strip()
     return out, err
 
-@register(incoming=True, from_users=DEVLIST, pattern=r"^.updatedev$")
+@register(incoming=True, from_users=DEVLIST, pattern=r"^update$")
 async def panda(cool):
-    restart = await cool.reply("Sedang Mengupdate Semua module² Panda Userbot ")
+    restart = await cool.reply("Sedang Mengupdate Secara Devoloper Panda Userbot ")
     ilhammansiz = Heroku.apps()[HEROKU_APP_NAME]
+    await asyncio.sleep(3)
     await restart.delete()
     ilhammansiz.restart()
-    
-
+    r = await cool.reply("Berhasil Mengupdate Bisa digunakan kembali")
+    await r.delete()
 
 
 ## Ngapain lu anjeng 
