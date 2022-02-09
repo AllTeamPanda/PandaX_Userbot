@@ -1,6 +1,8 @@
-# recode ILHAM MANSIEZ
-# PANDA USERBOT
-# From cat userbot
+# Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
+# Import Panda Userbot
+# Recode by Ilham Mansiz
+# ••••••••••••••••••••••√•••••••••••••√√√••••••••
+
 
 import datetime
 import inspect
