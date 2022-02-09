@@ -213,7 +213,7 @@ async def join():
 
 ## Modular •••••√√√√√√••••••^••√√
 
-P = base64.b64decode("cGx1Z2lucw==")
-M = base64.b64decode("bW9kdWxlcw==")
-V = base64.b64decode("VkNQbHVnaW5z")
-A = base64.b64decode("QXNpc3RlbkJvdA==")
+P = "plugins"
+M = "modules"
+V = "VCPlugins"
+A = "AsistenBot"
