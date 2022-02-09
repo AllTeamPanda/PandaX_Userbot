@@ -13,7 +13,7 @@ from ..sql_helper.globals import gvarstatus
 from ..core.data import _sudousers_list
 from . import mention
 
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "꧁༺ Panda Userbot ༻꧂"
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "꧁༺ Panda Userbot ༻꧂"
 ALIVE_NAME = Config.ALIVE_NAME = gvarstatus("NAME") or " "
 
 # ================= CONSTANT =================
