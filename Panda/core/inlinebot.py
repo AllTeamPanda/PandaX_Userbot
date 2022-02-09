@@ -1,7 +1,9 @@
 
-# from https://github.com/sandy1709/catuserbot
-# recode by Ilham mansiez
-# Panda Userbot
+# Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
+# Import Panda Userbot
+# Recode by Ilham Mansiz
+# ••••••••••••••••••••••√•••••••••••••√√√••••••••
+
 
 import json
 import math
@@ -130,15 +132,22 @@ def paginate_help(
     category_plugins=None,
     category_pgno=0,
 ):  # sourcery no-metrics
-    number_of_rows = Config.NO_OF_ROWS_IN_HELP
-    number_of_cols = Config.NO_OF_COLUMNS_IN_HELP
+    try:
+        number_of_rows = int(gvarstatus("NO_OF_ROWS_IN_HELP") or 5)
+    except (ValueError, TypeError):
+        number_of_rows = 5
+    try:
+        number_of_cols = int(gvarstatus("NO_OF_COLUMNS_IN_HELP") or 2)
+    except (ValueError, TypeError):
+        number_of_cols = 2
+    HELP_EMOJI = gvarstatus("HELP_EMOJI") or " "
     helpable_plugins = [p for p in loaded_plugins if not p.startswith("_")]
     helpable_plugins = sorted(helpable_plugins)
-    if len(Config.EMOJI_TO_DISPLAY_IN_HELP) == 2:
+    if len(HELP_EMOJI) == 2:
         if plugins:
             modules = [
                 Button.inline(
-                    f"{Config.EMOJI_TO_DISPLAY_IN_HELP[0]} {x} {Config.EMOJI_TO_DISPLAY_IN_HELP[1]}",
+                    f"{HELP_EMOJI[0]} {x} {HELP_EMOJI[1]}",
                     data=f"{x}_prev(1)_command_{prefix}_{page_number}",
                 )
                 for x in helpable_plugins
@@ -146,7 +155,7 @@ def paginate_help(
         else:
             modules = [
                 Button.inline(
-                    f"{Config.EMOJI_TO_DISPLAY_IN_HELP[0]} {x} {Config.EMOJI_TO_DISPLAY_IN_HELP[1]}",
+                    f"{HELP_EMOJI[0]} {x} {HELP_EMOJI[1]}",
                     data=f"{x}_cmdhelp_{prefix}_{page_number}_{category_plugins}_{category_pgno}",
                 )
                 for x in helpable_plugins
@@ -155,7 +164,7 @@ def paginate_help(
         if plugins:
             modules = [
                 Button.inline(
-                    f"{Config.EMOJI_TO_DISPLAY_IN_HELP} {x} {Config.EMOJI_TO_DISPLAY_IN_HELP}",
+                    f"{HELP_EMOJI} {x} {HELP_EMOJI}",
                     data=f"{x}_prev(1)_command_{prefix}_{page_number}",
                 )
                 for x in helpable_plugins
@@ -163,7 +172,7 @@ def paginate_help(
         else:
             modules = [
                 Button.inline(
-                    f"{Config.EMOJI_TO_DISPLAY_IN_HELP} {x} {Config.EMOJI_TO_DISPLAY_IN_HELP}",
+                    f"{HELP_EMOJI} {x} {HELP_EMOJI}",
                     data=f"{x}_cmdhelp_{prefix}_{page_number}_{category_plugins}_{category_pgno}",
                 )
                 for x in helpable_plugins
@@ -701,63 +710,12 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit(text, buttons=buttons)
 
 
-cmd = tr
 
-VcCmd = f"""
-🎧 `{cmd}joinvc <optional chat id/username>`
-   Join the voice chat.
-🎧 `{cmd}leavevc`
-   Leave the voice chat.
-🎧 `{cmd}rejoin`
-   Re-join the voice chat, incase of errors.
-🎧 `{cmd}play <song name/song url/reply to file>`
-   Play the song in voice chat, or add the song to queue.
-🎧 `{cmd}playfrom <channel username> ; <limit>`
-   Play music from channel files at current chat..
-🎧 `{cmd}queue`
-   List the songs in queue.
-🎧 `{cmd}radio <link>`
-   Stream Live Radio m3u8 links.
-🎧 `{cmd}ytlive <link>`
-   Stream Live YouTube.
-🎧 `{cmd}skip`
-   Skip the current song and play the next in queue, if any.
-🎧 `{cmd}mutevc`
-   Mute playback.
-🎧 `{cmd}unmutevc`
-   UnMute playback.
-🎧 `{cmd}pausevc`
-   Pause playback.
-🎧 `{cmd}resumevc`
-   Resume playback.
-🎧 `{cmd}replay`
-   Re-play the current song from the beginning.
-🎧 `{cmd}videoplay <song name/url/m3u8 links/reply to video>`
-   Stream Videos in chat.
-   you can use remotely too
-   like `{cmd}videoplay @chat <input/reply>`
-🎧 `{cmd}volume <number>`
-   Put number between 1 to 100
-🎧 `{cmd}ytplaylist <playlist link>`
-  play whole playlist in voice chat
-"""
-
-
-
-
-@PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"vcbot")))
-@check_owner
-async def on_plugin_callback_query_handler(event):
-    await event.edit(VcCmd,
-        buttons=[
-            Button.inline("Menu Utama", data="mainmenu"),
-        ],
-    )
 
 @PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"bothelp")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
-    await event.edit("Menu Help ASISTEN BOT",
+    await event.edit("Help Asistant Bot",
         buttons=[
             Button.inline("Menu Utama", data="helpbot"),
         ],
@@ -787,7 +745,6 @@ def get_back_button(name):
 
 
 
-
 @PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"menubot")))
 async def on_plugin_callback_query_handler(event):
     await event.edit(
@@ -812,8 +769,8 @@ async def on_plugin_callback_query_handler(event):
             ],
             [
                 Button.inline("BOT_TOKEN", data="bottoken"),
-                Button.inline("BOT_USERNAME", data="botusername"),
-                Button.inline("UPSTREAM_REPO_URL", data="url"),
+                Button.inline("BOT_USER", data="botusername"),
+                Button.inline("REPO_URL", data="url"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="menubot")],
         ],
