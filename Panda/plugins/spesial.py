@@ -1,7 +1,6 @@
 from . import mention
 import random
 from Panda.events import register
-import asyncio
 
 pengguna = [
     f"Perkenalkan Nama saya {mention}\nTerimah Kasih Ganteng 😏",
