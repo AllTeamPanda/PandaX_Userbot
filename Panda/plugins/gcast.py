@@ -2,6 +2,10 @@
 # Copyright (C) 2020 TeamUltroid
 # Recode by Ilham Mansiez
 
+import asyncio
+
+from requests import get
+from telethon.errors.rpcerrorlist import FloodWaitError
 
 from Panda import PandaBot
 import Panda
