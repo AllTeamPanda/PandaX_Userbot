@@ -12,7 +12,6 @@ from pathlib import Path
 from telethon.tl.functions.channels import JoinChannelRequest
 import requests
 from telethon import types, utils
-import pybase64
 from Panda import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 
 from ..Config import Config
