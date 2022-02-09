@@ -4,7 +4,6 @@
 
 import asyncio
 
-from requests import get
 from telethon.errors.rpcerrorlist import FloodWaitError
 
 from Panda import PandaBot
