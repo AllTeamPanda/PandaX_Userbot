@@ -1,6 +1,4 @@
 from asyncio import sleep
-import sys
-from os import environ, execle
 from telethon import functions
 from telethon.errors import (
     BadRequestError,
