@@ -274,7 +274,7 @@ oldvars = {
             "get": "To show the already existing var value.",
             "del": "To delete the existing value",
         },
-        "var name": f"valuess",
+        "var name": f"{valuess}",
         "usage": [
             "{tr}setdb <var name> <var value>",
             "{tr}getdb <var name>",
