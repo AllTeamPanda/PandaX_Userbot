@@ -10,7 +10,7 @@ import os, shutil
 import heroku3
 from Panda.Config import Config
 from Panda import DEVLIST, PandaBot
-from ..core.managers import edit_delete, edit_or_reply
+from ..core.managers import edit_or_reply
 from Panda.events import register
 import asyncio
 import os
