@@ -1,5 +1,5 @@
 import time
-from platform import python_version, uname
+from platform import python_version
 
 from telethon import version
 import asyncio
