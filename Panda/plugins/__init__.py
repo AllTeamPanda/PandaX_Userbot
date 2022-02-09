@@ -17,6 +17,7 @@ from ..core.session import PandaBot
 from ..helpers import *
 from ..helpers.utils import _format, _pandatools, _pandautils, install_pip, reply_id
 from telethon import events
+from ..sql_helper.globals import gvarstatus
 
 # =================== CONSTANT ===================
 def mansiez(**args):
@@ -40,7 +41,7 @@ bot = PandaBot
 pandaub = PandaBot
 LOGS = logging.getLogger(__name__)
 USERID = pandaub.uid if Config.OWNER_ID == 0 else Config.OWNER_ID
-ALIVE_NAME = Config.ALIVE_NAME
+ALIVE_NAME = gvarstatus("ALIVE_NAME") or Config.ALIVE_NAME 
 AUTONAME = Config.AUTONAME
 DEFAULT_BIO = Config.DEFAULT_BIO
 
