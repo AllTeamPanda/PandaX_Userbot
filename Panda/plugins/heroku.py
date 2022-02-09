@@ -6,6 +6,7 @@ import asyncio
 import math
 import os
 from validators.url import url
+from Panda.core.logger import logging
 
 import heroku3
 import requests
@@ -17,7 +18,7 @@ from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
 plugin_category = "plugins"
-
+LOGS = logging.getLogger(__name__)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # =================
 
