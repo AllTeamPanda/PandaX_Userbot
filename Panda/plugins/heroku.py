@@ -309,7 +309,7 @@ async def panda(event):  # sourcery no-metrics
         if cmd == "set":
             if not vinfo:
                 return await edit_delete(
-                    event, f"Give some values which you want to save for **{vname}**"
+                    event, f"Berhasil Mengubah {vname}"
                 )
             check = vinfo.split(" ")
             for i in check:
