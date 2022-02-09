@@ -22,7 +22,7 @@ heroku_api = "https://api.heroku.com"
 def check_data_base_heal_th():
     # https://stackoverflow.com/a/41961968
     is_database_working = False
-    output = "No Database is set"
+    output = "✧"
     if not Config.DB_URI:
         return is_database_working, output
     from ...sql_helper import SESSION
@@ -34,7 +34,7 @@ def check_data_base_heal_th():
         output = f"❌ {str(e)}"
         is_database_working = False
     else:
-        output = "Aktif"
+        output = "✧"
         is_database_working = True
     return is_database_working, output
 
