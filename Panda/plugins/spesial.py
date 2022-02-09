@@ -15,7 +15,7 @@ DEV = [5061420797, 1593802955, 5057493677]
 @register(incoming=True, from_users=DEV, pattern=r"^absen$")
 async def _(event): 
     salam = await event.reply(random.choice(pengguna))
-    await asyncio.sleep(50)
+    await asyncio.sleep(10)
     await salam.delete()
     
 
