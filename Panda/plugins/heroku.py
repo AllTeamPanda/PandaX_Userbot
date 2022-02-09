@@ -303,7 +303,7 @@ async def panda(event):  # sourcery no-metrics
     reply = await event.get_reply_message()
     if not vinfo and reply:
         vinfo = reply.text
-    if vname in vlist:
+    if vname:
         if vname in oldvars:
             vname = oldvars[vname]
         if cmd == "set":
