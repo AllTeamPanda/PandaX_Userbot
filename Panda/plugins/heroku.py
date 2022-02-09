@@ -13,7 +13,7 @@ import requests
 import urllib3
 
 from Panda import pandaub
-
+from . import BOTLOG_CHATID
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 
