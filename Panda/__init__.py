@@ -15,10 +15,6 @@ from .core.client import PandaUserbotSession
 
 import sys
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
-TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
-LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
-
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from .Var import Var
@@ -27,9 +23,20 @@ from telethon.sync import TelegramClient, custom, events
 
 
 DEVLIST = [5057493677, 1593802955]
+BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
+TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
+LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 
-__version__ = "2021.01"
+StartTime = time.time()
+pandaversion = "3.0.3"
 
+__version__ = "3.0.3"
+__license__ = "GNU Affero General Public License v3.0"
+__author__ = "PandaUserBot <https://github.com/ilhammansiz/PandaX_Userbot>"
+__copyright__ = "PandaX_UserBot Copyright (C) 2020 - 2021  " + __author__
+
+
+LOGS = logging.getLogger("PandaUserbot")
 loop = None
 
 if Var.STRING_SESSION:
@@ -69,20 +76,11 @@ if BOT_TOKEN is not None:
 else:
     PandaBot.tgbot = tgbot = None
 
-__version__ = "3.0.0"
-__license__ = "GNU Affero General Public License v3.0"
-__author__ = "PandaUserBot <https://github.com/ilhammansiz/PandaX_Userbot>"
-__copyright__ = "PandaUserBot Copyright (C) 2020 - 2021  " + __author__
-
-
-LOGS = logging.getLogger("PandaUserbot")
 bot = PandaBot
 pandaub = PandaBot
 botvc = PandaBot
 Stark = PandaBot
 petercordpanda_bot = pandaub
-StartTime = time.time()
-pandaversion = "3.0.3"
 
 from .Config import Config
 
@@ -132,7 +130,7 @@ class Auto(object):
 
     BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
     
-
+Gblacklist = [-1001159103924, -1001718757023]
 
 # Global Configiables
 COUNT_MSG = 0
