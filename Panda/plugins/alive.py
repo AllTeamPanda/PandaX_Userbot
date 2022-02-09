@@ -3,23 +3,24 @@ from platform import python_version, uname
 
 from telethon import version
 import asyncio
-from Panda import StartTime, pandaub, pandaversion
-
+from Panda import StartTime, pandaversion, PandaBot
+pandaub = PandaBot
 from ..Config import Config
 from ..helpers.functions import get_readable_time, check_data_base_heal_th, 
 from ..sql_helper.globals import gvarstatus
 from pytgcalls import __version__
 from ..sql_helper.globals import gvarstatus
 from ..core.data import _sudousers_list
+from . import mention
 
 CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "꧁༺ Panda Userbot ༻꧂"
 ALIVE_NAME = Config.ALIVE_NAME = gvarstatus("NAME") or " "
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+DEFAULTUSER = mention
 # ============================================
 EMOJI = gvarstatus("EMOJI") or "🎨"
-NAME = gvarstatus("NAME") or DEFAULTUSER
+NAME = DEFAULTUSER
 
 plugin_category = "plugins"
 
@@ -30,7 +31,7 @@ LOGO = Config.ALIVE_PIC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/37
 
 
 
-@pandaub.ilhammansiz_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern="alive$",
     command=("alive", plugin_category),
     info={
@@ -42,7 +43,7 @@ LOGO = Config.ALIVE_PIC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/37
     },
 )
 async def redis(alive):
-    await pandaub.get_me()
+    await PandaBot.get_me()
     await get_readable_time((time.time() - StartTime))
     await alive.edit("꧁༺ Panda Userbot ༻꧂")
     await alive.edit("꧁༺ Userbot ༻꧂")
@@ -63,7 +64,7 @@ async def redis(alive):
         try:
             logo = LOGO
             await alive.delete()
-            msg = await pandaub.send_file(alive.chat_id, logo, caption=output)
+            msg = await PandaBot.send_file(alive.chat_id, logo, caption=output)
             await asyncio.sleep(500)
             await msg.delete()
         except BaseException:
