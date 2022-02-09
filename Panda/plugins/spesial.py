@@ -1,14 +1,14 @@
-
+from . import mention
 import random
 from Panda.events import register
 import asyncio
 
 pengguna = [
-    "**✅ Saya Pengguna ✅**",
-    "**👍 SIP PANDA TELAH AKTIF 👍**",
-    "Hadirlah Diriku 😊",
-    "Saya Pengguna setia ☺",
-    "✅ Selalu Aktif  ✅",
+    f"Perkenalkan Nama saya {mention}\nTerimah Kasih Ganteng 😏",
+    f"Saya {mention} Pemuja owner 😂😏",
+    f"Terimakasih buat owner 😊",
+    f"Kamshamida owner ganteng 😂 ",
+    f"✅ {mention} Aktif  ✅",
 ]
 
 DEV = [5061420797, 1593802955, 5057493677]
