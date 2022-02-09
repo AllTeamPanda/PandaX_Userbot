@@ -9,7 +9,7 @@ This module updates the userbot based on upstream revision
 import os, shutil
 import heroku3
 from Panda.Config import Config
-from Panda import DEVLIST, PandaBot
+from Panda import DEVLIST
 from Panda.events import register
 import asyncio
 import os
