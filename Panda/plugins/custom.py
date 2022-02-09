@@ -91,6 +91,10 @@ async def custom_pandauserbot(event):
         if gvarstatus("pmblock") is None:
             return await edit_delete(event, "__You haven't customzied your pmblock.__")
         delgvar("pmblock")
+    if input_str == "NAME":
+        if gvarstatus("NAME") is None:
+            return await edit_delete(event, "__You haven't customzied your NAME.__")
+        delgvar("NAME")
     if input_str == "pmpic":
         if gvarstatus("pmpermit_pic") is None:
             return await edit_delete(event, "__You haven't customzied your pmpic.__")
