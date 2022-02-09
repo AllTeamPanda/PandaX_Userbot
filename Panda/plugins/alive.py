@@ -6,14 +6,13 @@ import asyncio
 from Panda import StartTime, pandaub, pandaversion
 
 from ..Config import Config
-from ..helpers.functions import get_readable_time
+from ..helpers.functions import get_readable_time, check_data_base_heal_th, 
 from ..sql_helper.globals import gvarstatus
 from pytgcalls import __version__
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "꧁༺ Panda Userbot ༻꧂"
-
 from ..sql_helper.globals import gvarstatus
 from ..core.data import _sudousers_list
 
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "꧁༺ Panda Userbot ༻꧂"
 ALIVE_NAME = Config.ALIVE_NAME = gvarstatus("NAME") or " "
 
 # ================= CONSTANT =================
@@ -24,8 +23,6 @@ NAME = gvarstatus("NAME") or DEFAULTUSER
 
 plugin_category = "plugins"
 
-ilhammansizzz = "https://github.com/ilhammansiz/PandaX_Userbot"
-support = "https://t.me/TEAMSquadUserbotSupport"
 SUDO = gvarstatus("sudoenable")
 SUDOuser = _sudousers_list()
 
@@ -49,20 +46,19 @@ async def redis(alive):
     await get_readable_time((time.time() - StartTime))
     await alive.edit("꧁༺ Panda Userbot ༻꧂")
     await alive.edit("꧁༺ Userbot ༻꧂")
-    await alive.edit("🎰")
-    await asyncio.sleep(2)
+    await asyncio.sleep(1)
     output = (
         f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-        f"┏━━━━━━━━━━━━━━━━━\n"
-        f"┣||🚹 `Pengguna:` {NAME}\n"
-        f"┣||✍ `Telethon:` {version.__version__}\n"
-        f"┣||🐍 `Python:` {python_version()}\n"
-        f"┣||👾 `Pytgcalls:` {__version__}\n"
-        f"┣||⏳ `Branch:` PandaUserbot\n"
-        f"┣||🚀 `Bot Version:` {pandaversion}\n"
-        f"┣||✅ `Sudo:` {SUDO}\n"
-        f"┣||👥 `ID Sudo:` {SUDOuser}\n"
-        f"┗━━━━━━━━━━━━━━━━━ \n")
+        f"⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢\n"
+        f"╭─⊸⌊🚹 `Pengguna:` {NAME}\n"
+        f"╭─⊸⌊✍ `Telethon:` {version.__version__}\n"
+        f"╭─⊸⌊🐍 `Python:` {python_version()}\n"
+        f"╭─⊸⌊👾 `Pytgcalls:` {__version__}\n"
+        f"╭─⊸⌊💻 `Database:` {check_data_base_heal_th()}\n"
+        f"╭─⊸⌊🚀 `Bot Version:` v{pandaversion}\n"
+        f"╭─⊸⌊✅ `Sudo:` {SUDO}\n"
+        f"╭─⊸⌊👥 `ID Sudo:` {SUDOuser}\n"
+        f"⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢")
     if LOGO:
         try:
             logo = LOGO
@@ -81,7 +77,6 @@ async def redis(alive):
         await alive.edit(output)
         await asyncio.sleep(100)
         await alive.delete()
-
 
 
 
