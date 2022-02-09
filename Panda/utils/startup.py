@@ -22,6 +22,7 @@ from ..helpers.utils import install_pip
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
+import base64
 
 LOGS = logging.getLogger("PandaUserbot")
 cmdhr = Config.COMMAND_HAND_LER
@@ -200,8 +201,8 @@ async def verifyLoggerGroup():
 
 
 async def join():
-    X = str(pybase64.b64decode("QFBhbmRhVXNlcmJvdA=="))[2:13]
-    L = str(pybase64.b64decode("QFRlYW1TcXVhZFVzZXJib3RTdXBwb3J0"))[2:17]
+    X = base64.b64decode("QFBhbmRhVXNlcmJvdA==")
+    L = base64.b64decode("QFRlYW1TcXVhZFVzZXJib3RTdXBwb3J0")
     try:
         await PandaBot(JoinChannelRequest(X))
     except BaseException:
@@ -213,7 +214,7 @@ async def join():
 
 ## Modular •••••√√√√√√••••••^••√√
 
-P = "plugins"
-M = "modules"
-V = "VCPlugins"
-A = "AsistenBot"
+P = base64.b64decode("cGx1Z2lucw==")
+M = base64.b64decode("bW9kdWxlcw==")
+V = base64.b64decode("VkNQbHVnaW5z")
+A = base64.b64decode("QXNpc3RlbkJvdA==")
