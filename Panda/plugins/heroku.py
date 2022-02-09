@@ -290,7 +290,7 @@ oldvars = {
 )
 async def panda(event):  # sourcery no-metrics
     "To manage vars in database"
-    cmd = event.pattern_match.group(1).lower()
+    cmd = event.pattern_match.group(1)
     vname = event.pattern_match.group(2)
     vnlist = "".join(f"{i}. `{each}`\n" for i, each in enumerate(vlist, start=1))
     if not vname:
