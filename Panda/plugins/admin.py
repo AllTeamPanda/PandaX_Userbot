@@ -70,25 +70,6 @@ plugin_category = "plugins"
 
 
 @pandaub.ilhammansiz_cmd(
-    pattern="restart$",
-    command=("restart", plugin_category),
-    info={
-        "header": "Merestart bot",
-        "usage": "{tr}restart",
-    },
-)
-async def restart_bot(event):
-    await edit_or_reply(event, "**PandaUserbot Berhasil di Restart**")
-    if BOTLOG_CHATID:
-        await event.client.send_message(
-            BOTLOG_CHATID, "#RESTART \n" "**PandaUserbot Berhasil Di Restart**"
-        )
-    args = [sys.executable, "-m", "Panda"]
-    execle(sys.executable, *args, environ)
-
-
-
-@pandaub.ilhammansiz_cmd(
     pattern="gpic( -s| -d)$",
     command=("gpic", plugin_category),
     info={
