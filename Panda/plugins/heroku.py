@@ -5,6 +5,7 @@
 import asyncio
 import math
 import os
+from validators.url import url
 
 import heroku3
 import requests
@@ -231,73 +232,118 @@ def prettyjson(obj, indent=2, maxlinelength=80):
 
 
 
-@pandaub.ilhammansiz_cmd(
-    pattern="getdb$",
-    command=("getdb", plugin_category),
-    info={
-        "header": "To Check dyno usage of userbot and also to know how much left.",
-        "usage": "{tr}getdb",
-    },
-)
-async def getsql(event):
-    var_ = event.pattern_match.group(1).upper()
-    xxnx = await edit_or_reply(event, f"**Getting variable** `{var_}`")
-    if var_ == "":
-        return await xxnx.edit(
-            f"**Invalid Syntax !!** \n\nKetik `{tr}getdb NAMA_VARIABLE`"
-        )
-    try:
-        sql_v = gvarstatus(var_)
-        os_v = os.environ.get(var_) or "None"
-    except Exception as e:
-        return await xxnx.edit(f"**ERROR !!**\n\n`{e}`")
-    await xxnx.edit(
-        f"**OS VARIABLE:** `{var_}`\n**OS VALUE :** `{os_v}`\n------------------\n**SQL VARIABLE:** `{var_}`\n**SQL VALUE :** `{sql_v}`\n"
-    )
+valuess = """
+     ALIVE_PIC
+     CUSTOM_ALIVE_TEXT
+     HELP_EMOJI
+     HELP_TEXT_INLINE
+     ALIVE_NAME
+     PM_TEXT
+     PM_BLOCK
+     NO_OF_ROWS_IN_HELP
+     NO_OF_COLUMNS_IN_HELP
+"""
+
+vlist = [
+    "ALIVE_PIC",
+    "CUSTOM_ALIVE_TEXT",
+    "HELP_EMOJI",
+    "HELP_TEXT_INLINE",
+    "ALIVE_NAME",
+    "PM_TEXT",
+    "PM_BLOCK",
+    "NO_OF_ROWS_IN_HELP",
+    "NO_OF_COLUMNS_IN_HELP",
+]
+
+oldvars = {
+    "PM_TEXT": "pmpermit_txt",
+    "PM_BLOCK": "pmblock",
+}
 
 
 @pandaub.ilhammansiz_cmd(
-    pattern="setdb$",
-    command=("setdb", plugin_category),
+    pattern="(set|get|del)db(?: |$)([\s\S]*)",
+    command=("db", plugin_category),
     info={
-        "header": "To Check dyno usage of userbot and also to know how much left.",
-        "usage": "{tr}setdb",
+        "header": "Set vars in database or Check or Delete",
+        "description": "Set , Fetch or Delete values or vars directly in database without restart or heroku vars.\n\nYou can set multiple pics by giving space after links in alive, pm permit.",
+        "flags": {
+            "set": "To set new var in database or modify the old var",
+            "get": "To show the already existing var value.",
+            "del": "To delete the existing value",
+        },
+        "var name": f"valuess",
+        "usage": [
+            "{tr}setdb <var name> <var value>",
+            "{tr}getdb <var name>",
+            "{tr}deldb <var name>",
+        ],
+        "examples": [
+            "{tr}setdb ALIVE_PIC <pic link>",
+            "{tr}setdb ALIVE_PIC <pic link 1> <pic link 2>",
+            "{tr}getdb ALIVE_PIC",
+            "{tr}deldb ALIVE_PIC",
+        ],
     },
 )
-async def setsql(event):
-    hel_ = event.pattern_match.group(1)
-    var_ = hel_.split(" ")[0].upper()
-    val_ = hel_.split(" ")[1:]
-    valu = " ".join(val_)
-    xxnx = await edit_or_reply(event, f"**Setting variable** `{var_}` **as** `{valu}`")
-    if "" in (var_, valu):
-        return await xxnx.edit(
-            f"**Invalid Syntax !!**\n\n**Ketik** `{tr}setsql VARIABLE_NAME value`"
+async def panda(event):  # sourcery no-metrics
+    "To manage vars in database"
+    cmd = event.pattern_match.group(1).lower()
+    vname = event.pattern_match.group(2)
+    vnlist = "".join(f"{i}. `{each}`\n" for i, each in enumerate(vlist, start=1))
+    if not vname:
+        return await edit_delete(
+            event, f"**📑 Give correct var name from the list :\n\n**{vnlist}", time=60
         )
-    try:
-        addgvar(var_, valu)
-    except Exception as e:
-        return await xxnx.edit(f"**ERROR !!** \n\n`{e}`")
-    await xxnx.edit(f"**Variable** `{var_}` **successfully added with value** `{valu}`")
-
-
-@pandaub.ilhammansiz_cmd(
-    pattern="deldb$",
-    command=("deldb", plugin_category),
-    info={
-        "header": "To Check dyno usage of userbot and also to know how much left.",
-        "usage": "{tr}deldb",
-    },
-)
-async def delsql(event):
-    var_ = event.pattern_match.group(1).upper()
-    xxnx = await edit_or_reply(event, f"**Deleting Variable** `{var_}`")
-    if var_ == "":
-        return await xxnx.edit(
-            f"**Invalid Syntax !!**\n\n**Ketik** `{tr}delsql VARIABLE_NAME`"
+    vinfo = None
+    if " " in vname:
+        vname, vinfo = vname.split(" ", 1)
+    reply = await event.get_reply_message()
+    if not vinfo and reply:
+        vinfo = reply.text
+    if vname in vlist:
+        if vname in oldvars:
+            vname = oldvars[vname]
+        if cmd == "set":
+            if not vinfo:
+                return await edit_delete(
+                    event, f"Give some values which you want to save for **{vname}**"
+                )
+            check = vinfo.split(" ")
+            for i in check:
+                if "PIC" in vname and not url(i):
+                    return await edit_delete(event, "**Give me a correct link...**")
+            addgvar(vname, vinfo)
+            if BOTLOG_CHATID:
+                await event.client.send_message(
+                    BOTLOG_CHATID,
+                    f"#SET_DATAVAR\
+                    \n**{vname}** is updated newly in database as below",
+                )
+                await event.client.send_message(BOTLOG_CHATID, vinfo, silent=True)
+            await edit_delete(
+                event, f"📑 Value of **{vname}** is changed to :- `{vinfo}`", time=20
+            )
+        if cmd == "get":
+            var_data = gvarstatus(vname)
+            await edit_delete(
+                event, f"📑 Value of **{vname}** is  `{var_data}`", time=20
+            )
+        elif cmd == "del":
+            delgvar(vname)
+            if BOTLOG_CHATID:
+                await event.client.send_message(
+                    BOTLOG_CHATID,
+                    f"#DEL_DATAVAR\
+                    \n**{vname}** is deleted from database",
+                )
+            await edit_delete(
+                event,
+                f"📑 Value of **{vname}** is now deleted & set to default.",
+                time=20,
+            )
+    else:
+        await edit_delete(
+            event, f"**📑 Give correct var name from the list :\n\n**{vnlist}", time=60
         )
-    try:
-        delgvar(var_)
-    except Exception as e:
-        return await xxnx.edit(f"**ERROR !!**\n\n`{e}`")
-    await xxnx.edit(f"**Deleted Variable** `{var_}`")
