@@ -234,15 +234,15 @@ def prettyjson(obj, indent=2, maxlinelength=80):
 
 
 valuess = """
-     ALIVE_PIC
-     CUSTOM_ALIVE_TEXT
-     HELP_EMOJI
-     HELP_TEXT_INLINE
-     ALIVE_NAME
-     PM_TEXT
-     PM_BLOCK
-     NO_OF_ROWS_IN_HELP
-     NO_OF_COLUMNS_IN_HELP
+    `ALIVE_PIC`
+    `CUSTOM_ALIVE_TEXT`
+    `HELP_EMOJI`
+    `HELP_TEXT_INLINE`
+    `ALIVE_NAME`
+    `PM_TEXT`
+    `PM_BLOCK`
+    `NO_OF_ROWS_IN_HELP`
+    `NO_OF_COLUMNS_IN_HELP`
 """
 
 vlist = [
