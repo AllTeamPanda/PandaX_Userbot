@@ -3,7 +3,7 @@
 # Recode by Ilham Mansiez
 
 
-from Panda import bot, PandaBot
+from Panda import PandaBot
 import Panda
 plugin_category = "plugins"
 
