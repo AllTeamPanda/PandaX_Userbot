@@ -25,3 +25,5 @@ class Var(object):
         "SESSION", None)
     STRING_SESSION = sys.argv[3] if len(sys.argv) > 3 else config("SESSION", default=None)
     MONGO_URI = config("MONGO_URI", default=None)
+    DB_URI = os.environ.get("DATABASE_URL", None)
+    
