@@ -3,7 +3,7 @@ from platform import python_version
 
 from telethon import version
 import asyncio
-from Panda import StartTime, pandaversion, PandaBot
+from Panda import StartTime, pandaversion, PandaBot, SqL
 pandaub = PandaBot
 from ..Config import Config
 from ..helpers.functions import get_readable_time, check_data_base_heal_th
@@ -13,20 +13,20 @@ from ..sql_helper.globals import gvarstatus
 from ..core.data import _sudousers_list
 from . import mention
 
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "꧁༺ Panda Userbot ༻꧂"
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT = SqL.getdb("CUSTOM_ALIVE_TEXT") or "꧁༺ Panda Userbot ༻꧂"
 
 # ================= CONSTANT =================
 DEFAULTUSER = mention
 # ============================================
-EMOJI = gvarstatus("EMOJI") or "🎨"
+EMOJI = SqL.getdb("EMOJI") or "🎨"
 NAME = DEFAULTUSER
 
 plugin_category = "plugins"
 
-SUDO = gvarstatus("sudoenable")
+SUDO = SqL.getdb("sudoenable")
 SUDOuser = _sudousers_list()
 
-LOGO = Config.ALIVE_PIC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/37b52b38dffb858cccf49.jpg"
+LOGO = Config.ALIVE_PIC = SqL.getdb("ALIVE_PIC") or "https://telegra.ph/file/37b52b38dffb858cccf49.jpg"
 
 
 
