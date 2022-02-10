@@ -1,3 +1,10 @@
+
+# Credits: @robotrakitangakbagus, @diemmmmmmmmmm
+# FROM PandaX_Userbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# t.me/PandaUserbot & t.me/TeamSquadUserbotSupport
+
+
+
 try:
     from . import BASE, SESSION
 except ImportError:
