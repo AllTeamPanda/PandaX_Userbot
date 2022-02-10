@@ -7,7 +7,7 @@ from telethon import Button, functions
 from telethon.events import CallbackQuery
 from telethon.utils import get_display_name
 
-from Panda import pandaub
+from Panda import pandaub, SqL
 from Panda.core.logger import logging
 
 from ..Config import Config
@@ -16,14 +16,15 @@ from ..helpers.utils import _format, get_user_from_event, reply_id
 from ..sql_helper import global_collectionjson as sql
 from ..sql_helper import global_list as sqllist
 from ..sql_helper import pmpermit_sql
-from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import mention
 
 plugin_category = "plugins"
 LOGS = logging.getLogger(__name__)
 cmdhd = Config.COMMAND_HAND_LER
 
-
+gvarstatus = SqL.getdb
+addgvar = SqL.setdb
+delgvar = SqL.deldb
 
 
 
