@@ -26,7 +26,7 @@ class Sqldb(BASE):
 Sqldb.__table__.create(checkfirst=True)
 
 
-def get(variable):
+def getdb(variable):
     try:
         return (
             SESSION.query(Sqldb)
@@ -40,15 +40,15 @@ def get(variable):
         SESSION.close()
 
 
-def set(variable, value):
+def setdb(variable, value):
     if SESSION.query(Sqldb).filter(Sqldb.variable == str(variable)).one_or_none():
-        del(variable)
+        deldb(variable)
     adder = Sqldb(str(variable), value)
     SESSION.add(adder)
     SESSION.commit()
 
 
-def del(variable):
+def deldb(variable):
     rem = (
         SESSION.query(Sqldb)
         .filter(Sqldb.variable == str(variable))
