@@ -12,7 +12,7 @@ import heroku3
 import requests
 import urllib3
 
-from Panda import pandaub
+from Panda import pandaub, SqL
 from . import BOTLOG_CHATID
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
@@ -27,7 +27,9 @@ heroku_api = "https://api.heroku.com"
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 HEROKU_API_KEY = Config.HEROKU_API_KEY
 
-from Panda.sql_helper.globals import addgvar, delgvar, gvarstatus
+gvarstatus = SqL.getdb
+addgvar = SqL.setdb
+delgvar = SqL.deldb
 
 @pandaub.ilhammansiz_cmd(
     pattern="(set|get|del) var (.*)",
