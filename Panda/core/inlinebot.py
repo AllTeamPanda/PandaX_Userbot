@@ -36,7 +36,7 @@ LOGS = logging.getLogger(__name__)
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 PANDALOGO = "https://telegra.ph/file/0c571ae6dcb68ea2bdf49.jpg"
 tr = Config.COMMAND_HAND_LER
-ilhammansiez = Config.PANDA_HELP_LOGO = gvarstatus("PANDA_HELP_LOGO") or "https://telegra.ph/file/336d811bce4f1d1053fbf.jpg"
+ilhammansiez = Config.PANDA_HELP_LOGO = SqL.getdb("PANDA_HELP_LOGO") or "https://telegra.ph/file/336d811bce4f1d1053fbf.jpg"
 from ..plugins import mention
 
 def getkey(val):
@@ -64,7 +64,7 @@ import time
 
 from ..Config import Config
 
-CUSTOM_HELP_TEXT = gvarstatus("HELP_TEXT_INLINE") or  "🛠 INLINE MENU 🛠"
+CUSTOM_HELP_TEXT = SqL.getdb("HELP_TEXT_INLINE") or  "🛠 INLINE MENU 🛠"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "🎴"
 
 def settingvar(dat):
