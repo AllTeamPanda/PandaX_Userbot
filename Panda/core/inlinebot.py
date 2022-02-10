@@ -16,7 +16,7 @@ from telethon import Button, types, events
 
 from youtubesearchpython import VideosSearch
 from telethon.events import InlineQuery, callbackquery, CallbackQuery
-from Panda import PandaBot
+from Panda import PandaBot, SqL
 pandaub = PandaBot
 from ..Config import Config
 from ..helpers.functions import rand_key
@@ -133,14 +133,14 @@ def paginate_help(
     category_pgno=0,
 ):  # sourcery no-metrics
     try:
-        number_of_rows = int(gvarstatus("NO_OF_ROWS_IN_HELP") or 5)
+        number_of_rows = int(SqL.getdb("NO_OF_ROWS_IN_HELP") or 5)
     except (ValueError, TypeError):
         number_of_rows = 5
     try:
-        number_of_cols = int(gvarstatus("NO_OF_COLUMNS_IN_HELP") or 2)
+        number_of_cols = int(SqL.getdb("NO_OF_COLUMNS_IN_HELP") or 2)
     except (ValueError, TypeError):
         number_of_cols = 2
-    HELP_EMOJI = gvarstatus("HELP_EMOJI") or " "
+    HELP_EMOJI = SqL.getdb("HELP_EMOJI") or " "
     helpable_plugins = [p for p in loaded_plugins if not p.startswith("_")]
     helpable_plugins = sorted(helpable_plugins)
     if len(HELP_EMOJI) == 2:
