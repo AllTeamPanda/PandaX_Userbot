@@ -14,7 +14,7 @@ from ..core.managers import edit_or_reply
 from Panda.events import register
 import asyncio
 import os
-
+from . import BOTLOG_CHATID
 
 
 ## ===================================
