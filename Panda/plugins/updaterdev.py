@@ -16,7 +16,7 @@ import asyncio
 import os
 from . import BOTLOG_CHATID
 
-
+plugin_category = "modules"
 ## ===================================
 
 REPO_URL = "https://github.com/PandaUserbot/Dev"
