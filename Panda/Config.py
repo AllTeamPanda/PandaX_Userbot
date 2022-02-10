@@ -6,7 +6,7 @@ from telethon.tl.types import ChatBannedRights
 class Config(object):
     LOGGER = True
 
-    ALIVE_NAME = os.environ.get("ALIVE_NAME", None) = SqL.getdb("ALIVE_NAME") or None
+    ALIVE_NAME = SqL.getdb("ALIVE_NAME") or os.environ.get("ALIVE_NAME", None)
     APP_ID = int(os.environ.get("API_ID", 6))
     API_HASH = os.environ.get("API_HASH") or None
     DB_URI = os.environ.get("DATABASE_URL", None)
@@ -19,10 +19,10 @@ class Config(object):
         "TG_BOT_TOKEN_BF_HER", None
     )
     TG_BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
-    TZ = os.environ.get("TZ", "Asia/Jakarta") = SqL.getdb("TZ") or None
+    TZ = SqL.getdb("TZ") or os.environ.get("TZ", "Asia/Jakarta") 
     UPSTREAM_REPO = os.environ.get(
         "UPSTREAM_REPO", "https://github.com/ilhammansiz/PandaX_Userbot.git"
-    ) = SqL.getdb("UPSTREAM_REPO") or "https://github.com/ilhammansiz/PandaX_Userbot.git"
+    ) 
     AUTONAME = os.environ.get("AUTONAME", None)
     PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
     PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID") or 0)
@@ -37,7 +37,7 @@ class Config(object):
         or 0
     )
 
-    PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL") or 0) = int(SqL.getdb("PLUGIN_CHANNEL") or 0)
+    PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL") or 0)
     CUSTOM_ALIVE_TEXT = os.environ.get("CUSTOM_ALIVE_TEXT", None)
     CUSTOM_ALIVE_EMOJI = os.environ.get("CUSTOM_ALIVE_EMOJI", None)
     TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "pandauserbot")
@@ -75,7 +75,7 @@ class Config(object):
     EMOJI_TO_DISPLAY_IN_HELP = os.environ.get("EMOJI_TO_DISPLAY_IN_HELP", "✅")
     # specify command handler that should be used for the plugins
     # this should be a valid "regex" pattern
-    COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", r".") = SqL.getdb("COMMAND_HAND_LER") or "."
+    COMMAND_HAND_LER = SqL.getdb("COMMAND_HAND_LER") or os.environ.get("COMMAND_HAND_LER", r".")
     SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", r".")
     # set this with required folder path to act as download folder
     TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "downloads")
