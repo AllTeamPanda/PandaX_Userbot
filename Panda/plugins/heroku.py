@@ -245,6 +245,7 @@ valuess = """
     `PM_BLOCK`
     `NO_OF_ROWS_IN_HELP`
     `NO_OF_COLUMNS_IN_HELP`
+    `PANDA_HELP_LOGO`
 """
 
 vlist = [
