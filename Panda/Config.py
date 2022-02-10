@@ -22,7 +22,7 @@ class Config(object):
     TZ = os.environ.get("TZ", "Asia/Jakarta") = SqL.getdb("TZ") or None
     UPSTREAM_REPO = os.environ.get(
         "UPSTREAM_REPO", "https://github.com/ilhammansiz/PandaX_Userbot.git"
-    ) = SqL.getdb("UPSTREAM_REPO") or None
+    ) = SqL.getdb("UPSTREAM_REPO") or "https://github.com/ilhammansiz/PandaX_Userbot.git"
     AUTONAME = os.environ.get("AUTONAME", None)
     PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
     PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID") or 0)
