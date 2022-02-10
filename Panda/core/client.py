@@ -19,6 +19,7 @@ from ..helpers.utils.events import checking
 from ..helpers.utils.format import paste_text
 from ..helpers.utils.utils import runcmd
 from ..sql_helper.globals import gvarstatus
+from ..sql_helper import sqldb as SqL
 from . import BOT_INFO, CMD_INFO, GRP_INFO, LOADED_CMDS, PLG_INFO
 from .cmdinfo import _format_about
 from .data import _sudousers_list, blacklist_chats_list, sudo_enabled_cmds, _dev_list
@@ -63,7 +64,7 @@ class PandaUserbotSession(TelegramClient):
     ) -> callable:  # sourcery no-metrics
         kwargs["func"] = kwargs.get("func", lambda e: e.via_bot_id is None)
         kwargs.setdefault("forwards", forword)
-        if gvarstatus("blacklist_chats") is not None:
+        if SqL.getdb("blacklist_chats") is not None:
             kwargs["blacklist_chats"] = True
             kwargs["chats"] = blacklist_chats_list()
         stack = inspect.stack()
@@ -199,7 +200,7 @@ class PandaUserbotSession(TelegramClient):
                                 **kwargs,
                             ),
                         )
-                if allow_sudo and gvarstatus("sudoenable") is not None:
+                if allow_sudo and SqL.getdb("sudoenable") is not None:
                     if command is None or command[0] in sudo_enabledcmds:
                         if edited:
                             PandaBot.add_event_handler(
@@ -249,7 +250,7 @@ class PandaUserbotSession(TelegramClient):
     ) -> callable:  # sourcery no-metrics
         kwargs["func"] = kwargs.get("func", lambda e: e.via_bot_id is None)
         kwargs.setdefault("forwards", forword)
-        if gvarstatus("blacklist_chats") is not None:
+        if SqL.getdb("blacklist_chats") is not None:
             kwargs["blacklist_chats"] = True
             kwargs["chats"] = blacklist_chats_list()
         stack = inspect.stack()
@@ -385,7 +386,7 @@ class PandaUserbotSession(TelegramClient):
                                 **kwargs,
                             ),
                         )
-                if allow_sudo and gvarstatus("sudoenable") is not None:
+                if allow_sudo and SqL.getdb("sudoenable") is not None:
                     if command is None or command[0] in sudo_enabledcmds:
                         if edited:
                             PandaBot.add_event_handler(
@@ -501,93 +502,6 @@ class PandaUserbotSession(TelegramClient):
             except Exception as e:
                 LOGS.debug(e)
         self.running_processes.clear()
-
-def Pandavc(
-    pattern: str = None,
-    allow_sudo: bool = True,
-    disable_edited: bool = False,
-    forword=False,
-    command: str = None,
-    **args,
-):
-    args["func"] = lambda e: e.via_bot_id is None
-    stack = inspect.stack()
-    previous_stack_frame = stack[1]
-    file_test = Path(previous_stack_frame.filename)
-    file_test = file_test.stem.replace(".py", "")
-
-    if "disable_edited" in args:
-        del args["disable_edited"]
-
-    args["blacklist_chats"] = True
-    black_list_chats = blacklist_chats_list()
-    if len(black_list_chats) > 0:
-        args["chats"] = black_list_chats
-
-    if pattern is not None:
-        global panda_reg
-        global sudo_reg
-        if (
-            pattern.startswith(r"\#")
-            or not pattern.startswith(r"\#")
-            and pattern.startswith(r"^")
-        ):
-            panda_reg = sudo_reg = re.compile(pattern)
-        else:
-            panda_ = "\\" + Config.COMMAND_HAND_LER
-            sudo_ = "\\" + Config.SUDO_COMMAND_HAND_LER
-            panda_reg = re.compile(panda_ + pattern)
-            sudo_reg = re.compile(sudo_ + pattern)
-            if command is not None:
-                cmd1 = panda_ + command
-                cmd2 = sudo_ + command
-            else:
-                cmd1 = (
-                    (panda_ + pattern).replace("$", "").replace("\\", "").replace("^", "")
-                )
-                cmd2 = (
-                    (sudo_ + pattern)
-                    .replace("$", "")
-                    .replace("\\", "")
-                    .replace("^", "")
-                )
-            try:
-                LOADED_CMDS[file_test].append(cmd1)
-            except BaseException:
-                LOADED_CMDS.update({file_test: [cmd1]})
-
-    from Asisten import mansizbot as botvc
-
-    def decorator(func):
-        if not disable_edited:
-            botvc.add_event_handler(
-                func, events.MessageEdited(**args, outgoing=True, pattern=panda_reg)
-            )
-        botvc.add_event_handler(
-            func, events.NewMessage(**args, outgoing=True, pattern=panda_reg)
-        )
-        if allow_sudo:
-            if not disable_edited:
-                botvc.add_event_handler(
-                    func,
-                    events.MessageEdited(
-                        **args, from_users=_sudousers_list(), pattern=sudo_reg
-                    ),
-                )
-            botvc.add_event_handler(
-                func,
-                events.NewMessage(
-                    **args, from_users=_sudousers_list(), pattern=sudo_reg
-                ),
-            )
-        try:
-            LOADED_CMDS[file_test].append(func)
-        except Exception:
-            LOADED_CMDS.update({file_test: [func]})
-        return func
-
-    return decorator
-
 
 PandaUserbotSession.fast_download_file = download_file
 PandaUserbotSession.fast_upload_file = upload_file
