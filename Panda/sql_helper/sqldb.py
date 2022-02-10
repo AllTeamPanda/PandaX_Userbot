@@ -35,7 +35,7 @@ def get(variable):
 
 def set(variable, value):
     if SESSION.query(Sqldb).filter(Sqldb.variable == str(variable)).one_or_none():
-        delgvar(variable)
+        del(variable)
     adder = Sqldb(str(variable), value)
     SESSION.add(adder)
     SESSION.commit()
