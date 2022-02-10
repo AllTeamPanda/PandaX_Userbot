@@ -2,7 +2,7 @@ from datetime import datetime
 
 from telethon.utils import get_display_name
 
-from Panda import pandaub
+from Panda import pandaub, SqL
 from Panda.core.logger import logging
 
 from ..Config import Config
@@ -48,9 +48,9 @@ async def chat_blacklist(event):
     input_str = event.pattern_match.group(1)
     sudousers = _sudousers_list()
     if input_str == "on":
-        if gvarstatus("sudoenable") is not None:
+        if SqL.getdb("sudoenable") is not None:
             return await edit_delete(event, "__Sudo is already enabled.__")
-        addgvar("sudoenable", "true")
+        SqL.setdb("sudoenable", "true")
         text = "__Enabled sudo successfully.__\n"
         if len(sudousers) != 0:
             text += (
@@ -67,8 +67,8 @@ async def chat_blacklist(event):
                 event,
                 text,
             )
-    if gvarstatus("sudoenable") is not None:
-        delgvar("sudoenable")
+    if SqL.getdb("sudoenable") is not None:
+        SqL.deldb("sudoenable")
         text = "__Disabled sudo successfully.__"
         if len(sudousers) != 0:
             text += (
@@ -232,7 +232,7 @@ async def _(event):  # sourcery no-metrics
             + PLG_INFO["execmod"]
             + PLG_INFO["heroku"]
             + PLG_INFO["afk"]
-            + PLG_INFO["PmPanda"]
+            + PLG_INFO["pmpanda"]
             + PLG_INFO["custom"]
             + PLG_INFO["blacklistchats"]
             + PLG_INFO["corecmds"]
@@ -335,7 +335,7 @@ async def _(event):  # sourcery no-metrics
             + PLG_INFO["execmod"]
             + PLG_INFO["heroku"]
             + PLG_INFO["afk"]
-            + PLG_INFO["PmPanda"]
+            + PLG_INFO["pmpanda"]
             + PLG_INFO["custom"]
             + PLG_INFO["blacklistchats"]
             + PLG_INFO["corecmds"]
