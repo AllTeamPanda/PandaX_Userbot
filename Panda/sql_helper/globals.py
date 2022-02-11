@@ -1,5 +1,4 @@
 from Panda.sql_helper import sqldb as SqL
-from Panda.sql_helper.sqldb import MongoDB
 
 
 gvarstatus = SqL.getdb 
