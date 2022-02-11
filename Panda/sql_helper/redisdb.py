@@ -1,4 +1,3 @@
-import os
 import time
 
 from redis import StrictRedis
