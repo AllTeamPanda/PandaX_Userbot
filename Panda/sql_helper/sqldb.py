@@ -152,3 +152,7 @@ class MongoDB:
         return True
 
 
+def pyDB():
+    if MongoClient and Var.MONGO_URI:
+        return MongoDB(Var.MONGO_URI)
+
