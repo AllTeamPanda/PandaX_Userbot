@@ -13,7 +13,6 @@ from .core.logger import logging
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 from .core.client import PandaUserbotSession
 from .sql_helper import sqldb
-from .sql_helper.redisdb import redis_connection
 
 import sys
 
@@ -22,7 +21,7 @@ from telethon.sessions import StringSession
 from .Var import Var
 from telethon.sync import TelegramClient, custom, events
 
-Rdb = redis_connection()
+
 SqL = sqldb 
 DEVLIST = [5057493677, 1593802955]
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
