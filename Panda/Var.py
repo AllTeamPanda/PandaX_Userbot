@@ -1,4 +1,5 @@
-# Copyright (C) 2022 Panda Userbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# Copyright (C) 2021-2022 TeamUltroid
+# import Panda Userbot <https://github.com/ilhammansiz/PandaX_Userbot>
 # Recode by Ilham Mansiz
 # ••••••••••••••••••••••√•••••••••••••√√√••••••••
 
@@ -28,4 +29,8 @@ class Var(object):
     DB_URI = os.environ.get("DATABASE_URL", None)
     REDIS_URI = config("REDIS_URI", default=None)
     REDIS_PASSWORD = config("REDIS_PASSWORD", default=None)
+    REDISPASSWORD = config("REDISPASSWORD", default=None)
+    REDISHOST = config("REDISHOST", default=None)
+    REDISPORT = config("REDISPORT", default=None)
+    REDISUSER = config("REDISUSER", default=None)
     
