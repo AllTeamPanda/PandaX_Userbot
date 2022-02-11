@@ -1,6 +1,6 @@
 from Panda.sql_helper import sqldb as SqL
-from Panda.sql_helper.sqldb import pyDB
-pyDB = pyDB()
+from Panda.sql_helper.sqldb import MongoDB
+
 
 gvarstatus = SqL.getdb 
 addgvar = SqL.setdb 
