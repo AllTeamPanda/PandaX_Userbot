@@ -26,4 +26,6 @@ class Var(object):
     STRING_SESSION = sys.argv[3] if len(sys.argv) > 3 else config("SESSION", default=None)
     MONGO_URI = config("MONGO_URI", default=None)
     DB_URI = os.environ.get("DATABASE_URL", None)
+    REDIS_URI = config("REDIS_URI", default=None)
+    REDIS_PASSWORD = config("REDIS_PASSWORD", default=None)
     
