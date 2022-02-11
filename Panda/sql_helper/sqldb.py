@@ -147,7 +147,7 @@ class MongoDB:
             return x["value"]
 
     def flushall(self):
-        self.dB.drop_database("Mongo")
+        self.dB.drop_database("pyDB")
         self._cache = {}
         return True
 
