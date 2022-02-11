@@ -59,7 +59,7 @@ def deldb(variable):
 
 
 
-from Panda.Config import Config
+from Panda.Var import Var
 from Panda.core.logger import logging
 
 LOGS = logging.getLogger("PandaUserbot")
@@ -68,7 +68,7 @@ try:
     from pymongo import MongoClient
 except ImportError:
     MongoClient = None
-    if Config.MONGO_URI:
+    if Var.MONGO_URI:
         LOGS.warning(
             "'pymongo' not found!\nInstall pymongo[srv] to use Mongo database.."
         )
@@ -152,6 +152,6 @@ class MongoDB:
         return True
 
 def pyDB():
-    if MongoClient and Config.MONGO_URI:
-        return MongoDB(Config.MONGO_URI)
+    if MongoClient and Var.MONGO_URI:
+        return MongoDB(Var.MONGO_URI)
     
