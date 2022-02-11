@@ -59,8 +59,6 @@ def deldb(variable):
 
 
 
-import os
-import sys
 from Panda.Config import Config
 from Panda.core.logger import logging
 
