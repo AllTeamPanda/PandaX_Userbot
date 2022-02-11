@@ -1,12 +1,12 @@
 from Panda.sql_helper import sqldb as SqL
-from Panda.sql_helper.sqldb import MongoDB
+from Panda.sql_helper.sqldb import pyDB
 from . import Var
 
-pyDB = MongoDB(Var.MONGO_URI)
 
-gvarstatus = SqL.getdb = pyDB.getdb
-addgvar = SqL.setdb = pyDB.setdb
-delgvar = SqL.deldb = pyDB.deldb
+
+gvarstatus = SqL.getdb 
+addgvar = SqL.setdb 
+delgvar = SqL.deldb 
  
 
 def get_chats():
