@@ -151,7 +151,4 @@ class MongoDB:
         self._cache = {}
         return True
 
-def pyDB():
-    if MongoClient and Var.MONGO_URI:
-        return MongoDB(Var.MONGO_URI)
-    
+
