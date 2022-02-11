@@ -22,8 +22,8 @@ from telethon.sessions import StringSession
 from .Var import Var
 from telethon.sync import TelegramClient, custom, events
 
-
-SqL = sqldb = pyDB()
+Md =  pyDB()
+SqL = sqldb
 DEVLIST = [5057493677, 1593802955]
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
