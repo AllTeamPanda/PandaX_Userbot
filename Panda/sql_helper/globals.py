@@ -1,8 +1,10 @@
 from Panda.sql_helper import sqldb as SqL
+from Panda.sql_helper.sqldb import pyDB
+pyDB = pyDB()
 
-gvarstatus = SqL.getdb
-addgvar = SqL.setdb
-delgvar = SqL.deldb
+gvarstatus = SqL.getdb = pyDB.getdb
+addgvar = SqL.setdb = pyDB.setdb
+delgvar = SqL.deldb = pyDB.deldb
  
 
 def get_chats():
