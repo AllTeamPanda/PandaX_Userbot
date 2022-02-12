@@ -34,7 +34,7 @@ def user_list(l, n):
     groups_only=True,
     require_admin=True,
 )
-async def _(e):
+async def stopvc(e):
     try:
         await e.client(stopvc(await get_call(e)))
         await edit_or_reply(e, "Voice Chat Stopped")
@@ -56,7 +56,7 @@ async def _(e):
     groups_only=True,
     require_admin=True,
 )
-async def _(e):
+async def vcinvite(e):
     ok = await edit_or_reply(e, "Inviting Members to Voice Chat")
     users = []
     z = 0
@@ -85,7 +85,7 @@ async def _(e):
     groups_only=True,
     require_admin=True,
 )
-async def _(e):
+async def startvc(e):
     try:
         await e.client(startvc(e.chat_id))
         await edit_or_reply(e, "Voice Chat Started")
@@ -107,7 +107,7 @@ async def _(e):
     groups_only=True,
     require_admin=True,
 )
-async def _(e):
+async def vctitle(e):
     title = e.pattern_match.group(1).strip()
     if not title:
         return await edit_or_reply(e, "Silahkan Masukan Title untuk VCG"), time=5)
