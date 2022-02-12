@@ -48,14 +48,14 @@ async def redis(alive):
     output = (
         f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         f"⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢\n"
-        f"╭─⊸⌊🚹 `Pengguna:` {NAME}\n"
-        f"╭─⊸⌊✍ `Telethon:` v{version.__version__}\n"
-        f"╭─⊸⌊🐍 `Python:` v{python_version()}\n"
-        f"╭─⊸⌊👾 `Pytgcalls:` v{__version__}\n"
-        f"╭─⊸⌊💻 `Database:` {check_data_base_heal_th()}\n"
-        f"╭─⊸⌊🚀 `Version:` v{pandaversion}\n"
-        f"╭─⊸⌊✅ `Sudo:` {SUDO}\n"
-        f"╭─⊸⌊👥 `ID Sudo:` {SUDOuser}\n"
+        f"╭─⊸⌊`Pengguna:` {NAME}\n"
+        f"╭─⊸⌊`Telethon:` v{version.__version__}\n"
+        f"╭─⊸⌊`Python:` v{python_version()}\n"
+        f"╭─⊸⌊`Pytgcalls:` v{__version__}\n"
+        f"╭─⊸⌊`Database:` {check_data_base_heal_th()}\n"
+        f"╭─⊸⌊`Version:` v{pandaversion}\n"
+        f"╭─⊸⌊`Sudo:` {SUDO}\n"
+        f"╭─⊸⌊`ID Sudo:` {SUDOuser}\n"
         f"⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢")
     if LOGO:
         try:
