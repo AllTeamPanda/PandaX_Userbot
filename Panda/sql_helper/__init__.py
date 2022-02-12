@@ -29,21 +29,3 @@ except AttributeError as e:
     LOGS.error(str(e))
 
 
-def where_hosted():
-    if os.getenv("DYNO"):
-        return "heroku"
-    if os.getenv("RAILWAY_STATIC_URL"):
-        return "railway"
-    if os.getenv("KUBERNETES_PORT"):
-        return "qovery"
-    if os.getenv("WINDOW") and os.getenv("WINDOW") != "0":
-        return "windows"
-    if os.getenv("RUNNER_USER") or os.getenv("HOSTNAME"):
-        return "github actions"
-    if os.getenv("ANDROID_ROOT"):
-        return "termux"
-    return "local"
-
-
-HOSTED_ON = where_hosted()
-
