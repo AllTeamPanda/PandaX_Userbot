@@ -58,10 +58,8 @@ def deldb(variable):
         SESSION.commit()
 
 
-import os
 from Panda.Var import Var
 from Panda.core.logger import logging
-from redis import Redis
 
 LOGS = logging.getLogger("PandaUserbot")
 
