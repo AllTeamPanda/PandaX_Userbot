@@ -9,7 +9,7 @@ from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
 plugin_category = "modules"
-
+from Panda.events import register
 
 async def get_call(event):
     mm = await event.client(getchat(event.chat_id))
@@ -21,19 +21,7 @@ def user_list(l, n):
     for i in range(0, len(l), n):
         yield l[i : i + n]
 
-@PandaBot.ilhammansiz_cmd(
-    pattern="stopvc(?: |$)(.*)",
-    command=("stopvc", plugin_category),
-    info={
-        "header": "To give admin rights for a person",
-        "description": "Stop Group Call in a group",
-        "usage": [
-            "{tr}stopvc",
-        ],
-    },
-    groups_only=True,
-    require_admin=True,
-)
+@register(outgoing=True, pattern=r"^\.stopvc$", groups_only=True)
 async def stopvc(e):
     try:
         await e.client(stopvc(await get_call(e)))
@@ -43,19 +31,7 @@ async def stopvc(e):
 
 
 
-@PandaBot.ilhammansiz_cmd(
-    pattern="vcinvite(?: |$)(.*)",
-    command=("vcinvite", plugin_category),
-    info={
-        "header": "To give admin rights for a person",
-        "description": "Invite Group Call in a group",
-        "usage": [
-            "{tr}vcinvite",
-        ],
-    },
-    groups_only=True,
-    require_admin=True,
-)
+@register(outgoing=True, pattern=r"^\.vcinvite$", groups_only=True)
 async def vcinvite(e):
     ok = await edit_or_reply(e, "Inviting Members to Voice Chat")
     users = []
@@ -72,19 +48,7 @@ async def vcinvite(e):
             pass
     await ok.edit(f"Invited {z} users")
 
-@PandaBot.ilhammansiz_cmd(
-    pattern="startvc(?: |$)(.*)",
-    command=("startvc", plugin_category),
-    info={
-        "header": "To give admin rights for a person",
-        "description": "startvc Group Call in a group",
-        "usage": [
-            "{tr}startvc",
-        ],
-    },
-    groups_only=True,
-    require_admin=True,
-)
+@register(outgoing=True, pattern=r"^\.startvc$", groups_only=True)
 async def startvc(e):
     try:
         await e.client(startvc(e.chat_id))
@@ -94,19 +58,7 @@ async def startvc(e):
 
 
 
-@PandaBot.ilhammansiz_cmd(
-    pattern="vctitle(?: |$)(.*)",
-    command=("vctitle", plugin_category),
-    info={
-        "header": "To give admin rights for a person",
-        "description": "vctitle Group Call in a group",
-        "usage": [
-            "{tr}vctitle",
-        ],
-    },
-    groups_only=True,
-    require_admin=True,
-)
+@register(outgoing=True, pattern=r"^\.vctitle$", groups_only=True)
 async def vctitle(e):
     title = e.pattern_match.group(1).strip()
     if not title:
