@@ -25,15 +25,15 @@ def user_list(l, n):
 async def stopvc(e):
     try:
         await e.client(stopvc(await get_call(e)))
-        await edit_or_reply(e, "Voice Chat Stopped")
+        await e.edit("Voice Chat Stopped")
     except Exception as ex:
-        await edit_or_reply(e, f"`{ex}`")
+        await e.edit(f"`{ex}`")
 
 
 
 @register(outgoing=True, pattern=r"^\.vcinvite$", groups_only=True)
 async def vcinvite(e):
-    ok = await edit_or_reply(e, "Inviting Members to Voice Chat")
+    ok = await e.edit("Inviting Members to Voice Chat")
     users = []
     z = 0
     async for x in e.client.iter_participants(e.chat_id):
@@ -46,15 +46,15 @@ async def vcinvite(e):
             z += 6
         except BaseException:
             pass
-    await ok.edit(f"Invited {z} users")
+    await e.edit(f"Invited {z} users")
 
 @register(outgoing=True, pattern=r"^\.startvc$", groups_only=True)
 async def startvc(e):
     try:
         await e.client(startvc(e.chat_id))
-        await edit_or_reply(e, "Voice Chat Started")
+        await e.edit("Voice Chat Started")
     except Exception as ex:
-        await edit_or_reply(e, f"`{ex}`")
+        await e.edit(f"`{ex}`")
 
 
 
@@ -62,9 +62,9 @@ async def startvc(e):
 async def vctitle(e):
     title = e.pattern_match.group(1).strip()
     if not title:
-        return await edit_or_reply(e, "Silahkan Masukan Title untuk VCG"), time=5)
+        return await e.edit("Silahkan Masukan Title untuk VCG"), time=5)
     try:
         await e.client(settitle(call=await get_call(e), title=title.strip()))
-        await edit_or_reply(e, f"Berhasil Mengubah Judul VCG menjadi {title}")
+        await e.edit(f"Berhasil Mengubah Judul VCG menjadi {title}")
     except Exception as ex:
-        await edit_or_reply(e, f"`{ex}`")
+        await e.edit(f"`{ex}`")
