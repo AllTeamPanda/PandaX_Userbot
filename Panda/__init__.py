@@ -163,7 +163,7 @@ def where_hosted():
 Redisdb = RedisConnection(
         host=Var.REDIS_URI or "localhost",
         password=Var.REDIS_PASSWORD or "",
-        port=6379,
+        port=Var.REDISHOST,
         platform=where_hosted(),
         decode_responses=True,
         socket_timeout=5,
