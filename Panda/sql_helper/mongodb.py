@@ -106,7 +106,12 @@ def flushall(self):
 
 
 
+class RedisError(Exception):
+    pass
 
+
+class SessionExpiredError(Exception):
+    pass
 
 
 class RedisConnection(Redis):
