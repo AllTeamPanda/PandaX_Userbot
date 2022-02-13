@@ -38,7 +38,7 @@ def get_data(self_, key):
 
 
 
-def __init__(self, key):
+def __init__(self, Var.MONGO_URI):
     self.dB = MongoClient(Var.MONGO_URI, serverSelectionTimeoutMS=5000)
     self.db = self.dB
     self.re_cache()
