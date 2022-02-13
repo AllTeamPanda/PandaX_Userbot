@@ -482,6 +482,7 @@ async def endmute(event):
                     await event.client(
                         EditBannedRequest(event.chat_id, user.id, UNBAN_RIGHTS)
                     )
+                    await event.edit(f"`Successfully unmuted In group {event.chat.title}`")
         except AttributeError:
             return await edit_or_reply(
                 event,
