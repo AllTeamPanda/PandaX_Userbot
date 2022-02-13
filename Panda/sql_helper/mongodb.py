@@ -28,8 +28,8 @@ def get_data(self_, key):
 
 class MongoDB:
     def __init__(self, key):
-        self.dB = MongoClient(key, serverSelectionTimeoutMS=5000)
-        self.db = self.dB.pyDB
+        self.dB = MongoClient(Var.MONGO_URI, serverSelectionTimeoutMS=5000)
+        self.db = self.dB
         self.re_cache()
 
     def __repr__(self):
@@ -49,8 +49,11 @@ class MongoDB:
             self._cache.update({key: self.get_key(key)})
 
     def ping(self):
-        if self.dB.server_info():
-            return True
+        try:
+            self.dB.server_info()
+        except BaseException:
+            return False
+        return True
 
     def keys(self):
         return self.db.list_collection_names()
@@ -93,8 +96,4 @@ class MongoDB:
 
 
 
-def pyDB():
-    if MongoClient and Var.MONGO_URI:
-        return MongoDB(Var.MONGO_URI)
-    
-    
+
