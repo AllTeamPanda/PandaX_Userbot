@@ -9,7 +9,6 @@
 
 import os
 from redis import Redis
-import sys
 from Panda.Var import Var
 from Panda.core.logger import logging
 
