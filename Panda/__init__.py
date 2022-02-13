@@ -170,3 +170,9 @@ Redisdb = RedisConnection(
         retry_on_timeout=True,
     )
 
+def redisalive():
+    try:
+        Redisdb.ping()
+        return True
+    except BaseException:
+        return False
