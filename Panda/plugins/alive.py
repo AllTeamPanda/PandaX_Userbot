@@ -3,7 +3,7 @@ from platform import python_version
 
 from telethon import version
 import asyncio
-from Panda import StartTime, pandaversion, PandaBot, SqL
+from Panda import StartTime, pandaversion, PandaBot, SqL, Mongodb
 pandaub = PandaBot
 from ..Config import Config
 from ..helpers.functions import get_readable_time, check_data_base_heal_th
@@ -52,7 +52,8 @@ async def redis(alive):
         f"╭─⊸⌊`Telethon:` v{version.__version__}\n"
         f"╭─⊸⌊`Python:` v{python_version()}\n"
         f"╭─⊸⌊`Pytgcalls:` v{__version__}\n"
-        f"╭─⊸⌊`Database:` {check_data_base_heal_th()}\n"
+        f"╭─⊸⌊`DB_SqL:` {check_data_base_heal_th()}\n"
+        f"╭─⊸⌊`Mongo_DB:` {Mongodb.ping()}\n"
         f"╭─⊸⌊`Version:` v{pandaversion}\n"
         f"╭─⊸⌊`Sudo:` {SUDO}\n"
         f"╭─⊸⌊`ID Sudo:` {SUDOuser}\n"
