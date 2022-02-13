@@ -9,7 +9,7 @@
 
 import os
 from redis import Redis
-
+import sys
 from Panda.Var import Var
 from Panda.core.logger import logging
 
@@ -108,15 +108,9 @@ def flushall(self):
 
 
 
-class RedisError(Exception):
-    pass
 
 
-class SessionExpiredError(Exception):
-    pass
-
-
-class RedisConnection(Redis):
+class RedisConnection:
     def __init__(
         self,
         host,
@@ -132,42 +126,69 @@ class RedisConnection(Redis):
             host = spli_[0]
             port = int(spli_[-1])
             if host.startswith("http"):
-                raise RedisError("Your REDIS_URI should not start with http !")
-        elif host and port:
-            pass
-        else:
-            raise RedisError("Port Number not found")
+                logger.error("Your REDIS_URI should not start with http !")
+                import sys
 
+                sys.exit()
+        elif not host or not port:
+            logger.error("Port Number not found")
+            import sys
+
+            sys.exit()
         kwargs["host"] = host
         kwargs["password"] = password
         kwargs["port"] = port
 
-    if platform.lower() == "qovery" and not host:
-            var, hash, host, password = "", "", "", ""
-            for vars in os.environ:
-                if vars.startswith("QOVERY_REDIS_") and vars.endswith("_HOST"):
-                    var = vars
+        if platform.lower() == "qovery" and not host:
+            var, hash_, host, password = "", "", "", ""
+            for vars_ in os.environ:
+                if vars_.startswith("QOVERY_REDIS_") and vars.endswith("_HOST"):
+                    var = vars_
             if var:
-                hash = var.split("_", maxsplit=2)[1].split("_")[0]
+                hash_ = var.split("_", maxsplit=2)[1].split("_")[0]
             if hash:
-                kwargs["host"] = os.environ(f"QOVERY_REDIS_{hash}_HOST")
-                kwargs["port"] = os.environ(f"QOVERY_REDIS_{hash}_PORT")
-                kwargs["password"] = os.environ(f"QOVERY_REDIS_{hash}_PASSWORD")
-        if logger:
-            logger.info("Connecting to redis database")
-        super().__init__(**kwargs)
+                kwargs["host"] = os.environ(f"QOVERY_REDIS_{hash_}_HOST")
+                kwargs["port"] = os.environ(f"QOVERY_REDIS_{hash_}_PORT")
+                kwargs["password"] = os.environ(f"QOVERY_REDIS_{hash_}_PASSWORD")
+        self.db = Redis(**kwargs)
+        self.set = self.db.set
+        self.get = self.db.get
+        self.keys = self.db.keys
+        self.ping = self.db.ping
+        self.delete = self.db.delete
+        self.re_cache()
 
-    def set_redis(self, key, value):
+    # dict is faster than Redis
+    def re_cache(self):
+        self._cache = {}
+        for keys in self.keys():
+            self._cache.update({keys: self.get_key(keys)})
+
+    @property
+    def name(self):
+        return "Redis"
+
+    @property
+    def usage(self):
+        return sum(self.db.memory_usage(x) for x in self.keys())
+
+    def setredis(self, key, value):
+        value = str(value)
+        try:
+            value = eval(value)
+        except BaseException:
+            pass
+        self._cache.update({key: value})
         return self.set(str(key), str(value))
 
-    def get_redis(self, key):
-        data = None
-        if self.get(str(key)):
-            try:
-                data = eval(self.get(str(key)))
-            except BaseException:
-                data = self.get(str(key))
-        return data
+    def getredis(self, key):
+        if key in self._cache:
+            return self._cache[key]
+        _ = get_data(self, key)
+        self._cache.update({key: _})
+        return _
 
-    def del_redis(self, key):
+    def delredis(self, key):
+        if key in self._cache:
+            del self._cache[key]
         return bool(self.delete(str(key)))
