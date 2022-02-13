@@ -59,7 +59,7 @@ def re_cache(self):
     for key in self.keys():
         self._cache.update({key: self.get_key(key)})
 
-def ping(self):
+def ping():
     try:
         self.dB.server_info()
     except BaseException:
