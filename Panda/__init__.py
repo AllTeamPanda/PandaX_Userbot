@@ -15,7 +15,7 @@ from .core.client import PandaUserbotSession
 from .sql_helper import sqldb
 from .sql_helper import mongodb
 import sys
-
+from .sql_helper.mongodb import RedisConnection
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from .Var import Var
@@ -23,6 +23,8 @@ from telethon.sync import TelegramClient, custom, events
 
 Mongodb = mongodb
 SqL = sqldb
+
+
 DEVLIST = [5057493677, 1593802955]
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
@@ -152,3 +154,19 @@ LOAD_PLUG = {}
 BOTLOG = Config.BOTLOG
 BOTLOG_CHATID = Config.BOTLOG_CHATID
 PM_LOGGER_GROUP_ID = Config.PM_LOGGER_GROUP_ID
+
+def where_hosted():
+    if os.getenv("DYNO"):
+        return "heroku"
+
+
+Redisdb = RedisConnection(
+        host=Var.REDIS_URI or "localhost",
+        password=Var.REDIS_PASSWORD or "",
+        port=6379,
+        platform=where_hosted(),
+        decode_responses=True,
+        socket_timeout=5,
+        retry_on_timeout=True,
+    )
+
