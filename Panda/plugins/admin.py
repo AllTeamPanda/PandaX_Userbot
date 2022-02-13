@@ -433,7 +433,7 @@ async def startmute(event):
 
 
 @pandaub.ilhammansiz_cmd(
-    pattern="unmute(?: |$)(.*)",
+    pattern="unmute(?:\s|$)([\s\S]*)",
     command=("unmute", plugin_category),
     info={
         "header": "To allow user to send messages again",
@@ -458,7 +458,7 @@ async def endmute(event):
         try:
             unmute(event.chat_id, event.chat_id)
         except Exception as e:
-            await event.edit(f"**Error **\n`{str(e)}`")
+            await event.edit(f"**Error **\n`{e}`")
         else:
             await event.edit(
                 "`Successfully unmuted that person\n乁( ◔ ౪◔)「    ┑(￣Д ￣)┍`"
@@ -477,11 +477,7 @@ async def endmute(event):
             if is_muted(user.id, event.chat_id):
                 unmute(user.id, event.chat_id)
             else:
-                result = await event.client(
-                    functions.channels.GetParticipantRequest(
-                        channel=event.chat_id, user.id
-                    )
-                )
+                result = await event.client.get_permissions(event.chat_id, user.id)
                 if result.participant.banned_rights.send_messages:
                     await event.client(
                         EditBannedRequest(event.chat_id, user.id, UNBAN_RIGHTS)
@@ -492,18 +488,19 @@ async def endmute(event):
                 "`This user can already speak freely in this chat ~~lmfao sed rip~~`",
             )
         except Exception as e:
-            return await edit_or_reply(event, f"**Error : **`{str(e)}`")
+            return await edit_or_reply(event, f"**Error : **`{e}`")
         await edit_or_reply(
             event,
-            f"{_format.mentionuser(user.first_name ,user.id)} `is unmuted in {event.chat.title}\n乁( ◔ ౪◔)「    ┑(￣Д ￣)┍`",
+            f"{_format.mentionuser(user.first_name ,user.id)} `is unmuted in {get_display_name(await event.get_chat())}\n乁( ◔ ౪◔)「    ┑(￣Д ￣)┍`",
         )
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
                 "#UNMUTE\n"
                 f"**User :** [{user.first_name}](tg://user?id={user.id})\n"
-                f"**Chat :** {event.chat.title}(`{event.chat_id}`)",
+                f"**Chat :** {get_display_name(await event.get_chat())}(`{event.chat_id}`)",
             )
+
 
 
 @pandaub.ilhammansiz_cmd(
