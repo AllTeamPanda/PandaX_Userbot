@@ -4,7 +4,6 @@ from ..core.managers import edit_delete, edit_or_reply
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
 from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
-from telethon.tl.functions.phone import EditGroupCallTitleRequest as settitle
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
@@ -57,14 +56,3 @@ async def startvc(e):
         await e.edit(f"`{ex}`")
 
 
-
-@register(outgoing=True, pattern=r"^\.vctitle$", groups_only=True)
-async def vctitle(e):
-    title = e.pattern_match.group(1).strip()
-    if not title:
-        return await e.edit("Silahkan Masukan Title untuk VCG"), time=5)
-    try:
-        await e.client(settitle(call=await get_call(e), title=title.strip()))
-        await e.edit(f"Berhasil Mengubah Judul VCG menjadi {title}")
-    except Exception as ex:
-        await e.edit(f"`{ex}`")
