@@ -1,5 +1,3 @@
-from Panda import PandaBot
-from ..core.managers import edit_delete, edit_or_reply
 
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
@@ -32,7 +30,7 @@ async def stopvc(e):
 
 @register(outgoing=True, pattern=r"^\.vcinvite$", groups_only=True)
 async def vcinvite(e):
-    ok = await e.edit("Inviting Members to Voice Chat")
+    await e.edit("Inviting Members to Voice Chat")
     users = []
     z = 0
     async for x in e.client.iter_participants(e.chat_id):
