@@ -7,7 +7,8 @@
 # Import PandaX_Userbot <https://github.com/ilhammansiz/PandaX_Userbot>
 # t.me/PandaUserbot & t.me/TeamSquadUserbotSupport
 
-
+import os
+from redis import Redis
 
 from Panda.Var import Var
 from Panda.core.logger import logging
@@ -107,4 +108,66 @@ def flushall(self):
 
 
 
+class RedisError(Exception):
+    pass
 
+
+class SessionExpiredError(Exception):
+    pass
+
+
+class RedisConnection(Redis):
+    def __init__(
+        self,
+        host,
+        port,
+        password,
+        platform=None,
+        logger=LOGS,
+        *args,
+        **kwargs,
+    ):
+        if host and ":" in host:
+            spli_ = host.split(":")
+            host = spli_[0]
+            port = int(spli_[-1])
+            if host.startswith("http"):
+                raise RedisError("Your REDIS_URI should not start with http !")
+        elif host and port:
+            pass
+        else:
+            raise RedisError("Port Number not found")
+
+        kwargs["host"] = host
+        kwargs["password"] = password
+        kwargs["port"] = port
+
+    if platform.lower() == "qovery" and not host:
+            var, hash, host, password = "", "", "", ""
+            for vars in os.environ:
+                if vars.startswith("QOVERY_REDIS_") and vars.endswith("_HOST"):
+                    var = vars
+            if var:
+                hash = var.split("_", maxsplit=2)[1].split("_")[0]
+            if hash:
+                kwargs["host"] = os.environ(f"QOVERY_REDIS_{hash}_HOST")
+                kwargs["port"] = os.environ(f"QOVERY_REDIS_{hash}_PORT")
+                kwargs["password"] = os.environ(f"QOVERY_REDIS_{hash}_PASSWORD")
+        if logger:
+            logger.info("Connecting to redis database")
+        super().__init__(**kwargs)
+
+    def set_redis(self, key, value):
+        return self.set(str(key), str(value))
+
+    def get_redis(self, key):
+        data = None
+        if self.get(str(key)):
+            try:
+                data = eval(self.get(str(key)))
+            except BaseException:
+                data = self.get(str(key))
+        return data
+
+    def del_redis(self, key):
+        return bool(self.delete(str(key)))
