@@ -14,6 +14,7 @@ from .sql_helper.globals import addgvar, delgvar, gvarstatus
 from .core.client import PandaUserbotSession
 from .sql_helper import sqldb
 from .sql_helper import mongodb
+from .sql_helper.db import BaseDB
 import sys
 from .sql_helper.mongodb import RedisConnection
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
@@ -21,7 +22,7 @@ from telethon.sessions import StringSession
 from .Var import Var
 from telethon.sync import TelegramClient, custom, events
 
-Mongodb = mongodb
+Mongodb = BaseDB()
 SqL = sqldb
 
 
