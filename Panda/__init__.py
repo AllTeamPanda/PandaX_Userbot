@@ -22,7 +22,7 @@ from telethon.sessions import StringSession
 from .Var import Var
 from telethon.sync import TelegramClient, custom, events
 
-Mongodb = BaseDB()
+Mongodb = mongodb
 SqL = sqldb
 
 
