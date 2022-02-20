@@ -529,6 +529,7 @@ async def on_plugin_callback_query_handler(event):
     await event.edit(
         buttons=[
             Button.inline("Menu Utama", data="mainmenu"),
+            Button.inline("Close All", data="vinna"),
         ],
     )
 
@@ -545,7 +546,8 @@ async def on_plug_in_callback_query_handler(event):
 @PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"vinna")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
-    await event.edit("__Terhapus__")
+    ilhamyt = await event.edit("__Terhapus__")
+    await ilhamyt.delete()
 
 @settingvar("vinnna")
 async def closet(lol):
