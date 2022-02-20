@@ -526,10 +526,10 @@ async def inline_handler(event):  # sourcery no-metrics
 @PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"close")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
-    button = [
-        (custom.Button.inline("Menu Utama", data="mainmenu"),),
+    buttons = [
+        (Button.inline("Menu Utama", data="mainmenu"),),
     ]
-    xxxx = await event.edit("Menu Ditutup")
+    xxxx = await event.edit("Menu Utama", buttons=buttons)
     await xxxx.delete()
 
 @PandaBot.tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
