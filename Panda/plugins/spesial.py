@@ -10,7 +10,7 @@ pengguna = [
     f"✅ {mention} Aktif  ✅",
 ]
 
-DEV = [5061420797, 1593802955, 5057493677]
+DEV = [5061420797, 1593802955, 5057493677, 1338398753, 1743866353 ]
         
 @register(incoming=True, from_users=DEV, pattern=r"^absen$")
 async def _(event): 
