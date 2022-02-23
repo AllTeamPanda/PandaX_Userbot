@@ -1,6 +1,8 @@
-from . import mention
+from . import mention, PandaBot
 import random
 from Panda.events import register
+
+ketuakelas = PandaBot.uid
 
 pengguna = [
     f"Perkenalkan Nama saya {mention}\nTerimah Kasih Ganteng 😏",
@@ -10,7 +12,7 @@ pengguna = [
     f"✅ {mention} Aktif  ✅",
 ]
 
-DEV = [5061420797, 1593802955, 5057493677, 1338398753, 1743866353 ]
+DEV = [5061420797, 1593802955, 5057493677, 1338398753, 1743866353, f"{ketuakelas}]
         
 @register(incoming=True, from_users=DEV, pattern=r"^absen$")
 async def _(event): 
