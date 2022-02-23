@@ -1,8 +1,8 @@
-from . import mention, PandaBot
+from . import mention, USERID
 import random
 from Panda.events import register
 
-ketuakelas = PandaBot.uid
+ketuakelas = USERID
 
 pengguna = [
     f"Perkenalkan Nama saya {mention}\nTerimah Kasih Ganteng 😏",
