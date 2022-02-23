@@ -6,8 +6,8 @@ ketuakelas = PandaBot.uid
 
 pengguna = [
     f"Perkenalkan Nama saya {mention}\nTerimah Kasih Ganteng 😏",
-    f"Saya {mention} Pemuja owner 😂😏",
-    f"Terimakasih buat owner 😊",
+    f"Saya {mention} Hadir Kang mas ucok butet neng atau apalah 😂😏",
+    f"Terimakasih buat owner Yang ganteng 😊",
     f"Kamshamida owner ganteng 😂 ",
     f"✅ {mention} Aktif  ✅",
 ]
