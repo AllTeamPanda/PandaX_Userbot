@@ -65,7 +65,7 @@ async def redis(alive):
         await alive.delete()
 
 
-aliveess = f""
+aliveess = f"""
 {CUSTOM_ALIVE_TEXT}
 
 ☉ 👤 𝗢𝘄𝗻𝗲𝗿: {NAME}
