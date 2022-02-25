@@ -1,6 +1,10 @@
 from sys import version_info
 from git import Repo
 
+
+repo = Repo()
+branch = f"@{repo.active_branch.name}"
+
 __Tgl__ = 25
 __Bln__ = 02
 __Thn__ = 2022
@@ -12,3 +16,6 @@ __author__ = "PandaX_UserBot <https://github.com/ilhammansiz/PandaX_Userbot>"
 __copyright__ = "PandaX_UserBot Copyright (©) 2020 - 2021  " + __author__
 
 
+versi = f"{__Tgl__}.{__Bln__}.{__Thn__}"
+
+__version__ = versi + "|" + branch
