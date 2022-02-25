@@ -11,7 +11,7 @@ from pytgcalls import __version__
 from ..core.data import _sudousers_list
 from . import mention
 
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT = SqL.getdb("CUSTOM_ALIVE_TEXT") or "꧁༺ Panda Userbot ༻꧂"
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT = SqL.getdb("CUSTOM_ALIVE_TEXT") or "🗜PandaX-Userbot 🗜"
 
 # ================= CONSTANT =================
 DEFAULTUSER = mention
@@ -45,24 +45,11 @@ async def redis(alive):
     await alive.edit("꧁༺ Panda Userbot ༻꧂")
     await alive.edit("꧁༺ Userbot ༻꧂")
     await asyncio.sleep(1)
-    output = (
-        f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-        f"⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢\n"
-        f"╭─⊸⌊`𝗢𝘄𝗻𝗲𝗿:` {NAME}\n"
-        f"╭─⊸⌊`𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻:` `𝚅{version.__version__}`\n"
-        f"╭─⊸⌊`𝗣𝘆𝘁𝗵𝗼𝗻:` `𝚅{python_version()}`\n"
-        f"╭─⊸⌊`𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀:` `𝚅{__version__}`\n"
-        f"╭─⊸⌊`𝗗𝗕_𝗦𝗾𝗟:` `{check_data_base_heal_th()}`\n"
-        f"╭─⊸⌊`𝗠𝗼𝗻𝗴𝗼_𝗗𝗕:` `{Mongodb.ping()}`\n"
-        f"╭─⊸⌊`𝗥𝗲𝗱𝗶𝘀_𝗗𝗕:` `{redisalive()}`\n"
-        f"╭─⊸⌊`𝗩𝗲𝗿𝘀𝗶𝗼𝗻:` `𝚅{pandaversion}`\n"
-        f"╭─⊸⌊`𝗦𝘂𝗱𝗼:` {SUDO}\n"
-        f"⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢")
     if LOGO:
         try:
             logo = LOGO
             await alive.delete()
-            msg = await PandaBot.send_file(alive.chat_id, logo, caption=output)
+            msg = await PandaBot.send_file(alive.chat_id, logo, caption=aliveess)
             await asyncio.sleep(500)
             await msg.delete()
         except BaseException:
@@ -78,4 +65,26 @@ async def redis(alive):
         await alive.delete()
 
 
+aliveess = f""
+{CUSTOM_ALIVE_TEXT}
 
+☉ 👤 𝗢𝘄𝗻𝗲𝗿: {NAME}
+
+☉ 🛰 𝗩𝗘𝗥𝗦𝗜𝗢𝗡-𝗕𝗢𝗧: `𝚅{pandaversion}`
+
+☉ 👾 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
+☉ 🎙 𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀: `𝚅{__version__}`
+☉ 🐍 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`
+     
+⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
+╭━─━─━─━─━─━─━─━─━╮
+               𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲:
+
+☉ 🐘 𝗗𝗕_𝗦𝗾𝗟: `{check_data_base_heal_th()}`
+☉ 🗺 𝗠𝗼𝗻𝗴𝗼_𝗗𝗕: `{Mongodb.ping()}`
+☉ 🚀 𝗥𝗲𝗱𝗶𝘀_𝗗𝗕: `{redisalive()}`
+☉ 👥 𝗦𝘂𝗱𝗼: {SUDO}
+
+╰━─━─━─━─━─━─━─━─━╯
+⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
+"""
