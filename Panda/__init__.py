@@ -33,10 +33,10 @@ TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
 LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 
 StartTime = time.time()
-pandaversion = get_version()
+pandaversion = "3.03"
 
-__version__ = get_version()
-__license__ = __version__ 
+__version__ = "3.03"
+__license__ = __license__ 
 __author__ = __author__
 __copyright__ = __copyright__
 
