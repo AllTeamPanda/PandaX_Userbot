@@ -35,7 +35,7 @@ LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 StartTime = time.time()
 pandaversion = __version__
 
-__version__ = __version__
+__version__ = "25.02.2022"
 __license__ = __license__ 
 __author__ = __author__
 __copyright__ = __copyright__
