@@ -2,9 +2,9 @@ from sys import version_info
 
 branch = f"@PandaUserbot"
 
-__Tgl__ = 25
-__Bln__ = 02
-__Thn__ = 2022
+__Tgl__ = "25"
+__Bln__ = "02"
+__Thn__ = "2022"
 
 
 __python_version__ = f"{version_info[0]}.{version_info[1]}.{version_info[2]}"
