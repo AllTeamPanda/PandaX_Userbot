@@ -21,7 +21,7 @@ from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from .Var import Var
 from telethon.sync import TelegramClient, custom, events
-from .versions import __license__, __author__, __copyright__, __version__
+from Panda.versions import *
 
 Mongodb = mongodb
 SqL = sqldb
@@ -35,7 +35,7 @@ LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 StartTime = time.time()
 pandaversion = __version__
 
-__version__ = "25.02.2022"
+__version__ = __version__
 __license__ = __license__ 
 __author__ = __author__
 __copyright__ = __copyright__
