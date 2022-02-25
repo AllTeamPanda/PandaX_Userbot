@@ -21,7 +21,7 @@ from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from .Var import Var
 from telethon.sync import TelegramClient, custom, events
-from Panda.versions import *
+from Panda.versions import __version__, __license__, __author__, __copyright__
 
 Mongodb = mongodb
 SqL = sqldb
