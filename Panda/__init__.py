@@ -8,6 +8,7 @@ import os
 
 import time
 import heroku3
+from redis import StrictRedis
 
 from .core.logger import logging
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
@@ -16,7 +17,7 @@ from .sql_helper import sqldb
 from .sql_helper import mongodb
 from .sql_helper.db import BaseDB
 import sys
-from .sql_helper.mongodb import RedisConnection
+
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from .Var import Var
@@ -161,16 +162,7 @@ def where_hosted():
     if os.getenv("DYNO"):
         return "heroku"
 
-
-Redisdb = RedisConnection(
-        host=Var.REDIS_URI,
-        password=Var.REDIS_PASSWORD,
-        port=Var.REDISHOST,
-        platform=where_hosted(),
-        decode_responses=True,
-        socket_timeout=5,
-        retry_on_timeout=True,
-    )
+Redisdb = StrictRedis(host='localhost', port=6379, db=0)
 
 def redisalive():
     try:
