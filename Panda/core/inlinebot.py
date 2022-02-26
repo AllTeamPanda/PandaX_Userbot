@@ -135,12 +135,12 @@ def paginate_help(
     try:
         number_of_rows = int(SqL.getdb("NO_OF_ROWS_IN_HELP") or 5)
     except (ValueError, TypeError):
-        number_of_rows = 5
+        number_of_rows = 3
     try:
         number_of_cols = int(SqL.getdb("NO_OF_COLUMNS_IN_HELP") or 2)
     except (ValueError, TypeError):
         number_of_cols = 2
-    HELP_EMOJI = SqL.getdb("HELP_EMOJI") or " "
+    HELP_EMOJI = SqL.getdb("HELP_EMOJI") or "📚"
     helpable_plugins = [p for p in loaded_plugins if not p.startswith("_")]
     helpable_plugins = sorted(helpable_plugins)
     if len(HELP_EMOJI) == 2:
