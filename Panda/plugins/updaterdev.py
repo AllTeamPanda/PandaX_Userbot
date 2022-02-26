@@ -9,12 +9,10 @@ This module updates the userbot based on upstream revision
 import os, shutil
 import heroku3
 from Panda.Config import Config
-from Panda import DEVLIST, PandaBot
-from ..core.managers import edit_or_reply
+from Panda import DEVLIST
 from Panda.events import register
 import asyncio
 import os
-from . import BOTLOG_CHATID
 
 plugin_category = "modules"
 ## ===================================
