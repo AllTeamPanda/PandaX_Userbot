@@ -133,7 +133,7 @@ def paginate_help(
     category_pgno=0,
 ):  # sourcery no-metrics
     try:
-        number_of_rows = int(SqL.getdb("NO_OF_ROWS_IN_HELP") or 5)
+        number_of_rows = int(SqL.getdb("NO_OF_ROWS_IN_HELP") or 3)
     except (ValueError, TypeError):
         number_of_rows = 3
     try:
