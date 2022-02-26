@@ -210,14 +210,24 @@ async def _(dyno):
     try:
         Heroku = heroku3.from_key(HEROKU_API_KEY)
         app = Heroku.app(HEROKU_APP_NAME)
-    except BaseException:
-        return await dyno.reply(
+    except:
+        return await edit_or_reply(dyno,
             " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku"
         )
-    data = app.get_log()
-    await edit_or_reply(
-        dyno, data, deflink=True, linktext="**Recent 100 lines of heroku logs: **"
+    v = await dyno.edit("Getting Logs....")
+    with open("logs.txt", "w") as log:
+        log.write(app.get_log())
+    await v.edit("Got the logs wait a sec")
+    await dyno.client.send_file(
+        dyno.chat_id,
+        "logs.txt",
+        reply_to=dyno.id,
+        caption="Panda-Userbot Logs.",
     )
+
+    await asyncio.sleep(5)
+    await v.delete()
+    return os.remove("logs.txt")
 
 
 
