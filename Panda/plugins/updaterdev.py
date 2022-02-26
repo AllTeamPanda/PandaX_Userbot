@@ -55,22 +55,7 @@ async def panda(cool):
     r = await cool.reply("Berhasil Mengupdate Bisa digunakan kembali")
     await r.delete()
 
-@PandaBot.ilhammansiz_cmd(
-    pattern="restart$",
-    command=("restart", plugin_category),
-    info={
-        "header": "Merestart bot",
-        "usage": "{tr}restart",
-    },
-)
-async def restart_bot(event):
-    await edit_or_reply(event, "**PandaUserbot Berhasil di Restart**")
-    if BOTLOG_CHATID:
-        await event.client.send_message(
-            BOTLOG_CHATID, "#RESTART \n" "**PandaUserbot Berhasil Di Restart**"
-        )
-    ilhammansiz = Heroku.apps()[HEROKU_APP_NAME]
-    ilhammansiz.restart()
+
 
 ## Ngapain lu anjeng 
 ## Ngentot
