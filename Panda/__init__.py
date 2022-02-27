@@ -87,17 +87,6 @@ botvc = PandaBot
 Stark = PandaBot
 petercordpanda_bot = pandaub
 
-from .helpers.utils.utils import runasync
-import signal
-
-def close_connection(*_):
-    print("Clossing Userbot connection.")
-    runasync(bot.disconnect())
-    sys.exit(143)
-
-
-signal.signal(signal.SIGTERM, close_connection)
-
 
 from .Config import Config
 
