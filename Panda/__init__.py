@@ -17,7 +17,6 @@ from .sql_helper import sqldb
 from .sql_helper import mongodb
 from .sql_helper.db import BaseDB
 import sys
-
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from .Var import Var
@@ -88,12 +87,28 @@ botvc = PandaBot
 Stark = PandaBot
 petercordpanda_bot = pandaub
 
+from .helpers.utils.utils import runasync
+import signal
+
+def close_connection(*_):
+    print("Clossing Userbot connection.")
+    runasync(bot.disconnect())
+    sys.exit(143)
+
+
+signal.signal(signal.SIGTERM, close_connection)
+
+
 from .Config import Config
 
-if Config.UPSTREAM_REPO == "PANDA_USERBOT":
+
+if Config.UPSTREAM_REPO == "NEW_USERBOT":
+    UPSTREAM_REPO_URL = "https://github.com/AftahBagas/New_Userbot"
+elif Config.UPSTREAM_REPO == "PANDA_USERBOT":
     UPSTREAM_REPO_URL = "https://github.com/ilhammansiz/PandaX_Userbot"
 else:
     UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
+
 
 if Config.PRIVATE_GROUP_BOT_API_ID == 0:
     if gvarstatus("PRIVATE_GROUP_BOT_API_ID") is None:
