@@ -71,7 +71,7 @@ vcsi
 wand
 wget
 wikipedia
-git+https://github.com/ilhammansiz/Telethon
+telethon
 telethon-session-sqlalchemy
 lyrics_extractor
 youtube-search-python==1.4.7
