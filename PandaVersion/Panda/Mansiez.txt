@@ -2,3 +2,4 @@ git+https://github.com/1danish-00/carbon-now-sh-api-wrapper.git
 pybase64
 pymongo[srv]
 pytgcalls==3.0.0.dev19
+git+https://github.com/ilhammansiz/Telethon
