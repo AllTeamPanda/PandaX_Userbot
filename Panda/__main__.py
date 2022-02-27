@@ -42,7 +42,4 @@ LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{Panda.__version__} [TEL
 if len(sys.argv) not in (1, 3, 4):
     Panda.PandaBot.disconnect()
 else:
-    try:
-        Panda.PandaBot.run_until_disconnected()
-    except ConnectionError:
-        pass
+    Panda.PandaBot.run_until_disconnected()
