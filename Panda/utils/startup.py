@@ -22,7 +22,7 @@ from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
 import base64
-from .versions import __version__ as botvers
+from ..versions import __version__ as botvers
 
 LOGS = logging.getLogger("PandaUserbot")
 cmdhr = Config.COMMAND_HAND_LER
