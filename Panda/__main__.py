@@ -36,6 +36,7 @@ print("🛠 Sedang memperoses.....")
 Panda.PandaBot.loop.run_until_complete(memulai())
 print("Berhasil Mengaktifkan Userbot")
 Panda.PandaBot.loop.run_until_complete(utils.join())
+Panda.PandaBot.loop.run_until_complete(Panda.utils.ongrup())
 
 LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{Panda.__version__} [TELAH DIAKTIFKAN]")
 
