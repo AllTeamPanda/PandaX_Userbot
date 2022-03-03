@@ -22,6 +22,7 @@ from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
 import base64
+from .versions import __version__ as botvers
 
 LOGS = logging.getLogger("PandaUserbot")
 cmdhr = Config.COMMAND_HAND_LER
@@ -198,6 +199,30 @@ async def verifyLoggerGroup():
         sys.exit(0)
 
 
+ON = f"""
+✅ **Panda-Userbot Aktif**
+•••••••••••
+☢ **Version -** `{botvers}`
+☢ **Ketik** `{cmdhr}alive` **untuk Mengecheck Bot apakah sudah aktif**
+
+❗Sebaiknya Anda jangan keluar grup ini agar bot tidak mati
+ ....Terimakasih....🇮🇩
+
+❗You should not leave this group so that the bot does not die
+ ....Thank You....🇺🇸
+•••••••••••
+"""
+
+async def ongrup():
+    try:
+        if PandaBot:
+            if BOTLOG_CHATID != 0:
+                await PandaBot.send_message(
+                    BOTLOG_CHATID,
+                    ON,
+                )
+    except BaseException:
+        pass
 
 async def join():
     X = base64.b64decode("QFBhbmRhVXNlcmJvdA==")
