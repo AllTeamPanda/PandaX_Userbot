@@ -1,8 +1,8 @@
 from sys import version_info
-from git import Repo
 
-repo = Repo()
-branch = repo.active_branch.name
+
+
+branch = f"@PandaUserbot"
 
 
 __Tgl__ = "25"
