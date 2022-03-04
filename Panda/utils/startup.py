@@ -202,8 +202,8 @@ async def verifyLoggerGroup():
 ON = f"""
 ✅ **Panda-Userbot Aktif**
 •••••••••••
-☢ **Version -** `{botvers}`
-☢ **Ketik** `{cmdhr}alive` **untuk Mengecheck Bot apakah sudah aktif**
+💻 **Version -** `{botvers}`
+➡ **Ketik** `{cmdhr}alive` **untuk Mengecheck Bot apakah sudah aktif**
 
 ❗Sebaiknya Anda jangan keluar grup ini agar bot tidak mati
  ....Terimakasih....🇮🇩
