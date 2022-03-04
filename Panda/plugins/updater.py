@@ -271,7 +271,7 @@ async def upstream(event):
 )
 async def upstream(event):
     event = await edit_or_reply(event, "`Sedang Mengupdate mohon sabar kira² 5 min lah ....`")
-    off_repo = "https://github.com/PandaUserbot/Dev"
+    off_repo = "https://github.com/ilhammansiz/DEPLOY"
     os.chdir("/app")
     await _pandautils.runcmd(f"rm -rf .git")
     try:
