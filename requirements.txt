@@ -1,7 +1,7 @@
 aiofiles
 redis>=3.3.10
 python-decouple==3.3
-aiohttp[speedups]
+aiohttp
 cloudscraper
 colour
 covid
