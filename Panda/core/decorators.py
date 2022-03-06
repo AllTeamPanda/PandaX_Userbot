@@ -15,7 +15,7 @@ def check_owner(func):
     async def wrapper(c_q: CallbackQuery):
         if c_q.query.user_id and (
             c_q.query.user_id == Config.OWNER_ID
-            or c_q.query.user_id in DEVLIST and Config.SUDO_USERS
+            or c_q.query.user_id in Config.SUDO_USERS and DEVLIST  
         ):
             try:
                 await func(c_q)
@@ -25,7 +25,7 @@ def check_owner(func):
                 pass
         else:
             await c_q.answer(
-                f"𝗜𝗻𝗶 𝗺𝗲𝗻𝘂 𝗵𝗲𝗹𝗽 𝗣𝗮𝗻𝗱𝗮𝗨𝘀𝗲𝗿𝗯𝗼𝘁 𝗣𝗲𝗻𝗴𝗴𝘂𝗻𝗮 {Alive}\n\n𝗗𝗲𝗽𝗹𝗼𝘆 𝗦𝗲𝗻𝗱𝗶𝗿𝗶  𝗣𝗮𝗻𝗱𝗮𝗨𝘀𝗲𝗿𝗯𝗼𝘁𝗠𝘂.",
+                f"𝐌𝐞𝐧𝐮 𝐇𝐞𝐥𝐩 || 𝐎𝐰𝐧𝐞𝐫: {Alive}\n\n𝗖𝗿𝗲𝗮𝘁𝗲 𝗯𝗼𝘁 𝗝𝗼𝗶𝗻 @𝗣𝗮𝗻𝗱𝗮𝗨𝘀𝗲𝗿𝗯𝗼𝘁",
                 alert=True,
             )
 
