@@ -180,8 +180,8 @@ class PandaUserbotSession(TelegramClient):
                     wrapper,
                     NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                 )
-                if dev is None:
-                    if command is None or command[0]:
+                if dev is not None:
+                    if command is not None or command[0]:
                         if edited:
                             PandaBot.add_event_handler(
                                 wrapper,
@@ -366,8 +366,8 @@ class PandaUserbotSession(TelegramClient):
                     wrapper,
                     NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                 )
-                if dev is None:
-                    if command is None or command[0]:
+                if dev is not None:
+                    if command is not None or command[0]:
                         if edited:
                             PandaBot.add_event_handler(
                                 wrapper,
