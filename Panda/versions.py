@@ -5,8 +5,8 @@ from sys import version_info
 branch = f"@PandaUserbot"
 
 
-__Tgl__ = "25"
-__Bln__ = "02"
+__Tgl__ = "07"
+__Bln__ = "03"
 __Thn__ = "2022"
 
 
