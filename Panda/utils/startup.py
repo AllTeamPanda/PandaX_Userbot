@@ -11,7 +11,8 @@ from asyncio.exceptions import CancelledError
 from pathlib import Path
 from telethon.tl.functions.channels import JoinChannelRequest
 import requests
-from telethon import types, utils
+from telethon import functions, types, utils
+
 from Panda import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 
 from ..Config import Config
@@ -30,16 +31,27 @@ pandaub = PandaBot
 
 async def setup_bot():
     try:
-        await PandaBot.start()
-        await PandaBot.start(bot_token=Config.TG_BOT_USERNAME)
+        await PandaBot.connect()
+        delta = await PandaBot(functions.help.GetConfigRequest())
+        for option in delta.dc_options:
+            if option.ip_address == PandaBot.session.server_address:
+                if PandaBot.session.dc_id != option.id:
+                    LOGS.warning(
+                        f"Fixed DC ID in session from {PandaBot.session.dc_id}"
+                        f" to {option.id}"
+                    )
+                PandaBot.session.set_dc(option.id, option.ip_address, option.port)
+                PandaBot.session.save()
+                break
         PandaBot.me = await PandaBot.get_me()
+        bot_details = await PandaBot.tgbot.get_me()
+        Config.TG_BOT_USERNAME = f"@{bot_details.username}"
         PandaBot.uid = PandaBot.tgbot.uid = utils.get_peer_id(PandaBot.me)
         if Config.OWNER_ID == 0:
             Config.OWNER_ID = utils.get_peer_id(PandaBot.me)
     except Exception as e:
         LOGS.error(f"STRING_SESSION - {str(e)}")
         sys.exit()
-
 
 
 # don't know work or not just a try in future will use sleep
