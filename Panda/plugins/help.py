@@ -176,6 +176,7 @@ async def _(event):
     },
 )
 async def _(event):
+    reply_to_id = await reply_id(event)
     results = await event.client.inline_query(Config.TG_BOT_USERNAME, "help")
     botfer = await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     await edit_or_reply(event, botfer)
