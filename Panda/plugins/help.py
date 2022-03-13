@@ -1,4 +1,6 @@
 from telethon import functions
+from time import sleep
+
 
 from Panda import pandaub
 Bot = pandaub
@@ -6,7 +8,7 @@ from ..Config import Config
 from ..core import CMD_INFO, GRP_INFO, PLG_INFO
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id
-
+from . import mention
 cmdprefix = Config.COMMAND_HAND_LER
 
 plugin_category = "plugins"
@@ -16,6 +18,7 @@ plugin_category = "plugins"
 hemojis = {
     "plugins": "🗂",
     "modules": "📂",
+    "music": "🎙"
 }
 
 
@@ -94,9 +97,10 @@ async def plugininfo(input_str, event, flag):
 
 
 async def grpinfo():
-    outstr = "**Plugins in Pandauserbot are:**\n\n"
-    outstr += f"**🗂 Usage : ** `{cmdprefix}help <plugin name>`\n\n"
-    category = ["modules", "plugins"]
+    outstr = "**Plugins in Panda-Userbot are:**\n\n"
+    outstr += f"**👤 Owner : ** {mention}\n"
+    outstr += f"**📜 Usage : ** `{cmdprefix}help <plugin name>`\n\n"
+    category = ["modules", "plugins", "music"]
     for panda in category:
         plugins = GRP_INFO[panda]
         outstr += f"**{hemojis[panda]} {panda.title()} **({len(plugins)})\n"
@@ -108,7 +112,7 @@ async def grpinfo():
 
 async def cmdlist():
     outstr = "**Total list of Commands in your Pandauserbot are :**\n\n"
-    category = ["modules", "plugins"]
+    category = ["modules", "plugins", "music"]
     for panda in category:
         plugins = GRP_INFO[panda]
         outstr += f"**{hemojis[panda]} {panda.title()} ** - {len(plugins)}\n\n"
@@ -126,7 +130,7 @@ async def cmdlist():
     pattern="help ?(-c|-p|-t)? ?(.*)?",
     command=("help", plugin_category),
     info={
-        "header": "To get guide for pandauserbot.",
+        "header": "To get guide for Panda-Userbot.",
         "description": "To get information or guide for the command or plugin",
         "note": "if command name and plugin name is same then you get guide for plugin. So by using this flag you get command guide",
         "flags": {
@@ -145,7 +149,8 @@ async def _(event):
     "To get guide for pandauserbot."
     flag = event.pattern_match.group(1)
     input_str = event.pattern_match.group(2)
-    reply_to_id = await reply_id(event)
+    await reply_id(event)
+    outstr = await grpinfo()
     if flag and flag == "-c" and input_str:
         outstr = await cmdinfo(input_str, event)
         if outstr is None:
@@ -154,16 +159,26 @@ async def _(event):
         outstr = await plugininfo(input_str, event, flag)
         if outstr is None:
             return
-    else:
-        if flag == "-t":
-            outstr = await grpinfo()
-        else:
-            results = await event.client.inline_query(Config.TG_BOT_USERNAME, "help")
-            await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
-            await event.delete()
-            return
-    await edit_or_reply(event, outstr)
+    dev = await edit_or_reply(event, outstr)
+    sleep(1000)
+    await dev.delete()
 
+
+@pandaub.ilhammansiz_cmd(
+    pattern="inline(?: |$)(.*)",
+    command=("inline", plugin_category),
+    info={
+        "header": "Inline bot",
+        "description": "Help via inline Bot",
+        "usage": [
+            "{tr}inline",
+        ],
+    },
+)
+async def _(event):
+    results = await event.client.inline_query(Config.TG_BOT_USERNAME, "help")
+    botfer = await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
+    await edit_or_reply(event, botfer)
 
 @pandaub.ilhammansiz_cmd(
     pattern="cmds(?: |$)(.*)",
