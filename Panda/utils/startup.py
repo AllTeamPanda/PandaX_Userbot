@@ -31,7 +31,7 @@ pandaub = PandaBot
 
 async def setup_bot():
     try:
-        await PandaBot.connect()
+        await PandaBot.start()
         delta = await PandaBot(functions.help.GetConfigRequest())
         for option in delta.dc_options:
             if option.ip_address == PandaBot.session.server_address:
