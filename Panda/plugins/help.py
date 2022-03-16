@@ -1,5 +1,4 @@
 from telethon import functions
-from time import sleep
 
 
 from Panda import pandaub
