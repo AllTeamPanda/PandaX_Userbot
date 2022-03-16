@@ -159,10 +159,8 @@ async def _(event):
         outstr = await plugininfo(input_str, event, flag)
         if outstr is None:
             return
-    dev = await edit_or_reply(event, outstr)
-    sleep(1000)
-    await dev.delete()
-
+    await edit_or_reply(event, outstr)
+    
 
 @pandaub.ilhammansiz_cmd(
     pattern="inline(?: |$)(.*)",
