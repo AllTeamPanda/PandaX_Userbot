@@ -25,7 +25,7 @@ SUDOuser = _sudousers_list()
 
 LOGO = Config.ALIVE_PIC = SqL.getdb("ALIVE_PIC") or "https://telegra.ph/file/6134eb4bf284402c9a7f6.mp4"
 
-
+usernames = Config.TG_BOT_USERNAME
 
 @PandaBot.ilhammansiz_cmd(
     pattern="alive$",
@@ -78,7 +78,7 @@ aliveess = f"""
 
 ☉ 🎭 Dual-Mode: {dual_mode()}
 ☉ ⚡ Command Dualmode: {dual_duall()}
-     
+☉ 👥 BotUser-Dual: {usernames}
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
 ╭━─━─━─━─━─━─━─━─━╮
                𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲:
