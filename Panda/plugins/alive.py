@@ -1,9 +1,8 @@
 import time
 from platform import python_version
-
-from telethon import version
+from telethon import Button, version
 import asyncio
-from Panda import StartTime, pandaversion, PandaBot, SqL, Mongodb, redisalive
+from Panda import StartTime, pandaversion, PandaBot, SqL, Mongodb, redisalive, dual_mode, dual_duall
 pandaub = PandaBot
 from ..Config import Config
 from ..helpers.functions import get_readable_time, check_data_base_heal_th
@@ -11,7 +10,7 @@ from pytgcalls import __version__
 from ..core.data import _sudousers_list
 from . import mention
 
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT = SqL.getdb("CUSTOM_ALIVE_TEXT") or "🗜PandaX-Userbot 🗜"
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT = SqL.getdb("CUSTOM_ALIVE_TEXT") or "PandaX-Userbot"
 
 # ================= CONSTANT =================
 DEFAULTUSER = mention
@@ -50,6 +49,7 @@ async def redis(alive):
             logo = LOGO
             await alive.delete()
             msg = await PandaBot.send_file(alive.chat_id, logo, caption=aliveess)
+            await PandaBot.tgbot.send_file(alive.chat_id, logo, caption=aliveess, buttons=menu())
             await asyncio.sleep(500)
             await msg.delete()
         except BaseException:
@@ -60,7 +60,7 @@ async def redis(alive):
             await asyncio.sleep(100)
             await alive.delete()
     else:
-        await alive.edit(output)
+        await alive.edit(aliveess)
         await asyncio.sleep(100)
         await alive.delete()
 
@@ -70,11 +70,14 @@ aliveess = f"""
 
 ☉ 👤 𝗢𝘄𝗻𝗲𝗿: {NAME}
 
-☉ 🛰 𝗩𝗘𝗥𝗦𝗜𝗢𝗡-𝗕𝗢𝗧: `𝚅{pandaversion}`
+☉ 🛰 Version:`𝚅{pandaversion}`
 
 ☉ 👾 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
 ☉ 🎙 𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀: `𝚅{__version__}`
 ☉ 🐍 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`
+
+☉ 🎭 Dual-Mode: {dual_mode()}
+☉ ⚡ Command Dualmode: {dual_duall()}
      
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
 ╭━─━─━─━─━─━─━─━─━╮
@@ -88,3 +91,29 @@ aliveess = f"""
 ╰━─━─━─━─━─━─━─━─━╯
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
 """
+
+
+def menu():
+    buttons = [
+        (
+            Button.url(
+                "Support",
+                "https://t.me/TEAMSquadUserbotSupport",
+            ),
+            Button.inline(
+                f"💎 𝙸𝚗𝚏𝚘",
+                data="check",
+            ),
+        ),   
+        (
+            Button.url(
+                "Source Code",
+                "https://github.com/ilhammansiz/PandaX_Userbot",
+            ),
+            Button.url(
+                "Deploy",
+                "https://t.me/PandaUserbot/13",
+            ),
+        ),
+    ]
+    return buttons
