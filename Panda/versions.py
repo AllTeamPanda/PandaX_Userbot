@@ -18,4 +18,4 @@ __copyright__ = "PandaX_UserBot Copyright (©) 2020 - 2021  " + __author__
 
 versi = f"{__Tgl__}.{__Bln__}.{__Thn__}"
 
-__version__ = versi + "|" + branch
+__version__ = versi + "|" + branch + __python_version__
