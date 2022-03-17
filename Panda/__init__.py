@@ -1,6 +1,7 @@
 # Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
 # Import Panda Userbot
 # Recode by Ilham Mansiz
+# t.me/PandaUserbot
 # ••••••••••••••••••••••√•••••••••••••√√√••••••••
 
 
@@ -12,7 +13,7 @@ from redis import StrictRedis
 
 from .core.logger import logging
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
-from .core.client import PandaUserbotSession
+from .core.client import PandaUserbotSession, dual_duall
 from .sql_helper import sqldb
 from .sql_helper import mongodb
 from .sql_helper.db import BaseDB
@@ -32,6 +33,9 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
 LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 
+
+
+
 StartTime = time.time()
 pandaversion = __version__
 
@@ -44,48 +48,90 @@ __copyright__ = __copyright__
 LOGS = logging.getLogger("PandaUserbot")
 loop = None
 
-if Var.STRING_SESSION:
-    session = StringSession(str(Var.STRING_SESSION))
-else:
-    session = "pandauserbot"
-try:
-    PandaBot = PandaUserbotSession(
-        session=session,
-        api_id=Var.APP_ID,
-        api_hash=Var.API_HASH,
-        loop=loop,
-        app_version=__version__,
-        connection=ConnectionTcpAbridged,
-        auto_reconnect=True,
-        connection_retries=None,
-    )  
-except Exception as e:
-    print(f"STRING_SESSION - {str(e)}")
-    sys.exit()
+BOT_MODE = SqL.getdb("MODE_DUAL")
+DUAL_MODE = SqL.getdb("DUAL_MODE")
 
+##•••••••••••••••Recode by Ilham mansiz••||||•••
+## Mode Userbot
+try:
+    if BOT_MODE:
+        if DUAL_MODE:
+            SqL.deldb("DUAL_MODE")
+            DUAL_MODE = False
+        PandaBot = None
+    else:
+         if Var.STRING_SESSION:
+             PandaBot = PandaUserbotSession(
+                session=StringSession(str(Var.STRING_SESSION)),
+                api_id=Var.APP_ID,
+                api_hash=Var.API_HASH,
+                loop=loop,
+                app_version=__version__,
+                connection=ConnectionTcpAbridged,
+                auto_reconnect=True,
+                connection_retries=None,
+            )
+except Exception as e:
+    print(f"STRING_SESSION {str(e)}")
+    sys.exit()
+######################################
 
 from .helpers.functions.auto import autobot
 
-if not BOT_TOKEN:
+if not BOT_MODE:
     PandaBot.loop.run_until_complete(autobot())
-
-if BOT_TOKEN is not None:
-    PandaBot.tgbot = tgbot = PandaUserbotSession(
-        "BOT_TOKEN",
-        api_id=Var.APP_ID,
-        api_hash=Var.API_HASH,
-        connection=ConnectionTcpAbridged,
-        auto_reconnect=True,
-        connection_retries=None,
-    ).start(bot_token=BOT_TOKEN)
 else:
-    PandaBot.tgbot = tgbot = None
+    if not SqL.getdb("BOT_TOKEN") and BOT_TOKEN:
+        SqL.setdb("BOT_TOKEN", BOT_TOKEN)
+    if not SqL.setdb("BOT_TOKEN"):
+        LOGS.info('"BOT_TOKEN" not Found! Please add it, in order to use "MODE BoT"')
+        import sys
+
+        sys_exit()
+
+### Mode bot asisten
+
+try:
+    if BOT_TOKEN is not None:
+        PandaBot.tgbot = tgbot = PandaUserbotSession(
+            "BOT_TOKEN",
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+        ).start(bot_token=BOT_TOKEN)
+    else:
+        PandaBot.tgbot = tgbot = None
+except Exception as e:
+    print(f"TOKEN- {str(e)}")
+    sys.exit()
+#########
+
+if BOT_MODE:
+    PandaBot = PandaBot.tgbot = tgbot
+    
+PandaBot == PandaBot.tgbot
+    
 
 bot = PandaBot
 pandaub = PandaBot
 botvc = PandaBot
 Stark = PandaBot
 petercordpanda_bot = pandaub
+
+def dual_mode():
+    try:
+        if SqL.getdb("DUAL_MODE") is not None:
+            mode = SqL.setdb("DUAL_MODE", "DUAL") or "DUAL"
+            return mode
+        else:
+            mode = SqL.setdb("DUAL_MODE", "False")
+            return mode
+    except Exception as e:
+        print(f"{str(e)}")
+        sys.exit()
+
 
 
 from .Config import Config
