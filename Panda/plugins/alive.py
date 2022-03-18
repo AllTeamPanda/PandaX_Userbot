@@ -70,7 +70,7 @@ aliveess = f"""
 
 ☉ 👤 𝗢𝘄𝗻𝗲𝗿: {NAME}
 
-☉ 🛰 Version:`𝚅{pandaversion}`
+☉ 🛰 Version: `𝚅{pandaversion}`
 
 ☉ 👾 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
 ☉ 🎙 𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀: `𝚅{__version__}`
@@ -97,7 +97,7 @@ def menu():
     buttons = [
         (
             Button.url(
-                "Support",
+                "👤 Support 👤",
                 "https://t.me/TEAMSquadUserbotSupport",
             ),
             Button.inline(
@@ -107,11 +107,11 @@ def menu():
         ),   
         (
             Button.url(
-                "Source Code",
+                "❓Source Code❓",
                 "https://github.com/ilhammansiz/PandaX_Userbot",
             ),
             Button.url(
-                "Deploy",
+                "#⃣Deploy#⃣",
                 "https://t.me/PandaUserbot/13",
             ),
         ),
