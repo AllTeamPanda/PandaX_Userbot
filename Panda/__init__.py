@@ -110,7 +110,8 @@ except Exception as e:
 
 if BOT_MODE:
     PandaBot = PandaBot.tgbot = tgbot
-    
+ 
+PandaBot == PandaBot.tgbot
 
 bot = PandaBot
 pandaub = PandaBot
