@@ -77,8 +77,8 @@ aliveess = f"""
 ☉ 🐍 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`
 
 ☉ 🎭 Dual-Mode: {dual_mode()}
-☉ ⚡ Command Dualmode: {dual_duall()}
-☉ 👥 BotUser-Dual: {usernames}
+☉ 🆕 Command DualMode: {dual_duall()}
+☉ 👥 BotUser-Dual: `{usernames}`\n
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
 ╭━─━─━─━─━─━─━─━─━╮
                𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲:
