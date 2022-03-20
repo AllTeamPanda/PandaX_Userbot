@@ -195,6 +195,7 @@ ISAFK = False
 AFKREASON = None
 CMD_LIST = {}
 SUDO_LIST = {}
+AFF_LIST = {}
 # for later purposes
 INT_PLUG = ""
 LOAD_PLUG = {}
