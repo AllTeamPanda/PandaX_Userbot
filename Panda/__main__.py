@@ -8,16 +8,14 @@ import sys
 import Panda
 from Panda import utils
 LOGS = Panda.core.logger.logging.getLogger("PandaUserbot")
-print(Panda.__copyright__)
-print("Licensed under the terms of the " + Panda.__license__)
 from .utils import P, M, V, A
 
 
 ## Memulai ••••••••••√√√√√•••••••
 
 try:
-    LOGS.info("Memulai PandaUserbot")
-    LOGS.info("Asistant Bot berhasil")
+    LOGS.info(Panda.__copyright__)
+    LOGS.info("Licensed under the terms of the " + Panda.__license__)
 except Exception as e:
     LOGS.error(f"{e}")
     sys.exit()
@@ -35,12 +33,16 @@ def start():
     Panda.PandaBot.loop.run_until_complete(Panda.utils.setup_bot())
     Panda.PandaBot.loop.run_until_complete(memulai())
     Panda.PandaBot.loop.run_until_complete(utils.join())
-    Panda.PandaBot.loop.run_until_complete(Panda.utils.ongrup())
     LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{Panda.__version__} [TELAH DIAKTIFKAN]")
 
 if __name__ == "__main__":
     start()
     try:
-        Panda.PandaBot.run_until_disconnected()
-    except ConnectionError:
-        pass
+        if len(sys.argv) not in (1, 3, 4):
+            Panda.PandaBot.disconnect()
+        else:
+            Panda.PandaBot.run_until_disconnected()
+    except Exception as e:
+        LOGS.error(f"{e}")
+        sys.exit()
+    
