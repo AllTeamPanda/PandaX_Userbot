@@ -2,7 +2,6 @@
 # ⚠️ Do not remove credits
 # from pocong userbot
 
-import requests
 import random
 from .. import PandaBot
 from telethon.tl.types import InputMessagesFilterVideo
