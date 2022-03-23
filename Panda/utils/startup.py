@@ -214,7 +214,7 @@ async def verifyLoggerGroup():
 ON = f"""
 ➕➕ **Panda-Userbot Aktif ➕➕**
 •••••••••••
-👤 Owner {PandaBot.username}
+👤 Owner {PandaBot.first_name}
 💻 **Version -** `{botvers}`
 
 ❕ **Ketik** `{cmdhr}alive` **untuk Mengecheck Bot apakah sudah aktif**
