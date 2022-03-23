@@ -33,6 +33,7 @@ def start():
     Panda.PandaBot.loop.run_until_complete(Panda.utils.setup_bot())
     Panda.PandaBot.loop.run_until_complete(memulai())
     Panda.PandaBot.loop.run_until_complete(utils.join())
+    Panda.PandaBot.loop.run_until_complete(utils.ongrup())
     LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{Panda.__version__} [TELAH DIAKTIFKAN]")
 
 if __name__ == "__main__":
