@@ -212,7 +212,7 @@ async def verifyLoggerGroup():
 
 
 ON = f"""
-➕➕ **Panda-Userbot Aktif ➕➕**
+© **Panda-Userbot**
 •••••••••••
 👤 Owner {Config.ALIVE_NAME}
 💻 **Version -** `{botvers}`
@@ -225,6 +225,7 @@ ON = f"""
 ❗You should not leave this group so that the bot does not die
  ....Thank You....🇺🇸
 •••••••••••
+Dev by Ilham Mansiz
 """
 
 async def ongrup():
