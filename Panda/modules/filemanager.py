@@ -22,7 +22,7 @@ plugin_category = "modules"
         "header": "To list all files and folders.",
         "description": "Will show all files and folders if no path is given or folder path is given else will show file details(if file path os given).",
         "usage": "{tr}ls <path>",
-        "examples": "{tr}ls userbot",
+        "examples": "{tr}ls Panda",
     },
 )
 async def lst(event):  # sourcery no-metrics
