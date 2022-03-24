@@ -7,12 +7,14 @@ import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 
-from ..helpers.utils.utils import runcmd
-from ..helpers.utils.tools import take_screen_shot
+from ..helpers.utils import _pandautils
+from ..helpers.utils import _pandatools
 from .. import PandaBot
 from ..Config import Config 
 from . import edit_delete, edit_or_reply
 
+runcmd = _pandautils.runcmd
+take_screen_shot = _pandatools.take_screen_shot
 
 Config.TMP_DOWNLOAD_DIRECTORY = TEMP_DOWNLOAD_DIRECTORY
 plugin_category = "modules"
