@@ -14,7 +14,7 @@ from ..Config import Config
 from . import edit_delete, edit_or_reply
 
 
-Config.TMP_DOWNLOAD_DIRECTORY = TEMP_DOWNLOAD_DIRECTORY
+TEMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 plugin_category = "modules"
 
 
