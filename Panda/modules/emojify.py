@@ -66,7 +66,7 @@ async def itachi(event):
         emoji, arg = args.split(" ", 1)
     except Exception:
         arg = args
-        emoji = "😺"
+        emoji = "🐼"
     result = ""
     for a in arg:
         a = a.lower()
