@@ -16,7 +16,7 @@ from . import edit_delete, edit_or_reply
 runcmd = _pandautils.runcmd
 take_screen_shot = _pandatools.take_screen_shot
 
-Config.TMP_DOWNLOAD_DIRECTORY = TEMP_DOWNLOAD_DIRECTORY
+TEMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 plugin_category = "modules"
 
 
