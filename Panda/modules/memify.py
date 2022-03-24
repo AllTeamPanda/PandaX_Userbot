@@ -1,8 +1,6 @@
 # Copyright (C) UsergeTeam 2020
 # Licensed under GPLv3
 # Ported from Userge and refactored by @KenHV
-# FROM Man-Userbot
-# t.me/SharingUserbot
 
 import os
 import textwrap
