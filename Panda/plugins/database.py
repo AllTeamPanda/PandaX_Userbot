@@ -12,7 +12,7 @@ import heroku3
 import requests
 import urllib3
 
-from Panda import pandaub, SqL
+from Panda import SqL
 from . import BOTLOG_CHATID, ilhammansiz_cmd
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
