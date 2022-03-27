@@ -6,7 +6,6 @@ from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
-from .. import PandaBot
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
