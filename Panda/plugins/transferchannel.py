@@ -5,7 +5,6 @@ Available Commands:
 import telethon.password as pwd_mod
 from telethon.tl import functions
 
-from Panda import pandaub
 from . import ilhammansiz_cmd
 from ..Config import Config
 
