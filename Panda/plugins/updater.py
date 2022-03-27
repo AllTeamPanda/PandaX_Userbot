@@ -7,7 +7,7 @@ import urllib3
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from Panda import UPSTREAM_REPO_URL, pandaub
+from Panda import UPSTREAM_REPO_URL
 
 from ..Config import Config
 from ..core.logger import logging
