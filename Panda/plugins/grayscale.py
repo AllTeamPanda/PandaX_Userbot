@@ -2,7 +2,7 @@ import asyncio
 import os
 from os.path import basename
 from typing import Optional, Tuple
-
+from . import ilhammansiz_cmd
 import PIL.ImageOps
 from PIL import Image
 
@@ -67,7 +67,7 @@ def random_color():
     ]
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="gray(?: |$)(.*)",
     command=("gray", plugin_category),
     info={
