@@ -3,7 +3,7 @@
 #from catuserbot
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from . import edit_or_reply, pandaub, reply_id, ilhammansiz_cmd
+from . import edit_or_reply, ilhammansiz_cmd, reply_id
 
 plugin_category = "plugins"
 
