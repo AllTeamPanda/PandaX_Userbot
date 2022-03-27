@@ -51,7 +51,7 @@ from Panda.utils.vceor import eor, eod
 from PandaXBahasa import get_string
 from Panda.Config import Config
 from Panda.core.data import _sudousers_list
-
+from Panda.core.cmd_user import ilhammansiz_cmd
 HNDLR = Config.COMMAND_HAND_LER
 asst = PandaBot.tgbot
 UltVer = "VcPanda" 
