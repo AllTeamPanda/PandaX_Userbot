@@ -8,7 +8,7 @@ from random import choice
 
 from telethon.tl.functions.users import GetFullUserRequest
 
-from . import edit_delete, edit_or_reply
+from . import edit_delete, edit_or_reply, ilhammansiz_cmd
 from ..helpers.utils.misc import create_quotly
 plugin_category = "plugins"
 
@@ -17,7 +17,7 @@ from Panda import pandaub
 from .carbon import all_col
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="q(?: |$)(.*)",
     command=("q", plugin_category),
     info={
