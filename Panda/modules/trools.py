@@ -5,7 +5,6 @@ import os
 
 from telegraph import exceptions, upload_file
 
-from Panda import PandaBot
 
 from ..core.managers import edit_or_reply
 from ..helpers.utils import _pandatools, reply_id
