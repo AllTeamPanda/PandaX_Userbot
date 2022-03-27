@@ -7,7 +7,6 @@ from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 from telethon.tl.functions.photos import DeletePhotosRequest, GetUserPhotosRequest
 from telethon.tl.types import Channel, Chat, InputPhoto, User
 
-from Panda import pandaub
 
 from ..Config import Config
 from ..core.logger import logging
