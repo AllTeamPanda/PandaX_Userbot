@@ -175,7 +175,7 @@ async def on_afk(event):  # sourcery no-metrics
 @register(
     pattern="afk(?:\s|$)([\s\S]*)",
     command=("afk", plugin_category),
-    info={
+    help={
         "header": "Enables afk for your account",
         "description": "When you are in afk if any one tags you then your bot will reply as he is offline.\
         AFK mean away from keyboard.",
@@ -235,7 +235,7 @@ async def _(event):
 @register(
     pattern="mafk(?:\s|$)([\s\S]*)",
     command=("mafk", plugin_category),
-    info={
+    help={
         "header": "Enables afk for your account",
         "description": "When you are in afk if any one tags you then your bot will reply as he is offline.\
          AFK mean away from keyboard. Here it supports media unlike afk command",
