@@ -14,6 +14,7 @@ from . import (
     edit_delete,
     get_user_from_event,
     pandaub,
+    ilhammansiz_cmd,
 )
 
 plugin_category = "plugins"
@@ -21,7 +22,7 @@ DEFAULTUSER = str(AUTONAME) if AUTONAME else str(ALIVE_NAME)
 DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else ""
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="clone(?: |$)(.*)",
     command=("clone", plugin_category),
     info={
@@ -62,7 +63,7 @@ async def _(event):
         )
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="unclone$",
     command=("unclone", plugin_category),
     info={
