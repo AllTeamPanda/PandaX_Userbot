@@ -8,7 +8,6 @@ import requests
 from bs4 import BeautifulSoup
 from humanize import naturalsize
 
-from Panda import pandaub
 from . import ilhammansiz_cmd
 from ..core.managers import edit_or_reply
 
