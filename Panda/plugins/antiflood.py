@@ -5,7 +5,7 @@ from telethon.tl.types import ChatBannedRights
 
 from ..sql_helper import antiflood_sql as sql
 from ..utils import is_admin
-from . import edit_or_reply, pandaub, ilhammansiz_cmd
+from . import edit_or_reply, ilhammansiz_cmd
 
 plugin_category = "plugins"
 CHAT_FLOOD = sql.__load_flood_settings()
