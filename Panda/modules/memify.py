@@ -9,7 +9,6 @@ from PIL import Image, ImageDraw, ImageFont
 
 from ..helpers.utils import _pandautils
 from ..helpers.utils import _pandatools
-from .. import PandaBot
 from ..Config import Config 
 from . import edit_delete, edit_or_reply, ilhammansiz_cmd
 
