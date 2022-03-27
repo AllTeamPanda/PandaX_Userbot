@@ -13,7 +13,7 @@ from pytz import timezone as tz
 from ..Config import Config
 from ..helpers.utils import _format
 from ..sql_helper.globals import addgvar, gvarstatus
-from . import edit_or_reply, logging, pandaub, reply_id, ilhammansiz_cmd
+from . import edit_or_reply, ilhammansiz_cmd, logging, reply_id
 
 plugin_category = "plugins"
 
