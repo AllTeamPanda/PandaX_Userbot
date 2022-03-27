@@ -8,12 +8,12 @@ import requests
 from Panda import PandaBot
 
 from ..Config import Config
-from . import PandaBot
+from . import PandaBot, ilhammansiz_cmd
 
 plugin_category = "plugins"
 
 
-@PandaBot.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="payudara(?: |$)(.*)",
     command=("payudara", plugin_category),
     info={
