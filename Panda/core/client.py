@@ -3,40 +3,11 @@
 # Recode by Ilham Mansiz
 # ••••••••••••••••••••••√•••••••••••••√√√••••••••
 
-import asyncio
-import datetime
-import inspect
-import re
 import sys
-import traceback
-from pathlib import Path
-from typing import Dict, List, Union
 
-from telethon import TelegramClient, events
-from telethon.errors import (
-    AlreadyInConversationError,
-    BotInlineDisabledError,
-    BotResponseTimeoutError,
-    ChatSendInlineForbiddenError,
-    ChatSendMediaForbiddenError,
-    ChatSendStickersForbiddenError,
-    FloodWaitError,
-    MessageIdInvalidError,
-    MessageNotModifiedError,
-)
-from ..Config import Config
-from ..helpers.utils.events import checking
-from ..helpers.utils.format import paste_text
-from ..helpers.utils.utils import runcmd
 from ..sql_helper import sqldb as SqL
-from . import BOT_INFO, CMD_INFO, GRP_INFO, LOADED_CMDS, PLG_INFO
-from .cmdinfo import _format_about
-from .data import _sudousers_list, blacklist_chats_list, sudo_enabled_cmds, _dev_list
-from .events import MessageEdited, NewMessage
-from .fasttelethon import download_file, upload_file
+from .data import sudo_enabled_cmds
 from .logger import logging
-from .managers import edit_delete
-from .pluginManager import restart_script
 
 LOGS = logging.getLogger(__name__)
 
