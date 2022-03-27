@@ -1,9 +1,9 @@
 plugin_category = "plugins"
-
+from . import ilhammansiz_cmd
 from Panda import pandaub
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="gsend(?: |$)(.*)",
     command=("gsend", plugin_category),
     info={
