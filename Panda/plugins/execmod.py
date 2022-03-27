@@ -1,4 +1,4 @@
-from . import _pandautils, edit_or_reply, pandaub, ilhammansiz_cmd
+from . import _pandautils, edit_or_reply, ilhammansiz_cmd
 
 plugin_category = "plugins"
 
