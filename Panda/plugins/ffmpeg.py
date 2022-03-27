@@ -4,7 +4,6 @@ import os
 import time
 from datetime import datetime
 
-from Panda import pandaub
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
