@@ -2,7 +2,6 @@ import os
 import cv2
 from PIL import Image
 from . import ilhammansiz_cmd
-from Panda import pandaub
 
 plugin_category = "plugins"
 
