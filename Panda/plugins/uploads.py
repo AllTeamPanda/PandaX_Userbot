@@ -10,7 +10,6 @@ from hachoir.parser import createParser
 from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo
 
-from Panda import pandaub
 
 plugin_category = "plugins"
 from ..Config import Config
