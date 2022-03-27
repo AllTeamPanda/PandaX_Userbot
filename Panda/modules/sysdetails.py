@@ -9,7 +9,6 @@ from datetime import datetime
 import psutil
 from telethon import __version__
 
-from .. import PandaBot
 from . import ilhammansiz_cmd
 from ..core.managers import edit_or_reply
 from ..helpers.utils import _pandautils as _catutils
