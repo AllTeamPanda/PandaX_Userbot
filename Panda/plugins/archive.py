@@ -12,7 +12,7 @@ from telethon import types
 from telethon.utils import get_extension
 
 from ..Config import Config
-from . import edit_delete, edit_or_reply, pandaub, progress, ilhammansiz_cmd
+from . import edit_delete, edit_or_reply, ilhammansiz_cmd, progress
 
 thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
 plugin_category = "plugins"
