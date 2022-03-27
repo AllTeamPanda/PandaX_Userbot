@@ -5,14 +5,14 @@ Userbot plugin for CatUserbot
 """
 
 from .. import PandaBot
-
+from . import ilhammansiz_cmd
 from ..core.managers import edit_or_reply
 from ..helpers import fonts as emojify
 
 plugin_category = "modules"
 
 
-@PandaBot.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="emoji(?:\s|$)([\s\S]*)",
     command=("emoji", plugin_category),
     info={
@@ -43,7 +43,7 @@ async def itachi(event):
     await edit_or_reply(event, result)
 
 
-@PandaBot.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="cmoji(?:\s|$)([\s\S]*)",
     command=("cmoji", plugin_category),
     info={
