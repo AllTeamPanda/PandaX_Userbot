@@ -8,7 +8,7 @@ from ..Config import Config
 from ..helpers.functions import get_readable_time, check_data_base_heal_th
 from pytgcalls import __version__
 from ..core.data import _sudousers_list
-from . import mention
+from . import mention, ilhammansiz_cmd
 
 CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT = SqL.getdb("CUSTOM_ALIVE_TEXT") or "PandaX-Userbot"
 
@@ -27,7 +27,7 @@ LOGO = Config.ALIVE_PIC = SqL.getdb("ALIVE_PIC") or "https://telegra.ph/file/613
 
 usernames = Config.TG_BOT_USERNAME
 
-@PandaBot.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="alive$",
     command=("alive", plugin_category),
     info={
