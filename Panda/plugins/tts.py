@@ -12,12 +12,12 @@ from gtts import gTTS
 from Panda import pandaub
 
 from ..core.managers import edit_delete, edit_or_reply
-from . import deEmojify, reply_id
+from . import deEmojify, reply_id, ilhammansiz_cmd
 
 plugin_category = "modules"
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="tts (.*)",
     command=("tts", plugin_category),
     info={
