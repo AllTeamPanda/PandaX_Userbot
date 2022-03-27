@@ -2,7 +2,7 @@ import asyncio
 import random
 import re
 
-
+from . import ilhammansiz_cmd
 from .. import PandaBot
 
 usernexp = re.compile(r"@(\w{3,32})\[(.+?)\]")
@@ -17,7 +17,7 @@ class FlagContainer:
     is_active = False
 
 
-@PandaBot.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="mention(?: |$)(.*)",
     command=("mention", plugin_category),
     info={
@@ -41,7 +41,7 @@ async def _(event):
     )
 
 
-@PandaBot.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="emojitag(?: |$)(.*)",
     command=("emojitag", plugin_category),
     info={
@@ -87,7 +87,7 @@ async def _(event):
         FlagContainer.is_active = False
 
 
-@PandaBot.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="all(?: |$)(.*)",
     command=("all", plugin_category),
     info={
