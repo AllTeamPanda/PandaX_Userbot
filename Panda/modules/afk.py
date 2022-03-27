@@ -9,7 +9,7 @@ from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.tools import media_type
 from ..helpers.utils import _format
-from . import BOTLOG, BOTLOG_CHATID, mention
+from . import BOTLOG, BOTLOG_CHATID, mention, register
 
 plugin_category = "plugins"
 
@@ -33,7 +33,7 @@ class AFK:
 AFK_ = AFK()
 
 
-@PandaBot.register(outgoing=True, edited=False)
+@register(outgoing=True, edited=False)
 async def set_not_afk(event):
     if AFK_.afk_on is False:
         return
@@ -79,7 +79,7 @@ async def set_not_afk(event):
             )
 
 
-@PandaBot.register(
+@register(
     incoming=True, func=lambda e: bool(e.mentioned or e.is_private), edited=False
 )
 async def on_afk(event):  # sourcery no-metrics
@@ -173,7 +173,7 @@ async def on_afk(event):  # sourcery no-metrics
             )
 
 
-@PandaBot.register(
+@register(
     pattern="afk(?:\s|$)([\s\S]*)",
     command=("afk", plugin_category),
     help={
@@ -233,7 +233,7 @@ async def _(event):
                 )
 
 
-@PandaBot.register(
+@register(
     pattern="mafk(?:\s|$)([\s\S]*)",
     command=("mafk", plugin_category),
     help={
