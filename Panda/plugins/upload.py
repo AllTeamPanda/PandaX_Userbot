@@ -12,7 +12,6 @@ from hachoir.parser import createParser
 from telethon.tl import types
 from telethon.utils import get_attributes
 
-from Panda import pandaub
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
