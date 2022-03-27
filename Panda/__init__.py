@@ -13,7 +13,7 @@ from redis import StrictRedis
 
 from .core.logger import logging
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
-from .core.client import PandaUserbotSession, dual_duall
+from .core.client import dual_duall
 from .sql_helper import sqldb
 from .sql_helper import mongodb
 from .sql_helper.db import BaseDB
@@ -61,7 +61,7 @@ try:
         PandaBot = None
     else:
          if Var.STRING_SESSION:
-             PandaBot = PandaUserbotSession(
+             PandaBot = TelegramClient(
                 session=StringSession(str(Var.STRING_SESSION)),
                 api_id=Var.APP_ID,
                 api_hash=Var.API_HASH,
@@ -93,7 +93,7 @@ else:
 
 try:
     if BOT_TOKEN is not None:
-        PandaBot.tgbot = tgbot = PandaUserbotSession(
+        PandaBot.tgbot = tgbot = TelegramClient(
             "BOT_TOKEN",
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
