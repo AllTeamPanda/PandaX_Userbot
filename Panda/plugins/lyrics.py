@@ -4,7 +4,7 @@ import lyricsgenius
 from tswift import Song
 
 from Panda import pandaub
-
+from . import ilhammansiz_cmd
 from ..core.managers import edit_or_reply
 
 plugin_category = "plugins"
@@ -12,7 +12,7 @@ plugin_category = "plugins"
 GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="lyrics ?(.*)",
     command=("lyrics", plugin_category),
     info={
@@ -49,7 +49,7 @@ async def _(event):
     await edit_or_reply(pandaevent, reply)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="glyrics ?(.*)",
     command=("glyrics", plugin_category),
     info={
