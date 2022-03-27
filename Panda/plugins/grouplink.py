@@ -1,6 +1,5 @@
 plugin_category = "plugins"
 from . import ilhammansiz_cmd
-from Panda import pandaub
 
 
 @ilhammansiz_cmd(
