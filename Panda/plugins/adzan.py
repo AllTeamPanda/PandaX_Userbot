@@ -2,7 +2,7 @@ import json
 
 import requests
 
-from . import pandaub, ilhammansiz_cmd
+from . import ilhammansiz_cmd
 
 plugin_category = "plugins"
 
