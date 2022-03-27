@@ -12,7 +12,7 @@ from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import get_user_from_event, mentionuser
 from ..sql_helper import global_collectionjson as sql
 from ..sql_helper import global_list as sqllist
-
+from . import ilhammansiz_cmd
 plugin_category = "plugins"
 
 LOGS = logging.getLogger(__name__)
@@ -33,7 +33,7 @@ def get_key(val):
     return None
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="sudo (on|off)$",
     command=("sudo", plugin_category),
     info={
@@ -87,7 +87,7 @@ async def chat_blacklist(event):
     await edit_delete(event, "It was turned off already")
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="addsudo(?: |$)(.*)",
     command=("addsudo", plugin_category),
     info={
@@ -127,7 +127,7 @@ async def add_sudo_user(event):
     await event.client.reload(msg)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="delsudo(?: |$)(.*)",
     command=("delsudo", plugin_category),
     info={
@@ -158,7 +158,7 @@ async def _(event):
     await event.client.reload(msg)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="vsudo$",
     command=("vsudo", plugin_category),
     info={
@@ -187,7 +187,7 @@ async def _(event):
     await edit_or_reply(event, result)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="addscmd(s)? ((.|\n)*)",
     command=("addscmd", plugin_category),
     info={
@@ -286,7 +286,7 @@ async def _(event):  # sourcery no-metrics
     await event.client.reload(msg)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="rmscmd(s)? ((.|\n)*)?",
     command=("rmscmd", plugin_category),
     info={
@@ -380,7 +380,7 @@ async def _(event):  # sourcery no-metrics
     await event.client.reload(msg)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="vscmds( -d)?$",
     command=("vscmds", plugin_category),
     info={
