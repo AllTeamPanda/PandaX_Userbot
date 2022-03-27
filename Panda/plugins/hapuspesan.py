@@ -3,7 +3,6 @@ from asyncio import sleep
 
 from telethon.errors import rpcbaseerrors
 
-from Panda import pandaub
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id
