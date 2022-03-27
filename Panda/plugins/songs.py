@@ -10,7 +10,6 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from validators.url import url
 
-from Panda import pandaub
 from . import ilhammansiz_cmd
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
