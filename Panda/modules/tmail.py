@@ -4,7 +4,6 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from PIL import Image
 
-from Panda import pandaub
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
