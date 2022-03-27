@@ -7,7 +7,7 @@ from Panda import pandaub
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id
-from . import BOTLOG, BOTLOG_CHATID
+from . import BOTLOG, BOTLOG_CHATID, ilhammansiz_cmd
 
 plugin_category = "plugins"
 
@@ -15,7 +15,7 @@ plugin_category = "plugins"
 purgelist = {}
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="purge(?: |$)(.*)",
     command=("purge", plugin_category),
     info={
@@ -86,7 +86,7 @@ async def fastpurger(event):
     await hi.delete()
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="purgefrom$",
     command=("purgefrom", plugin_category),
     info={
@@ -109,7 +109,7 @@ async def purge_from(event):
         await edit_delete(event, "`Reply to a message to let me know what to delete.`")
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="purgeto$",
     command=("purgeto", plugin_category),
     info={
@@ -162,7 +162,7 @@ async def purge_to(event):
         await edit_delete(event, f"**Error**\n`{str(e)}`")
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="purgeme",
     command=("purgeme", plugin_category),
     info={
@@ -196,7 +196,7 @@ async def purgeme(event):
     await smsg.delete()
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="del(\s*| \d+)$",
     command=("del", plugin_category),
     info={
