@@ -3,7 +3,6 @@ from datetime import datetime
 
 from telethon.tl import functions, types
 
-from Panda import pandaub
 
 from ..Config import Config
 from ..core.logger import logging
