@@ -18,7 +18,6 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.functions.messages import SendMediaRequest
 from telethon.utils import get_attributes
 
-from Panda import pandaub
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
