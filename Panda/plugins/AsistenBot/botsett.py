@@ -32,7 +32,7 @@ from Panda.sql_helper.bot_pms_sql import (
 )
 from Panda.sql_helper.bot_starters import add_starter_to_db, get_starter_details
 from Panda.sql_helper.globals import delgvar, gvarstatus
-from . import BOTLOG, BOTLOG_CHATID, ilhammansiz_cmd, bot_cmd
+from . import BOTLOG, BOTLOG_CHATID, bot_cmd
 from .botdata import ban_user_from_bot
 pandaub = PandaBot
 
