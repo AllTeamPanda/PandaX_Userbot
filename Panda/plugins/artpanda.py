@@ -1,5 +1,4 @@
 
-from Panda import pandaub
 
 from ..core.managers import edit_or_reply
 from . import ilhammansiz_cmd
