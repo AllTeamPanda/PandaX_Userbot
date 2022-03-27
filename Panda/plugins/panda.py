@@ -3,7 +3,7 @@ from time import sleep
 
 from telethon import events
 
-from Panda import bot, pandaub
+from Panda import bot
 from . import ilhammansiz_cmd
 plugin_category = "modules"
 
