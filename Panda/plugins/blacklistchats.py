@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from telethon.utils import get_display_name
-
+from . import ilhammansiz_cmd
 from Panda import pandaub
 from Panda.core.logger import logging
 
@@ -15,7 +15,7 @@ plugin_category = "plugins"
 LOGS = logging.getLogger(__name__)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="chatblacklist (on|off)$",
     command=("chatblacklist", plugin_category),
     info={
@@ -71,7 +71,7 @@ async def chat_blacklist(event):
     await edit_delete(event, "It was turned off already")
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="addblkchat(s)? ?((.|\n)*)?",
     command=("addblkchat", plugin_category),
     info={
@@ -150,7 +150,7 @@ async def add_blacklist_chat(event):
     await event.client.reload(msg)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="rmblkchat(s)? ?((.|\n)*)?",
     command=("rmblkchat", plugin_category),
     info={
@@ -214,7 +214,7 @@ async def add_blacklist_chat(event):
     await event.client.reload(msg)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="listblkchats$",
     command=("listblkchats", plugin_category),
     info={
