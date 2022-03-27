@@ -3,7 +3,6 @@ import time
 
 from prettytable import PrettyTable
 
-from .. import PandaBot
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.tools import media_type
