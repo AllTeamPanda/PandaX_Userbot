@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-from .. import PandaBot
 
 from ..core.managers import edit_or_reply
 from . import ilhammansiz_cmd
