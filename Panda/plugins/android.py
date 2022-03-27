@@ -6,7 +6,7 @@ import re
 from bs4 import BeautifulSoup
 from requests import get
 
-from . import edit_delete, edit_or_reply, pandaub, ilhammansiz_cmd
+from . import edit_delete, edit_or_reply, ilhammansiz_cmd
 plugin_category = "plugins"
 
 
