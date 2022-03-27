@@ -2,7 +2,6 @@ from asyncio.exceptions import TimeoutError
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from . import ilhammansiz_cmd
-from Panda import pandaub
 
 plugin_category = "plugins"
 
