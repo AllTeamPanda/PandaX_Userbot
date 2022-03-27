@@ -356,7 +356,7 @@ def register(
         except BaseException:
             PLG_INFO.update({file_test: [command[0]]})
         if not command[0] in CMD_INFO:
-            CMD_INFO[command[0]] = [_format_about(info)]
+            CMD_INFO[command[0]] = [_format_about(help)]
     if pattern is not None:
         if (
             pattern.startswith(r"\#")
