@@ -13,7 +13,6 @@ from . import (
     DEFAULT_BIO,
     edit_delete,
     get_user_from_event,
-    pandaub,
     ilhammansiz_cmd,
 )
 
