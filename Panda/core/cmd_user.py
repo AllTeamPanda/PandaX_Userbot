@@ -4,6 +4,7 @@
 # Recode by Ilham Mansiz
 # ••••••••••••••••••••••√•••••••••••••√√√••••••••
 
+import asyncio
 import datetime
 import inspect
 import re
@@ -13,6 +14,17 @@ from pathlib import Path
 from typing import Dict, List, Union
 
 from telethon import events
+from telethon.errors import (
+    AlreadyInConversationError,
+    BotInlineDisabledError,
+    BotResponseTimeoutError,
+    ChatSendInlineForbiddenError,
+    ChatSendMediaForbiddenError,
+    ChatSendStickersForbiddenError,
+    FloodWaitError,
+    MessageIdInvalidError,
+    MessageNotModifiedError,
+)
 from ..Config import Config
 from ..helpers.utils.format import paste_text
 from ..helpers.utils.utils import runcmd
@@ -129,6 +141,82 @@ def ilhammansiz_cmd(
                return await edit_delete(
                     check, "`I don't think this is a personal Chat.`", 10
                 )
+            try:
+                await func(check)
+            except events.StopPropagation:
+                raise events.StopPropagation
+            except KeyboardInterrupt:
+                pass
+            except MessageNotModifiedError:
+                LOGS.error("Message was same as previous message")
+            except MessageIdInvalidError:
+                LOGS.error("Message was deleted or cant be found")
+            except BotInlineDisabledError:
+                await edit_delete(check, "`Turn on Inline mode for our bot`", 10)
+            except ChatSendStickersForbiddenError:
+                await edit_delete(
+                    check, "`I guess i can't send stickers in this chat`", 10
+                )
+            except BotResponseTimeoutError:
+                await edit_delete(
+                    check, "`The bot didnt answer to your query in time`", 10
+                )
+            except ChatSendMediaForbiddenError:
+                await edit_delete(check, "`You can't send media in this chat`", 10)
+            except AlreadyInConversationError:
+                await edit_delete(
+                    check,
+                    "`A conversation is already happening with the given chat. try again after some time.`",
+                    10,
+                )
+            except ChatSendInlineForbiddenError:
+                await edit_delete(
+                    check, "`You can't send inline messages in this chat.`", 10
+                )
+            except FloodWaitError as e:
+                LOGS.error(
+                    f"A flood wait of {e.seconds} occured. wait for {e.seconds} seconds and try"
+                )
+                await check.delete()
+                await asyncio.sleep(e.seconds + 5)
+            except BaseException as e:
+                LOGS.exception(e)
+                if not disable_errors:
+                    if Config.PRIVATE_GROUP_BOT_API_ID == 0:
+                        return
+                    date = (datetime.datetime.now()).strftime("%m/%d/%Y, %H:%M:%S")
+                    ftext = f"\nDisclaimer:\nFile ini hanya disisipkan di sini HANYA di sini,\
+                              \nkami hanya mencatat fakta kesalahan dan tanggal,\nKami menghormati privasi anda,\
+                              \nyou may not report this error if you've\
+                              \nany confidential data here, no one will see your data\
+                              \n\n--------BEGIN USERBOT TRACEBACK LOG--------\
+                              \nDate: {date}\nGroup ID: {str(check.chat_id)}\
+                              \nSender ID: {str(check.sender_id)}\
+                              \n\nEvent Trigger:\n{str(check.text)}\
+                              \n\nTraceback info:\n{str(traceback.format_exc())}\
+                              \n\nError text:\n{str(sys.exc_info()[1])}"
+                    new = {
+                        "error": str(sys.exc_info()[1]),
+                        "date": datetime.datetime.now(),
+                    }
+                    ftext += "\n\n--------END USERBOT TRACEBACK LOG--------"
+                    command = 'git log --pretty=format:"%an: %s" -5'
+                    ftext += "\n\n\nLast 5 commits:\n"
+                    output = (await runcmd(command))[:2]
+                    result = output[0] + output[1]
+                    ftext += result
+                    pastelink = paste_text(ftext)
+                    text = "**PandaUserbot Error report**\n\n"
+                    link = "[Klik](https://t.me/TEAMSquadUserbotSupport)"
+                    text += "If you wanna you can report it"
+                    text += f"- just forward this message {link}.\n"
+                    text += (
+                        "Nothing is logged except the fact of error and date\n\n"
+                    )
+                    text += f"**Error report : ** [{new['error']}]({pastelink})"
+                    await check.client.send_message(
+                        Config.PRIVATE_GROUP_BOT_API_ID, text, link_preview=False
+                    )
 
         from .session import PandaBot
           
@@ -301,7 +389,83 @@ def register(
                return await edit_delete(
                     check, "`I don't think this is a personal Chat.`", 10
                 )
-            
+            try:
+                await func(check)
+            except events.StopPropagation:
+                raise events.StopPropagation
+            except KeyboardInterrupt:
+                pass
+            except MessageNotModifiedError:
+                LOGS.error("Message was same as previous message")
+            except MessageIdInvalidError:
+                LOGS.error("Message was deleted or cant be found")
+            except BotInlineDisabledError:
+                await edit_delete(check, "`Turn on Inline mode for our bot`", 10)
+            except ChatSendStickersForbiddenError:
+                await edit_delete(
+                    check, "`I guess i can't send stickers in this chat`", 10
+                )
+            except BotResponseTimeoutError:
+                await edit_delete(
+                    check, "`The bot didnt answer to your query in time`", 10
+                )
+            except ChatSendMediaForbiddenError:
+                await edit_delete(check, "`You can't send media in this chat`", 10)
+            except AlreadyInConversationError:
+                await edit_delete(
+                    check,
+                    "`A conversation is already happening with the given chat. try again after some time.`",
+                    10,
+                )
+            except ChatSendInlineForbiddenError:
+                await edit_delete(
+                    check, "`You can't send inline messages in this chat.`", 10
+                )
+            except FloodWaitError as e:
+                LOGS.error(
+                    f"A flood wait of {e.seconds} occured. wait for {e.seconds} seconds and try"
+                )
+                await check.delete()
+                await asyncio.sleep(e.seconds + 5)
+            except BaseException as e:
+                LOGS.exception(e)
+                if not disable_errors:
+                    if Config.PRIVATE_GROUP_BOT_API_ID == 0:
+                        return
+                    date = (datetime.datetime.now()).strftime("%m/%d/%Y, %H:%M:%S")
+                    ftext = f"\nDisclaimer:\nFile ini hanya disisipkan di sini HANYA di sini,\
+                              \nkami hanya mencatat fakta kesalahan dan tanggal,\nKami menghormati privasi anda,\
+                              \nyou may not report this error if you've\
+                              \nany confidential data here, no one will see your data\
+                              \n\n--------BEGIN USERBOT TRACEBACK LOG--------\
+                              \nDate: {date}\nGroup ID: {str(check.chat_id)}\
+                              \nSender ID: {str(check.sender_id)}\
+                              \n\nEvent Trigger:\n{str(check.text)}\
+                              \n\nTraceback info:\n{str(traceback.format_exc())}\
+                              \n\nError text:\n{str(sys.exc_info()[1])}"
+                    new = {
+                        "error": str(sys.exc_info()[1]),
+                        "date": datetime.datetime.now(),
+                    }
+                    ftext += "\n\n--------END USERBOT TRACEBACK LOG--------"
+                    command = 'git log --pretty=format:"%an: %s" -5'
+                    ftext += "\n\n\nLast 5 commits:\n"
+                    output = (await runcmd(command))[:2]
+                    result = output[0] + output[1]
+                    ftext += result
+                    pastelink = paste_text(ftext)
+                    text = "**PandaUserbot Error report**\n\n"
+                    link = "[Klik](https://t.me/TEAMSquadUserbotSupport)"
+                    text += "If you wanna you can report it"
+                    text += f"- just forward this message {link}.\n"
+                    text += (
+                        "Nothing is logged except the fact of error and date\n\n"
+                    )
+                    text += f"**Error report : ** [{new['error']}]({pastelink})"
+                    await check.client.send_message(
+                        Config.PRIVATE_GROUP_BOT_API_ID, text, link_preview=False
+                    )
+
         from .session import PandaBot
           
         if not func.__doc__ is None:
