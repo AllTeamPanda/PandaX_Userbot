@@ -12,7 +12,6 @@ from ..core.managers import edit_delete, edit_or_reply
 from . import ilhammansiz_cmd
 plugin_category = "modules"
 
-from Panda import pandaub
 
 async def get_chatinfo(event):
     chat = event.pattern_match.group(1)
