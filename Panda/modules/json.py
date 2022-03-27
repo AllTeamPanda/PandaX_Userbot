@@ -1,4 +1,3 @@
-from Panda import PandaBot
 
 from ..core.managers import edit_or_reply
 from ..helpers.utils import _format
