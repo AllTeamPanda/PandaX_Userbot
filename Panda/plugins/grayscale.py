@@ -6,7 +6,6 @@ from . import ilhammansiz_cmd
 import PIL.ImageOps
 from PIL import Image
 
-from Panda import pandaub
 
 plugin_category = "plugins"
 
