@@ -10,7 +10,6 @@ import random
 from carbonnow import Carbon
 from Panda.utils.tools import inline_mention
 from ..core.managers import edit_delete, edit_or_reply
-from Panda import PandaBot
 from . import ilhammansiz_cmd
 plugin_category = "plugins"
 
