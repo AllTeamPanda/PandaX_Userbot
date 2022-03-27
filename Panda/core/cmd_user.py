@@ -633,18 +633,18 @@ def bot_cmd(
 
     return decorator
 
-    async def get_traceback(self, exc: Exception) -> str:
-        return "".join(
-            traceback.format_exception(etype=type(exc), value=exc, tb=exc.__traceback__)
-        )
+async def get_traceback(self, exc: Exception) -> str:
+    return "".join(
+        traceback.format_exception(etype=type(exc), value=exc, tb=exc.__traceback__)
+    )
 
-    def _kill_running_processes(self) -> None:
-        """Kill all the running asyncio subprocessess"""
-        for _, process in self.running_processes.items():
-            try:
-                process.kill()
-                LOGS.debug("Killed %d which was still running.", process.pid)
-            except Exception as e:
-                LOGS.debug(e)
-        self.running_processes.clear()
+def _kill_running_processes(self) -> None:
+    """Kill all the running asyncio subprocessess"""
+    for _, process in self.running_processes.items():
+        try:
+            process.kill()
+            LOGS.debug("Killed %d which was still running.", process.pid)
+        except Exception as e:
+            LOGS.debug(e)
+    self.running_processes.clear()
 
