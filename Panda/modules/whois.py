@@ -8,7 +8,6 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_input_location
 
-from .. import PandaBot
 from ..core.logger import logging
 
 from ..Config import Config
