@@ -32,7 +32,7 @@ from Panda.sql_helper.bot_pms_sql import (
 )
 from Panda.sql_helper.bot_starters import add_starter_to_db, get_starter_details
 from Panda.sql_helper.globals import delgvar, gvarstatus
-from . import BOTLOG, BOTLOG_CHATID
+from . import BOTLOG, BOTLOG_CHATID, ilhammansiz_cmd, bot_cmd
 from .botdata import ban_user_from_bot
 pandaub = PandaBot
 
@@ -73,7 +73,7 @@ async def check_bot_started_users(user, event):
         await event.client.send_message(BOTLOG_CHATID, notification)
 
 
-@PandaBot.bot_cmd(
+@bot_cmd(
     pattern=f"^/start({botusername})?([\s]+)?$",
     incoming=True,
     func=lambda e: e.is_private,
@@ -131,7 +131,7 @@ async def bot_start(event):
         await check_bot_started_users(chat, event)
 
 
-@PandaBot.bot_cmd(incoming=True, func=lambda e: e.is_private)
+@bot_cmd(incoming=True, func=lambda e: e.is_private)
 async def bot_pms(event):  # sourcery no-metrics
     chat = await event.get_chat()
     if check_is_black_list(chat.id):
@@ -188,7 +188,7 @@ async def bot_pms(event):  # sourcery no-metrics
                     )
 
 
-@PandaBot.bot_cmd(edited=True)
+@bot_cmd(edited=True)
 async def bot_pms_edit(event):  # sourcery no-metrics
     chat = await event.get_chat()
     if check_is_black_list(chat.id):
@@ -277,7 +277,7 @@ async def handler(event):
                 LOGS.error(str(e))
 
 
-@PandaBot.bot_cmd(
+@bot_cmd(
     pattern=f"^/uinfo$",
     from_users=Config.OWNER_ID,
 )
