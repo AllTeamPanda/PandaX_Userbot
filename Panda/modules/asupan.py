@@ -6,9 +6,9 @@ import random
 from .. import PandaBot
 from telethon.tl.types import InputMessagesFilterVideo
 plugin_category = "modules"
+from . import ilhammansiz_cmd
 
-
-@PandaBot.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="asupan(?: |$)(.*)",
     command=("asupan", plugin_category),
     info={
