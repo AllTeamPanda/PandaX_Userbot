@@ -9,7 +9,6 @@ from jikanpy import Jikan
 from jikanpy.exceptions import APIException
 from telegraph import exceptions, upload_file
 
-from Panda import pandaub
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import media_type, readable_time, time_formatter
