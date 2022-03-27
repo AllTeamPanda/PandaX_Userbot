@@ -6,14 +6,14 @@ from Panda.core.logger import logging
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
-
+from . import ilhammansiz_cmd
 plugin_category = "plugins"
 LOGS = logging.getLogger(__name__)
 cmdhd = Config.COMMAND_HAND_LER
 extractor = URLExtract()
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="custom (pmpermit|pmblock|pmpic|NAME)$",
     command=("custom", plugin_category),
     info={
@@ -65,7 +65,7 @@ async def custom_pandauserbot(event):
     await edit_or_reply(event, f"__Your custom {input_str} has been updated__")
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="delcustom (pmpermit|pmblock|pmpic|NAME)$",
     command=("delcustom", plugin_category),
     info={
