@@ -2,7 +2,6 @@ from asyncio import sleep
 
 from googletrans import LANGUAGES, Translator
 
-from Panda import pandaub
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..sql_helper.globals import addgvar, gvarstatus
