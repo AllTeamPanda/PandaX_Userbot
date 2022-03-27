@@ -5,7 +5,6 @@ import shutil
 import time
 from pathlib import Path
 
-from .. import PandaBot
 
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
