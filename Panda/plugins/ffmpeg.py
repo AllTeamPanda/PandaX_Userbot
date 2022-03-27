@@ -9,7 +9,7 @@ from Panda import pandaub
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import _pandatools, media_type, progress, reply_id
-
+from . import ilhammansiz_cmd
 plugin_category = "plugins"
 
 
@@ -54,7 +54,7 @@ async def cult_small_video(
     return None
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="ffmpegsave$",
     command=("ffmpegsave", plugin_category),
     info={
@@ -101,7 +101,7 @@ async def ff_mpeg_trim_cmd(event):
         )
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="vtrim(?: |$)(.*)",
     command=("vtrim", plugin_category),
     info={
@@ -187,7 +187,7 @@ async def ff_mpeg_trim_cmd(event):
     await edit_delete(pandaevent, f"`Completed Process in {ms} seconds`", 3)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="atrim(?: |$)(.*)",
     command=("atrim", plugin_category),
     info={
@@ -251,7 +251,7 @@ async def ff_mpeg_trim_cmd(event):
     await edit_delete(pandaevent, f"`Completed Process in {ms} seconds`", 3)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="ffmpegclear$",
     command=("ffmpegclear", plugin_category),
     info={
