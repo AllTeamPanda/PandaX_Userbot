@@ -5,7 +5,6 @@ from telethon.tl import functions, types
 from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from Panda import pandaub
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.tools import media_type
