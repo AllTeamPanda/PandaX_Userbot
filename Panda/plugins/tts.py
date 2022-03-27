@@ -9,7 +9,6 @@ from datetime import datetime
 
 from gtts import gTTS
 
-from Panda import pandaub
 
 from ..core.managers import edit_delete, edit_or_reply
 from . import deEmojify, reply_id, ilhammansiz_cmd
