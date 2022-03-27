@@ -4,7 +4,6 @@ modified by  @mrconfused
 Userbot plugin for CatUserbot
 """
 
-from .. import PandaBot
 from . import ilhammansiz_cmd
 from ..core.managers import edit_or_reply
 from ..helpers import fonts as emojify
