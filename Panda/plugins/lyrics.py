@@ -3,7 +3,6 @@ import os
 import lyricsgenius
 from tswift import Song
 
-from Panda import pandaub
 from . import ilhammansiz_cmd
 from ..core.managers import edit_or_reply
 
