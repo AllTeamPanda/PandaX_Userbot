@@ -3,7 +3,6 @@ from datetime import datetime
 
 from telethon.tl import functions, types
 
-from Panda import PandaBot
 from ..Config import Config
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
