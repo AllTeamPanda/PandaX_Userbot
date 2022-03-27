@@ -12,7 +12,7 @@ from Panda import pandaub
 from ..Config import Config
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
-
+from . import ilhammansiz_cmd
 LOGS = logging.getLogger(__name__)
 plugin_category = "plugins"
 
@@ -29,7 +29,7 @@ USERNAME_TAKEN = "```This username is already taken.```"
 # ===============================================================
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="pbio (.*)",
     command=("pbio", plugin_category),
     info={
@@ -47,7 +47,7 @@ async def _(event):
         await edit_or_reply(event, f"**Error:**\n`{str(e)}`")
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="pname (.*)",
     command=("pname", plugin_category),
     info={
@@ -73,7 +73,7 @@ async def _(event):
         await edit_or_reply(event, f"**Error:**\n`{str(e)}`")
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="ppic$",
     command=("ppic", plugin_category),
     info={
@@ -127,7 +127,7 @@ async def _(event):
         LOGS.info(str(e))
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="pusername (.*)",
     command=("pusername", plugin_category),
     info={
@@ -147,7 +147,7 @@ async def update_username(username):
         await edit_or_reply(event, f"**Error:**\n`{str(e)}`")
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="count$",
     command=("count", plugin_category),
     info={
@@ -191,7 +191,7 @@ async def count(event):
     await pandaevent.edit(result)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="delpfp ?(.*)",
     command=("delpfp", plugin_category),
     info={
@@ -226,7 +226,7 @@ async def remove_profilepic(delpfp):
     )
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="myusernames$",
     command=("myusernames", plugin_category),
     info={
