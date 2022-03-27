@@ -1,6 +1,6 @@
 from telethon.tl.functions.messages import SaveDraftRequest
 
-from . import pandaub, ilhammansiz_cmd
+from . import ilhammansiz_cmd
 
 plugin_category = "plugins"
 
