@@ -2,7 +2,6 @@ import re
 
 from telethon.utils import get_display_name
 
-from Panda import PandaBot
 
 from ..core.managers import edit_or_reply
 from ..sql_helper import blacklist_sql as sql
