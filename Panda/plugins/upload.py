@@ -18,7 +18,7 @@ from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import progress
 from ..helpers.utils import reply_id
-
+from . import ilhammansiz_cmd
 plugin_category = "plugins"
 
 PATH = os.path.join("./temp", "temp_vid.mp4")
@@ -132,7 +132,7 @@ async def upload(path, event, udir_event, pandaflag=None):  # sourcery no-metric
         UPLOAD_.uploaded += 1
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="upload( -f)? ([\s\S]*)",
     command=("upload", plugin_category),
     info={
