@@ -2,7 +2,6 @@ import string
 
 from telethon.tl.types import Channel
 
-from Panda import pandaub
 from Panda.core.logger import logging
 
 from ..Config import Config
