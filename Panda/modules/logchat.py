@@ -1,6 +1,5 @@
 import asyncio
 
-from Panda import pandaub
 from Panda.core.logger import logging
 
 from ..Config import Config
