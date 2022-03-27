@@ -9,7 +9,6 @@ from PIL import Image, ImageDraw, ImageFont
 from requests import get
 from telethon.utils import get_display_name
 
-from Panda import pandaub
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
