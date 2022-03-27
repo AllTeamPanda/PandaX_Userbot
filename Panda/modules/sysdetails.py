@@ -10,7 +10,7 @@ import psutil
 from telethon import __version__
 
 from .. import PandaBot
-
+from . import ilhammansiz_cmd
 from ..core.managers import edit_or_reply
 from ..helpers.utils import _pandautils as _catutils
 
@@ -25,7 +25,7 @@ def get_size(inputbytes, suffix="B"):
         inputbytes /= factor
 
 
-@PandaBot.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="spc$",
     command=("spc", plugin_category),
     info={
@@ -81,7 +81,7 @@ async def psu(event):
     await event.edit(help_string)
 
 
-@PandaBot.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="cpu$",
     command=("cpu", plugin_category),
     info={
@@ -98,7 +98,7 @@ async def cpu(event):
     )
 
 
-@PandaBot.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="sysd$",
     command=("sysd", plugin_category),
     info={
