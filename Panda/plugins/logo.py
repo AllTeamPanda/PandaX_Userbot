@@ -8,7 +8,6 @@ import requests
 from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw, ImageFont
 
-from Panda import pandaub
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.functions import clippy
