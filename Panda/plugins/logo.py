@@ -13,7 +13,7 @@ from Panda import pandaub
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.functions import clippy
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
-from . import convert_toimage, reply_id
+from . import convert_toimage, reply_id, ilhammansiz_cmd
 
 # ======================================================================================================================================================================================
 
@@ -31,7 +31,7 @@ vars_list = {
 plugin_category = "plugins"
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="(|s)logo(?: |$)(.*)",
     command=("logo", plugin_category),
     info={
@@ -109,7 +109,7 @@ async def very(event):
         os.remove(file_name)
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="(|c)lbg(?: |$)(.*)",
     command=("lbg", plugin_category),
     info={
@@ -185,7 +185,7 @@ async def bad(event):
         )
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="lf(|c|s|h|w)(?: |$)(.*)",
     command=("lf", plugin_category),
     info={
@@ -329,7 +329,7 @@ async def pussy(event):
                     )
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="(g|d|r)lvar(?: |$)(.*)",
     command=("lvar", plugin_category),
     info={
