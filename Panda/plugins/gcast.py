@@ -6,7 +6,6 @@ import asyncio
 
 from telethon.errors.rpcerrorlist import FloodWaitError
 
-from Panda import PandaBot
 import Panda
 from . import ilhammansiz_cmd
 plugin_category = "plugins"
