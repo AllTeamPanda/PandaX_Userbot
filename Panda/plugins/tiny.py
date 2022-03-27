@@ -1,13 +1,13 @@
 import os
 import cv2
 from PIL import Image
-
+from . import ilhammansiz_cmd
 from Panda import pandaub
 
 plugin_category = "plugins"
 
 
-@pandaub.ilhammansiz_cmd(
+@ilhammansiz_cmd(
     pattern="tiny(?: |$)(.*)",
     command=("tiny", plugin_category),
     info={
