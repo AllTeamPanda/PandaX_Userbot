@@ -1,6 +1,5 @@
 import html
 
-from Panda import PandaBot
 
 from ..core.managers import edit_or_reply
 from ..sql_helper import warns_sql as sql
