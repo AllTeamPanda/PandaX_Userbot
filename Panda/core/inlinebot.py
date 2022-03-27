@@ -72,7 +72,7 @@ def settingvar(dat):
     return ultr
 
 def main_menu():
-    text = f"**{CUSTOM_HELP_TEXT}**\n\n  **Pengguna :** {mention}\n  Jumlah-Module:** {len(PLG_INFO)}**\n  Commands:** {len(CMD_INFO)}\n**"
+    text = f"**{CUSTOM_HELP_TEXT}**\n\n  **Owner :** {mention}\n  Number of Module:** {len(PLG_INFO)}**\n  Commands:** {len(CMD_INFO)}\n**"
     buttons = [
         (
             Button.url(
