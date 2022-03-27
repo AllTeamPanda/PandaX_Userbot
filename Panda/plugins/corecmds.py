@@ -9,7 +9,6 @@ from . import (
     SUDO_LIST,
     edit_delete,
     edit_or_reply,
-    pandaub,
     reply_id,
     ilhammansiz_cmd,
 )
