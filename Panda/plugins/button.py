@@ -10,7 +10,7 @@ import re
 from telethon import Button
 
 from ..Config import Config
-from . import edit_delete, pandaub, reply_id, ilhammansiz_cmd
+from . import edit_delete, ilhammansiz_cmd, reply_id
 
 plugin_category = "plugins"
 # regex obtained from:
