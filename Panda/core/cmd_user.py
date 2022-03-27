@@ -1,5 +1,6 @@
 # Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
 # Import Panda Userbot
+# © Panda Userbot
 # Recode by Ilham Mansiz
 # ••••••••••••••••••••••√•••••••••••••√√√••••••••
 
@@ -319,6 +320,8 @@ def ilhammansiz_cmd(
 
 def register(
     pattern: str or tuple = None,
+    help: Union[str, Dict[str, Union[str, List[str], Dict[str, str]]]]
+    or tuple = None,
     info: Union[str, Dict[str, Union[str, List[str], Dict[str, str]]]]
     or tuple = None,
     groups_only: bool = False,
