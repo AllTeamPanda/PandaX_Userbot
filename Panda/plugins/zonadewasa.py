@@ -5,10 +5,9 @@ import urllib
 
 import requests
 
-from Panda import PandaBot
 
 from ..Config import Config
-from . import PandaBot, ilhammansiz_cmd
+from . import ilhammansiz_cmd
 
 plugin_category = "plugins"
 
