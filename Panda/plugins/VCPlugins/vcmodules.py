@@ -164,7 +164,7 @@ async def join_(event):
             chat = int(chat)
         try:
             chat = int("-100" + str((await call_py.get_entity(chat)).id))
-        except Exception as e:
+        except Exception:
             return await edit_or_reply(event, "**ERROR:**{e}")
     else:
          try:
