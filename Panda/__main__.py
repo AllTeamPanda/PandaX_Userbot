@@ -38,7 +38,7 @@ def start():
 
 if __name__ == "__main__":
     start()
-    Panda.VcBot()
+    Panda.VcBot.start()
     idle()
     try:
         if len(sys.argv) not in (1, 3, 4):
