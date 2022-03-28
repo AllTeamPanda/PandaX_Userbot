@@ -116,6 +116,21 @@ async def skip_current_song(chat_id: int):
     pop_an_item(chat_id)
     return [songname, link, type]
 
+@ilhammansiz_cmd(
+    pattern="joinvc(?:\s|$)([\s\S]*)",
+    command=("joinvc", plugin_category),
+    info={
+        "header": "jooin the song in voice chat.",
+        "description": "Join the song in voice chat, or add the song to queue..",
+        "usage": "{tr}joinvc",
+        "examples": "{tr}joinvc",
+    },
+)
+async def joinvc(event):
+    try:
+        await call_py.join_group_call()
+    except Exception as ep:       
+        await event.edit(f"`{ep}`")
 
 
 @ilhammansiz_cmd(
