@@ -67,5 +67,5 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 * [Ilham Mansiz](https://github.com/ilhammansiz) for [PandaX_Userbot](https://github.com/ilhammansiz/PandaX_Userbot)
 
 ## License
-Licensed under [Raphielscape Public License](https://github.com/ilhammansiz/PandaX_Userbot/blob/PandaX_Userbot/LICENSE) - Version 1.d, February 2020
+Licensed under [Raphielscape Public License](https://github.com/ilhammansiz/PandaX_Userbot/blob/PandaUserbot/LICENSE) - Version 1.d, February 2020
 
