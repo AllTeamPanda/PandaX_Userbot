@@ -127,10 +127,13 @@ async def skip_current_song(chat_id: int):
     },
 )
 async def joinvc(event):
-    try:
-        await call_py.join_group_call(chat_id)
-    except Exception as ep:       
-        await event.edit(f"`{ep}`")
+    chat_id = event.chat_id
+    if chat_id in QUEUE:
+        try:
+            await call_py.join_group_call(chat_id)
+            add_to_queue(chat_id)
+        except Exception as ep:       
+            await event.edit(f"`{ep}`")
 
 
 @ilhammansiz_cmd(
