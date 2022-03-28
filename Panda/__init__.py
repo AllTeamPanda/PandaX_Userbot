@@ -23,6 +23,8 @@ from telethon.sessions import StringSession
 from .Var import Var
 from telethon.sync import TelegramClient, custom, events
 from Panda.versions import __version__, __license__, __author__, __copyright__
+from pytgcalls import PyTgCalls
+
 
 Mongodb = mongodb
 SqL = sqldb
@@ -75,6 +77,7 @@ except Exception as e:
     print(f"STRING_SESSION {str(e)}")
     sys.exit()
 ######################################
+VcBot = PyTgCalls(PandaBot)
 
 from .helpers.functions.auto import autobot
 
