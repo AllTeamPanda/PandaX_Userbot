@@ -3,7 +3,7 @@
 # Recode by Ilham Mansiz
 # ••••••••••••••••••••••√•••••••••••••√√√••••••••
 
-
+from pytgcalls import idle
 import sys
 import Panda
 from Panda import utils
@@ -38,6 +38,8 @@ def start():
 
 if __name__ == "__main__":
     start()
+    Panda.VcBot()
+    idle()
     try:
         if len(sys.argv) not in (1, 3, 4):
             Panda.PandaBot.disconnect()
