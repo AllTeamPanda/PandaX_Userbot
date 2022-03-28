@@ -130,6 +130,7 @@ async def skip_current_song(chat_id: int):
     },
 )
 async def joinvc(event):
+    chat = await event.get_chat()
     chat_id = event.chat_id
     file = '../input.raw'
     if chat_id:
@@ -147,39 +148,6 @@ async def joinvc(event):
         except Exception as ep:       
             await event.edit(f"`{ep}`")
 
-@ilhammansiz_cmd(
-    pattern="langsung$",
-    command=("langsung", plugin_category),
-    info={
-        "header": "jooin the song in voice chat.",
-        "description": "Join the song in voice chat, or add the song to queue..",
-        "usage": "{tr}joinvc",
-        "examples": "{tr}joinvc",
-    },
-)
-async def join_(event):
-    if len(event.text.split()) > 1:
-        chat = event.text.split()[1]
-        if not chat.startswith("@"):
-            chat = int(chat)
-        try:
-            chat = int("-100" + str((await call_py.get_entity(chat)).id))
-        except Exception:
-            return await edit_or_reply(event, "**ERROR:**{e}")
-    else:
-         try:
-             await call_py.join_group_call(
-                       event.chat_id,
-                       InputStream(
-                           InputAudioStream(
-                               file,
-                           ),
-                       ),
-                       stream_type=StreamType().pulse_stream,
-             )
-             await edit_or_reply(event, "**Berhasil Join Voice grup**")
-         except Exception as ep:       
-             await event.edit(f"`{ep}`")
 
 @ilhammansiz_cmd(
     pattern="play(?:\s|$)([\s\S]*)",
