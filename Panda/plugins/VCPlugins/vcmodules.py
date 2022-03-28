@@ -5,6 +5,9 @@
 
 from pytgcalls import StreamType
 from pytgcalls.types import Update
+from pytgcalls.types.input_stream import InputAudioStream
+from pytgcalls.types.input_stream import InputStream
+
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import (
     HighQualityAudio,
@@ -128,10 +131,18 @@ async def skip_current_song(chat_id: int):
 )
 async def joinvc(event):
     chat_id = event.chat_id
-    if chat_id in QUEUE:
+    file = '../input.raw'
+    if chat_id:
         try:
-            await call_py.join_group_call(chat_id)
-            add_to_queue(chat_id)
+            await call_py.join_group_call(
+                      chat_id,
+                      InputStream(
+                          InputAudioStream(
+                              file,
+                          ),
+                      ),
+                      stream_type=StreamType().local_stream,
+            )
         except Exception as ep:       
             await event.edit(f"`{ep}`")
 
