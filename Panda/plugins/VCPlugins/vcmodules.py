@@ -169,7 +169,7 @@ async def join_(event):
     else:
          try:
              await call_py.join_group_call(
-                       chat_id,
+                       event.chat_id,
                        InputStream(
                            InputAudioStream(
                                file,
