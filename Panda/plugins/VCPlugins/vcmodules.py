@@ -130,7 +130,7 @@ async def skip_current_song(chat_id: int):
     },
 )
 async def joinvc(event):
-    chat = await event.get_chat()
+    await event.get_chat()
     chat_id = event.chat_id
     file = '../input.raw'
     if chat_id:
