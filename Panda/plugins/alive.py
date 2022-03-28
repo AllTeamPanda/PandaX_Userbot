@@ -6,7 +6,7 @@ from Panda import StartTime, pandaversion, PandaBot, SqL, Mongodb, redisalive, d
 pandaub = PandaBot
 from ..Config import Config
 from ..helpers.functions import get_readable_time, check_data_base_heal_th
-from pytgcalls import __version__
+from pytgcalls import __version__ as pytgcalls
 from ..core.data import _sudousers_list
 from . import mention, ilhammansiz_cmd
 
@@ -73,7 +73,7 @@ aliveess = f"""
 ☉ 🛰 Version: `𝚅{pandaversion}`
 
 ☉ 👾 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
-☉ 🎙 𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀: `𝚅{__version__}`
+☉ 🎙 𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀: `𝚅{pytgcalls.__version__}`
 ☉ 🐍 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`
 
 ☉ 🎭 Dual-Mode: {dual_mode()}
