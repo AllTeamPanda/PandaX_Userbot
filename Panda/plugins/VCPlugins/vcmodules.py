@@ -120,7 +120,7 @@ async def skip_current_song(chat_id: int):
     return [songname, link, type]
 
 @ilhammansiz_cmd(
-    pattern="joinvc(?:\s|$)([\s\S]*)",
+    pattern="joinvc$",
     command=("joinvc", plugin_category),
     info={
         "header": "jooin the song in voice chat.",
