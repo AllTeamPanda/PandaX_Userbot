@@ -143,6 +143,7 @@ async def joinvc(event):
                       ),
                       stream_type=StreamType().local_stream,
             )
+            await edit_or_reply(event, "**Berhasil Join Voice grup**")
         except Exception as ep:       
             await event.edit(f"`{ep}`")
 
