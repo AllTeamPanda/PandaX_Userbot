@@ -79,3 +79,8 @@ psycopg2-binary
 pyyaml==5.4.1
 countryinfo
 emoji-country-flag
+git+https://github.com/1danish-00/carbon-now-sh-api-wrapper.git
+pybase64
+pymongo[srv]
+py-tgcalls
+git+https://github.com/yt-dlp/yt-dlp@master
