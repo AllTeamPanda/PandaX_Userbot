@@ -1,5 +1,5 @@
 aiofiles
-redis>=3.3.10
+redis
 python-decouple==3.3
 aiohttp
 cloudscraper
