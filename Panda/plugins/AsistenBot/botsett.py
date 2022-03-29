@@ -450,8 +450,8 @@ async def settings_toggle(c_q: CallbackQuery):
     await c_q.edit("BOT_ANTIFLOOD batal sekarang !")
 
 
-@PandaBot.bot_cmd(incoming=True, func=lambda e: e.is_private)
-@PandaBot.bot_cmd(edited=True, func=lambda e: e.is_private)
+@bot_cmd(incoming=True, func=lambda e: e.is_private)
+@bot_cmd(edited=True, func=lambda e: e.is_private)
 async def antif_on_msg(event):
     if gvarstatus("bot_antif") is None:
         return
