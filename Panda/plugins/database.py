@@ -214,7 +214,7 @@ async def _(dyno):
         return await edit_or_reply(dyno,
             " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku"
         )
-    v = await dyno.edit("Getting Logs....")
+    v = await edit_or_reply(dyno, "Getting Logs....")
     with open("logs.txt", "w") as log:
         log.write(app.get_log())
     await v.edit("Got the logs wait a sec")
