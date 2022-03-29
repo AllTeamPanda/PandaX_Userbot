@@ -5,8 +5,9 @@
 
 
 import os
+"""
 os.system("pip3 install --no-cache-dir -U -q -r PandaVersion/Panda/Mansiez.txt")
-    
+"""  
 import sys
 
 from decouple import config
