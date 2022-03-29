@@ -1,6 +1,8 @@
-FROM python:3.9
-WORKDIR /app
-ENV PYTHONUNBUFFERED=1
-COPY . .
-RUN bash install.sh
-ENTRYPOINT ["bash", "start.sh"]
+FROM ilhammansiz17/pandauserbot:docker-userbot
+
+RUN git clone -b PandaUserbot https://github.com/ilhammansiz/PandaX_Userbot
+    
+WORKDIR /app/
+
+
+CMD [ "bash", "start" ]
