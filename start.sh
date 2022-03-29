@@ -23,7 +23,7 @@ _repolink () {
 
 _install_bot () {
     local zippath
-    zippath="USERBOT.zip"
+    zippath="pandax_userbot.zip"
     echo "  Downloading source code ..."
     wget -q $(_repolink) -O "$zippath"
     echo "  Unpacking Data ..."
