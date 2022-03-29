@@ -5,4 +5,4 @@ RUN git clone -b PandaUserbot https://github.com/ilhammansiz/PandaX_Userbot
 WORKDIR /app/
 
 
-CMD [ "bash", "start" ]
+CMD [ "bash", "start.sh" ]
