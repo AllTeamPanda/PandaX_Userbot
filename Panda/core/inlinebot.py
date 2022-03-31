@@ -99,11 +99,6 @@ def main_menu():
                 f"VC Music ({len(GRP_INFO['music'])})",
                 data=f"music_menu",
             ),
-            Button.inline(
-                f"Menu Asisten",
-                data="bothelp",
-            ),
-        ),
         (
             Button.inline(
                 f"🔒 𝙲𝚕𝚘𝚜𝚎 𝙼𝚎𝚗𝚞",
