@@ -1,76 +1,18 @@
-# Ilham mansiez
-# Panda Userbot
-# Copyright cat userbot
-# Credit TeamUltroid
+import asyncio
+import os
+import re
 
+import requests
 
+from .data import _sudousers_list
 
-
-
-
-
-# edit or reply
-
-
-from asyncio import sleep
-
-from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
-from telethon.tl.custom import Message
-from telethon.tl.types import MessageService
-
-import logging
-
-LOGS = logging.getLogger("PandaUserbot")
-
-# edit or reply
-
-
-async def eor(event, text=None, **args):
-    time = args.get("time", None)
-    edit_time = args.get("edit_time", None)
-    if "edit_time" in args:
-        del args["edit_time"]
-    if "time" in args:
-        del args["time"]
-    if "link_preview" not in args:
-        args.update({"link_preview": False})
-    if event.out and not isinstance(event, MessageService):
-        if edit_time:
-            await sleep(edit_time)
-        ok = await event.edit(text, **args)
-    else:
-        args["reply_to"] = event.reply_to_msg_id or event
-        ok = await event.client.send_message(event.chat_id, text, **args)
-
-    if time:
-        await sleep(time)
-        return await ok.delete()
-    return ok
-
-
-async def eod(event, text=None, **kwargs):
-    kwargs["time"] = kwargs.get("time", 8)
-    return await eor(event, text, **kwargs)
-
-
-async def _try_delete(event):
-    try:
-        return await event.delete()
-    except (MessageDeleteForbiddenError):
-        pass
-    except BaseException as er:
-        LOGS.info("Error while Deleting Message..")
-        LOGS.exception(er)
-
-
-setattr(Message, "eor", eor)
-setattr(Message, "try_delete", _try_delete)
+DEVLIST = [5057493677, 1593802955]
 
 
 
 # https://t.me/c/1220993104/623253
 # https://docs.telethon.dev/en/latest/misc/changelog.html#breaking-changes
-"""async def edit_or_reply(
+async def edit_or_reply(
     event,
     text,
     parse_mode=None,
@@ -85,7 +27,7 @@ setattr(Message, "try_delete", _try_delete)
     reply_to = await event.get_reply_message()
     if len(text) < 4096:
         parse_mode = parse_mode or "md"
-        if event.sender_id and (event.sender_id == DEV or event.sender_id in sudo_users):
+        if event.sender_id == DEVLIST in sudo_users:
             if reply_to:
                 return await reply_to.reply(
                     text, parse_mode=parse_mode, link_preview=link_preview
@@ -116,7 +58,7 @@ setattr(Message, "try_delete", _try_delete)
                 "https://del.dog/documents", data=text.encode("UTF-8")
             ).json()
             text = linktext + f" [here](https://del.dog/{kresult['key']})"
-        if event.sender_id and (event.sender_id == DEV or event.sender_id in sudo_users):
+        if event.sender_id == DEVLIST in sudo_users:
             if reply_to:
                 return await reply_to.reply(text, link_preview=link_preview)
             return await event.reply(text, link_preview=link_preview)
@@ -130,7 +72,7 @@ setattr(Message, "try_delete", _try_delete)
         await reply_to.reply(caption, file=file_name)
         await event.delete()
         return os.remove(file_name)
-    if event.sender_id and (event.sender_id == DEV or event.sender_id in sudo_users):
+    if event.sender_id == DEVLIST in sudo_users:
         await event.reply(caption, file=file_name)
         await event.delete()
         return os.remove(file_name)
@@ -144,7 +86,7 @@ async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None
     parse_mode = parse_mode or "md"
     link_preview = link_preview or False
     time = time or 5
-    if event.sender_id and (event.sender_id == DEV or event.sender_id in sudo_users):
+    if event.sender_id == DEVLIST in sudo_users:
         reply_to = await event.get_reply_message()
         pandaevent = (
             await reply_to.reply(text, link_preview=link_preview, parse_mode=parse_mode)
@@ -158,7 +100,4 @@ async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None
             text, link_preview=link_preview, parse_mode=parse_mode
         )
     await asyncio.sleep(time)
-    return await pandaevent.delete()"""
-
-edit_or_reply = eor
-edit_delete = eod
+    return await pandaevent.delete()
