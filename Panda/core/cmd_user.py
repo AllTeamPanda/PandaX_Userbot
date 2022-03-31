@@ -42,7 +42,7 @@ LOGS = logging.getLogger(__name__)
 def dual_duall():
     try:
         if SqL.getdb("DUAL_HNDLR") is not None:
-            duall = SqL.setdb("DUAL_HNDLR", "/") or "/"
+            duall = SqL.setdb("DUAL_HNDLR", "/") or "®"
             return duall
         else:
             duall = SqL.setdb("DUAL_HNDLR", "/") or "/"
