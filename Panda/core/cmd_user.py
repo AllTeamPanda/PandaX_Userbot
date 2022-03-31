@@ -42,7 +42,7 @@ LOGS = logging.getLogger(__name__)
 def dual_duall():
     try:
         if SqL.getdb("DUAL_HNDLR") is not None:
-            duall = SqL.setdb("DUAL_HNDLR", "/") or "•"
+            duall = SqL.setdb("DUAL_HNDLR", "/") or "/"
             return duall
         else:
             duall = SqL.setdb("DUAL_HNDLR", "/") or "/"
@@ -242,11 +242,11 @@ def ilhammansiz_cmd(
             if dual and SqL.getdb("MODE_DUAL"):
                 PandaBot.tgbot.add_event_handler(
                     wrapper,
-                    MessageEdited(pattern=REGEX_.dual, outgoing=True, **kwargs),
+                    MessageEdited(pattern=REGEX_.dual, from_users=Config.OWNER_ID, **kwargs),
                 )
             PandaBot.tgbot.add_event_handler(
                 wrapper,
-                NewMessage(pattern=REGEX_.dual, outgoing=True, **kwargs),
+                NewMessage(pattern=REGEX_.dual, from_users=Config.OWNER_ID, **kwargs),
             )
             if dev is not None:
                 if command is not None or command[0]:
@@ -490,11 +490,11 @@ def register(
             if dual and SqL.getdb("MODE_DUAL"):
                 PandaBot.tgbot.add_event_handler(
                     wrapper,
-                    MessageEdited(pattern=REGEX_.dual, outgoing=True, **kwargs),
+                    MessageEdited(pattern=REGEX_.dual, from_users=Config.OWNER_ID, **kwargs),
                 )
             PandaBot.tgbot.add_event_handler(
                 wrapper,
-                NewMessage(pattern=REGEX_.dual, outgoing=True, **kwargs),
+                NewMessage(pattern=REGEX_.dual, from_users=Config.OWNER_ID, **kwargs),
             )
             if dev is not None:
                 if command is not None or command[0]:
