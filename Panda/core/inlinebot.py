@@ -96,9 +96,14 @@ def main_menu():
         ),
         (
             Button.inline(
-                f"VC Music ({len(GRP_INFO['music'])})",
+                f"🎙 VC Music ({len(GRP_INFO['music'])})",
                 data=f"music_menu",
             ),
+            Button.inline(
+                f"📖 Menu Asisten",
+                data="bothelp",
+            ),
+        ),
         (
             Button.inline(
                 f"🔒 𝙲𝚕𝚘𝚜𝚎 𝙼𝚎𝚗𝚞",
@@ -107,6 +112,7 @@ def main_menu():
         ),
     ]
     return text, buttons
+
 
 
 def command_in_category(cname):
