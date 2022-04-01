@@ -26,7 +26,7 @@ class Var(object):
     STRING_SESSION = os.environ.get(
         "SESSION", None)
     STRING_SESSION = sys.argv[3] if len(sys.argv) > 3 else os.environ.get("SESSION", None)
-    MONGO_URI = config("MONGO_URI", default=None)
+    MONGO_URI = os.environ.get("MONGO_URI", default=None)
     DB_URI = os.environ.get("DATABASE_URL", None)
     REDIS_URI = os.environ.get("REDIS_URI", "redis-18892.c292.ap-southeast-1-1.ec2.cloud.redislabs.com:18892")
     REDIS_PASSWORD = os.environ.get("REDIS_PASSWORD", "9A6h30jSdRsO8DiFasSN4G8qXnUNA9H2")
