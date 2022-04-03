@@ -105,7 +105,7 @@ async def grpinfo():
         plugins = GRP_INFO[panda]
         outstr += f"{hemojis[panda]} {panda.title()} ({len(plugins)})\n\n"
         for plugin in plugins:
-            outstr += f"`\t{ICON_HELP}"
+            outstr += f"\t{ICON_HELP}"
             outstr += f"`{plugin}`"
         outstr += "\n\n"
     return outstr
