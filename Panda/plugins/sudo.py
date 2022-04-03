@@ -1,14 +1,10 @@
-from datetime import datetime
 
-from telethon.utils import get_display_name
-from Panda import pandaub, SqL
 from Panda.core.logger import logging
 import heroku3
 from telethon.tl.functions.users import GetFullUserRequest
 
 from . import edit_delete, edit_or_reply, ilhammansiz_cmd, HEROKU_APP_NAME, HEROKU_API_KEY, Config
 from ..core.data import _sudousers_list
-from .. import SqL
 Heroku = heroku3.from_key(HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 sudousers = _sudousers_list()
