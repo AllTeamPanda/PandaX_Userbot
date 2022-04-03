@@ -13,7 +13,7 @@ from Panda import DEVLIST
 from Panda.events import register
 import asyncio
 import os
-from . import ilhammansiz_cm d
+from . import ilhammansiz_cmd
 
 plugin_category = "modules"
 ## ===================================
