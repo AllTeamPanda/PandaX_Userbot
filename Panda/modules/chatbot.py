@@ -8,7 +8,7 @@ from telethon.tl.types import User
 
 from .. import LOGS, bot
 from ..sql_helper.tede_chatbot_sql import is_tede, rem_tede, set_tede
-from . import edit_or_reply, ilhammansiz
+from . import edit_or_reply, ilhammansiz_cmd
 plugin_category = "modules"
 
 translator = Translator()
