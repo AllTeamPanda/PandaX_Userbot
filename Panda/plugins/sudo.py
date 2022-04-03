@@ -3,7 +3,6 @@ from datetime import datetime
 from telethon.utils import get_display_name
 from Panda import pandaub, SqL
 from Panda.core.logger import logging
-from ..core.pluginManager import restart_script as reload
 
 from ..Config import Config
 from ..core import CMD_INFO, PLG_INFO
