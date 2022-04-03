@@ -89,7 +89,7 @@ async def add(event):
 
 @ilhammansiz_cmd(
     pattern="delsudo(?:\s|$)([\s\S]*)",
-    command=("addsudo", plugin_category),
+    command=("delsudo", plugin_category),
     info={
         "header": "To add user as your sudo.",
         "usage": "{tr}addsudo <username/reply/mention>",
