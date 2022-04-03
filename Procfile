@@ -1,1 +1,1 @@
-worker: bash start.sh
+worker: bash termux_install.sh
