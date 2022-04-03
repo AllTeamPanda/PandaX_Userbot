@@ -26,7 +26,7 @@ from telethon.errors import (
     MessageNotModifiedError,
 )
 from ..Config import Config
-from ..helpers.utils.format import paste_text
+from ..helpers.utils.format import paste_message
 from ..helpers.utils.utils import runcmd
 from ..sql_helper import sqldb as SqL
 from . import BOT_INFO, CMD_INFO, GRP_INFO, LOADED_CMDS, PLG_INFO
@@ -185,13 +185,14 @@ def ilhammansiz_cmd(
                     if Config.PRIVATE_GROUP_BOT_API_ID == 0:
                         return
                     date = (datetime.datetime.now()).strftime("%m/%d/%Y, %H:%M:%S")
-                    ftext = f"\nDisclaimer:\nFile ini hanya disisipkan di sini HANYA di sini,\
-                              \nkami hanya mencatat fakta kesalahan dan tanggal,\nKami menghormati privasi anda,\
+                    ftext = f"\nDisclaimer:\nThis file is pasted only here ONLY here,\
+                              \nwe logged only fact of error and date,\nwe respect your privacy,\
                               \nyou may not report this error if you've\
                               \nany confidential data here, no one will see your data\
                               \n\n--------BEGIN USERBOT TRACEBACK LOG--------\
                               \nDate: {date}\nGroup ID: {str(check.chat_id)}\
                               \nSender ID: {str(check.sender_id)}\
+                              \nMessage Link: {await check.client.get_msg_link(check)}\
                               \n\nEvent Trigger:\n{str(check.text)}\
                               \n\nTraceback info:\n{str(traceback.format_exc())}\
                               \n\nError text:\n{str(sys.exc_info()[1])}"
@@ -205,9 +206,11 @@ def ilhammansiz_cmd(
                     output = (await runcmd(command))[:2]
                     result = output[0] + output[1]
                     ftext += result
-                    pastelink = paste_text(ftext)
+                    pastelink = await paste_message(
+                        ftext, pastetype="s", markdown=False
+                    )
                     text = "**PandaUserbot Error report**\n\n"
-                    link = "[Klik](https://t.me/TEAMSquadUserbotSupport)"
+                    link = "[here](https://t.me/TeamSquadUserbotSupport)"
                     text += "If you wanna you can report it"
                     text += f"- just forward this message {link}.\n"
                     text += (
@@ -433,13 +436,14 @@ def register(
                     if Config.PRIVATE_GROUP_BOT_API_ID == 0:
                         return
                     date = (datetime.datetime.now()).strftime("%m/%d/%Y, %H:%M:%S")
-                    ftext = f"\nDisclaimer:\nFile ini hanya disisipkan di sini HANYA di sini,\
-                              \nkami hanya mencatat fakta kesalahan dan tanggal,\nKami menghormati privasi anda,\
+                    ftext = f"\nDisclaimer:\nThis file is pasted only here ONLY here,\
+                              \nwe logged only fact of error and date,\nwe respect your privacy,\
                               \nyou may not report this error if you've\
                               \nany confidential data here, no one will see your data\
                               \n\n--------BEGIN USERBOT TRACEBACK LOG--------\
                               \nDate: {date}\nGroup ID: {str(check.chat_id)}\
                               \nSender ID: {str(check.sender_id)}\
+                              \nMessage Link: {await check.client.get_msg_link(check)}\
                               \n\nEvent Trigger:\n{str(check.text)}\
                               \n\nTraceback info:\n{str(traceback.format_exc())}\
                               \n\nError text:\n{str(sys.exc_info()[1])}"
@@ -453,9 +457,11 @@ def register(
                     output = (await runcmd(command))[:2]
                     result = output[0] + output[1]
                     ftext += result
-                    pastelink = paste_text(ftext)
+                    pastelink = await paste_message(
+                        ftext, pastetype="s", markdown=False
+                    )
                     text = "**PandaUserbot Error report**\n\n"
-                    link = "[Klik](https://t.me/TEAMSquadUserbotSupport)"
+                    link = "[here](https://t.me/TeamSquadUserbotSupport)"
                     text += "If you wanna you can report it"
                     text += f"- just forward this message {link}.\n"
                     text += (
@@ -593,15 +599,16 @@ def bot_cmd(
                         return
                     date = (datetime.datetime.now()).strftime("%m/%d/%Y, %H:%M:%S")
                     ftext = f"\nDisclaimer:\nThis file is pasted only here ONLY here,\
-                                \nwe logged only fact of error and date,\nwe respect your privacy,\
-                                \nyou may not report this error if you've\
-                                \nany confidential data here, no one will see your data\
-                                \n\n--------BEGIN USERBOT TRACEBACK LOG--------\
-                                \nDate: {date}\nGroup ID: {str(check.chat_id)}\
-                                \nSender ID: {str(check.sender_id)}\
-                                \n\nEvent Trigger:\n{str(check.text)}\
-                                \n\nTraceback info:\n{str(traceback.format_exc())}\
-                                \n\nError text:\n{str(sys.exc_info()[1])}"
+                              \nwe logged only fact of error and date,\nwe respect your privacy,\
+                              \nyou may not report this error if you've\
+                              \nany confidential data here, no one will see your data\
+                              \n\n--------BEGIN USERBOT TRACEBACK LOG--------\
+                              \nDate: {date}\nGroup ID: {str(check.chat_id)}\
+                              \nSender ID: {str(check.sender_id)}\
+                              \nMessage Link: {await check.client.get_msg_link(check)}\
+                              \n\nEvent Trigger:\n{str(check.text)}\
+                              \n\nTraceback info:\n{str(traceback.format_exc())}\
+                              \n\nError text:\n{str(sys.exc_info()[1])}"
                     new = {
                         "error": str(sys.exc_info()[1]),
                         "date": datetime.datetime.now(),
@@ -612,9 +619,11 @@ def bot_cmd(
                     output = (await runcmd(command))[:2]
                     result = output[0] + output[1]
                     ftext += result
-                    pastelink = paste_text(ftext)
+                    pastelink = await paste_message(
+                        ftext, pastetype="s", markdown=False
+                    )
                     text = "**PandaUserbot Error report**\n\n"
-                    link = "[Klik](https://t.me/TEAMSquadUserbotSupport)"
+                    link = "[here](https://t.me/TeamSquadUserbotSupport)"
                     text += "If you wanna you can report it"
                     text += f"- just forward this message {link}.\n"
                     text += (
@@ -622,7 +631,7 @@ def bot_cmd(
                     )
                     text += f"**Error report : ** [{new['error']}]({pastelink})"
                     await check.client.send_message(
-                       Config.PRIVATE_GROUP_BOT_API_ID, text, link_preview=False
+                        Config.PRIVATE_GROUP_BOT_API_ID, text, link_preview=False
                     )
 
         from .session import tgbot
