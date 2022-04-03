@@ -1,11 +1,12 @@
 ## Docker with Panda Userbot
 ## © PandaX_Userbot
 
-FROM ilhammansiz17/pandauserbot:docker-python
+FROM pandauserbotfile/pandauserbot:docker-python202
 
-COPY . .
+RUN git clone -b PandaUserbot https://github.com/ilhammansiz/PandaX_Userbot /home/pandauserbot/ \
+    && chmod 777 /home/pandauserbot \
+    && mkdir /home/pandauserbot/bin/
 
-RUN bash Text.sh
-
+WORKDIR /home/pandauserbot/
 
 CMD [ "bash", "start.sh" ]
