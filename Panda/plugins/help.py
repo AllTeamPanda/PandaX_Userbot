@@ -57,13 +57,13 @@ async def cmdinfo(input_str, event, plugin=False):
     except Exception as e:
         await edit_delete(event, f"**Error**\n`{str(e)}`")
         return None
-    outstr = f"**Command :** `{cmdprefix}{input_str}`\n"
+    outstr = f"🙇🏻**Command :** `{cmdprefix}{input_str}`\n"
     plugin = get_key(input_str)
     if plugin is not None:
-        outstr += f"**Plugin :** `{plugin}`\n"
+        outstr += f"🗂**List :** `{plugin}`\n"
         category = getkey(plugin)
         if category is not None:
-            outstr += f"**Category :** `{category}`\n\n"
+            outstr += f"❗**Category :** `{category}`\n\n"
     outstr += f"**➕  Function :**\n{about[0]}"
     return outstr
 
@@ -80,11 +80,11 @@ async def plugininfo(input_str, event, flag):
     if len(cmds) == 1 and (flag is None or (flag and flag != "-p")):
         outstr = await cmdinfo(cmds[0], event, plugin=False)
         return outstr
-    outstr = f"**Plugin : **`{input_str}`\n"
-    outstr += f"**Commands Available :** `{len(cmds)}`\n"
+    outstr = f"🗂**List : **`{input_str}`\n"
+    outstr += f"🙇🏻**Commands :** `{len(cmds)}`\n"
     category = getkey(input_str)
     if category is not None:
-        outstr += f"**Category :** `{category}`\n\n"
+        outstr += f"❗**Category :** `{category}`\n\n"
     for cmd in cmds:
         outstr += f"➕  **Syntax :** `{cmdprefix}{cmd}`\n"
         try:
