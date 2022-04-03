@@ -47,45 +47,28 @@ async def sudo(event):
     },
     allow_sudo=False,
 )
-async def add(event):
-    suu = event.text[9:]
-    if f"{cmd}add " in event.text:
-        return
-    xxnx = await edit_or_reply(event, "`Processing...`")
-    var = "SUDO_USERS"
-    reply = await event.get_reply_message()
-    if not suu and not reply:
-        return await edit_delete(
-            xxnx,
-            "Balas ke pengguna atau berikan user id untuk menambahkannya ke daftar pengguna sudo anda.",
-            45,
-        )
-    if suu and not suu.isnumeric():
-        return await edit_delete(
-            xxnx, "Berikan User ID atau reply ke pesan penggunanya.", 45
-        )
+async def sudore(event):
+    ok = await edit_or_reply(event, "Prosessing...")
+    vars = "SUDO_USERS"
     if HEROKU_APP_NAME is not None:
         app = Heroku.app(HEROKU_APP_NAME)
     else:
-        await edit_delete(
-            xxnx,
-            "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **untuk menambahkan pengguna sudo**",
-        )
+        await ok.edit("`[HEROKU]:" "\nPlease setup your` **HEROKU_APP_NAME**")
         return
-    heroku_Config = app.config()
+    heroku_var = app.config()
     if event is None:
         return
-    if suu:
-        target = suu
-    elif reply:
+    try:
         target = await get_user(event)
-    suudo = f"{sudousers} {target}"
-    newsudo = suudo.replace("{", "")
-    newsudo = newsudo.replace("}", "")
-    await xxnx.edit(
-        f"**Berhasil Menambahkan** `{target}` **ke Pengguna Sudo.**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan."
-    )
-    heroku_Config[var] = newsudo
+    except Exception:
+        await ok.edit(f"Reply to a user.")
+    if sudousers:
+        newsudo = f"{sudousers} {target}"
+    else:
+        newsudo = f"{target}"
+    await ok.edit(f"Menambahkan  `{target}` sedang merestart di heroku tunggu 2-3 min.")
+    heroku_var[vars] = newsudo
+
 
 
 @ilhammansiz_cmd(
