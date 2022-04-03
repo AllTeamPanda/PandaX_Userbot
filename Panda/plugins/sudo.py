@@ -9,6 +9,7 @@ Heroku = heroku3.from_key(HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 sudousers = _sudousers_list()
 
+cmd = Config.COMMAND_HAND_LER
 
 plugin_category = "plugins"
 LOGS = logging.getLogger(__name__)
