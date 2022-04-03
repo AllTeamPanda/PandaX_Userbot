@@ -237,7 +237,7 @@ async def _(event):  # sourcery no-metrics
             + PLG_INFO["corecmds"]
             + PLG_INFO["groupactions"]
             + PLG_INFO["sudo"]
-            + PLG_INFO["transfer_channel"]
+            + PLG_INFO["transferchannel"]
             + ["gauth"]
             + ["greset"]
         )
@@ -340,7 +340,7 @@ async def _(event):  # sourcery no-metrics
             + PLG_INFO["corecmds"]
             + PLG_INFO["groupactions"]
             + PLG_INFO["sudo"]
-            + PLG_INFO["transfer_channel"]
+            + PLG_INFO["transferchannel"]
             + ["gauth"]
             + ["greset"]
         )
