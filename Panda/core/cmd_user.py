@@ -35,7 +35,6 @@ from .data import _sudousers_list, blacklist_chats_list, sudo_enabled_cmds, _dev
 from .events import MessageEdited, NewMessage
 from .logger import logging
 from .managers import edit_delete
-from .pluginManager import get_message_link, restart_script
 
 LOGS = logging.getLogger(__name__)
 
