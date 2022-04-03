@@ -13,6 +13,7 @@ from Panda import DEVLIST
 from Panda.events import register
 import asyncio
 import os
+from . import ilhammansiz_cm d
 
 plugin_category = "modules"
 ## ===================================
@@ -53,7 +54,22 @@ async def panda(cool):
     r = await cool.reply("Berhasil Mengupdate Bisa digunakan kembali")
     await r.delete()
 
-
+@ilhammansiz_cmd(
+    pattern="restart$",
+    command=("restart", plugin_category),
+    info={
+        "header": "Restarts the bot !!",
+        "usage": "{tr}restart",
+    },
+)
+async def panda(cool):
+    restart = await edit_or_reply(cool, "Sedang Merestart Panda Userbot ")
+    ilhammansizz = Heroku.apps()[HEROKU_APP_NAME]
+    await asyncio.sleep(6)
+    await restart.delete()
+    ilhammansizz.restart()
+    r = await cool.reply("Berhasil Mengupdate Bisa digunakan kembali")
+    await r.delete()
 
 ## Ngapain lu anjeng 
 ## Ngentot
