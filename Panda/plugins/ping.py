@@ -1,10 +1,7 @@
-import random
 import time
 
 from datetime import datetime
-from speedtest import Speedtest
 from .. import StartTime, bot
-from ..helpers import humanbytes
 from . import edit_or_reply, ilhammansiz_cmd
 plugin_category = "plugins"
 
