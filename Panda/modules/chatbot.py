@@ -45,7 +45,7 @@ async def chat_bot_toggle(event):
         await edit_or_reply(event, "**Usage:** `.chatbot` <on/off>")
 
 @ilhammansiz_cmd(
-    pattern="chatbot(?: |$)(.*)"",
+    pattern="chatbot(?: |$)(.*)",
     command=("chatbot", plugin_category),
     info={
         "header": "** Untuk membalas chat dengan chatbot AI.",
