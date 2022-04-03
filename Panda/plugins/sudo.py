@@ -18,7 +18,7 @@ LOGS = logging.getLogger(__name__)
     pattern="sudo$",
     command=("sudo", plugin_category),
     info={
-        "header": "To enable sudo of your Catuserbot.",
+        "header": "To enable sudo of your Pandauserbot.",
         "description": "Initially all sudo commands are disabled, you need to enable ",
         "usage": "{tr}sudo",
     },
