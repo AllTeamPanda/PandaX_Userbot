@@ -113,19 +113,12 @@ async def on_afk(event):
 
 
 @register(
-    pattern="ofg(?: |$)(.*)",
+    pattern="off(?: |$)(.*)",
     command=("off", plugin_category),
     help={
-        "header": "Enables afk for your account",
-        "description": "When you are in afk if any one tags you then your bot will reply as he is offline.\
-        AFK mean away from keyboard.",
-        "options": "If you want AFK reason with hyperlink use [ ; ] after reason, then paste the media link.",
-        "usage": [
-            "{tr}afk <reason>",
-            "{tr}afk <reason> ; <link>",
+        "header": "Memberi tahu kalau Master sedang off bisa dengan menampilkan media keren ketika seseorang menandai atau membalas salah satu pesan atau dm Anda",
+        "usage": [ "<alasan> bisa <sambil reply sticker/foto/gif/media>"
         ],
-        "examples": "{tr}afk Let Me Sleep",
-        "note": "Switches off AFK when you type back anything, anywhere. You can use #afk in message to continue in afk without breaking it",
     },
 )
 async def _(event):
