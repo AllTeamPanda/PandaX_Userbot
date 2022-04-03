@@ -91,7 +91,7 @@ async def plugininfo(input_str, event, flag):
             outstr += f"➕  **Function :** `{CMD_INFO[cmd][1]}`\n\n"
         except IndexError:
             outstr += f"➕  **Function :** `Silahkan ketik` `{cmdprefix}help {cmd}` Untuk melihat cara menggunakan\n\n"
-    outstr += f"**🙇🏻 Usage : ** `{cmdprefix}help <command name>`\
+    outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help <command name>`\
         \n**🖍 Note : **If command name is same as plugin name then use this `{cmdprefix}help <command name>`."
     return outstr
 
@@ -99,7 +99,7 @@ async def plugininfo(input_str, event, flag):
 async def grpinfo():
     outstr = "**📰 List Modules Panda-Userbot:**\n\n"
     outstr += f"**👤 Owner : ** {mention}\n"
-    outstr += f"**🙇🏻 Usage : ** `{cmdprefix}help <plugin name>`\n\n"
+    outstr += f"**✅ Total Command : ** `{len(CMD_INFO)}`\n\n"
     category = ["plugins", "modules", "music"]
     for panda in category:
         plugins = GRP_INFO[panda]
@@ -108,6 +108,7 @@ async def grpinfo():
             outstr += f"\t{ICON_HELP}"
             outstr += f"`{plugin}`"
         outstr += "\n\n"
+    outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help <plugin name>`\n\n"
     return outstr
 
 
