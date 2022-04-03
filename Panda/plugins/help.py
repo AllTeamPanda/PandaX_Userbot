@@ -15,8 +15,8 @@ plugin_category = "plugins"
 
 
 hemojis = {
-    "plugins": "🗂",
-    "modules": "📂",
+    "plugins": "📑",
+    "modules": "📜",
     "music": "🎙"
 }
 
@@ -63,7 +63,7 @@ async def cmdinfo(input_str, event, plugin=False):
         category = getkey(plugin)
         if category is not None:
             outstr += f"**Category :** `{category}`\n\n"
-    outstr += f"**•  Intro :**\n{about[0]}"
+    outstr += f"**➕  Function :**\n{about[0]}"
     return outstr
 
 
@@ -85,20 +85,20 @@ async def plugininfo(input_str, event, flag):
     if category is not None:
         outstr += f"**Category :** `{category}`\n\n"
     for cmd in cmds:
-        outstr += f"✖  **cmd :** `{cmdprefix}{cmd}`\n"
+        outstr += f"➕  **Syntax :** `{cmdprefix}{cmd}`\n"
         try:
-            outstr += f"✖  **info :** `{CMD_INFO[cmd][1]}`\n\n"
+            outstr += f"➕  **Function :** `{CMD_INFO[cmd][1]}`\n\n"
         except IndexError:
-            outstr += f"✖  **info :** `None`\n\n"
-    outstr += f"**🗂 Usage : ** `{cmdprefix}help <command name>`\
-        \n**Note : **If command name is same as plugin name then use this `{cmdprefix}help -c <command name>`."
+            outstr += f"➕  **Function :** `Silahkan ketik` `{cmdprefix}help {cmd}` Untuk melihat cara menggunakan\n\n"
+    outstr += f"**🙇🏻 Usage : ** `{cmdprefix}help <command name>`\
+        \n**🖍 Note : **If command name is same as plugin name then use this `{cmdprefix}help <command name>`."
     return outstr
 
 
 async def grpinfo():
-    outstr = "**Plugins in Panda-Userbot are:**\n\n"
+    outstr = "**📰 List Modules Panda-Userbot:**\n\n"
     outstr += f"**👤 Owner : ** {mention}\n"
-    outstr += f"**📜 Usage : ** `{cmdprefix}help <plugin name>`\n\n"
+    outstr += f"**🙇🏻 Usage : ** `{cmdprefix}help <plugin name>`\n\n"
     category = ["modules", "plugins", "music"]
     for panda in category:
         plugins = GRP_INFO[panda]
@@ -110,14 +110,14 @@ async def grpinfo():
 
 
 async def cmdlist():
-    outstr = "**Total list of Commands in your Pandauserbot are :**\n\n"
+    outstr = "**Total list of Commands in your Pandauserbot:**\n\n"
     category = ["modules", "plugins", "music"]
     for panda in category:
         plugins = GRP_INFO[panda]
         outstr += f"**{hemojis[panda]} {panda.title()} ** - {len(plugins)}\n\n"
         for plugin in plugins:
             cmds = PLG_INFO[plugin]
-            outstr += f"✖ **{plugin.title()} has {len(cmds)} commands**\n"
+            outstr += f"➕ **{plugin.title()} has {len(cmds)} commands**\n"
             for cmd in cmds:
                 outstr += f"  - `{cmdprefix}{cmd}`\n"
             outstr += "\n"
