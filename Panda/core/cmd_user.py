@@ -4,7 +4,6 @@
 # Recode by Ilham Mansiz
 # ••••••••••••••••••••••√•••••••••••••√√√••••••••
 
-import asyncio
 import datetime
 import inspect
 import re
@@ -14,17 +13,6 @@ from pathlib import Path
 from typing import Dict, List, Union
 
 from telethon import events
-from telethon.errors import (
-    AlreadyInConversationError,
-    BotInlineDisabledError,
-    BotResponseTimeoutError,
-    ChatSendInlineForbiddenError,
-    ChatSendMediaForbiddenError,
-    ChatSendStickersForbiddenError,
-    FloodWaitError,
-    MessageIdInvalidError,
-    MessageNotModifiedError,
-)
 from ..Config import Config
 from ..helpers.utils.format import paste_text
 from ..helpers.utils.utils import runcmd
