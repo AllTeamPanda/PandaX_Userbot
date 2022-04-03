@@ -9,7 +9,6 @@ while flag:
     try:
         from .chatbot import *
         from .functions import *
-        from .memeifyhelpers import *
         from .progress import *
         from .qhelper import process
         from .tools import *
