@@ -48,7 +48,7 @@ async def chat_bot_toggle(event):
     pattern="chatbot(?: |$)(.*)"",
     command=("chatbot", plugin_category),
     info={
-        "header": ** Untuk membalas chat dengan chatbot AI.",
+        "header": "** Untuk membalas chat dengan chatbot AI.",
         "usage": ["{tr}chatbot` <on/off>"],
     },
 )
