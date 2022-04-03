@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from telethon.utils import get_display_name
-
+from ..core.pluginManager import restart_script as reload
 from Panda import pandaub, SqL
 from Panda.core.logger import logging
 
