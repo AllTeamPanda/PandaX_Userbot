@@ -1,6 +1,6 @@
 from telethon import functions
 
-
+import asyncio
 from Panda import pandaub, SqL
 Bot = pandaub
 from ..Config import Config
@@ -161,7 +161,8 @@ async def _(event):
         if outstr is None:
             return
     await edit_or_reply(event, outstr)
-    
+    await asyncio.sleep(1000)
+    await event.delete()
 
 @ilhammansiz_cmd(
     pattern="inline(?: |$)(.*)",
