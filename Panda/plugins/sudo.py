@@ -3,6 +3,7 @@ from datetime import datetime
 from telethon.utils import get_display_name
 from Panda import pandaub, SqL
 from Panda.core.logger import logging
+from ..core.pluginManager import restart_script as reload
 
 from ..Config import Config
 from ..core import CMD_INFO, PLG_INFO
@@ -123,7 +124,7 @@ async def add_sudo_user(event):
     output = f"{mentionuser(userdata['chat_name'],userdata['chat_id'])} __is Added to your sudo users.__\n"
     output += "**Bot is reloading to apply the changes. Please wait for a minute**"
     msg = await edit_or_reply(event, output)
-    await event.client.reload(msg)
+    await event.reload(msg)
 
 
 @ilhammansiz_cmd(
@@ -154,7 +155,7 @@ async def _(event):
     output = f"{mentionuser(get_display_name(replied_user),replied_user.id)} __is removed from your sudo users.__\n"
     output += "**Bot is reloading to apply the changes. Please wait for a minute**"
     msg = await edit_or_reply(event, output)
-    await event.client.reload(msg)
+    await event.reload(msg)
 
 
 @ilhammansiz_cmd(
@@ -282,7 +283,7 @@ async def _(event):  # sourcery no-metrics
     if errors != "":
         output += "\n**Errors:**\n" + errors
     msg = await edit_or_reply(pandaevent, output)
-    await event.client.reload(msg)
+    await event.reload(msg)
 
 
 @ilhammansiz_cmd(
@@ -376,7 +377,7 @@ async def _(event):  # sourcery no-metrics
     if errors != "":
         output += "\n**Errors:**\n" + errors
     msg = await edit_or_reply(pandaevent, output)
-    await event.client.reload(msg)
+    await event.reload(msg)
 
 
 @ilhammansiz_cmd(
