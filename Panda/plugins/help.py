@@ -1,7 +1,7 @@
 from telethon import functions
 
 
-from Panda import pandaub
+from Panda import pandaub, SqL
 Bot = pandaub
 from ..Config import Config
 from ..core import CMD_INFO, GRP_INFO, PLG_INFO
@@ -13,6 +13,7 @@ cmdprefix = Config.COMMAND_HAND_LER
 plugin_category = "plugins"
 
 
+ICON_HELP = SqL.getdb("ICON_HELP") or "🔮"
 
 hemojis = {
     "plugins": "📑",
@@ -102,9 +103,10 @@ async def grpinfo():
     category = ["modules", "plugins", "music"]
     for panda in category:
         plugins = GRP_INFO[panda]
-        outstr += f"**{hemojis[panda]} {panda.title()} **({len(plugins)})\n"
+        outstr += f"**{hemojis[panda]} {panda.title()} **({len(plugins)})\n\n"
         for plugin in plugins:
-            outstr += f"`{plugin}`  "
+            outstr += f"`\t\t\t{ICON_HELP}\t\t\t"
+            outstr += f"{ICON_HELP}   `{plugin}`"
         outstr += "\n\n"
     return outstr
 
