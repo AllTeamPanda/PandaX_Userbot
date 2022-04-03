@@ -103,7 +103,7 @@ async def grpinfo():
     category = ["modules", "plugins", "music"]
     for panda in category:
         plugins = GRP_INFO[panda]
-        outstr += f"**{hemojis[panda]} {panda.title()} **({len(plugins)})\n\n"
+        outstr += f"{hemojis[panda]} {panda.title()} ({len(plugins)})\n\n"
         for plugin in plugins:
             outstr += f"`\t{ICON_HELP}"
             outstr += f"`{plugin}`"
