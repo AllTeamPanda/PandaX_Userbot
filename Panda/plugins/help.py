@@ -13,7 +13,7 @@ cmdprefix = Config.COMMAND_HAND_LER
 plugin_category = "plugins"
 
 
-ICON_HELP = SqL.getdb("ICON_HELP") or "🔮"
+ICON_HELP = SqL.getdb("ICON_HELP") or "᪥"
 
 hemojis = {
     "plugins": "📑",
@@ -105,8 +105,8 @@ async def grpinfo():
         plugins = GRP_INFO[panda]
         outstr += f"**{hemojis[panda]} {panda.title()} **({len(plugins)})\n\n"
         for plugin in plugins:
-            outstr += f"`\t\t\t{ICON_HELP}\t\t\t"
-            outstr += f"{ICON_HELP}   `{plugin}`"
+            outstr += f"`\t{ICON_HELP}"
+            outstr += f"{ICON_HELP}`{plugin}`{ICON_HELP}"
         outstr += "\n\n"
     return outstr
 
