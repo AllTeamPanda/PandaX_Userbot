@@ -1,6 +1,6 @@
 ## Running PandaUserbot
 
-_ziplink () {
+__ziplink () {
     local regex
     regex='(https?)://github.com/.+/.+'
     if [[ $PANDA_USERBOT_REPO == "PANDA_USERBOT" ]]
@@ -22,7 +22,7 @@ _ziplink () {
     fi
 }
 
-_repolink () {
+__repolink () {
     local regex
     local rlink
     regex='(https?)://github.com/.+/.+'
