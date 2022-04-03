@@ -287,7 +287,7 @@ def ilhammansiz_cmd(
                             **kwargs,
                         ),
                     )
-            if allow_sudo and SqL.getdb("sudoenable") is not None:
+            if allow_sudo is not None:
                 if command is None or command[0]:
                     if edited:
                         PandaBot.add_event_handler(
@@ -538,7 +538,7 @@ def register(
                             **kwargs,
                         ),
                     )
-            if allow_sudo and SqL.getdb("sudoenable") is not None:
+            if allow_sudo is not None:
                 if command is None or command[0]:
                     if edited:
                         PandaBot.add_event_handler(
