@@ -82,3 +82,10 @@ async def restart_script(client: TelegramClient, ilham):
     args = [executable, "-m", "Panda"]
     os.execle(executable, *args, os.environ)
     sys.exit(0)
+
+async def get_message_link(client, event):
+    chat = await event.get_chat()
+    if event.is_private:
+        return f"tg://openmessage?user_id={chat.id}&message_id={event.id}"
+    return f"https://t.me/c/{chat.id}/{event.id}"
+
