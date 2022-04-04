@@ -663,7 +663,7 @@ def _kill_running_processes(self) -> None:
             LOGS.debug(e)
     self.running_processes.clear()
 
-PandaBot.fast_download_file = download_file
-PandaBot.fast_upload_file = upload_file
-PandaBot.reload = restart_script
-PandaBot.check_testcases = checking
+ilhammansiz_cmd.fast_download_file = download_file
+ilhammansiz_cmd.fast_upload_file = upload_file
+ilhammansiz_cmd.reload = restart_script
+ilhammansiz_cmd.check_testcases = checking
