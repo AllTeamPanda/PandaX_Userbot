@@ -112,7 +112,7 @@ async def ban_cha(ult):
     command=("addwl", plugin_category),
     info={
         "header": "** Add Channel to channelban whitelist.",
-        "usage": ["`{tr}addwl <Username>`, `{tr}remwl <Username>, `{tr}listwl"],
+        "usage": ["`{tr}addwl <Username>`, {tr}remwl <Username>, {tr}listwl"],
     },
 )
 async def do_magic(event):
