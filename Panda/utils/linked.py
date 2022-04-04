@@ -1,8 +1,4 @@
-from telethon.errors.rpcerrorlist import UserNotParticipantError
-from telethon.tl import functions, types
-import asyncio
-import time
-import uuid
+from telethon.tl import functions
 _cache = {}
 
 async def get_update_linked_chat(event):
