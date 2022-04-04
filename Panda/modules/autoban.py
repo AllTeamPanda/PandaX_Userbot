@@ -83,7 +83,7 @@ async def _(event):
         "header": "** Enable/Disable autobanning send as channel in used chat.",
         "usage": ["`{tr}cban`"],
     },
-    admins_only=True,
+    groups_only=True,
 )
 async def ban_cha(ult):
     if autoban_db.is_autoban_enabled(ult.chat_id):
