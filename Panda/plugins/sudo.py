@@ -65,7 +65,7 @@ async def sudore(event):
     if sudousers:
         newsudo = f"{sudousers} {target}"
     else:
-        newsudo = f"{target}"
+        newsudo = target
     await ok.edit(f"Menambahkan  `{target}` sedang merestart di heroku tunggu 2-3 min.")
     heroku_var[vars] = newsudo
 
