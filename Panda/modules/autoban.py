@@ -18,6 +18,7 @@ from ..utils.tools import inline_mention
 
 asst = PandaBot.tgbot
 ultroid_bot = PandaBot
+plugin_category "modules"
 
 async def dnd_func(event):
     if event.chat_id in dnd_db.get_dnd_chats():
