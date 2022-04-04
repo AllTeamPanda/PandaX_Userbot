@@ -35,7 +35,7 @@ from .data import _sudousers_list, blacklist_chats_list, sudo_enabled_cmds, _dev
 from .events import MessageEdited, NewMessage
 from .logger import logging
 from .managers import edit_delete
-from .pluginManager import restart_script
+from .pluginManager import restart_script, get_message_link
 from .fasttelethon import download_file, upload_file
 from ..helpers.utils.events import checking
 
@@ -195,7 +195,7 @@ def ilhammansiz_cmd(
                               \n\n--------BEGIN USERBOT TRACEBACK LOG--------\
                               \nDate: {date}\nGroup ID: {str(check.chat_id)}\
                               \nSender ID: {str(check.sender_id)}\
-                              \nMessage Link: {await check.client.get_msg_link(check)}\
+                              \nMessage Link: {await check.client.get_message_link(check)}\
                               \n\nEvent Trigger:\n{str(check.text)}\
                               \n\nTraceback info:\n{str(traceback.format_exc())}\
                               \n\nError text:\n{str(sys.exc_info()[1])}"
@@ -663,7 +663,7 @@ def _kill_running_processes(self) -> None:
             LOGS.debug(e)
     self.running_processes.clear()
 
-ilhammansiz_cmd.fast_download_file = download_file
-ilhammansiz_cmd.fast_upload_file = upload_file
-ilhammansiz_cmd.reload = restart_script
-ilhammansiz_cmd.check_testcases = checking
+PandaBot.fast_download_file = download_file
+PandaBot.fast_upload_file = upload_file
+PandaBot.reload = restart_script
+PandaBot.check_testcases = checking
