@@ -141,7 +141,7 @@ async def joinvc(event):
     else:
         chat_id = event.chat_id
         await event.get_chat()
-        file = '../input.raw'
+        file = 'PandaVersion/Panda/literasi.mp3'
     if chat_id:
         try:
             await call_py.join_group_call(
