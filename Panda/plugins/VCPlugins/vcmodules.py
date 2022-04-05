@@ -5,6 +5,8 @@
 
 from pytgcalls import StreamType
 from pytgcalls.types import Update
+from pytgcalls.types.input_stream import InputAudioStream
+from pytgcalls.types.input_stream import InputStream
 
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import (
@@ -141,6 +143,7 @@ async def joinvc(event):
     else:
         chat_id = event.chat_id
         await event.get_chat()
+        file = 'PandaVersion/Panda/literasi.mp3'
     if chat_id:
         try:
             await call_py(
@@ -148,7 +151,15 @@ async def joinvc(event):
                     chat_id, title="🎧 PandaX Music 🎶"
                 )
             )
-            await call_py.join_group_call(chat_id)
+            await call_py.join_group_call(
+                      chat_id,
+                      InputStream(
+                          InputAudioStream(
+                              file,
+                          ),
+                      ),
+                      stream_type=StreamType().pulse_stream,
+            )
             await edit_or_reply(event, "**Berhasil Join Voice grup**")
         except Exception as ep:       
             await event.edit(f"`{ep}`")
