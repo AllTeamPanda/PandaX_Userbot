@@ -162,7 +162,7 @@ async def joinvc(event):
 
 
 @ilhammansiz_cmd(
-    pattern="levevc$",
+    pattern="leavevc$",
     command=("leavevc", plugin_category),
     info={
         "header": "leave the song in voice chat.",
