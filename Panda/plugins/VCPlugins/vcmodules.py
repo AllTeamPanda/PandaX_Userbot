@@ -146,15 +146,19 @@ async def joinvc(event):
         file = 'PandaVersion/Panda/literasi.mp3'
     if chat_id:
         try:
-            await call_py.join_group_call(
-                      chat_id,
-                      InputStream(
+            await call_py(
+                functions.phone.CreateGroupCallRequest(
+                    self._chat, title="🎧 PandaX Music 🎶"
+                )
+            )
+            await call_py.join_group_call(chat_id)
+                    """  InputStream(
                           InputAudioStream(
                               file,
                           ),
                       ),
                       stream_type=StreamType().pulse_stream,
-            )
+            ) """
             await edit_or_reply(event, "**Berhasil Join Voice grup**")
         except Exception as ep:       
             await event.edit(f"`{ep}`")
@@ -472,13 +476,13 @@ async def vc_vplay(event):
 
 
 @ilhammansiz_cmd(
-    pattern="stopvc$",
-    command=("stopvc", plugin_category),
+    pattern="endvc$",
+    command=("endvc", plugin_category),
     info={
         "header": "Leave vc the voice chat....",
         "description": "Leave vc the voice chat....",
-        "usage": "{tr}leavevc",
-        "examples": "{tr}leavevc",
+        "usage": "{tr}endevc",
+        "examples": "{tr}endvc",
     },
 )
 async def vc_end(event):
