@@ -147,16 +147,16 @@ async def joinvc(event):
         file = 'PandaVersion/Panda/literasi.mp3'
     if chat_id:
         try:
-            if:
-               await call_py.join_group_call(
-                         chat_id,
-                         InputStream(
-                             InputAudioStream(
-                                 file,
-                             ),
-                         ),
-                         stream_type=StreamType().pulse_stream,
-               )
+            if chat_id:
+                       await call_py.join_group_call(
+                                 chat_id,
+                                 InputStream(
+                                     InputAudioStream(
+                                         file,
+                                     ),
+                                 ),
+                                 stream_type=StreamType().pulse_stream,
+                       )
             else:
                  await PandaBot(
                      functions.phone.CreateGroupCallRequest(
