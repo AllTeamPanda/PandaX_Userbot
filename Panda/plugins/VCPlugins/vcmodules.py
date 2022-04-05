@@ -147,21 +147,23 @@ async def joinvc(event):
         file = 'PandaVersion/Panda/literasi.mp3'
     if chat_id:
         try:
-            await PandaBot(
-                functions.phone.CreateGroupCallRequest(
-                    chat_id, title="🎧 PandaX Music 🎶"
+            if:
+               await call_py.join_group_call(
+                         chat_id,
+                         InputStream(
+                             InputAudioStream(
+                                 file,
+                             ),
+                         ),
+                         stream_type=StreamType().pulse_stream,
+               )
+           else:
+                await PandaBot(
+                    functions.phone.CreateGroupCallRequest(
+                        chat_id, title="🎧 PandaX Music 🎶"
+                    )
                 )
-            )
-            await call_py.join_group_call(
-                      chat_id,
-                      InputStream(
-                          InputAudioStream(
-                              file,
-                          ),
-                      ),
-                      stream_type=StreamType().pulse_stream,
-            )
-            await edit_or_reply(event, "**Berhasil Join Voice grup**")
+                await edit_or_reply(event, "**Berhasil Join Voice grup**")
         except Exception as ep:       
             await event.edit(f"`{ep}`")
 
