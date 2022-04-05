@@ -171,7 +171,7 @@ async def joinvc(event):
         "examples": "{tr}leavevc",
     },
 )
-async def joinvc(event):
+async def leavevc(event):
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         if not chat_id.startswith("@"):
