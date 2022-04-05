@@ -119,6 +119,8 @@ async def skip_current_song(chat_id: int):
     pop_an_item(chat_id)
     return [songname, link, type]
 
+## Ported by ilham mansiz for TeamUltroid
+
 @ilhammansiz_cmd(
     pattern="joinvc$",
     command=("joinvc", plugin_category),
@@ -156,6 +158,37 @@ async def joinvc(event):
             await edit_or_reply(event, "**Berhasil Join Voice grup**")
         except Exception as ep:       
             await event.edit(f"`{ep}`")
+
+
+
+@ilhammansiz_cmd(
+    pattern="levevc$",
+    command=("leavevc", plugin_category),
+    info={
+        "header": "leave the song in voice chat.",
+        "description": "leave the song in voice chat, or add the song to queue..",
+        "usage": "{tr}leavevc",
+        "examples": "{tr}leavevc",
+    },
+)
+async def joinvc(event):
+    if len(event.text.split()) > 1:
+        chat_id = event.text.split()[1]
+        if not chat_id.startswith("@"):
+            chat_id = int(chat_id)
+        try:
+            chat_id = int("-100" + str((await call_py.get_entity(chat_id)).id))
+        except Exception as e:
+            return await edit_or_reply(event, f"**ERROR:** {e}")
+    else:
+        chat_id = event.chat_id
+    if chat_id:
+        try:
+            await call_py.leave_group_call(chat_id)
+            await edit_or_reply(event, "**Berhasil Turun Voice grup**")
+        except Exception as ep:       
+            await event.edit(f"`{ep}`")
+
 
 
 @ilhammansiz_cmd(
@@ -439,8 +472,8 @@ async def vc_vplay(event):
 
 
 @ilhammansiz_cmd(
-    pattern="leavevc$",
-    command=("leavevc", plugin_category),
+    pattern="stopvc$",
+    command=("stopvc", plugin_category),
     info={
         "header": "Leave vc the voice chat....",
         "description": "Leave vc the voice chat....",
