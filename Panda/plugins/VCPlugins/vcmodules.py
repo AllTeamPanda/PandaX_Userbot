@@ -23,7 +23,8 @@ from Panda import SqL
 fotoplay = SqL.getdb("PLAY_PIC") or "https://telegra.ph/file/6213d2673486beca02967.png"
 ngantri = SqL.getdb("QUEUE_PIC") or "https://telegra.ph/file/d6f92c979ad96b2031cba.png"
 
-from ... import VcBot as call_py
+from ... import PandaBot, VcBot as call_py
+
 from ...utils.tools import bash
 from ...core.managers import edit_delete, edit_or_reply
 
@@ -146,7 +147,7 @@ async def joinvc(event):
         file = 'PandaVersion/Panda/literasi.mp3'
     if chat_id:
         try:
-            await call_py(
+            await PandaBot(
                 functions.phone.CreateGroupCallRequest(
                     chat_id, title="🎧 PandaX Music 🎶"
                 )
