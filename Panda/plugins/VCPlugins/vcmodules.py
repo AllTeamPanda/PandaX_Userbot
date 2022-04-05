@@ -157,13 +157,13 @@ async def joinvc(event):
                          ),
                          stream_type=StreamType().pulse_stream,
                )
-           else:
-                await PandaBot(
-                    functions.phone.CreateGroupCallRequest(
-                        chat_id, title="🎧 PandaX Music 🎶"
-                    )
-                )
-                await edit_or_reply(event, "**Berhasil Join Voice grup**")
+            else:
+                 await PandaBot(
+                     functions.phone.CreateGroupCallRequest(
+                         chat_id, title="🎧 PandaX Music 🎶"
+                     )
+                 )
+                 await edit_or_reply(event, "**Berhasil Join Voice grup**")
         except Exception as ep:       
             await event.edit(f"`{ep}`")
 
