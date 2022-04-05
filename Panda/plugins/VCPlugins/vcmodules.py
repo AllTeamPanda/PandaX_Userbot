@@ -121,6 +121,7 @@ async def skip_current_song(chat_id: int):
     return [songname, link, type]
 
 ## Ported by ilham mansiz for TeamUltroid
+## Jangan dihapus anjeng
 
 @ilhammansiz_cmd(
     pattern="joinvc$",
@@ -157,6 +158,7 @@ async def joinvc(event):
                                  ),
                                  stream_type=StreamType().pulse_stream,
                        )
+                       await edit_or_reply(event, "**Berhasil Join Voice grup**")
             else:
                  await PandaBot(
                      functions.phone.CreateGroupCallRequest(
