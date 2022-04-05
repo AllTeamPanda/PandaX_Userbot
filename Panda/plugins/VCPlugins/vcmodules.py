@@ -152,13 +152,6 @@ async def joinvc(event):
                 )
             )
             await call_py.join_group_call(chat_id)
-                    """  InputStream(
-                          InputAudioStream(
-                              file,
-                          ),
-                      ),
-                      stream_type=StreamType().pulse_stream,
-            ) """
             await edit_or_reply(event, "**Berhasil Join Voice grup**")
         except Exception as ep:       
             await event.edit(f"`{ep}`")
