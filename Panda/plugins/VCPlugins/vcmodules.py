@@ -130,9 +130,18 @@ async def skip_current_song(chat_id: int):
     },
 )
 async def joinvc(event):
-    await event.get_chat()
-    chat_id = event.chat_id
-    file = '../input.raw'
+    if len(event.text.split()) > 1:
+        chat_id = event.text.split()[1]
+        if not chat_id.startswith("@"):
+            chat_id = int(chat_id)
+        try:
+            chat_id = int("-100" + str((await call_py.get_entity(chat_id)).id))
+        except Exception as e:
+            return await edit_or_reply(event, f"**ERROR:** {e}")
+    else:
+        chat_id = event.chat_id
+        await event.get_chat()
+        file = '../input.raw'
     if chat_id:
         try:
             await call_py.join_group_call(
