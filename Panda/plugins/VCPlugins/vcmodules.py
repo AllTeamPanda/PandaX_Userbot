@@ -15,7 +15,7 @@ from pytgcalls.types.input_stream.quality import (
     LowQualityVideo,
     MediumQualityVideo,
 )
-from telethon.tl import types
+from telethon.tl import types, functions
 from telethon.utils import get_display_name
 from youtubesearchpython import VideosSearch
 
