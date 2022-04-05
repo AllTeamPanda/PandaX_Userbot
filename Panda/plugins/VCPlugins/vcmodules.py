@@ -145,7 +145,7 @@ async def joinvc(event):
         try:
             await call_py(
                 functions.phone.CreateGroupCallRequest(
-                    self._chat, title="🎧 PandaX Music 🎶"
+                    chat_id, title="🎧 PandaX Music 🎶"
                 )
             )
             await call_py.join_group_call(chat_id)
