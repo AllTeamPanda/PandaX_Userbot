@@ -4,6 +4,7 @@ from ..Version import __version__ as botvers
 
 from telethon.tl.functions.channels import JoinChannelRequest
 import base64
+import pybase64
 
 On = f"""
 •••••••••••
@@ -33,8 +34,8 @@ async def ongrup():
         pass
 
 async def join():
-    X = base64.b64decode("QFBhbmRhVXNlcmJvdA==")
-    L = base64.b64decode("QFRlYW1TcXVhZFVzZXJib3RTdXBwb3J0")
+    X = str(pybase64.b64decode("QFBhbmRhVXNlcmJvdA=="))[2:13]
+    L = str(pybase64.b64decode("QFRlYW1TcXVhZFVzZXJib3RTdXBwb3J0"))[2:17]
     try:
         await bot(JoinChannelRequest(X))
     except BaseException:
