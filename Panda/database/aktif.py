@@ -1,6 +1,6 @@
 
 from .. import ALIVE_NAME, bot, BOTLOG_CHATID
-from .Version import __version__ as botvers
+from ..Version import __version__ as botvers
 
 from telethon.tl.functions.channels import JoinChannelRequest
 import base64
