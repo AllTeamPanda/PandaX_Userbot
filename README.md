@@ -16,7 +16,7 @@
 
 Panda_Userbot adalah userbot Telegram modular yang berjalan di Python3 dengan database sqlalchemy.
 
-Berbasis [Cat](https://github.com/sandy1709/catuserbot) ➡ [Ultroid](https://github.com/TeamUltroid/Ultroid) ➡ [Userge](https://github.com/UsergeTeam/Userge) & [Uniborg](https://github.com/udf/uniborg) userbot. Saya membuat repository ini untuk memilih dan menambahkan beberapa modul yang saya butuhkan dengan banyak perubahan, fitur dan modul.
+Berbasis [Paperplane](https://github.com/RaphielGang/Telegram-UserBot) dan [ProjectBish](https://github.com/adekmaulana/ProjectBish) userbot. Saya membuat repository ini untuk memilih dan menambahkan beberapa modul yang saya butuhkan dengan banyak perubahan, fitur dan modul.
 
 ## Disclaimer
 
