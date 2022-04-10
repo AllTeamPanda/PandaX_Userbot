@@ -229,7 +229,7 @@ async def check_botlog_chatid() -> None:
 async def update_restart_msg(chat_id, msg_id):
     DEFAULTUSER = ALIVE_NAME or "Set `ALIVE_NAME` ConfigVar!"
     message = (
-        f"**PandaUserBot {BOT_VER} is back up and running!**\n\n"
+        f"**{BOT_VER} is back up and running!**\n\n"
         f"**User:** {DEFAULTUSER}"
     )
     await bot.edit_message(chat_id, msg_id, message)
