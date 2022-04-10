@@ -67,7 +67,7 @@ with bot:
         from ..misc import reply_id
 
         dugmeler = CMD_HELP
-        user = bot.get_me()
+        user = user
         uid = user.id
         owner = user.first_name
         logo = ALIVE_LOGO
