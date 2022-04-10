@@ -19,8 +19,8 @@ async def help(event):
         user = await event.client.get_me()
         string = ""
         for i in CMD_HELP:
-            string += "`" + str(i)
-            string += f"᪥\t"
+            string += "[" + "`" + str(i)
+            string += "`]\t"
         await edit_or_reply(
             event,
             f"**👤 Owner:** [{user.first_name}](tg://user?id={user.id})\n\n"
