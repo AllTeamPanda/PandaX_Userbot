@@ -20,10 +20,10 @@ async def help(event):
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += f"`\t᪥"
         await edit_or_reply(
             event,
             f"**👤 Owner:** [{user.first_name}](tg://user?id={user.id})\n\n"
+            f"**🗂 Total Modules:** [ `{len(modules)}` ]\n\n"
             f"{string}"
             f"\n\nSupport @PandaUserbot",
         )
