@@ -1,20 +1,13 @@
 from .. import *
 
-from requests import get
 from telethon import Button
 from telethon.errors import UserIsBlockedError
 from telethon.tl.types import InputWebDocument
 from telethon.utils import get_display_name
 from telethon.sync import custom, events
-import random
 import re
-import time
-from datetime import datetime
 from math import ceil
 
-import logging
-import os
-import sys
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 4
