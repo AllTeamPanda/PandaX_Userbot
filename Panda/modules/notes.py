@@ -7,23 +7,17 @@
 
 from asyncio import sleep
 
-from . import ilhammansiz_cmd, BOTLOG_CHATID
+from .. import BOTLOG, BOTLOG_CHATID
+from .. import CMD_HANDLER as cmd
+from .. import CMD_HELP, bot
+from ..events import Cutepanda, register
 
-plugin_category = "modules"
 
-@ilhammansiz_cmd(
-    pattern="notes$",
-    command=("notes", plugin_category),
-    info={
-        "header": "Mendapatkan catatan yang disimpan dalam obrolan",
-        "usage": [
-            "{tr}notes",
-        ],
-    },
-)
+@bot.on(Cutepanda(outgoing=True, pattern=r"notes$"))
 async def notes_active(svd):
+    """For .notes command, list all of the notes saved in a chat."""
     try:
-        from ..sql_helper.notes_sql import get_notes
+        from ..modules.sql_helper.notes_sql import get_notes
     except AttributeError:
         return await svd.edit("**Running on Non-SQL mode!**")
     message = "**Tidak ada catatan yang disimpan dalam obrolan ini**"
@@ -35,20 +29,11 @@ async def notes_active(svd):
     await svd.edit(message)
 
 
-@ilhammansiz_cmd(
-    pattern="clear (\w*)",
-    command=("clear", plugin_category),
-    info={
-        "header": "Menghapus catatan yang ditentukan",
-        "usage": [
-            "{tr}clear <notename>",
-        ],
-    },
-)
+@bot.on(Cutepanda(outgoing=True, pattern=r"clear (\w*)"))
 async def remove_notes(clr):
     """For .clear command, clear note with the given name."""
     try:
-        from ..sql_helper.notes_sql import rm_note
+        from ..modules.sql_helper.notes_sql import rm_note
     except AttributeError:
         return await clr.edit("**Running on Non-SQL mode!**")
     notename = clr.pattern_match.group(1)
@@ -59,20 +44,11 @@ async def remove_notes(clr):
     return await clr.edit("**Berhasil Menghapus Catatan:** `{}`".format(notename))
 
 
-
-@ilhammansiz_cmd(
-    pattern="save (\w*)",
-    command=("save", plugin_category),
-    info={
-        "header": "Menghapus catatan yang ditentukan",
-        "usage": [
-            "{tr}save <notename> <notedata> atau balas pesan dengan .save <notename>",
-        ],
-    },
-)
+@bot.on(Cutepanda(outgoing=True, pattern=r"save (\w*)"))
 async def add_note(fltr):
+    """For .save command, saves notes in a chat."""
     try:
-        from ..sql_helper.notes_sql import add_note
+        from ..modules.sql_helper.notes_sql import add_note
     except AttributeError:
         return await fltr.edit("**Running on Non-SQL mode!**")
     keyword = fltr.pattern_match.group(1)
@@ -103,13 +79,13 @@ async def add_note(fltr):
     return await fltr.edit(success.format("Berhasil", keyword))
 
 
-@ilhammansiz_cmd(pattern=r"#\w*", disable_edited=True, disable_errors=True, ignore_unsafe=True)
+@register(pattern=r"#\w*", disable_edited=True, disable_errors=True, ignore_unsafe=True)
 async def incom_note(getnt):
     """Notes logic."""
     try:
-        if not (await getnt.get_sender()).getnt.client:
+        if not (await getnt.get_sender()).bot:
             try:
-                from ..sql_helper.notes_sql import get_note
+                from ..modules.sql_helper.notes_sql import get_note
             except AttributeError:
                 return
             notename = getnt.text[1:]
@@ -136,17 +112,7 @@ async def incom_note(getnt):
         pass
 
 
-
-@ilhammansiz_cmd(
-    pattern="rmbotnotes (.*)",
-    command=("rmbotnotes", plugin_category),
-    info={
-        "header": "Menghapus semua catatan bot admin (Saat ini didukung: Marie, Rose, dan klonnya.) Dalam obrolan.",
-        "usage": [
-            "{tr}rmbotnotes` <marie / rose>",
-        ],
-    },
-)
+@bot.on(Cutepanda(outgoing=True, pattern=r"rmbotnotes (.*)"))
 async def kick_marie_notes(kick):
     """ For .rmbotnotes command, allows you to kick all \
         Marie(or her clones) notes from a chat. """
@@ -165,7 +131,25 @@ async def kick_marie_notes(kick):
             await kick.reply("/clear %s" % (i.strip()))
         await sleep(0.3)
     await kick.respond("```Successfully purged bots notes yaay!```\n Gimme cookies!")
-    if BOTLOG_CHATID:
+    if BOTLOG:
         await kick.client.send_message(
             BOTLOG_CHATID, "I cleaned all Notes at " + str(kick.chat_id)
         )
+
+
+CMD_HELP.update(
+    {
+        "notes": f"**Plugin : **`Notes`\
+        \n\n  ➕  **Syntax :** `#<notename>`\
+        \n  ➕  **Function : **Mendapat catatan yang ditentukan.\
+        \n\n  ➕  **Syntax :** `{cmd}save` <notename> <notedata> atau balas pesan dengan .save <notename>\
+        \n  ➕  **Function : **Menyimpan pesan yang dibalas sebagai catatan dengan notename. (Bekerja dengan foto, dokumen, dan stiker juga!).\
+        \n\n  ➕  **Syntax :** `{cmd}notes`\
+        \n  ➕  **Function : **Mendapat semua catatan yang disimpan dalam obrolan \
+        \n\n  ➕  **Syntax :** `{cmd}clear` <notename>\
+        \n  ➕  **Function : **Menghapus catatan yang ditentukan. \
+        \n\n  ➕  **Syntax :** `{cmd}rmbotnotes` <marie / rose>\
+        \n  ➕  **Function : **Menghapus semua catatan bot admin (Saat ini didukung: Marie, Rose, dan klonnya.) Dalam obrolan.\
+    "
+    }
+)

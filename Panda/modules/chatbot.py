@@ -6,15 +6,15 @@ from googletrans import Translator
 from telethon import events
 from telethon.tl.types import User
 
-from .. import LOGS, bot
-from ..sql_helper.tede_chatbot_sql import is_tede, rem_tede, set_tede
-from . import edit_or_reply, ilhammansiz_cmd
-plugin_category = "modules"
+from .. import CMD_HANDLER as cmd
+from .. import CMD_HELP, LOGS, bot
+from ..modules.sql_helper.tede_chatbot_sql import is_tede, rem_tede, set_tede
+from ..misc import edit_or_reply, pandacute
 
 translator = Translator()
 LANGUAGE = "id"
 
-url = "https://api-tede.herokuapp.com/api/chatbot?message={message}"
+url = "https://apitede.herokuapp.com/api/chatbot?message={message}"
 
 
 async def ngapain_rep(message):
@@ -44,14 +44,8 @@ async def chat_bot_toggle(event):
     else:
         await edit_or_reply(event, "**Usage:** `.chatbot` <on/off>")
 
-@ilhammansiz_cmd(
-    pattern="chatbot(?: |$)(.*)",
-    command=("chatbot", plugin_category),
-    info={
-        "header": "** Untuk membalas chat dengan chatbot AI.",
-        "usage": ["{tr}chatbot` <on/off>"],
-    },
-)
+
+@pandacute(pattern="chatbot(?: |$)(.*)")
 async def on_apa_off(event):
     await chat_bot_toggle(event)
 
@@ -75,3 +69,11 @@ async def tede_chatbot(event):
             await event.reply(tr.text)
 
 
+CMD_HELP.update(
+    {
+        "chatbot": f"**Plugin : **`chatbot`\
+      \n\n  ➕  **Syntax :** `{cmd}chatbot` <on/off>\
+      \n  ➕  **Function :** Untuk membalas chat dengan chatbot AI.\
+      "
+    }
+)

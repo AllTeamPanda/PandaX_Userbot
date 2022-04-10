@@ -1,220 +1,225 @@
 # created by @eve_enryu
-# edited & fix by @Jisan7509
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+from telethon.tl.functions.contacts import UnblockRequest
 
-from . import ilhammansiz_cmd
-from ..core.managers import edit_or_reply
+from .. import CMD_HANDLER as cmd
+from .. import CMD_HELP
+from ..misc import edit_or_reply, pandacute
 
-plugin_category = "modules"
 
-
-@ilhammansiz_cmd(
-    pattern="firmware ([\s\S]*)",
-    command=("firmware", plugin_category),
-    info={
-        "header": "To get lastest Firmware.",
-        "description": "Works for Xiaomeme devices only",
-        "usage": "{tr}firmware <codename>",
-        "examples": "{tr}firmware whyred",
-    },
-)
+@pandacute(pattern="firmware(?: |$)(.*)")
 async def _(event):
-    "To get lastest Firmware."
+    if event.fwd_from:
+        return
     link = event.pattern_match.group(1)
     firmware = "firmware"
-    catevent = await edit_or_reply(event, "```Processing```")
-    async with event.client.conversation("@XiaomiGeeksBot") as conv:
+    chat = "@XiaomiGeeksBot"
+    await edit_or_reply(event, "`Processing...`")
+    async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=774181428)
             )
             await conv.send_message(f"/{firmware} {link}")
-            respond = await response
-            await event.client.send_read_acknowledge(conv.chat_id)
+            response = await response
         except YouBlockedUserError:
-            return await catevent.edit("```Unblock @XiaomiGeeksBot plox```")
+            await event.client(UnblockRequest(chat))
+            await conv.send_message(f"/{firmware} {link}")
+            response = await response
         else:
-            await catevent.delete()
-            await event.client.forward_messages(event.chat_id, respond.message)
+            await event.delete()
+            await event.client.forward_messages(event.chat_id, response.message)
 
 
-@ilhammansiz_cmd(
-    pattern="vendor ([\s\S]*)",
-    command=("vendor", plugin_category),
-    info={
-        "header": "To get lastest Vendor.",
-        "description": "Works for Xiaomeme devices only",
-        "usage": "{tr}vendor <codename>",
-        "examples": "{tr}vendor whyred",
-    },
-)
+@pandacute(pattern="fastboot(?: |$)(.*)")
 async def _(event):
-    "To get lastest Vendor."
-    link = event.pattern_match.group(1)
-    vendor = "vendor"
-    catevent = await edit_or_reply(event, "```Processing```")
-    async with event.client.conversation("@XiaomiGeeksBot") as conv:
-        try:
-            response = conv.wait_event(
-                events.NewMessage(incoming=True, from_users=774181428)
-            )
-            await conv.send_message(f"/{vendor} {link}")
-            respond = await response
-            await event.client.send_read_acknowledge(conv.chat_id)
-        except YouBlockedUserError:
-            return await catevent.edit("```Unblock @XiaomiGeeksBot plox```")
-        else:
-            await catevent.delete()
-            await event.client.forward_messages(event.chat_id, respond.message)
-
-
-@ilhammansiz_cmd(
-    pattern="xspecs ([\s\S]*)",
-    command=("xspecs", plugin_category),
-    info={
-        "header": "To get quick spec information about device",
-        "description": "Works for Xiaomeme devices only",
-        "usage": "{tr}xspecs <codename>",
-        "examples": "{tr}xspecs whyred",
-    },
-)
-async def _(event):
-    "To get quick spec information about device"
-    link = event.pattern_match.group(1)
-    specs = "specs"
-    catevent = await edit_or_reply(event, "```Processing```")
-    async with event.client.conversation("@XiaomiGeeksBot") as conv:
-        try:
-            response = conv.wait_event(
-                events.NewMessage(incoming=True, from_users=774181428)
-            )
-            await conv.send_message(f"/{specs} {link}")
-            respond = await response
-            await event.client.send_read_acknowledge(conv.chat_id)
-        except YouBlockedUserError:
-            return await catevent.edit("```Unblock @XiaomiGeeksBot plox```")
-        else:
-            await catevent.delete()
-            await event.client.forward_messages(event.chat_id, respond.message)
-
-
-@ilhammansiz_cmd(
-    pattern="fastboot ([\s\S]*)",
-    command=("fastboot", plugin_category),
-    info={
-        "header": "To get latest fastboot MIUI.",
-        "description": "Works for Xiaomeme devices only",
-        "usage": "{tr}fastboot <codename>",
-        "examples": "{tr}fastboot whyred",
-    },
-)
-async def _(event):
-    "To get latest fastboot MIUI."
+    if event.fwd_from:
+        return
     link = event.pattern_match.group(1)
     fboot = "fastboot"
-    catevent = await edit_or_reply(event, "```Processing```")
-    async with event.client.conversation("@XiaomiGeeksBot") as conv:
+    chat = "@XiaomiGeeksBot"
+    await edit_or_reply(event, "`Processing...`")
+    async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=774181428)
             )
             await conv.send_message(f"/{fboot} {link}")
-            respond = await response
-            await event.client.send_read_acknowledge(conv.chat_id)
+            response = await response
         except YouBlockedUserError:
-            return await catevent.edit("```Unblock @XiaomiGeeksBot plox```")
+            await event.client(UnblockRequest(chat))
+            await conv.send_message(f"/{fboot} {link}")
+            response = await response
         else:
-            await catevent.delete()
-            await event.client.forward_messages(event.chat_id, respond.message)
+            await event.delete()
+            await event.client.forward_messages(event.chat_id, response.message)
 
 
-@ilhammansiz_cmd(
-    pattern="recovery ([\s\S]*)",
-    command=("recovery", plugin_category),
-    info={
-        "header": "To get latest recovery MIUI.",
-        "description": "Works for Xiaomeme devices only",
-        "usage": "{tr}recovery <codename>",
-        "examples": "{tr}recovery whyred",
-    },
-)
+@pandacute(pattern="recovery(?: |$)(.*)")
 async def _(event):
-    "To get latest recovery MIUI."
+    if event.fwd_from:
+        return
     link = event.pattern_match.group(1)
     recovery = "recovery"
-    catevent = await edit_or_reply(event, "```Processing```")
-    async with event.client.conversation("@XiaomiGeeksBot") as conv:
+    chat = "@XiaomiGeeksBot"
+    await edit_or_reply(event, "`Processing...`")
+    async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=774181428)
             )
             await conv.send_message(f"/{recovery} {link}")
-            respond = await response
-            await event.client.send_read_acknowledge(conv.chat_id)
+            response = await response
         except YouBlockedUserError:
-            return await catevent.edit("```Unblock @XiaomiGeeksBot plox```")
+            await event.client(UnblockRequest(chat))
+            await conv.send_message(f"/{recovery} {link}")
+            response = await response
         else:
-            await catevent.delete()
-            await event.client.forward_messages(event.chat_id, respond.message)
+            await event.delete()
+            await event.client.forward_messages(event.chat_id, response.message)
 
 
-@ilhammansiz_cmd(
-    pattern="pb ([\s\S]*)",
-    command=("pb", plugin_category),
-    info={
-        "header": "To get latest PBRP.",
-        "description": "Works for Xiaomeme devices only",
-        "usage": "{tr}pb <codename>",
-        "examples": "{tr}pb whyred",
-    },
-)
+@pandacute(pattern="pb(?: |$)(.*)")
 async def _(event):
-    "To get latest PBRP."
+    if event.fwd_from:
+        return
     link = event.pattern_match.group(1)
     pitch = "pb"
-    catevent = await edit_or_reply(event, "```Processing```")
-    async with event.client.conversation("@XiaomiGeeksBot") as conv:
+    chat = "@XiaomiGeeksBot"
+    await edit_or_reply(event, "`Processing...`")
+    async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=774181428)
             )
             await conv.send_message(f"/{pitch} {link}")
-            respond = await response
-            await event.client.send_read_acknowledge(conv.chat_id)
+            response = await response
         except YouBlockedUserError:
-            return await catevent.edit("```Unblock @XiaomiGeeksBot plox```")
+            await event.client(UnblockRequest(chat))
+            await conv.send_message(f"/{pitch} {link}")
+            response = await response
         else:
-            await catevent.delete()
-            await event.client.forward_messages(event.chat_id, respond.message)
+            await event.delete()
+            await event.client.forward_messages(event.chat_id, response.message)
 
 
-@ilhammansiz_cmd(
-    pattern="of ([\s\S]*)",
-    command=("of", plugin_category),
-    info={
-        "header": "To get latest ORangeFox Recover.",
-        "description": "Works for Xiaomeme devices only",
-        "usage": "{tr}of <codename>",
-        "examples": "{tr}of whyred",
-    },
-)
+@pandacute(pattern="of(?: |$)(.*)")
 async def _(event):
-    "To get latest ORangeFox Recover."
+    if event.fwd_from:
+        return
     link = event.pattern_match.group(1)
     ofox = "of"
-    catevent = await edit_or_reply(event, "```Processing```")
-    async with event.client.conversation("@XiaomiGeeksBot") as conv:
+    chat = "@XiaomiGeeksBot"
+    await edit_or_reply(event, "`Processing...`")
+    async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=774181428)
             )
             await conv.send_message(f"/{ofox} {link}")
-            respond = await response
-            await event.client.send_read_acknowledge(conv.chat_id)
+            response = await response
         except YouBlockedUserError:
-            return await catevent.edit("```Unblock @XiaomiGeeksBot plox```")
+            await event.client(UnblockRequest(chat))
+            await conv.send_message(f"/{ofox} {link}")
+            response = await response
         else:
-            await catevent.delete()
-            await event.client.forward_messages(event.chat_id, respond.message)
+            await event.delete()
+            await event.client.forward_messages(event.chat_id, response.message)
+
+
+@pandacute(pattern="eu(?: |$)(.*)")
+async def _(event):
+    if event.fwd_from:
+        return
+    link = event.pattern_match.group(1)
+    eu = "eu"
+    chat = "@XiaomiGeeksBot"
+    await edit_or_reply(event, "`Processing...`")
+    async with event.client.conversation(chat) as conv:
+        try:
+            response = conv.wait_event(
+                events.NewMessage(incoming=True, from_users=774181428)
+            )
+            await conv.send_message(f"/{eu} {link}")
+            response = await response
+        except YouBlockedUserError:
+            await event.client(UnblockRequest(chat))
+            await conv.send_message(f"/{eu} {link}")
+            response = await response
+        else:
+            await event.delete()
+            await event.client.forward_messages(event.chat_id, response.message)
+
+
+@pandacute(pattern="vendor(?: |$)(.*)")
+async def _(event):
+    if event.fwd_from:
+        return
+    link = event.pattern_match.group(1)
+    vendor = "vendor"
+    chat = "@XiaomiGeeksBot"
+    await edit_or_reply(event, "`Processing...`")
+    async with event.client.conversation(chat) as conv:
+        try:
+            response = conv.wait_event(
+                events.NewMessage(incoming=True, from_users=774181428)
+            )
+            await conv.send_message(f"/{vendor} {link}")
+            response = await response
+        except YouBlockedUserError:
+            await event.client(UnblockRequest(chat))
+            await conv.send_message(f"/{vendor} {link}")
+            response = await response
+        else:
+            await event.delete()
+            await event.client.forward_messages(event.chat_id, response.message)
+
+
+@pandacute(pattern="specs(?: |$)(.*)")
+async def _(event):
+    if event.fwd_from:
+        return
+    link = event.pattern_match.group(1)
+    specs = "specs"
+    chat = "@XiaomiGeeksBot"
+    await edit_or_reply(event, "`Processing...`")
+    async with event.client.conversation(chat) as conv:
+        try:
+            response = conv.wait_event(
+                events.NewMessage(incoming=True, from_users=774181428)
+            )
+            await conv.send_message(f"/{specs} {link}")
+            response = await response
+        except YouBlockedUserError:
+            await event.client(UnblockRequest(chat))
+            await conv.send_message(f"/{specs} {link}")
+            response = await response
+        else:
+            await event.delete()
+            await event.client.forward_messages(event.chat_id, response.message)
+
+
+CMD_HELP.update(
+    {
+        "xiaomi": f"**Plugin : **`xiaomi`\
+        \n\n  ➕  **Syntax :** `{cmd}firmware` (codename)\
+        \n  ➕  **Function : **Get lastest Firmware.\
+        \n\n  ➕  **Syntax :** `{cmd}pb` (codename)\
+        \n  ➕  **Function : **Get latest PitchBlack Recovery.\
+        \n\n  ➕  **Syntax :** `{cmd}specs` (codename)\
+        \n  ➕  **Function : **Get quick spec information about device.\
+        \n\n  ➕  **Syntax :** `{cmd}fastboot` (codename)\
+        \n  ➕  **Function : **Get latest fastboot MIUI.\
+        \n\n  ➕  **Syntax :** `{cmd}recovery` (codename)\
+        \n  ➕  **Function : **Get latest recovery MIUI.\
+        \n\n  ➕  **Syntax :** `{cmd}eu` (codename)\
+        \n  ➕  **Function : **Get latest xiaomi.eu rom.\
+        \n\n  ➕  **Syntax :** `{cmd}vendor` (codename)\
+        \n  ➕  **Function : **fetches latest vendor.\
+        \n\n  ➕  **Syntax :** `{cmd}of` (codename)\
+        \n  ➕  **Function : **Get latest ORangeFox Recovery.\
+    "
+    }
+)

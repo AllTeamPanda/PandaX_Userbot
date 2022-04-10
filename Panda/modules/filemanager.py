@@ -1,95 +1,114 @@
-import asyncio
+# Credits to Userge for Remove and Rename
+
 import io
 import os
+import os.path
+import re
 import shutil
 import time
-from pathlib import Path
+from datetime import datetime
+from os.path import basename, dirname, exists, isdir, isfile, join, relpath
+from shutil import rmtree
+from tarfile import TarFile, is_tarfile
+from zipfile import ZIP_DEFLATED, BadZipFile, ZipFile, is_zipfile
+
+from natsort import os_sorted
+from rarfile import BadRarFile, RarFile, is_rarfile
+
+from .. import CMD_HANDLER as cmd
+from .. import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
+from ..events import Cutepanda
+from ..misc import humanbytes
+
+MAX_MESSAGE_SIZE_LIMIT = 4095
 
 
-from ..Config import Config
-from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.utils import _format, _pandautils as _catutils
-from . import humanbytes, ilhammansiz_cmd
-
-plugin_category = "modules"
-
-
-@ilhammansiz_cmd(
-    pattern="ls(?:\s|$)([\s\S]*)",
-    command=("ls", plugin_category),
-    info={
-        "header": "To list all files and folders.",
-        "description": "Will show all files and folders if no path is given or folder path is given else will show file details(if file path os given).",
-        "usage": "{tr}ls <path>",
-        "examples": "{tr}ls Panda",
-    },
-)
-async def lst(event):  # sourcery no-metrics
-    "To list all files and folders."
-    cat = "".join(event.text.split(maxsplit=1)[1:])
+@bot.on(Cutepanda(outgoing=True, pattern=r"ls(?: |$)(.*)"))
+async def lst(event):
+    if event.fwd_from:
+        return
+    cat = event.pattern_match.group(1)
     path = cat or os.getcwd()
-    if not os.path.exists(path):
-        await edit_or_reply(
-            event,
-            f"there is no such directory or file with the name `{cat}` check again",
+    if not exists(path):
+        await event.edit(
+            f"Tidak ada direktori atau file dengan nama `{cat}` coba check lagi!"
         )
         return
-    path = Path(cat) if cat else os.getcwd()
-    if os.path.isdir(path):
+    if isdir(path):
         if cat:
-            msg = "Folders and Files in `{}` :\n".format(path)
+            msg = "**Folder dan File di `{}`** :\n\n".format(path)
         else:
-            msg = "Folders and Files in Current Directory :\n"
+            msg = "**Folder dan File di Direktori Saat Ini** :\n\n"
         lists = os.listdir(path)
         files = ""
         folders = ""
-        for contents in sorted(lists):
-            catpath = os.path.join(path, contents)
-            if not os.path.isdir(catpath):
+        for contents in os_sorted(lists):
+            catpath = path + "/" + contents
+            if not isdir(catpath):
                 size = os.stat(catpath).st_size
-                if str(contents).endswith((".mp3", ".flac", ".wav", ".m4a")):
-                    files += "🎵" + f"`{contents}`\n"
-                if str(contents).endswith((".opus")):
-                    files += "🎙" + f"`{contents}`\n"
-                elif str(contents).endswith(
+                if contents.endswith((".mp3", ".flac", ".wav", ".m4a")):
+                    files += "🎵 "
+                elif contents.endswith((".opus")):
+                    files += "🎙 "
+                elif contents.endswith(
                     (".mkv", ".mp4", ".webm", ".avi", ".mov", ".flv")
                 ):
-                    files += "🎞" + f"`{contents}`\n"
-                elif str(contents).endswith((".zip", ".tar", ".tar.gz", ".rar")):
-                    files += "🗜" + f"`{contents}`\n"
-                elif str(contents).endswith(
-                    (".jpg", ".jpeg", ".png", ".gif", ".bmp", ".ico")
+                    files += "🎞 "
+                elif contents.endswith(
+                    (".zip", ".tar", ".tar.gz", ".rar", ".7z", ".xz")
                 ):
-                    files += "🖼" + f"`{contents}`\n"
+                    files += "🗜 "
+                elif contents.endswith(
+                    (".jpg", ".jpeg", ".png", ".gif", ".bmp", ".ico", ".webp")
+                ):
+                    files += "🖼 "
+                elif contents.endswith((".exe", ".deb")):
+                    files += "⚙️ "
+                elif contents.endswith((".iso", ".img")):
+                    files += "💿 "
+                elif contents.endswith((".apk", ".xapk")):
+                    files += "📱 "
+                elif contents.endswith((".py")):
+                    files += "🐍 "
                 else:
-                    files += "📄" + f"`{contents}`\n"
+                    files += "📄 "
+                files += f"`{contents}` (__{humanbytes(size)}__)\n"
             else:
-                folders += f"📁`{contents}`\n"
+                folders += f"📁 `{contents}`\n"
         msg = msg + folders + files if files or folders else msg + "__empty path__"
     else:
         size = os.stat(path).st_size
-        msg = "The details of given file :\n"
-        if str(path).endswith((".mp3", ".flac", ".wav", ".m4a")):
-            mode = "🎵"
-        if str(path).endswith((".opus")):
-            mode = "🎙"
-        elif str(path).endswith((".mkv", ".mp4", ".webm", ".avi", ".mov", ".flv")):
-            mode = "🎞"
-        elif str(path).endswith((".zip", ".tar", ".tar.gz", ".rar")):
-            mode = "🗜"
-        elif str(path).endswith((".jpg", ".jpeg", ".png", ".gif", ".bmp", ".ico")):
-            mode = "🖼"
+        msg = "Rincian file yang diberikan:\n\n"
+        if path.endswith((".mp3", ".flac", ".wav", ".m4a")):
+            mode = "🎵 "
+        elif path.endswith((".opus")):
+            mode = "🎙 "
+        elif path.endswith((".mkv", ".mp4", ".webm", ".avi", ".mov", ".flv")):
+            mode = "🎞 "
+        elif path.endswith((".zip", ".tar", ".tar.gz", ".rar", ".7z", ".xz")):
+            mode = "🗜 "
+        elif path.endswith((".jpg", ".jpeg", ".png", ".gif", ".bmp", ".ico", ".webp")):
+            mode = "🖼 "
+        elif path.endswith((".exe", ".deb")):
+            mode = "⚙️ "
+        elif path.endswith((".iso", ".img")):
+            mode = "💿 "
+        elif path.endswith((".apk", ".xapk")):
+            mode = "📱 "
+        elif path.endswith((".py")):
+            mode = "🐍 "
         else:
-            mode = "📄"
+            mode = "📄 "
         time.ctime(os.path.getctime(path))
         time2 = time.ctime(os.path.getmtime(path))
         time3 = time.ctime(os.path.getatime(path))
         msg += f"**Location :** `{path}`\n"
-        msg += f"**icon :** `{mode}`\n"
+        msg += f"**Icon :** `{mode}`\n"
         msg += f"**Size :** `{humanbytes(size)}`\n"
         msg += f"**Last Modified Time:** `{time2}`\n"
         msg += f"**Last Accessed Time:** `{time3}`"
-    if len(msg) > Config.MAX_MESSAGE_SIZE_LIMIT:
+
+    if len(msg) > MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(msg)) as out_file:
             out_file.name = "ls.txt"
             await event.client.send_file(
@@ -101,164 +120,141 @@ async def lst(event):  # sourcery no-metrics
             )
             await event.delete()
     else:
-        await edit_or_reply(event, msg)
+        await event.edit(msg)
 
 
-@ilhammansiz_cmd(
-    pattern="rem ([\s\S]*)",
-    command=("rem", plugin_category),
-    info={
-        "header": "To delete a file or folder from the server",
-        "usage": "{tr}rem <path>",
-        "examples": "{tr}rem Dockerfile",
-    },
-)
-async def lst(event):
-    "To delete a file or folder."
+@bot.on(Cutepanda(outgoing=True, pattern=r"rm(?: |$)(.*)"))
+async def rmove(event):
+    """Removing Directory/File"""
     cat = event.pattern_match.group(1)
-    if cat:
-        path = Path(cat)
+    if not cat:
+        await event.edit("`Lokasi file tidak ada!`")
+        return
+    if not exists(cat):
+        await event.edit("`Lokasi file tidak ada!`")
+        return
+    if isfile(cat):
+        os.remove(cat)
     else:
-        await edit_or_reply(event, "what should i delete")
+        rmtree(cat)
+    await event.edit(f"Dihapus `{cat}`")
+
+
+@bot.on(Cutepanda(outgoing=True, pattern=r"rn ([^|]+)\|([^|]+)"))
+async def rname(event):
+    """Renaming Directory/File"""
+    cat = str(event.pattern_match.group(1)).strip()
+    new_name = str(event.pattern_match.group(2)).strip()
+    if not exists(cat):
+        await event.edit(f"file path : {cat} tidak ada!")
         return
-    if not os.path.exists(path):
-        await edit_or_reply(
-            event,
-            f"there is no such directory or file with the name `{cat}` check again",
-        )
+    new_path = join(dirname(cat), new_name)
+    shutil.move(cat, new_path)
+    await event.edit(f"Diganti nama dari `{cat}` ke `{new_path}`")
+
+
+@bot.on(Cutepanda(outgoing=True, pattern=r"zip (.*)"))
+async def zip_file(event):
+    if event.fwd_from:
         return
-    catcmd = f"rm -rf {path}"
-    if os.path.isdir(path):
-        await _catutils.runcmd(catcmd)
-        await edit_or_reply(event, f"successfully removed `{path}` directory")
+    if not exists(TEMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
+    input_str = event.pattern_match.group(1)
+    path = input_str
+    zip_name = ""
+    if "|" in input_str:
+        path, zip_name = path.split("|")
+        path = path.strip()
+        zip_name = zip_name.strip()
+    if exists(path):
+        await event.edit("`Zipping...`")
+        start_time = datetime.now()
+        if isdir(path):
+            dir_path = path.split("/")[-1]
+            if path.endswith("/"):
+                dir_path = path.split("/")[-2]
+            zip_path = join(TEMP_DOWNLOAD_DIRECTORY, dir_path) + ".zip"
+            if zip_name:
+                zip_path = join(TEMP_DOWNLOAD_DIRECTORY, zip_name)
+                if not zip_name.endswith(".zip"):
+                    zip_path += ".zip"
+            with ZipFile(zip_path, "w", ZIP_DEFLATED) as zip_obj:
+                for roots, _, files in os.walk(path):
+                    for file in files:
+                        files_path = join(roots, file)
+                        arc_path = join(dir_path, relpath(files_path, path))
+                        zip_obj.write(files_path, arc_path)
+            end_time = (datetime.now() - start_time).seconds
+            await event.edit(
+                f"Zipped `{path}` ke `{zip_path}` dalam `{end_time}` detik."
+            )
+        elif isfile(path):
+            file_name = basename(path)
+            zip_path = join(TEMP_DOWNLOAD_DIRECTORY, file_name) + ".zip"
+            if zip_name:
+                zip_path = join(TEMP_DOWNLOAD_DIRECTORY, zip_name)
+                if not zip_name.endswith(".zip"):
+                    zip_path += ".zip"
+            with ZipFile(zip_path, "w", ZIP_DEFLATED) as zip_obj:
+                zip_obj.write(path, file_name)
+            await event.edit(f"Zipped `{path}` ke `{zip_path}`")
     else:
-        await _catutils.runcmd(catcmd)
-        await edit_or_reply(event, f"successfully removed `{path}` file")
+        await event.edit("`404: Not Found`")
 
 
-@ilhammansiz_cmd(
-    pattern="mkdir(?:\s|$)([\s\S]*)",
-    command=("mkdir", plugin_category),
-    info={
-        "header": "To create a new directory.",
-        "usage": "{tr}mkdir <topic>",
-        "examples": "{tr}mkdir cat",
-    },
-)
-async def _(event):
-    "To create a new directory."
-    pwd = os.getcwd()
-    input_str = event.pattern_match.group(1)
-    if not input_str:
-        return await edit_delete(
-            event,
-            "What should i create ?",
-            parse_mode=_format.parse_pre,
-        )
-    original = os.path.join(pwd, input_str.strip())
-    if os.path.exists(original):
-        await edit_delete(
-            event,
-            f"Already a directory named {original} exists",
-        )
+@bot.on(Cutepanda(outgoing=True, pattern=r"unzip (.*)"))
+async def unzip_file(event):
+    if event.fwd_from:
         return
-    mone = await edit_or_reply(
-        event, "creating the directory ...", parse_mode=_format.parse_pre
-    )
-    await asyncio.sleep(2)
-    try:
-        await _catutils.runcmd(f"mkdir {original}")
-        await mone.edit(f"Successfully created the directory `{original}`")
-    except Exception as e:
-        await edit_delete(mone, str(e), parse_mode=_format.parse_pre)
-
-
-@ilhammansiz_cmd(
-    pattern="cpto(?:\s|$)([\s\S]*)",
-    command=("cpto", plugin_category),
-    info={
-        "header": "To copy a file from one directory to other directory",
-        "usage": "{tr}cpto from ; to destination",
-        "examples": "{tr}cpto sample_config.py ; downloads",
-    },
-)
-async def _(event):
-    "To copy a file from one directory to other directory"
-    pwd = os.getcwd()
+    if not exists(TEMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
     input_str = event.pattern_match.group(1)
-    if not input_str:
-        return await edit_delete(
-            event,
-            "What and where should i move the file/folder.",
-            parse_mode=_format.parse_pre,
+    file_name = basename(input_str)
+    output_path = TEMP_DOWNLOAD_DIRECTORY + re.split("(.zip|.rar|.tar)", file_name)[0]
+    if exists(input_str):
+        start_time = datetime.now()
+        await event.edit("`Unzipping...`")
+        if is_zipfile(input_str):
+            zip_type = ZipFile
+        elif is_rarfile(input_str):
+            zip_type = RarFile
+        elif is_tarfile(input_str):
+            zip_type = TarFile
+        else:
+            return await event.edit(
+                "`Jenis file tidak didukung!`\n`Hanya Bisa ZIP, RAR dan TAR`"
+            )
+        try:
+            with zip_type(input_str, "r") as zip_obj:
+                zip_obj.extractall(output_path)
+        except BadRarFile:
+            return await event.edit("**Error:** `File RAR Rusak`")
+        except BadZipFile:
+            return await event.edit("**Error:** `File ZIP Rusak`")
+        except BaseException as err:
+            return await event.edit(f"**Error:** `{err}`")
+        end_time = (datetime.now() - start_time).seconds
+        await event.edit(
+            f"Unzipped `{input_str}` ke `{output_path}` dalam `{end_time}` detik."
         )
-    loc = input_str.split(";")
-    if len(loc) != 2:
-        return await edit_delete(
-            event,
-            "use proper syntax .cpto from ; to destination",
-            parse_mode=_format.parse_pre,
-        )
-    original = os.path.join(pwd, loc[0].strip())
-    location = os.path.join(pwd, loc[1].strip())
-
-    if not os.path.exists(original):
-        await edit_delete(
-            event,
-            f"there is no such directory or file with the name `{cat}` check again",
-        )
-        return
-    mone = await edit_or_reply(
-        event, "copying the file ...", parse_mode=_format.parse_pre
-    )
-    await asyncio.sleep(2)
-    try:
-        await _catutils.runcmd(f"cp -r {original} {location}")
-        await mone.edit(f"Successfully copied the `{original}` to `{location}`")
-    except Exception as e:
-        await edit_delete(mone, str(e), parse_mode=_format.parse_pre)
+    else:
+        await event.edit("`404: Not Found`")
 
 
-@ilhammansiz_cmd(
-    pattern="mvto(?:\s|$)([\s\S]*)",
-    command=("mvto", plugin_category),
-    info={
-        "header": "To move a file from one directory to other directory.",
-        "usage": "{tr}mvto frompath ; topath",
-        "examples": "{tr}mvto stringsession.py ; downloads",
-    },
+CMD_HELP.update(
+    {
+        "file": f"**Plugin : **`file`\
+        \n\n  •  **Syntax :** `{cmd}ls`\
+        \n  •  **Function : **Untuk Melihat Daftar file di dalam direktori server\
+        \n\n  •  **Syntax :** `{cmd}rm` <directory/file>\
+        \n  •  **Function : **Untuk Menghapus File atau folder yg tersimpan di server\
+        \n\n  •  **Syntax :** `{cmd}rn` <directory/file> | <nama baru>\
+        \n  •  **Function : **Untuk Mengubah nama file atau direktori\
+        \n\n  •  **Syntax :** `{cmd}zip` <file/folder path> | <nama zip> (optional)\
+        \n  •  **Function : **Untuk mengcompress file atau folder.\
+        \n\n  •  **Syntax :** `{cmd}unzip` <path ke zip file>\
+        \n  •  **Function : **Untuk mengekstrak file arsip.\
+        \n  •  **NOTE : **Hanya bisa untuk file ZIP, RAR dan TAR!\
+    "
+    }
 )
-async def _(event):
-    "To move a file from one directory to other directory"
-    pwd = os.getcwd()
-    input_str = event.pattern_match.group(1)
-    if not input_str:
-        return await edit_delete(
-            event,
-            "What and where should i move the file/folder.",
-            parse_mode=_format.parse_pre,
-        )
-    loc = input_str.split(";")
-    if len(loc) != 2:
-        return await edit_delete(
-            event,
-            "use proper syntax .mvto from ; to destination",
-            parse_mode=_format.parse_pre,
-        )
-    original = os.path.join(pwd, loc[0].strip())
-    location = os.path.join(pwd, loc[1].strip())
-
-    if not os.path.exists(original):
-        return await edit_delete(
-            event,
-            f"there is no such directory or file with the name `{original}` check again",
-        )
-    mone = await edit_or_reply(
-        event, "Moving the file ...", parse_mode=_format.parse_pre
-    )
-    await asyncio.sleep(2)
-    try:
-        shutil.move(original, location)
-        await mone.edit(f"Successfully moved the `{original}` to `{location}`")
-    except Exception as e:
-        await edit_delete(mone, str(e), parse_mode=_format.parse_pre)

@@ -1,108 +1,43 @@
-# Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
-# Import Panda Userbot
-# Recode by Ilham Mansiz
-# ••••••••••••••••••••••√•••••••••••••√√√••••••••
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.d (the "License");
+# you may not use this file except in compliance with the License.
+#
+# Recode by ilham mansiz
+
+import sys
+
+from .. import LOAD, LOGS, NO_LOAD
 
 
-import math
-import os
-import re
-import time
+def __list_all_modules():
+    import glob
+    from os.path import basename, dirname, isfile
 
-import heroku3
-import lottie
-import requests
-import spamwatch as spam_watch
-from validators.url import url
-
-from .. import *
-from ..Config import Config
-from ..core.logger import logging
-from ..core.managers import edit_delete, edit_or_reply
-from ..core.session import PandaBot
-from ..helpers import *
-from ..helpers.utils import _format, _pandatools, _pandautils, install_pip, reply_id
-from ..core.cmd_user import ilhammansiz_cmd, bot_cmd, register
-
-# =================== CONSTANT ===================
-bot = PandaBot
-pandaub = PandaBot
-LOGS = logging.getLogger(__name__)
-USERID = pandaub.uid if Config.OWNER_ID == 0 else Config.OWNER_ID
-ALIVE_NAME = Config.ALIVE_NAME
-AUTONAME = Config.AUTONAME
-DEFAULT_BIO = Config.DEFAULT_BIO
+    mod_paths = glob.glob(dirname(__file__) + "/*.py")
+    all_modules = [
+        basename(f)[:-3]
+        for f in mod_paths
+        if isfile(f) and f.endswith(".py") and not f.endswith("__init__.py")
+    ]
+    if LOAD or NO_LOAD:
+        to_load = LOAD
+        if to_load:
+            if not all(
+                any(mod == module_name for module_name in all_modules)
+                for mod in to_load
+            ):
+                LOGS.error("Nama Modules yang anda masukan salah.")
+                sys.exit(1)
+        else:
+            to_load = all_modules
+        if NO_LOAD:
+            LOGS.info("Modules No Load : {}".format(NO_LOAD))
+            return [item for item in to_load if item not in NO_LOAD]
+        return to_load
+    return all_modules
 
 
-Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
-heroku_api = "https://api.heroku.com"
-HEROKU_APP_NAME = Config.HEROKU_APP_NAME
-HEROKU_API_KEY = Config.HEROKU_API_KEY
-
-thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
-
-USERID = pandaub.uid if Config.OWNER_ID == 0 else Config.OWNER_ID
-
-# mention user
-mention = f"[{Config.ALIVE_NAME}](tg://user?id={USERID})"
-hmention = f"<a href = tg://user?id={USERID}>{Config.ALIVE_NAME}</a>"
-
-PM_START = []
-PMMESSAGE_CACHE = {}
-PMMENU = "pmpermit_menu" not in Config.NO_LOAD
-
-# Gdrive
-G_DRIVE_CLIENT_ID = Config.G_DRIVE_CLIENT_ID
-G_DRIVE_CLIENT_SECRET = Config.G_DRIVE_CLIENT_SECRET
-G_DRIVE_DATA = Config.G_DRIVE_DATA
-G_DRIVE_FOLDER_ID = Config.G_DRIVE_FOLDER_ID
-TMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
-
-# spamwatch support
-if Config.SPAMWATCH_API:
-    token = Config.SPAMWATCH_API
-    spamwatch = spam_watch.Client(token)
-else:
-    spamwatch = None
-
-
-# ================================================
-
-if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
-    os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
-
-
-# thumb image
-if Config.THUMB_IMAGE is not None:
-    check = url(Config.THUMB_IMAGE)
-    if check:
-        try:
-            with open(thumb_image_path, "wb") as f:
-                f.write(requests.get(Config.THUMB_IMAGE).content)
-        except Exception as e:
-            LOGS.info(str(e))
-
-
-def set_key(dictionary, key, value):
-    if key not in dictionary:
-        dictionary[key] = value
-    elif isinstance(dictionary[key], list):
-        if value in dictionary[key]:
-            return
-        dictionary[key].append(value)
-    else:
-        dictionary[key] = [dictionary[key], value]
-
-
-async def make_gif(event, reply, quality=None, fps=None):
-    fps = fps or 1
-    quality = quality or 256
-    result_p = os.path.join("temp", "animation.gif")
-    animation = lottie.parsers.tgs.parse_tgs(reply)
-    with open(result_p, "wb") as result:
-        await _pandautils.run_sync(
-            lottie.exporters.gif.export_gif, animation, result, quality, fps
-        )
-    return result_p
-
-
+ALL_MODULES = sorted(__list_all_modules())
+LOGS.info("Modules To Load : %s", str(ALL_MODULES))
+__all__ = ALL_MODULES + ["ALL_MODULES"]

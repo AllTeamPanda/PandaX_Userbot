@@ -1,53 +1,43 @@
-# Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
-# Import Panda Userbot
-# Recode by Ilham Mansiz
-# ••••••••••••••••••••••√•••••••••••••√√√••••••••
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.c (the "License");
+# you may not use this file except in compliance with the License.
+# Recode by ilham mansiz
 
-from pytgcalls import idle
+
+##
 import sys
-import Panda
-from Panda import utils
-LOGS = Panda.core.logger.logging.getLogger("PandaUserbot")
-from .utils import P, M, V, A
+from importlib import import_module
+from platform import python_version
+from telethon import version
+from . import Botver, LOGS, bot, vcbot
+from .modules import ALL_MODULES
+from pytgcalls import idle
+##
 
-
-## Memulai ••••••••••√√√√√•••••••
 
 try:
-    LOGS.info(Panda.__copyright__)
-    LOGS.info("Licensed under the terms of the " + Panda.__license__)
+    bot.start()
+    vcbot.start()
+    user = bot.get_me()
 except Exception as e:
-    LOGS.error(f"{e}")
-    sys.exit()
+    LOGS.info(str(e), exc_info=True)
+    sys.exit(1)
 
-## Install Modules ••••••√√√√√••••••
+try:
+    for module_name in ALL_MODULES:
+        imported_module = import_module(f"Panda.modules.{module_name}")
+    LOGS.info(f"Python Version - {python_version()}")
+    LOGS.info(f"Telethon Version - {version.__version__}")
+    LOGS.info(f"PandaUserbot Version - {Botver} [ BERHASIL DIAKTIFKAN ]")
+except (ConnectionError, KeyboardInterrupt, NotImplementedError, SystemExit):
+    pass
+except BaseException as e:
+    LOGS.info(str(e), exc_info=True)
+    sys.exit(1)
 
-async def memulai():
-    await utils.loads(f"{P}")
-    await utils.loads(f"{M}")
-    await utils.buka(f"{V}")
-    await utils.buka(f"{A}")
-    
-
-def start():
-    Panda.PandaBot.loop.run_until_complete(Panda.utils.setup_bot())
-    Panda.PandaBot.loop.run_until_complete(memulai())
-    Panda.PandaBot.loop.run_until_complete(utils.join())
-    Panda.PandaBot.loop.run_until_complete(utils.ongrup())
-    LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{Panda.__version__} [TELAH DIAKTIFKAN]")
-
-if __name__ == "__main__":
-    start()
-    Panda.VcBot.start()
-    idle()
-    try:
-        if len(sys.argv) not in (1, 3, 4):
-            Panda.PandaBot.disconnect()
-        else:
-            Panda.PandaBot.run_until_disconnected()
-    except (ConnectionError, KeyboardInterrupt, NotImplementedError, SystemExit):
-        pass
-    except Exception as e:
-        LOGS.error(f"{e}")
-        sys.exit()
-    
+idle()
+if len(sys.argv) not in (1, 3, 4):
+    bot.disconnect()
+else:
+    bot.run_until_disconnected()
