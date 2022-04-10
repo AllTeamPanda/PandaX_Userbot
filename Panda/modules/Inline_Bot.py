@@ -322,7 +322,7 @@ with bot:
                     else:
                          reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
                          await event.answer(reply_pop_up_alert, cache_time=0)
-                 except BaseException:
+                except BaseException:
                      pandaxx = f"Do .help {modul_name} to get the list of commands."
                      await event.edit(pandaxx, buttons=buttons)
     except BaseException:
