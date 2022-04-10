@@ -6,18 +6,12 @@ from telethon.tl.functions.channels import JoinChannelRequest
 import pybase64
 
 On = f"""
-•••••••••••
-👤 Owner {owner}
-💻 **Version -** `{botvers}`
+`🐼PANDA-USERBOT🐼
+MENYALA`
 
+❍ `Name :` [{owner}](tg://user?id={user.id}) \n
+❍ `Version-ALL :` `{botvers}`
 
-❕ **Ketik** `{HANDLER}alive` **untuk Mengecheck Bot apakah sudah aktif**
-❗Sebaiknya Anda jangan keluar grup ini agar bot tidak mati
- ....Terimakasih....🇮🇩
-❗You should not leave this group so that the bot does not die
- ....Thank You....🇺🇸
-•••••••••••
-Dev by Ilham Mansiz
 """
 
 
