@@ -249,6 +249,14 @@ try:
 except AttributeError:
     pass
 
+with bot:
+    try:
+        user = bot.get_me()
+        uid = user.id
+        owner = user.first_name
+    except BaseException as a:
+        LOGS.info(f"{a}")
+
 
 
 def paginate_help(page_number, loaded_modules, prefix):
