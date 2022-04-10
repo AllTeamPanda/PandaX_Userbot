@@ -253,7 +253,9 @@ with bot:
     try:
         user = bot.get_me()
         uid = user.id
-        owner = user.first_name
+        firstname = user.first_name
+        lastname = user.last_name
+        owner = f"{firstname} {lastname}" if lastname else firstname
     except BaseException as a:
         LOGS.info(f"{a}")
 
@@ -319,7 +321,9 @@ with bot:
         dugmeler = CMD_HELP
         user = bot.get_me()
         uid = user.id
-        owner = user.first_name
+        firstname = user.first_name
+        lastname = user.last_name
+        owner = f"{firstname} {lastname}" if lastname else firstname
         logo = ALIVE_LOGO
         inlinelogo = INLINE_PIC
         tgbotusername = BOT_USERNAME
