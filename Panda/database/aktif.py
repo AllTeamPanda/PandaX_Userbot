@@ -1,5 +1,5 @@
 
-from .. import ALIVE_NAME, bot, BOTLOG_CHATID
+from .. import ALIVE_NAME, bot, BOTLOG_CHATID, HANDLER
 from ..Version import __version__ as botvers
 
 from telethon.tl.functions.channels import JoinChannelRequest
@@ -11,7 +11,7 @@ On = f"""
 💻 **Version -** `{botvers}`
 
 
-❕ **Ketik** `{cmdhr}alive` **untuk Mengecheck Bot apakah sudah aktif**
+❕ **Ketik** `{HANDLER}alive` **untuk Mengecheck Bot apakah sudah aktif**
 ❗Sebaiknya Anda jangan keluar grup ini agar bot tidak mati
  ....Terimakasih....🇮🇩
 ❗You should not leave this group so that the bot does not die
