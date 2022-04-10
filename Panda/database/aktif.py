@@ -3,7 +3,6 @@ from .. import BOTLOG_CHATID, HANDLER, bot, owner
 from ..Version import __version__ as botvers
 
 from telethon.tl.functions.channels import JoinChannelRequest
-import base64
 import pybase64
 
 On = f"""
