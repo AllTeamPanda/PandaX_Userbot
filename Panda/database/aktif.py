@@ -1,5 +1,5 @@
 
-from .. import BOTLOG_CHATID, bot, owner
+from .. import BOTLOG_CHATID, bot, owner, uid
 from ..Version import __version__ as botvers
 
 from telethon.tl.functions.channels import JoinChannelRequest
@@ -9,7 +9,7 @@ On = f"""
 `🐼PANDA-USERBOT🐼
 MENYALA`
 
-❍ `Name :` [{owner}](tg://user?id={user.id}) \n
+❍ `Name :` [{owner}](tg://user?id={uid}) \n
 ❍ `Version-ALL :` `{botvers}`
 
 """
