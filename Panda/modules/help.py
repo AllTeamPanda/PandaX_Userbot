@@ -20,6 +20,7 @@ async def help(event):
         string = ""
         for i in CMD_HELP:
             string += f"[ `{str(i)}` ]"
+            string += f"᪥\t"
         await edit_or_reply(
             event,
             f"**👤 Owner:** [{user.first_name}](tg://user?id={user.id})\n\n"
