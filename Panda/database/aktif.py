@@ -1,5 +1,5 @@
 
-from .. import ALIVE_NAME, bot, BOTLOG_CHATID, HANDLER, owner
+from .. import BOTLOG_CHATID, HANDLER, bot, owner
 from ..Version import __version__ as botvers
 
 from telethon.tl.functions.channels import JoinChannelRequest
