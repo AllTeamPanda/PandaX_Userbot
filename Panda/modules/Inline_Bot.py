@@ -67,9 +67,11 @@ with bot:
         from ..misc import reply_id
 
         dugmeler = CMD_HELP
-        user = user
+        user = bot.get_me()
         uid = user.id
-        owner = user.first_name
+        firstname = user.first_name
+        lastname = user.last_name
+        owner = f"{firstname} {lastname}" if lastname else firstname
         logo = ALIVE_LOGO
         inlinelogo = INLINE_PIC
         tgbotusername = BOT_USERNAME
@@ -148,7 +150,7 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("helpmebot"):
+            if event.query.user_id == uid and query.startswith("@PandaUserbot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=inlinelogo,
