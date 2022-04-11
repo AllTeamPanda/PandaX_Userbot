@@ -1,5 +1,5 @@
-from .. import *
-
+from .. import ALIVE_LOGO, CMD_HELP, INLINE_PIC, BOT_USERNAME, BOTLOG_CHATID, BOTLOG, INLINE_EMOJI, SUDO_USERS, DEVS
+from ..Session import bot, tgbot
 from telethon import Button
 from telethon.errors import UserIsBlockedError
 from telethon.tl.types import InputWebDocument
