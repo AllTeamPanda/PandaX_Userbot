@@ -402,6 +402,8 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
+            string = query.lower()
+            string.split()
             if event.query.user_id == uid and query.startswith("@PandaUserbot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
