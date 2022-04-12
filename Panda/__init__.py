@@ -262,7 +262,7 @@ with bot:
 
 def main_menu():
     text=f"**➕ Panda-Userbot Inline Menu **\n\n👤 **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(CMD_HELP)}` Modules"
-    buttons =
+    buttons = [
         (
             Button.url(
                 "Support",
