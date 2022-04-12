@@ -260,6 +260,21 @@ with bot:
         LOGS.info(f"{a}")
 
 
+def main_menu():
+    text=f"**➕ Panda-Userbot Inline Menu **\n\n👤 **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(CMD_HELP)}` Modules"
+    buttons =
+        (
+            Button.url(
+                "Support",
+                "https://t.me/TEAMSquadUserbotSupport",
+            ),
+            Button.inline(
+                f"💎 𝙸𝚗𝚏𝚘",
+                data="menuu",
+            ),
+        ),
+    ]
+    return text, buttons
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 4
@@ -429,6 +444,15 @@ with bot:
                     ],
                     link_preview=False,
                 )
+            elif string == "help":
+               _result = main_menu()
+               result = builder.photo(
+                   file=inlinelogo,
+                   text=_result[0],
+                   buttons=_result[1],
+                   link_preview=False,
+               )
+               await event.answer([result] if result else None)
             elif query.startswith("Inline buttons"):
                 markdown_note = query[14:]
                 prev = 0
@@ -513,6 +537,13 @@ with bot:
                     f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
                 )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"menuu")))
+        async def on_plug_in_callback_query_handler(event):
+            buttons = paginate_help(0, dugmeler, "helpme")
+            text=f"**➕ Panda-Userbot Inline Menu **\n\n👤 **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
+              
+            await event.edit(text, buttons=buttons),
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
