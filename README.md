@@ -5,7 +5,7 @@
 
 
 <p align="center">
-    <img alt="Panda Version" src="https://img.shields.io/badge/Panda%20Version-27.03.2022-brightgreen"/>
+    <img alt="Panda Version" src="https://img.shields.io/badge/Panda%20Version-13.04.2022-brightgreen"/>
     <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20-Last Day-brightgreen"/>
            <a href="https://travis-ci.com/ilhammansiz/PandaX_Userbot.svg?branch=PandaUserbot" /></a>
     <a href="https://github.com/ilhammansiz/PandaX_Userbot/network/members"> <img src="https://img.shields.io/github/forks/ilhammansiz/PandaX_Userbot?logo=github&style=for-the-badge" /></a>
