@@ -11,6 +11,17 @@ from .cmdinfo import _format_about
 
 
 from telethon import events
+from telethon.errors import (
+    AlreadyInConversationError,
+    BotInlineDisabledError,
+    BotResponseTimeoutError,
+    ChatSendInlineForbiddenError,
+    ChatSendMediaForbiddenError,
+    ChatSendStickersForbiddenError,
+    FloodWaitError,
+    MessageIdInvalidError,
+    MessageNotModifiedError,
+)
 from ..Osdb import Osdb
 
 from .. import (
@@ -94,6 +105,36 @@ def Cutepanda(
                 raise events.StopPropagation
             except KeyboardInterrupt:
                 pass
+            except MessageNotModifiedError:
+                LOGS.error("Message was same as previous message")
+            except MessageIdInvalidError:
+                LOGS.error("Message was deleted or cant be found")
+            except BotInlineDisabledError:
+                await edit_delete(check, "`Turn on Inline mode for our bot`", 10)
+            except ChatSendStickersForbiddenError:
+                await edit_delete(
+                    check, "`I guess i can't send stickers in this chat`", 10
+                )
+            except BotResponseTimeoutError:
+                await edit_delete(
+                    check, "`The bot didnt answer to your query in time`", 10
+                )
+            except ChatSendMediaForbiddenError:
+                await edit_delete(check, "`You can't send media in this chat`", 10)
+            except AlreadyInConversationError:
+                await edit_delete(
+                    check,
+                    "`A conversation is already happening with the given chat. try again after some time.`",
+                    10,
+                )
+            except ChatSendInlineForbiddenError:
+                await edit_delete(
+                    check, "`You can't send inline messages in this chat.`", 10
+                )
+            except FloodWaitError as e:
+                LOGS.error(
+                    f"A flood wait of {e.seconds} occured. wait for {e.seconds} seconds and try"
+                )
         if not func.__doc__ is None:
             CMD_INFO[command[0]].append((func.__doc__).strip())
         if pattern is not None:
