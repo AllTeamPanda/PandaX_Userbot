@@ -69,7 +69,7 @@ def Cutepanda(pattern=None, command=None, **args):
             bot.add_event_handler(func, events.MessageEdited(pattern=sudoal, from_users=SUDO_USERS, **args))
         bot.add_event_handler(func, events.NewMessage(pattern=sudoal, from_users=SUDO_USERS, **args))
 
-    return events.NewMessage(**args), decorator
+    return events.NewMessage(**args)
 
 
 def command(**args):
