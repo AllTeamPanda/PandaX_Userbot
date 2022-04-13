@@ -23,7 +23,7 @@ from telethon.tl.functions.contacts import UnblockRequest
 from .. import BOT_USERNAME
 from .. import CMD_HANDLER as cmd
 from .. import bot
-from ..misc import edit_or_reply, pandacute
+from ..misc import edit_or_reply, pandacute, reply_id
 
 
 @pandacute(pattern="inline")
@@ -33,9 +33,10 @@ async def _(event):
     if BOT_USERNAME is not None:
         chat = "@Botfather"
         try:
+            reply_to_id = await reply_id(event)
             results = await event.client.inline_query(BOT_USERNAME, "help")
             await results[0].click(
-                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+                event.chat_id, reply_to=reply_to_id, hide_via=True
             )
             await event.delete()
         except noinline:
