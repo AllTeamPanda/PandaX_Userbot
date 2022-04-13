@@ -17,7 +17,7 @@ from traceback import format_exc
 from telethon import events
 
 
-from . import CMD_HANDLER, CMD_LIST, bot, DEFAULT
+from . import CMD_HANDLER, CMD_LIST, bot, DEFAULT, SUDO_HANDLER, SUDO_USERS
 
 ## Editor by ilham 
 
@@ -28,6 +28,7 @@ def Cutepanda(pattern=None, command=None, **args):
     file_test = Path(previous_stack_frame.filename)
     file_test = file_test.stem.replace(".py", "")
     args.get("allow_sudo", True)
+    
  
     if pattern is not None:
         if pattern.startswith(r"\#"):
@@ -45,7 +46,9 @@ def Cutepanda(pattern=None, command=None, **args):
                 reg = CMD_HANDLER[1]
             elif len(CMD_HANDLER) == 1:
                 catreg = "^\\" + CMD_HANDLER
+                sudoreg = "\\" + SUDO_HANDLER
                 reg = CMD_HANDLER
+            sudoal = re.compile(sudoreg + pattern)
             args["pattern"] = re.compile(catreg + pattern)
             if command is not None:
                 cmd = reg + command
@@ -60,8 +63,13 @@ def Cutepanda(pattern=None, command=None, **args):
 
     if "allow_edited_updates" in args and args["allow_edited_updates"]:
         del args["allow_edited_updates"]
-    
-    return events.NewMessage(**args)
+
+    def decorator(func):
+        if allow_sudo:
+            bot.add_event_handler(func, events.MessageEdited(pattern=sudoal, from_users=SUDO_USERS, **args))
+        bot.add_event_handler(func, events.NewMessage(pattern=sudoal, from_users=SUDO_USERS, **args))
+
+    return events.NewMessage(**args), decorator
 
 
 def command(**args):
