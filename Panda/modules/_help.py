@@ -16,14 +16,9 @@
 # @Qulec tarafından yazılmıştır.
 # Thanks @Spechide.
 
-from telethon.errors.rpcerrorlist import BotInlineDisabledError as noinline
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.functions.contacts import UnblockRequest
 
 from .. import BOT_USERNAME
-from .. import CMD_HANDLER as cmd
-from .. import bot
-from ..misc import edit_or_reply, pandacute, reply_id, Cutepanda
+from ..misc import Cutepanda, reply_id
 category = "help"
 
 @Cutepanda(
