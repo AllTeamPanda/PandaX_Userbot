@@ -67,7 +67,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 
 
 
-    ## Deploy Panda Userbot Heroku
+    🔗 Deploy Panda Userbot Heroku 🔗
 
 <p align="center"><a href="https://github.com/ilhammansiz/DEPLOY"><img src="https://img.shields.io/badge/Deploy%20Lewat%20Web%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"" /></a></p>
 
