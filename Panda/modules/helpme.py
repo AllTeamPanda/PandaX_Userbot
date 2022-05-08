@@ -34,7 +34,7 @@ async def _(event):
     if BOT_USERNAME is not None:
         chat = "@Botfather"
         try:
-            results = await event.client.inline_query(BOT_USERNAME, "help")
+            results = await event.client.inline_query(BOT_USERNAME, "@PandaUserbot")
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
