@@ -34,6 +34,24 @@ category = "help"
 )
 async def _(event):
     reply_to_id = await reply_id(event)
-    results = await event.client.inline_query(BOT_USERNAME, "@PandaUserbot")
+    results = await event.client.inline_query(BOT_USERNAME, "help")
+    await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
+    
+
+
+@Cutepanda(
+    pattern="coderepo(?: |$)(.*)",
+    command=("coderepo", category),
+    help={
+        "header": "Inline bot",
+        "description": "Help via inline Bot",
+        "usage": [
+            "{tr}inline",
+        ],
+    },
+)
+async def _(event):
+    reply_to_id = await reply_id(event)
+    results = await event.client.inline_query(BOT_USERNAME, "repo")
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     
