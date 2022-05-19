@@ -186,7 +186,7 @@ GROUP = os.environ.get("GROUP", "TeamSquadUserbotSupport")
 CHANNEL = os.environ.get("CHANNEL", "PandaUserbot")
 BYPASS_URL = os.environ.get("BYPASS_URL", "@bypassvip_bot")
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./downloads/")
-
+TMP_DOWNLOAD_DIRECTORY = TEMP_DOWNLOAD_DIRECTORY
 GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN", None)
 
 # Quotes API Token
