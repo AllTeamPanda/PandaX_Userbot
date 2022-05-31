@@ -46,7 +46,7 @@ async def startbot():
     try:
         bot.start()
         vcbot.start()
-        user = bot.get_me()
+        bot.get_me()
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
@@ -54,7 +54,7 @@ async def startbot():
 async def loadbot():
     try:
         for module_name in ALL_MODULES:
-            imported_module = import_module(f"Panda.modules.{module_name}")
+            import_module(f"Panda.modules.{module_name}")
         LOGS.info(f"PandaUserbot Version - {Botver} [ BERHASIL DIAKTIFKAN ]")
     except (ConnectionError, KeyboardInterrupt, NotImplementedError, SystemExit):
         pass
