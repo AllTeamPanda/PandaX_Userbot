@@ -9,35 +9,27 @@
 import sys
 from importlib import import_module
 from . import Botver, LOGS, bot, vcbot
-from .database import ongrup, join
+from .database import ongrup, join, startbot, loadbot
 from .modules import ALL_MODULES
 from pytgcalls import idle
 ##
 
 
-try:
-    bot.start()
-    vcbot.start()
-    user = bot.get_me()
-except Exception as e:
-    LOGS.info(str(e), exc_info=True)
-    sys.exit(1)
+def start():
+    bot.loop.run_until_complete(startbot())
+    bot.loop.run_until_complete(loadbot())
+    bot.loop.run_until_complete(join())
+    bot.loop.run_until_complete(ongrup())
 
-try:
-    for module_name in ALL_MODULES:
-        imported_module = import_module(f"Panda.modules.{module_name}")
-    LOGS.info(f"PandaUserbot Version - {Botver} [ BERHASIL DIAKTIFKAN ]")
-except (ConnectionError, KeyboardInterrupt, NotImplementedError, SystemExit):
-    pass
-except BaseException as e:
-    LOGS.info(str(e), exc_info=True)
-    sys.exit(1)
-
-bot.loop.run_until_complete(join())
-bot.loop.run_until_complete(ongrup())
-
-idle()
-if len(sys.argv) not in (1, 3, 4):
-    bot.disconnect()
-else:
-    bot.run_until_disconnected()
+if __name__ == "__main__":
+    start()
+    idle()
+    try:
+        if len(sys.argv) not in (1, 3, 4):
+            bot.disconnect()
+        else:
+            bot.run_until_disconnected()
+    except Exception as e:
+        LOGS.error(f"{e}")
+        sys.exit()
+    
