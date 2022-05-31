@@ -1,6 +1,9 @@
 
-from .. import BOTLOG_CHATID, bot, owner, uid
+from .. import BOTLOG_CHATID, bot, owner, uid, vcbot, LOGS
 from ..Version import __version__ as botvers
+import sys
+from ..modules import ALL_MODULES
+from importlib import import_module
 
 from telethon.tl.functions.channels import JoinChannelRequest
 import pybase64
@@ -37,3 +40,24 @@ async def join():
         await bot(JoinChannelRequest(L))
     except BaseException:
         pass
+
+
+async def startbot():
+    try:
+        bot.start()
+        vcbot.start()
+        user = bot.get_me()
+    except Exception as e:
+        LOGS.info(str(e), exc_info=True)
+        sys.exit(1)
+
+async def loadbot():
+    try:
+        for module_name in ALL_MODULES:
+            imported_module = import_module(f"Panda.modules.{module_name}")
+        LOGS.info(f"PandaUserbot Version - {Botver} [ BERHASIL DIAKTIFKAN ]")
+    except (ConnectionError, KeyboardInterrupt, NotImplementedError, SystemExit):
+        pass
+    except BaseException as e:
+        LOGS.info(str(e), exc_info=True)
+        sys.exit(1)
