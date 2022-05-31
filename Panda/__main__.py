@@ -7,10 +7,8 @@
 
 ##
 import sys
-from importlib import import_module
-from . import Botver, LOGS, bot, vcbot
+from . import LOGS, bot
 from .database import ongrup, join, startbot, loadbot
-from .modules import ALL_MODULES
 from pytgcalls import idle
 ##
 
