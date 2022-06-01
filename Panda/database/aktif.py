@@ -55,7 +55,7 @@ async def loadbot():
     try:
         for module_name in ALL_MODULES:
             import_module(f"Panda.modules.{module_name}")
-        LOGS.info(f"PandaUserbot Version - {Botver} [ BERHASIL DIAKTIFKAN ]")
+        LOGS.info(f"PandaUserbot Version - {botvers} [ BERHASIL DIAKTIFKAN ]")
     except (ConnectionError, KeyboardInterrupt, NotImplementedError, SystemExit):
         pass
     except BaseException as e:
