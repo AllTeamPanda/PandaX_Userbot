@@ -7,11 +7,19 @@
 
 ##
 import sys
-from . import LOGS, bot
+from . import LOGS, bot, vcbot
 from .database import ongrup, join, startbot, loadbot
 from pytgcalls import idle
 ##
 
+
+try:
+    bot.start()
+    vcbot.start()
+    user = bot.get_me()
+except Exception as e:
+    LOGS.info(str(e), exc_info=True)
+    sys.exit(1)
 
 def start():
     bot.loop.run_until_complete(startbot())
