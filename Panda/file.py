@@ -6,4 +6,4 @@ class Database(object):
     SESSION = os.environ.get("SESSION", None)
     DB_URI = os.environ.get("DATABASE_URL", None)
     BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
- 
+    PyroSESSION = os.environ.get("PyroSESSION", None)
