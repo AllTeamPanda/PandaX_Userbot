@@ -16,8 +16,8 @@ try:
         sleep_threshold=180,
     )
     else:
-         session_name = "startup"
-         pyrobot = Client(session_name, Database.APP_ID, Database.API_HASH)
+         session_name = None
+         pyrobot = session_name
     if Database.BOT_TOKEN is not None:
         pyrotgbot = Client(
            "SESSION",
