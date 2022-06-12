@@ -32,4 +32,4 @@ except Exception as e:
     sys.exit()
 
 
-pyrovcbot = PyTgCalls(bot)
+pyrovcbot = PyTgCalls(pyrobot)
