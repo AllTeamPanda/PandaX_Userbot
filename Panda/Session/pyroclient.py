@@ -9,7 +9,7 @@ import sys
 
 try:    
     if Database.PyroSESSION:
-        bot = Client(
+        pyrobot = Client(
         Database.PyroSESSION,
         api_id=Database.APP_ID,
         api_hash=Database.API_HASH,
@@ -17,9 +17,9 @@ try:
     )
     else:
          session_name = "startup"
-         bot = Client(session_name, Database.APP_ID, Database.API_HASH)
+         pyrobot = Client(session_name, Database.APP_ID, Database.API_HASH)
     if Database.BOT_TOKEN is not None:
-        tgbot = Client(
+        pyrotgbot = Client(
            "SESSION",
            api_id=Database.APP_ID,
            api_hash=Database.API_HASH,
@@ -32,4 +32,4 @@ except Exception as e:
     sys.exit()
 
 
-vcbot = PyTgCalls(bot)
+pyrovcbot = PyTgCalls(bot)
