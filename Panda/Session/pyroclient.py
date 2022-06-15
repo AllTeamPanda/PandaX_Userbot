@@ -6,6 +6,7 @@ from ..Version import __version__
 from pytgcalls import PyTgCalls
 import sys
 
+loop = None
 
 try:    
     if Database.PyroSESSION:
