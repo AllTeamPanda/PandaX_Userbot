@@ -11,7 +11,7 @@ def TelethonPyro():
         try:
             bot.start()
             vcbot.start()
-            user = bot.get_me()
+            bot.get_me()
         except Exception as e:
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
@@ -20,7 +20,7 @@ def TelethonPyro():
         try:
             pyrobot.start()
             pyrovcbot.start()
-            user = pyrobot.get_me()
+            pyrobot.get_me()
         except Exception as e:
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
