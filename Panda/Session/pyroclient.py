@@ -1,4 +1,5 @@
 from pyrogram import Client
+from pyrogram.types import *
 
 from ..file import Database
 from ..Version import __version__
@@ -28,7 +29,7 @@ try:
            sleep_threshold=180,
             ).start(bot_token=Database.BOT_TOKEN) 
 except Exception as e:
-    print(f"STRING_SESSION {str(e)}")
+    print(f"PyroSESSION {str(e)}")
     sys.exit()
 
 
