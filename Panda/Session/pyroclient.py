@@ -1,5 +1,4 @@
 from pyrogram import Client
-from pyrogram.types import *
 
 from ..file import Database
 from ..Version import __version__
