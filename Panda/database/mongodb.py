@@ -1,6 +1,4 @@
 import motor.motor_asyncio
-from .. import LOGS
-import sys
 from ..file import Database
 
 
