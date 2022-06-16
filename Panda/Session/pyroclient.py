@@ -23,8 +23,6 @@ try:
            "SESSION",
            api_id=Database.APP_ID,
            api_hash=Database.API_HASH,
-           loop=loop,
-           app_version=__version__,
            sleep_threshold=180,
             ).start(bot_token=Database.BOT_TOKEN) 
 except Exception as e:
