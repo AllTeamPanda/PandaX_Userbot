@@ -22,8 +22,9 @@ try:
            "SESSION",
            api_id=Database.APP_ID,
            api_hash=Database.API_HASH,
+           bot_token=Database.BOT_TOKEN,
            sleep_threshold=180,
-            ).start(bot_token=Database.BOT_TOKEN) 
+            ) 
 except Exception as e:
     print(f"PyroSESSION {str(e)}")
     sys.exit()
