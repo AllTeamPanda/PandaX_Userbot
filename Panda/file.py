@@ -7,4 +7,4 @@ class Database(object):
     DB_URI = os.environ.get("DATABASE_URL", None)
     BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
     PyroSESSION = os.environ.get("PyroSESSION", None)
-    MONGO_DB = os.environ.get("MONGO_DB", None)
+    MONGO_DB = os.environ.get("MONGO_DB", None) or "mongodb+srv://alfarezahs:alfarezahs@cluster0.lw1xw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
