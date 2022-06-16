@@ -1,7 +1,6 @@
 from pyrogram import Client
 
 from ..file import Database
-from pytgcalls import PyTgCalls
 import sys
 
 loop = None
