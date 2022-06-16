@@ -22,7 +22,6 @@ except Exception as e:
     sys.exit(1)
 
 def start():
-    bot.loop.run_until_complete(startbot())
     bot.loop.run_until_complete(loadbot())
     bot.loop.run_until_complete(join())
     bot.loop.run_until_complete(ongrup())
