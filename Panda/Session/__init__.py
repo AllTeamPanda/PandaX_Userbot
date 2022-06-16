@@ -6,10 +6,9 @@ from .client import (
 
 from .Storage import *
 
-"""
+
 from .pyroclient import (
     pyrobot,
     pyrotgbot,
     provcbot,
-)
-"""
+
