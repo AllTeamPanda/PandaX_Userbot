@@ -27,7 +27,6 @@ from ..Osdb import Osdb
 from .. import (
     bot,
     tgbot,
-    pyrobot,
 )
 
 
