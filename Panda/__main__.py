@@ -8,7 +8,7 @@
 ##
 import sys
 from . import LOGS, bot, vcbot
-from .database import ongrup, join, startbot, loadbot
+from .database import join, loadbot, ongrup
 from pytgcalls import idle
 ##
 
