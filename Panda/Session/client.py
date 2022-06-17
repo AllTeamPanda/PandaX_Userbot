@@ -39,12 +39,11 @@ try:
            api_id=Database.APP_ID,
            api_hash=Database.API_HASH,
            loop=loop,
-           bot_token=Database.BOT_TOKEN,
            app_version=__version__,
            connection=ConnectionTcpAbridged,
            auto_reconnect=True,
            connection_retries=None,
-            )
+            ).start(bot_token=Database.BOT_TOKEN)
 except Exception as e:
     print(f"STRING_SESSION {str(e)}")
     sys.exit()
