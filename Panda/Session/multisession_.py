@@ -20,9 +20,7 @@ def TelethonPyro():
 
     if Database.BOT_TOKEN:
         try:
-            tgbot.start()
             pyrotgbot.start()
-            tgbot.get_me()
             pyrotgbot.get_me()
         except Exception as e:
             LOGS.info(str(e), exc_info=True)
