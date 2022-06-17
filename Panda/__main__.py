@@ -27,7 +27,7 @@ if TelethonPyro:
         based = "Telethon"
     else:
        Database.PyroSESSION:
-        based = "Program"
+        based = "Pyrogram"
     return "telethon" if telethon else "pyrogram"
 
 LOGS.info("{based}")
