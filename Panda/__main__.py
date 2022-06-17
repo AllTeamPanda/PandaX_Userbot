@@ -7,12 +7,12 @@
 
 ##
 import sys
-from . import LOGS, bot, vcbot
+from . import LOGS, TelethonPyro
 from .database import join, loadbot, ongrup
 from pytgcalls import idle
 ##
 
-
+"""
 try:
     bot.start()
     vcbot.start()
@@ -20,13 +20,14 @@ try:
 except Exception as e:
     LOGS.info(str(e), exc_info=True)
     sys.exit(1)
-
+"""
 def start():
     bot.loop.run_until_complete(loadbot())
     bot.loop.run_until_complete(join())
     bot.loop.run_until_complete(ongrup())
 
 if __name__ == "__main__":
+    TelethonPyro()
     start()
     idle()
     try:
