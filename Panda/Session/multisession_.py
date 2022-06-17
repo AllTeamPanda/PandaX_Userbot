@@ -1,7 +1,7 @@
 
 from .. import LOGS
 from .client import bot, vcbot
-from .pyroclient import pyrobot
+from .pyroclient import pyrobot, pyrobot2, pyrobot3, pyrobot4
 import sys
 
 from ..file import Database
@@ -23,3 +23,27 @@ def TelethonPyro():
         except Exception as e:
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
+
+    if Database.PyroSESSION2:
+        try:
+            pyrobot2.start()
+            pyrobot2.get_me()
+        except Exception as e:
+            LOGS.info(str(e), exc_info=True)
+            sys.exit(1)
+    if Database.PyroSESSION3:
+        try:
+            pyrobot3.start()
+            pyrobot3.get_me()
+        except Exception as e:
+            LOGS.info(str(e), exc_info=True)
+            sys.exit(1)
+
+    if Database.PyroSESSION4:
+        try:
+            pyrobot4.start()
+            pyrobot4.get_me()
+        except Exception as e:
+            LOGS.info(str(e), exc_info=True)
+            sys.exit(1)
+
