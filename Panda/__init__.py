@@ -48,6 +48,7 @@ LASTMSG = {}
 CMD_HELP = {}
 CATEGORY = {}
 CMD_LIST = {}
+XTRA_CMD_LIST = {}
 SUDO_LIST = {}
 ZALG_LIST = {}
 LOAD_PLUG = {}
