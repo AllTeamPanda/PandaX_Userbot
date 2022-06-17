@@ -1,4 +1,7 @@
 
+# Panda Userbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# Recode by Ilham Mansiz
+# ••••••••••••••••••••••√•••••••••••••√√√••••••••
 
 
 
