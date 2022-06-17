@@ -3,9 +3,7 @@ from .. import start_time, pyrotgbot as bot
 from pyrogram import filters
 
 from .._func._helpers import get_readable_time
-from .._func.assistant_helpers import (
-    _check_owner_or_sudos,
-)
+from .._func.assistant_helpers import _check_owner_or_sudos
 
 @bot.on_message(filters.command(["ping"]) & filters.incoming)
 @_check_owner_or_sudos
