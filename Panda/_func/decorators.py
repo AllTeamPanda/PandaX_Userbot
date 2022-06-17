@@ -23,8 +23,8 @@ from .. import (
     pyrobot4,
 )
 from ..Osdb import Osdb as Config
-from ._helpers import is_admin_or_owner
-from .helpers import edit_or_reply
+from ._helpers import is_admin_or_owner, edit_or_reply
+
 
 
 def Panda_cmd(
