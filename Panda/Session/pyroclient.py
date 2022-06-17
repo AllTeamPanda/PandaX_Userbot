@@ -37,7 +37,7 @@ try:
          session_name = None
          pyrobot3 = session_name
     if Database.PyroSESSION4:
-        pyrobot = Client(
+        pyrobot4 = Client(
         Database.PyroSESSION4,
         api_id=Database.APP_ID,
         api_hash=Database.API_HASH,
