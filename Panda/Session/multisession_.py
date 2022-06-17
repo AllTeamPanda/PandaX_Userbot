@@ -1,7 +1,7 @@
 
 from .. import LOGS
 from .client import bot, vcbot
-from .pyroclient import pyrobot, pyrobot2, pyrobot3, pyrobot4
+from .pyroclient import pyrobot, pyrobot2, pyrobot3, pyrobot4, pyrotgbot
 import sys
 
 from ..file import Database
@@ -20,6 +20,9 @@ def TelethonPyro():
         try:
             pyrobot.start()
             pyrobot.get_me()
+            if pyrotgbot:
+             await pyrotgbot.start()
+             pyrotgbot.me = await pyrotgbot.get_me()
         except Exception as e:
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
