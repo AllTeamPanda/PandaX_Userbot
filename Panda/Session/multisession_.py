@@ -31,6 +31,7 @@ def TelethonPyro():
         except Exception as e:
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
+
     if Database.PyroSESSION3:
         try:
             pyrobot3.start()
