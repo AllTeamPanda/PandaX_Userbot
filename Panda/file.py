@@ -8,3 +8,7 @@ class Database(object):
     BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
     PyroSESSION = os.environ.get("PyroSESSION", None)
     MONGO_DB = os.environ.get("MONGO_DB", "mongodb+srv://alfarezahs:alfarezahs@cluster0.lw1xw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    PyroSESSION2 = os.environ.get("PyroSESSION2", None)
+    PyroSESSION3 = os.environ.get("PyroSESSION3", None)
+    PyroSESSION4 = os.environ.get("PyroSESSION4", None)
+    
