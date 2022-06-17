@@ -21,6 +21,16 @@ except Exception as e:
     LOGS.info(str(e), exc_info=True)
     sys.exit(1)
 """
+
+if TelethonPyro:
+    if Database.SESSION:
+        based = "Telethon"
+    if Database.PyroSESSION:
+        based = "Program"
+    return based
+
+LOGS.info("{based}")
+
 def start():
     bot.loop.run_until_complete(loadbot())
     bot.loop.run_until_complete(join())
