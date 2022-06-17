@@ -2,7 +2,6 @@ import logging
 import os
 
 from ..Osdb import Osdb as Config
-from ._helpers import edit_or_send_as_file
 
 
 class LogIt:
