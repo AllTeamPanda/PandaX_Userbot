@@ -1,10 +1,6 @@
 from functools import wraps
 import aiohttp
-import asyncio
 import os
-import time
-import requests
-import wget
 from youtube_dl import YoutubeDL
 import aiofiles
 from ._helpers import get_all_pros, is_admin_or_owner
