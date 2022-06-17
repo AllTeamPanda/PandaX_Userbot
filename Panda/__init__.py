@@ -62,7 +62,7 @@ load_dotenv("config.env")
 
 ## Time
 StartTime = time.time()
-
+start_time = StartTime
 def STORAGE(n):
     return Storage(Path("data") / n)
 
