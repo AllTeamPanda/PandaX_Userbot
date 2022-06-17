@@ -1,7 +1,7 @@
 
 from logging import getLogger
 
-from .client import bot, vcbot, tgbot
+from .client import bot, vcbot
 from .pyroclient import pyrobot, pyrobot2, pyrobot3, pyrobot4, pyrotgbot
 import sys
 LOGS = getLogger(__name__)
