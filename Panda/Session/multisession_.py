@@ -1,9 +1,12 @@
 
-from .. import LOGS
+from logging import DEBUG, INFO, basicConfig, getLogger
+
 from .client import bot, vcbot
 from .pyroclient import pyrobot, pyrobot2, pyrobot3, pyrobot4, pyrotgbot
 import sys
+LOGS = getLogger(__name__)
 
+if 
 from ..file import Database
 
 def TelethonPyro():
