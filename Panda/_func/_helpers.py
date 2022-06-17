@@ -4,7 +4,6 @@
 
 
 import asyncio
-import logging
 import math
 import os
 import shlex
@@ -200,7 +199,7 @@ def cb_wrapper(func):
                 await func(client, cb)
             except MessageNotModified:
                 await cb.answer("🤔🧐")
-            except Exception as e:
+            except Exception:
                 print(format_exc())
                 await cb.answer(
                     f"Oh No, SomeThing Isn't Right. Please Check Logs!",
