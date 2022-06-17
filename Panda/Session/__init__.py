@@ -5,7 +5,7 @@ from .client import (
 )
 
 from .Storage import *
-
+from .multisession_ import TelethonPyro
 
 from .pyroclient import (
     pyrobot,
