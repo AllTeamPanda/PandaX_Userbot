@@ -23,15 +23,6 @@ except Exception as e:
     sys.exit(1)
 """
 
-if TelethonPyro:
-    if Database.SESSION:
-        based = "Telethon"
-    else:
-         Database.PyroSESSION:
-         based = "Pyrogram"
-    return based if Database.SESSION else based
-
-LOGS.info("{based}")
 
 def start():
     bot.loop.run_until_complete(loadbot())
