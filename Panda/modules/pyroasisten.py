@@ -4,7 +4,6 @@ from pyrogram import filters
 
 from .._func._helpers import get_readable_time
 from .._func.assistant_helpers import (
-    _check_admin,
     _check_owner_or_sudos,
 )
 
