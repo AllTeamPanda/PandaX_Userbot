@@ -25,9 +25,10 @@ except Exception as e:
 if TelethonPyro:
     if Database.SESSION:
         based = "Telethon"
-    if Database.PyroSESSION:
+    else:
+       Database.PyroSESSION:
         based = "Program"
-    return based
+    return "telethon" if telethon else "pyrogram"
 
 LOGS.info("{based}")
 
