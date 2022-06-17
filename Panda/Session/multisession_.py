@@ -18,7 +18,7 @@ def TelethonPyro():
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
 
-    if Database.BOT_TOKEN:
+    if pyrotgbot:
         try:
             pyrotgbot.start()
             pyrotgbot.get_me()
