@@ -18,14 +18,6 @@ def TelethonPyro():
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
 
-    if pyrotgbot:
-        try:
-            pyrotgbot.start()
-            pyrotgbot.me = pyrotgbot.get_me()
-        except Exception as e:
-            LOGS.info(str(e), exc_info=True)
-            sys.exit(1)
-     
     if Database.PyroSESSION:
         try:
             pyrobot.start()
