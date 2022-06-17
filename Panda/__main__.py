@@ -10,7 +10,6 @@ import sys
 from . import LOGS, TelethonPyro, bot
 from .database import join, loadbot, ongrup
 from pytgcalls import idle
-from .file import Database
 ##
 
 """
