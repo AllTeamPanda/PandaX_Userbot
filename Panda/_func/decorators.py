@@ -24,7 +24,6 @@ from .. import (
 )
 from ..Osdb import Osdb as Config
 from ._helpers import is_admin_or_owner
-from .. import pyrotgbot as bot
 from .helpers import edit_or_reply
 
 
@@ -95,7 +94,7 @@ def Panda_cmd(
                     pass
                 except ContinuePropagation:
                     raise ContinuePropagation
-                except BaseException as e:
+                except BaseException:
                     logging.error(
                         f"Exception - {func.__module__} - {func.__name__}"
                     )
@@ -133,7 +132,7 @@ def listen(filter_s):
                 pass
             except MessageEmpty:
                 pass
-            except BaseException as e:
+            except BaseException:
                 logging.error(f"Exception - {func.__module__} - {func.__name__}")
                 TZ = pytz.timezone(Config.TZ)
                 datetime_tz = datetime.now(TZ)
