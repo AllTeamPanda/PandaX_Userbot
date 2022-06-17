@@ -1,8 +1,8 @@
 
 from logging import getLogger
 
-from .client import bot, vcbot
-from .pyroclient import pyrobot, pyrobot2, pyrobot3, pyrobot4
+from .client import bot, vcbot, tgbot
+from .pyroclient import pyrobot, pyrobot2, pyrobot3, pyrobot4, pyrotgbot
 import sys
 LOGS = getLogger(__name__)
 
@@ -14,6 +14,16 @@ def TelethonPyro():
             bot.start()
             vcbot.start()
             bot.get_me()
+        except Exception as e:
+            LOGS.info(str(e), exc_info=True)
+            sys.exit(1)
+
+    if Database.BOT_TOKEN:
+        try:
+            tgbot.start()
+            pyrotgbot.start()
+            tgbot.get_me()
+            pyrotgbot.get_me()
         except Exception as e:
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
