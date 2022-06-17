@@ -20,8 +20,8 @@ def TelethonPyro():
 
     if pyrotgbot:
         try:
-            await pyrotgbot.start()
-            pyrotgbot.me = await pyrotgbot.get_me()
+            pyrotgbot.start()
+            pyrotgbot.me = pyrotgbot.get_me()
         except Exception as e:
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
