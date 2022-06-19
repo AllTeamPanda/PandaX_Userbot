@@ -1,6 +1,6 @@
 
 from logging import getLogger
-
+import pyrogram as pandapyro
 from .client import bot, vcbot
 from .pyroclient import pyrobot, pyrobot2, pyrobot3, pyrobot4
 import sys
@@ -26,6 +26,7 @@ def TelethonPyro():
         try:
             pyrobot.start()
             pyrobot.get_me()
+            pandapyro.idle()
         except Exception as e:
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
@@ -34,6 +35,7 @@ def TelethonPyro():
         try:
             pyrobot2.start()
             pyrobot2.get_me()
+            pandapyro.idle()
         except Exception as e:
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
@@ -42,6 +44,7 @@ def TelethonPyro():
         try:
             pyrobot3.start()
             pyrobot3.get_me()
+            pandapyro.idle()
         except Exception as e:
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
@@ -50,6 +53,7 @@ def TelethonPyro():
         try:
             pyrobot4.start()
             pyrobot4.get_me()
+            pandapyro.idle()
         except Exception as e:
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
