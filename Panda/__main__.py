@@ -6,9 +6,10 @@
 
 
 ##
-from . import TelethonPyro, bot
+from . import TelethonPyro, bot, LOGS
 from .database import join, loadbot, ongrup
 from pytgcalls import idle
+import sys
 ##
 
 """
@@ -26,9 +27,20 @@ def start():
     bot.loop.run_until_complete(join())
     bot.loop.run_until_complete(ongrup())
 
+
+
 if __name__ == "__main__":
     TelethonPyro()
     loadbot()
     start()
     idle()
-    
+
+if bot:
+    try:
+        if len(sys.argv) not in (1, 3, 4):
+            bot.disconnect()
+        else:
+            bot.run_until_disconnected()
+    except Exception as e:
+        LOGS.info(str(e), exc_info=True)
+        sys.exit(1)
