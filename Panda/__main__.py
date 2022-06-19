@@ -6,8 +6,7 @@
 
 
 ##
-import pyrogram as pandapyro
-from . import TelethonPyro, bot, LOGS, pyrotgbot
+from . import LOGS, TelethonPyro, bot
 from .database import join, loadbot, ongrup
 from pytgcalls import idle
 import sys
