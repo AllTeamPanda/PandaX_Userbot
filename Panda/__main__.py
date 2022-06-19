@@ -6,7 +6,8 @@
 
 
 ##
-from . import TelethonPyro, bot, LOGS
+import pyrogram as pandapyro
+from . import TelethonPyro, bot, LOGS, pyrotgbot
 from .database import join, loadbot, ongrup
 from pytgcalls import idle
 import sys
@@ -22,17 +23,27 @@ except Exception as e:
     sys.exit(1)
 """
 
-
+## Telethon
 def start():
-    bot.loop.run_until_complete(join())
-    bot.loop.run_until_complete(ongrup())
+    if bot:
+        bot.loop.run_until_complete(join())
+        bot.loop.run_until_complete(ongrup())
+##
 
+## Asisten Pyrogram
+
+def run_bot():
+    if pyrotgbot:
+        await pyrotgbot.start()
+        pyrotgbot.me = await pyrotgbot.get_me()
+    await pandapyro.idle()
 
 
 if __name__ == "__main__":
     TelethonPyro()
     loadbot()
     start()
+    run_bot()
     idle()
 
 if bot:
