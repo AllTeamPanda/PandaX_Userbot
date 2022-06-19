@@ -34,9 +34,9 @@ def start():
 
 def run_bot():
     if pyrotgbot:
-        await pyrotgbot.start()
-        pyrotgbot.me = await pyrotgbot.get_me()
-    await pandapyro.idle()
+        pyrotgbot.start()
+        pyrotgbot.me = pyrotgbot.get_me()
+    pandapyro.idle()
 
 
 if __name__ == "__main__":
