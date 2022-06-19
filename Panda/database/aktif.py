@@ -51,7 +51,7 @@ async def startbot():
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
-async def loadbot():
+def loadbot():
     try:
         for module_name in ALL_MODULES:
             import_module(f"Panda.modules.{module_name}")
