@@ -6,8 +6,7 @@
 
 
 ##
-import sys
-from . import LOGS, TelethonPyro, bot
+from . import TelethonPyro, bot
 from .database import join, loadbot, ongrup
 from pytgcalls import idle
 ##
