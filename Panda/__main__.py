@@ -23,12 +23,12 @@ except Exception as e:
 
 
 def start():
-    bot.loop.run_until_complete(loadbot())
     bot.loop.run_until_complete(join())
     bot.loop.run_until_complete(ongrup())
 
 if __name__ == "__main__":
     TelethonPyro()
+    loadbot()
     start()
     idle()
     
