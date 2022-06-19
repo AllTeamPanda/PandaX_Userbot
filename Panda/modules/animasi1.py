@@ -22,6 +22,19 @@ async def _(event):
     sleep(1)
     await xx.edit("__GELAYY__🤮")    
    
+@pandacute(pattern="mantan(?: |$)(.*)")
+async def _(event):
+    xx = await edit_or_reply(event, f"**Hai ,  Mantan anjeng🙃**")
+    sleep(1)
+    await xx.edit("Kau selingkuhin aku dari belakang bangsat🙄")
+    sleep(1)
+    await xx.edit("Udah diewe pulak sama dia huaa🤣")
+    sleep(1)
+    await xx.edit("gasukaa😫😭😭")
+    sleep(1)
+    await xx.edit("Cuihhhhhhhh najisss🤮")    
+    sleep(1)
+    await xx.edit("Fuck mantan anjeng")    
 
 @pandacute(pattern="kntl(?: |$)(.*)")
 async def _(event):
