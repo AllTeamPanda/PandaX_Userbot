@@ -149,7 +149,8 @@ def listen(filter_s):
                 except BaseException:
                     logging.error(text)
             message.continue_propagation()
-        pyrobot.add_handler(MessageHandler(wrapper, filters=filter_s), group=0)
+        if pyrobot:
+            pyrobot.add_handler(MessageHandler(wrapper, filters=filter_s), group=0)
         if pyrobot2:
             pyrobot2.add_handler(MessageHandler(wrapper, filters=filter_s), group=0)
         if pyrobot3:
