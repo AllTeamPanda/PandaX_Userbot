@@ -31,13 +31,13 @@ def start():
 ##
 
 ## Asisten Pyrogram
-
+"""
 def run_bot():
     if pyrotgbot:
         pyrotgbot.start()
         pyrotgbot.me = pyrotgbot.get_me()
     pandapyro.idle()
-
+"""
 
 if __name__ == "__main__":
     TelethonPyro()
