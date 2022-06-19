@@ -32,12 +32,4 @@ if __name__ == "__main__":
     TelethonPyro()
     start()
     idle()
-    try:
-        if len(sys.argv) not in (1, 3, 4):
-            bot.disconnect()
-        else:
-            bot.run_until_disconnected()
-    except Exception as e:
-        LOGS.error(f"{e}")
-        sys.exit()
     
