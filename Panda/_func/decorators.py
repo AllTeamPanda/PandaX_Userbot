@@ -201,7 +201,8 @@ def add_handler(filter_s, func_, cmd):
             d_c_l.extend(['eval', 'bash', 'install']) 
         if any(item in list(d_c_l) for item in list(cmd)): 
             filter_s = (filters.me & filters.command(cmd, Config.COMMAND_HANDLER) & ~filters.via_bot & ~filters.forwarded)
-    pyrobot.add_handler(MessageHandler(func_, filters=filter_s), group=0)
+    if pyrobot:
+        pyrobot.add_handler(MessageHandler(func_, filters=filter_s), group=0)
     if pyrobot2:
         pyrobot2.add_handler(MessageHandler(func_, filters=filter_s), group=0)
     if pyrobot3:
