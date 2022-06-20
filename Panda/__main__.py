@@ -49,4 +49,4 @@ if bot:
 
 if pyrobot:
     pyrobot.loop.run_until_complete(Pyrogram())
-    
+    LOGS.info("PandaUserbot Pyrogram Telah Aktif") )
