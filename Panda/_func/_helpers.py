@@ -24,7 +24,7 @@ from pyrogram.types import (
     Message,
 )
 
-from ..Session import pyrobot, pyrobot2, pyrobot3, pyrobot4
+from ..Session.pyroclient import pyrobot, pyrobot2, pyrobot3, pyrobot4
 from ..Osdb import Osdb as Config
 
 import mimetypes
