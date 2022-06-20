@@ -46,7 +46,7 @@ try:
     else:
          session_name = None
          pyrobot4 = session_name
-    if Database.BOT_TOKEN is not None:
+    if Database.BOT_TOKEN:
         pyrotgbot = Client(
            "SESSION",
            api_id=Database.APP_ID,
@@ -54,6 +54,8 @@ try:
            bot_token=Database.BOT_TOKEN,
            sleep_threshold=180,
             ) 
+    else:
+         pyrotgbot = None
 except Exception as e:
     print(f"PyroSESSION {str(e)}")
     sys.exit()
