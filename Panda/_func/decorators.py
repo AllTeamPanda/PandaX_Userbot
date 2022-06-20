@@ -14,9 +14,7 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 )
 from pyrogram.handlers import MessageHandler
 
-from .. import (
-    CMD_LIST,
-    XTRA_CMD_LIST,
+from ..Session.pyroclient import (
     pyrobot,
     pyrobot2,
     pyrobot3,
@@ -25,7 +23,8 @@ from .. import (
 from ..Osdb import Osdb as Config
 from ._helpers import is_admin_or_owner, edit_or_reply
 
-
+CMD_LIST = {}
+XTRA_CMD_LIST = {}
 
 def Panda_cmd(
     cmd: list,
