@@ -2,7 +2,7 @@ import logging
 from logging import getLogger
 import pyrogram as pandapyro
 from .client import bot, vcbot
-from .._func.startup import load_modulesPyro, plugin_collecter, update_it, run_cmd
+from .._func.startup import load_modulesPyro, plugin_collecter
 from .pyroclient import pyrobot, pyrobot2, pyrobot3, pyrobot4, pyrotgbot
 import sys
 LOGS = getLogger(__name__)
