@@ -29,19 +29,12 @@ def start():
         bot.loop.run_until_complete(ongrup())
 ##
 
-## Asisten Pyrogram
 
-def run_bot():
-    if pyrotgbot:
-        pyrotgbot.start()
-        pyrotgbot.me = pyrotgbot.get_me()
-  
 
 if __name__ == "__main__":
     TelethonPyro()
     loadbot()
     start()
-    run_bot()
     idle()
 
 if bot:
