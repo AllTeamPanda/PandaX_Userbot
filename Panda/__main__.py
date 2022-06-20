@@ -6,7 +6,7 @@
 
 
 ##
-from . import LOGS, Telethon, bot
+from . import LOGS, Telethon, bot, Pyrogram
 from .database import join, loadbot, ongrup
 from pytgcalls import idle
 import sys
@@ -46,3 +46,7 @@ if bot:
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
+
+if pyrobot:
+    pyrobot.loop.run_until_complete(Pyrogram())
+    
