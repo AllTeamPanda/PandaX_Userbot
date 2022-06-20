@@ -6,7 +6,7 @@
 
 
 ##
-from . import LOGS, TelethonPyro, bot
+from . import LOGS, Telethon, bot, Pyrogram
 from .database import join, loadbot, ongrup
 from pytgcalls import idle
 import sys
@@ -32,7 +32,7 @@ def start():
 
 
 if __name__ == "__main__":
-    TelethonPyro()
+    Telethon()
     loadbot()
     start()
     idle()
