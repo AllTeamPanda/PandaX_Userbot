@@ -6,7 +6,7 @@
 
 
 ##
-from . import LOGS, Telethon, bot, Pyrogram
+from . import LOGS, Telethon, bot
 from .database import join, loadbot, ongrup
 from pytgcalls import idle
 import sys
