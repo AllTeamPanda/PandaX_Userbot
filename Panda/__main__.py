@@ -27,6 +27,10 @@ def start():
     if bot:
         bot.loop.run_until_complete(join())
         bot.loop.run_until_complete(ongrup())
+    if pyrobot:
+        pyrobot.loop.run_until_complete(Pyrogram())
+        LOGS.info("PandaUserbot Pyrogram Telah Aktif")
+
 ##
 
 
@@ -47,6 +51,3 @@ if bot:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
-if pyrobot:
-    pyrobot.loop.run_until_complete(Pyrogram())
-    LOGS.info("PandaUserbot Pyrogram Telah Aktif")
