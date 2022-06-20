@@ -26,18 +26,18 @@ async def Pyrogram():
     if pyrobot:
         await pyrobot.start()
         pyrobot.me = await pyrobot.get_me()
-        pyrobot.has_a_bot = True if bot else False
+        pyrobot.has_a_bot = True if pyrotgbot else False
     if pyrobot2:
         await pyrobot2.start()
         pyrobot2.me = await pyrobot2.get_me()
-        pyrobot2.has_a_bot = True if bot else False
+        pyrobot2.has_a_bot = True if pyrotgbot else False
     if pyrobot3:
         await pyrobot3.start()
         pyrobot3.me = await pyrobot3.get_me()
-        pyrobot3.has_a_bot = True if bot else False
+        pyrobot3.has_a_bot = True if pyrotgbot else False
     if pyrobot4:
         await pyrobot4.start()
         pyrobot.me = await pyrobot4.get_me()
-        pyrobot4.has_a_bot = True if bot else False
+        pyrobot4.has_a_bot = True if pyrotgbot else False
     
     await pandapyro.idle()
