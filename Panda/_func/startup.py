@@ -18,7 +18,7 @@ BRANCH_ = "PandaUserbot"
 
 """
 def load_plugins(plugin_name):
-    """Load All Extra Petercord Userbot Using ImportLib"""
+  
     if plugin_name not in Config.XTRA_NO_LOAD:
         plugin_path = "Plugins." + plugin_name
         loader_type = "[USER][XTRA-PetercordUserbot]"
