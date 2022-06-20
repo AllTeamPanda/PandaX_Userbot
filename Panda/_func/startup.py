@@ -6,12 +6,8 @@ from ..Osdb import Osdb as Config
 import ntpath
 import shlex
 from typing import Tuple
-import sys
-from datetime import datetime
-from os import environ, execle, path, remove
-import heroku3
 from git import Repo
-from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
+from git.exc import GitCommandError, InvalidGitRepositoryError
 
 REPO_ = Config.UPSTREAM_REPO
 BRANCH_ = "PandaUserbot"
