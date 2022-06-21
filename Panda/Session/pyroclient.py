@@ -1,7 +1,6 @@
 from pyrogram import Client
 
 from ..file import Database
-import sys
 
 loop = None
 
