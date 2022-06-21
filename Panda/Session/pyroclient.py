@@ -1,6 +1,7 @@
 from pyrogram import Client
 
 from ..file import Database
+import sys
 
 loop = None
 
@@ -12,6 +13,8 @@ if Database.PyroSESSION:
         api_hash=Database.API_HASH,
         sleep_threshold=180,
     )
+else:
+    pyrobot = None
 if Database.PyroSESSION2:
     pyrobot2 = Client(
         Database.PyroSESSION2,
