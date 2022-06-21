@@ -5,11 +5,6 @@ import sys
 
 loop = None
 
-try:    
-
-
-
-
 
 if Database.PyroSESSION:
     pyrobot = Client(
