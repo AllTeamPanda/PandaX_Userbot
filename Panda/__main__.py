@@ -51,3 +51,14 @@ if bot:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
+if pyrobot:
+    try:
+        if len(sys.argv) not in (1, 3, 4):
+            pyrobot.disconnect()
+        else:
+            pyrobot.run_until_disconnected()
+    except Exception as e:
+        LOGS.info(str(e), exc_info=True)
+        sys.exit(1)
+
+
