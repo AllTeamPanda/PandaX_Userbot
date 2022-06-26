@@ -1,5 +1,6 @@
 from .client import (
     bot,
+    bot2,
     tgbot,
     vcbot,
 )
