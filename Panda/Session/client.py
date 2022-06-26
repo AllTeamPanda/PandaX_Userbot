@@ -33,6 +33,21 @@ try:
     else:
          session_name = "startup"
          bot = TelegramClient(session_name, Database.APP_ID, Database.API_HASH)
+    if Database.SESSION2:
+        session_name = str(Database.SESSION2)
+        bot2 = TelegramClient(
+           session=StringSession(str(session_name)),
+           api_id=Database.APP_ID,
+           api_hash=Database.API_HASH,
+           loop=loop,
+           app_version=__version__,
+           connection=ConnectionTcpAbridged,
+           auto_reconnect=True,
+           connection_retries=None,
+            )
+    else:
+         session_name = "startup"
+         bot2 = TelegramClient(session_name, Database.APP_ID, Database.API_HASH)
     if Database.BOT_TOKEN is not None:
         tgbot = TelegramClient(
            "SESSION",
