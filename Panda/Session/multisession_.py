@@ -1,7 +1,7 @@
 import logging
 from logging import getLogger
 import pyrogram as pandapyro
-from .client import bot, vcbot
+from .client import bot, vcbot, bot2
 from .._func.startup import load_modulesPyro, plugin_collecter
 from .pyroclient import pyrobot, pyrobot2, pyrobot3, pyrobot4, pyrotgbot
 import sys
@@ -15,6 +15,14 @@ def Telethon():
             bot.start()
             vcbot.start()
             bot.get_me()
+        except Exception as e:
+            LOGS.info(str(e), exc_info=True)
+            sys.exit(1)
+
+    if Database.SESSION2:
+        try:
+            bot2.start()
+            bot2.get_me()
         except Exception as e:
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
