@@ -66,7 +66,7 @@ except Exception as e:
 
 dualbotTelethon = [bot for bot in [bot, bot2] if bot]
 
-for bot in dualbotTelethon:
-    vcbot = PyTgCalls(bot)
+
+vcbot = PyTgCalls(bot)
 
 
