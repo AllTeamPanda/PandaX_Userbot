@@ -51,7 +51,7 @@ if __name__ == "__main__":
     start()
     idle()
 
-if bot:
+if bots:
     try:
         if len(sys.argv) not in (1, 3, 4):
             bots.disconnect()
