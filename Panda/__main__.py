@@ -6,7 +6,7 @@
 
 
 ##
-from . import LOGS, Pyrogram, bot, pyrobot, Telethon
+from . import LOGS, Pyrogram, bot, pyrobot, Telethon, bot2
 from .database import join, loadbot, ongrup
 from pytgcalls import idle
 import sys
@@ -49,6 +49,17 @@ if bot:
             bot.disconnect()
         else:
             bot.run_until_disconnected()
+    except Exception as e:
+        LOGS.info(str(e), exc_info=True)
+        sys.exit(1)
+
+
+if bot2:
+    try:
+        if len(sys.argv) not in (1, 3, 4):
+            bot2.disconnect()
+        else:
+            bot2.run_until_disconnected()
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
