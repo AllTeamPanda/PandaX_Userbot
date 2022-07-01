@@ -1,13 +1,10 @@
 from .client import (
-    bot1,
+    bot,
     bot2,
     tgbot,
     vcbot,
 )
 
-
-
-bot = [bot for bot in [bot1, bot2] if bot]
 
 
 from .Storage import *
