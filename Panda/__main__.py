@@ -27,8 +27,8 @@ except Exception as e:
 ## Telethon
 def start():
     if bot:
-        bots.loop.run_until_complete(join())
-        bots.loop.run_until_complete(ongrup())
+        bot.loop.run_until_complete(join())
+        bot.loop.run_until_complete(ongrup())
     if pyrobot:
         pyrobot.loop.run_until_complete(Pyrogram())
         LOGS.info("PandaUserbot Pyrogram Telah Aktif")
