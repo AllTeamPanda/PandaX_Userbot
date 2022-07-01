@@ -6,7 +6,7 @@
 
 
 ##
-from . import LOGS, Telethon, bot, Pyrogram, pyrobot
+from . import LOGS, Pyrogram, bot, pyrobot
 from .database import join, loadbot, ongrup
 from pytgcalls import idle
 import sys
@@ -28,7 +28,7 @@ async def main():
         try:
             await bots.start()
             bots.me = await bots.get_me()
-        except Exception as a:
+        except Exception:
             LOGS.info(str(e), exc_info=True)
             sys.exit(1)
 
