@@ -10,7 +10,6 @@ LOGS = getLogger(__name__)
 
 
 def Telethon():
-    
     if Database.SESSION:
         try:
             bot.start()
