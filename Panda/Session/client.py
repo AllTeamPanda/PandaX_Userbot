@@ -20,7 +20,7 @@ loop = None
 try:    
     if Database.SESSION:
         session_name = str(Database.SESSION)
-        bot = TelegramClient(
+        bot1 = TelegramClient(
            session=StringSession(str(session_name)),
            api_id=Database.APP_ID,
            api_hash=Database.API_HASH,
@@ -32,7 +32,7 @@ try:
             )
     else:
          session_name = "startup"
-         bot = TelegramClient(session_name, Database.APP_ID, Database.API_HASH)
+         bot1 = TelegramClient(session_name, Database.APP_ID, Database.API_HASH)
     if Database.SESSION2:
         session_name = str(Database.SESSION2)
         bot2 = TelegramClient(
@@ -64,9 +64,8 @@ except Exception as e:
     sys.exit()
 
 
-dualbotTelethon = [bot for bot in [bot, bot2] if bot]
 
 
-vcbot = PyTgCalls(bot)
+vcbot = PyTgCalls(bot1)
 
 
