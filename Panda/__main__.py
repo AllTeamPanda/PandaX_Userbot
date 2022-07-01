@@ -22,11 +22,22 @@ except Exception as e:
     sys.exit(1)
 """
 
+
+async def main():
+    for bots in bot:
+        try:
+            await bots.start()
+            bots.me = await bots.get_me()
+        except Exception as a:
+            LOGS.info(str(e), exc_info=True)
+            sys.exit(1)
+
 ## Telethon
 def start():
-    if bot:
-        bot.loop.run_until_complete(join())
-        bot.loop.run_until_complete(ongrup())
+    if bots:
+        bots.loop.run_until_complete(main())
+        bots.loop.run_until_complete(join())
+        bots.loop.run_until_complete(ongrup())
     if pyrobot:
         pyrobot.loop.run_until_complete(Pyrogram())
         LOGS.info("PandaUserbot Pyrogram Telah Aktif")
@@ -36,7 +47,6 @@ def start():
 
 
 if __name__ == "__main__":
-    Telethon()
     loadbot()
     start()
     idle()
@@ -44,9 +54,9 @@ if __name__ == "__main__":
 if bot:
     try:
         if len(sys.argv) not in (1, 3, 4):
-            bot.disconnect()
+            bots.disconnect()
         else:
-            bot.run_until_disconnected()
+            bots.run_until_disconnected()
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
