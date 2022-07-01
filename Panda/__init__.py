@@ -13,8 +13,6 @@ import os
 from .Session import *
 from .Version import __version__
 
-bot == bot2
-
 import logging
 import os
 import re
