@@ -6,7 +6,7 @@
 
 
 ##
-from . import LOGS, Pyrogram, bot, pyrobot
+from . import LOGS, Pyrogram, bot, pyrobot, Telethon
 from .database import join, loadbot, ongrup
 from pytgcalls import idle
 import sys
@@ -23,19 +23,10 @@ except Exception as e:
 """
 
 
-async def main():
-    for bots in bot:
-        try:
-            await bots.start()
-            bots.me = await bots.get_me()
-        except Exception:
-            LOGS.info(str(e), exc_info=True)
-            sys.exit(1)
 
 ## Telethon
 def start():
-    if bots:
-        bots.loop.run_until_complete(main())
+    if bot:
         bots.loop.run_until_complete(join())
         bots.loop.run_until_complete(ongrup())
     if pyrobot:
@@ -47,16 +38,17 @@ def start():
 
 
 if __name__ == "__main__":
+    Telethon((
     loadbot()
     start()
     idle()
 
-if bots:
+if bot:
     try:
         if len(sys.argv) not in (1, 3, 4):
-            bots.disconnect()
+            bot.disconnect()
         else:
-            bots.run_until_disconnected()
+            bot.run_until_disconnected()
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
