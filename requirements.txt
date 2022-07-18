@@ -86,4 +86,4 @@ youtube-dl
 youtube-search
 youtube-search-python==1.4.9
 zipfile38
-pyrogram
+pyrogram==1.4.16
