@@ -2,7 +2,7 @@
 
 FROM pandauserbotfile/pandauserbot:python202
 
-RUN git clone -b PandaUserbot https://github.com/ilhammansiz/PandaX_Userbot /home/pandauserbot/ \
+RUN git clone -b main https://github.com/ilhammansiz/PandaX_Userbot /home/pandauserbot/ \
     && chmod 777 /home/pandauserbot \
     && mkdir /home/pandauserbot/bin/
 
