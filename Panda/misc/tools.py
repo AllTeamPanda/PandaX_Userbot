@@ -27,9 +27,8 @@ import shlex
 import time
 from os.path import basename
 from typing import Optional, Union
-"""
 from emoji import get_emoji_regexp
-"""
+
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from html_telegraph_poster import TelegraphPoster
@@ -47,10 +46,10 @@ from .format import md_to_text, paste_message
 from ..Osdb import Osdb
 SUDO_USERS = Osdb.SUDO_USERS
 
-"""
+
 def deEmojify(inputString):
     return get_emoji_regexp().sub("", inputString)
-"""
+
 
 async def md5(fname: str) -> str:
     hash_md5 = hashlib.md5()
