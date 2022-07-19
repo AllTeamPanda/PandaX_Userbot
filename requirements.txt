@@ -11,7 +11,7 @@ covid
 cowpy
 deezloader
 dnspython
-emoji
+emoji==2.0.0
 faker
 ffmpeg-python
 fontTools
