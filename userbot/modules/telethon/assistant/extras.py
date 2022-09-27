@@ -1,6 +1,6 @@
 
 from telethon import events
-from .... import PandaBot, tgbot
+from .... import tgbot
 from ....resources import is_admin
 from datetime import timedelta
 Stark = tgbot
