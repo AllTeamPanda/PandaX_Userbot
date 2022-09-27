@@ -1,9 +1,7 @@
 
-from pyrogram import filters
-from userbot import CMD_HELP, pyrobot as app
 import base64
 from userbot._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from userbot._func._helpers import edit_or_reply, get_arg
+from userbot._func._helpers import get_arg
 
 from . import HELP
 
@@ -20,7 +18,7 @@ HELP(
                 'example': '{ch}en Mengkodekan textbase64'})
 async def encode(client, message):
     ppk = get_arg(message)
-    chat = message.chat.id
+    message.chat.id
     if not ppk:
         return await message.edit_text("`Give me Something to Encode..`")
     byt = ppk.encode("ascii")
@@ -36,7 +34,7 @@ async def encode(client, message):
                 'example': '{ch}de Membuka textbase64'})
 async def decode(client, message):
     ppk = get_arg(message)
-    chat = message.chat.id
+    message.chat.id
     if not ppk:
         return await message.edit_text("`Give me Something to Decode..`")
     byt = ppk.encode("ascii")

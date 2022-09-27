@@ -1,11 +1,8 @@
-import os
 
-from pyrogram import filters
 from pyrogram.errors import RPCError
-from pyrogram.types import Message, User
+from pyrogram.types import User
 
 from userbot._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from userbot._func._helpers import edit_or_reply
 from userbot import pyrobot as app
 from . import HELP
 

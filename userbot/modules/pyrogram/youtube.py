@@ -8,15 +8,12 @@
 import asyncio
 import os
 import time
-import requests
 import wget
 from yt_dlp import YoutubeDL
 from youtubesearchpython import SearchVideos
-from pyrogram import filters
 
-from userbot import CMD_HELP, pyrobot as app
+from userbot import pyrobot as app
 from userbot._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from userbot._func._helpers import edit_or_reply
 from . import HELP
 
 HELP(
@@ -33,7 +30,7 @@ HELP(
 async def yt_vid(client, message):
     input_st = message.text
     input_str= input_st.split(" ", 1)[1]
-    pablo = await message.edit_text("`Processing...`")
+    await message.edit_text("`Processing...`")
     if not input_str:
         await message.edit_text(
             "Tolong berikan input yang valid"
@@ -68,7 +65,7 @@ async def yt_vid(client, message):
     except Exception as e:
         await message.edit_text(f"**Failed To Download** \n**Error :** `{str(e)}`")
         return
-    c_time = time.time()
+    time.time()
     file_path= f"{ytdl_data['id']}.mp4"
     capy = f"**Video Name ➠** `{vid_title}` \n**Requested For ➠** `{input_str}` \n**Channel ➠** `{uploade_r}` \n**Link ➠** `{url}`"
     await app.send_video(

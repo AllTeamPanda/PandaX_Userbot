@@ -13,10 +13,8 @@ from io import BytesIO
 
 from googletrans import Translator
 from gtts import gTTS
-from pyrogram import filters
 from pyrogram.types import Message
 from userbot._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from userbot._func._helpers import edit_or_reply
 
 from . import HELP
 
@@ -25,7 +23,6 @@ HELP(
     "translate",
 )
 
-from ... import CMD_HELP, pyrobot as app
 
 
 
@@ -46,7 +43,6 @@ def convert(text):
 
 
 from ..._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from ..._func._helpers import edit_or_reply
 
 from . import HELP
 

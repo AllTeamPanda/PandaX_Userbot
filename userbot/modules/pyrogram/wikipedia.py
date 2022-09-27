@@ -7,10 +7,8 @@
 
 import wikipedia
 
-from pyrogram import filters
 from userbot._func.decorators import Panda_cmd as ilhammansiz_on_cmd
 from userbot._func._helpers import edit_or_reply
-from userbot import pyrobot as app
 from . import HELP
 
 
