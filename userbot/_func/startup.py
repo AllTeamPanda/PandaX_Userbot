@@ -7,7 +7,6 @@ import ntpath
 import shlex
 from typing import Tuple
 import importlib
-import sys
 from pathlib import Path
 import os
 
@@ -35,16 +34,16 @@ def load_module(shortname, plugin_path=None):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        path = Path(f"userbot/modules/pyrogram/{shortname}.py")
-        name = "userbot.modules.pyrogram.{}".format(shortname)
+        Path(f"userbot/modules/pyrogram/{shortname}.py")
+        "userbot.modules.pyrogram.{}".format(shortname)
         logging.info("Successfully imported " + shortname)
     else:
         if plugin_path is None:
-            path = Path(f"userbot/modules/pyrogram/{shortname}.py")
-            name = f"userbot.modules.pyrogram.{shortname}"
+            Path(f"userbot/modules/pyrogram/{shortname}.py")
+            f"userbot.modules.pyrogram.{shortname}"
         else:
-            path = Path((f"{plugin_path}/{shortname}.py"))
-            name = f"{plugin_path}/{shortname}".replace("/", ".")
+            Path((f"{plugin_path}/{shortname}.py"))
+            f"{plugin_path}/{shortname}".replace("/", ".")
         logging.info("Successfully imported " + shortname)
 
 
