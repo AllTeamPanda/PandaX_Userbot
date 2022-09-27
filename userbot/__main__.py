@@ -4,11 +4,10 @@
 # t.me/PandaUserbot
 # ••••••••••••••••••••••√•••••••••••••√√√••••••••
 
-import contextlib
 import sys
 
 import userbot
-from userbot import BOTLOG_CHATID, PM_LOGGER_GROUP_ID, LOGS
+from userbot import LOGS
 
 from .Var import Database
 from .Session.multisession_ import Pyrogram, Telethon
