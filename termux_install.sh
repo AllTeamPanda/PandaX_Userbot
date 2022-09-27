@@ -13,7 +13,7 @@ Powered By @diemmmmmmmmmm with Telegram
 
 _start_all () {
     terakhir
-    python3 -m Panda
+    python3 -m userbot
 }
 
 _start_all
