@@ -1,53 +1,55 @@
 {
-  "name": "Pandauserbot",
-  "description": "A simple Telegram userbot based on Telethon . Maintained by IlhamMansiez ",
+  "name": "⋆ PandaUserbot ⋆",
+  "description": "[PandaUserbot] Userbot Hanya Untuk Bersenang - Senang",
   "logo": "https://telegra.ph/file/3cfda2e8353bb1569cc79.jpg",
-    "keywords": [
-    "telegram"
-  ],
+  "keywords": ["telegram", "userbot", "PandaUserbot", "modular", "python"],
   "repository": "https://github.com/ilhammansiz/PandaX_Userbot",
   "stack": "container",
   "env": {
     "ALIVE_NAME": {
-      "description": "Alive Name",
-      "value": "",
-      "required": false
+      "description": "give your name",
+      "value": ""
     },
     "API_ID": {
-      "description": "Dapatkan API KEY di web my.telegram.org Masukan yg APP ID Telegram",
-      "required": true
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
     },
     "API_HASH": {
-      "description": "Dapatkan API Hash di web my.telegram.org",
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    },
+    "SESSION": {
+      "description": "Ambil string session TELETHON KETIKA MENGAMBIL KETIK T",
+      "value": "",
       "required": true
     },
     "BOT_TOKEN": {
-      "description": "Buat Bot di t.me/botfather Masukan BOT tokennya disini",
-      "required": false
-    },
-    "BOT_USERNAME": {
-      "description": "Buat Bot di t.me/botfather Masukan BOT Usernamenya pake @",
-      "required": false
-    },
-     "SESSION": {
-      "description": "Dapatkan String Session di Grup » https://t.me/TeamSquadUserbotSupport » Lalu ketik #string",
+      "description": "Token bot ambil di @Botfather",
+      "value": "",
       "required": true
     },
-    "HEROKU_APP_NAME": {
-      "description": "Nama App heroku, Nama App yang paling pertama di isi (liat paling atas)",
+    "BOT_USERNAME": {
+      "description": "Username bot di @Botfather",
+      "value": "",
+      "required": true
+    },
+    "PRIVATE_GROUP_BOT_API_ID": {
+      "description": "Buatlah grup telegram publik lalu masukan @MissRose_bot ketik /id, masukan id grup nya disini. contoh: -1001473548xxx",
+      "value": "Isi id grup",
       "required": true
     },
     "HEROKU_API": {
-      "description": "Ambil Heroku API KEY mu disini » https://dashboard.heroku.com/account",
+      "description": "Required for updating the bot and other stuff get it from https://dashboard.heroku.com/account",
+      "value": "",
       "required": true
     },
-    "PM_AUTO_BAN": {
-      "description": "PM Auto-Ban adalah module untuk bot welcome otomatis ketika ada orang ngePC kamu, jika Mau di matikan ubah ke False",
-      "value": "False",
-      "required": false
+    "HEROKU_APP_NAME": {
+      "description": "YOUR app name ",
+      "value": "",
+      "required": true
     }
   },
-  "addons": [
+    "addons": [
     {
     "plan": "heroku-postgresql",
       "options": {
