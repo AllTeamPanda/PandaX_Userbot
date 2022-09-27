@@ -1,3 +1,9 @@
+pymongo[srv]
+wand
+telethon
+pyrogram==1.4.16
+emoji==1.7.0
+psycopg2-binary
 aiofiles
 redis>=3.3.10
 python-decouple==3.3
@@ -66,19 +72,15 @@ pendulum
 twitter_scraper
 opencv-python
 vcsi
-wand
 wget
 wikipedia
-telethon
 telethon-session-sqlalchemy
 lyrics_extractor
 youtube-search-python==1.4.7
 youtube_dl==2021.6.6
-psycopg2-binary
 pyyaml==5.4.1
 countryinfo
 emoji-country-flag
-pyrogram==1.4.16
 tinydb>=4.4.0
 NoteShrinker>=0.2.0
 img2pdf>=0.4.0
@@ -91,6 +93,5 @@ faker>=6.6.2
 gpytranslate==1.4.0
 git+https://github.com/1danish-00/carbon-now-sh-api-wrapper.git
 pybase64
-pymongo[srv]
 pytgcalls==3.0.0.dev21
-emoji==1.7.0
+
