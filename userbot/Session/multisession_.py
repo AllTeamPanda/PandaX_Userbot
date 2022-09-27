@@ -8,7 +8,7 @@ from .._database._var import Var
 from logging import getLogger
 import pyrogram as pandapyro
 from .client import *
-from .._func.startup import load_modulesPyro, plugin_collecter, buka
+from .._func.startup import load_modulesPyro, plugin_collecter
 from .pyroclient import *
 import sys
 LOGS = getLogger(__name__)

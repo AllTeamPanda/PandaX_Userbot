@@ -8,7 +8,6 @@ from telethon.sessions import StringSession
 from .._database._var import Var, Database
 from telethon import TelegramClient
 import os
-from ..versions import __version__
 
 
 from .._database import DatabaseCute
