@@ -4,7 +4,7 @@ from userbot import Config, SqL
 from userbot._func.decorators import Panda_cmd as ilhammansiz_on_cmd, listen
 from userbot._func._helpers import edit_or_reply
 from . import HELP
-from .database.welcomedb import add_welcome, del_welcome, welcome_info
+from userbot.modules.pyrogram.database.welcomedb import add_welcome, del_welcome, welcome_info
 
 HELP(
     "welcomes",
