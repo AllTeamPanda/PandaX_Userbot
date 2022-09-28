@@ -1,10 +1,8 @@
-import asyncio
 from datetime import datetime
 
 from pyrogram import filters
 
 from userbot.modules.pyrogram.database.afk import check_afk, go_afk, no_afk
-from ... import Config
 from ..._func.decorators import ilhammansiz_on_cmd, listen
 from ..._func._helpers import edit_or_reply, get_text
 from ..._func.logger_s import LogIt
@@ -97,13 +95,12 @@ async def afk_er(client, message):
     afk_start = lol["time"]
     afk_end = back_alivee.replace(microsecond=0)
     total_afk_time = str((afk_end - afk_start))
-    afk_since = "**a while ago**"
     message_to_reply = (
         f"I Am **[AFK]** Right Now. \n**Last Seen :** `{total_afk_time}`\n**Reason** : `{reason}`"
         if reason
         else f"I Am **[AFK]** Right Now. \n**Last Seen :** `{total_afk_time}`"
     )
-    LL = await message.reply(message_to_reply)
+    await message.reply(message_to_reply)
 
 
 @listen(filters.outgoing & filters.me & is_afk)
