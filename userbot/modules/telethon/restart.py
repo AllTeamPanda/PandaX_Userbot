@@ -1,17 +1,14 @@
-import os
 from asyncio.exceptions import CancelledError
-from time import sleep
 
 from ... import PandaBot
 
 import logging
-from . import edit_delete, edit_or_reply
+from . import edit_or_reply
 from ...sql_helper.global_collection import (
     add_to_collectionlist,
     del_keyword_collectionlist,
     get_collectionlist_items,
 )
-from ...sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
 
 LOGS = logging.getLogger(__name__)
