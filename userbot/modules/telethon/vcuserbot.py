@@ -4,12 +4,9 @@
 
 # Version sql
 #Panda Userbot
-# Yang Ngapus anak anjeng capek lah aku port nya :(
 
 
-
-
-from . import *
+from .vcclient import *
 from pytgcalls.exceptions import NotConnectedError
 from requests.exceptions import MissingSchema
 from telethon import events
