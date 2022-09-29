@@ -9,16 +9,14 @@
 import asyncio
 import os
 import re
-import traceback
 from time import time
 from traceback import format_exc
 
-import cv2
 from pytgcalls import GroupCallFactory
 from pytgcalls.exceptions import GroupCallNotFoundError
 from telethon.errors.rpcerrorlist import ParticipantJoinMissingError
 from telethon import events
-from telethon.tl import functions, types
+from telethon.tl import functions
 from telethon.utils import get_display_name
 
 
@@ -29,24 +27,19 @@ except ImportError:
     LOGS.info("'YoutubeDL' not found!")
 
 
-from youtubesearchpython import Playlist, ResultMode, Video, VideosSearch
+from youtubesearchpython import VideosSearch
 from ... import LOGS, PandaBot, tgbot
 from ...resources.tools import (
     bash,
     downloader,
-    get_user_id,
     get_videos_link,
-    inline_mention,
-    mediainfo,
     time_formatter,
 )
 
-from ...resources.owner import admin_check, in_pattern
+from ...resources.owner import admin_check
 
 from ...sql_helper.globals import check_vcauth, gvarstatus
 from ...sql_helper.globals import get_chats as get_vc
-from ...resources.vceor import eor, eod
-from ...helpers.PandaXBahasa import get_string
 from ... import Config
 from ..._misc.data import _sudousers_list
 
