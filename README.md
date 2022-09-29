@@ -42,6 +42,8 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
     <summary> <b>🔗 Deploy Termux Panda Userbot</b></summary><br/>
 
 ### Tutorial Deploy di Termux
+-  `pkg install`
+-  `pkg update && upgrade -y`
 -  `pkg install git`
 -  `git clone https://github.com/ilhammansiz/PandaX_Userbot`
 -  `cd PandaX_Userbot`
@@ -55,6 +57,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
     <summary> <b>🔗 Deploy Vps Panda Userbot</b></summary><br/>
 
 ### Tutorial Deploy di Vps
+- `sudo apt update && upgrade -y`
 -  `sudo apt install git`
 -  `git clone https://github.com/ilhammansiz/PandaX_Userbot`
 -  `cd PandaX_Userbot`
