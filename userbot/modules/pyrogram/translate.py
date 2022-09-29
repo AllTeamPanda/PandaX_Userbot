@@ -10,7 +10,7 @@ import traceback
 from asyncio import get_running_loop
 from inspect import getfullargspec
 from io import BytesIO
-
+from ... import Config
 from googletrans import Translator
 from gtts import gTTS
 from pyrogram.types import Message
@@ -23,7 +23,7 @@ HELP(
     "translate",
 )
 
-
+PREFIX = Config.COMMAND_HAND_LER
 
 
 async def edrep(msg: Message, **kwargs):
