@@ -40,6 +40,7 @@ sudo apt install liblapack-dev
 sudo apt install aria2
 sudo apt install zip
 sudo apt install sudo
+sudo apt install python3-wand
 sudo apt install postgresql-client
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 cle
