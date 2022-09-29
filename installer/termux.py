@@ -8,9 +8,8 @@
 # Recode Panda Userbot
 
 
-from os import system, path
+from os import path
 from time import sleep
-from datetime import datetime
 
 
 PANDA = "Panda Userbot"
