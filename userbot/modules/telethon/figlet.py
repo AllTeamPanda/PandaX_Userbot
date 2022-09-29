@@ -1,6 +1,6 @@
 import pyfiglet
 
-from ..helpers.utils import _format
+from ...helpers.utils import _format
 from . import _format, deEmojify, edit_delete, edit_or_reply, pandaub
 
 plugin_category = "plugins"
