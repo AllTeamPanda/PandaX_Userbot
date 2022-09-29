@@ -60,6 +60,7 @@ echo -e $LUQ
 echo "Menginstall Pakages"
 echo -e $LUQ
 cd PandaX_Userbot
+pip3 install av -q --no-binary av
 pip3 install -U -r requirements.txt
 python3 installer/termux.py
 screen -S PandaX_Userbot
