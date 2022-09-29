@@ -1,4 +1,4 @@
-59 sloc)  1.4 KB
+
 ## Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
 # Import Panda Userbot
 # Recode by Ilham Mansiz
