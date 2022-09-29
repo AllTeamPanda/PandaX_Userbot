@@ -6,13 +6,17 @@
 # Please read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 # Recode Panda Userbot
-
+## Thanks full Ultroid For installer termux env
 
 from os import path
 from time import sleep
 
 
-PANDA = "Panda Userbot"
+PANDA = "★ PANDA USERBOT DEPLOY★"
+
+
+
+
 
 def with_header(text):
     return PANDA + "\n\n" + text
@@ -49,7 +53,7 @@ def ask_process_info_text():
 def envtelethon():
     start = input("").strip().lower()
     if start in ["telethon", "t"]:
-        print(f"Ketik y untuk Creating .env file..")
+        print(f"Ketik t untuk Creating .env file.. Telethon")
         with open(".env", "a") as file:
             for var in ["API_ID", "API_HASH", "SESSION", "DATABASE_URL", "PRIVATE_GROUP_BOT_API_ID", "BOT_TOKEN", "BOT_USERNAME"]:
                 inp = input(f"Enter {var}\n- ")
@@ -62,7 +66,7 @@ def envtelethon():
 def envpyrogram():
     start = input("").strip().lower()
     if start in ["pyrogram", "p"]:
-        print(f"Ketik y untuk Creating .env file..")
+        print(f"Ketik p untuk Creating .env file.. Pyrogram")
         with open(".env", "a") as file:
             for var in ["API_ID", "API_HASH", "PyroSESSION", "DATABASE_URL", "PRIVATE_GROUP_BOT_API_ID", "BOT_TOKEN", "BOT_USERNAME"]:
                 inp = input(f"Enter {var}\n- ")
