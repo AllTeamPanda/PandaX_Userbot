@@ -75,7 +75,7 @@ def envpyrogram():
 
 
 if not path.exists(".env"):
-    print(with_header("# Do you want to move toward creating .env file ? [y/N] "))
+    print(with_header("# Do you want to move toward creating .env file ? [t/p] t untuk telethon p untuk pyrogram "))
     envtelethon()
     envpyrogram()
     
