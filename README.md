@@ -69,7 +69,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 -  `pkg install git`
 -  `git clone https://github.com/ilhammansiz/PandaX_Userbot`
 -  `cd PandaX_Userbot`
--  `Bash termux.sh`
+-  `bash termux.sh`
 
 </details>
 
