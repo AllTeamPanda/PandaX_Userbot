@@ -5,15 +5,23 @@
 # Version sql
 #Panda Userbot
 
-
+from ... import LOGS, PandaBot, tgbot
 import asyncio
 import os
 import re
 from time import time
 from traceback import format_exc
 
-from pytgcalls import GroupCallFactory
-from pytgcalls.exceptions import GroupCallNotFoundError
+try:
+    from pytgcalls import GroupCallFactory
+    from pytgcalls.exceptions import GroupCallNotFoundError
+except ImportError:
+    LOGS.info("Installing 'pytgcalls' for music.")
+    os.system("pip3 install -q pytgcalls==3.0.0.dev21")
+    from pytgcalls import GroupCallFactory
+    from pytgcalls.exceptions import GroupCallNotFoundError
+
+
 from telethon.errors.rpcerrorlist import ParticipantJoinMissingError
 from telethon import events
 from telethon.tl import functions
@@ -28,7 +36,6 @@ except ImportError:
 
 
 from youtubesearchpython import VideosSearch
-from ... import LOGS, PandaBot, tgbot
 from ...resources.tools import (
     bash,
     downloader,
