@@ -1,12 +1,21 @@
-pymongo[srv]
-wand
+# Important Requirements Telethon & Pyrogram
 telethon
 pyrogram==1.4.16
-emoji==1.7.0
+# end
+
+#Database 
+pymongo[srv]
 psycopg2-binary
-aiofiles
 redis>=3.3.10
+telethon-session-sqlalchemy
+sqlalchemy-json
+sqlalchemy==1.3.23
+# end
+
 python-decouple==3.3
+wand
+emoji==1.7.0
+aiofiles
 aiohttp
 cloudscraper
 colour
@@ -58,8 +67,6 @@ setuptools
 ShazamAPI
 spamwatch
 speedtest-cli
-sqlalchemy-json
-sqlalchemy==1.3.23
 telegraph
 ffmpeg-python
 wheel
@@ -67,14 +74,9 @@ TgCrypto
 tswift
 ujson
 urlextract
-validators
-pendulum
-twitter_scraper
-opencv-python
 vcsi
 wget
 wikipedia
-telethon-session-sqlalchemy
 lyrics_extractor
 youtube-search-python==1.4.7
 youtube_dl==2021.6.6
@@ -94,4 +96,7 @@ gpytranslate==1.4.0
 git+https://github.com/1danish-00/carbon-now-sh-api-wrapper.git
 pybase64
 pytgcalls==3.0.0.dev21
+validators
+pendulum
+twitter_scraper
 
