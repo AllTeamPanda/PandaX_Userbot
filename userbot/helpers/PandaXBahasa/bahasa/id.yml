@@ -1,0 +1,203 @@
+name: Indonesia
+natively: Indonesia
+
+authors:
+  - itsmenandos
+
+# commons
+com_1: "`memproses...`"
+com_2: "`sedang mencari...`"
+vcbot_20: "`Downloading and converting...`"
+# help
+help_1: "`{}` bukan plugin yang valid!"
+help_2: "bot tidak menanggapi inline kueri.\nlebih baik untuk menggunakan `{}restart`"
+help_3: "`aktifkan terlebih dahulu inline mode bot anda dari` @Botfather."
+help_4: "🙋 hai kamu, \nkamu sedang mengaktifkan mode bot. \npengguna mode bot tidak dapat mendapatkan bantuan secara langsung... \nlebih baik copy dan paste yang berikut di obrolan dan klik pop up \n\n `@{} PandaX_Userbot`"
+
+# autopic
+autopic_1: "hei, berikan aku satu kata..."
+autopic_2: "tidak ada hasil yang ditemukan untuk `{}`"
+autopic_3: "mendapatkan koleksi `{}` yang terkait dengan penelusuran anda !\nmemulai autopic !!"
+
+# inline
+inline_1: "[⫷ Support Grup ⫸](https://t.me/TEAMSquadUserbotSupport)\n\n
+**ᴍᴇɴᴜ ʜᴇʟᴘ ᴜɴᴛᴜᴋ {}.\n\n
+ᴛᴏᴛᴀʟ ᴘʟᴜɢɪɴs ~ {}**"
+inline_ilham: "[⫷ Support Grup ⫸](https://t.me/TEAMSquadUserbotSupport)\n\n
+**Hᴇʟᴘ Mᴇɴᴜ Oғ {}.\n\n
+Exra Panda ~ {}**"
+inline_2: "[⫷ Support Grup ⫸](https://t.me/TEAMSquadUserbotSupport)\n\n
+**ᴍᴇɴᴜ ʜᴇʟᴘ ᴜɴᴛᴜᴋ {}.\n\n
+𝙼𝚘𝚍𝚞𝚕𝚎𝚜 ~ {}**"
+inline_3: "[⫷ Support Grup ⫸](https://t.me/TEAMSquadUserbotSupport)\n\n
+**ᴍᴇɴᴜ ʜᴇʟᴘ ᴜɴᴛᴜᴋ {}.\n\n
+MODULES ~ {}\n\n
+ᴘᴇʀɢɪ ᴅᴀɴ ᴛᴀᴍʙᴀʜᴋᴀɴ ᴠᴀʀ `MODULES` ᴅᴇɴɢᴀɴ ᴠᴀʟᴜᴇ ᴛʀᴜᴇ**"
+inline_4: "**★★★𝐏𝐞𝐧𝐠𝐠𝐮𝐧𝐚 𝐏𝐚𝐧𝐝𝐚★★★\n\n ║{}║\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n\n📗 ᴘʟᴜɢɪɴs 📗 ~ {}\n📙 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 📙 ~ {}\n\n║Exra Command║\n\n😜 PandaToxic 😜 ~ {}\n🎧 VC-MUSIC 🎧 ~  {}\n\n☑ ᴛᴏᴛᴀʟ ᴄᴏᴍᴍᴀɴᴅs ~ {}**\n\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰"
+inline_5: "**🚫 Menu closed 🚫**"
+inline_6: "**☠ Terhapus Semua ☠**"
+inline_7: "**☠ Terhapus Semua ☠**"
+inline_mansiz: " ☬ Pengguna 𝐏𝐚𝐧𝐝𝐚𝐗_𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ☬**\n\n➣ NAMA: `{}`\n➣ ID PENGGUNA** - `{}`\n\n__PandaX_Userbot Adalah Userbot Khusus Yang Digunakan Untuk Bersenang-Senang Di Telegram Versi Bot Yang Digunakan PandaX_Userbot__"
+inline_dino: "➣ ☬ Pengguna 𝐏𝐚𝐧𝐝𝐚𝐗_𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ☬\n{}\n➣ ☬ Plugins - {}\n➣ ☬ Modules - {}\n➣ ☬ Exra Panda - {}\n➣ ☬ VC-MUSIC - {}\n➣ ☬ Jumlah Perintah - {}"
+#ilham
+tagnot_1: "{} menandai anda dalam {}\n\n```{}```\n\n[📨MESSAGE📨]({})"
+tagnot_2: "{} menandai anda dalam {}\n\n [📨MESSAGE📨]({})"
+
+# whisper
+wspr_1: "@{} pesan rahasia buatmu.\nhapus pesanmu setelah membaca.\natau pesan selanjutnya tidak bisa diterima."
+wspr_2: "pesan dihapus!"
+
+# afk
+afk_1: "`✅ sudah tidak afk ✅\n\n
+karena ~ {}`"
+afk_2: "#AFK\n
+𝙢𝙤𝙙𝙚 𝙖𝙛𝙠 𝙣𝙤𝙣-𝙖𝙠𝙩𝙞𝙛.\n
+AFK untuk {}`"
+afk_3: "✅ 𝐒𝐄𝐃𝐀𝐍𝐆 𝐀𝐅𝐊 ✅.\n
+`terakhir dilihat {} yang lalu.`\n\n
+karena: `{}`"
+afk_4: "`✅ 𝐒𝐄𝐃𝐀𝐍𝐆 𝐀𝐅𝐊 ✅.\n\n
+terakhir dilihat {} yang lalu.`"
+afk_5: "`✅ 𝐒𝐄𝐃𝐀𝐍𝐆 𝐀𝐅𝐊 ✅.`\n\n
+**karena:** `{}`"
+afk_6: "𝒎𝒂𝒖 𝒂𝒇𝒌 𝒅𝒖𝒍𝒖 𝒚𝒂𝒉."
+afk_7: "𝒂𝒌𝒖 𝒍𝒂𝒈𝒊 𝒂𝒇𝒌 𝒏𝒊𝒉, 𝒌𝒂𝒓𝒆𝒏𝒂 {}"
+afk_8: "𝒔𝒆𝒅𝒂𝒏𝒈 𝒂𝒇𝒌 𝒚𝒂 𝒔𝒂𝒚𝒂𝒏𝒈."
+
+# bot
+alive_1: "**♻ 𝐏𝐚𝐧𝐝𝐚𝐗_𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ♻**\n\n**{}**\n\n╭═──────╼═⌘═╾──────═\n▸ **🤖 𝙥𝙚𝙢𝙞𝙡𝙞𝙠** - `{}`\n▸ **✅ 𝙫𝙚𝙧𝙨𝙞𝙤𝙣** - `{}`\n▸ **🐍 𝙥𝙮𝙩𝙝𝙤𝙣** - `v.21`\n▸ **🕔 𝙪𝙥𝙩𝙞𝙢𝙚** - `{}`\n▸ **👾 𝙩𝙚𝙡𝙚𝙩𝙝𝙤𝙣** - `44.7T`\n▸ **⚡ 𝙗𝙧𝙖𝙣𝙘𝙝** - `{}`\n▸ **🛰 CPU: {}%\n▸ **📼 RAM: {}%\n▸ **🎞 DISK: {}%**\n╰═──────╼═⌘═╾──────═"
+alive_2: "**♻ 𝐏𝐚𝐧𝐝𝐚𝐗_𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ♻**\n\n╭═──────╼═⌘═╾──────═\n▸ **🤖 𝙥𝙚𝙢𝙞𝙡𝙞𝙠** - `{}`\n▸ **✅ 𝙫𝙚𝙧𝙨𝙞𝙤𝙣** - `{}`\n▸ **🕔 𝙪𝙥𝙩𝙞𝙢𝙚** - `{}`\n▸ **⚡ 𝙗𝙧𝙖𝙣𝙘𝙝** - `{}`\n▸ **🛰 CPU: {}%\n▸ **📼 RAM: {}%\n▸ **🎞 DISK: {}%**\n╰═──────╼═⌘═╾──────═"
+log: "**heroku** 𝐏𝐚𝐧𝐝𝐚𝐗_𝐔𝐬𝐞𝐫𝐛𝐨𝐭 logs.\npasted [here]({}) too!"
+ping: "┏━《 ** 𝗣 𝗔 𝗡 𝗗 𝗔 ** 》\n┣➠ __𖣘𖣘 𝐏𝐢𝐧𝐠 𖣘𖣘__:  `{}ms`\n┣➠ **__𖣘𖣘𖣘 𝐔𝐩𝐭𝐢𝐦𝐞 𖣘𖣘𖣘__** - `{}`\n┗➠ ** 𝐏𝐚𝐧𝐝𝐚𝐗_𝐔𝐬𝐞𝐫𝐛𝐨𝐭 **"
+usage: "**💰 penggunaan harta 💰**:\n\n
+ 🏧 `pemakaian dollar Untuk`  **{}**:\n
+     💵  `{}`**$**  `{}`**m**
+**|**  [`{}`**%**]\n\n
+ 🏧 `sisa dollar bulan ini`:\n
+     💵  `{}`**$**  `{}`**m**
+**|**  [`{}`**%**]\n\n
+**penyimpanan brankas: {}\n\n**
+**terpakai: {}  kosong: {}\n\n**
+**📊 penggunaan saham 📊\n\n🏦 high: {}\n🏦 down: {}\n\n**
+**CPU: {}%\nRAM: {}%\nDISK: {}%**"
+shutdown: "♻ 𝐏𝐚𝐧𝐝𝐚𝐗_𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ♻ {}.\n`sedang mematikan bot...`"
+
+# broadcast
+bd_1: "`menambahkan ke database...`"
+bd_2: "`mencoba menambahkan semua channel admin ke database...`"
+bd_3: "**Berhasil.**\nChats sudah ada dalam Database: {}\nBaru ditambahkan: {}"
+bd_4: "Channels ditambahkan!"
+bd_5: "`Menambahkan ke database!`"
+bd_6: "`Channel sudah ada dalam database!`"
+
+# carbon
+carbon_1: "memproses..."
+carbon_2: "carbon oleh [{}](tg://user?id={})"
+
+# chats
+chats_1: "`memproses...`"
+chats_2: "`tidak bisa menghapus chat ini.`"
+chats_3: "`aku bukan admin.`"
+chats_4: "#Terhapus\nTerhapus {}"
+chats_5: "Anda [{}]({}) Grup telah dibuat oleh boss!"
+chats_6: "Join @TEAMSquadUserbotSupport"
+
+# converter
+cvt_1: "Balas ke media/Dokumen apapun."
+cvt_2: "Beri Nama dan ekstensi file"
+cvt_3: "`memproses...`"
+cvt_4: "balas ke media."
+
+# core
+core_1: "`Modul ditemukan`"
+core_2: "{}.py gunakan .paste untuk menempel di neko dan raw.."
+core_3: "`Cari lagi..?`"
+core_4: "Modul {} ditemukan"
+core_5: "{}.py gunakan .paste untuk menempel di neko dan raw.."
+core_6: "Modul {}.py tidak ada"
+core_7: "Tidak Ada Modul Seperti Itu"
+core_8: "Ga ada modul yang namanya {}.py"
+core_9: "`Beri tau nama plugin yang ingin Anda unload`"
+core_10: "**Uɴʟᴏᴀᴅᴇᴅ** `{}` **Bᴇʀʜᴀsɪʟ.**"
+core_11: "**Aɴᴅᴀ Tɪᴅᴀᴋ Bɪsᴀ Uɴʟᴏᴀᴅ Oғғɪᴄɪᴀʟ Pʟᴜɢɪɴs**"
+core_12: "**Tɪᴅᴀᴋ Aᴅᴀ Pʟᴜɢɪɴ Yᴀɴɢ Bᴇʀɴᴀᴍᴀ** `{}`"
+core_13: "`Beri tau nama plugin yang ingin Anda uninstall`"
+core_14: "**Uɴɪɴsᴛᴀʟʟᴇᴅ** `{}` **Bᴇʀʜᴀsɪʟ.**"
+core_15: "**Aɴᴅᴀ Tɪᴅᴀᴋ Bɪsᴀ Uɴɪɴsᴛᴀʟʟ Oғғɪᴄɪᴀʟ Pʟᴜɢɪɴs**"
+core_16: "`Beri tau nama plugin yang ingin Anda load`"
+core_17: "**Bᴇʀʜᴀsɪʟ Dɪ Lᴏᴀᴅ** `{}`"
+core_18: "**Tidak dapat diload** `{}` **karena kesalahan berikut.**\n`{}`"
+
+# fedutils
+sf_1: "Memulai Mass-FedBan..."
+sf_2: "`Tidak ada pengguna yang dipilih!`"
+sf_3: "Lu gabisa banned Developer gua!! dasar Noob"
+sf_4: "`Sepertinya Rose tidak merespons atau plugin bermasalah`"
+sf_5: "Anda hanya dapat menggunakan perintah fed satu kali setiap 5 menit"
+sf_6: "Coba lagi dalam 5 menit."
+sf_7: "Tidak dapat mengumpulkan FedAdminList. Sedang Mencoba lagi ({}/3)..."
+sf_8: "Kesalahan"
+sf_9: "Tidak dapat mengumpulkan FedAdminList."
+sf_10: "FBaning dalam {} feds."
+sf_11: "ID Grup FBan yang ditentukan salah."
+sf_12: "{} Pengecualian."
+sf_13: "Kesalahan dalam menghapus file FedAdmin.\n{}"
+sf_14: "SuperFBan Selesai.\nTotal Feds - {}.\nPengecualian - {}.\n Pengaruh {} feds.\n#TB"
+sf_15: "Memulai Mass-UnFedBan..."
+sf_16: "SuperUnFBan Selesai.\nTotal Feds - {}.\nPengecualian - {}.\n Pengaruh {} feds.\n#TB"
+sf_17: "`Beri saya id seseorang, atau balas pesan seseorang untuk memeriksa fedstatnya.`"
+sf_18: "Daftar feds {} telah dibanned.\n\nDikumpulkan menggunakan Sakura Ubot."
+sf_19: "**Kesalahan**\n `Unblock` @MissRose_Bot `dan coba lagi!"
+sf_20: "`mengekstrak informasi...`"
+sf_21: "\n\nFedInfo diekstrak oleh Sakura"
+
+# gdrive
+gdrive_1: "`Anda telah memberi otorisasi dengan Google Drive`"
+gdrive_2: "Pergi [kesini](https://console.developers.google.com/flows/enableapi?apiid=drive) dan dapatkan `GDRIVE_CLIENT_ID` dan `GDRIVE_CLIENT_SECRET` kamu\n\n
+Kirim GDRIVE_CLIENT_ID dan GDRIVE_CLIENT_SECRET kamu seperti ini.\n`GDRIVE_CLIENT_ID GDRIVE_CLIENT_SECRET` dipisahkan dengan spasi."
+gdrive_3: "`Client Id salah anjim`"
+gdrive_4: "`Terjadi kesalahan! Kirim `/auth` lagi.\nJika masih sama, harap hubungi `@levinachannel"
+gdrive_5: "`Berhasil!\nAnda siap untuk menggunakan Google Drive dengan Sakura Userbot.`"
+gdrive_6: "`Pergi ke `{}` dan kirim ``/auth.`"
+gdrive_7: "**File Berhasil Diupload kedalam G-Drive :**\n\n[{}]({})"
+
+# pmpermit
+pmperm_1: "Harap tunggu saya merespons atau Anda akan diblokir dan dilaporkan sebagai spam!!"
+pmperm_2: "Anda telah melakukan spamming pada pesan Boss saya."
+pmperm_3: "Balas pesan seseorang atau coba perintah ini secara pribadi."
+
+# updater
+upd_1: "`memeriksa pembaruan, harap tunggu....`"
+upd_2: "`oops.. updater tidak dapat melanjutkan karena beberapa masalah.`\n\n**LOGTRACE:**\n"
+upd_3: "**UPDATE baru tersedia untuk [[{}]]({}/tree/{}):\n\nPERUBAHAN:**\n\n{}"
+upd_4: "`log perubahan terlalu besar, lihat file untuk melihatnya.`"
+upd_5: "ketik `{}update now` untuk memperbarui userbot."
+upd_6: "{}\n\nketik `{}update now` untuk update bot."
+upd_7: "\n`𝐏𝐚𝐧𝐝𝐚𝐗_𝐔𝐬𝐞𝐫𝐛𝐨𝐭  sudah versi`  **paling terbaru**  `dengan`  **[[{}]]({}/tree/{})**\n"
+
+# upload download
+udl_1: "`Balas ke file/media yang ingin anda download...`"
+udl_2: "Download Berhasil..\nTo\n`{}`\nin `{}`"
+udl_3: "`Berikan tempat penyimpanan khusus ke file`"
+
+# words
+wrd_1: "**Kata** - `{}`\n\n**Arti** - \n"
+wrd_2: "**Kata** - `{}`\n\n**Sinonim** - \n"
+wrd_3: "**Kata** - `{}`\n\n**Antonim** - \n"
+
+# ---------------------------------------------------#
+
+# assisant
+ast_1: "pilih api key yang ingin anda setel."
+ast_2: "**remove.bg API**\nMasukkan API key Anda dari remove.bg.\n\nGunakan /cancel untuk membatalkan."
+ast_3: "Assalamualaikum, {} silahkan telusuri opsi berikut:"
+
+
+# filter
+flr_1: "`Masukan keyword perintah ini untuk ditetapkan sebagai filter dan balas...`"
+flr_2: "Daftar Filter Yang Aktif Disini adalah\n\n"
+flr_3: "`Berikan filter untuk dihapus..`"
+flr_4: "**Berhasil Menyimpan Filter** `{}`"
+flr_5: "**Berhasil Menghapus Filter** `{}`"
+flr_6: "Tidak Ada Filter Apapun Disini"
+
