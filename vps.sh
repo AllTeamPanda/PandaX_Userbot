@@ -60,4 +60,4 @@ echo "Menginstall Pakages"
 echo -e $LUQ
 cd PandaX_Userbot
 pip3 install -U -r requirements.txt
-python installer/termux.py
+python3 installer/termux.py
