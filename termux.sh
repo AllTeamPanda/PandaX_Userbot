@@ -26,6 +26,7 @@ echo -e $LUQ
 echo "Menginstal python3"
 echo -e $LUQ
 pkg install python3
+pkg install screen
 pip3 install --upgrade pip
 apt install postgresql
 apt install neofetch
@@ -61,3 +62,5 @@ echo -e $LUQ
 cd PandaX_Userbot
 pip3 install -U -r requirements.txt
 python3 installer/termux.py
+screen -S PandaX_Userbot
+bash start.sh
