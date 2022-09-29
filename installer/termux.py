@@ -84,6 +84,6 @@ if not path.exists(".env"):
     envpyrogram()
     
 
-print(f"Ketik 'bash start.sh' to try running Panda Userbot")
+print(f"Terima Kasih sudah menggunakan Panda Userbot")
 sleep(0.5)
 print("\nMade with 🐼 by @PandaUserbot...")
