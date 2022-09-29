@@ -38,6 +38,7 @@ apt install liblapack-dev
 apt install aria2
 apt install zip
 apt install sudo
+apt install python3-wand
 apt install postgresql-client
 cle
 echo -e $PANDA
