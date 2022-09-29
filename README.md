@@ -38,8 +38,6 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 
 </details>
 
-
-
 <details>
     <summary> <b>🔗 Deploy VPS Panda Userbot</b></summary><br/>
 
@@ -60,6 +58,18 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 -  Buka SCRREN di VPS Anda `screen -S PandaX_Userbot`
 -  Kemudian gunakan perintah ini untuk menyebarkan PandaX_Userbot `python3 -m userbot`
 
+
+</details>
+
+
+<details>
+    <summary> <b>🔗 Deploy Termux Panda Userbot</b></summary><br/>
+
+### Tutorial Deploy di Termux
+-  `pkg install git
+-  `git clone https://github.com/ilhammansiz/PandaX_Userbot`
+-  `cd PandaX_Userbot`
+-  `Bash termux.sh`
 
 </details>
 
