@@ -33,7 +33,7 @@ def pyrogram():
     elif yes_no in ["nopyrogram", "nop"]:
         return False
     print("Invalid Input\nRe-Enter: ")
-    return pyrogram
+    return pyrogram()
 
 def ask_process_info_text():
     strm = input("").lower().strip()
