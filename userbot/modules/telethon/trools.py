@@ -5,10 +5,10 @@ import os
 
 from telegraph import exceptions, upload_file
 
-from Panda import PandaBot
+from ... import PandaBot
 
-from ..core.managers import edit_or_reply
-from ..helpers.utils import _pandatools, reply_id
+from ..._misc.managers import edit_or_reply
+from ...helpers.utils import _pandatools, reply_id
 from . import convert_toimage, deEmojify, phcomment, threats, trap, trash
 _cattools = _pandatools
 
