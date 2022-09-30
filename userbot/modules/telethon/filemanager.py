@@ -5,11 +5,11 @@ import shutil
 import time
 from pathlib import Path
 
-from .. import PandaBot
+from ... import PandaBot
 
-from ..Config import Config
-from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.utils import _format, _pandautils as _catutils
+from ...Var import Config
+from . import edit_delete, edit_or_reply
+from ...helpers.utils import _format, _pandautils as _catutils
 from . import humanbytes
 
 plugin_category = "modules"
