@@ -1,14 +1,14 @@
 import asyncio
 
-from Panda import pandaub
-from Panda.core.logger import logging
+from ... import pandaub
+import logging
 
-from ..Config import Config
-from ..core.managers import edit_delete
-from ..helpers.tools import media_type
-from ..helpers.utils import _format
-from ..sql_helper import no_log_pms_sql
-from ..sql_helper.globals import addgvar, gvarstatus
+from ...Var import Config
+from . import edit_delete
+from ...helpers.tools import media_type
+from ...helpers.utils import _format
+from ...sql_helper import no_log_pms_sql
+from ...sql_helper.globals import addgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
 
 LOGS = logging.getLogger(__name__)
