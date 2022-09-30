@@ -3,8 +3,8 @@ import asyncio
 from pyrogram import *
 from pyrogram.errors import RPCError
 from pyrogram.types import *
-from Panda._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from Panda._func._helpers import edit_or_reply
+from ..._func.decorators import Panda_cmd as ilhammansiz_on_cmd
+from ..._func._helpers import edit_or_reply
 
 
 from . import *
