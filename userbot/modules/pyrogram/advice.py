@@ -1,5 +1,5 @@
 from ..._func.decorators import Panda_cmd
-from ..._func._helpers import edit_or_reply, get_text
+from ..._func._helpers import edit_or_reply
 import requests
 from . import HELP
 
