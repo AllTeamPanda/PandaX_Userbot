@@ -1,9 +1,9 @@
 import html
 
-from Panda import PandaBot
+from ... import PandaBot
 
-from ..core.managers import edit_or_reply
-from ..sql_helper import warns_sql as sql
+from ..._misc.managers import edit_or_reply
+from ...sql_helper import warns_sql as sql
 
 plugin_category = "modules"
 
