@@ -3,11 +3,11 @@ import time
 
 from prettytable import PrettyTable
 
-from .. import PandaBot
+from ... import PandaBot
 
-from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.tools import media_type
-from ..helpers.utils import _format
+from . import edit_delete, edit_or_reply
+from ...helpers.tools import media_type
+from ...helpers.utils import _format
 from . import humanbytes
 
 plugin_category = "modules"
