@@ -6,11 +6,11 @@
 import os
 from time import sleep
 
-from Panda import PandaBot
+from ... import PandaBot
 
-from ..core.logger import logging
-from ..core.managers import edit_or_reply
-from ..sql_helper.globals import addgvar, delgvar, gvarstatus
+from ..._misc.logger import logging
+from ..._misc.managers import edit_or_reply
+from ...sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID, HEROKU_APP_NAME
 
 LOGS = logging.getLogger(__name__)
