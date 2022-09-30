@@ -2,8 +2,8 @@ import random
 
 import requests
 
-from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.utils import _pandautils, reply_id
+from . import edit_delete, edit_or_reply
+from ...helpers.utils import _pandautils, reply_id
 from . import PandaBot 
 pandaub = PandaBot
 
