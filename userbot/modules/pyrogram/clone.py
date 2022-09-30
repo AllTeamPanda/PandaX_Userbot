@@ -12,7 +12,8 @@ from ..._func._helpers import edit_or_reply, get_text, get_user
 OWNER = SqL.getdb("OWNERS") or ""
 BIO = SqL.getdb("BIO") or ""
 from . import HELP
-HELP("clone")
+HELP("clone",
+)
 
 
 
