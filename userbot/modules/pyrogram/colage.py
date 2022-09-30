@@ -6,16 +6,12 @@
 #
 # All rights reserved.
 
-import glob
 import os
-import random
 import shutil
 from PIL import Image
 import logging
 import pathlib
-from ...Var import Config
 from ..._func.decorators import Panda_cmd
-from ..._func.startup import run_cmd
 from ..._func._helpers import edit_or_reply, get_text
 from . import HELP
 HELP("colage",)
