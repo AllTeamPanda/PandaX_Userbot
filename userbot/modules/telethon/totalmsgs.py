@@ -1,4 +1,4 @@
-from Panda import bot, pandaub
+from ... import bot, pandaub
 
 plugin_category = "plugins"
 
