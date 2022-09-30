@@ -5,10 +5,10 @@ from telethon.errors import BadRequestError
 from telethon.tl.functions.channels import EditAdminRequest
 from telethon.tl.types import ChatAdminRights
 
-from Panda import PandaBot
+from ... import PandaBot
 
-from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.utils import get_user_from_event
+from . import edit_delete, edit_or_reply
+from ...helpers.utils import get_user_from_event
 from . import ALIVE_NAME
 
 plugin_category = "modules"
