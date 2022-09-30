@@ -2,14 +2,14 @@ import logging
 
 from pyrogram import filters
 
-from Panda.sql_helper.autopost_sql import (
+from ...sql_helper.autopost_sql import (
     add_new_autopost,
     check_if_autopost_in_db,
     del_autopost,
     get_autopost,
 )
-from Panda._func.decorators import Panda_cmd as ilhammansiz_on_cmd, listen
-from Panda._func._helpers import edit_or_reply, get_text
+from ..._func.decorators import Panda_cmd as ilhammansiz_on_cmd, listen
+from ..._func._helpers import edit_or_reply, get_text
 from . import HELP
 
 
