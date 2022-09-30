@@ -1,6 +1,6 @@
 # 
-from Panda._func.decorators import Config, listen
-from Panda import pyrotgbot as bot
+from ..._func.decorators import Config, listen
+from ... import pyrotgbot as bot
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from datetime import datetime
 import pytz
