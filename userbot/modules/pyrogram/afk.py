@@ -3,7 +3,7 @@ from datetime import datetime
 from pyrogram import filters
 
 from userbot.modules.pyrogram.database.afk import check_afk, go_afk, no_afk
-from ..._func.decorators import ilhammansiz_on_cmd, listen
+from ..._func.decorators import Panda_cmd as ilhammansiz_on_cmd, listen
 from ..._func._helpers import edit_or_reply, get_text
 from ..._func.logger_s import LogIt
 
