@@ -83,7 +83,8 @@ if not path.exists(".env"):
     envtelethon()
     envpyrogram()
     
-
-print(f"Terima Kasih sudah menggunakan Panda Userbot")
+print(f"Silakan Ketik screen -S PandaX_Userbot")
+sleep(0.2)
+print(f"Use 'bash start.sh' Untuk memulai Panda Userbot")
 sleep(0.5)
 print("\nMade with 🐼 by @PandaUserbot...")
