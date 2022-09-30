@@ -3,7 +3,7 @@ import random
 import re
 
 
-from .. import PandaBot
+from ... import PandaBot
 
 usernexp = re.compile(r"@(\w{3,32})\[(.+?)\]")
 nameexp = re.compile(r"\[([\w\S]+)\]\(tg://user\?id=(\d+)\)\[(.+?)\]")
