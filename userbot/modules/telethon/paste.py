@@ -190,7 +190,7 @@ async def _(event):
     # just to show in help menu as seperate
 
 
-@catub.cat_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern="g(et)?paste(?:\s|$)([\s\S]*)",
     command=("getpaste", plugin_category),
     info={
