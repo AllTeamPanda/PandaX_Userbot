@@ -4,10 +4,10 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from PIL import Image
 
-from Panda import pandaub
+from ... import pandaub
 
-from ..Config import Config
-from ..core.managers import edit_or_reply
+from ...Var import Config
+from ..._misc.managers import edit_or_reply
 from . import CMD_HELP
 
 plugin_category = "plugins"
