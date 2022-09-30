@@ -11,7 +11,8 @@ import os
 import re
 from time import time
 from traceback import format_exc
-
+os.system("pip3 install -q pytgcalls==3.0.0.dev21")
+  
 try:
     from pytgcalls import GroupCallFactory
     from pytgcalls.exceptions import GroupCallNotFoundError
