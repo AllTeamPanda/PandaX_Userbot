@@ -10,9 +10,9 @@ from pyrogram.raw.functions.phone import CreateGroupCall, DiscardGroupCall
 from pyrogram.raw.types import InputGroupCall, InputPeerChannel, InputPeerChat
 
 
-from Panda import DEVLIST as DEVS, pyrobot
-from Panda._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from Panda._func._helpers import (
+from ... import DEVLIST as DEVS, pyrobot
+from ..._func.decorators import Panda_cmd as ilhammansiz_on_cmd
+from ..._func._helpers import (
     edit_or_reply,
 )
 
