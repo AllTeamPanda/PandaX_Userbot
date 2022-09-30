@@ -133,7 +133,7 @@ async def give_sysinfo(client, message):
 )
 async def wow_restart(client, message):
     await edit_or_reply(message, "`Restarting...`")
-    args = [sys.executable, "-m", "Panda"]
+    args = [sys.executable, "-m", "userbot"]
     execle(sys.executable, *args, environ)
     exit()
     return
