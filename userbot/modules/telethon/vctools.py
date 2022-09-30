@@ -12,9 +12,10 @@ from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
+plugin_category = "music"
 
-
-from Panda.events import register
+from ... import PandaBot
+from . import edit_or_reply, edit_delete
 
 async def get_call(event):
     mm = await event.client(getchat(event.chat_id))
@@ -27,7 +28,16 @@ def user_list(l, n):
         yield l[i : i + n]
 
 
-@register(outgoing=True, pattern=r"^\.startvc$", groups_only=True)
+@PandaBot.ilhammansiz_cmd(
+    pattern="startvc$",
+    command=("startvc", plugin_category),
+    info={
+        "header": "Vctools.",
+        "description": "Menghidupkan Voice Chat grup",
+        "usage": "{tr}startvc",
+    },
+    groups_only=True,
+)
 async def start_voice(c):
     me = await c.client.get_me()
     chat = await c.get_chat()
@@ -44,7 +54,16 @@ async def start_voice(c):
         await edit_delete(c, f"**ERROR:** `{ex}`")
 
 
-@register(outgoing=True, pattern=r"^\.stopvc$", groups_only=True)
+@PandaBot.ilhammansiz_cmd(
+    pattern="stopvc$",
+    command=("stopvc", plugin_category),
+    info={
+        "header": "Vctools.",
+        "description": "Menghentikan Voice Chat grup",
+        "usage": "{tr}stopvc",
+    },
+    groups_only=True,
+)
 async def stop_voice(c):
     me = await c.client.get_me()
     chat = await c.get_chat()
@@ -61,7 +80,17 @@ async def stop_voice(c):
         await edit_delete(c, f"**ERROR:** `{ex}`")
 
 
-@register(outgoing=True, pattern=r"^\.vcinvite$", groups_only=True)
+
+@PandaBot.ilhammansiz_cmd(
+    pattern="vcinvite$",
+    command=("vcinvite", plugin_category),
+    info={
+        "header": "Vctools.",
+        "description": "invite user to Voice Chat grup",
+        "usage": "{tr}vcinvite",
+    },
+    groups_only=True,
+)
 async def _(c):
     xxnx = await edit_or_reply(c, "`Inviting Members to Voice Chat...`")
     users = []
