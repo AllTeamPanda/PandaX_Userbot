@@ -5,16 +5,16 @@ from asyncio import sleep
 
 from pyrogram.types import ChatPermissions
 import pyrogram
-from Panda._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from Panda._func._helpers import (
+from ..._func.decorators import Panda_cmd as ilhammansiz_on_cmd
+from ..._func._helpers import (
     edit_or_reply,
     edit_or_send_as_file,
     get_text,
     get_user,
     is_admin_or_owner,
 )
-from Panda._func.logger_s import LogIt
-from Panda._func.plugin_helpers import (
+from ..._func.logger_s import LogIt
+from ..._func.plugin_helpers import (
     convert_to_image,
 )
 from . import HELP
@@ -325,7 +325,7 @@ async def ujwal_mote(client, message):
         return
     userz = user.id
     if not Res:
-        Res = "Admeme"
+        Res = "Admin"
     if userz == me_m.id:
         await pablo.edit("`🙄 Nice Idea, Lets Self Promote!`")
         return
