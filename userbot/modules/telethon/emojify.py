@@ -4,10 +4,10 @@ modified by  @mrconfused
 Userbot plugin for CatUserbot
 """
 
-from .. import PandaBot
+from ... import PandaBot
 
-from ..core.managers import edit_or_reply
-from ..helpers import fonts as emojify
+from . import edit_or_reply
+from ...helpers import fonts as emojify
 
 plugin_category = "modules"
 
