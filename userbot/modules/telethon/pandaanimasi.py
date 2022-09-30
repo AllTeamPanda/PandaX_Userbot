@@ -3,7 +3,7 @@ from time import sleep
 
 from telethon import events
 
-from Panda import PandaBot
+from ... import PandaBot
 
 plugin_category = "modules"
 
