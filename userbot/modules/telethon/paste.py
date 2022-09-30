@@ -9,14 +9,14 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.utils import get_extension
 from urlextract import URLExtract
 
-from Panda import PandaBot
+from ... import PandaBot
 
-from ..Config import Config
-from ..core.events import MessageEdited
-from ..core.logger import logging
-from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.tools import media_type
-from ..helpers.utils import pastetext, reply_id
+from ... import Config
+from ..._misc.events import MessageEdited
+import logging
+from ..._misc.managers import edit_delete, edit_or_reply
+from ...helpers.tools import media_type
+from ...helpers.utils import pastetext, reply_id
 
 plugin_category = "modules"
 
