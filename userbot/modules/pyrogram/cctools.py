@@ -7,29 +7,22 @@
 # All rights reserved.
 
 import aiohttp
-import asyncio
 import re
 import random
 from ...Var import Config
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 
-from ..._func.decorators import Panda_cmd, listen
+from ..._func.decorators import Panda_cmd
 from ..._func._helpers import (
     edit_or_reply,
-    edit_or_send_as_file,
     get_text,
-    get_user,
-    iter_chats,
     run_in_exc
 )
-from ..._func.logger_s import LogIt
-from . import devs_id, HELP
+from . import HELP
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 
 GOOGLE_CHROME_BIN = Config.CHROME_BIN_PATH
