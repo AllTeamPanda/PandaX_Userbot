@@ -10,7 +10,7 @@ from PIL import Image
 from search_engine_parser import BingSearch, GoogleSearch, YahooSearch
 from search_engine_parser.core.exceptions import NoResultsOrTrafficError
 
-from Panda import PandaBot
+from ... import PandaBot
 pandaub = PandaBot
 
 from ...Var import Config
