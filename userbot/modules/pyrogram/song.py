@@ -7,8 +7,8 @@ import requests
 import wget
 from youtube_dl import YoutubeDL
 from youtubesearchpython import SearchVideos
-from Panda._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from Panda._func._helpers import edit_or_reply, get_text, progress, humanbytes
+from ..._func.decorators import Panda_cmd as ilhammansiz_on_cmd
+from ..._func._helpers import edit_or_reply, get_text, progress, humanbytes
 
 from . import HELP
 
