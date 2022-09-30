@@ -3,18 +3,16 @@ from pyrogram.raw.functions.photos import DeletePhotos, UploadProfilePhoto
 DeletePhotosRequest = DeletePhotos
 UploadProfilePhotoRequest = UploadProfilePhoto
 
-from Panda import STORAGE, SqL
-from Panda._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from Panda._func._helpers import edit_or_reply, get_text, get_user
-
-if not hasattr(STORAGE, "userObj"):
-    STORAGE.userObj = False
+from ... import SqL
+from ..._func.decorators import Panda_cmd as ilhammansiz_on_cmd
+from ..._func._helpers import edit_or_reply, get_text, get_user
 
 
 
 OWNER = SqL.getdb("OWNERS") or ""
 BIO = SqL.getdb("BIO") or ""
-
+from . import HELP
+HELP("clone")
 
 
 
