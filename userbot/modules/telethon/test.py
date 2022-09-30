@@ -1,4 +1,4 @@
-from .. import pyrotgbot
+from ... import pyrotgbot
 from pyrogram import filters
 
 
