@@ -14,7 +14,6 @@ from .... import PandaBot
 
 from .... import Config
 from ...._misc.logger import logging
-from ...._misc.client import bot_cmd
 from ...._misc.managers import edit_delete, edit_or_reply
 from ....helpers import reply_id, time_formatter
 from ....helpers.utils import _format
@@ -39,7 +38,7 @@ cmhd = Config.COMMAND_HAND_LER
 
 
 
-@bot_cmd(
+@PandaBot.bot_cmd(
     pattern=f"^/broadcast$",
     from_users=Config.OWNER_ID,
 )
@@ -117,7 +116,7 @@ async def ban_starters(event):
     await edit_or_reply(event, msg)
 
 
-@bot_cmd(
+@PandaBot.bot_cmd(
     pattern=f"^/ban\s+(.*)",
     from_users=Config.OWNER_ID,
 )
@@ -152,7 +151,7 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@bot_cmd(
+@PandaBot.bot_cmd(
     pattern=f"^/unban(?: |$)(.*)",
     from_users=Config.OWNER_ID,
 )
