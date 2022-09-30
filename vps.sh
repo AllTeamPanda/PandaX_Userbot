@@ -42,6 +42,7 @@ sudo apt install zip
 sudo apt install sudo
 sudo apt install python3-wand
 sudo apt install postgresql-client
+pip3 install av -q --no-binary av
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 cle
 echo -e $PANDA
@@ -60,7 +61,6 @@ echo -e $LUQ
 echo "Menginstall Pakages"
 echo -e $LUQ
 cd PandaX_Userbot
-pip3 install av -q --no-binary av
 pip3 install -U -r requirements.txt
 python3 installer/termux.py
 screen -S PandaX_Userbot
