@@ -1,6 +1,6 @@
-from Panda import pandaub
+from ... import pandaub
 
-from ..core.managers import edit_delete, edit_or_reply
+from . import edit_delete, edit_or_reply
 
 plugin_category = "plugins"
 
