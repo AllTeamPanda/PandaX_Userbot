@@ -8,11 +8,11 @@ from telethon.tl import functions
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
 
-from ..core.managers import edit_delete, edit_or_reply
+from . import edit_delete, edit_or_reply
 
 plugin_category = "modules"
 
-from Panda import pandaub
+from ... import pandaub
 
 async def get_chatinfo(event):
     chat = event.pattern_match.group(1)
