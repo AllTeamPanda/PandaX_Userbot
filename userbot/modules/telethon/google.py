@@ -13,10 +13,10 @@ from search_engine_parser.core.exceptions import NoResultsOrTrafficError
 from Panda import PandaBot
 pandaub = PandaBot
 
-from ..Config import Config
-from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.functions import deEmojify
-from ..helpers.utils import reply_id
+from ...Var import Config
+from . import edit_delete, edit_or_reply
+from ...helpers.functions import deEmojify
+from ...helpers.utils import reply_id
 from . import BOTLOG, BOTLOG_CHATID
 
 opener = urllib.request.build_opener()
