@@ -6,10 +6,10 @@ from time import time
 
 import speedtest
 
-from Panda import PandaBot
+from ... import PandaBot
 
-from ..core.managers import edit_or_reply
-from ..helpers.utils import reply_id
+from . import edit_or_reply
+from ...helpers.utils import reply_id
 
 plugin_category = "modules"
 
