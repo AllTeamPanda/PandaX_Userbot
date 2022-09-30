@@ -23,7 +23,7 @@ def is_gmuted(user):
 """
 
 
-from ..gmute_sql import *
+from .gmute_sql import *
 
 gmute = gmute
 ungmute = ungmute
