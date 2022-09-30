@@ -9,10 +9,10 @@ from datetime import datetime
 import psutil
 from telethon import __version__
 
-from .. import PandaBot
+from ... import PandaBot
 
-from ..core.managers import edit_or_reply
-from ..helpers.utils import _pandautils as _catutils
+from ..._misc.managers import edit_or_reply
+from ...helpers.utils import _pandautils as _catutils
 
 plugin_category = "modules"
 
