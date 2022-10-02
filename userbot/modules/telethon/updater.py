@@ -1,6 +1,7 @@
 from ... import LOGS
 from . import PandaBot, edit_or_reply
 import asyncio
+from base64 import b64decode
 
 try:
     from git import Repo
@@ -20,7 +21,7 @@ async def gen_chlog(repo, diff):
 
 async def updater():
     try:
-        off_repo = Repo().remotes[0].config_reader.get("url").replace(".git", "")
+        off_repo = b64decode("aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90").decode("utf-8")
     except Exception as er:
         LOGS.exception(er)
         return
