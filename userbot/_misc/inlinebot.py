@@ -740,7 +740,10 @@ else:
 
 async def setting(event, name, value):
     try:
-        heroku_var[name] = value
+        if Heroku:
+            heroku_var[name] = value
+        else:
+             SqL.setdb(name, value)
     except BaseException:
         return await event.edit("**Maaf Gagal Menyimpan Dikarenakan ERROR**")
 
