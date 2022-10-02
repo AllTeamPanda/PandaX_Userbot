@@ -74,13 +74,10 @@ aliveess = f"""
 {CUSTOM_ALIVE_TEXT}
 
 ☉ 👤 𝗢𝘄𝗻𝗲𝗿: {NAME}
-
 ☉ 🛰 Version: `𝚅{pandaversion}`
-
 ☉ 👾 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
 ☉ 🎙 𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀: `𝚅{__version__}`
 ☉ 🐍 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`
-
 ☉ 🎭 Dual-Mode: {dual_mode()}
 ☉ 🆕 Command DualMode: {dual_duall()}
 ☉ 👥 BotUser-Dual: `{usernames}`\n
