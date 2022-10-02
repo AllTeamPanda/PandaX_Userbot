@@ -8,14 +8,15 @@
 # Recode Panda Userbot
 ## Thanks full Ultroid For installer termux env
 
-from os import path
-from time import sleep
 
+from time import sleep
+from os import system, path
 
 PANDA = "★ PANDA USERBOT DEPLOY★"
 
 
-
+def clear():
+    system("clear")
 
 
 def with_header(text):
