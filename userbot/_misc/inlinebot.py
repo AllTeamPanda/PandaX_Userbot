@@ -64,7 +64,7 @@ import time
 
 from ..Var import Config
 
-CUSTOM_HELP_TEXT = SqL.getdb("HELP_TEXT_INLINE") or  "🛠 INLINE MENU 🛠"
+CUSTOM_HELP_TEXT = SqL.getdb("HELP_TEXT_INLINE") or  "INLINE MENU"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "🎴"
 
 def settingvar(dat):
@@ -755,7 +755,6 @@ async def on_plugin_callback_query_handler(event):
         "**Daftar Help & Setting Asisten**",
         buttons=[
             [
-                Button.inline("Help", data="helpp"),
                 Button.inline("⚙ Setting ⚙", data="menuset"),],
             ],
     )
