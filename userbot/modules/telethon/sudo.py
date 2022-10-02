@@ -6,7 +6,7 @@ from ... import pandaub, SqL
 import logging
 
 from ...Var import Config
-from .._misc import CMD_INFO, PLG_INFO
+from ..._misc import CMD_INFO, PLG_INFO
 from ..._misc.data import _sudousers_list, sudo_enabled_cmds
 from . import edit_delete, edit_or_reply
 from ...helpers.utils import get_user_from_event, mentionuser
