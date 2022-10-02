@@ -3,12 +3,12 @@ from datetime import datetime
 from telethon.utils import get_display_name
 
 from ... import pandaub, SqL
-from ..._misc.logger import logging
+import logging
 
 from ...Var import Config
 from .._misc import CMD_INFO, PLG_INFO
 from ..._misc.data import _sudousers_list, sudo_enabled_cmds
-from ..._misc.managers import edit_delete, edit_or_reply
+from . import edit_delete, edit_or_reply
 from ...helpers.utils import get_user_from_event, mentionuser
 from ...sql_helper import global_collectionjson as sql
 from ...sql_helper import global_list as sqllist
