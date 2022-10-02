@@ -317,7 +317,7 @@ async def inline_handler(event):  # sourcery no-metrics
             query = query[7:]
             user, txct = query.split(" ", 1)
             builder = event.builder
-            secret = os.path.join("./Panda", "secrets.txt")
+            secret = os.path.join("./userbot", "secrets.txt")
             try:
                 jsondata = json.load(open(secret))
             except Exception:
