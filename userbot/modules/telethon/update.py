@@ -113,8 +113,7 @@ async def _(e):
         m = await updater()
         branch = (Repo.init()).active_branch
         if m:
-            x = await edit_or_reply(e, "Update.."),
-            )
+            x = await edit_or_reply(e, "Update..")
             Link = x.message_link
             await xx.edit(
                 f'<strong><a href="{Link}">[ChangeLogs]</a></strong>',
