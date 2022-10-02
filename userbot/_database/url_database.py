@@ -75,7 +75,7 @@ class _BaseDatabase:
             self._cache.update({key: self.getdb(key)})
 
     def ping(self):
-        return 1
+        return "Active"
 
     @property
     def usage(self):
