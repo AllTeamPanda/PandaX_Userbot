@@ -102,28 +102,28 @@ async def bash(cmd, run_code=0):
 )
 async def _(e):
     xx = await edit_or_reply(e, "memulai Update....")
-    if e.pattern_match.group(1).strip() and (
-        "deploy" in e.pattern_match.group(1).strip()
-        or "now" in e.pattern_match.group(1).strip()
-    ):
+    panda = event.pattern_match.group(1).strip()
+    if panda == "deploy":
+        await updater()
         await bash("git pull -f && pip3 install -r requirements.txt")
         await xx.edit("Update perlahan tapi pasti")
         os.execl(sys.executable, "python3", "-m", "userbot")
-        # return
-    m = await updater()
-    branch = (Repo.init()).active_branch
-    if m:
-        x = await edit_or_reply(e, "Update.."),
-        )
-        Link = x.message_link
-        await xx.edit(
-            f'<strong><a href="{Link}">[ChangeLogs]</a></strong>',
-            parse_mode="html",
-            link_preview=False,
-        )
-    else:
-        await xx.edit(
-            f'<code>Your BOT is </code><strong>up-to-date</strong><code> with </code><strong><a href="https://github.com/ilhammansiz/PandaX_Userbot/tree/{branch}">[{branch}]</a></strong>',
-            parse_mode="html",
-            link_preview=False,
-        )
+        return
+    if panda == "now":
+        m = await updater()
+        branch = (Repo.init()).active_branch
+        if m:
+            x = await edit_or_reply(e, "Update.."),
+            )
+            Link = x.message_link
+            await xx.edit(
+                f'<strong><a href="{Link}">[ChangeLogs]</a></strong>',
+                parse_mode="html",
+                link_preview=False,
+            )
+        else:
+            await xx.edit(
+                f'<code>Your BOT is </code><strong>up-to-date</strong><code> with </code><strong><a href="https://github.com/ilhammansiz/PandaX_Userbot/tree/{branch}">[{branch}]</a></strong>',
+                parse_mode="html",
+                link_preview=False,
+            )
