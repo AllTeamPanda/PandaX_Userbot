@@ -1,6 +1,6 @@
 import datetime
 import re
-import request
+import requests
 from bs4 import BeautifulSoup
 from markdown import markdown
 from telethon.tl.tlobject import TLObject
