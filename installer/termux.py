@@ -60,9 +60,7 @@ def envtelethon():
                 file.write(f"{var}={inp}\n")
         print("* Created '.env' file successfully! 😃 klik enter")
 
-    else:
-        print("OK!")
-
+   
 def envpyrogram():
     start = input("").strip().lower()
     if start in ["pyrogram", "p"]:
@@ -73,11 +71,7 @@ def envpyrogram():
                 file.write(f"{var}={inp}\n")
         print("* Created '.env' file successfully! 😃 klik enter")
 
-    else:
-        print("OK!")
-
-
-
+clear()
 if not path.exists(".env"):
     print(with_header("# Do you want to move toward creating .env file ? [t/p] t untuk telethon p untuk pyrogram "))
     envtelethon()
