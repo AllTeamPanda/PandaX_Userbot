@@ -53,7 +53,8 @@ async def redis(alive):
             logo = LOGO
             await alive.delete()
             msg = await PandaBot.send_file(alive.chat_id, logo, caption=aliveess)
-            await tgbot.send_file(alive.chat_id, logo, caption=aliveess, buttons=menu())
+            if tgbot:
+                await tgbot.send_file(alive.chat_id, logo, caption=aliveess, buttons=menu())
             await asyncio.sleep(500)
             await msg.delete()
         except BaseException:
