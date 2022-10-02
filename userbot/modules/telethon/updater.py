@@ -12,11 +12,20 @@ except ImportError:
 
 
 async def gen_chlog(repo, diff):
-    d_form = "%d/%m/%y"
-    return "".join(
-        f"• [{c.committed_datetime.strftime(d_form)}]: {c.summary} <{c.author}>\n"
-        for c in repo.iter_commits(diff)
-    )
+    """Generate Changelogs..."""
+    UPSTREAM_REPO_URL = b64decode("aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90").decode("utf-8")
+    ac_br = repo.active_branch.name
+    ch_log = tldr_log = ""
+    ch = f"<b>Ultroid {ultroid_version} updates for <a href={UPSTREAM_REPO_URL}/tree/{ac_br}>[{ac_br}]</a>:</b>"
+    ch_tl = f"Ultroid {ultroid_version} updates for {ac_br}:"
+    d_form = "%d/%m/%y || %H:%M"
+    for c in repo.iter_commits(diff):
+        ch_log += f"\n\n💬 <b>{c.count()}</b> 🗓 <b>[{c.committed_datetime.strftime(d_form)}]</b>\n<b><a href={UPSTREAM_REPO_URL.rstrip('/')}/commit/{c}>[{c.summary}]</a></b> 👨‍💻 <code>{c.author}</code>"
+        tldr_log += f"\n\n💬 {c.count()} 🗓 [{c.committed_datetime.strftime(d_form)}]\n[{c.summary}] 👨‍💻 {c.author}"
+    if ch_log:
+        return str(ch + ch_log), str(ch_tl + tldr_log)
+    return ch_log, tldr_log
+
 
 
 async def updater():
@@ -46,7 +55,7 @@ async def updater():
     repo.create_remote("upstream", off_repo) if "upstream" not in repo.remotes else None
     ups_rem = repo.remote("upstream")
     ups_rem.fetch(ac_br)
-    changelog, tl_chnglog = await gen_chlog(repo, diff)
+    changelog, tl_chnglog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     return bool(changelog)
 
 
