@@ -9,6 +9,15 @@ except ImportError:
     Repo = None
 
 
+
+async def gen_chlog(repo, diff):
+    d_form = "%d/%m/%y"
+    return "".join(
+        f"• [{c.committed_datetime.strftime(d_form)}]: {c.summary} <{c.author}>\n"
+        for c in repo.iter_commits(diff)
+    )
+
+
 async def updater():
     try:
         off_repo = Repo().remotes[0].config_reader.get("url").replace(".git", "")
@@ -36,7 +45,7 @@ async def updater():
     repo.create_remote("upstream", off_repo) if "upstream" not in repo.remotes else None
     ups_rem = repo.remote("upstream")
     ups_rem.fetch(ac_br)
-    changelog, tl_chnglog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
+    changelog, tl_chnglog = await gen_chlog(repo, diff)
     return bool(changelog)
 
 
