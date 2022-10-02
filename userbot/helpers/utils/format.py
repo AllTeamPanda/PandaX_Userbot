@@ -1,12 +1,28 @@
 import datetime
-import re
 
-import requests
+from bs4 import BeautifulSoup
+from markdown import markdown
 from telethon.tl.tlobject import TLObject
 from telethon.tl.types import MessageEntityPre
 from telethon.utils import add_surrogate
 
 from ..functions.utils import utc_to_local
+from .paste import pastetext
+
+
+def md_to_text(md):
+    html = markdown(md)
+    soup = BeautifulSoup(html, features="html.parser")
+    return soup.get_text()
+
+async def paste_message(text, pastetype="p", extension=None, markdown=True):
+    if markdown:
+        text = md_to_text(text)
+    response = await pastetext(text, pastetype, extension)
+    if "url" in response:
+        return response["url"]
+    return "Error while pasting text to site"
+
 
 
 def paste_text(text):
