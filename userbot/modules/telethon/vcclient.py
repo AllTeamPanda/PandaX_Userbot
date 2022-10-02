@@ -44,12 +44,11 @@ from ...resources.tools import (
     time_formatter,
 )
 
-from ...resources.owner import admin_check, in_pattern
+from ...resources.owner import admin_check
 from ...sql_helper.globals import check_vcauth, gvarstatus
 from ...sql_helper.globals import get_chats as get_vc
 from ... import Config
 from ..._misc.data import _sudousers_list
-from ...helper.PandaXBahasa import get_string
 
 HNDLR = Config.COMMAND_HAND_LER
 asst = tgbot
