@@ -58,7 +58,7 @@ def envtelethon():
             for var in ["API_ID", "API_HASH", "SESSION", "DATABASE_URL", "PRIVATE_GROUP_BOT_API_ID", "BOT_TOKEN", "BOT_USERNAME"]:
                 inp = input(f"Enter {var}\n- ")
                 file.write(f"{var}={inp}\n")
-        print("* Created '.env' file successfully! 😃")
+        print("* Created '.env' file successfully! 😃 klik enter")
 
     else:
         print("OK!")
@@ -71,7 +71,7 @@ def envpyrogram():
             for var in ["API_ID", "API_HASH", "PyroSESSION", "DATABASE_URL", "PRIVATE_GROUP_BOT_API_ID", "BOT_TOKEN", "BOT_USERNAME"]:
                 inp = input(f"Enter {var}\n- ")
                 file.write(f"{var}={inp}\n")
-        print("* Created '.env' file successfully! 😃")
+        print("* Created '.env' file successfully! 😃 klik enter")
 
     else:
         print("OK!")
