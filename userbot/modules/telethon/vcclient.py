@@ -49,7 +49,6 @@ from ...sql_helper.globals import check_vcauth, gvarstatus
 from ...sql_helper.globals import get_chats as get_vc
 from ... import Config
 from ..._misc.data import _sudousers_list
-from ...helpers.PandaXBahasa.bahasa import get_string
 HNDLR = Config.COMMAND_HAND_LER
 asst = tgbot
 UltVer = "VcPanda" 
