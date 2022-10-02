@@ -45,12 +45,10 @@ from ...resources.tools import (
 )
 
 from ...resources.owner import admin_check
-from ...resources.vceor import eor, eod
 from ...sql_helper.globals import check_vcauth, gvarstatus
 from ...sql_helper.globals import get_chats as get_vc
 from ... import Config
 from ..._misc.data import _sudousers_list
-from ...helper.PandaXBahasa import get_string
 
 HNDLR = Config.COMMAND_HAND_LER
 asst = tgbot
