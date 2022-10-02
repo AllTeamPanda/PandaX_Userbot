@@ -10,7 +10,7 @@ try:
 except ImportError:
     Repo = None
 
-plugin_category "modules"
+plugin_category = "modules"
 
 async def gen_chlog(repo, diff):
     """Generate Changelogs..."""
