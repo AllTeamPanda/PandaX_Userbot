@@ -16,7 +16,7 @@ else:
 CMD_HELP = {}
 
 from telethon import events
-from Panda import LOGSPAMMER
+from .... import LOGSPAMMER
 import sys
 from asyncio import create_subprocess_shell as asyncsubshell
 from asyncio import subprocess as asyncsub
