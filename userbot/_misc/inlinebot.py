@@ -34,11 +34,11 @@ from .logger import logging
 LOGS = logging.getLogger(__name__)
 
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
-PANDALOGO = "https://telegra.ph/file/0c571ae6dcb68ea2bdf49.jpg"
+
 tr = Config.COMMAND_HAND_LER
 ilhammansiez = Config.PANDA_HELP_LOGO = SqL.getdb("PANDA_HELP_LOGO") or "https://telegra.ph/file/ccbc25f1c295310902070.jpg"
 from ..modules.telethon import mention
-
+PANDALOGO = ilhammansiez
 def getkey(val):
     for key, value in GRP_INFO.items():
         for plugin in value:
