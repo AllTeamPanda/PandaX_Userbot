@@ -4,4 +4,5 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-CMD ["bash","start.sh"]
+ENTRYPOINT [ "bash", "start.sh" ]
+
