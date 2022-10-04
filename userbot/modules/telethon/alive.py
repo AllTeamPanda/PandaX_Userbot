@@ -2,6 +2,7 @@ import time
 from platform import python_version
 from telethon import Button, version
 import asyncio
+import sys
 from userbot import PandaBot, SqL, StartTime, dual_duall, dual_mode, pandaversion, tgbot
 pandaub = PandaBot
 import random
@@ -31,12 +32,19 @@ plugin_category = "plugins"
 
 SUDO = SqL.getdb("sudoenable")
 
-if SUDO:
-    SudoActive = SqL.setdb("sudoenable", "True")
-    return SudoActive
-else:
-    SudoActive = SqL.setdb("sudoenable", "False")
-    return SudoActive
+def SUDO():
+    try:
+        if SqL.getdb("sudoenable") is not None:
+            SudoActive = SqL.setdb("sudoenable", "True")
+            return SudoActive
+        else:
+            SudoActive = SqL.setdb("sudoenable", "False")
+            return SudoActive
+    except Exception as e:
+        print(f"{str(e)}")
+        sys.exit()
+
+
 
 
 emoji_alive = "🌛 🌜 🌚 🌝 🎲 🧩 ♟ 🎯 🎳 🎭💕 💞 💓 💗 💖 ❤️‍🔥 💔 🤎 🤍 🖤 ❤️ 🧡 💛 💚 💙 💜 💘 💝 🐵 🦁 🐯 🐱 🐶 🐺 🐻 🐨 🐼 🐹 🐭 🐰 🦊 🦝 🐮 🐷 🐽 🐗 🦓 🦄 🐴 🐸 🐲 🦎 🐉 🦖 🦕 🐢 🐊 🐍 🐁 🐀 🐇 🐈 🐩 🐕 🦮 🐕‍🦺 🐅 🐆 🐎 🐖 🐄 🐂 🐃 🐏 🐑 🐐 🦌 🦙 🦥 🦘 🐘 🦏 🦛 🦒 🐒 🦍 🦧 🐪 🐫 🐿️ 🦨 🦡 🦔 🦦 🦇 🐓 🐔 🐣 🐤 🐥 🐦 🦉 🦅 🦜 🕊️ 🦢 🦩 🦚 🦃 🦆 🐧 🦈 🐬 🐋 🐳 🐟 🐠 🐡 🦐 🦞 🦀 🦑 🐙 🦪 🦂 🕷️ 🦋 🐞 🐝 🦟 🦗 🐜 🐌 🐚 🕸️ 🐛 🐾 🌞 🤢 🤮 🤧 🤒 🍓 🍒 🍎 🍉 🍑 🍊 🥭 🍍 🍌 🌶 🍇 🥝 🍐 🍏 🍈 🍋 🍄 🥕 🍠 🧅 🌽 🥦 🥒 🥬 🥑 🥯 🥖 🥐 🍞 🥜 🌰 🥔 🧄 🍆 🧇 🥞 🥚 🧀 🥓 🥩 🍗 🍖 🥙 🌯 🌮 🍕 🍟 🥨 🥪 🌭 🍔 🧆 🥘 🍝 🥫 🥣 🥗 🍲 🍛 🍜 🍢 🥟 🍱 🍚 🥡 🍤 🍣 🦞 🦪 🍘 🍡 🥠 🥮 🍧 🍨 📞".split(
@@ -101,7 +109,7 @@ aliveess = f"""
                𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲:
 
 ☉ {random.choice(emoji_alive)} 𝗗𝗕_𝗦𝗾𝗟: `{SqL.ping()}`
-☉ {random.choice(emoji_alive)} 𝗦𝘂𝗱𝗼: {SUDO}
+☉ {random.choice(emoji_alive)} 𝗦𝘂𝗱𝗼: {SUDO()}
 
 ╰━─━─━─━─━─━─━─━─━╯
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
