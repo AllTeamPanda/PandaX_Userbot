@@ -40,6 +40,7 @@ apt install aria2
 apt install zip
 apt install sudo
 apt install python3-wand
+apt install python3-lxml
 apt install postgresql-client
 cle
 echo -e $PANDA
