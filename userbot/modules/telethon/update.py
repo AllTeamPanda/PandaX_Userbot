@@ -102,7 +102,7 @@ async def bash(cmd, run_code=0):
 )
 async def _(e):
     xx = await edit_or_reply(e, "memulai Update....")
-    panda = event.pattern_match.group(1).strip()
+    panda = e.pattern_match.group(1).strip()
     if panda == "deploy":
         await updater()
         await bash("git pull -f && pip3 install -r requirements.txt")
