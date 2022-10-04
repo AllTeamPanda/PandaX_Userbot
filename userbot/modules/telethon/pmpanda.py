@@ -7,15 +7,15 @@ from telethon import Button, functions
 from telethon.events import CallbackQuery
 from telethon.utils import get_display_name
 
-from Panda import pandaub, SqL, tgbot
-from Panda.core.logger import logging
+from ... import pandaub, SqL, tgbot
+import logging
 
-from ..Config import Config
-from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.utils import _format, get_user_from_event, reply_id
-from ..sql_helper import global_collectionjson as sql
-from ..sql_helper import global_list as sqllist
-from ..sql_helper import pmpermit_sql
+from ...Var import Config
+from . import edit_delete, edit_or_reply
+from ...helpers.utils import _format, get_user_from_event, reply_id
+from ...sql_helper import global_collectionjson as sql
+from ...sql_helper import global_list as sqllist
+from ...sql_helper import pmpermit_sql
 from . import mention
 
 plugin_category = "plugins"
@@ -309,10 +309,7 @@ async def do_pm_chat_action(event, chat):
     except AttributeError:
         PMMESSAGE_CACHE = {}
     if str(chat.id) not in PM_WARNS:
-        text = """__Heyy! I am busy right now I already asked you to wait know. After my work finishes. \
-We can talk but not right know. Hope you understand.__
-__My master will respond when he/she comes back online, if he/she wants to.__
-**Please do not spam unless you wish to be blocked and reported.**"""
+        text = """Hei! Saya sedang sibuk sekarang saya sudah meminta Anda untuk menunggu tahu. Setelah pekerjaan saya selesai. Kita bisa bicara tapi tidak benar tahu. Semoga kamu mengerti Tuan saya akan merespons ketika dia kembali online, jika dia mau.**Tolong jangan spam kecuali Anda ingin diblokir dan dilaporkan.**"""
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
         sql.del_collection("pmwarns")
@@ -331,9 +328,7 @@ __My master will respond when he/she comes back online, if he/she wants to.__
         LOGS.info(str(e))
     sql.del_collection("pmmessagecache")
     sql.add_collection("pmmessagecache", PMMESSAGE_CACHE, {})
-    USER_BOT_WARN_ZERO = f"**If I remember correctly I mentioned in my previous message this is not the right place for you to spam. \
-Though you ignored that message. So, I simply blocked you. \
-Now you can't do anything unless my master comes online and unblocks you.**"
+    USER_BOT_WARN_ZERO = f"""**Jika saya ingat dengan benar saya sebutkan dalam pesan saya sebelumnya ini bukan tempat yang tepat bagi Anda untuk spam. Meskipun Anda mengabaikan pesan itu. Jadi, saya hanya memblokir Anda. Sekarang Anda tidak dapat melakukan apa pun kecuali tuan saya online dan membuka blokir Anda.**"""
     await event.reply(USER_BOT_WARN_ZERO)
     await event.client(functions.contacts.BlockRequest(chat.id))
     the_message = f"#BLOCKED_PM\
@@ -490,9 +485,7 @@ async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "Idoit this options for user who messages you. not for you"
         return await event.answer(text, cache_time=0, alert=True)
-    text = """__Okay. Your request has been registered. Do not spam my master's inbox now. \
-My master is busy right now, When My master comes online he/she will check your message and ping you. \
-Then we can extend this conversation more but not right now.__"""
+    text = """__Oke. Permintaan Anda telah terdaftar. Jangan spam kotak masuk master saya sekarang. \ Tuan saya sedang sibuk sekarang, Ketika Tuan saya online, dia akan memeriksa pesan Anda dan melakukan ping kepada Anda. \ Kemudian kita dapat memperpanjang percakapan ini tetapi tidak sekarang.__"""
     sqllist.add_to_list("pmenquire", event.query.user_id)
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
@@ -511,10 +504,7 @@ async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "Idoit this options for user who messages you. not for you"
         return await event.answer(text, cache_time=0, alert=True)
-    text = """__Okay. I have notified my master about this. When he/she comes comes online\
- or when my master is free he/she will look into this chat and will ping you so we can have a friendly chat.__\
-
-**But right now please do not spam unless you wish to get blocked.**"""
+    text = """__Oke. Saya telah memberi tahu tuan saya tentang ini. Ketika dia datang online\ atau ketika tuan saya bebas, dia akan melihat ke dalam obrolan ini dan akan melakukan ping kepada Anda sehingga kami dapat mengobrol dengan ramah.__\ ** Tapi sekarang tolong jangan spam kecuali Anda ingin diblokir.**"""
     sqllist.add_to_list("pmrequest", event.query.user_id)
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
@@ -533,8 +523,7 @@ async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "Idoit these options are for users who message you. not for you"
         return await event.answer(text, cache_time=0, alert=True)
-    text = """__Yaa sure we can have a friendly chat but not right now. we can have this\
-some other time. Right now I am a little busy. when I come online and if I am free. I will ping you ,this is Damm sure.__"""
+    text = """__Yaa tentu kita bisa mengobrol ramah tapi tidak sekarang. kita dapat memiliki ini\ beberapa waktu lain. Saat ini saya sedikit sibuk. ketika saya online dan jika saya bebas. Saya akan ping Anda, ini pasti Damm.__"""
     sqllist.add_to_list("pmchat", event.query.user_id)
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
