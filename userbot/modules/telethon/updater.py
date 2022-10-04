@@ -8,7 +8,7 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from ...Var import Config
 from . import HEROKU_API_KEY, HEROKU_APP_NAME
 from . import edit_delete, edit_or_reply, PandaBot
-
+plugin_category = "modules"
 cmd = Config.COMMAND_HAND_LER
 
 async def gen_chlog(repo, diff):
