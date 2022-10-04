@@ -42,7 +42,7 @@ apt install sudo
 apt install python3-wand
 apt install python3-lxml
 apt install postgresql-client
-cle
+clear
 echo -e $PANDA
 echo -e $LUQ
 echo "⚙️ Github Installer"
