@@ -4,7 +4,7 @@ from telethon import Button, version
 import asyncio
 from userbot import PandaBot, SqL, StartTime, dual_duall, dual_mode, pandaversion, tgbot
 pandaub = PandaBot
-
+import random
 from userbot import Config
 from ...helpers.functions import get_readable_time
 from pytgcalls import __version__
@@ -19,8 +19,9 @@ CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT = SqL.getdb("CUSTOM_ALIVE_TEXT") or
 # ================= CONSTANT =================
 DEFAULTUSER = mention
 # ============================================
-EMOJI = SqL.getdb("EMOJI") or "🎨"
+
 NAME = DEFAULTUSER
+
 
 plugin_category = "plugins"
 
@@ -33,6 +34,10 @@ else:
     SudoActive = SqL.setdb("sudoenable", "False")
     return SudoActive
 
+
+emoji_alive = "🌛 🌜 🌚 🌝 🎲 🧩 ♟ 🎯 🎳 🎭💕 💞 💓 💗 💖 ❤️‍🔥 💔 🤎 🤍 🖤 ❤️ 🧡 💛 💚 💙 💜 💘 💝 🐵 🦁 🐯 🐱 🐶 🐺 🐻 🐨 🐼 🐹 🐭 🐰 🦊 🦝 🐮 🐷 🐽 🐗 🦓 🦄 🐴 🐸 🐲 🦎 🐉 🦖 🦕 🐢 🐊 🐍 🐁 🐀 🐇 🐈 🐩 🐕 🦮 🐕‍🦺 🐅 🐆 🐎 🐖 🐄 🐂 🐃 🐏 🐑 🐐 🦌 🦙 🦥 🦘 🐘 🦏 🦛 🦒 🐒 🦍 🦧 🐪 🐫 🐿️ 🦨 🦡 🦔 🦦 🦇 🐓 🐔 🐣 🐤 🐥 🐦 🦉 🦅 🦜 🕊️ 🦢 🦩 🦚 🦃 🦆 🐧 🦈 🐬 🐋 🐳 🐟 🐠 🐡 🦐 🦞 🦀 🦑 🐙 🦪 🦂 🕷️ 🦋 🐞 🐝 🦟 🦗 🐜 🐌 🐚 🕸️ 🐛 🐾 🌞 🤢 🤮 🤧 🤒 🍓 🍒 🍎 🍉 🍑 🍊 🥭 🍍 🍌 🌶 🍇 🥝 🍐 🍏 🍈 🍋 🍄 🥕 🍠 🧅 🌽 🥦 🥒 🥬 🥑 🥯 🥖 🥐 🍞 🥜 🌰 🥔 🧄 🍆 🧇 🥞 🥚 🧀 🥓 🥩 🍗 🍖 🥙 🌯 🌮 🍕 🍟 🥨 🥪 🌭 🍔 🧆 🥘 🍝 🥫 🥣 🥗 🍲 🍛 🍜 🍢 🥟 🍱 🍚 🥡 🍤 🍣 🦞 🦪 🍘 🍡 🥠 🥮 🍧 🍨 📞".split(
+    " "
+)
 
 SUDOuser = _sudousers_list()
 
@@ -82,17 +87,17 @@ async def redis(alive):
 aliveess = f"""
 {CUSTOM_ALIVE_TEXT}
 
-☉ 👤 𝗢𝘄𝗻𝗲𝗿: {PandaBot.me.username}
-☉ 🛰 Version: `𝚅{pandaversion}`
-☉ 👾 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
-☉ 🎙 𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀: `𝚅{__version__}`
-☉ 🐍 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`\n
+☉ {random.choice(emoji_alive)} 𝗢𝘄𝗻𝗲𝗿: {PandaBot.me.username}
+☉ {random.choice(emoji_alive)} Version: `𝚅{pandaversion}`
+☉ {random.choice(emoji_alive)} 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
+☉ {random.choice(emoji_alive)} 𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀: `𝚅{__version__}`
+☉ {random.choice(emoji_alive)} 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`\n
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
 ╭━─━─━─━─━─━─━─━─━╮
                𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲:
 
-☉ 🐘 𝗗𝗕_𝗦𝗾𝗟: `{SqL.ping()}`
-☉ 👥 𝗦𝘂𝗱𝗼: {SUDO}
+☉ {random.choice(emoji_alive)} 𝗗𝗕_𝗦𝗾𝗟: `{SqL.ping()}`
+☉ {random.choice(emoji_alive)} 𝗦𝘂𝗱𝗼: {SUDO}
 
 ╰━─━─━─━─━─━─━─━─━╯
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
