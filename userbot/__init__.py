@@ -185,7 +185,7 @@ async def update_user(chat_id, msg_id):
 
 try:
     chat_id, msg_id = gvarstatus("restartstatus").split("\n")
-    with bot:
+    with PandaBot:
         try:
             LOOP.run_until_complete(update_user(int(chat_id), int(msg_id)))
         except BaseException:
