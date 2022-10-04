@@ -16,10 +16,9 @@ from telethon.events import CallbackQuery, StopPropagation
 from telethon.utils import get_display_name
 
 from .... import Config
-from .... import PandaBot 
+from .... import PandaBot, tgbot
 from ...._misc import check_owner, pool
 from ...._misc.logger import logging
-from ...._misc.session import tgbot
 from ....helpers import reply_id
 from ....helpers.utils import _format
 from ....sql_helper.bot_blacklists import check_is_black_list
