@@ -25,6 +25,15 @@ NAME = DEFAULTUSER
 plugin_category = "plugins"
 
 SUDO = SqL.getdb("sudoenable")
+
+if SUDO:
+    SudoActive = SqL.setdb("sudoenable", "True")
+    return SudoActive
+else:
+    SudoActive = SqL.setdb("sudoenable", "False")
+    return SudoActive
+
+
 SUDOuser = _sudousers_list()
 
 LOGO = Config.ALIVE_PIC = SqL.getdb("ALIVE_PIC") or "https://telegra.ph/file/462ea6cf2beab87ef2d9f.jpg"
@@ -43,7 +52,7 @@ usernames = Config.TG_BOT_USERNAME
     },
 )
 async def redis(alive):
-    await PandaBot.get_me()
+    PandaBot.me = await PandaBot.get_me()
     await get_readable_time((time.time() - StartTime))
     await alive.edit("꧁༺ Panda Userbot ༻꧂")
     await alive.edit("꧁༺ Userbot ༻꧂")
@@ -73,14 +82,11 @@ async def redis(alive):
 aliveess = f"""
 {CUSTOM_ALIVE_TEXT}
 
-☉ 👤 𝗢𝘄𝗻𝗲𝗿: {NAME}
+☉ 👤 𝗢𝘄𝗻𝗲𝗿: {PandaBot.me.username}
 ☉ 🛰 Version: `𝚅{pandaversion}`
 ☉ 👾 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
 ☉ 🎙 𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀: `𝚅{__version__}`
-☉ 🐍 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`
-☉ 🎭 Dual-Mode: {dual_mode()}
-☉ 🆕 Command DualMode: {dual_duall()}
-☉ 👥 BotUser-Dual: `{usernames}`\n
+☉ 🐍 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`\n
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
 ╭━─━─━─━─━─━─━─━─━╮
                𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲:
