@@ -166,3 +166,32 @@ PM_LOGGER_GROUP_ID = Config.PM_LOGGER_GROUP_ID
 def where_hosted():
     if os.getenv("DYNO"):
         return "heroku"
+
+
+from asyncio import get_event_loop
+LOOP = get_event_loop()
+from platform import python_version
+from telethon import version
+
+async def update_user(chat_id, msg_id):
+    message = (
+        f"**PandaUserbot {__version__} Berhasil di-update..**\n\n"
+        f"**Telethon:** {version.__version__}\n"
+        f"**Python:** {python_version()}\n"
+    )
+    await PandaBot.edit_message(chat_id, msg_id, message)
+    return True
+
+
+try:
+    chat_id, msg_id = gvarstatus("restartstatus").split("\n")
+    with bot:
+        try:
+            LOOP.run_until_complete(update_user(int(chat_id), int(msg_id)))
+        except BaseException:
+            pass
+    delgvar("restartstatus")
+except AttributeError:
+    pass
+
+
