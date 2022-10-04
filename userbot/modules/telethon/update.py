@@ -111,6 +111,7 @@ async def _(e):
         return
     if panda == "now":
         m = await updater()
+        os.execl(sys.executable, "python3", "-m", "userbot")
         branch = (Repo.init()).active_branch
         if m:
             x = await edit_or_reply(e, "Update..")
