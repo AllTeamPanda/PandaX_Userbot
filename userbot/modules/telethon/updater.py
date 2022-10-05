@@ -191,7 +191,7 @@ async def upstream(event):
         await print_changelogs(xx, ac_br, changelog)
         await xx.delete()
         return await event.respond(
-            f"**Ketik** `{cmd}update deploy` **untuk Mengupdate Userbot.**"
+            f"**Ketik** `{cmd}update deploy untuk update Hard / now untuk soft update` **untuk Mengupdate Userbot.**"
         )
 
     if force_update:
