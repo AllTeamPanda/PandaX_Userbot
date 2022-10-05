@@ -77,15 +77,6 @@ def Telethon():
                     logging.error("[ASSISTANT] - Failed To Load : " + f"{mods} - {str(e)}")
             if PandaBot:
                 cekbot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
-            if PandaBot:
-                try:
-                    if len(sys.argv) not in (1, 3, 4):
-                        PandaBot.disconnect()
-                    else:
-                        PandaBot.run_until_disconnected()
-                except Exception as e:
-                    LOGS.info(str(e), exc_info=True)
-                    sys.exit(1)
         except Exception as e:
             LOGS.error(f"STRING_SESSION - {str(e)}")
             sys.exit()
