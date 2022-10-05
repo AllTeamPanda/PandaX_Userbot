@@ -68,6 +68,15 @@ def Telethon():
                 Var.OWNER_ID = utils.get_peer_id(PandaBot.me)
             if PandaBot:
                 cekbot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
+            if PandaBot:
+                try:
+                    if len(sys.argv) not in (1, 3, 4):
+                        PandaBot.disconnect()
+                    else:
+                        PandaBot.run_until_disconnected()
+                except Exception as e:
+                    LOGS.info(str(e), exc_info=True)
+                    sys.exit(1)
         except Exception as e:
             LOGS.error(f"STRING_SESSION - {str(e)}")
             sys.exit()
@@ -92,7 +101,7 @@ def Telethon():
             PandaBot.uid = tgbot.uid = utils.get_peer_id(PandaBot2.me)
             if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot2.me)
-            if PandaBot:
+            if PandaBot2:
                 cekbot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
         except Exception as e:
             LOGS.error(f"STRING_SESSION - {str(e)}")
@@ -117,7 +126,7 @@ def Telethon():
             PandaBot.uid = tgbot.uid = utils.get_peer_id(PandaBot.me)
             if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot3.me)
-            if PandaBot:
+            if PandaBot3:
                 cekbot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
         except Exception as e:
             LOGS.error(f"STRING_SESSION - {str(e)}")
