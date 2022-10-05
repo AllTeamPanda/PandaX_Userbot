@@ -97,7 +97,7 @@ def Telethon():
                     break
             PandaBot2.me = PandaBot2.get_me()
             tgbot.get_me()     
-          if Var.OWNER_ID:
+            if Var.OWNER_ID:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot2.me)
             if PandaBot2:
                 cekbot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
