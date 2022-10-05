@@ -4,12 +4,15 @@ from os import environ, execle, remove
 
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
-
+from ... import LOGS, __version__
 from ...Var import Config
 from . import HEROKU_API_KEY, HEROKU_APP_NAME
 from . import edit_delete, edit_or_reply, PandaBot
 plugin_category = "modules"
 cmd = Config.COMMAND_HAND_LER
+
+_REPO_URL = b64decode("aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90").decode("utf-8")
+
 
 async def gen_chlog(repo, diff):
     d_form = "%d/%m/%y"
@@ -20,9 +23,7 @@ async def gen_chlog(repo, diff):
 
 
 async def print_changelogs(xx, ac_br, changelog):
-    changelog_str = (
-        f"**Tersedia Pembaruan Untuk [{ac_br}] :\n\nPembaruan:**\n`{changelog}`"
-    )
+    changelog_str = f"<b>PandaUserbot {__version__} Tersedia Pembaruan Untuk <a href={_REPO_URL}/tree/{ac_br}>[{ac_br}]</a>:</b>"
     if len(changelog_str) > 4096:
         await edit_or_reply(xx, "**Changelog terlalu besar, dikirim sebagai file.**")
         with open("output.txt", "w+") as file:
@@ -57,7 +58,7 @@ async def deploy(xx, repo, ups_rem, ac_br, txt):
             await edit_or_reply(
                 xx,
                 f"{txt}\n"
-                "**Kredensial Heroku tidak valid untuk deploy Man-Userbot dyno.**",
+                "**Kredensial Heroku tidak valid untuk deploy Panda-Userbot dyno.**",
             )
             return repo.__del__()
         try:
