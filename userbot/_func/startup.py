@@ -11,7 +11,7 @@ from pathlib import Path
 import os
 
 REPO_ = Config.UPSTREAM_REPO
-BRANCH_ = "PandaUserbot"
+BRANCH_ = "main"
 
 
 
