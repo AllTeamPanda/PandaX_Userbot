@@ -39,4 +39,12 @@ if __name__ == "__main__":
         Pyrogram()
         
     
-   
+f userbot.PandaBot:
+    try:
+        if len(sys.argv) not in (1, 3, 4):
+            userbot.PandaBot.disconnect()
+        else:
+            userbot.PandaBot.run_until_disconnected()
+    except Exception as e:
+        LOGS.info(str(e), exc_info=True)
+        sys.exit(1)
