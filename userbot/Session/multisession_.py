@@ -9,7 +9,7 @@ from .._database._var import Var
 from logging import getLogger
 import pyrogram as pandapyro
 from .client import *
-from .._func.startup import load_modulesPyro, plugin_collecter
+from .._func.startup import load_modulesPyro, plugin_collecter, load_modulesTelethon
 from .pyroclient import *
 import sys
 LOGS = getLogger(__name__)
@@ -46,9 +46,18 @@ def Telethon():
     if Var.STRING_SESSION:
         try:
             PandaBot.start()
-            for module_name in ALL_MODULES:
-                imported_module = import_module(f"userbot.modules.telethon.{module_name}")
-                imported_module = import_module(f"userbot.modules.telethon.assistant.{module_name}")
+            needed_mods = plugin_collecter("./userbot/modules/telethon/")
+            for nm in needed_mods:
+                try:
+                    load_modulesTelethon(nm)
+                except Exception as e:
+                    logging.error("[USER] - Failed To Load : " + f"{nm} - {str(e)}")
+            assistant_mods = plugin_collecter("./userbot/modules/telethon/assistant/")
+            for mods in assistant_mods:
+                try:
+                    load_modulesTelethon(mods, assistant=True)
+                except Exception as e:
+                    logging.error("[ASSISTANT] - Failed To Load : " + f"{mods} - {str(e)}")
             cekbot.start(bot_token=CEKBOT)
             delta = PandaBot(functions.help.GetConfigRequest())
             for option in delta.dc_options:
