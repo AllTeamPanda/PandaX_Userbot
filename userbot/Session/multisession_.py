@@ -1,4 +1,5 @@
 from telethon import version
+from importlib import import_module
 
 from .pyroclient import pyrotgbot, pyrobot
 from telethon import functions, utils
@@ -14,7 +15,7 @@ import sys
 LOGS = getLogger(__name__)
 import os
 from pyrogram import __version__ as pyrover
-
+from .modules import ALL_MODULES
 PRIVATE = int(os.environ.get("PRIVATE") or "-1001718757023")
 
 cmdhr = os.environ.get("COMMAND_HAND_LER") or "."
@@ -45,6 +46,9 @@ def Telethon():
     if Var.STRING_SESSION:
         try:
             PandaBot.start()
+            for module_name in ALL_MODULES:
+                imported_module = import_module(f"userbot.modules.telethon.{module_name}")
+                imported_module = import_module(f"userbot.modules.telethon.assistant.{module_name}")
             cekbot.start(bot_token=CEKBOT)
             delta = PandaBot(functions.help.GetConfigRequest())
             for option in delta.dc_options:
