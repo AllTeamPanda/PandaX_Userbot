@@ -46,18 +46,6 @@ def Telethon():
     if Var.STRING_SESSION:
         try:
             PandaBot.start()
-            needed_mods = plugin_collecter("./userbot/modules/telethon/")
-            for nm in needed_mods:
-                try:
-                    load_modulesTelethon(nm)
-                except Exception as e:
-                    logging.error("[USER] - Failed To Load : " + f"{nm} - {str(e)}")
-            assistant_mods = plugin_collecter("./userbot/modules/telethon/assistant/")
-            for mods in assistant_mods:
-                try:
-                    load_modulesTelethon(mods, assistant=True)
-                except Exception as e:
-                    logging.error("[ASSISTANT] - Failed To Load : " + f"{mods} - {str(e)}")
             cekbot.start(bot_token=CEKBOT)
             delta = PandaBot(functions.help.GetConfigRequest())
             for option in delta.dc_options:
@@ -75,6 +63,18 @@ def Telethon():
             PandaBot.uid = tgbot.uid = utils.get_peer_id(PandaBot.me)
             if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot.me)
+            needed_mods = plugin_collecter("./userbot/modules/telethon/")
+            for nm in needed_mods:
+                try:
+                    load_modulesTelethon(nm)
+                except Exception as e:
+                    logging.error("[USER] - Failed To Load : " + f"{nm} - {str(e)}")
+            assistant_mods = plugin_collecter("./userbot/modules/telethon/assistant/")
+            for mods in assistant_mods:
+                try:
+                    load_modulesTelethon(mods, assistant=True)
+                except Exception as e:
+                    logging.error("[ASSISTANT] - Failed To Load : " + f"{mods} - {str(e)}")
             if PandaBot:
                 cekbot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
             if PandaBot:
