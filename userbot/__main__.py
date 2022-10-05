@@ -39,7 +39,7 @@ if __name__ == "__main__":
         Pyrogram()
         
     
-userbot.PandaBot:
+if userbot.PandaBot:
     try:
         if len(sys.argv) not in (1, 3, 4):
             userbot.PandaBot.disconnect()
