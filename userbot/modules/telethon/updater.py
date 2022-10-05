@@ -11,7 +11,7 @@ from . import edit_delete, edit_or_reply, PandaBot
 plugin_category = "modules"
 cmd = Config.COMMAND_HAND_LER
 
-_REPO_URL = b64decode("aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90").decode("utf-8")
+REPO_URL = b64decode("aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90").decode("utf-8")
 
 
 async def gen_chlog(repo, diff):
@@ -23,7 +23,7 @@ async def gen_chlog(repo, diff):
 
 
 async def print_changelogs(xx, ac_br, changelog):
-    changelog_str = f"<b>PandaUserbot {__version__} Tersedia Pembaruan Untuk <a href={_REPO_URL}/tree/{ac_br}>[{ac_br}]</a>:</b>"
+    changelog_str = f"<b>PandaUserbot {__version__} Tersedia Pembaruan Untuk <a href={REPO_URL}/tree/{ac_br}>[{ac_br}]</a>:</b>"
     if len(changelog_str) > 4096:
         await edit_or_reply(xx, "**Changelog terlalu besar, dikirim sebagai file.**")
         with open("output.txt", "w+") as file:
