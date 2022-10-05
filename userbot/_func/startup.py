@@ -30,6 +30,23 @@ def load_modulesPyro(plugin_name, assistant=False):
             logging.info(f"{loader_type} - Connection : " + str(plugin_name))
 
 
+def load_modulesTelethon(plugin_name, assistant=False):
+    """Load PLugins - Assitant & User Using ImportLib"""
+    if plugin_name.endswith("__"):
+        pass
+    else:
+        if plugin_name not in Config.MAIN_NO_LOAD:
+            if assistant:
+                plugin_path = "userbot.modules.telethon.assistant." + plugin_name
+            else:
+                plugin_path = "userbot.modules.telethon." + plugin_name
+            loader_type = "[🤖 Assistant]" if assistant else "[👤 User]"
+            importlib.import_module(plugin_path)
+            logging.info(f"{loader_type} - Connection : " + str(plugin_name))
+
+
+
+
 def load_module(shortname, plugin_path=None):
     if shortname.startswith("__"):
         pass
