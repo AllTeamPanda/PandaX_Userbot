@@ -63,7 +63,6 @@ def Telethon():
                     break
             PandaBot.me = PandaBot.get_me()
             tgbot.get_me()
-            PandaBot.uid = tgbot.uid = utils.get_peer_id(PandaBot.me)
             if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot.me)
             if PandaBot:
@@ -97,9 +96,8 @@ def Telethon():
                     PandaBot2.session.save()
                     break
             PandaBot2.me = PandaBot2.get_me()
-            tgbot.get_me()
-            PandaBot.uid = tgbot.uid = utils.get_peer_id(PandaBot2.me)
-            if Var.OWNER_ID == 0:
+            tgbot.get_me()     
+          if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot2.me)
             if PandaBot2:
                 cekbot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
@@ -122,8 +120,7 @@ def Telethon():
                     PandaBot3.session.save()
                     break
             PandaBot3.me = PandaBot3.get_me()
-            tgbot.get_me()
-            PandaBot.uid = tgbot.uid = utils.get_peer_id(PandaBot.me)
+            tgbot.get_me()      
             if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot3.me)
             if PandaBot3:
