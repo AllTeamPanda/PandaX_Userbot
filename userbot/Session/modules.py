@@ -1,9 +1,11 @@
+import os
+import logging
 import sys
-from .._database import DatabaseCute
-DB = DatabaseCute()
 
-from userbot import LOAD, LOGS, NO_LOAD
+LOGS = logging.getLogger("PandaUserbot")
 
+LOAD = os.environ.get("LOAD", "").split()
+NO_LOAD = os.environ.get("NO_LOAD", "").split()
 
 def __list_all_modules():
     import glob
@@ -34,7 +36,7 @@ def __list_all_modules():
 
 
 ALL_MODULES = sorted(__list_all_modules())
-LOGS.info("Starting To Load Plugins")
+LOGS.info("Starting To Load Modules")
 LOGS.info(
     f"Succesfully Load {len(ALL_MODULES)} Plugins",
 )
