@@ -396,7 +396,7 @@ async def send_flood_alert(user_) -> None:
         FloodConfig.ALERT[user_.id]["fa_id"] = fa_msg.id
 
 
-@PandaBot.tgbot.on(CallbackQuery(data=re.compile(b"bot_pm_ban_([0-9]+)")))
+@tgbot.on(CallbackQuery(data=re.compile(b"bot_pm_ban_([0-9]+)")))
 @check_owner
 async def bot_pm_ban_cb(c_q: CallbackQuery):
     user_id = int(c_q.pattern_match.group(1))
