@@ -12,7 +12,7 @@ from userbot import LOGS
 from .Var import Database
 from .Session.multisession_ import Pyrogram, Telethon
 
-"""
+
 from . import resources
 
 
@@ -27,14 +27,12 @@ def start():
         userbot.PandaBot.loop.run_until_complete(resources.join())
         LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{userbot.__version__} [TELAH DIAKTIFKAN]")
 
-"""
+
 
 if __name__ == "__main__":
     if Database.SESSION:
         Telethon()
-        """
         start()
-        """
     if Database.PyroSESSION:
         Pyrogram()
         
