@@ -63,6 +63,7 @@ def Telethon():
             PandaBot.uid = tgbot.uid = utils.get_peer_id(PandaBot.me)
             if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot.me)
+            """
             needed_mods = plugin_collecter("./userbot/modules/telethon/")
             for nm in needed_mods:
                 try:
@@ -75,6 +76,7 @@ def Telethon():
                     load_modulesTelethon(mods, assistant=True)
                 except Exception as e:
                     logging.error("[ASSISTANT] - Failed To Load : " + f"{mods} - {str(e)}")
+            """
             if PandaBot:
                 cekbot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
         except Exception as e:
