@@ -71,7 +71,7 @@ async def check_bot_started_users(user, event):
         await event.client.send_message(BOTLOG_CHATID, notification)
 
 
-@PandaBot.bot_cmd(
+@tgbot.bot_cmd(
     pattern=f"^/start({botusername})?([\s]+)?$",
     incoming=True,
     func=lambda e: e.is_private,
@@ -129,7 +129,7 @@ async def bot_start(event):
         await check_bot_started_users(chat, event)
 
 
-@PandaBot.bot_cmd(incoming=True, func=lambda e: e.is_private)
+@tgbot.bot_cmd(incoming=True, func=lambda e: e.is_private)
 async def bot_pms(event):  # sourcery no-metrics
     chat = await event.get_chat()
     if check_is_black_list(chat.id):
@@ -186,7 +186,7 @@ async def bot_pms(event):  # sourcery no-metrics
                     )
 
 
-@PandaBot.bot_cmd(edited=True)
+@tgbot.bot_cmd(edited=True)
 async def bot_pms_edit(event):  # sourcery no-metrics
     chat = await event.get_chat()
     if check_is_black_list(chat.id):
@@ -275,7 +275,7 @@ async def handler(event):
                 LOGS.error(str(e))
 
 
-@PandaBot.bot_cmd(
+@tgbot.bot_cmd(
     pattern=f"^/uinfo$",
     from_users=Config.OWNER_ID,
 )
@@ -448,8 +448,8 @@ async def settings_toggle(c_q: CallbackQuery):
     await c_q.edit("BOT_ANTIFLOOD batal sekarang !")
 
 
-@PandaBot.bot_cmd(incoming=True, func=lambda e: e.is_private)
-@PandaBot.bot_cmd(edited=True, func=lambda e: e.is_private)
+@tgbot.bot_cmd(incoming=True, func=lambda e: e.is_private)
+@tgbot.bot_cmd(edited=True, func=lambda e: e.is_private)
 async def antif_on_msg(event):
     if gvarstatus("bot_antif") is None:
         return
