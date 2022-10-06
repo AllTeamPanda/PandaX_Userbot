@@ -61,7 +61,5 @@ echo -e $LUQ
 echo "Menginstall Pakages"
 echo -e $LUQ
 cd PandaX_Userbot
-pip3 install -U -r requirements.txt
+pip3 install --no-cache-dir -r requirements.txt
 python3 installer/termux.py
-screen -S PandaX_Userbot
-bash start.sh
