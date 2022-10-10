@@ -48,7 +48,6 @@ echo -e $LUQ
 echo "⚙️ Github Installer"
 echo -e $LUQ
 pkg install git -y
-rm -rf PandaX_Userbot
 clear
 echo -e $PANDA
 echo -e $LUQ
