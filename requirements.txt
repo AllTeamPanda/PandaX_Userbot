@@ -93,4 +93,3 @@ git+https://github.com/1danish-00/carbon-now-sh-api-wrapper.git
 pybase64
 validators
 twitter_scraper
-
