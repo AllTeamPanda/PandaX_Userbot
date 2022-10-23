@@ -38,7 +38,7 @@ async def _(event):
         end = datetime.now()
         ms = (end - start).microseconds / 1000
         await pandaevent.edit(
-            f"┏━《 **𝗣 𝗔 𝗡 𝗗 𝗔** 》━\n"
+            f"┏━《 **★𝗣 𝗔 𝗡 𝗗 𝗔★** 》━\n"
             f"┣➠  __Ping:__ `{ms} ms`\n"
-            f"┗➠ 𝗢𝘄𝗻𝗲𝗿𝘀: {mention} "
+            f"┗➠ __Username:__ {mention} "
         )
