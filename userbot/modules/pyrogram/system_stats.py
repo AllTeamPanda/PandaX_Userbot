@@ -13,7 +13,7 @@ import time
 import uuid
 from datetime import datetime
 from os import environ, execle
-
+import random
 import psutil
 from pyrogram import __version__
 
@@ -27,6 +27,14 @@ from userbot._func._helpers import (
 )
 
 from . import HELP
+
+custom_text = " 𝐏𝐚𝐧𝐝𝐚 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐁𝐎𝐓_𝐈𝐒_𝐑𝐔𝐍𝐍𝐈𝐍𝐆 𝐃𝐚𝐭𝐚𝐛𝐚𝐬𝐞𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐏𝐚𝐧𝐝𝐚_𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐀𝐜𝐭𝐢𝐯𝐞".split(
+    " "
+)
+
+emoji_alive = "🌛 🌜 👿 😈  ⭐ 🌟 🌞 🌚 🌝 🎑 🥇 🎗 🏅 🎀  🏓 🏸 🏒 🏑 🏌 ⛸️ 🎽  ⛷️ 🏂 🎲 🧩 ♟ 🎯 🎳 🎭💕 💞 💓 💗 💖 ❤️‍🔥 💔 🤎 🤍 🖤 ❤️ 🧡 💛 💚 💙 💜 💘 💝 🐵 🦁 🐯 🐱 🐶 🐺 🐻 🐨 🐼 🐹 🐭 🐰 🦊 🦝 🐮 🐷 🐽 🐗 🦓 🦄 🐴 🐸 🐲 🦎 🐉 🦖 🦕 🐢 🐊 🐍 🐁 🐀 🐇 🐈 🐩 🐕 🦮 🐕‍🦺 🐅 🐆 🐎 🐖 🐄 🐂 🐃 🐏 🐑 🐐 🦌 🦙 🦥 🦘 🐘 🦏 🦛 🦒 🐒 🦍 🦧 🐪 🐫 🐿️ 🦨 🦡 🦔 🦦 🦇 🐓 🐔 🐣 🐤 🐥 🐦 🦉 🦅 🦜 🕊️ 🦢 🦩 🦚 🦃 🦆 🐧 🦈 🐬 🐋 🐳 🐟 🐠 🐡 🦐 🦞 🦀 🦑 🐙 🦪 🦂 🕷️ 🦋 🐞 🐝 🦟 🦗 🐜 🐌 🐚 🕸️ 🐛 🐾 🌞 🤢 🤮 🤧 🤒 🍓 🍒 🍎 🍉 🍑 🍊 🥭 🍍 🍌 🌶 🍇 🥝 🍐 🍏 🍈 🍋 🍄 🥕 🍠 🧅 🌽 🥦 🥒 🥬 🥑 🥯 🥖 🥐 🍞 🥜 🌰 🥔 🧄 🍆 🧇 🥞 🥚 🧀 🥓 🥩 🍗 🍖 🥙 🌯 🌮 🍕 🍟 🥨 🥪 🌭 🍔 🧆 🥘 🍝 🥫 🥣 🥗 🍲 🍛 🍜 🍢 🥟 🍱 🍚 🥡 🍤 🍣 🦞 🦪 🍘 🍡 🥠 🥮 🍧 🍨 📞".split(
+    " "
+)
 
 
 HELP(
@@ -49,7 +57,7 @@ async def pingy(client, message):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await hmm.edit(
-        f"**┏━《 **𝗣 𝗔 𝗡 𝗗 𝗔** 》━\n**┣➠  __Ping:__** `{ms}` \n┗➠ __Uptime:__ `{uptime}`",
+        f"**┏━《 **★𝗣 𝗔 𝗡 𝗗 𝗔★** 》━\n**┣➠  __Ping:__** `{ms}` \n┗➠ __Uptime:__ `{uptime}`",
     )
 
 
@@ -63,16 +71,16 @@ async def amialive(client, message):
     du = psutil.disk_usage(client.workdir)
     disk = f"{humanbytes(du.used)} / {humanbytes(du.total)} " f"({du.percent}%)"
     alive = f"""
-**{me_} PandaUserbot**
-
- **Version :** `{pandaversion}`\n
- **Uptime :** __{get_readable_time((time.time() - start_time))}__
- **Pyrogram Version :** __{__version__}__
- **Python Version :** __{platform.python_version()}__
- **OS :** __{platform.system()}__
- **CPU :** __{len(psutil.Process().cpu_affinity())}__
- **DISK USAGE :** __{disk}__
- **Database :** {DB.name}
+{random.choice(custom_text)}
+ {random.choice(emoji_alive)}**Name: {me_}**
+ {random.choice(emoji_alive)}**Version :** `{pandaversion}`
+ {random.choice(emoji_alive)}**Uptime :** __{get_readable_time((time.time() - start_time))}__
+ {random.choice(emoji_alive)}**Pyrogram Version :** __{__version__}__
+ {random.choice(emoji_alive)}**Python Version :** __{platform.python_version()}__
+ {random.choice(emoji_alive)}**OS :** __{platform.system()}__
+ {random.choice(emoji_alive)}**CPU :** __{len(psutil.Process().cpu_affinity())}__
+ {random.choice(emoji_alive)}**DISK USAGE :** __{disk}__
+ {random.choice(emoji_alive)}**Database :** {DB.name} + {DB.ping()}
 """
     if message.reply_to_message:
         await client.send_photo(
