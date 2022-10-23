@@ -54,7 +54,7 @@ from ...helpers.PandaXBahasa import get_string
 
 HNDLR = Config.COMMAND_HAND_LER
 asst = tgbot
-UltVer = "VcPanda" 
+UltVer = "Userbot★Panda" 
 asstUserName = Config.TG_BOT_USERNAME
 LOG_CHANNEL = int(Config.PRIVATE_GROUP_BOT_API_ID)
 ACTIVE_CALLS, VC_QUEUE = [], {}
@@ -184,7 +184,7 @@ class Player:
             del CLIENTS[self._chat]
             await PandaBot.send_message(
                 self._current_chat,
-                f"• Successfully Left Vc : <code>{chat_id}</code> •",
+                f"★ Successfully Left Vc : <code>{chat_id}</code> •",
                 parse_mode="html",
             )
         except Exception:
@@ -201,7 +201,7 @@ class Player:
         if done:
             await vcClient.send_message(
                 self._current_chat,
-                "• Joined VC in <code>{}</code>".format(chat_id),
+                "★ Joined VC in <code>{}</code>".format(chat_id),
                 parse_mode="html",
             )
             return True
@@ -392,7 +392,7 @@ async def file_download(event, reply, fast_download=True):
     title = reply.file.title or reply.file.name or str(time()) + ".mp4"
     if fast_download:
         dl = await downloader(
-            "Panda/core/downloads/" + reply.file.name,
+            "userbot/_misc/" + reply.file.name,
             reply.media.document,
             event,
             time(),
@@ -403,7 +403,7 @@ async def file_download(event, reply, fast_download=True):
         dl = await reply.download_media()
     duration = time_formatter(reply.file.duration * 1000) if reply.file.duration else "🤷‍♂️"
     if reply.document.thumbs:
-        thumb = await reply.download_media("Panda/core/downloads/", thumb=-1)
+        thumb = await reply.download_media("userbot/_misc/", thumb=-1)
     return dl, thumb, title, reply.message_link, duration
 
 
