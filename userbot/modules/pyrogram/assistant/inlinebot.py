@@ -410,7 +410,7 @@ async def black_menu(client, cb):
             ],
             [
                 InlineKeyboardButton(
-                    text="🏧 Data PandaUserbot 🏧", callback_data=f"make_ilham_bot"
+                    text="🎗 Data PandaUserbot 🎗", callback_data=f"make_ilham_bot"
                 )
             ],
             [
