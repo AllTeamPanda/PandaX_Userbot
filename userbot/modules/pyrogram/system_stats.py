@@ -80,7 +80,7 @@ async def amialive(client, message):
  {random.choice(emoji_alive)}**OS :** __{platform.system()}__
  {random.choice(emoji_alive)}**CPU :** __{len(psutil.Process().cpu_affinity())}__
  {random.choice(emoji_alive)}**DISK USAGE :** __{disk}__
- {random.choice(emoji_alive)}**Database :** {DB.name} + {DB.ping()}
+ {random.choice(emoji_alive)}**Database :** {DB.name} {DB.ping()}
 """
     if message.reply_to_message:
         await client.send_photo(
