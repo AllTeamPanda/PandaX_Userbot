@@ -467,7 +467,7 @@ async def roaststart(client, cb):
             ]
     ]
     await cb.edit_message_text("`Please Wait, Restarting... This May Take A While`", reply_markup=InlineKeyboardMarkup(bttn))
-    args = [sys.executable, "-m", "Panda"]
+    args = [sys.executable, "-m", "userbot"]
     execle(sys.executable, *args, environ)
     exit()
 
@@ -515,7 +515,7 @@ async def update_it(client, cb):
             repo.git.reset("--hard", "FETCH_HEAD")
         await run_cmd("pip3 install --no-cache-dir -r requirements.txt")
         await cb.edit_message_text("`Updated Sucessfully! Give Me A min To Restart!`", reply_markup=InlineKeyboardMarkup(bttn))
-        args = [sys.executable, "-m", "Panda"]
+        args = [sys.executable, "-m", "userbot"]
         execle(sys.executable, *args, environ)
         exit()
         return
