@@ -486,7 +486,7 @@ async def update_it(client, cb):
         repo = Repo()
     except GitCommandError:
         return await cb.edit_message_text(
-            "`Invalid Git Command. Please Report This Bug To @diemmmmmmmmmm`",
+            "`Invalid Git Command. Please Report This Bug To @PandaUserbot`",
             reply_markup=InlineKeyboardMarkup(bttn)
         )
     except InvalidGitRepositoryError:
@@ -591,7 +591,7 @@ async def wow_nice(client, cb):
         v_t = CMD_LIST
         bttn = paginate_help(0, CMD_LIST, "helpme", is_official=nice)
     await cb.edit_message_text(
-        f"Command List & Help \n**Total Commands :** `{len(v_t)}` \n**(C) @diemmmmmmmmmm**",
+        f"Command List & Help \n**Total Commands :** `{len(v_t)}` \n**(C) @PandaUserbot**",
         reply_markup=InlineKeyboardMarkup(bttn),
     )
 
@@ -643,7 +643,7 @@ async def give_plugin_cmds(client, cb):
         is_official = True
     cmd_list = CMD_LIST if is_official else XTRA_CMD_LIST
     help_string = f"**Modules :** `{plugin_name}` \n{cmd_list[plugin_name]}"
-    help_string += "\n\n**(C) @diemmmmmmmmmm** ".format(plugin_name)
+    help_string += "\n\n**(C) @PandaUserbot** ".format(plugin_name)
     await cb.edit_message_text(
         help_string,
         reply_markup=InlineKeyboardMarkup(
