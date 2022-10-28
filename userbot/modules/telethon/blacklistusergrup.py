@@ -8,6 +8,12 @@ from ...helpers.utils import get_user_from_event, mentionuser
 
 grupbclk = SqL.getdb("BLACKLISTGC") or ""
 
+@PandaBot.on(events.ChatAction)
+async def joingrup(event):
+    if event.user_joined:
+        if i in grupbclk:
+            await PandaBot.kick_participant(event.chat_id, i)
+
 
 
 @PandaBot.ilhammansiz_cmd(
@@ -50,11 +56,4 @@ async def addblck(event):
     SqL.setdb("BLACKLISTGC", f"{blacklistgrup")  
     await event.client.reload(msg)
 
-
-@PandaBot.on(events.ChatAction)
-async def join(event):
-
-    if event.user_joined:
-        if i in grupbclk:
-            await PandaBot.kick_participant(event.chat_id, i)
 
