@@ -52,7 +52,6 @@ async def addblck(event):
     output = await xxnx.edit("berhasil menambahkan pengguna anjeng").format(gcblck)
     output += "**Bot is reloading to apply the changes. Please wait for a minute**"
     msg = await edit_or_reply(event, output)
-    )
     SqL.setdb("BLACKLISTGC", f"{blacklistgrup")  
     await event.client.reload(msg)
 
