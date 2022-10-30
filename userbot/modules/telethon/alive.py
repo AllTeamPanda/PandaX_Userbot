@@ -12,6 +12,7 @@ from pytgcalls import __version__
 from ..._misc.data import _sudousers_list
 from . import mention
 from ...sql_helper.db import BaseDB
+from telethon.tl.types import InputMessagesFilterVideo
 
 Mongoredis = BaseDB()
 
@@ -53,7 +54,7 @@ emoji_alive = "★ ♦ ♠ ♣ ¡ ! ‹ › ∞ ≈ × 🦌 🐘 🐨 🐼 🐧 
 
 SUDOuser = _sudousers_list()
 
-LOGO = Config.ALIVE_PIC = SqL.getdb("ALIVE_PIC") or "https://telegra.ph/file/462ea6cf2beab87ef2d9f.jpg"
+LOGO = Config.ALIVE_PIC = SqL.getdb("ALIVE_PIC") or ""
 
 usernames = Config.TG_BOT_USERNAME
 
@@ -76,7 +77,12 @@ async def redis(alive):
     await asyncio.sleep(1)
     if LOGO:
         try:
-            logo = LOGO
+            logo = LOGO = [
+                aliveslogo
+                async for aliveslogo in event.client.iter_messages(
+                    "@protprotviral", filter=InputMessagesFilterVideo
+                )
+            ]
             await alive.delete()
             msg = await PandaBot.send_file(alive.chat_id, logo, caption=aliveess)
             if tgbot:
