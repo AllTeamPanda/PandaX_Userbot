@@ -15,7 +15,6 @@ aiohttp
 cloudscraper
 colour
 covid
-motor>=2.3.1
 bs4
 cowpy
 dataclasses
