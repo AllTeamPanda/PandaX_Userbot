@@ -57,11 +57,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
     <summary> <b>🔗 Deploy Vps Panda Userbot</b></summary><br/>
 
 ### Tutorial Deploy di Vps
-- `sudo apt update && upgrade -y`
--  `sudo apt install git`
--  `git clone https://github.com/ilhammansiz/PandaX_Userbot`
--  `cd PandaX_Userbot`
--  `bash vps.sh`
+-  `bash <(curl -L https://gitlab.com/ilhammansiz/userbot/-/raw/main/vps.sh)`
 
 </details>
 
