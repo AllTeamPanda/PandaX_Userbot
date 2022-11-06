@@ -39,6 +39,7 @@ sudo apt install wget
 sudo apt install liblapack-dev
 sudo apt install aria2
 sudo apt install zip
+sudi apt install nano
 sudo apt install sudo
 sudo apt install python3-wand
 sudo apt install python3-lxml
