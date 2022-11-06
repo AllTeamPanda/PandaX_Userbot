@@ -59,8 +59,14 @@ def envtelethon():
             for var in ["API_ID", "API_HASH", "SESSION", "DATABASE_URL", "PRIVATE_GROUP_BOT_API_ID", "BOT_TOKEN", "BOT_USERNAME"]:
                 inp = input(f"Enter {var}\n- ")
                 file.write(f"{var}={inp}\n")
-        print("* Created '.env' file successfully! 😃 klik enter")
-
+        print("* Created '.env' file successfully!")
+        sleep(0.1)
+        system("screen -S PandaX_Userbot")
+        sleep(0.1)
+        system("bash start.sh")
+    else:
+        print("Jika gagal mengisi vars Silakan isi Varnya sendiri liat contohnya..")     
+        system("nano .env")
    
 def envpyrogram():
     start = input("").strip().lower()
@@ -71,15 +77,18 @@ def envpyrogram():
                 inp = input(f"Enter {var}\n- ")
                 file.write(f"{var}={inp}\n")
         print("* Created '.env' file successfully! 😃 klik enter")
-
+        sleep(0.1)
+        system("screen -S PandaX_Userbot")
+        sleep(0.1)
+        system("bash start.sh")
+    else:
+        print("Jika gagal mengisi vars Silakan isi Varnya sendiri liat contohnya..")     
+        system("nano .env")
+   
 clear()
 if not path.exists(".env"):
-    print(with_header("# Do you want to move toward creating .env file ? [t/p] t untuk telethon p untuk pyrogram "))
+    print(with_header("Silahkan ketik [t/p] t untuk telethon p untuk pyrogram "))
     envtelethon()
     envpyrogram()
     
-print(f"Silakan Ketik screen -S PandaX_Userbot")
-sleep(0.2)
-print(f"Use 'bash start.sh' Untuk memulai Panda Userbot")
-sleep(0.5)
 print("\nMade with 🐼 by @PandaUserbot...")
