@@ -62,7 +62,6 @@ def envtelethon():
         print("* Created '.env' file successfully!")
         sleep(0.1)
         system("screen -S PandaX_Userbot")
-        sleep(0.1)
         system("bash start")
     else:
         print("Jika gagal mengisi vars Silakan isi Varnya sendiri liat contohnya..")     
@@ -79,7 +78,6 @@ def envpyrogram():
         print("* Created '.env' file successfully! 😃 klik enter")
         sleep(0.1)
         system("screen -S PandaX_Userbot")
-        sleep(0.1)
         system("bash start")
     else:
         print("Jika gagal mengisi vars Silakan isi Varnya sendiri liat contohnya..")     
