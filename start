@@ -1,3 +1,4 @@
+#!/bin/bash
 ## Running PandaUserbot
 
 terakhir () {
@@ -13,6 +14,9 @@ Powered By @diemmmmmmmmmm with Telegram
 
 _start_all () {
     terakhir
+    git clone https://github.com/ilhammansiz/PandaX_Userbot
+    cd PandaX_Userbot/ && rm -rf .git
+    python3 ../installer/updater.py ../requirements.txt requirements.txt
     python3 -m userbot
 }
 
