@@ -63,7 +63,7 @@ def envtelethon():
         sleep(0.1)
         system("screen -S PandaX_Userbot")
         sleep(0.1)
-        system("bash start.sh")
+        system("bash start")
     else:
         print("Jika gagal mengisi vars Silakan isi Varnya sendiri liat contohnya..")     
         system("nano .env")
@@ -80,7 +80,7 @@ def envpyrogram():
         sleep(0.1)
         system("screen -S PandaX_Userbot")
         sleep(0.1)
-        system("bash start.sh")
+        system("bash start")
     else:
         print("Jika gagal mengisi vars Silakan isi Varnya sendiri liat contohnya..")     
         system("nano .env")
