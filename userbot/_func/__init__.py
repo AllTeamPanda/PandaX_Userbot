@@ -5,3 +5,8 @@ from .gmdl import *
 from .logger_s import *
 from .decorators import *
 from .plugin_helpers import *
+from .methods import Decorators
+
+
+class Methods(Decorators):
+    pass
