@@ -42,14 +42,10 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
     <summary> <b>🔗 Deploy Termux Panda Userbot</b></summary><br/>
 
 ### Tutorial Deploy di Termux
--  `pkg install`
--  `pkg update && upgrade -y`
--  `pkg install git`
--  `git clone https://github.com/ilhammansiz/PandaX_Userbot`
--  `cd PandaX_Userbot`
--  `bash termux.sh`
+-  `bash <(curl -L https://gitlab.com/ilhammansiz/userbot/-/raw/main/termux.sh)`
 
 </details>
+
 
 
 
