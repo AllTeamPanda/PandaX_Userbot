@@ -1,1 +1,1 @@
-from userbot.sql_helper import *
+from userbot.sql_helper import BASE, SESSION
