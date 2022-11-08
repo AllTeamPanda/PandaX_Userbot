@@ -49,6 +49,10 @@ def ask_process_info_text():
         print("Invalid Input")
         print("Enter 'A' to Continue or 'E' to exit...")
         ask_process_info_text()
+    elif strm != "ap":
+        print("Invalid Input")
+        print("Enter 'A' to Continue or 'E' to exit...")
+        ask_process_info_text()
 
 
 def envtelethon():
@@ -68,7 +72,7 @@ def envpyrogram():
     start = input("").strip().lower()
     if start in ["pyrogram", "p"]:
         print(f"Ketik p untuk Creating .env file.. Pyrogram")
-        with open(".env", "a") as file:
+        with open(".env", "ap") as file:
             for var in ["API_ID", "API_HASH", "PyroSESSION", "DATABASE_URL", "PRIVATE_GROUP_BOT_API_ID", "BOT_TOKEN", "BOT_USERNAME"]:
                 inp = input(f"Enter {var}\n- ")
                 file.write(f"{var}={inp}\n")
