@@ -79,10 +79,7 @@ def envpyrogram():
         sleep(0.1)
         system("screen -S PandaX_Userbot")
         system("bash start")
-    else:
-        print("Jika gagal mengisi vars Silakan isi Varnya sendiri liat contohnya..")     
-        system("nano .env")
-   
+
 clear()
 if not path.exists(".env"):
     print(with_header("Silahkan ketik [t/p] t untuk telethon p untuk pyrogram "))
