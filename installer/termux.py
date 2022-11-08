@@ -69,10 +69,10 @@ def envtelethon():
         system("bash start")
    
 def envpyrogram():
-    start = input("").strip().lower()
-    if start in ["pyrogram", "p"]:
+    startp = input("").strip().lower()
+    if startp in ["pyrogram", "p"]:
         print(f"Ketik p untuk Creating .env file.. Pyrogram")
-        with open(".env", "ap") as file:
+        with open(".env", "a") as file:
             for var in ["API_ID", "API_HASH", "PyroSESSION", "DATABASE_URL", "PRIVATE_GROUP_BOT_API_ID", "BOT_TOKEN", "BOT_USERNAME"]:
                 inp = input(f"Enter {var}\n- ")
                 file.write(f"{var}={inp}\n")
@@ -82,8 +82,10 @@ def envpyrogram():
         system("bash start")
 
 if not path.exists(".env"):
-    print(with_header("Silahkan ketik [t/p] t untuk telethon p untuk pyrogram "))
+    print(with_header("Silahkan ketik t untuk telethon"))
     envtelethon()
-    envpyrogram()
+   
     
-print("\nMade with 🐼 by @PandaUserbot...")
+if not path.exists(".env"):
+    print(with_header("Silahkan ketik p untuk pyrogram "))
+    envpyrogram()
