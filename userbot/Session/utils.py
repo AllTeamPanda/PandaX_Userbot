@@ -8,7 +8,7 @@ from telegraph import Telegraph
 from .._database.classdb import Database
 from ..helpers import Helpers
 from .._func import Methods
-from ..Var import Config
+from ._var import Config
 from ..versions import __version__ as botver
 import ublackdev 
 
