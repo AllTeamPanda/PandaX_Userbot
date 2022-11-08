@@ -19,7 +19,7 @@ class Config(object):
     # api hash of your telegram account (required)
     API_HASH = os.getenv("API_HASH")
     # create a session using command [ python3 session.py ] or use repl.it (required)
-    SESSION = os.getenv("SESSION")
+    PyroSESSION = os.getenv("PyroSESSION")
     # ------------------
     # temporary download location (required)
     TEMP_DICT = os.getenv("TEMP_DICT", os.path.abspath(".") + "/downloads/")
