@@ -53,4 +53,9 @@ if Database.BOT_TOKEN:
     pyrotgbot = Pyrobot()
 
 
+from .classpyro import SuperClient
 
+if Database.PyroSESSION:
+    app = SuperClient()
+else:
+    app = None
