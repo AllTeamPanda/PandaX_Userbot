@@ -1,14 +1,15 @@
 import logging
 import random
 
-from moviepy.editor import VideoFileClip
+#from moviepy.editor import VideoFileClip
+
 from PIL import Image, ImageOps
 
 import logging
 
 LOGS = logging.getLogger(__name__)
 
-
+"""
 async def vid_to_gif(inputfile, outputfile, speed=None, starttime=None, endtime=None):
     try:
         clip = VideoFileClip(inputfile)
@@ -21,7 +22,7 @@ async def vid_to_gif(inputfile, outputfile, speed=None, starttime=None, endtime=
     except Exception as e:
         LOGS.error(e)
         return None
-
+"""
 
 async def r_frames(image, w, h, outframes):
     for i in range(1, w, w // 30):
