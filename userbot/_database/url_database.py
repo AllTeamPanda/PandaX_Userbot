@@ -228,5 +228,5 @@ def DatabaseCute():
             "No DB requirement fullfilled!\nPlease install sql dependencies...\nTill then using local file as database."
         )
     if HOSTED_ON == "termux":
-        return LocalDB()
+        return HOSTED_ON
     exit()
