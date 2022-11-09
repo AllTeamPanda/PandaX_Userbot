@@ -2,7 +2,7 @@ import importlib
 import sys
 from pathlib import Path
 
-from .. import CMD_HELP, LOAD_PLUG
+from .. import *
 from ..Var import Config
 from .._misc import LOADED_CMDS, PLG_INFO
 from .._misc.logger import logging
@@ -43,6 +43,8 @@ def load_module(shortname, plugin_path=None):
         mod.Stark = tgbot
         mod.asst = tgbot
         mod.sudo_cmd = sudo_cmd
+        mod.CMD_LIST = CMD_LIST
+        mod.CMD_HELP = CMD_LIST
         mod.CMD_HELP = CMD_HELP
         mod.reply_id = reply_id
         mod.admin_cmd = admin_cmd
