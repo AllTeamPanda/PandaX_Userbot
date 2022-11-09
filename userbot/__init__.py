@@ -53,7 +53,7 @@ CMD_HELP = {}
 XTRA_CMD_LIST = {}
 ISAFK = False
 AFKREASON = None
-#CMD_LIST = {}
+CMD_LIST = {}
 SUDO_LIST = {}
 AFF_LIST = {}
 # for later purposes
