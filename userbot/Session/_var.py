@@ -30,7 +30,7 @@ class Config(object):
     )
     # ------------------
     # heroku api key (required -> if hosted on heroku)
-    HEROKU_API_KEY = os.getenv("HEROKU_API_KEY")
+    HEROKU_API_KEY = os.getenv("HEROKU_API")
     # heroku app name (required -> if hosted on heroku)
     HEROKU_APP_NAME = os.getenv("HEROKU_APP_NAME")
     # database url (required)
