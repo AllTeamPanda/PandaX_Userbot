@@ -112,6 +112,43 @@ def main_menu():
     return text, buttons
 
 
+def Helpeororr():
+    buttons = [
+        (
+            Button.url(
+                "Support",
+                "https://t.me/PandaUserbot",
+            ),
+            Button.inline(
+                f"💎 𝙸𝚗𝚏𝚘",
+                data="check",
+            ),
+        ),
+        (
+            Button.inline(
+                f"✅ Plugins ({len(GRP_INFO['plugins'])})",
+                data=f"plugins_menu",
+            ),
+            Button.inline(
+                f"☑️ Modules ({len(GRP_INFO['modules'])})",
+                data=f"modules_menu",
+            ),
+        ),
+        (
+            Button.inline(
+                f"VC Music ({len(GRP_INFO['music'])})",
+                data=f"music_menu",
+            ),
+        ),
+        (
+            Button.inline(
+                f"🔒 𝙲𝚕𝚘𝚜𝚎 𝙼𝚎𝚗𝚞",
+                data=f"close",
+            ),
+        ),
+    ]
+    return buttons
+
 def command_in_category(cname):
     cmds = 0
     for i in GRP_INFO[cname]:
@@ -486,23 +523,13 @@ async def inline_handler(event):  # sourcery no-metrics
                 )
             await event.answer([result] if result else None)
     else:
-        buttons = [
-            (
-                Button.url(
-                    "Source code", "https://github.com/ilhammansiz/PandaX_Userbot"
-                ),
-                Button.url(
-                    "Deploy",
-                    "https://t.me/PandaUserbot/13",
-                ),
-            )
-        ]
+        buttons = Helpeororr()
         markup = event.client.build_reply_markup(buttons)
         photo = types.InputWebDocument(
             url=PANDALOGO, size=0, mime_type="image/jpeg", attributes=[]
         )
         text, msg_entities = await event.client._parse_message_text(
-            "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗕𝗼𝘁", "md"
+            "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗕𝗼𝘁 Help", "md"
         )
         result = types.InputBotInlineResult(
             id=str(uuid4()),
