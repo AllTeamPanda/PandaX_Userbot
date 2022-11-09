@@ -14,6 +14,20 @@ load_dotenv(find_dotenv())
 
 CMD_LIST = {}
 XTRA_CMD_LIST = {}
+
+COUNT_MSG = 0
+USERS = {}
+COUNT_PM = {}
+LASTMSG = {}
+CMD_HELP = {}
+ISAFK = False
+AFKREASON = None
+SUDO_LIST = {}
+AFF_LIST = {}
+# for later purposes
+INT_PLUG = ""
+LOAD_PLUG = {}
+
 ### Var
 class Var(object):
     LOGGER = True
