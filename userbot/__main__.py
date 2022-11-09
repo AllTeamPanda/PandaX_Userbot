@@ -9,7 +9,7 @@ import sys
 import userbot
 from userbot import LOGS
 
-from .Var import Database
+from . import Database
 from .Session.multisession_ import Pyrogram, Telethon
 
 
