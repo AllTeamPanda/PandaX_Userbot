@@ -2,7 +2,7 @@ import heroku3
 from pyrogram import filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 
-from asterix import app
+from .... import app
 
 # buttons
 settings = app.BuildKeyboard(
