@@ -17,7 +17,7 @@ from traceback import format_exc
 
 
 from telethon import events
-from ..Var import Osdb, CMD_HANDLER, CMD_LIST, DEFAULT
+from ..Var import Osdb, CMD_HANDLER, DEFAULT
 
 from ..Session import (
     PandaBot,
