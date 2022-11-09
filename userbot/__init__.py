@@ -12,7 +12,6 @@ from redis import StrictRedis
 
 import sys
 import os
-from .Var import *
 from ._database import DatabaseCute
 DB = DatabaseCute()
 SqL = DB
@@ -46,6 +45,21 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
 LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 
+# Global Configiables
+COUNT_MSG = 0
+USERS = {}
+COUNT_PM = {}
+LASTMSG = {}
+CMD_HELP = {}
+XTRA_CMD_LIST = {}
+ISAFK = False
+AFKREASON = None
+CMD_LIST = {}
+SUDO_LIST = {}
+AFF_LIST = {}
+# for later purposes
+INT_PLUG = ""
+LOAD_PLUG = {}
 
 """
 if not BOT_TOKEN:
@@ -89,7 +103,7 @@ def dual_mode():
 
 
 
-from .Var import Config
+from .Var import *
 
 
 if Config.UPSTREAM_REPO == "PANDA_USERBOT":
@@ -141,21 +155,7 @@ class Auto(object):
     
 Gblacklist = ublackdev.gblacklist
 
-# Global Configiables
-COUNT_MSG = 0
-USERS = {}
-COUNT_PM = {}
-LASTMSG = {}
-CMD_HELP = {}
-XTRA_CMD_LIST = {}
-ISAFK = False
-AFKREASON = None
-CMD_LIST = {}
-SUDO_LIST = {}
-AFF_LIST = {}
-# for later purposes
-INT_PLUG = ""
-LOAD_PLUG = {}
+
 
 
 # Variables
