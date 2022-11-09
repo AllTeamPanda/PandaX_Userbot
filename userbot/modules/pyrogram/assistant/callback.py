@@ -6,7 +6,7 @@ from .... import app
 
 # buttons
 settings = app.BuildKeyboard(
-    (["• Settings •", "open-settings-dex"], ["• Modules •", "asterix-dex-2"])
+    (["• Settings •", "open-settings-dex"], ["• Modules •", "panda-dex-2"])
 )
 extra = app.BuildKeyboard(
     (["• Extra •", "open-extra-dex"], ["• Stats •", "open-stats-dex"])
@@ -19,7 +19,7 @@ home_back = app.BuildKeyboard((["Home", "close-dex"], ["Back", "open-start-dex"]
 
 
 # modules dex
-@app.bot.on_callback_query(filters.regex("asterix-dex-2"))
+@app.bot.on_callback_query(filters.regex("panda-dex-2"))
 @app.alert_user
 async def modules(_, cb):
     btn = app.HelpDex(0, app.CMD_HELP, "helpme")
@@ -96,7 +96,7 @@ async def _stats(_, cb):
 @app.alert_user
 async def _about(_, cb):
     await cb.edit_message_text(
-        text=f"**Dex:** About\n\n**Location:** /home/about\n\n**[ Personal Info ]:**\n\n**Age:** {app.assistant_age}\n**Name:** {app.assistant_name}\n**Gender:** {app.assistant_gender}\n\n**[ Versions ]:**\n\n**Python:** {app.python_version}\n**Pyrogram:** {app.pyrogram_version}\n**Assistant:**  {app.assistant_version}\n\n**[ About ]:**\n\nI am Khushi made by Ryoishin\nI am your friendly assistant, i will help you as much as you need. You can ask me for any help related to your userbot. If you have any suggestions or you're facing any problems which are related to asterixuserbot then just ask in [support group](https://t.me/asterix_support), ",
+        text=f"**Dex:** About\n\n**Location:** /home/about\n\n**[ Personal Info ]:**\n\n**Age:** {app.assistant_age}\n**Name:** {app.assistant_name}\n**Gender:** {app.assistant_gender}\n\n**[ Versions ]:**\n\n**Python:** {app.python_version}\n**Pyrogram:** {app.pyrogram_version}\n**Assistant:**  {app.assistant_version}\n\n**[ About ]:**\n\nI am Panda\nI am your friendly assistant, i will help you as much as you need. You can ask me for any help related to your userbot. If you have any suggestions or you're facing any problems which are related to asterixuserbot then just ask in [support group](https://t.me/teamsquaduserbotsupport), ",
         reply_markup=InlineKeyboardMarkup([home_back]),
     )
 
@@ -174,19 +174,19 @@ async def _settings(_, cb):
                 [
                     InlineKeyboardButton(
                         "Restart bot",
-                        callback_data="restart-asterix",
+                        callback_data="restart-panda",
                     ),
                 ],
                 [
                     InlineKeyboardButton(
                         "Shutdown bot",
-                        callback_data="shutdown-asterix",
+                        callback_data="shutdown-panda",
                     )
                 ],
                 [
                     InlineKeyboardButton(
                         "Update bot",
-                        callback_data="update-asterix",
+                        callback_data="update-panda",
                     )
                 ],
                 home_back,
@@ -195,7 +195,7 @@ async def _settings(_, cb):
     )
 
 
-@app.bot.on_callback_query(filters.regex("update-asterix"))
+@app.bot.on_callback_query(filters.regex("update-panda"))
 @app.alert_user
 async def _update_callback(_, cb):
     pass
@@ -210,9 +210,9 @@ async def _start(_, cb):
     )
 
 
-@app.bot.on_callback_query(filters.regex("restart-asterix"))
+@app.bot.on_callback_query(filters.regex("restart-panda"))
 @app.alert_user
-async def _restart_asterix(_, cb):
+async def _restart_panda(_, cb):
     await cb.edit_message_text(
         text="**Dex:** restart bot ( before confirm )\n\n**Location:** /home/settings/restart bot/confirm\n\nPress the Confirm button to restart userbot...",
         reply_markup=InlineKeyboardMarkup(
@@ -281,7 +281,7 @@ async def _restart_core(_, cb):
         )
 
 
-@app.bot.on_callback_query(filters.regex("shutdown-asterix"))
+@app.bot.on_callback_query(filters.regex("shutdown-panda"))
 @app.alert_user
 async def _shutdown_asterix(_, cb):
     await cb.edit_message_text(
