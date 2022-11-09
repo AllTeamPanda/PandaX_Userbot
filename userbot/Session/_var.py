@@ -13,6 +13,7 @@ if os.uname()[1] == "localhost":
 
 class Config(object):
     """configuration class"""
+    PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 
     # api id of your telegram account (required)
     API_ID = int(os.getenv("API_ID"))
@@ -40,7 +41,7 @@ class Config(object):
         int(x) for x in os.getenv("SUDO_USERS", "").split()
     ]  # splits on spaces
     # a group to store logs, etc (required)
-    LOG_CHAT = int(os.getenv("LOG_CHAT"))
+    LOG_CHAT = int(os.getenv("LOG_CHAT")) or PRIVATE_GROUP_BOT_API_ID
     # command handler, if you give (exclamation symbol = !) then you can do like this command: !ping => result: pong !
     PREFIX = os.getenv("PREFIX", ".")
     # for more info visit docs.pyrogram.org, workers section
@@ -60,7 +61,7 @@ class Config(object):
         "Hi tunggu sampai tuan saya membalas anda",
     )
     PM_LIMIT = int(os.getenv("PM_LIMIT", 4))
-    TIME_ZONE = os.getenv("TIME_ZONE", "Asia/Kolkata")
+    TIME_ZONE = os.getenv("TIME_ZONE", "Asia/Jakarta")
     USER_NAME = os.getenv("USER_NAME")
     USER_BIO = os.getenv("USER_BIO")
     USER_PIC = os.getenv("USER_PIC", "")
