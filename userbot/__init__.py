@@ -21,8 +21,6 @@ from .Session import *
 from .versions import __version__
 import logging
 from .versions import __version__, __license__, __author__, __copyright__
-from ._misc.client import dual_duall
-from .helpers.filters import gen, regex
 
 DEVLIST = ublackdev.plist
 DEVS = DEVLIST
@@ -156,7 +154,7 @@ class Auto(object):
 Gblacklist = ublackdev.gblacklist
 
 
-
+from ._misc.client import dual_duall
 
 # Variables
 BOTLOG = Config.BOTLOG
