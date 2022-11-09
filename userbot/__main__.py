@@ -6,10 +6,9 @@
 
 import sys
 
-import userbot
 from userbot import LOGS
 
-from . import Database
+from . import *
 from .Session.multisession_ import Pyrogram, Telethon
 
 
@@ -22,9 +21,9 @@ async def memulai():
     await resources.bukabot(f"assistant")
 
 def start():
-    if userbot.PandaBot:
-        userbot.PandaBot.loop.run_until_complete(memulai())
-        userbot.PandaBot.loop.run_until_complete(resources.join())
+    if PandaBot:
+        PandaBot.loop.run_until_complete(memulai())
+        PandaBot.loop.run_until_complete(resources.join())
         LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{userbot.__version__} [TELAH DIAKTIFKAN]")
 
 
@@ -37,12 +36,12 @@ if __name__ == "__main__":
         Pyrogram()
         
     
-if userbot.PandaBot:
+if PandaBot:
     try:
         if len(sys.argv) not in (1, 3, 4):
-            userbot.PandaBot.disconnect()
+            PandaBot.disconnect()
         else:
-            userbot.PandaBot.run_until_disconnected()
+            PandaBot.run_until_disconnected()
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
