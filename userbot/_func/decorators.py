@@ -19,10 +19,10 @@ from ..Session.pyroclient import (
     pyrobot3,
     pyrobot4,
 )
-from ..Var import Config
+
 from ._helpers import is_admin_or_owner, edit_or_reply
 
-from .. import CMD_LIST, XTRA_CMD_LIST
+from .. import CMD_LIST, XTRA_CMD_LIST, Config
 
 
 
