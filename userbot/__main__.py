@@ -5,7 +5,7 @@
 # ••••••••••••••••••••••√•••••••••••••√√√••••••••
 
 import sys
-
+import userbot
 from userbot import LOGS
 
 from . import *
