@@ -1,5 +1,5 @@
 # Important Requirements Telethon & Pyrogram
-Telethon==1.24.0
+telethon
 pyrogram==1.4.16
 pymongo[srv]
 psycopg2-binary
