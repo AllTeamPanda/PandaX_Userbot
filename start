@@ -14,7 +14,6 @@ Powered By @diemmmmmmmmmm with Telegram
 
 _start_all () {
     terakhir
-    python3 ../installer/updater.py ../requirements.txt requirements.txt
     python3 -m userbot
 }
 
