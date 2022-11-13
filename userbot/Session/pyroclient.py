@@ -49,7 +49,7 @@ if Database.PyroSESSION4:
 else:
     pyrobot4 = None
 
-if Database.PyroBOT_TOKEN:
+if Database.BOT_TOKEN:
     pyrotgbot = Pyrobot()
 
 
