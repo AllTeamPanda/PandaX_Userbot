@@ -5,7 +5,7 @@ from .pyroclient import pyrotgbot, pyrobot
 from telethon import functions, utils
 
 import logging
-from .._database._var import Var
+from .._database._var import Var, Database
 from logging import getLogger
 import pyrogram as pandapyro
 from .client import *
@@ -136,9 +136,8 @@ def Telethon():
 
 
 def Pyrogram():
-    if pyrotgbot:
+    if Database.PyroBOT_TOKEN:
         pyrotgbot.start()
-    if app.bot:
         app.bot.start()
         pyrotgbot.me = pyrotgbot.get_me()
         assistant_mods = plugin_collecter("./userbot/modules/pyrogram/assistant/")
@@ -147,7 +146,7 @@ def Pyrogram():
                 load_modulesPyro(mods, assistant=True)
             except Exception as e:
                 logging.error("[ASSISTANT] - Failed To Load : " + f"{mods} - {str(e)}")
-    if pyrobot:
+    if Database.PyroBOT_TOKEN:
         pyrobot.start()
         pyrobot.me = pyrobot.get_me()
         pyrobot.has_a_bot = True if pyrotgbot else False
