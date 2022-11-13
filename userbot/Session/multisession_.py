@@ -145,7 +145,7 @@ def Pyrogram():
                 load_modulesPyro(mods, assistant=True)
             except Exception as e:
                 logging.error("[ASSISTANT] - Failed To Load : " + f"{mods} - {str(e)}")
-    if Database.PyroBOT_TOKEN:
+    if pyrobot:
         pyrobot.start()
         pyrobot.me = pyrobot.get_me()
         pyrobot.has_a_bot = True if pyrotgbot else False
