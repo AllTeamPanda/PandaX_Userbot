@@ -72,7 +72,7 @@ class Config(object):
     BOT_PIC = os.getenv("BOT_PIC", "https://telegra.ph//file/ba8081afe4eb70270cf03.jpg")
     BOT_USERNAME = os.getenv("BOT_USERNAME")
     BOT_ID = os.getenv("BOT_ID")
-    TOKEN = os.getenv("PyroBOT_TOKEN")
+    TOKEN = os.getenv("BOT_TOKEN")
     THUMB_PIC = os.getenv("THUMB_PIC", "material/images/asterix.png")
     TL_NAME = os.getenv("TL_NAME")
     HELP_EMOJI = os.getenv("HELP_EMOJI")
