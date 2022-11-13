@@ -113,7 +113,7 @@ aliveess = f"""
 {CUSTOM_ALIVE_TEXT}
 
 ☉ {random.choice(emoji_alive)} 𝗢𝘄𝗻𝗲𝗿: @{PandaBot.me.username}
-☉ {random.choice(emoji_alive)} Version: `𝚅{pandaversion}`
+☉ {random.choice(emoji_alive)} 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: `𝚅{pandaversion}`
 ☉ {random.choice(emoji_alive)} 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
 ☉ {random.choice(emoji_alive)} 𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀: `𝚅{__version__}`
 ☉ {random.choice(emoji_alive)} 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`\n
