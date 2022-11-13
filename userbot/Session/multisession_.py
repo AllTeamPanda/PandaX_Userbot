@@ -45,8 +45,7 @@ THON_ON = """
 def Telethon():
     if Var.STRING_SESSION:
         try:
-            PandaBot.start()
-            cekbot.start(bot_token=CEKBOT)
+            PandaBot.connect()
             delta = PandaBot(functions.help.GetConfigRequest())
             for option in delta.dc_options:
                 if option.ip_address == PandaBot.session.server_address:
@@ -78,7 +77,7 @@ def Telethon():
                     logging.error("[ASSISTANT] - Failed To Load : " + f"{mods} - {str(e)}")
             """
             if PandaBot:
-                cekbot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
+                PandaBot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
         except Exception as e:
             LOGS.error(f"STRING_SESSION - {str(e)}")
             sys.exit()
@@ -86,7 +85,7 @@ def Telethon():
 
     if Var.STRING_SESSION2:
         try:
-            PandaBot2.start()
+            PandaBot2.connect()
             delta = PandaBot2(functions.help.GetConfigRequest())
             for option in delta.dc_options:
                 if option.ip_address == PandaBot2.session.server_address:
@@ -104,14 +103,14 @@ def Telethon():
             if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot2.me)
             if PandaBot2:
-                cekbot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
+                PandaBot2.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
         except Exception as e:
             LOGS.error(f"STRING_SESSION - {str(e)}")
             sys.exit()
      
     if Var.STRING_SESSION3:
         try:
-            PandaBot3.start()
+            PandaBot3.connect()
             delta = PandaBot3(functions.help.GetConfigRequest())
             for option in delta.dc_options:
                 if option.ip_address == PandaBot3.session.server_address:
@@ -129,7 +128,7 @@ def Telethon():
             if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot3.me)
             if PandaBot3:
-                cekbot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
+                PandaBot3.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
         except Exception as e:
             LOGS.error(f"STRING_SESSION - {str(e)}")
             sys.exit()
