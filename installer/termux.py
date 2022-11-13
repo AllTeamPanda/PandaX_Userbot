@@ -73,7 +73,7 @@ def envpyrogram():
     if startp in ["pyrogram", "p"]:
         print(f"Ketik p untuk Creating .env file.. Pyrogram")
         with open(".env", "a") as file:
-            for var in ["API_ID", "API_HASH", "PyroSESSION", "DATABASE_URL", "PRIVATE_GROUP_BOT_API_ID", "BOT_TOKEN", "BOT_USERNAME"]:
+            for var in ["API_ID", "API_HASH", "PyroSESSION", "DATABASE_URL", "PRIVATE_GROUP_BOT_API_ID", "PyroBOT_TOKEN", "BOT_USERNAME"]:
                 inp = input(f"Enter {var}\n- ")
                 file.write(f"{var}={inp}\n")
         print("* Created '.env' file successfully! 😃 klik enter")
