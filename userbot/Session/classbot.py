@@ -18,5 +18,5 @@ class Pyrobot(Client):
             "BotToken",
             api_id=Database.APP_ID,
             api_hash=Database.API_HASH,
-            bot_token=Database.BOT_TOKEN,
+            bot_token=Database.PyroBOT_TOKEN,
         )
