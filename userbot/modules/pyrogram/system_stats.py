@@ -74,16 +74,19 @@ async def amialive(client, message):
     du = psutil.disk_usage(client.workdir)
     disk = f"{humanbytes(du.used)} / {humanbytes(du.total)} " f"({du.percent}%)"
     alive = f"""
-{random.choice(custom_text)}
- {random.choice(emoji_alive)}**Name: {me_}**
- {random.choice(emoji_alive)}**Version :** `{pandaversion}`
- {random.choice(emoji_alive)}**Uptime :** __{get_readable_time((time.time() - start_time))}__
- {random.choice(emoji_alive)}**Pyrogram Version :** __{__version__}__
- {random.choice(emoji_alive)}**Python Version :** __{platform.python_version()}__
- {random.choice(emoji_alive)}**OS :** __{platform.system()}__
- {random.choice(emoji_alive)}**CPU :** __{len(psutil.Process().cpu_affinity())}__
- {random.choice(emoji_alive)}**DISK USAGE :** __{disk}__
- {random.choice(emoji_alive)}**Database :** {DB.name} {DB.ping()}
+{custom_text}\n
+☉ {random.choice(emoji_alive)} 𝗢𝘄𝗻𝗲𝗿: @{me_}
+☉ {random.choice(emoji_alive)} 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: `𝚅{pandaversion}`
+☉ {random.choice(emoji_alive)} 𝗣𝘆𝗿𝗼𝗴𝗿𝗮𝗺: `𝚅{__version__}`
+☉ {random.choice(emoji_alive)} 𝗗𝗶𝘀𝗸 𝗨𝘀𝗮𝗴𝗲: `𝚅{disk}`
+☉ {random.choice(emoji_alive)} 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{platform.python_version()}`\n
+⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
+╭━─━─━─━─━─━─━─━─━╮
+               𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲:
+☉ {random.choice(emoji_alive)} 𝗗𝗕_𝗦𝗾𝗟: `{DB.ping()}`
+☉ {random.choice(emoji_alive)} 𝗨𝗽𝘁𝗶𝗺𝗲: {get_readable_time((time.time() - start_time))}
+╰━─━─━─━─━─━─━─━─━╯
+⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
 """
     if message.reply_to_message:
         await client.send_photo(
@@ -95,6 +98,26 @@ async def amialive(client, message):
     else:
         await client.send_photo(message.chat.id, img_, caption=alive)
     await delete_or_pass(message)
+
+
+
+aliveess = f"""
+{CUSTOM_ALIVE_TEXT}
+☉ {random.choice(emoji_alive)} 𝗢𝘄𝗻𝗲𝗿: @{me_}
+☉ {random.choice(emoji_alive)} 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: `𝚅{pandaversion}`
+☉ {random.choice(emoji_alive)} 𝗣𝘆𝗿𝗼𝗴𝗿𝗮𝗺: `𝚅{__version__}`
+☉ {random.choice(emoji_alive)} 𝗗𝗶𝘀𝗸 𝗨𝘀𝗮𝗴𝗲: `𝚅{disk}`
+☉ {random.choice(emoji_alive)} 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{platform.python_version()}`\n
+⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
+╭━─━─━─━─━─━─━─━─━╮
+               𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲:
+☉ {random.choice(emoji_alive)} 𝗗𝗕_𝗦𝗾𝗟: `{DB.ping()}`
+☉ {random.choice(emoji_alive)} 𝗨𝗽𝘁𝗶𝗺𝗲: {get_readable_time((time.time() - start_time))}
+╰━─━─━─━─━─━─━─━─━╯
+⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
+"""
+
+
 
 
 @ilhammansiz_on_cmd(
