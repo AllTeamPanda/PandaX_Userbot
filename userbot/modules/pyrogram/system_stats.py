@@ -102,7 +102,7 @@ async def amialive(client, message):
 
 
 aliveess = f"""
-{CUSTOM_ALIVE_TEXT}
+{custom_text}
 ☉ {random.choice(emoji_alive)} 𝗢𝘄𝗻𝗲𝗿: @{me_}
 ☉ {random.choice(emoji_alive)} 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: `𝚅{pandaversion}`
 ☉ {random.choice(emoji_alive)} 𝗣𝘆𝗿𝗼𝗴𝗿𝗮𝗺: `𝚅{__version__}`
