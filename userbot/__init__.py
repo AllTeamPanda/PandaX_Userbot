@@ -194,3 +194,23 @@ except AttributeError:
     pass
 
 
+
+def where_hosted():
+    if os.getenv("DYNO"):
+        return "heroku"
+    if os.getenv("RAILWAY_STATIC_URL"):
+        return "railway"
+    if os.getenv("OKTETO_TOKEN"):
+        return "okteto"
+    if os.getenv("KUBERNETES_PORT"):
+        return "qovery | kubernetes"
+    if os.getenv("RUNNER_USER") or os.getenv("HOSTNAME"):
+        return "github actions"
+    if os.getenv("ANDROID_ROOT"):
+        return "termux"
+    return "local"
+
+
+HOSTED_ON = where_hosted()
+
+
