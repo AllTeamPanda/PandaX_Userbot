@@ -3,7 +3,7 @@ from platform import python_version
 from telethon import Button, version
 import asyncio
 import sys
-from userbot import PandaBot, SqL, StartTime, dual_duall, dual_mode, pandaversion, tgbot
+from userbot import PandaBot, SqL, StartTime, dual_duall, dual_mode, pandaversion, tgbot, HOSTED_ON
 pandaub = PandaBot
 import random
 from userbot import Config
@@ -121,7 +121,7 @@ aliveess = f"""
 ╭━─━─━─━─━─━─━─━─━╮
                𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲:
 
-☉ {random.choice(emoji_alive)} 𝗗𝗕_𝗦𝗾𝗟: `{SqL.ping()}`
+☉ {random.choice(emoji_alive)} 𝗗𝗕_𝗦𝗾𝗟: `{SqL.ping()}` in `{HOSTED_ON}`
 ☉ {random.choice(emoji_alive)} 𝗦𝘂𝗱𝗼: {SUDO()}
 
 ╰━─━─━─━─━─━─━─━─━╯
