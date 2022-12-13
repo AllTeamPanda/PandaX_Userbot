@@ -9,7 +9,7 @@ import userbot
 from userbot import LOGS
 
 from . import *
-from .Session.multisession_ import Pyrogram, Telethon
+from .Session.multisession_ import *
 
 
 from . import resources
@@ -25,7 +25,13 @@ def start():
         PandaBot.loop.run_until_complete(memulai())
         PandaBot.loop.run_until_complete(resources.join())
         LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{userbot.__version__} [TELAH DIAKTIFKAN]")
-
+    if PandaBot:
+        PandaBot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
+    if PandaBot2:
+        PandaBot2.send_message(PRIVATE, THON_ON.format(PandaBot2.me.username, version.__version__, cmdhr))
+    if PandaBot3:
+        PandaBot3.send_message(PRIVATE, THON_ON.format(PandaBot3.me.username, version.__version__, cmdhr))
+             
 
 
 if __name__ == "__main__":
