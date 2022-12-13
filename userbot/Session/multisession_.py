@@ -76,8 +76,6 @@ def Telethon():
                 except Exception as e:
                     logging.error("[ASSISTANT] - Failed To Load : " + f"{mods} - {str(e)}")
             """
-            if PandaBot:
-                PandaBot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
         except Exception as e:
             LOGS.error(f"STRING_SESSION - {str(e)}")
             sys.exit()
@@ -102,8 +100,6 @@ def Telethon():
             PandaBot2.uid = tgbot.uid = utils.get_peer_id(PandaBot2.me)
             if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot2.me)
-            if PandaBot2:
-                PandaBot2.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
         except Exception as e:
             LOGS.error(f"STRING_SESSION - {str(e)}")
             sys.exit()
@@ -127,8 +123,6 @@ def Telethon():
             PandaBot3.uid = tgbot.uid = utils.get_peer_id(PandaBot3.me)
             if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot3.me)
-            if PandaBot3:
-                PandaBot3.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
         except Exception as e:
             LOGS.error(f"STRING_SESSION - {str(e)}")
             sys.exit()
