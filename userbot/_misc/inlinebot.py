@@ -64,7 +64,7 @@ import time
 
 from ..Var import Config
 
-CUSTOM_HELP_TEXT = SqL.getdb("HELP_TEXT_INLINE") or  f"INLINE MENU CONNECT TO {HOSTED_ON}"
+CUSTOM_HELP_TEXT = SqL.getdb("HELP_TEXT_INLINE") or  f"INLINE MENU [ {HOSTED_ON} ]"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "🎴"
 
 def settingvar(dat):
