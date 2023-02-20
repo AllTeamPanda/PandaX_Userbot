@@ -4,7 +4,7 @@ from os import environ, execle, remove
 
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
-from ... import LOGS, __version__
+from ... import __version__
 from ...Var import Config
 from . import HEROKU_API_KEY, HEROKU_APP_NAME
 from . import edit_delete, edit_or_reply, PandaBot

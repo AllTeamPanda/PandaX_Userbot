@@ -1,5 +1,3 @@
-from telethon import version
-from importlib import import_module
 
 from .pyroclient import pyrotgbot, pyrobot
 from telethon import functions, utils
@@ -9,13 +7,12 @@ from .._database._var import Var, Database
 from logging import getLogger
 import pyrogram as pandapyro
 from .client import *
-from .._func.startup import load_modulesPyro, plugin_collecter, load_modulesTelethon
+from .._func.startup import load_modulesPyro, plugin_collecter
 from .pyroclient import *
 import sys
 LOGS = getLogger(__name__)
 import os
 from pyrogram import __version__ as pyrover
-from .modules import ALL_MODULES
 PRIVATE = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID"))
 
 cmdhr = os.environ.get("COMMAND_HAND_LER") or "."

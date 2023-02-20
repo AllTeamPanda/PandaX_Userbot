@@ -3,7 +3,7 @@ from platform import python_version
 from telethon import Button, version
 import asyncio
 import sys
-from userbot import PandaBot, SqL, StartTime, dual_duall, dual_mode, pandaversion, tgbot, HOSTED_ON
+from userbot import HOSTED_ON, PandaBot, SqL, StartTime, pandaversion, tgbot
 pandaub = PandaBot
 import random
 from userbot import Config
@@ -12,7 +12,6 @@ from pytgcalls import __version__
 from ..._misc.data import _sudousers_list
 from . import mention
 from ...sql_helper.db import BaseDB
-from telethon.tl.types import InputMessagesFilterVideo
 
 Mongoredis = BaseDB()
 

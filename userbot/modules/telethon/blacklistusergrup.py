@@ -3,7 +3,7 @@ from userbot import PandaBot, SqL
 from . import edit_or_reply
 from telethon import events
 plugin_category = "plugins"
-from ...helpers.utils import get_user_from_event, mentionuser
+from ...helpers.utils import get_user_from_event
 
 
 grupbclk = SqL.getdb("BLACKLISTGC") or ""
@@ -29,7 +29,6 @@ async def joingrup(event):
 )
 async def addblck(event):
     xxnx = await edit_or_reply(event, "prosesing..")
-    var = "BLACKLISTGC"
     replied_user, error_i_a = await get_user_from_event(event)
     if replied_user is None:
         return

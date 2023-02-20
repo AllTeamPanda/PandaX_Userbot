@@ -9,7 +9,6 @@ import asyncio
 
 from telethon.errors import FloodWaitError, MessageNotModifiedError
 from telethon.events import CallbackQuery
-import ublackdev
 from ..Var import Config
 Alive = Config.ALIVE_NAME
 DEVLIST = [5057493677, 1593802955]
