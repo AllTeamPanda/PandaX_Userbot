@@ -84,7 +84,7 @@ except Exception as e:
     sys.exit()
 
 try:
-    if Database.BOT_TOKEN is not None:
+    if Var.STRING_SESSION and Database.BOT_TOKEN:
         tgbot = PandaUserbotSession(
             "BOT_TOKEN",
             api_id=Var.APP_ID,
