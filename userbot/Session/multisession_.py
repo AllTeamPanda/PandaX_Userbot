@@ -126,7 +126,7 @@ def Telethon():
 
 
 def Pyrogram():
-    if Database.BOT_TOKEN:
+    if Database.PyroSESSION and Database.BOT_TOKEN:
         pyrotgbot.start()
         app.bot.start()
         pyrotgbot.me = pyrotgbot.get_me()
