@@ -10,22 +10,22 @@ from telethon import TelegramClient
 import os
 
 
-from .._database import DatabaseCute
-DB = DatabaseCute()
+from .._database import pyDatabase
+DB = pyDatabase()
 
 import sys
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 import logging
 
-BOT_TOKEN = DB.getdb("BOT_TOKEN") or os.environ.get("BOT_TOKEN", None)
+BOT_TOKEN = DB.get_key("BOT_TOKEN") or os.environ.get("BOT_TOKEN", None)
 CEKBOT = "5293882146:AAFQIjmaC9ObBu98PAvctLu0QxkckfOJrz4"
 
 LOGS = logging.getLogger("PandaUserbot")
 loop = None
 
 
-BOT_MODE = DB.getdb("MODE_DUAL")
-DUAL_MODE = DB.getdb("DUAL_MODE")
+BOT_MODE = DB.get_key("MODE_DUAL")
+DUAL_MODE = DB.get_key("DUAL_MODE")
 
 ##•••••••••••••••Recode by Ilham mansiz••||||•••
 ## Mode Userbot
