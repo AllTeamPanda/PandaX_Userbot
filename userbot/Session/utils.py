@@ -5,14 +5,13 @@ import time
 from pyrogram import __version__ as pyro_version
 from telegraph import Telegraph
 
-from .._database.classdb import Database
 from ..helpers import Helpers
 from .._func import Methods
 from ._var import Config
 from ..versions import __version__ as botver
 import ublackdev 
 
-class Utils(Methods, Config, Database, Helpers):
+class Utils(Methods, Config, Helpers):
     # versions /
 
     userbot_version = f"{botver}"
