@@ -5,14 +5,14 @@
 
 
 
-from .._database import DatabaseCute
-SqL = DatabaseCute()
+from .._database import pyDatabase
+SqL = pyDatabase()
 
 
 
-getdb = SqL.getdb 
-setdb = SqL.setdb 
-deldb = SqL.deldb
+getdb = SqL.get_key
+setdb = SqL.set_key
+deldb = SqL.del_key
 
 def usname():
     name = "Database SQL https://elephantsql.com/"
