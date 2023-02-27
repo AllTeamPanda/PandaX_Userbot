@@ -36,17 +36,17 @@ from .fasttelethon import download_file, upload_file
 from .logger import logging
 from .managers import edit_delete
 from .pluginManager import restart_script
-from ..sql_helper import sqldb as SqL
+
 LOGS = logging.getLogger(__name__)
 
 
 def dual_duall():
     try:
-        if SqL.getdb("DUAL_HNDLR") is not None:
-            duall = SqL.setdb("DUAL_HNDLR", "/") or "•"
+        if Config.COMMAND_HAND_LER is not None:
+            duall = Config.COMMAND_HAND_LER or "•"
             return duall
         else:
-            duall = SqL.setdb("DUAL_HNDLR", "/") or "/"
+            duall = Config.COMMAND_HAND_LER or "/"
             return duall
     except Exception as e:
         print(f"{str(e)}")
