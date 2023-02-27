@@ -1,12 +1,12 @@
 
-from .._database import DatabaseCute
-SqL = DatabaseCute()
+from .._database import pyDatabase
+SqL = pyDatabase()
 
 
 
-gvarstatus = SqL.getdb 
-addgvar = SqL.setdb 
-delgvar = SqL.deldb 
+gvarstatus = SqL.get_key
+addgvar = SqL.set_key
+delgvar = SqL.del_key
  
 
 def get_chats():
