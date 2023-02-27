@@ -39,7 +39,9 @@ from .managers import edit_delete
 from .pluginManager import restart_script
 
 LOGS = logging.getLogger(__name__)
+from .._database import DatabaseCute
 
+SqL = DatabaseCute()
 
 def dual_duall():
     try:
@@ -342,8 +344,8 @@ class PandaUserbotSession(TelegramClient):
                                 **kwargs,
                             ),
                         )
-                if allow_sudo and SqL.getdb("sudoenable") is not None:
-                    if command is None or command[0] in sudo_enabledcmds:
+                if allow_sudo is not None:
+                    if command is None or command[0]:
                         if edited:
                             PandaBot.add_event_handler(
                                 wrapper,
@@ -645,8 +647,8 @@ class PandaUserbotSession(TelegramClient):
                                 **kwargs,
                             ),
                         )
-                if allow_sudo and SqL.getdb("sudoenable") is not None:
-                    if command is None or command[0] in sudo_enabledcmds:
+                if allow_sudo is not None:
+                    if command is None or command[0]:
                         if edited:
                             PandaBot.add_event_handler(
                                 wrapper,
