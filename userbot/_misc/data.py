@@ -14,7 +14,7 @@ DEV = [5057493677, 1593802955]
 
 def _sudousers_list():
     try:
-        sudousers = pdB.get_key("sudousers_list") 
+        sudousers = pdB.get_key("sudousers_list") or {}
     except AttributeError:
         sudousers = {}
     ulist = sudousers.keys()
@@ -22,7 +22,7 @@ def _sudousers_list():
 
 def _dev_list():
     try:
-        _users = pdB.get_key("devs_list")
+        _users = pdB.get_key("devs_list") or {}
     except AttributeError:
         pass
     ulist = _users.keys()
