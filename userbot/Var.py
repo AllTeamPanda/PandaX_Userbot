@@ -296,7 +296,7 @@ class Config(object):
     NO_OF_ROWS_IN_HELP = int(os.environ.get("NO_OF_ROWS_IN_HELP", 5))
     NO_OF_COLUMNS_IN_HELP = int(os.environ.get("NO_OF_COLUMNS_IN_HELP", 2))
     EMOJI_TO_DISPLAY_IN_HELP = os.environ.get("EMOJI_TO_DISPLAY_IN_HELP", "✅")
-    COMMAND_HAND_LER = SqL.get_keyda("COMMAND_HAND_LER") or os.environ.get("COMMAND_HAND_LER", r".")
+    COMMAND_HAND_LER = SqL.get_key("COMMAND_HAND_LER") or os.environ.get("COMMAND_HAND_LER", r".")
     SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", r".")
     TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "downloads")
     # set this with required folder path to act as temparary folder
