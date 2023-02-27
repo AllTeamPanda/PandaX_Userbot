@@ -202,8 +202,8 @@ API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 
 import os
 from typing import Set
-from ._database import DatabaseCute
-SqL = DatabaseCute()
+from ._database import pyDatabase
+SqL = pyDatabase()
 from telethon.tl.types import ChatBannedRights
 import heroku3
 from dotenv import load_dotenv
@@ -239,7 +239,7 @@ class Config(object):
     LOGGER = True
     STRING_SESSION3 = os.environ.get("SESSION3") or None  
     STRING_SESSION2 = os.environ.get("SESSION2") or None
-    ALIVE_NAME = SqL.getdb("ALIVE_NAME") or os.environ.get("ALIVE_NAME", None)
+    ALIVE_NAME = SqL.get_key("ALIVE_NAME") or os.environ.get("ALIVE_NAME", None)
     APP_ID = int(os.environ.get("API_ID", 6))
     API_HASH = os.environ.get("API_HASH") or None
     DB_URI = os.environ.get("DATABASE_URL", None)
@@ -252,12 +252,12 @@ class Config(object):
         "TG_BOT_TOKEN_BF_HER", None
     )
     TG_BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
-    TZ = SqL.getdb("TZ") or os.environ.get("TZ", "Asia/Jakarta") 
+    TZ = SqL.get_key("TZ") or os.environ.get("TZ", "Asia/Jakarta") 
     UPSTREAM_REPO = os.environ.get(
         "UPSTREAM_REPO", "https://github.com/ilhammansiz/PandaX_Userbot.git"
     ) 
-    BOT_TOKEN = SqL.getdb("BOT_TOKEN") or TG_BOT_TOKEN 
-    BOT_USERNAME = SqL.getdb("BOT_USERNAME") or TG_BOT_USERNAME
+    BOT_TOKEN = SqL.get_key("BOT_TOKEN") or TG_BOT_TOKEN 
+    BOT_USERNAME = SqL.get_key("BOT_USERNAME") or TG_BOT_USERNAME
     AUTONAME = os.environ.get("AUTONAME", None)
     PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
     PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID") or 0)
@@ -296,7 +296,7 @@ class Config(object):
     NO_OF_ROWS_IN_HELP = int(os.environ.get("NO_OF_ROWS_IN_HELP", 5))
     NO_OF_COLUMNS_IN_HELP = int(os.environ.get("NO_OF_COLUMNS_IN_HELP", 2))
     EMOJI_TO_DISPLAY_IN_HELP = os.environ.get("EMOJI_TO_DISPLAY_IN_HELP", "✅")
-    COMMAND_HAND_LER = SqL.getdb("COMMAND_HAND_LER") or os.environ.get("COMMAND_HAND_LER", r".")
+    COMMAND_HAND_LER = SqL.get_keyda("COMMAND_HAND_LER") or os.environ.get("COMMAND_HAND_LER", r".")
     SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", r".")
     TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "downloads")
     # set this with required folder path to act as temparary folder
