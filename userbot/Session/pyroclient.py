@@ -53,7 +53,8 @@ else:
 
 if DB.getdb("PyroSESSION") or Database.PyroSESSION and DB.getdb("BOT_TOKEN") or Database.BOT_TOKEN:
     pyrotgbot = Pyrobot()
-
+else:
+    pyrotgbot = None
 
 from .classpyro import SuperClient
 
