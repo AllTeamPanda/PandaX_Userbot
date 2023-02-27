@@ -6,29 +6,21 @@
 
 
 
-from ..sql_helper.global_collectionjson import get_collection
-from ..sql_helper.global_list import get_collection_list
+
+from .._database import pdB
 DEV = [5057493677, 1593802955]
 
 def _sudousers_list():
-    try:
-        sudousers = get_collection("sudousers_list").json
-    except AttributeError:
-        sudousers = {}
-    ulist = sudousers.keys()
-    return [int(chat) for chat in ulist]
+    sudousers = pdB.get_key("sudousers_list") 
+    return sudousers
 
 def _dev_list():
-    try:
-        sudousers = get_collection("dev_list").json
-    except AttributeError:
-        sudousers = {}
-    ulist = sudousers.keys()
-    return [int(chat) for chat in ulist]
+    _users = pdB.get_key("devs_list") 
+    return _users
 
 def _users_list():
     try:
-        sudousers = get_collection("sudousers_list").json
+        sudousers = pdB.get_key("sudousers_list")
     except AttributeError:
         sudousers = {}
     ulist = sudousers.keys()
@@ -39,7 +31,7 @@ def _users_list():
 
 def blacklist_chats_list():
     try:
-        blacklistchats = get_collection("blacklist_chats_list").json
+        blacklistchats = pdB.get_key("blacklist_chats_list") 
     except AttributeError:
         blacklistchats = {}
     blacklist = blacklistchats.keys()
@@ -47,8 +39,8 @@ def blacklist_chats_list():
 
 
 def sudo_enabled_cmds():
-    listcmds = get_collection_list("sudo_enabled_cmds")
-    return list(listcmds)
+    listcmds = pdB.get_key("sudo_enabled_cmds")
+    return listcmds
 
 
 
