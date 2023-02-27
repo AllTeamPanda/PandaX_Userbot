@@ -1,2 +1,2 @@
-from .url_database import DatabaseCute
+from .url_database import pyDatabase
 
