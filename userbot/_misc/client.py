@@ -36,7 +36,7 @@ from .fasttelethon import download_file, upload_file
 from .logger import logging
 from .managers import edit_delete
 from .pluginManager import restart_script
-
+from ..sql_helper import sqldb as SqL
 LOGS = logging.getLogger(__name__)
 
 
