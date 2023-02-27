@@ -51,7 +51,7 @@ if DB.getdb("PyroSESSION4") or Database.PyroSESSION4:
 else:
     pyrobot4 = None
 
-if DB.getdb("BOT_TOKEN") or Database.BOT_TOKEN:
+if DB.getdb("PyroSESSION") or Database.PyroSESSION and DB.getdb("BOT_TOKEN") or Database.BOT_TOKEN:
     pyrotgbot = Pyrobot()
 
 
