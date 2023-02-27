@@ -10,13 +10,24 @@
 from .._database import pdB
 DEV = [5057493677, 1593802955]
 
+
+
 def _sudousers_list():
-    sudousers = pdB.get_key("sudousers_list") 
-    return sudousers
+    try:
+        sudousers = pdB.get_key("sudousers_list") 
+    except AttributeError:
+        sudousers = {}
+    ulist = sudousers.keys()
+    return [int(chat) for chat in ulist]
 
 def _dev_list():
-    _users = pdB.get_key("devs_list") 
-    return _users
+    try:
+        _users = pdB.get_key("devs_list")
+    except AttributeError:
+        sudousers = {}
+    ulist = _users.keys()
+    return [int(chat) for chat in ulist]
+
 
 def _users_list():
     try:
