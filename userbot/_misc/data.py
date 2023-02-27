@@ -24,7 +24,7 @@ def _dev_list():
     try:
         _users = pdB.get_key("devs_list")
     except AttributeError:
-        sudousers = {}
+        pass
     ulist = _users.keys()
     return [int(chat) for chat in ulist]
 
