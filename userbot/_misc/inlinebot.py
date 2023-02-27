@@ -64,7 +64,7 @@ import time
 
 from ..Var import Config
 
-CUSTOM_HELP_TEXT = SqL.getdb("HELP_TEXT_INLINE") or  f"INLINE MENU [ {HOSTED_ON} ]"
+CUSTOM_HELP_TEXT = SqL.get_key("HELP_TEXT_INLINE") or  f"INLINE MENU [ {HOSTED_ON} ]"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "🎴"
 
 def settingvar(dat):
@@ -166,14 +166,14 @@ def paginate_help(
     category_pgno=0,
 ):  # sourcery no-metrics
     try:
-        number_of_rows = int(SqL.getdb("NO_OF_ROWS_IN_HELP") or 3)
+        number_of_rows = int(SqL.get_key("NO_OF_ROWS_IN_HELP") or 3)
     except (ValueError, TypeError):
         number_of_rows = 3
     try:
-        number_of_cols = int(SqL.getdb("NO_OF_COLUMNS_IN_HELP") or 2)
+        number_of_cols = int(SqL.get_key("NO_OF_COLUMNS_IN_HELP") or 2)
     except (ValueError, TypeError):
         number_of_cols = 2
-    HELP_EMOJI = SqL.getdb("HELP_EMOJI") or "📚"
+    HELP_EMOJI = SqL.get_key("HELP_EMOJI") or "📚"
     helpable_plugins = [p for p in loaded_plugins if not p.startswith("_")]
     helpable_plugins = sorted(helpable_plugins)
     if len(HELP_EMOJI) == 2:
@@ -770,8 +770,8 @@ async def setting(event, name, value):
         if Heroku:
             heroku_var[name] = value
         else:
-             SqL.setdb(name, value)
-        SqL.setdb(name, value)
+             SqL.set_key(name, value)
+        SqL.set_key(name, value)
     except BaseException:
         return await event.edit("**Maaf Gagal Menyimpan Dikarenakan ERROR**")
 
