@@ -38,9 +38,7 @@ from .managers import edit_delete
 from .pluginManager import restart_script
 
 LOGS = logging.getLogger(__name__)
-from .._database import DatabaseCute
 
-SqL = DatabaseCute()
 
 def dual_duall():
     try:
@@ -261,7 +259,7 @@ class PandaUserbotSession(TelegramClient):
                         wrapper,
                         NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                     )
-                if dual and SqL.getdb("MODE_DUAL"):
+                if dual:
                     tgbot.add_event_handler(
                         wrapper,
                         MessageEdited(pattern=REGEX_.dual, outgoing=True, **kwargs),
@@ -326,7 +324,7 @@ class PandaUserbotSession(TelegramClient):
                                     **kwargs,
                                 ),
                             )
-                        if dual and SqL.getdb("MODE_DUAL"):
+                        if dual:
                             tgbot.add_event_handler(
                                 wrapper,
                                 MessageEdited(
@@ -564,7 +562,7 @@ class PandaUserbotSession(TelegramClient):
                         wrapper,
                         NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                     )
-                if dual and SqL.getdb("MODE_DUAL"):
+                if dual:
                     tgbot.add_event_handler(
                         wrapper,
                         MessageEdited(pattern=REGEX_.dual, outgoing=True, **kwargs),
@@ -629,7 +627,7 @@ class PandaUserbotSession(TelegramClient):
                                     **kwargs,
                                 ),
                             )
-                        if dual and SqL.getdb("MODE_DUAL"):
+                        if dual:
                             tgbot.add_event_handler(
                                 wrapper,
                                 MessageEdited(
