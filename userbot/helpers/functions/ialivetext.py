@@ -23,19 +23,7 @@ def check_data_base_heal_th():
     # https://stackoverflow.com/a/41961968
     is_database_working = False
     output = "✧"
-    if not Config.DB_URI:
-        return is_database_working, output
-    from ...sql_helper import SESSION
-
-    try:
-        # to check database we will execute raw query
-        SESSION.execute("SELECT 1")
-    except Exception as e:
-        output = f"❌ {str(e)}"
-        is_database_working = False
-    else:
-        output = "✧"
-        is_database_working = True
+    
     return is_database_working, output
 
 
