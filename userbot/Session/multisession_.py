@@ -42,7 +42,7 @@ THON_ON = """
 def Telethon():
     if Var.STRING_SESSION:
         try:
-            PandaBot.connect()
+            PandaBot.start()
             delta = PandaBot(functions.help.GetConfigRequest())
             for option in delta.dc_options:
                 if option.ip_address == PandaBot.session.server_address:
