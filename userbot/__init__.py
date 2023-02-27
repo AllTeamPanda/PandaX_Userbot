@@ -12,8 +12,8 @@ from redis import StrictRedis
 
 import sys
 import os
-from ._database import DatabaseCute
-DB = DatabaseCute()
+from ._database import pyDatabase
+DB = pyDatabase()
 SqL = DB
 import time
 import ublackdev
@@ -38,8 +38,8 @@ LOGS.info(f"Terkoneksi {DB.name} Successfully!")
 
 pandaversion = __version__
 StartTime = time.time()
-BOT_MODE = SqL.getdb("MODE_DUAL")
-DUAL_MODE = SqL.getdb("DUAL_MODE")
+BOT_MODE = SqL.get_key("MODE_DUAL")
+DUAL_MODE = SqL.get_key("DUAL_MODE")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
 LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
@@ -68,9 +68,9 @@ if not BOT_TOKEN:
         PandaBot.loop.run_until_complete(autobot())
 else:
     BOT_TOKEN = None
-    if not SqL.getdb("BOT_TOKEN") and BOT_TOKEN:
-        SqL.setdb("BOT_TOKEN", BOT_TOKEN)
-    if not SqL.getdb("BOT_TOKEN"):
+    if not SqL.get_key("BOT_TOKEN") and BOT_TOKEN:
+        SqL.set_key("BOT_TOKEN", BOT_TOKEN)
+    if not SqL.get_key("BOT_TOKEN"):
         LOGS.info('"BOT_TOKEN" not Found! Please add it, in order to use "MODE BoT"')
         import sys
 
@@ -90,11 +90,11 @@ petercordpanda_bot = pandaub
 
 def dual_mode():
     try:
-        if SqL.getdb("DUAL_MODE") is not None:
-            mode = SqL.setdb("DUAL_MODE", "DUAL") or "DUAL"
+        if SqL.get_key("DUAL_MODE") is not None:
+            mode = SqL.set_key("DUAL_MODE", "DUAL") or "DUAL"
             return mode
         else:
-            mode = SqL.setdb("DUAL_MODE", "False")
+            mode = SqL.set_key("DUAL_MODE", "False")
             return mode
     except Exception as e:
         print(f"{str(e)}")
