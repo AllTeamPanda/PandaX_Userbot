@@ -88,7 +88,8 @@ class PandaUserbotSession(TelegramClient):
     ) -> callable:  # sourcery no-metrics
         kwargs["func"] = kwargs.get("func", lambda e: e.via_bot_id is None)
         kwargs.setdefault("forwards", forword)
-        if SqL.getdb("blacklist_chats") is not None:
+        from .._database import pdB
+        if pdB.get_key("blacklist_chats") is not None:
             kwargs["blacklist_chats"] = True
             kwargs["chats"] = blacklist_chats_list()
         stack = inspect.stack()
@@ -392,7 +393,8 @@ class PandaUserbotSession(TelegramClient):
     ) -> callable:  # sourcery no-metrics
         kwargs["func"] = kwargs.get("func", lambda e: e.via_bot_id is None)
         kwargs.setdefault("forwards", forword)
-        if SqL.getdb("blacklist_chats") is not None:
+        from .._database import pdB
+        if pdB.get_key("blacklist_chats") is not None:
             kwargs["blacklist_chats"] = True
             kwargs["chats"] = blacklist_chats_list()
         stack = inspect.stack()
