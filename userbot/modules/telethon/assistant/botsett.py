@@ -24,10 +24,10 @@ LOGS = logging.getLogger(__name__)
 
 plugin_category = "plugins"
 
-
+botusername = Config.BOT_USERNAME
 
 @tgbot.bot_cmd(
-    pattern=f"^/start$",
+    pattern=f"^/start({botusername})?([\s]+)?$",
     incoming=True,
     func=lambda e: e.is_private,
 )
