@@ -1,287 +1,183 @@
-
+# Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
 
 import asyncio
-import os
-import time
-import requests
-import wget
-from youtube_dl import YoutubeDL
-from youtubesearchpython import SearchVideos
-from ..._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from ..._func._helpers import edit_or_reply, get_text, progress, humanbytes
 
-from . import HELP
+from pyrogram.types import Message
 
+from ... import app, gen
 
-HELP(
-    "song",
-)
-
-@ilhammansiz_on_cmd(
-    ["utubevid", "ytv"],
-    cmd_help={
-        "help": "Download YouTube Videos just with name!",
-        "example": "{ch}utubevid (video name OR link)",
-    },
-)
-async def yt_vid(client, message):
-    input_str = get_text(message)
-    pablo = await edit_or_reply(message, f"`Processing...`")
-    if not input_str:
-        await pablo.edit(
-            "`Please Give Me A Valid Input. You Can Check Help Menu To Know More!`"
-        )
-        return
-    await pablo.edit(f"`Getting {input_str} From Youtube Servers. Please Wait.`")
-    search = SearchVideos(str(input_str), offset=1, mode="dict", max_results=1)
-    rt = search.result()
-    result_s = rt["search_result"]
-    url = result_s[0]["link"]
-    vid_title = result_s[0]["title"]
-    yt_id = result_s[0]["id"]
-    uploade_r = result_s[0]["channel"]
-    thumb_url = f"https://img.youtube.com/vi/{yt_id}/hqdefault.jpg"
-    await asyncio.sleep(0.6)
-    downloaded_thumb = wget.download(thumb_url)
-    opts = {
-        "format": "best",
-        "addmetadata": True,
-        "key": "FFmpegMetadata",
-        "prefer_ffmpeg": True,
-        "geo_bypass": True,
-        "nocheckcertificate": True,
-        "postprocessors": [{"key": "FFmpegVideoConvertor", "preferedformat": "mp4"}],
-        "outtmpl": "%(id)s.mp4",
-        "logtostderr": False,
-        "quiet": True,
-    }
-    try:
-        with YoutubeDL(opts) as ytdl:
-            ytdl_data = ytdl.extract_info(url, download=True)
-    except Exception as e:
-        await pablo.edit(f"**Failed To Download** \n**Error :** `{str(e)}`")
-        return
-    c_time = time.time()
-    file_stark = f"{ytdl_data['id']}.mp4"
-    capy = f"**Video Name ➠** `{vid_title}` \n**Requested For ➠** `{input_str}` \n**Channel ➠** `{uploade_r}` \n**Link ➠** `{url}`"
-    await client.send_video(
-        message.chat.id,
-        video=open(file_stark, "rb"),
-        duration=int(ytdl_data["duration"]),
-        file_name=str(ytdl_data["title"]),
-        thumb=downloaded_thumb,
-        caption=capy,
-        supports_streaming=True,
-        progress=progress,
-        progress_args=(
-            pablo,
-            c_time,
-            f"`Uploading {input_str} Song From YouTube Music!`",
-            file_stark,
-        ),
-    )
-    await pablo.delete()
-    for files in (downloaded_thumb, file_stark):
-        if files and os.path.exists(files):
-            os.remove(files)
-            
-@ilhammansiz_on_cmd(
-    ["ytdl"],
-    cmd_help={
-        "help": "Download All Contents Supported by youtube_dl",
-        "example": "{ch}ytdl (link)",
-    },
-)
-async def yt_dl_(client, message):
-    input_str = get_text(message)
-    pablo = await edit_or_reply(message, f"`Processing...`")
-    if not input_str:
-        await pablo.edit(
-            "`Please Give Me A Valid Input. You Can Check Help Menu To Know More!`"
-        )
-        return
-    await pablo.edit(f"`Downloading Please Wait..`")
-    url = input_str
-    opts = {
-        "format": "best",
-        "addmetadata": True,
-        "key": "FFmpegMetadata",
-        "prefer_ffmpeg": True,
-        "geo_bypass": True,
-        "nocheckcertificate": True,
-        "postprocessors": [{"key": "FFmpegVideoConvertor", "preferedformat": "mp4"}],
-        "outtmpl": "%(id)s.mp4",
-        "logtostderr": False,
-        "quiet": True,
-    }
-    try:
-        with YoutubeDL(opts) as ytdl:
-            ytdl_data = ytdl.extract_info(url, download=True)
-    except Exception as e:
-        await pablo.edit(f"**Failed To Download** \n**Error :** `{str(e)}`")
-        return
-    c_time = time.time()
-    file_stark = f"{ytdl_data['id']}.mp4"
-    size = os.stat(file_stark).st_size
-    capy = f"<< **{file_stark}** [`{humanbytes(size)}`] >>"
-    await client.send_video(
-        message.chat.id,
-        video=open(file_stark, "rb"),
-        duration=int(ytdl_data["duration"]),
-        file_name=str(ytdl_data["title"]),
-        caption=capy,
-        supports_streaming=True,
-        progress=progress,
-        progress_args=(
-            pablo,
-            c_time,
-            f"`Uploading {file_stark}.`",
-            file_stark,
-        ),
-    )
-    await pablo.delete()
-    if os.path.exists(file_stark):
-        os.remove(file_stark)
-
-@ilhammansiz_on_cmd(
-    ["ytmusic", "yta"],
-    cmd_help={
-        "help": "Download YouTube Music just with name!",
-        "example": "{ch}ytmusic (song name OR link)",
-    },
-)
-async def ytmusic(client, message):
-    input_str = get_text(message)
-    pablo = await edit_or_reply(
-        message, f"`Getting {input_str} From Youtube Servers. Please Wait.`"
-    )
-    if not input_str:
-        await pablo.edit(
-            "`Please Give Me A Valid Input. You Can Check Help Menu To Know More!`"
-        )
-        return
-    search = SearchVideos(str(input_str), offset=1, mode="dict", max_results=1)
-    rt = search.result()
-    try:
-        result_s = rt["search_result"]
-    except:
-        await pablo.edit(
-            f"Song Not Found With Name {input_str}, Please Try Giving Some Other Name."
-        )
-        return
-    url = result_s[0]["link"]
-    result_s[0]["duration"]
-    vid_title = result_s[0]["title"]
-    yt_id = result_s[0]["id"]
-    uploade_r = result_s[0]["channel"]
-    thumb_url = f"https://img.youtube.com/vi/{yt_id}/hqdefault.jpg"
-    await asyncio.sleep(0.6)
-    downloaded_thumb = wget.download(thumb_url)
-    opts = {
-        "format": "bestaudio",
-        "addmetadata": True,
-        "key": "FFmpegMetadata",
-        "writethumbnail": True,
-        "prefer_ffmpeg": True,
-        "geo_bypass": True,
-        "nocheckcertificate": True,
-        "postprocessors": [
+app.CMD_HELP.update(
+    {
+        "song": (
+            "song",
             {
-                "key": "FFmpegExtractAudio",
-                "preferredcodec": "mp3",
-                "preferredquality": "720",
-            }
-        ],
-        "outtmpl": "%(id)s.mp3",
-        "quiet": True,
-        "logtostderr": False,
-    }
-    try:
-        with YoutubeDL(opts) as ytdl:
-            ytdl_data = ytdl.extract_info(url, download=True)
-    except Exception as e:
-        await pablo.edit(f"**Failed To Download** \n**Error :** `{str(e)}`")
-        return
-    c_time = time.time()
-    capy = f"**Song Name ➠** `{vid_title}` \n**Requested For ➠** `{input_str}` \n**Channel ➠** `{uploade_r}` \n**Link ➠** `{url}`"
-    file_stark = f"{ytdl_data['id']}.mp3"
-    await client.send_audio(
-        message.chat.id,
-        audio=open(file_stark, "rb"),
-        duration=int(ytdl_data["duration"]),
-        title=str(ytdl_data["title"]),
-        performer=str(ytdl_data["uploader"]),
-        thumb=downloaded_thumb,
-        caption=capy,
-        progress=progress,
-        progress_args=(
-            pablo,
-            c_time,
-            f"`Uploading {input_str} Song From YouTube Music!`",
-            file_stark,
-        ),
-    )
-    await pablo.delete()
-    for files in (downloaded_thumb, file_stark):
-        if files and os.path.exists(files):
-            os.remove(files)
-
-
-@ilhammansiz_on_cmd(
-    ["deezer", "dsong"],
-    cmd_help={
-        "help": "Download Songs From Deezer Just With Name!",
-        "example": "{ch}deezer (song name)",
-    },
-)
-async def deezer(client, message):
-    pablo = await edit_or_reply(message, "`Searching For Song.....`")
-    sgname = get_text(message)
-    if not sgname:
-        await pablo.edit(
-            "`Please Give Me A Valid Input. You Can Check Help Menu To Know More!`"
+                "ly [song title]": "Get Song Lyrics [ Japanese Songs Doesn't Work For Now.]",
+                "song [song name]": "Get songs in mp3 format.",
+                "dz [song name]": "Get songs from deezer bot in mp3 format.",
+            },
         )
-        return
-    link = f"https://api.deezer.com/search?q={sgname}&limit=1"
-    dato = requests.get(url=link).json()
-    match = dato.get("data")
+    }
+)
+
+
+@app.on_message(gen(["song", "music"], allow=["sudo", "channel"]))
+async def song_handler(_, m: Message):
+    await app.send_edit(m, "Getting song . . .")
     try:
-        urlhp = match[0]
-    except IndexError:
-        await pablo.edit("`Song Not Found. Try Searching Some Other Song`")
-        return
-    urlp = urlhp.get("link")
-    thumbs = urlhp["album"]["cover_big"]
-    thum_f = wget.download(thumbs)
-    polu = urlhp.get("artist")
-    replo = urlp[29:]
-    urlp = f"https://starkapis.herokuapp.com/deezer/{replo}"
-    datto = requests.get(url=urlp).json()
-    mus = datto.get("url")
-    sname = f"{urlhp.get('title')}.mp3"
-    doc = requests.get(mus)
-    await client.send_chat_action(message.chat.id, "upload_audio")
-    await pablo.edit("`Downloading Song From Deezer!`")
-    with open(sname, "wb") as f:
-        f.write(doc.content)
-    c_time = time.time()
-    car = f"""
-**Song Name :** {urlhp.get("title")}
-**Duration :** {urlhp.get('duration')} Seconds
-**Artist :** {polu.get("name")}
-Music Downloaded And Uploaded By Friday Userbot
-Get Your Friday From @FridayOT"""
-    await pablo.edit(f"`Downloaded {sname}! Now Uploading Song...`")
-    await client.send_audio(
-        message.chat.id,
-        audio=open(sname, "rb"),
-        duration=int(urlhp.get("duration")),
-        title=str(urlhp.get("title")),
-        performer=str(polu.get("name")),
-        thumb=thum_f,
-        caption=car,
-        progress=progress,
-        progress_args=(pablo, c_time, f"`Uploading {sname} Song From Deezer!`", sname),
-    )
-    await client.send_chat_action(message.chat.id, "cancel")
-    await pablo.delete()
+        cmd = m.command
+        reply = m.reply_to_message
+        if len(cmd) > 1:
+            song_name = m.text.split(None, 1)[1]
+        elif reply and len(cmd) == 1:
+            song_name = reply.text or reply.caption
+        elif not reply and len(cmd) == 1:
+            return await app.send_edit(
+                m, "Give me a song name . . .", text_type=["mono"], delme=3
+            )
+
+        song_results = await app.get_inline_bot_results("audio_storm_bot", song_name)
+
+        try:
+            # send to Saved Messages because hide_via doesn't work sometimes
+            saved = await app.send_inline_bot_result(
+                chat_id="me",
+                query_id=song_results.query_id,
+                result_id=song_results.results[0].id,
+                hide_via=True,
+            )
+
+            # forward as a new message from Saved Messages
+            saved = await app.get_messages("me", int(saved.updates[1].message.id))
+            reply_to = m.reply_to_message.message_id if m.reply_to_message else None
+
+            await app.send_audio(
+                chat_id=m.chat.id,
+                audio=str(saved.audio.file_id),
+                reply_to_message_id=reply_to,
+                caption=f"**Song:** `{song_name}`\n**Uploaded By:** {app.UserMention()}",
+            )
+
+            # delete the message from Saved Messages
+            await app.delete_messages("me", saved.message_id)
+        except TimeoutError:
+            return await app.send_edit(m, "Something went wrong, tru again !")
+    except Exception as e:
+        await app.error(m, e)
+        await app.send_edit(m, "failed to process your request, please check logs")
+
+
+@app.on_message(gen(["dz", "deezer"], allow=["sudo", "channel"]))
+async def deezer_handler(_, m: Message):
+    try:
+        m = await app.send_edit(m, "Searching on deezer . . .")
+        m.command
+        reply = m.reply_to_message
+        if app.long(m) > 1:
+            song_name = m.text.split(None, 1)[1]
+        elif reply and app.long(m) == 1:
+            song_name = reply.text or reply.caption
+        elif not reply and app.long(m) == 1:
+            return await app.send_edit(
+                m, "Give a song name . . .", delme=3, text_type=["mono"]
+            )
+
+        song_results = await app.get_inline_bot_results("DeezerMusicBot", song_name)
+
+        try:
+            # send to Saved Messages because hide_via doesn't work sometimes
+            saved = await app.send_inline_bot_result(
+                chat_id="me",
+                query_id=song_results.query_id,
+                result_id=song_results.results[0].id,
+                hide_via=True,
+            )
+
+            # forward as a new message from Saved Messages
+            saved = await app.get_messages("me", int(saved.updates[1].message.id))
+            reply_to = m.reply_to_message.message_id if m.reply_to_message else None
+
+            await app.send_audio(
+                chat_id=m.chat.id,
+                audio=str(saved.audio.file_id),
+                reply_to_message_id=reply_to,
+                caption=f"**Song:** `{song_name}`\n**Uploaded By:** {app.UserMention()}",
+            )
+
+            # delete the message from Saved Messages
+            await app.delete_messages("me", [saved.message_id, m.message_id])
+        except TimeoutError:
+            return await app.send_edit(
+                m, "Something went wrong, try again . . .", delme=3, text_type=["mono"]
+            )
+    except Exception as e:
+        await app.error(m, e)
+        await app.send_edit(
+            m, "Something went wrong, try again !", text_type=["mono"], delme=3
+        )
+
+
+@app.on_message(gen(["ly", "lyrics"], allow=["sudo", "channel"]))
+async def lyrics_handler(_, m: Message):
+    try:
+        cmd = m.command
+        reply = m.reply_to_message
+
+        if not reply and len(cmd) > 1:
+            song_name = m.text.split(None, 1)[1]
+        elif reply:
+            if reply.audio:
+                song_name = f"{reply.audio.title} {reply.audio.performer}"
+            elif reply.text or reply.caption and len(cmd) == 1:
+                song_name = reply.text or reply.caption
+            elif reply.text and len(cmd) > 1:
+                song_name = m.text.split(None, 1)[1]
+            else:
+                return await app.send_edit(
+                    m, "Give me a song name . . .", text_type=["mono"], delme=3
+                )
+
+        elif not reply and len(cmd) == 1:
+            return await app.send_edit(
+                m, "Give me a song name . . .", text_type=["mono"], delme=3
+            )
+
+        await app.send_edit(m, f"**Finding lyrics for:** `{song_name}`")
+
+        lyrics_results = await app.get_inline_bot_results("ilyricsbot", song_name)
+
+        try:
+            # send to cloud because hide_via doesn't work sometimes
+            saved = await app.send_inline_bot_result(
+                chat_id="me",
+                query_id=lyrics_results.query_id,
+                result_id=lyrics_results.results[0].id,
+                hide_via=True,
+            )
+            await asyncio.sleep(0.50)
+
+            # forward from Saved Messages
+            await app.copy_message(
+                chat_id=m.chat.id,
+                from_chat_id="me",
+                message_id=saved.updates[1].message.id,
+            )
+
+            # delete the message from Saved Messages
+            await app.delete_messages("me", saved.updates[1].message.id)
+        except TimeoutError:
+            return await app.send_edit(
+                m, "Something went Wrong !", text_type=["mono"], delme=3
+            )
+    except Exception as e:
+        await app.error(m, e)
+        await app.send_edit(
+            m,
+            "Something went wrong, please try again later !",
+            text_type=["mono"],
+            delme=3,
+        )

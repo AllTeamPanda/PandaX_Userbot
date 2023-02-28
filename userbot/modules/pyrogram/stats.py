@@ -1,62 +1,54 @@
 # Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
-# Import Panda Userbot
-# Recode by Ilham Mansiz
-# t.me/PandaUserbot
-# ••••••••••••••••••••••√•••••••••••••√√√••••••••
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
 
+from pyrogram.types import Message
 
-from datetime import datetime
+from ... import app, gen
 
-from userbot._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from userbot._func._helpers import edit_or_reply
-from . import HELP
-
-
-HELP(
-    "stats",
-)
-
-@ilhammansiz_on_cmd(
-    ["stats", "stat"],
-    cmd_help={
-        "help": "Shows user account stats!",
-        "example": "{ch}stats",
-    },
-)
-async def stats(client, message):
-    pablo = await edit_or_reply(message, f"`Processing...`")
-    start = datetime.now()
-    u = 0
-    g = 0
-    sg = 0
-    c = 0
-    b = 0
-    a_chat = 0
-    async for dialog in client.iter_dialogs():
-        if dialog.chat.type == "private":
-            u += 1
-        elif dialog.chat.type == "bot":
-            b += 1
-        elif dialog.chat.type == "group":
-            g += 1
-        elif dialog.chat.type == "supergroup":
-            sg += 1
-            user_s = await dialog.chat.get_member(int(client.me.id))
-            if user_s.status in ("creator", "administrator"):
-                a_chat += 1
-        elif dialog.chat.type == "channel":
-            c += 1
-
-    end = datetime.now()
-    ms = (end - start).seconds
-    await pablo.edit(
-        """`Your Stats Obtained in {} seconds`
-`You have {} Private Messages.`
-`You are in {} Groups.`
-`You are in {} Super Groups.`
-`You Are in {} Channels.`
-`You Are Admin in {} Chats.`
-`Bots = {}`""".format(
-            ms, u, g, sg, c, a_chat, b
+app.CMD_HELP.update(
+    {
+        "stats": (
+            "stats",
+            {"stats": "Get information about how many groups/channels/users you have."},
         )
-    )
+    }
+)
+
+
+@app.on_message(gen("stats", allow=["sudo"]))
+async def dialogstats_handler(_, m: Message):
+    try:
+        m = await app.send_edit(m, "Getting stats . . .", text_type=["mono"])
+
+        bot = 0
+        user = 0
+        group = 0
+        channel = 0
+        stat_format = """
+		• **STATS FOR:** {}
+
+		🤖 • **BOTS:** {}
+		👨 • **USERS:** {}
+		🛡️ • **GROUPS:** {}
+		⚙️ • **CHANNELS:** {}
+		"""
+
+        async for x in app.iter_dialogs():
+            if x.chat.type == "channel":
+                channel += 1
+            if x.chat.type == "bot":
+                bot += 1
+            if x.chat.type in ("supergroup", "group"):
+                group += 1
+            if x.chat.type == "private":
+                user += 1
+
+        await app.send_edit(
+            m, stat_format.format(app.UserMention(), bot, user, group, channel)
+        )
+    except Exception as e:
+        await app.error(m, e)

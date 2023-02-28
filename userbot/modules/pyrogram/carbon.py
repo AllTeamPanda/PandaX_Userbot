@@ -1,59 +1,115 @@
 # Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
-# Import Panda Userbot
-# Recode by Ilham Mansiz
-# t.me/PandaUserbot
-# ••••••••••••••••••••••√•••••••••••••√√√••••••••
- 
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
 
 
-from io import BytesIO
+import os
+import shutil
+import urllib
 
-from aiohttp import ClientSession
-from userbot import pyrobot as app
-from userbot._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from userbot._func._helpers import edit_or_reply
+from pyrogram.types import Message
+from requests import post
 
-from . import HELP
+from ... import app, gen
 
-
-HELP(
-    "carbon",
-)
-aiosession = ClientSession()
-
-async def make_carbon(code):
-    url = "https://carbonara.vercel.app/api/cook"
-    async with aiosession.post(url, json={"code": code}) as resp:
-        image = BytesIO(await resp.read())
-    image.name = "carbon.png"
-    return image
-
-
-@ilhammansiz_on_cmd(['carbon', 'cr'],
-               cmd_help={
-                'help': 'Carbon.',
-                'example': '{ch}carbon reply ke textt'})
-async def carbon_func(client, message):
-    text = (
-        message.text.split(None, 1)[1]
-        if len(
-            message.command,
+app.CMD_HELP.update(
+    {
+        "carbon": (
+            "carbon",
+            {
+                "carbon [text]": "Get a carbon image with written text on it.",
+                "carblist": "Get list of carbon colour codes.",
+            },
         )
-        != 1
-        else None
-    )
-    if message.reply_to_message:
-        text = message.reply_to_message.text or message.reply_to_message.caption
-    if not text:
-        return await message.delete()
-    Panda = await edit_or_reply(message, "`Preparing Carbon...`")
-    carbon = await make_carbon(text)
-    await Panda.edit("`Uploading...`")
-    ah = await app.get_me()
-    await app.send_photo(
-        message.chat.id,
-        carbon,
-        caption=f"**Carbonised by** {ah.mention}",
-    )
-    await Panda.delete()
-    carbon.close()
+    }
+)
+
+
+colour_code = {
+    "aqua": "rgba(0, 255, 255, 100)",
+    "red": "rgba(255, 0, 0, 100)",
+    "blue": "rgba(0, 0, 255, 100)",
+    "green": "rgba(0, 255, 0, 100)",
+    "yellow": "rgba(255, 255, 0, 100)",
+    "gold": "rgba(255, 215, 0, 100)",
+    "orange": "rgba(255, 165, 0, 100)",
+    "purple": "rgba(41, 5, 68, 100)",
+    "black": "rgba(0, 0, 0, 100)",
+    "white": "rgba(255, 255, 255, 100)",
+    "lime": "rgba(0, 255, 0, 100)",
+    "silver": "rgba(192, 192, 192, 100)",
+    "maroon": "rgba(128, 0, 0, 100)",
+    "olive": "rgba(128, 128, 0, 100)",
+    "teal": "rgba(0, 128, 128, 100)",
+    "navy": "rgba(0, 128, 128, 100)",
+    "chocolate": "rgba(210, 105, 30, 100)",
+}
+
+
+@app.on_message(gen(["carbon", "carb"], allow=["sudo"]))
+async def carbon_handler(_, m: Message):
+    cmd = m.command
+    oldmsg = m  # fixed for-->  m = send_edit() replaces the variable
+    if app.long(m) < 2:
+        return await app.send_edit(
+            m,
+            f"Usage:\n\n`{app.PREFIX}carbon [colour] [text]`\n`{app.PREFIX}carbon [text]`\n\n**Note:** Default colour is aqua",
+            delme=4,
+        )
+
+    elif app.textlen(m) <= 4096:
+        try:
+            m = await app.send_edit(m, "creating carbon . . .", text_type=["mono"])
+            if cmd[1] in colour_code:
+                text = oldmsg.text.split(None, 2)[2]
+                colour = cmd[1]
+            else:
+                text = oldmsg.text.split(None, 1)[1]
+                colour = "aqua"
+            await create_carbon(m, text=text, colour=colour)
+        except Exception as e:
+            await app.error(m, e)
+    elif app.textlen(m) > 4096:
+        await app.send_edit(m, "The text is too long !", delme=2)
+
+
+@app.on_message(gen("carblist", allow=["sudo"]))
+async def carblist_handler(_, m: Message):
+    clist = [f"`{x}`" for x in list(colour_code.keys())]
+    await app.send_edit(m, "**COLOUR CODES:**\n\n" + "\n".join(clist))
+
+
+async def create_carbon(m: Message, text, colour):
+    reply = m.reply_to_message
+    json = {
+        "backgroundColor": f"{colour_code.get(colour)}",
+        "theme": "Dracula",
+        "exportSize": "4x",
+    }
+    json["code"] = urllib.parse.quote(text)
+    json["language"] = "Auto"
+    ApiUrl = "http://carbonnowsh.herokuapp.com"
+    text = post(ApiUrl, json=json, stream=True)
+    filename = "carbon_image.png"
+    if text.status_code == 200:
+        text.raw.decode_content = True
+        with open(filename, "wb") as f:
+            shutil.copyfileobj(text.raw, f)
+            f.close()
+        reply_msg_id = reply.message_id if reply else None
+        await app.send_document(
+            m.chat.id,
+            filename,
+            caption=f"**Carbon Made by:** {app.UserMention()}",
+            reply_to_message_id=reply_msg_id,
+        )
+        await m.delete()
+        if os.path.exists(f"./{filename}"):
+            os.remove(filename)
+    else:
+        await app.send_edit(
+            m, "Image Couldn't be retreived.", delme=4, text_type=["mono"]
+        )

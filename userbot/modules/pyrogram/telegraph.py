@@ -1,68 +1,94 @@
 # Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
-# Import Panda Userbot
-# Recode by Ilham Mansiz
-# t.me/PandaUserbot
-# ••••••••••••••••••••••√•••••••••••••√√√••••••••
- 
-
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
 
 import os
 
-from telegraph import Telegraph, exceptions, upload_file
+from pyrogram.types import Message
+from telegraph import upload_file
 
-from userbot._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from userbot._func._helpers import edit_or_reply, get_text
-from userbot._func.plugin_helpers import convert_to_image
-
-telegraph = Telegraph()
-r = telegraph.create_account(short_name="PandaUserBot")
-auth_url = r["auth_url"]
-
-from . import HELP
+from ... import app, gen
 
 
-HELP(
-    "telegraph",
+app.CMD_HELP.update(
+    {
+        "telegraph": (
+            "telegraph",
+            {
+                "tgm [reply to message | media]": "Reply To Media To Get Links Of That Media.\nSupported Media - (jpg, jpeg, png, gif, mp4)."
+            },
+        )
+    }
 )
 
-@ilhammansiz_on_cmd(
-    ["telegraph"],
-    cmd_help={
-        "help": "Get Telegraph link of replied image",
-        "example": "{ch}telegraph (reply to text or image)",
-    },
-)
-async def telegrapher(client, message):
-    pablo = await edit_or_reply(message, "`Processing..`")
-    if not message.reply_to_message:
-        await pablo.edit("Reply To Message To Parse it To Telegraph !")
-        return
-    if message.reply_to_message.media:
-        # Assume its media
-        if message.reply_to_message.sticker:
-            m_d = await convert_to_image(message, client)
-        else:
-            m_d = await message.reply_to_message.download()
-        try:
-            media_url = upload_file(m_d)
-        except exceptions.TelegraphException as exc:
-            await pablo.edit(
-                f"`Unable To Upload Media To Telegraph! \nTraceBack : {exc}`"
+
+@app.on_message(gen(["tgm", "telegraph"], allow=["sudo", "channel"]))
+async def telegraph_handler(_, m: Message):
+    reply = m.reply_to_message
+    filesize = 5242880
+    # if not replied
+    if not reply:
+        await app.send_edit(
+            m, f"Please reply to media / text . . .", text_type=["mono"]
+        )
+    # replied to text
+    elif reply.text:
+        if len(reply.text) <= 4096:
+            await app.send_edit(m, "⏳• Hold on . . .", text_type=["mono"])
+            link = app.telegraph.create_page(app.name, html_content=reply.text)
+            await app.send_edit(
+                m,
+                f"**Telegraph Link: [Press Here](https://telegra.ph/{link.get('path')})**",
+                disable_web_page_preview=True,
             )
-            os.remove(m_d)
-            return
-        U_done = f"Uploaded To Telegraph! \nLink : https://telegra.ph/{media_url[0]}"
-        await pablo.edit(U_done, disable_web_page_preview=False)
-        os.remove(m_d)
-    elif message.reply_to_message.text:
-        # Assuming its text
-        page_title = get_text(message) if get_text(message) else client.me.first_name
-        page_text = message.reply_to_message.text
-        page_text = page_text.replace("\n", "<br>")
-        try:
-            response = telegraph.create_page(page_title, html_content=page_text)
-        except exceptions.TelegraphException as exc:
-            await pablo.edit(f"`Unable To Create Telegraph! \nTraceBack : {exc}`")
-            return
-        wow_graph = f"Telegraphed! \nLink : https://telegra.ph/{response['path']}"
-        await pablo.edit(wow_graph, disable_web_page_preview=False)
+        else:
+            await app.send_edit(
+                m, "The length text exceeds 4096 characters . . .", text_type=["mono"]
+            )
+    # replied to supported media
+    elif reply.media:
+        if (
+            reply.photo
+            and reply.photo.file_size <= filesize  # png, jpg, jpeg
+            or reply.video
+            and reply.video.file_size <= filesize  # mp4
+            or reply.animation
+            and reply.animation.file_size <= filesize
+            or reply.sticker
+            and reply.sticker.file_size <= filesize
+            or reply.document
+            and reply.document.file_size <= filesize  # [photo, video] document
+        ):
+            await app.send_edit(m, "⏳• Hold on . . .", text_type=["mono"])
+            # change ext to png to use convert in link
+            if reply.animation or reply.sticker:
+                loc = await app.download_media(
+                    reply, file_name=f"{app.TEMP_DICT}telegraph.png"
+                )
+            else:
+                loc = await app.download_media(reply)
+            try:
+                response = upload_file(loc)
+            except Exception as e:
+                return await app.error(m, e)
+            await app.send_edit(
+                m,
+                f"**Telegraph Link: [Press Here](https://telegra.ph{response[0]})**",
+                disable_web_page_preview=True,
+            )
+            if os.path.exists(loc):
+                os.remove(loc)
+        else:
+            await app.send_edit(
+                m,
+                "Please check the file format or file size , it must be less than 5 mb . . .",
+                text_type=["mono"],
+            )
+    else:
+        # if replied to unsupported media
+        await app.send_edit(
+            m, "Sorry, The File is not supported !", delme=2, text_type=["mono"]
+        )

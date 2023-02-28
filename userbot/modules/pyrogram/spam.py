@@ -1,40 +1,86 @@
-# 
-from ..._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from ..._func._helpers import edit_or_reply, get_text
+# Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
 
-from . import HELP
+import asyncio
 
+from pyrogram.types import Message
 
-HELP(
-    "spam",
-)
+from ... import app, gen
 
-@ilhammansiz_on_cmd(
-    ["spam", "ultraspam"],
-    is_official=False,
-    cmd_help={
-        "help": "Spam Message Multiple Times!",
-        "example": "{ch}spam (number of times to spam) (reply to message)",
-    },
-)
-async def spam(client, message):
-    pablo = await edit_or_reply(message, "Processing....")
-    count = get_text(message)
-    if not count:
-        await pablo.edit("`Please Give Me A Valid Input. You Can Check Help Menu To Know More!`")
-        return
-    if not count.isnumeric():
-        await pablo.edit("`Give Digits Idiot!`")
-        return
-    if not message.reply_to_message:
-        await pablo.edit("`Reply To Message, Idiot!`")
-        return
-    count = int(count)
-    x = 0
-    for x in range(count):
-        await client.copy_message(
-            from_chat_id=message.chat.id,
-            chat_id=message.chat.id,
-            message_id=message.reply_to_message.message_id,
+app.CMD_HELP.update(
+    {
+        "spam": (
+            "spam",
+            {
+                "spam [number] [text]": "You Know The Use Of This Command.",
+                "dspam [delay] [count] [msg]": "Delay spam use it to spam with a delay between spamming msg.",
+            },
         )
-        x += 1
+    }
+)
+
+
+@app.on_message(gen("spam", allow=["sudo"]))
+async def spam_handler(_, m: Message):
+    try:
+        reply = m.reply_to_message
+        reply_to_id = reply.message_id if reply else None
+        cmd = m.text.split(None, 2)
+
+        if not reply and app.long(m) == 1:
+            await app.send_edit(
+                m,
+                "Reply or give me count & spam text after command.",
+                text_type=["mono"],
+                delme=4,
+            )
+
+        elif not reply and app.long(m) > 1:
+            await m.delete()
+            times = int(cmd[1]) if cmd[1].isdigit() else 0
+            spam_msg = cmd[2]
+            for x in range(times):
+                await app.send_message(
+                    m.chat.id, spam_msg, reply_to_message_id=reply_to_id
+                )
+                await asyncio.sleep(0.10)
+
+        elif reply:
+            await m.delete()
+            times = int(cmd[1]) if cmd[1].isdigit() else 0
+            spam_msg = reply.message_id
+            for x in range(times):
+                await app.copy_message(m.chat.id, m.chat.id, spam_msg)
+    except Exception as e:
+        await app.error(m, e)
+
+
+@app.on_message(gen("dspam", allow=["sudo"]))
+async def delayspam_handler(_, m: Message):
+    try:
+        reply = m.reply_to_message
+        m.command
+
+        if app.long(m) < 3:
+            await app.send_edit(
+                m,
+                f"Use like this: `{app.MyPrefix()[0]}dspam [count spam] [delay time in seconds] [text messages]`",
+            )
+
+        elif app.long(m) > 2 and not reply:
+            await m.delete()
+            msg = m.text.split(None, 3)
+            times = int(msg[1]) if msg[1].isdigit() else None
+            sec = int(msg[2]) if msg[2].isdigit() else None
+            text = msg[3]
+            for x in range(times):
+                await app.send_message(m.chat.id, text)
+                await asyncio.sleep(sec)
+        else:
+            await app.send_edit(m, "Something wrong in spam command !")
+    except Exception as e:
+        await app.error(m, e)

@@ -1,47 +1,59 @@
 # Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
-# Import Panda Userbot
-# Recode by Ilham Mansiz
-# t.me/PandaUserbot
-# ••••••••••••••••••••••√•••••••••••••√√√••••••••
- 
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
 
-import wikipedia
+import wikipediaapi
+from pyrogram.types import Message
 
-from userbot._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-from userbot._func._helpers import edit_or_reply
-from . import HELP
+from ... import app, gen
 
-
-HELP(
-    "wikipedia",
+app.CMD_HELP.update(
+    {
+        "wikipedia": (
+            "wikipedia",
+            {"wiki [ query ]": "Get info about anything on Wikipedia."},
+        )
+    }
 )
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-@ilhammansiz_on_cmd(['wiki', 'wk'],
-               cmd_help={
-                'help': '『 **Wikipedia** 』',
-                'example': '{ch}[Kata] -> Mencari kata di wikipedia'})
-async def wiki(client, message):
-    lang = message.command[1]
-    user_request = " ".join(message.command[2:])
-    await edit_or_reply(message, "**Telusuri info**")
-    if user_request == "":
-        wikipedia.set_lang("id")
-        user_request = " ".join(message.command[1:])
-    try:
-        if lang == "id":
-            wikipedia.set_lang("id")
 
-        result = wikipedia.summary(user_request)
-        await edit_or_reply(message,
-            f"""**Kata:**
-`{user_request}`
-**Info:**
-`{result}`"""
+@app.on_message(gen("wiki", allow=["sudo", "channel"]))
+async def wikipedia_handler(_, m: Message):
+    if app.long(m) == 1:
+        await app.send_edit(
+            m,
+            "Give me some query to search on wikipedia . . .",
+            text_type=["mono"],
+            delme=True,
         )
-    except Exception as exc:
-        await edit_or_reply(message,
-            f"""**Request:**
-`{user_request}`
-**Result:**
-`{exc}`"""
-        )
+
+    elif app.long(m) > 1 and app.long(m) < 4096:
+        try:
+            obj = wikipediaapi.Wikipedia("en")
+            text = m.text.split(None, 1)[1]
+            result = obj.page(text)
+            await app.send_edit(
+                m, f"Searching for: __{text}__ . . .", text_type=["mono"]
+            )
+            if result:
+                giveresult = result.summary
+                if len(giveresult) <= 4096:
+                    await app.send_edit(
+                        m, f"**Results for:** `{text}`\n\n```{giveresult}```"
+                    )
+                else:
+                    await app.send_edit(
+                        m, f"**Results for:** `{text}`\n\n```{giveresult[:4095]}```"
+                    )
+            else:
+                await app.send_edit(
+                    m, "No results found !", delme=2, text_type=["mono"]
+                )
+        except Exception as e:
+            await app.error(m, e)
+    else:
+        await app.send(m, "Something went wrong !", text_type=["mono"], delme=3)

@@ -1,103 +1,93 @@
 # Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
-# Import Panda Userbot
-# Recode by Ilham Mansiz
-# t.me/PandaUserbot
-# ••••••••••••••••••••••√•••••••••••••√√√••••••••
- 
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
 
-
-import traceback
-from asyncio import get_running_loop
-from inspect import getfullargspec
-from io import BytesIO
-from ... import Config
-from googletrans import Translator
-from gtts import gTTS
+from deep_translator import GoogleTranslator
 from pyrogram.types import Message
-from userbot._func.decorators import Panda_cmd as ilhammansiz_on_cmd
 
-from . import HELP
+from ... import app, gen
 
-
-HELP(
-    "translate",
+app.CMD_HELP.update(
+    {
+        "translate": (
+            "translate",
+            {
+                "tr [ language code ] [ text ] | [ reply to message ]": "Translates The Message In Your Language.\n\nNote : Use Correct Language Codes To Translate In Your Language.",
+                "trlist": "Get list of supported translating languages.",
+            },
+        )
+    }
 )
 
-PREFIX = Config.COMMAND_HAND_LER
+
+gtl = GoogleTranslator()
 
 
-async def edrep(msg: Message, **kwargs):
-    func = msg.edit_text if msg.from_user.is_self else msg.reply
-    spec = getfullargspec(func.__wrapped__).args
-    await func(**{k: v for k, v in kwargs.items() if k in spec})
+@app.on_message(gen(["tr", "tl", "translate"], allow=["sudo", "channel"]))
+async def translate_handler(_, m: Message):
+    reply = m.reply_to_message
+    cmd = m.command
 
-
-def convert(text):
-    audio = BytesIO()
-    i = Translator().translate(text, dest="id")
-    lang = i.src
-    tts = gTTS(text, lang=lang)
-    audio.name = "Prime" + ".mp3"
-    tts.write_to_fp(audio)
-    return audio
-
-
-from ..._func.decorators import Panda_cmd as ilhammansiz_on_cmd
-
-from . import HELP
-
-
-HELP(
-    "speedtest",
-)
-
-@ilhammansiz_on_cmd(['tr', 'st'],
-               cmd_help={
-                'help': 'Translate message.',
-                'example': '{ch}tr'})
-async def translate(client, message):
-    if len(message.command) != 2:
-        return await message.edit_text(f"{PREFIX}tr [LANGUAGE_CODE]")
-    lang = message.text.split(None, 1)[1]
-    ah = Translator()
-    if not message.reply_to_message or not lang:
-        return await message.edit_text(
-            f"Reply to a message with {PREFIX}tr [language code]"
-        )
-    reply = message.reply_to_message
-    text = reply.text or reply.caption
-    if not text:
-        return await message.edit_text("Reply to a text to translate it")
     try:
-        result = ah.translate(text, dest=lang)
-        jembut = result.text
-        asu = """**DITERJEMAHKAN**\n dari `{}` ke `{}`\n
-        `{}`""".format(
-            result.src, lang, jembut
-        )
-        await message.edit_text(asu)
-    except Exception as exc:
-        await message.edit_text(str(exc))
+        lang = cmd[1] if app.long(m) > 1 else "id"
 
+        await app.send_edit(m, f"**Translating in** `{lang}` . . .")
 
-@ilhammansiz_on_cmd(['tts', 'ts'],
-               cmd_help={
-                'help': 'Voice message.',
-                'example': '{ch}tts'})
-async def tts(client, message):
-    if not message.reply_to_message:
-        return await message.edit_text("Reply to some text ffs.")
-    if not message.reply_to_message.text:
-        return await message.edit_text("Reply to some text ffs.")
-    m = await message.edit_text("Processing")
-    text = message.reply_to_message.text
-    try:
-        loop = get_running_loop()
-        audio = await loop.run_in_executor(None, convert, text)
-        await message.reply_voice(audio)
-        await m.delete()
-        audio.close()
+        languages = list((gtl.get_supported_languages(as_dict=True)).values())
+
+        if not lang in languages:
+            return await app.send_edit(
+                m,
+                "Bot doesn't support this language code, please try different one.",
+                text_type=["mono"],
+                delme=5,
+            )
+
+        if reply and reply.text:
+            tdata = await translate(m, lang=lang, text=reply.text)
+            await app.send_edit(m, f"**Translated to:** `{lang}`\n\n**Text:**`{tdata}`")
+
+        elif not reply and len(m.text) <= 4096:
+            if app.long(m) <= 2:
+                return await app.send_edit(
+                    m,
+                    "Give me the language code with text.",
+                    text_type=["mono"],
+                    delme=3,
+                )
+            text = m.text.split(None, 2)[2]
+            tdata = await translate(m, lang=lang, text=text)
+            await app.send_edit(
+                m, f"**Translated to:** `{lang}`\n\n**Text:** `{tdata}`"
+            )
+        else:
+            await app.send_edit(
+                m,
+                "Something went wrong, please try again later !",
+                text_type=["mono"],
+                delme=5,
+            )
     except Exception as e:
-        await m.edit(e)
-        e = traceback.format_exc()
-        print(e)
+        await app.error(m, e)
+
+
+async def translate(m: Message, lang, text):
+    tr = GoogleTranslator(source="auto", target=lang)
+    return tr.translate(text)
+
+
+@app.on_message(gen(["trlist", "tllist", "translatelist"], allow=["sudo", "channel"]))
+async def translatelang_handler(_, m):
+    data = []
+    data.clear()
+
+    langs_list = gtl.get_supported_languages(
+        as_dict=True
+    )  # output: {arabic: ar, french: fr, english: en etc...}
+    for keys, values in zip(langs_list.values(), langs_list.keys()):
+        data.append(f"`{keys}` : `{values}`")
+
+    await app.send_edit(m, "**Total languages:**\n\n" + "\n".join(data))
