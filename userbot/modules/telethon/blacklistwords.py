@@ -5,7 +5,7 @@ from telethon.utils import get_display_name
 from . import PandaBot
 
 from ..._misc.managers import edit_or_reply
-from ...sql_helper import blacklist_sql as sql
+from ..._database.dB.blacklist_db import get_blacklist, rem_blacklist, add_blacklist, list_blacklist
 from ...resources import is_admin
 
 plugin_category = "modules"
@@ -14,7 +14,7 @@ plugin_category = "modules"
 @PandaBot.ilhammansiz_cmd(incoming=True, groups_only=True)
 async def on_new_message(event):
     name = event.raw_text
-    snips = sql.get_chat_blacklist(event.chat_id)
+    snips = get_blacklist(event.chat_id)
     catadmin = await is_admin(event.client, event.chat_id, event.client.uid)
     if not catadmin:
         return
@@ -30,7 +30,7 @@ async def on_new_message(event):
                      So removing blacklist words from this group",
                 )
                 for word in snips:
-                    sql.rm_from_blacklist(event.chat_id, word.lower())
+                    rem_blacklist(event.chat_id, word.lower())
             break
 
 
@@ -56,7 +56,7 @@ async def _(event):
     )
 
     for trigger in to_blacklist:
-        sql.add_to_blacklist(event.chat_id, trigger.lower())
+        add_blacklist(event.chat_id, trigger.lower())
     await edit_or_reply(
         event,
         "Added {} triggers to the blacklist in the current chat".format(
@@ -86,7 +86,7 @@ async def _(event):
         {trigger.strip() for trigger in text.split("\n") if trigger.strip()}
     )
     successful = sum(
-        bool(sql.rm_from_blacklist(event.chat_id, trigger.lower()))
+        bool(rem_blacklist(event.chat_id, trigger.lower()))
         for trigger in to_unblacklist
     )
     await edit_or_reply(
@@ -107,7 +107,7 @@ async def _(event):
 )
 async def _(event):
     "To show the blacklist words in that specific chat"
-    all_blacklisted = sql.get_chat_blacklist(event.chat_id)
+    all_blacklisted = get_blacklist(event.chat_id)
     OUT_STR = "Blacklists in the Current Chat:\n"
     if len(all_blacklisted) > 0:
         for trigger in all_blacklisted:
