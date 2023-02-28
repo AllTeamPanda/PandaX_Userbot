@@ -1,5 +1,4 @@
 # Important Requirements Telethon & Pyrogram
-telethon
 pyrogram==1.4.16
 pymongo[srv]
 psycopg2-binary
@@ -103,3 +102,4 @@ pytube
 pysimplelog
 bing-image-downloader
 git-python
+git+https://github.com/Jisan09/Telethon@beta
