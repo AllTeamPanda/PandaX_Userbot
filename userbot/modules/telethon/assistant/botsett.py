@@ -23,12 +23,11 @@ pandaub = PandaBot
 LOGS = logging.getLogger(__name__)
 
 plugin_category = "plugins"
-tgbot.me = tgbot.get_me()
-botusername = tgbot.me.username
+
 
 
 @tgbot.bot_cmd(
-    pattern=f"^/start({botusername})?([\s]+)?$",
+    pattern=f"^/start$",
     incoming=True,
     func=lambda e: e.is_private,
 )
