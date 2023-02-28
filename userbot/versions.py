@@ -8,9 +8,9 @@ from sys import version_info
 branch = f"Python"
 
 
-__Tgl__ = "27"
-__Bln__ = "09"
-__Thn__ = "2022"
+__Tgl__ = "26"
+__Bln__ = "02"
+__Thn__ = "2023"
 
 
 __python_version__ = f"{version_info[0]}.{version_info[1]}.{version_info[2]}"
