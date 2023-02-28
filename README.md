@@ -18,7 +18,8 @@ Panda_Userbot adalah userbot Telegram modular yang berjalan di Python3 dengan da
 -  `For SQLDB`
      °DATABASE_URL - Get it from
       [Elephantsql](https://elephantsql.com/)
-    `For Redis`
+    
+   `For Redis`
      °REDIS_URI - Redis endpoint URL, from [redislabs](http://redislabs.com/)
       REDIS_PASSWORD - Redis endpoint Password, from [redislabs](http://redislabs.com/)
 
