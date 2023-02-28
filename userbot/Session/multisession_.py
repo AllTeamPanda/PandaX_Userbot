@@ -1,17 +1,23 @@
+# Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
 
-from .pyroclient import pyrotgbot, pyrobot
 from telethon import functions, utils
-
+from pyrogram import idle
 import logging
 from .._database._var import Var, Database
 from logging import getLogger
-import pyrogram as pandapyro
+
 from .client import *
-from .._func.startup import load_modulesPyro, plugin_collecter
+
 from .pyroclient import *
 import sys
 LOGS = getLogger(__name__)
 import os
+
 from pyrogram import __version__ as pyrover
 PRIVATE = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID"))
 
@@ -127,51 +133,26 @@ def Telethon():
 
 def Pyrogram():
     if Database.PyroSESSION and Database.BOT_TOKEN:
-        pyrotgbot.start()
-        pyrotgbot.me = pyrotgbot.get_me()
-        assistant_mods = plugin_collecter("./userbot/modules/pyrogram/assistant/")
-        for mods in assistant_mods:
-            try:
-                load_modulesPyro(mods, assistant=True)
-            except Exception as e:
-                logging.error("[ASSISTANT] - Failed To Load : " + f"{mods} - {str(e)}")
-    if pyrobot:
-        pyrobot.start()
-        pyrobot.me = pyrobot.get_me()
-        pyrobot.has_a_bot = True if pyrotgbot else False
-    if pyrobot2:
-        pyrobot2.start()
-        pyrobot2.me = pyrobot2.get_me()
-        pyrobot2.has_a_bot = True if pyrotgbot else False
-    if pyrobot3:
-        pyrobot3.start()
-        pyrobot3.me = pyrobot3.get_me()
-        pyrobot3.has_a_bot = True if pyrotgbot else False
-    if pyrobot4:
-        pyrobot4.start()
-        pyrobot.me = pyrobot4.get_me()
-        pyrobot4.has_a_bot = True if pyrotgbot else False
-    needed_mods = plugin_collecter("./userbot/modules/pyrogram/")
-    for nm in needed_mods:
-        try:
-            load_modulesPyro(nm)
-        except Exception as e:
-            logging.error("[USER] - Failed To Load : " + f"{nm} - {str(e)}")
-    if pyrobot:
-        pyrobot.join_chat("PandaUserbot")
-        pyrobot.join_chat("TeamSquadUserbotSupport")
-        pyrobot.send_message(PRIVATE, MSG_ON.format(pyrobot.me.username, pyrover, cmdhr))
-    if pyrobot2:
-        pyrobot2.join_chat("PandaUserbot")
-        pyrobot2.join_chat("TeamSquadUserbotSupport")
-        pyrobot2.send_message(PRIVATE, MSG_ON.format(pyrobot2.me.username, pyrover, cmdhr))
-    if pyrobot3:
-        pyrobot3.join_chat("PandaUserbot")
-        pyrobot3.join_chat("TeamSquadUserbotSupport")
-        pyrobot3.send_message(PRIVATE, MSG_ON.format(pyrobot3.me.username, pyrover, cmdhr))
-    if pyrobot4:
-        pyrobot4.join_chat("PandaUserbot")
-        pyrobot4.join_chat("TeamSquadUserbotSupport")
-        pyrobot4.send_message(PRIVATE, MSG_ON.format(pyrobot4.me.username, pyrover, cmdhr))
-    LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ PyroVersion:{pyrover} [TELAH DIAKTIFKAN]")
-    pandapyro.idle()
+        if app.bot:
+            print("Activating assistant.\n")
+            app.bot.start()
+            print("Assistant activated.\n")
+            asistant = app.import_module("userbot/modules/pyrogram/asistant/", exclude=app.NoLoad())
+            print(f"\n\n{asistant} modules Loaded Sucesfull\n\n")
+        else:
+            print("Assistant start unsuccessful, please check that you have given the bot token.\n")
+            print("skipping assistant start !")
+        
+    if app:
+        print("Activating assistant.\n")
+        app.start()
+        print("Assistant activated.\n")
+    else:
+        print("Assistant start unsuccessful, please check that you have given the bot token.\n")
+        print("skipping assistant start !")
+    print("Modules: Installing.\n\n")
+    modules = app.import_module("userbot/modules/pyrogram/", exclude=app.NoLoad())
+    print(f"\n\n{modules} modules Loaded Sucesfull\n\n")
+    print(f"⚙️ Panda Userbot {pyrover} Telah Aktif")
+    idle()
+
