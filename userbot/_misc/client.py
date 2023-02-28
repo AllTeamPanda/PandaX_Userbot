@@ -44,11 +44,11 @@ LOGS = logging.getLogger(__name__)
 
 def dual_duall():
     try:
-        if Config.COMMAND_HAND_LER is not None:
-            duall = Config.COMMAND_HAND_LER or "•"
+        if Config.COMMAND_HAND_LER :
+            duall = Config.COMMAND_HAND_LER
             return duall
         else:
-            duall = Config.COMMAND_HAND_LER or "/"
+            duall = Config.COMMAND_HAND_LER
             return duall
     except Exception as e:
         print(f"{str(e)}")
