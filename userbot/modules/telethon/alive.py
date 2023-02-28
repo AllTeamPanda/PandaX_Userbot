@@ -5,15 +5,14 @@ import asyncio
 import sys
 from userbot import HOSTED_ON, PandaBot, SqL, StartTime, pandaversion, tgbot
 pandaub = PandaBot
+
 import random
 from userbot import Config
 from ...helpers.functions import get_readable_time
-from pytgcalls import __version__
+
 from ..._misc.data import _sudousers_list
 from . import mention
-from ...sql_helper.db import BaseDB
 
-Mongoredis = BaseDB()
 
 
 custom_text = " 𝐏𝐚𝐧𝐝𝐚 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐁𝐎𝐓_𝐈𝐒_𝐑𝐔𝐍𝐍𝐈𝐍𝐆 𝐃𝐚𝐭𝐚𝐛𝐚𝐬𝐞𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐏𝐚𝐧𝐝𝐚_𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐀𝐜𝐭𝐢𝐯𝐞".split(
@@ -30,15 +29,15 @@ NAME = DEFAULTUSER
 
 plugin_category = "plugins"
 
-SUDO = SqL.getdb("sudoenable")
+SUDO = SqL.get_key("sudoenable")
 
 def SUDO():
     try:
-        if SqL.getdb("sudoenable") is not None:
-            SudoActive = SqL.setdb("sudoenable", "True")
+        if SqL.get_key("sudoenable") is not None:
+            SudoActive = SqL.set_key("sudoenable", "True")
             return SudoActive
         else:
-            SudoActive = SqL.setdb("sudoenable", "False")
+            SudoActive = SqL.set_key("sudoenable", "False")
             return SudoActive
     except Exception as e:
         print(f"{str(e)}")
@@ -65,7 +64,7 @@ emoji_alive = "★ ♦ ♠ ♣ ¡ ! ‹ › ∞ ≈ × 🦌 🐘 🐨 🐼 🐧 
 
 SUDOuser = _sudousers_list()
 
-LOGO = Config.ALIVE_PIC = SqL.getdb("ALIVE_PIC") or f"{random.choice(alive_logo)}"
+LOGO = Config.ALIVE_PIC = SqL.get_key("ALIVE_PIC") or f"{random.choice(alive_logo)}"
 
 usernames = Config.TG_BOT_USERNAME
 
@@ -114,7 +113,6 @@ aliveess = f"""
 ☉ {random.choice(emoji_alive)} 𝗢𝘄𝗻𝗲𝗿: @{PandaBot.me.username}
 ☉ {random.choice(emoji_alive)} 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: `𝚅{pandaversion}`
 ☉ {random.choice(emoji_alive)} 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
-☉ {random.choice(emoji_alive)} 𝗣𝘆𝘁𝗴𝗰𝗮𝗹𝗹𝘀: `𝚅{__version__}`
 ☉ {random.choice(emoji_alive)} 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`\n
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
 ╭━─━─━─━─━─━─━─━─━╮
