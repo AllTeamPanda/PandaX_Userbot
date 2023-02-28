@@ -14,7 +14,7 @@ import urllib3
 
 from ... import pandaub, SqL
 from . import BOTLOG_CHATID
-from ...Var import Config
+from ...config import Config
 from . import edit_delete, edit_or_reply
 
 plugin_category = "plugins"
@@ -27,9 +27,9 @@ heroku_api = "https://api.heroku.com"
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 HEROKU_API_KEY = Config.HEROKU_API_KEY
 
-gvarstatus = SqL.getdb
-addgvar = SqL.setdb
-delgvar = SqL.deldb
+gvarstatus = SqL.get_key
+addgvar = SqL.set_key
+delgvar = SqL.del_key
 
 @pandaub.ilhammansiz_cmd(
     pattern="(set|get|del) var (.*)",
