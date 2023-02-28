@@ -1,7 +1,9 @@
-# Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
-# Import Panda Userbot
-# Recode by Ilham Mansiz
-# ••••••••••••••••••••••√•••••••••••••√√√••••••••
+# Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
 
 import asyncio
 import datetime
@@ -260,7 +262,8 @@ class PandaUserbotSession(TelegramClient):
                         wrapper,
                         NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                     )
-                if dual:
+                from .._database import pdB
+                if pdB.get_key("MODE_DUAL"):
                     tgbot.add_event_handler(
                         wrapper,
                         MessageEdited(pattern=REGEX_.dual, outgoing=True, **kwargs),
@@ -325,7 +328,8 @@ class PandaUserbotSession(TelegramClient):
                                     **kwargs,
                                 ),
                             )
-                        if dual:
+                        from .._database import pdB
+                        if pdB.get_key("MODE_DUAL"):
                             tgbot.add_event_handler(
                                 wrapper,
                                 MessageEdited(
@@ -342,8 +346,8 @@ class PandaUserbotSession(TelegramClient):
                                 **kwargs,
                             ),
                         )
-                if allow_sudo is not None:
-                    if command is None or command[0]:
+                if allow_sudo and pdB.get_key("sudoenable") is not None:
+                    if command is None or command[0] in sudo_enabledcmds:
                         if edited:
                             PandaBot.add_event_handler(
                                 wrapper,
@@ -646,8 +650,9 @@ class PandaUserbotSession(TelegramClient):
                                 **kwargs,
                             ),
                         )
-                if allow_sudo is not None:
-                    if command is None or command[0]:
+                from .._database import pdB 
+                if allow_sudo and pdB.get_key("sudoenable") is not None:
+                    if command is None or command[0] in sudo_enabledcmds:
                         if edited:
                             PandaBot.add_event_handler(
                                 wrapper,
