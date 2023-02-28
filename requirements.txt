@@ -11,7 +11,7 @@ python-decouple==3.3
 wand
 emoji==1.7.0
 aiofiles
-aiohttp
+aiohttp[speedups]
 cloudscraper
 colour
 covid
