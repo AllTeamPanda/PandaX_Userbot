@@ -1,8 +1,9 @@
-# Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
-# Import Panda Userbot
-# Recode by Ilham Mansiz
-# ••••••••••••••••••••••√•••••••••••••√√√••••••••
-
+# Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
 
 import glob
 import os
@@ -13,17 +14,17 @@ from telethon.tl.functions.channels import JoinChannelRequest
 import requests
 from telethon import functions, types, utils
 
-from .. import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID, pyrobot, pyrobot2, pyrobot3, pyrobot4
+from .. import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 
-from ..Var import Config
+from ..config import Config
 from .._misc.logger import logging
-from .._misc.session import PandaBot, PandaBot2, PandaBot3, tgbot, cekbot
+from .._misc.session import PandaBot, PandaBot2, PandaBot3, tgbot
 from ..helpers.utils import install_pip
 from .._database import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
 import base64
-from ..versions import __version__ as botvers
+from ..version import __version__ as botvers
 
 LOGS = logging.getLogger("PandaUserbot")
 cmdhr = Config.COMMAND_HAND_LER
@@ -244,7 +245,7 @@ async def verifyLoggerGroup():
             )
     if flag:
         executable = sys.executable.replace(" ", "\\ ")
-        args = [executable, "-m", "Panda"]
+        args = [executable, "-m", "userbot"]
         os.execle(executable, *args, os.environ)
         sys.exit(0)
 
@@ -271,30 +272,21 @@ async def ongrup():
     try:
         if cekbot:
             if CHATID != 0:
-                await cekbot.send_message(
+                await PandaBot.send_message(
                     CHATID,
                     ON,
                 )
-                await cekbot.send_message(
+                await PandaBot.send_message(
                     CHATID,
                     ON,
                 )
-                await cekbot.send_message(
+                await PandaBot.send_message(
                     CHATID,
                     ON,
                 )
     except BaseException:
         pass
 
-
-async def ongruppyro():
-    try:
-        await pyrobot.send_message(BOTLOG_CHATID, MSG_ON.format(botvers, cmdhr))
-        await pyrobot2.send_message(BOTLOG_CHATID, MSG_ON.format(botvers, cmdhr))
-        await pyrobot3.send_message(BOTLOG_CHATID, MSG_ON.format(botvers, cmdhr))
-        await pyrobot4.send_message(BOTLOG_CHATID, MSG_ON.format(botvers, cmdhr))
-    except BaseException:
-        pass
 
 async def join():
     X = base64.b64decode("QFBhbmRhVXNlcmJvdA==")

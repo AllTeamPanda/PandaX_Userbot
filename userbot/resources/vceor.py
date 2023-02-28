@@ -6,7 +6,7 @@
 
 import asyncio
 
-from ..sql_helper.globals import gvarstatus
+from .._database import gvarstatus
 
 
 # edit or reply

@@ -1,3 +1,11 @@
+# Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
+
+
 import datetime
 import inspect
 import re
@@ -6,7 +14,7 @@ import traceback
 from pathlib import Path
 
 from .. import CMD_LIST, LOAD_PLUG, SUDO_LIST
-from ..Var import Config
+from ..config import Config
 from .._misc.data import _sudousers_list, blacklist_chats_list
 from .._misc.events import MessageEdited, NewMessage
 import logging
