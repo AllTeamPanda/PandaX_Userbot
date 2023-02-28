@@ -8,7 +8,7 @@ from . import PandaBot
 from ..._misc.managers import edit_or_reply
 from ..._database.dB.filter_db import (
     add_filter,
-    get_filters,
+    get_filter,
     rem_all_filter,
     rem_filter,
 )
@@ -19,7 +19,7 @@ plugin_category = "plugins"
 
 
 add_filter = add_filter
-get_filters = get_filters
+get_filters = get_filter
 remove_all_filters = rem_all_filter
 remove_filter = rem_filter
 
