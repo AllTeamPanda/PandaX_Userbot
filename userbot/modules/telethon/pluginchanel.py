@@ -3,7 +3,7 @@ from pathlib import Path
 
 from telethon.tl.types import InputMessagesFilterDocument
 
-from ...Var import Config
+from ...config import Config
 from ...helpers.utils import install_pip
 from ...resources import load_module
 from . import BOTLOG, BOTLOG_CHATID, PandaBot
