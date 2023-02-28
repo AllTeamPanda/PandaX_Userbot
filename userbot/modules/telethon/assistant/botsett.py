@@ -21,7 +21,7 @@ pandaub = PandaBot
 LOGS = logging.getLogger(__name__)
 
 plugin_category = "plugins"
-botusername = Config.TG_BOT_USERNAME
+botusername = tgbot.me.username
 
 
 @tgbot.bot_cmd(
