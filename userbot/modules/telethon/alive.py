@@ -18,7 +18,7 @@ from . import mention
 custom_text = " 𝐏𝐚𝐧𝐝𝐚 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐁𝐎𝐓_𝐈𝐒_𝐑𝐔𝐍𝐍𝐈𝐍𝐆 𝐃𝐚𝐭𝐚𝐛𝐚𝐬𝐞𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐏𝐚𝐧𝐝𝐚_𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐀𝐜𝐭𝐢𝐯𝐞".split(
     " "
 )
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT = SqL.getdb("CUSTOM_ALIVE_TEXT") or f"{random.choice(custom_text)}"
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT = SqL.get_key("CUSTOM_ALIVE_TEXT") or f"{random.choice(custom_text)}"
 
 # ================= CONSTANT =================
 DEFAULTUSER = mention
