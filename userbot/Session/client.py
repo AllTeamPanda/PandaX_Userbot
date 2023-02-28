@@ -17,7 +17,7 @@ import sys
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 import logging
 
-BOT_TOKEN = DB.get_key("BOT_TOKEN") or os.environ.get("BOT_TOKEN", None)
+BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 CEKBOT = "5293882146:AAFQIjmaC9ObBu98PAvctLu0QxkckfOJrz4"
 
 LOGS = logging.getLogger("PandaUserbot")
@@ -85,7 +85,7 @@ except Exception as e:
 
 try:
     if Var.STRING_SESSION and Database.BOT_TOKEN:
-        tgbot = PandaUserbotSession(
+        tgbot = TelegramClient(
             "BOT_TOKEN",
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
