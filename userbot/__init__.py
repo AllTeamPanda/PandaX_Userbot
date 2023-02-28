@@ -101,7 +101,7 @@ def dual_mode():
 
 
 
-from .Var import *
+from .config import *
 
 
 if Config.UPSTREAM_REPO == "PANDA_USERBOT":
