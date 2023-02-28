@@ -102,4 +102,4 @@ pytube
 pysimplelog
 bing-image-downloader
 git-python
-git+https://github.com/Jisan09/Telethon@beta
+Telethon==1.25.0
