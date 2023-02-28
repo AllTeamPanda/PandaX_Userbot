@@ -8,7 +8,7 @@ from pytz import timezone as tz
 
 from ... import PandaBot
 
-from ...Var import Config
+from ...config import Config
 from ..._misc.managers import edit_or_reply
 from . import reply_id
 
