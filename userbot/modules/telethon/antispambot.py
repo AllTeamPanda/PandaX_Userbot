@@ -6,11 +6,12 @@ from telethon.errors import ChatAdminRequiredError
 from telethon.events import ChatAction
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from ...Var import Config
-from ...sql_helper.gban_sql_helper import get_gbanuser, is_gbanned
+from ...config import Config
+from ..._database.dB.gban_mute_db import is_gbanned
 from ...resources import is_admin
 from . import BOTLOG, BOTLOG_CHATID, edit_or_reply, logging, pandaub, spamwatch
 
+get_gbanuser = is_gbanned
 LOGS = logging.getLogger(__name__)
 plugin_category = "plugins"
 if Config.ANTISPAMBOT_BAN:
