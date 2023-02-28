@@ -4,7 +4,7 @@ import html
 from telethon.tl import functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-from ...Var import Config
+from ...config import Config
 from . import (
     ALIVE_NAME,
     AUTONAME,
