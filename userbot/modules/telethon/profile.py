@@ -9,7 +9,7 @@ from telethon.tl.types import Channel, Chat, InputPhoto, User
 
 from . import pandaub
 
-from ...Var import Config
+from ...config import Config
 from ..._misc.logger import logging
 from ..._misc.managers import edit_delete, edit_or_reply
 
