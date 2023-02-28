@@ -5,13 +5,12 @@ from telethon.utils import get_display_name
 from ... import pandaub, SqL
 import logging
 
-from ...Var import Config
+from ...config import Config
 from ..._misc import CMD_INFO, PLG_INFO
 from ..._misc.data import _sudousers_list, sudo_enabled_cmds
 from . import edit_delete, edit_or_reply
 from ...helpers.utils import get_user_from_event, mentionuser
-from ...sql_helper import global_collectionjson as sql
-from ...sql_helper import global_list as sqllist
+
 
 plugin_category = "plugins"
 
@@ -47,9 +46,9 @@ async def chat_blacklist(event):
     input_str = event.pattern_match.group(1)
     sudousers = _sudousers_list()
     if input_str == "on":
-        if SqL.getdb("sudoenable") is not None:
+        if SqL.get_key("sudoenable") is not None:
             return await edit_delete(event, "__Sudo is already enabled.__")
-        SqL.setdb("sudoenable", "true")
+        SqL.set_key("sudoenable", "true")
         text = "__Enabled sudo successfully.__\n"
         if len(sudousers) != 0:
             text += (
@@ -66,8 +65,8 @@ async def chat_blacklist(event):
                 event,
                 text,
             )
-    if SqL.getdb("sudoenable") is not None:
-        SqL.deldb("sudoenable")
+    if SqL.get_key("sudoenable") is not None:
+        SqL.del_key("sudoenable")
         text = "__Disabled sudo successfully.__"
         if len(sudousers) != 0:
             text += (
@@ -115,12 +114,12 @@ async def add_sudo_user(event):
         "date": date,
     }
     try:
-        sudousers = sql.get_collection("sudousers_list").json
+        sudousers = SqL.get_key("sudousers_list") or {}
     except AttributeError:
         sudousers = {}
     sudousers[str(replied_user.id)] = userdata
-    sql.del_collection("sudousers_list")
-    sql.add_collection("sudousers_list", sudousers, {})
+    SqL.del_key("sudousers_list")
+    SqL.set_key("sudousers_list", sudousers, {})
     output = f"{mentionuser(userdata['chat_name'],userdata['chat_id'])} __is Added to your sudo users.__\n"
     output += "**Bot is reloading to apply the changes. Please wait for a minute**"
     msg = await edit_or_reply(event, output)
@@ -141,7 +140,7 @@ async def _(event):
     if replied_user is None:
         return
     try:
-        sudousers = sql.get_collection("sudousers_list").json
+        sudousers = SqL.get_key("sudousers_list") or {}
     except AttributeError:
         sudousers = {}
     if str(replied_user.id) not in sudousers:
@@ -150,8 +149,8 @@ async def _(event):
             f"{mentionuser(get_display_name(replied_user)),replied_user.id} __is not in your sudo__.",
         )
     del sudousers[str(replied_user.id)]
-    sql.del_collection("sudousers_list")
-    sql.add_collection("sudousers_list", sudousers, {})
+    SqL.del_key("sudousers_list")
+    SqL.set_key("sudousers_list", sudousers, {})
     output = f"{mentionuser(get_display_name(replied_user),replied_user.id)} __is removed from your sudo users.__\n"
     output += "**Bot is reloading to apply the changes. Please wait for a minute**"
     msg = await edit_or_reply(event, output)
@@ -170,7 +169,7 @@ async def _(event):
     "To list Your sudo users"
     sudochats = _sudousers_list()
     try:
-        sudousers = sql.get_collection("sudousers_list").json
+        sudousers = SqL.get_key("sudousers_list") or {}
     except AttributeError:
         sudousers = {}
     if len(sudochats) == 0:
@@ -243,14 +242,14 @@ async def _(event):  # sourcery no-metrics
         )
         loadcmds = list(set(totalcmds) - set(flagcmds))
         if len(sudocmds) > 0:
-            sqllist.del_keyword_list("sudo_enabled_cmds")
+            SqL.del_key("sudo_enabled_cmds")
     elif input_str[0] == "-full":
         pandaevent = await edit_or_reply(
             event, "__Enabling compelete sudo for users....__"
         )
         loadcmds = CMD_INFO.keys()
         if len(sudocmds) > 0:
-            sqllist.del_keyword_list("sudo_enabled_cmds")
+            SqL.del_key("sudo_enabled_cmds")
     elif input_str[0] == "-p":
         pandaevent = event
         input_str.remove("-p")
@@ -273,7 +272,7 @@ async def _(event):  # sourcery no-metrics
             else:
                 loadcmds.append(cmd)
     for cmd in loadcmds:
-        sqllist.add_to_list("sudo_enabled_cmds", cmd)
+        SqL.set_key("sudo_enabled_cmds", cmd)
     result = (
         f"__Successfully enabled __ `{len(loadcmds)}` __ for PandaUserbot sudo.__\n"
     )
@@ -367,9 +366,9 @@ async def _(event):  # sourcery no-metrics
                 flagcmds.append(cmd)
     count = 0
     for cmd in flagcmds:
-        if sqllist.is_in_list("sudo_enabled_cmds", cmd):
+        if SqL.set_key("sudo_enabled_cmds", cmd):
             count += 1
-            sqllist.rm_from_list("sudo_enabled_cmds", cmd)
+            SqL.set_key("sudo_enabled_cmds", cmd)
     result = f"__Successfully disabled __ `{count}` __ for PandaUserbot sudo.__\n"
     output = (
         result + "**Bot is reloading to apply the changes. Please wait for a minute**\n"
