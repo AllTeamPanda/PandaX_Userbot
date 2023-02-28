@@ -6,7 +6,7 @@ plugin_category = "plugins"
 from ...helpers.utils import get_user_from_event
 
 
-grupbclk = SqL.getdb("BLACKLISTGC") or ""
+grupbclk = SqL.get_key("BLACKLISTGC") or ""
 
 @PandaBot.on(events.ChatAction)
 async def joingrup(event):
