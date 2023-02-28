@@ -92,4 +92,3 @@ pybase64
 validators
 twitter_scraper
 moviepy
-pytgcalls==3.0.0.dev21
