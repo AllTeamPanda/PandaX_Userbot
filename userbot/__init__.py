@@ -20,7 +20,7 @@ from .Session import *
 from .versions import __version__
 import logging
 from .versions import __version__, __license__, __author__, __copyright__
-from .helpers.filters import gen, regex
+from ._helper.filters import gen, regex
 
 DEVLIST = ublackdev.plist
 DEVS = DEVLIST
