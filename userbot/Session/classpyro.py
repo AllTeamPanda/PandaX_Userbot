@@ -1,9 +1,15 @@
+# Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+
 from pyrogram import Client
 
 from .utils import Utils
 
 
-class SuperClient(Utils, Client):
+class PyroClient(Utils, Client):
     """Userbot (panda)"""
 
     def __init__(self):
@@ -48,4 +54,3 @@ class SuperClient(Utils, Client):
                 self.download_media(self.me.photo.big_file_id) if self.me.photo else ""
             )
             self.stop()
-
