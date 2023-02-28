@@ -16,7 +16,7 @@ from pySmartDL import SmartDL
 from telethon.errors import FloodWaitError
 from telethon.tl import functions
 
-from ...Var import Config
+from ...config import Config
 from ...helpers.utils import _format
 from ...sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import (
