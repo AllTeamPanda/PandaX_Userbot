@@ -7,7 +7,7 @@ import requests
 
 from . import PandaBot
 
-from ...Var import Config
+from ...config import Config
 from . import PandaBot
 
 plugin_category = "plugins"
