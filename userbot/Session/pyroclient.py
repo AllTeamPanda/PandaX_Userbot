@@ -56,9 +56,3 @@ if DB.get_key("PyroSESSION") or Database.PyroSESSION and DB.getdb("BOT_TOKEN") o
 else:
     pyrotgbot = None
 
-from .classpyro import SuperClient
-
-if DB.get_key("PyroSESSION") or Database.PyroSESSION:
-    app = SuperClient()
-else:
-    app = None
