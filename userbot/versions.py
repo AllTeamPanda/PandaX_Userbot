@@ -5,12 +5,12 @@ from sys import version_info
 
 
 
-branch = f"Python"
+branch = f"`@main`"
 
 
-__Tgl__ = "26"
-__Bln__ = "02"
-__Thn__ = "2023"
+__Tgl__ = "0"
+__Bln__ = "."
+__Thn__ = "8"
 
 
 __python_version__ = f"{version_info[0]}.{version_info[1]}.{version_info[2]}"
@@ -21,5 +21,5 @@ __copyright__ = "PandaX_UserBot Copyright (©) 2020 - 2021  " + __author__
 
 versi = f"{__Tgl__}.{__Bln__}.{__Thn__}"
 
-__version__ = versi + "|" + branch + __python_version__
+__version__ = versi + "|" + branch
 
