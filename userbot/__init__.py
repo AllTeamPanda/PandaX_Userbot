@@ -45,23 +45,11 @@ TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
 LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 
 
-USER_MODE = udB.get_key("USER_MODE")
-
-if USER_MODE:
-    DUAL_MODE = False
-
 if BOT_MODE:
-    if DUAL_MODE:
-        udB.del_key("DUAL_MODE")
-        DUAL_MODE = False
-    PandaBot = None
+    tgbot = PandaBot
 else:
     PandaBot = PandaBot
 
-if USER_MODE:
-    tgbot = PandaBot
-else:
-    tgbot = tgbot
 
 
 
