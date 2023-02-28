@@ -26,7 +26,7 @@ from telethon.errors import (
     MessageIdInvalidError,
     MessageNotModifiedError,
 )
-from ..Var import Config
+from ..config import Config
 from ..helpers.utils.events import checking
 from ..helpers.utils.format import paste_text
 from ..helpers.utils.utils import runcmd

@@ -19,7 +19,7 @@ from telethon import Button, types, events
 from youtubesearchpython import VideosSearch
 from telethon.events import InlineQuery, callbackquery, CallbackQuery
 from .. import PandaBot, SqL, tgbot, HOSTED_ON, gvarstatus
-from ..Var import Config
+from ..config import Config
 from ..helpers.functions import rand_key
 from ..helpers.functions.utube import (
     download_button,
