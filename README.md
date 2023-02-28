@@ -78,8 +78,8 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ### Update & Support
-   <a href="https://t.me/PandaUserbot"><img src="https://img.shields.io/badge/Channel%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
-   <a href="https://t.me/TEAMSquadUserbotSupport"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+   <a href="https://t.me/Pandac0de"><img src="https://img.shields.io/badge/Channel%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+   <a href="https://t.me/PandaUserbot"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
 
 
 #### Thanks To [Everyone](https://github.com/ilhammansiz/PandaX_Userbot/graphs/contributors) Who Has Helped Make This Userbot Awesome!
