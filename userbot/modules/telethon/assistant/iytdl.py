@@ -19,7 +19,7 @@ from wget import download
 
 from .... import PandaBot, tgbot
 
-from ....Var import Config
+from ....config import Config
 from ...._misc import check_owner, pool
 from ...._misc.logger import logging
 from ...._misc.managers import edit_delete, edit_or_reply
