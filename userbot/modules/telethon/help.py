@@ -1,7 +1,7 @@
 from telethon import functions
 
 
-from . import pandaub, tgbot
+from . import pandaub
 Bot = pandaub
 from ...config import Config
 from ..._misc import CMD_INFO, GRP_INFO, PLG_INFO
