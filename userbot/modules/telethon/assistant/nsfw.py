@@ -10,7 +10,7 @@ from telethon.events import CallbackQuery
 
 from .... import tgbot
 
-from ....Var import Config
+from ....config import Config
 from ...._misc.logger import logging
 
 LOGS = logging.getLogger(__name__)
