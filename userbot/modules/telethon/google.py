@@ -13,7 +13,7 @@ from search_engine_parser.core.exceptions import NoResultsOrTrafficError
 from ... import PandaBot
 pandaub = PandaBot
 
-from ...Var import Config
+from ...config import Config
 from . import edit_delete, edit_or_reply
 from ...helpers.functions import deEmojify
 from ...helpers.utils import reply_id
