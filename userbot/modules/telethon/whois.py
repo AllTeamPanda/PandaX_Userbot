@@ -11,7 +11,7 @@ from telethon.utils import get_input_location
 from ... import PandaBot
 import logging
 
-from ...Var import Config
+from ...config import Config
 from ..._misc.managers import edit_or_reply
 from ...helpers import get_user_from_event, reply_id
 from . import spamwatch
