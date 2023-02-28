@@ -4,7 +4,7 @@ Telethon and Pyrogram Editor & create by [@Pandauserbot](https://t.me/pandauserb
 
 
 <p align="center">
-    <img alt="Panda Version" src="https://img.shields.io/badge/Panda%20Version-28.09.2022-brightgreen"/>
+    <img alt="Panda Version" src="https://img.shields.io/badge/Panda%20Version-01.03.2023-brightgreen"/>
     <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20-Last Day-brightgreen"/>
            <a href="https://travis-ci.com/ilhammansiz/PandaX_Userbot.svg?branch=PandaUserbot" /></a>
     <a href="https://github.com/ilhammansiz/PandaX_Userbot/network/members"> <img src="https://img.shields.io/github/forks/ilhammansiz/PandaX_Userbot?logo=github&style=for-the-badge" /></a>
@@ -18,6 +18,11 @@ Panda_Userbot adalah userbot Telegram modular yang berjalan di Python3 dengan da
 -  `For SQLDB`
      °DATABASE_URL - Get it from
       [Elephantsql](https://elephantsql.com/)
+    `For Redis`
+     °REDIS_URI - Redis endpoint URL, from [redislabs](http://redislabs.com/)
+      REDIS_PASSWORD - Redis endpoint Password, from [redislabs](http://redislabs.com/)
+     `For MONGODB`
+      MONGO_URI - Get it from [mongodb](https://mongodb.com/atlas)
 
 ## Disclaimer
 
