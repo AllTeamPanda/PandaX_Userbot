@@ -6,7 +6,7 @@ from PIL import Image
 
 from ... import pandaub
 
-from ...Var import Config
+from ...config import Config
 from ..._misc.managers import edit_or_reply
 from . import CMD_HELP
 
