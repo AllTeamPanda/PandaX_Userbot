@@ -16,7 +16,7 @@ from telethon.utils import get_display_name, get_peer_id
 
 from ... import DEVLIST as DEVS
 from .utils import runcmd
-from ...Var import Config
+from ...config import Config
  
 TEMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 

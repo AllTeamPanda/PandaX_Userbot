@@ -2,7 +2,7 @@ import json
 
 import requests
 
-from ...Var import Config
+from ...config import Config
 import logging
 
 LOGS = logging.getLogger("PandaUserbot")
