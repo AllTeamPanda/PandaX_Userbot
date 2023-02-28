@@ -85,7 +85,7 @@ def Telethon():
 
     if Var.STRING_SESSION2:
         try:
-            PandaBot2.connect()
+            PandaBot2.start()
             delta = PandaBot2(functions.help.GetConfigRequest())
             for option in delta.dc_options:
                 if option.ip_address == PandaBot2.session.server_address:
@@ -108,7 +108,7 @@ def Telethon():
      
     if Var.STRING_SESSION3:
         try:
-            PandaBot3.connect()
+            PandaBot3.start()
             delta = PandaBot3(functions.help.GetConfigRequest())
             for option in delta.dc_options:
                 if option.ip_address == PandaBot3.session.server_address:
