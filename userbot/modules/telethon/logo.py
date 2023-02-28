@@ -12,7 +12,7 @@ from . import pandaub
 
 from ..._misc.managers import edit_delete, edit_or_reply
 from ...helpers.functions import clippy
-from ...sql_helper.globals import addgvar, delgvar, gvarstatus
+from ... import addgvar, delgvar, gvarstatus
 from . import convert_toimage, reply_id
 
 # ======================================================================================================================================================================================
