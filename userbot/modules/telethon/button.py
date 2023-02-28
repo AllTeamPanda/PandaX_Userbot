@@ -9,7 +9,7 @@ import re
 
 from telethon import Button
 
-from ...Var import Config
+from ...config import Config
 from . import edit_delete, pandaub, reply_id
 
 plugin_category = "plugins"
