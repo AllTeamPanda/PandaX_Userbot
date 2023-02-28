@@ -116,9 +116,9 @@ aliveess = f"""
 ☉ {random.choice(emoji_alive)} 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`\n
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
 ╭━─━─━─━─━─━─━─━─━╮
-               𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲:
+       𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲:
 
-☉ {random.choice(emoji_alive)} 𝗗𝗕_𝗦𝗾𝗟: `{SqL.ping()}` [ `{HOSTED_ON}` ]
+☉ {random.choice(emoji_alive)} 𝗗𝗕: `{SqL.ping()}` [ {HOSTED_ON} ]
 ☉ {random.choice(emoji_alive)} 𝗦𝘂𝗱𝗼: {SUDO()}
 
 ╰━─━─━─━─━─━─━─━─━╯
