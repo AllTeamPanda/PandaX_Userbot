@@ -6,13 +6,12 @@
 
 
 from telethon.sync import TelegramClient, custom, events
-from .sql_helper.globals import addgvar, delgvar, gvarstatus
 import heroku3
 from redis import StrictRedis
 
 import sys
 import os
-from ._database import pyDatabase
+from ._database import *
 DB = pyDatabase()
 SqL = DB
 import time
