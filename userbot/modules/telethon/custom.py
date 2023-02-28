@@ -3,9 +3,9 @@ from urlextract import URLExtract
 from . import pandaub
 import logging
 
-from ...Var import Config
+from ...config import Config
 from ..._misc.managers import edit_delete, edit_or_reply
-from ...sql_helper.globals import addgvar, delgvar, gvarstatus
+from ... import addgvar, delgvar, gvarstatus
 
 plugin_category = "plugins"
 LOGS = logging.getLogger(__name__)
