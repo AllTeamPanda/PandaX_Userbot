@@ -55,6 +55,8 @@ if BOT_MODE:
         udB.del_key("DUAL_MODE")
         DUAL_MODE = False
     PandaBot = None
+else:
+    PandaBot = PandaBot
 
 if USER_MODE:
     tgbot = PandaBot
