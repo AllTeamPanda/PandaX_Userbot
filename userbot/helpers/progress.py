@@ -1,3 +1,10 @@
+# Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
+
 import hashlib
 import math
 import re
@@ -6,7 +13,7 @@ from typing import Dict, Tuple
 
 from telethon.errors.rpcerrorlist import MessageNotModifiedError
 
-from ..Var import Config
+from ..config import Config
 import logging
 
 LOGS = logging.getLogger(__name__)

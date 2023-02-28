@@ -6,6 +6,6 @@ except ModuleNotFoundError:
     install_pip("randomstuff.py")
     import randomstuff
 
-from ..Var import Config
+from ..config import Config
 
 rs_client = randomstuff.AsyncClient(api_key=Config.RANDOM_STUFF_API_KEY, version="4")
