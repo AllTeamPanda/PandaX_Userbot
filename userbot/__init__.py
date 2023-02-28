@@ -56,14 +56,6 @@ if BOT_MODE:
         DUAL_MODE = False
     PandaBot = None
 
-if not udB.get_key("BOT_TOKEN") or BOT_TOKEN:
-    LOGS.critical(
-        '"BOT_TOKEN" not Found! Please add it, in order to use "BOTMODE"'
-   )
-
-    sys.exit()
-else:
-    PandaBot = PandaBot
 if USER_MODE:
     tgbot = PandaBot
 else:
