@@ -5,7 +5,7 @@ from googletrans import LANGUAGES, Translator
 from . import pandaub
 
 from ..._misc.managers import edit_delete, edit_or_reply
-from ...sql_helper.globals import addgvar, gvarstatus
+from ... import addgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
 
 plugin_category = "plugins"
