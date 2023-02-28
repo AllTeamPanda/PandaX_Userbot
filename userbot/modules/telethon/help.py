@@ -3,7 +3,7 @@ from telethon import functions
 
 from . import pandaub
 Bot = pandaub
-from ...Var import Config
+from ...config import Config
 from ..._misc import CMD_INFO, GRP_INFO, PLG_INFO
 from ..._misc.managers import edit_delete, edit_or_reply
 from ...helpers.utils import reply_id
