@@ -5,7 +5,7 @@ from telethon.utils import get_display_name
 from . import PandaBot
 
 from ..._misc.managers import edit_or_reply
-from ..._database.dB.blacklist_db import get_blacklist, rem_blacklist, add_blacklist, list_blacklist
+from ..._database.dB.blacklist_db import add_blacklist, get_blacklist, rem_blacklist
 from ...resources import is_admin
 
 plugin_category = "modules"
