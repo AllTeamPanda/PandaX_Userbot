@@ -6,16 +6,22 @@ from telethon.utils import get_display_name
 from . import PandaBot
 
 from ..._misc.managers import edit_or_reply
-from ...sql_helper.filter_sql import (
+from ..._database.dB.filter_db import (
     add_filter,
     get_filters,
-    remove_all_filters,
-    remove_filter,
+    rem_all_filter,
+    rem_filter,
 )
 from . import BOTLOG, BOTLOG_CHATID
 
 plugin_category = "plugins"
 
+
+
+add_filter = add_filter
+get_filters = get_filters
+remove_all_filters = rem_all_filter
+remove_filter = rem_filter
 
 @PandaBot.ilhammansiz_cmd(incoming=True)
 async def filter_incoming_handler(event):  # sourcery no-metrics
