@@ -10,7 +10,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 
 from ... import PandaBot
-from ...Var import Config 
+from ...config import Config 
 from . import edit_delete, edit_or_reply
 
 
