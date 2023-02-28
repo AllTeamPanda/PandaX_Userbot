@@ -92,3 +92,5 @@ pybase64
 validators
 twitter_scraper
 moviepy
+wikipedia-api
+ryoishin
