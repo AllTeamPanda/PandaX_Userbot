@@ -7,7 +7,6 @@
 
 from telethon import functions, utils
 from pyrogram import idle
-import logging
 from .._database._var import Var, Database
 from logging import getLogger
 
