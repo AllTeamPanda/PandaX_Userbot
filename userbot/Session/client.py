@@ -85,7 +85,7 @@ except Exception as e:
 
 try:
     if Var.STRING_SESSION and Database.BOT_TOKEN:
-        tgbot = TelegramClient(
+        tgbot = PandaUserbotSession(
             "BOT_TOKEN",
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
