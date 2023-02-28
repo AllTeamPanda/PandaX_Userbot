@@ -14,7 +14,7 @@ from telethon.utils import get_attributes
 
 from . import pandaub
 
-from ...Var import Config
+from ...config import Config
 from ..._misc.managers import edit_delete, edit_or_reply
 from ...helpers import progress
 from ...helpers.utils import reply_id
