@@ -11,7 +11,7 @@ import time
 from pyrogram import __version__ as pyro_version
 from telegraph import Telegraph
 from ._var import Config
-from ..version import __version__ as botver
+from ..versions import __version__ as botver
 from .._helper import Helpers
 from .._func import Methods
 from .._database.classdb import Database
