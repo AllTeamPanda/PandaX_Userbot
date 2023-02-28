@@ -44,6 +44,35 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
 LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 
+
+USER_MODE = udB.get_key("USER_MODE")
+
+if USER_MODE:
+    DUAL_MODE = False
+
+if BOT_MODE:
+    if DUAL_MODE:
+        udB.del_key("DUAL_MODE")
+        DUAL_MODE = False
+    PandaBot = None
+
+if not udB.get_key("BOT_TOKEN") or BOT_TOKEN:
+    LOGS.critical(
+        '"BOT_TOKEN" not Found! Please add it, in order to use "BOTMODE"'
+   )
+
+    sys.exit()
+else:
+    PandaBot = PandaBot
+if USER_MODE:
+    tgbot = PandaBot
+else:
+    tgbot = tgbot
+
+
+
+
+
 # Global Configiables
 COUNT_MSG = 0
 USERS = {}
@@ -60,26 +89,7 @@ AFF_LIST = {}
 INT_PLUG = ""
 LOAD_PLUG = {}
 
-"""
-if not BOT_TOKEN:
-    from .helpers.functions.auto import autobot
 
-    if PandaBot:
-        PandaBot.loop.run_until_complete(autobot())
-else:
-    BOT_TOKEN = None
-    if not SqL.get_key("BOT_TOKEN") and BOT_TOKEN:
-        SqL.set_key("BOT_TOKEN", BOT_TOKEN)
-    if not SqL.get_key("BOT_TOKEN"):
-        LOGS.info('"BOT_TOKEN" not Found! Please add it, in order to use "MODE BoT"')
-        import sys
-
-        sys_exit()
-"""
-
-if BOT_MODE:
-    tgbot = tgbot
-    PandaBot = tgbot
  
 
 bot = PandaBot
