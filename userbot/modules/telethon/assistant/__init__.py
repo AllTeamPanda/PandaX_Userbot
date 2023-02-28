@@ -3,7 +3,7 @@
 # PANDA USERBOT
 from .... import tgbot, PandaBot as pandaub
 
-from ....Var import Config
+from ....config import Config
 from ...._misc.inlinebot import *
 
 if Config.PRIVATE_GROUP_BOT_API_ID == 0:
