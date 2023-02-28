@@ -1,11 +1,11 @@
 
-ubot_version = "0.7"
+ubot_version = "0.8"
 
 from sys import version_info
 
 
 
-branch = f"`@main`"
+branch = f"`@update`"
 
 
 __Tgl__ = "0"
