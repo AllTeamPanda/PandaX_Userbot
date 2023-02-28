@@ -402,7 +402,7 @@ class Config(object):
     ALIVE_IMG = os.environ.get(
         "ALIVE_IMG", "https://telegra.ph/file/8f0e9e25427f9da09e08a.jpg"
     )
-    U_BRANCH = "master"
+    U_BRANCH = "main"
     HEROKU_URL = fetch_heroku_git_url(HEROKU_API_KEY, HEROKU_APP_NAME)
     V_T_KEY = os.environ.get("VIRUSTOTAL_API_KEY", None)
     TAG_LOGGER = os.environ.get("TAG_LOGGER", False)
