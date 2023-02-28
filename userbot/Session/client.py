@@ -84,7 +84,7 @@ except Exception as e:
     sys.exit()
 
 try:
-    if Database.BOT_TOKEN:
+    if Var.STRING_SESSION and Database.BOT_TOKEN:
         tgbot = PandaUserbotSession(
             "BOT_TOKEN",
             api_id=Var.APP_ID,
@@ -92,7 +92,7 @@ try:
             connection=ConnectionTcpAbridged,
             auto_reconnect=True,
             connection_retries=None,
-        ).start(bot_token=BOT_TOKEN)
+        )
     else:
         tgbot = None
 except Exception as e:
