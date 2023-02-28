@@ -10,8 +10,8 @@ from . import pandaub
 
 from ..._misc.managers import edit_delete, edit_or_reply
 from ...helpers.utils import _format
-from ...sql_helper import gban_sql_helper as gban_sql
-from ...sql_helper.mute_sql import is_muted, mute, unmute
+from ..._database.dB.gban_mute_db import is_gbanned, gban, ungban, list_gbanned
+from ..._database.dB.mute_db import is_muted, mute, unmute
 from . import BOTLOG, BOTLOG_CHATID, admin_groups, get_user_from_event
 
 plugin_category = "plugins"
@@ -58,12 +58,12 @@ async def pandagban(event):  # sourcery no-metrics
         return
     if user.id == pandaub.uid:
         return await edit_delete(pandae, "`why would I ban myself`")
-    if gban_sql.is_gbanned(user.id):
+    if is_gbanned(user.id):
         await pandae.edit(
             f"`the `[user](tg://user?id={user.id})` is already in gbanned list any way checking again`"
         )
     else:
-        gban_sql.pandagban(user.id, reason)
+        gban(user.id, reason)
     san = []
     san = await admin_groups(event)
     count = 0
@@ -140,8 +140,8 @@ async def pandagban(event):
     user, reason = await get_user_from_event(event, pandae)
     if not user:
         return
-    if gban_sql.is_gbanned(user.id):
-        gban_sql.pandaungban(user.id)
+    if is_gbanned(user.id):
+        ungban(user.id)
     else:
         return await edit_delete(
             pandae, f"the [user](tg://user?id={user.id}) `is not in your gbanned list`"
@@ -210,7 +210,7 @@ async def pandagban(event):
 )
 async def gablist(event):
     "Shows you the list of all gbanned users by you."
-    gbanned_users = gban_sql.get_all_gbanned()
+    gbanned_users = list_gbanned()
     GBANNED_LIST = "Current Gbanned Users\n"
     if len(gbanned_users) > 0:
         for a_user in gbanned_users:
