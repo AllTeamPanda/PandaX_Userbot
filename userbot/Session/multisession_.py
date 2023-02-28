@@ -128,7 +128,6 @@ def Telethon():
 def Pyrogram():
     if Database.PyroSESSION and Database.BOT_TOKEN:
         pyrotgbot.start()
-        app.bot.start()
         pyrotgbot.me = pyrotgbot.get_me()
         assistant_mods = plugin_collecter("./userbot/modules/pyrogram/assistant/")
         for mods in assistant_mods:
