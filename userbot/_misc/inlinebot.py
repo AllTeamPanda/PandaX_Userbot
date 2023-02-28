@@ -1,8 +1,10 @@
 
-# Copyright (C) 2020 Catuserbot <https://github.com/sandy1709/catuserbot>
-# Import Panda Userbot
-# Recode by Ilham Mansiz
-# ••••••••••••••••••••••√•••••••••••••√√√••••••••
+# Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
 
 
 import json
@@ -16,8 +18,7 @@ from telethon import Button, types, events
 
 from youtubesearchpython import VideosSearch
 from telethon.events import InlineQuery, callbackquery, CallbackQuery
-from userbot import PandaBot, SqL, tgbot, HOSTED_ON
-pandaub = PandaBot
+from .. import PandaBot, SqL, tgbot, HOSTED_ON, gvarstatus
 from ..Var import Config
 from ..helpers.functions import rand_key
 from ..helpers.functions.utube import (
@@ -27,7 +28,6 @@ from ..helpers.functions.utube import (
     result_formatter,
     ytsearch_data,
 )
-from ..sql_helper.globals import gvarstatus
 from . import CMD_INFO, GRP_INFO, PLG_INFO, check_owner
 from .logger import logging
 
@@ -36,9 +36,13 @@ LOGS = logging.getLogger(__name__)
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 tr = Config.COMMAND_HAND_LER
-ilhammansiez = Config.PANDA_HELP_LOGO = SqL.getdb("PANDA_HELP_LOGO") or "https://telegra.ph/file/ccbc25f1c295310902070.jpg"
+pandaub = PandaBot
+
+ilhammansiez = Config.PANDA_HELP_LOGO = SqL.get_key("PANDA_HELP_LOGO") or "https://telegra.ph/file/ccbc25f1c295310902070.jpg"
+
 from ..modules.telethon import mention
 PANDALOGO = ilhammansiez
+
 def getkey(val):
     for key, value in GRP_INFO.items():
         for plugin in value:
@@ -62,7 +66,7 @@ import time
 
 
 
-from ..Var import Config
+from ..config import Config
 
 CUSTOM_HELP_TEXT = SqL.get_key("HELP_TEXT_INLINE") or  f"INLINE MENU [ {HOSTED_ON} ]"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "🎴"
