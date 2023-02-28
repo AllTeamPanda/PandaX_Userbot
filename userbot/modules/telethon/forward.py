@@ -5,7 +5,7 @@ from telethon.tl.types import Channel
 from ... import pandaub
 import logging
 
-from ...Var import Config
+from ...config import Config
 from ..._misc.managers import edit_or_reply
 
 plugin_category = "plugins"
