@@ -118,7 +118,7 @@ aliveess = f"""
 ╭━─━─━─━─━─━─━─━─━╮
        𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲:
 
-☉ {random.choice(emoji_alive)} 𝗗𝗕: `{SqL.ping()}` [ {HOSTED_ON} ]
+☉ {random.choice(emoji_alive)} 𝗗𝗕: `{SqL.name} {SqL.ping()}` [ {HOSTED_ON} ]
 ☉ {random.choice(emoji_alive)} 𝗦𝘂𝗱𝗼: {SUDO()}
 
 ╰━─━─━─━─━─━─━─━─━╯
