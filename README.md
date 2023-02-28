@@ -9,7 +9,7 @@ Telethon and Pyrogram Editor & create by [@Pandauserbot](https://t.me/pandauserb
     <a href="https://github.com/ilhammansiz/PandaX_Userbot/network/members"> <img src="https://img.shields.io/github/forks/ilhammansiz/PandaX_Userbot?logo=github&style=for-the-badge" /></a>
     <a href="https://github.com/ilhammansiz/PandaX_Userbot"> <img src="https://img.shields.io/github/repo-size/ilhammansiz/PandaX_Userbot?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
-    <a href="https://pypi.org/project/pyrogram==1.4.16/"> <img src="https://img.shields.io/pypi/v/pyrogram?label=pyrogram&logo=pypi&logoColor=white&style=for-the-badge" /></a>
+    <a href="https://pypi.org/project/pyrogram==1.4.16/"> <img src="https://img.shields.io/pypi/v/pyrogram==1.4.16?label=pyrogram&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.10.4-blue?style=for-the-badge&logo=appveyor"/>
    </p>
 
