@@ -11,7 +11,7 @@ from tarfile import open as tar_open
 from telethon import types
 from telethon.utils import get_extension
 
-from ...Var import Config
+from ...config import Config
 from . import edit_delete, edit_or_reply, pandaub, progress
 
 thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
