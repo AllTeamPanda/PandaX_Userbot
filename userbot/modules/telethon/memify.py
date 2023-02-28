@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw, ImageFont
 from ...helpers.utils import _pandautils
 from ...helpers.utils import _pandatools
 from ... import PandaBot
-from ...Var import Config 
+from ...config import Config 
 from . import edit_delete, edit_or_reply
 
 runcmd = _pandautils.runcmd
