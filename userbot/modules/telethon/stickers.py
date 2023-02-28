@@ -26,7 +26,7 @@ from telethon.tl.types import (
 
 from ... import pandaub
 
-from ...Var import Config
+from ...config import Config
 from ..._misc.managers import edit_delete, edit_or_reply
 from ...helpers.functions import crop_and_divide
 from ...helpers.tools import media_type
