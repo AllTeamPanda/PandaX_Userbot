@@ -10,7 +10,7 @@ import spamwatch as spam_watch
 from validators.url import url
 
 from ... import *
-from ...Var import Config
+from ...config import Config
 from ..._misc.logger import logging
 from ..._misc.managers import edit_delete, edit_or_reply
 from ..._misc.session import PandaBot
