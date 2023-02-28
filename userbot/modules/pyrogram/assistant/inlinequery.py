@@ -31,8 +31,8 @@ def inline_result(_, inline_query):
             results=[
                 InlineQueryResultPhoto(
                     photo_url=app.PmpermitPic(),
-                    title="asterix security system",
-                    description="This is Panda Userbot security system, it helps you to stop spammers from spamming in your dm.",
+                    title="Panda security system",
+                    description="This is Panda security system, it helps you to stop spammers from spamming in your dm.",
                     caption=app.PmpermitText(),
                     parse_mode="combined",
                     reply_markup=InlineKeyboardMarkup([approve]),
@@ -45,9 +45,9 @@ def inline_result(_, inline_query):
             results=[
                 InlineQueryResultPhoto(
                     photo_url=app.BotPic(),
-                    title="Introduction to PandaUserbot",
-                    description="This is the PandaUserbot helpdex menu.",
-                    caption="**Dex:** Home\n\n**Description:** This is your helpdex use this to navigate in different sub dex, guidence and information is given in each dex.",
+                    title="Introduction to panda",
+                    description="Panda helpdex menu.",
+                    caption="Menu Help",
                     parse_mode="combined",
                     reply_markup=InlineKeyboardMarkup([settings, extra, about, close]),
                 )
@@ -61,7 +61,7 @@ def inline_result(_, inline_query):
                     photo_url=app.ialive_pic(),
                     title="Inline alive",
                     description="This is same as alive command, the difference is that this command have inline button.",
-                    caption=f"**⛊  Inline Status:**\n\n**⟐** {app.USER_BIO}\n\n**⟜ Owner**: [{app.name}](https://t.me/{app.username})\n**⟜ Userbot:** `{app.userbot_version}`\n**⟜ Python:** `{app.python_version}`\n⟜ **Pyrogram:** `{app.pyrogram_version}`\n⟜ **uptime:** `{app.uptime()}\n\n",
+                    caption=f"**⛊  Inline Status:**\n\n**⟐** {app.USER_BIO}\n\n**⟜ Owner**: [{app.name}](https://t.me/{app.username})\n**⟜ Panda:** `{app.userbot_version}`\n**⟜ Python:** `{app.python_version}`\n⟜ **Pyrogram:** `{app.pyrogram_version}`\n⟜ **uptime:** `{app.uptime()}\n\n",
                     parse_mode="combined",
                     reply_markup=InlineKeyboardMarkup([home_back]),
                 )

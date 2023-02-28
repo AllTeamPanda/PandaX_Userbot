@@ -24,7 +24,7 @@ home_back = app.BuildKeyboard((["Home", "close-dex"], ["Back", "open-start-dex"]
 async def modules(_, cb):
     btn = app.HelpDex(0, app.CMD_HELP, "helpme")
     await cb.edit_message_text(
-        f"**Dex:** Modules \n\n**Location:** /home/modules\n\n**Modules:** `{len(app.CMD_HELP)}`",
+        f"**Panda Userbot\n\n**Modules:** `{len(app.CMD_HELP)}`",
         reply_markup=InlineKeyboardMarkup(btn),
     )
 
@@ -55,7 +55,7 @@ async def give_old_page(_, cb):
 async def get_back(_, cb):
     page_number = int(cb.matches[0].group(1))
     buttons = app.HelpDex(page_number, app.CMD_HELP, "helpme")
-    text = f"**Dex:** Modules\n\nLocation: /home/modules\n\n**Modules:** `{len(app.CMD_HELP)}`"
+    text = f"**Panda Userbot\n\n**Modules:** `{len(app.CMD_HELP)}`"
     await cb.edit_message_text(text, reply_markup=InlineKeyboardMarkup(buttons))
 
 
@@ -96,7 +96,7 @@ async def _stats(_, cb):
 @app.alert_user
 async def _about(_, cb):
     await cb.edit_message_text(
-        text=f"**Dex:** About\n\n**Location:** /home/about\n\n**[ Personal Info ]:**\n\n**Age:** {app.assistant_age}\n**Name:** {app.assistant_name}\n**Gender:** {app.assistant_gender}\n\n**[ Versions ]:**\n\n**Python:** {app.python_version}\n**Pyrogram:** {app.pyrogram_version}\n**Assistant:**  {app.assistant_version}\n\n**[ About ]:**\n\nI am Panda\nI am your friendly assistant, i will help you as much as you need. You can ask me for any help related to your userbot. If you have any suggestions or you're facing any problems which are related to asterixuserbot then just ask in [support group](https://t.me/teamsquaduserbotsupport), ",
+        text=f"**Panda Userbot**\n\n**[ Versions ]:**{app.assistant_version}\n**Python:**{app.python_version}\n**Pyrogram:**{app.pyrogram_version}\n**[ About ]:**\n[Support group](https://t.me/pandauserbot)",
         reply_markup=InlineKeyboardMarkup([home_back]),
     )
 
@@ -105,7 +105,7 @@ async def _about(_, cb):
 @app.alert_user
 async def _public(_, cb):
     await cb.edit_message_text(
-        text="**Dex:** Extra\n\n**Location:** /home/extra/public commands\n\n**COMMAND:** /start\n**USAGE:** Check that bot is on or off.\n\n**COMMAND:** /help\n**USAGE:** Need help? Type this command.\n\n**COMMAND:** /id\n**USAGE:** Get your id and chat id.\n\n**COMMAND:** /quote\n**USAGE:** Get random anime character quote with a “more” inline button to change random quote infinitely.\n\n**COMMAND:** /ping\n**USAGE:** Test the speed of our bot and get results.\n\n",
+        text="**Panda Userbot\n\n**COMMAND:** /start\n**USAGE:** Check that bot is on or off.\n\n**COMMAND:** /help\n**USAGE:** Need help? Type this command.\n\n**COMMAND:** /id\n**USAGE:** Get your id and chat id.\n\n**COMMAND:** /quote\n**USAGE:** Get random anime character quote with a “more” inline button to change random quote infinitely.\n\n**COMMAND:** /ping\n**USAGE:** Test the speed of our bot and get results.\n\n",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -123,7 +123,7 @@ async def _public(_, cb):
 @app.alert_user
 async def _extra(_, cb):
     await cb.edit_message_text(
-        text="**Dex:** Extra\n\nLocation: /home/extra",
+        text="**PandaUserbot**",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -168,7 +168,7 @@ async def _close(_, cb: CallbackQuery):
 @app.alert_user
 async def _settings(_, cb):
     await cb.edit_message_text(
-        text="**Dex:** Settings\n\n**Location:** /home/settings",
+        text="Settings",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -205,16 +205,16 @@ async def _update_callback(_, cb):
 @app.alert_user
 async def _start(_, cb):
     await cb.edit_message_text(
-        text="**Dex:** Home\n\n**Description:** This is your helpdex use to navigate in different sub dex to information.",
+        text="**Menu Help**",
         reply_markup=InlineKeyboardMarkup([settings, extra, about, close]),
     )
 
 
 @app.bot.on_callback_query(filters.regex("restart-panda"))
 @app.alert_user
-async def _restart_panda(_, cb):
+async def _restart_asterix(_, cb):
     await cb.edit_message_text(
-        text="**Dex:** restart bot ( before confirm )\n\n**Location:** /home/settings/restart bot/confirm\n\nPress the Confirm button to restart userbot...",
+        text="**Heroku Press the Confirm button to restart userbot...",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -239,7 +239,7 @@ async def _restart_panda(_, cb):
 @app.alert_user
 async def _restart_core(_, cb):
     await cb.edit_message_text(
-        text="**Dex:** restart bot ( after confirm )\n\n**Location:** /home/settings/restart bot/confirm\n\n**Process:** `Restarting bot... please wait...`",
+        text="**Process:** `Restarting bot... please wait...`",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -255,7 +255,7 @@ async def _restart_core(_, cb):
     restart = application.restart()
     if not restart:
         await cb.edit_message_text(
-            "**Dex:** restart bot ( after confirm )\n\n**Location:** /home/settings/restart bot/confirm\n\n**Process:** `Failed to restart userbot, please do it manually !!`",
+            "**Process:** `Failed to restart userbot, please do it manually !!`",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -268,7 +268,7 @@ async def _restart_core(_, cb):
         )
     else:
         await cb.edit_message_text(
-            "**Dex:** restart bot ( before confirm )\n\n**Location:** /home/settings/restart bot/confirm\n\n**Process:** `Please wait 2-3 minutes to reboot userbot...`",
+            "**Process:** `Please wait 2-3 minutes to reboot userbot...`",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -285,7 +285,7 @@ async def _restart_core(_, cb):
 @app.alert_user
 async def _shutdown_asterix(_, cb):
     await cb.edit_message_text(
-        text="**Dex:** shutdown bot ( before confirm )\n\n**Location:** /home/settings/shutdown bot/confirm\n\n**Process:** Press the Confirm button to shutdown the userbot...",
+        text="**Process:** Press the Confirm button to shutdown the userbot...",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -310,7 +310,7 @@ async def _shutdown_asterix(_, cb):
 @app.alert_user
 async def _shutdown_core(_, cb):
     await cb.edit_message_text(
-        text="**Dex:** shutdown bot ( after confirm )\n\n**Location:** /home/settings/shutdown bot/confirm\n\n`Turning the userbot off, please wait...`",
+        text="**`Turning the userbot off, please wait...`",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -325,7 +325,7 @@ async def _shutdown_core(_, cb):
     application = access.apps()[app.HEROKU_APP_NAME]
     if not application:
         await cb.edit_message_text(
-            "**Dex:** shutdown bot ( after confirm )\n\n**Location:** /home/settings/shutdown bot/confirm\n\n**Process:** `Failed to turn userbot off, please do it manually !!`",
+            "**Process:** `Failed to turn userbot off, please do it manually !!`",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -340,7 +340,7 @@ async def _shutdown_core(_, cb):
         if application:
             application.process_formation()["worker"].scale(0)
             await cb.edit_message_text(
-                "**Dex:** shutdown bot ( after confirm )\n\n**Location:** /home/settings/shutdown bot/confirm\n\n**Process:** `Turned off the userbot... If Needed then please turn on the bot manually..`",
+                "**Process:** `Turned off the userbot... If Needed then please turn on the bot manually..`",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
