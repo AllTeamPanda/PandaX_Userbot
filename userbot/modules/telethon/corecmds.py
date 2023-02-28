@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-from ...Var import Config
+from ...config import Config
 from ...resources import load_module, remove_plugin
 from . import (
     CMD_HELP,
