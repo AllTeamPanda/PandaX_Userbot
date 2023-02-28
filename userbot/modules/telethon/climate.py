@@ -10,9 +10,9 @@ from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
-from ...Var import Config
+from ...config import Config
 from ...helpers.utils import _format
-from ...sql_helper.globals import addgvar, gvarstatus
+from ... import addgvar, gvarstatus
 from . import edit_or_reply, logging, pandaub, reply_id
 
 plugin_category = "plugins"
