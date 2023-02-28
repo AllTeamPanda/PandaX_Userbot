@@ -7,7 +7,7 @@ from telethon.tl import functions
 
 from . import pandaub
 
-from ...Var import Config
+from ...config import Config
 
 plugin_category = "plugins"
 
