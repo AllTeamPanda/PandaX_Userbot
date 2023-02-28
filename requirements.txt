@@ -102,3 +102,4 @@ pyDownload
 pytube
 pysimplelog
 bing-image-downloader
+git-python
