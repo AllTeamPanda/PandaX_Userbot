@@ -94,3 +94,8 @@ twitter_scraper
 moviepy
 wikipedia-api
 ryoishin
+currencyconverter
+deep_translator
+speedtest-cli==2.1.3
+httpx
+pyDownload
