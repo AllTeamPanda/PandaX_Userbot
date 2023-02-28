@@ -5,24 +5,15 @@
 
 
 
-import re
-from collections import defaultdict
-from datetime import datetime
-from typing import Optional, Union
 
-from telethon import Button, events
-from telethon.errors import UserIsBlockedError
-from telethon.events import CallbackQuery, StopPropagation
-from telethon.utils import get_display_name
+from telethon import Button
 
 from .... import Config
 from .... import PandaBot, tgbot
-from ...._misc import check_owner, pool
 from ...._misc.logger import logging
 from ....helpers import reply_id
 from ....helpers.utils import _format
 
-from .... import delgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
 
 pandaub = PandaBot
