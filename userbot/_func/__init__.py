@@ -1,10 +1,10 @@
+# Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
 
-from ._helpers import *
-from .assistant_helpers import *
-from .gmdl import *
-from .logger_s import *
-from .decorators import *
-from .plugin_helpers import *
+
 from .methods import Decorators
 
 
