@@ -19,7 +19,7 @@ from ..Var import Config
 from .._misc.logger import logging
 from .._misc.session import PandaBot, PandaBot2, PandaBot3, tgbot, cekbot
 from ..helpers.utils import install_pip
-from ..sql_helper.globals import addgvar, delgvar, gvarstatus
+from .._database import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
 import base64
