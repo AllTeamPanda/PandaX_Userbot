@@ -13,7 +13,7 @@ import logging
 from .._misc.session import PandaBot as pandaub
 from ..helpers.utils.format import paste_text
 from ..helpers.utils.utils import runcmd
-from ..sql_helper.globals import gvarstatus
+from .._database import gvarstatus
 
 LOGS = logging.getLogger(__name__)
 
