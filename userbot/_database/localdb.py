@@ -34,12 +34,12 @@ class Database:
         if key in self._cache:
             return self._cache.get(key)
 
-    def set(self, key=None, value=None, delete_key=None):
+    def set(self, key=None, value=None, deletedb=None):
         """Set key with given value, delete_key delete from database."""
         data = self._cache
         if delete_key:
             try:
-                del data[delete_key]
+                del data[deletedb]
             except KeyError:
                 pass
         if key and value:
@@ -59,7 +59,7 @@ class Database:
     def delete(self, key):
         """Delete a key from database."""
         if key in self._cache:
-            return self.set(delete_key=key)
+            return self.set(deletedb=key)
 
     def _create_database(self, database_name: str = None):
         """Create database file. Default name is 'database.json'"""

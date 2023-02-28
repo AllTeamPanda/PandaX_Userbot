@@ -1,10 +1,13 @@
-from ..sql_helper.database.afk_sql import AFKSQL
-from ..sql_helper.database.dv_sql import DVSQL
-from ..sql_helper.database.filters_sql import FILTERSSQL
-from ..sql_helper.database.notes_sql import NOTESSQL
-from ..sql_helper.database.pmpermit_sql import PMPERMITSQL
-from ..sql_helper.database.welcome_sql import WELCOMESQL
+from . import pdB
 
 
-class Database(AFKSQL, NOTESSQL, PMPERMITSQL, DVSQL, WELCOMESQL, FILTERSSQL):
+class DV():
+    setdv = pdB.set_key
+    getdv = pdB.get_key
+    getalldv = pdB.get_key
+    deldv = pdB.del_key
+
+
+
+class Database(DV):
     pass

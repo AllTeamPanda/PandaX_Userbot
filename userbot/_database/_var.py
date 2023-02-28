@@ -1,6 +1,5 @@
 import os
 
-import sys
 
 from dotenv import find_dotenv, load_dotenv
 
@@ -13,7 +12,6 @@ class Var(object):
     API_HASH = os.environ.get("API_HASH") or None
     STRING_SESSION = os.environ.get(
         "SESSION", None)
-    STRING_SESSION = sys.argv[3] if len(sys.argv) > 3 else os.environ.get("SESSION", None)
     MONGO_URI = os.environ.get("MONGO_URI", None)
     DB_URI = os.environ.get("DATABASE_URL", None)
     REDIS_URI = os.environ.get("REDIS_URI", None)
