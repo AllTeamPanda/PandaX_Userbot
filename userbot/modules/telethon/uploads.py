@@ -13,7 +13,7 @@ from telethon.tl.types import DocumentAttributeVideo
 from . import pandaub
 
 plugin_category = "plugins"
-from ...Var import Config
+from ...config import Config
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
