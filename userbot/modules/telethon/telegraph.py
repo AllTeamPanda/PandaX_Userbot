@@ -6,7 +6,7 @@ from telegraph import Telegraph, exceptions, upload_file
 
 from . import pandaub
 
-from ...Var import Config
+from ...config import Config
 from ..._misc.managers import edit_or_reply
 from . import BOTLOG, BOTLOG_CHATID
 
