@@ -4,9 +4,17 @@
 # Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
 # Dibuat dari berbagai userbot yang pernah ada.
 
-from .strings import Strings
-from .variables import Variables
+class Variables(object):
+    # lower
+    message_ids = {}
 
+    # assistant
+    assistant_name = "Panda Userbot"
+    assistant_age = "20"
+    assistant_gender = "male"
 
-class Containers(Strings, Variables):
-    pass
+    # userbot
+    userbot_name = "Panda Userbot"
+
+    # photo
+    PIC = "https://telegra.ph/file/c0ebbb1f92c7ef5c8c292.jpg"
