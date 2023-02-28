@@ -14,6 +14,7 @@ import os
 from ._database import *
 DB = pyDatabase()
 SqL = DB
+udB = DB
 import time
 import ublackdev
 from .Session import *
