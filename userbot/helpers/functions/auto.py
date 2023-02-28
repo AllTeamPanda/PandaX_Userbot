@@ -6,8 +6,8 @@ from random import randint
 import heroku3
 from dotenv import find_dotenv, load_dotenv
 load_dotenv(find_dotenv())
-from ..._database import DatabaseCute
-SqL = DatabaseCute()
+from ..._database import pdB
+SqL = pdB
 
 
 from telethon.errors.rpcerrorlist import ChannelsTooMuchError
@@ -262,9 +262,9 @@ async def autobot():
             await mansizbot(EditPhotoRequest(chat_id, InputChatUploadedPhoto(ll)))
             os.remove(photo)
             if not str(chat_id).startswith("-100"):
-               SqL.setdb(f"{ilhammansiezzzzzz}", "-100" + str(chat_id))
-               SqL.setdb(f"{ilhammansiezzzzzz}", token)
-               SqL.setdb(f"{botusername}", f"@{username}")
+               SqL.set_key(f"{ilhammansiezzzzzz}", "-100" + str(chat_id))
+               SqL.set_key(f"{ilhammansiezzzzzz}", token)
+               SqL.set_key(f"{botusername}", f"@{username}")
                var[ilhammansiezzzzzz] = "-100" + str(chat_id)
                var[ilhammansiezzzz] = token
                var[botusername] = f"@{username}"
@@ -343,9 +343,9 @@ async def autobot():
         await mansizbot(EditPhotoRequest(chat_id, InputChatUploadedPhoto(ll)))
         os.remove(photo)
         if not str(chat_id).startswith("-100"):
-            SqL.setdb(f"{ilhammansiezzzzzz}", "-100" + str(chat_id))
-            SqL.setdb(f"{ilhammansiezzzzzz}", token)
-            SqL.setdb(f"{botusername}", f"@{username}")  
+            SqL.set_key(f"{ilhammansiezzzzzz}", "-100" + str(chat_id))
+            SqL.set_key(f"{ilhammansiezzzzzz}", token)
+            SqL.set_key(f"{botusername}", f"@{username}")  
             var[ilhammansiezzzzzz] = "-100" + str(chat_id)
             var[ilhammansiezzzz] = token
             var[botusername] = f"@{username}"

@@ -6,7 +6,7 @@ import time
 import heroku3
 import requests
 
-from ...Var import Config
+from ...config import Config
 from .utils import get_readable_time
 
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
