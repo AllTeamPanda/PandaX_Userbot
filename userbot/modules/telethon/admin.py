@@ -25,7 +25,7 @@ from ..._misc.logger import logging
 from ..._misc.managers import edit_delete, edit_or_reply
 from ...helpers import media_type
 from ...helpers.utils import _format, get_user_from_event
-from ...sql_helper.mute_sql import is_muted, mute, unmute
+from ..._database.dB.mute_db import is_muted, mute, unmute
 from . import BOTLOG, BOTLOG_CHATID
 
 # =================== STRINGS ============
