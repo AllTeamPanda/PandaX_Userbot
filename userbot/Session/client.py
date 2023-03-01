@@ -92,7 +92,8 @@ try:
             connection=ConnectionTcpAbridged,
             auto_reconnect=True,
             connection_retries=None,
-        )
+        ).start(bot_token=Database.BOT_TOKEN)
+
     else:
         tgbot = None
 except Exception as e:
