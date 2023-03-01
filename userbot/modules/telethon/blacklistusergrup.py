@@ -23,7 +23,7 @@ async def joingrup(event):
         "header": "To check bot's blacklist status",
         "options": "userblacklist",
         "usage": [
-            "{tr}addbalckuser",
+            "{tr}addbalckuser reply to user",
         ],
     },
 )
