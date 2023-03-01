@@ -7,7 +7,7 @@ from ...config import Config
 from . import edit_delete
 from ...helpers.tools import media_type
 from ...helpers.utils import _format
-from ..._database.pmpermit_db import is_approved, approve_user, disapprove_user
+from ..._database.dB.pmpermit_db import is_approved, approve_user, disapprove_user
 from ... import addgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
 
