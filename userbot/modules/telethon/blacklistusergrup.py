@@ -23,22 +23,14 @@ async def joingrup(event):
         "header": "To check bot's blacklist status",
         "options": "userblacklist",
         "usage": [
-            "{tr}addbalckuser reply to user",
+            "{tr}addbalckuser id",
         ],
     },
 )
 async def addblck(event):
+    cmd = event.pattern_match.group(1)
     xxnx = await edit_or_reply(event, "prosesing..")
-    replied_user, error_i_a = await get_user_from_event(event)
-    if replied_user is None:
-        return
-    if replied_user.id == event.client.uid:
-        return await edit_or_reply(event, "__You can't add yourself to blacklist.")
-    if event is None:
-        return
-    gcblck = replied_user.id
-    if replied_user.id:
-        return await edit_or_reply(event, f"berhasil menambahkan pengguna lucknut  {gcblck}")
+    gcblck = cmd
     output = await xxnx.edit(f"berhasil menambahkan pengguna anjeng {gcblck}")
     output += "**Bot is reloading to apply the changes. Please wait for a minute**"
     msg = await edit_or_reply(event, output)
