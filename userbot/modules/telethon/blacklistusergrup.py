@@ -37,18 +37,9 @@ async def addblck(event):
     if event is None:
         return
     gcblck = replied_user.id
-    blckgc = f"{BLACKLIST_GCAST} {gcblck}"
-    if replied_user.id in grupbclk:
-        return await edit_or_reply(event, "berhasil menambahkan pengguna lucknut")
-    blacklistgrup = (
-        blckgc.replace("{", "")
-        .replace("}", "")
-        .replace(",", "")
-        .replace("[", "")
-        .replace("]", "")
-        .replace("set() ", "")
-    )
-    output = await xxnx.edit("berhasil menambahkan pengguna anjeng").format(gcblck)
+    if replied_user.id:
+        return await edit_or_reply(event, f"berhasil menambahkan pengguna lucknut  {gcblck}")
+    output = await xxnx.edit(f"berhasil menambahkan pengguna anjeng {gcblck}")
     output += "**Bot is reloading to apply the changes. Please wait for a minute**"
     msg = await edit_or_reply(event, output)
     SqL.set_key("BLACKLISTGC", [gcblck])  
