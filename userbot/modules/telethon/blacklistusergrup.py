@@ -6,7 +6,7 @@ plugin_category = "plugins"
 from ...helpers.utils import get_user_from_event
 
 
-grupbclk = SqL.get_key("BLACKLISTGC") or ""
+grupbclk = SqL.get_key("BLACKLISTGC") or []
 
 @PandaBot.on(events.ChatAction)
 async def joingrup(event):
@@ -51,7 +51,7 @@ async def addblck(event):
     output = await xxnx.edit("berhasil menambahkan pengguna anjeng").format(gcblck)
     output += "**Bot is reloading to apply the changes. Please wait for a minute**"
     msg = await edit_or_reply(event, output)
-    SqL.setdb("BLACKLISTGC", f"{blacklistgrup}")  
+    SqL.setdb("BLACKLISTGC", [gcblck])  
     await event.client.reload(msg)
 
 
