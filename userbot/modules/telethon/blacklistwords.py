@@ -5,7 +5,7 @@ from telethon.utils import get_display_name
 from . import PandaBot
 
 from ..._misc.managers import edit_or_reply
-from ..._database.dB.blacklist_db import add_blacklist, get_blacklist, rem_blacklist
+from ..._database.dB.blacklist_db import add_blacklist, get_blacklist, rem_blacklist, list_blacklist
 from ...resources import is_admin
 
 plugin_category = "modules"
@@ -14,7 +14,7 @@ plugin_category = "modules"
 @PandaBot.ilhammansiz_cmd(incoming=True, groups_only=True)
 async def on_new_message(event):
     name = event.raw_text
-    snips = get_blacklist(event.chat_id)
+    snips = list_blacklist()
     catadmin = await is_admin(event.client, event.chat_id, event.client.uid)
     if not catadmin:
         return
@@ -107,7 +107,7 @@ async def _(event):
 )
 async def _(event):
     "To show the blacklist words in that specific chat"
-    all_blacklisted = get_blacklist(event.chat_id)
+    all_blacklisted = list_blacklist()
     OUT_STR = "Blacklists in the Current Chat:\n"
     if len(all_blacklisted) > 0:
         for trigger in all_blacklisted:
