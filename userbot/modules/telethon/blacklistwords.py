@@ -14,7 +14,7 @@ plugin_category = "modules"
 @PandaBot.ilhammansiz_cmd(incoming=True, groups_only=True)
 async def on_new_message(event):
     name = event.raw_text
-    snips = list_blacklist()
+    snips = list_blacklist(event.chat_id)
     catadmin = await is_admin(event.client, event.chat_id, event.client.uid)
     if not catadmin:
         return
@@ -107,7 +107,7 @@ async def _(event):
 )
 async def _(event):
     "To show the blacklist words in that specific chat"
-    all_blacklisted = list_blacklist()
+    all_blacklisted = list_blacklist(event.chat_id)
     OUT_STR = "Blacklists in the Current Chat:\n"
     if len(all_blacklisted) > 0:
         for trigger in all_blacklisted:
