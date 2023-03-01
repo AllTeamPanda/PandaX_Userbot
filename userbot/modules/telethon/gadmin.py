@@ -221,7 +221,7 @@ async def gablist(event):
         reason = gbanned_users[a_user]
         GBANNED_LIST += f"[{name}](tg://user?id={name}\n"
     else:
-        GBANNED_LIST += f"Reason : {reason}\n\n"" if reason is not None else "\n"
+        GBANNED_LIST += f"Reason : {reason}\n\n" if reason is not None else "\n"
     await edit_or_reply(event, GBANNED_LIST)
 
 
