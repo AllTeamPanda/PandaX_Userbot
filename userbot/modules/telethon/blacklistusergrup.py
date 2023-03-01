@@ -3,7 +3,6 @@ from userbot import PandaBot, SqL
 from . import edit_or_reply
 from telethon import events
 plugin_category = "plugins"
-from ...helpers.utils import get_user_from_event
 
 
 grupbclk = SqL.get_key("BLACKLISTGC") or []
