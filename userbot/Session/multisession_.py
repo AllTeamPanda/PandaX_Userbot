@@ -47,7 +47,6 @@ THON_ON = """
 def Telethon():
     if Var.STRING_SESSION:
         try:
-            tgbot.start(bot_token=Database.BOT_TOKEN)
             PandaBot.start()
             delta = PandaBot(functions.help.GetConfigRequest())
             for option in delta.dc_options:
