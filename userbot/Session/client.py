@@ -86,7 +86,7 @@ except Exception as e:
 try:
     if Var.STRING_SESSION and Database.BOT_TOKEN:
         tgbot = PandaUserbotSession(
-            "BOT_TOKEN",
+            None,
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
