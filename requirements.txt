@@ -102,4 +102,4 @@ pytube
 pysimplelog
 bing-image-downloader
 git-python
-https://github.com/New-dev0/Telethon/archive/platy.zip
+telethon
