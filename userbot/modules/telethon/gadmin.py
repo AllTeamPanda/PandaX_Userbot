@@ -1,6 +1,5 @@
 import asyncio
 from datetime import datetime
-import os
 from telethon.errors import BadRequestError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.functions.users import GetFullUserRequest
@@ -13,7 +12,6 @@ from ...helpers.utils import _format
 from ..._database.dB.gban_mute_db import is_gbanned, gban, ungban, list_gbanned
 from ..._database.dB.mute_db import is_muted, mute, unmute
 from . import BOTLOG, BOTLOG_CHATID, admin_groups, get_user_from_event
-from ...resources.tools import inline_mention
 plugin_category = "plugins"
 
 BANNED_RIGHTS = ChatBannedRights(
