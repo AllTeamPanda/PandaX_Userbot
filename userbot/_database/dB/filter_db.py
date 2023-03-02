@@ -16,9 +16,9 @@ def get_stuff():
 def add_filter(chat_id, keyword, reply, f_mesg_id):
     ok = get_stuff()
     if ok.get(chat_id):
-        ok[chat_id].update({keyword: {"reply": reply, "f_mesg_id": f_mesg_id}})
+        ok[chat_id].update({str(chat_id): {keyword: {"reply": reply, "f_mesg_id": f_mesg_id}}})
     else:
-        ok.update({chat_id: {keyword: {"reply": reply, "f_mesg_id": f_mesg_id}}})
+        ok.update({str(chat_id): {keyword: {"reply": reply, "f_mesg_id": f_mesg_id}}})
     udB.set_key("FILTERS", ok)
 
 
