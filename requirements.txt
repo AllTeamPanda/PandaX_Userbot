@@ -102,4 +102,4 @@ pytube
 pysimplelog
 bing-image-downloader
 git-python
-telethon>=1.14.0
+telethon
