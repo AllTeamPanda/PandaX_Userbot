@@ -141,10 +141,10 @@ async def add_new_filter(event):
     elif not string:
         return await edit_or_reply(event, "__What should i do ?__")
     success = "`Filter` **{}** `{} successfully`"
-    if add_filter(str(event.chat_id), keyword, string, msg_id) is True:
+    if add_filter(event.chat_id, keyword, string, msg_id) is True:
         return await edit_or_reply(event, success.format(keyword, "added"))
-    remove_filter(str(event.chat_id), keyword)
-    if add_filter(str(event.chat_id), keyword, string, msg_id) is True:
+    remove_filter(event.chat_id, keyword)
+    if add_filter(event.chat_id, keyword, string, msg_id) is True:
         return await edit_or_reply(event, success.format(keyword, "Updated"))
     await edit_or_reply(event, f"Error while setting filter for {keyword}")
 
