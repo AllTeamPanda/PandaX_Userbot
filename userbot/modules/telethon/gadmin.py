@@ -210,34 +210,14 @@ async def pandagban(event):
 )
 async def gablist(event):
     "Shows you the list of all gbanned users by you."
-    users = list_gbanned()
-    x = await edit_or_reply(event, "Process...")
-    if not users:
-        return await x.edit("`You haven't GBanned anyone!`")
-    for i in users:
-        try:
-            name = await event.client.get_entity(int(i))
-        except BaseException:
-            name = i
-        reason = users[i]
-        msg = f"<strong>Reason</strong>: {inline_mention(name)}\n{reason}\n\n" if reason is not None else "\n"
-    gbanned_users = f"<strong>List of users GBanned by {pandaub.full_name}</strong>:\n\n{msg}"
-    if len(gbanned_users) > 4096:
-        with open("gbanned.txt", "w") as f:
-            f.write(
-                gbanned_users.replace("<strong>", "")
-                .replace("</strong>", "")
-                .replace("<a href=tg://user?id=", "")
-                .replace("</a>", "")
-            )
-        await x.reply(
-            file="gbanned.txt",
-            message=f"List of users GBanned by {inline_mention(pandaub.me)}",
-        )
-        os.remove("gbanned.txt")
-        await x.delete()
+    gbanned_users = list_gbanned()
+    GBANNED_LIST = "Current Gbanned Users\n"
+    if len(gbanned_users) > 0:
+        for a_user in gbanned_users:
+            GBANNED_LIST = f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n Reason {a_user.reason}" if a_user.reason is not None else "\n"
     else:
-        await x.edit(gbanned_users)
+        GBANNED_LIST = "no Gbanned Users (yet)"
+    await edit_or_reply(event, GBANNED_LIST)
 
 
 
