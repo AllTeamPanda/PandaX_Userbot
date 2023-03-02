@@ -75,7 +75,7 @@ async def warn(e):
         text = f"User {user} Got {action} Due to {count+1} Warns.\n\n"
         for x in range(c):
             text += f"•**{x+1}.** {r[x]}\n"
-        await edit_or_reply(text)
+        await edit_or_reply(e, text)
         return reset_warn(e.chat_id, ok.id)
     add_warn(e.chat_id, user, count + 1, r)
     ok = await pandaub.get_entity(user)
@@ -138,7 +138,7 @@ async def twarns(e):
             else:
                 user = int(user)
         except BaseException:
-            return await edit_or_reply("Reply To A User", time=5)
+            return await edit_or_reply(e, "Reply To A User", time=5)
     c, r = warns(e.chat_id, user)
     if c and r:
         ok = await e.client.get_entity(user)
@@ -164,12 +164,12 @@ async def twarns(e):
 async def warnset(e):
     ok = e.pattern_match.group(1).strip()
     if not ok:
-        return await edit_or_reply("stuff")
+        return await edit_or_reply(e, "stuff")
     if "|" in ok:
         try:
             number, action = int(ok.split()[0]), ok.split()[1]
         except BaseException:
-            return await edit_or_reply(get_string("schdl_2"), time=5)
+            return await edit_or_reply(e, "Incorrect Format", time=5)
         if ("ban" or "kick" or "mute") not in action:
             return await edit_or_reply(e, "`Only mute / ban / kick option suported`", time=5)
         udB.set_key("SETWARN", f"{number} {action}")
