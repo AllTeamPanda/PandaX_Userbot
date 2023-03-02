@@ -1,6 +1,6 @@
 import asyncio
 from datetime import datetime
-
+import os
 from telethon.errors import BadRequestError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.functions.users import GetFullUserRequest
@@ -13,7 +13,7 @@ from ...helpers.utils import _format
 from ..._database.dB.gban_mute_db import is_gbanned, gban, ungban, list_gbanned
 from ..._database.dB.mute_db import is_muted, mute, unmute
 from . import BOTLOG, BOTLOG_CHATID, admin_groups, get_user_from_event
-
+from ...resources.tools import inline_mention
 plugin_category = "plugins"
 
 BANNED_RIGHTS = ChatBannedRights(
@@ -210,19 +210,37 @@ async def pandagban(event):
 )
 async def gablist(event):
     "Shows you the list of all gbanned users by you."
-    gbanned_users = list_gbanned()
-    GBANNED_LIST = "Current Gbanned Users\n"
-    if len(gbanned_users) > 0:
-        for a_user in gbanned_users:
-            try:
-                name = await event.client.get_entity(int(a_user))
-            except BaseException:
-                name = a_user
-        reason = gbanned_users[a_user]
-        GBANNED_LIST += f"[{name}](tg://user?id={name}\n"
+    users = list_gbanned()
+    x = await await edit_or_reply("Process...")
+    msg = ""
+    if not users:
+        return await x.edit("`You haven't GBanned anyone!`")
+    for i in users:
+        try:
+            name = await event.client.get_entity(int(i))
+        except BaseException:
+            name = i
+        msg += f"<strong>User</strong>: {inline_mention(name, html=True)}\n"
+        reason = users[i]
+        msg += f"<strong>Reason</strong>: {reason}\n\n" if reason is not None else "\n"
+    gbanned_users = f"<strong>List of users GBanned by {pandaub.full_name}</strong>:\n\n{msg}"
+    if len(gbanned_users) > 4096:
+        with open("gbanned.txt", "w") as f:
+            f.write(
+                gbanned_users.replace("<strong>", "")
+                .replace("</strong>", "")
+                .replace("<a href=tg://user?id=", "")
+                .replace("</a>", "")
+            )
+        await x.reply(
+            file="gbanned.txt",
+            message=f"List of users GBanned by {inline_mention(pandaub.me)}",
+        )
+        os.remove("gbanned.txt")
+        await x.delete()
     else:
-        GBANNED_LIST += f"Reason : {reason}\n\n" if reason is not None else "\n"
-    await edit_or_reply(event, GBANNED_LIST)
+        await x.edit(gbanned_users, parse_mode="html")
+
 
 
 @pandaub.ilhammansiz_cmd(
