@@ -212,7 +212,6 @@ async def gablist(event):
     "Shows you the list of all gbanned users by you."
     users = list_gbanned()
     x = await await edit_or_reply("Process...")
-    msg = ""
     if not users:
         return await x.edit("`You haven't GBanned anyone!`")
     for i in users:
