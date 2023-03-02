@@ -220,7 +220,7 @@ async def gablist(event):
         except BaseException:
             name = i
         reason = users[i]
-        msg = f"<strong>Reason</strong>: {inline_mention(name, html=True)}\n{reason}\n\n" if reason is not None else "\n"
+        msg = f"<strong>Reason</strong>: {inline_mention(name)}\n{reason}\n\n" if reason is not None else "\n"
     gbanned_users = f"<strong>List of users GBanned by {pandaub.full_name}</strong>:\n\n{msg}"
     if len(gbanned_users) > 4096:
         with open("gbanned.txt", "w") as f:
@@ -237,7 +237,7 @@ async def gablist(event):
         os.remove("gbanned.txt")
         await x.delete()
     else:
-        await x.edit(gbanned_users, parse_mode="html")
+        await x.edit(gbanned_users)
 
 
 
