@@ -12,7 +12,6 @@ import ipaddress
 import struct
 import sys
 
-from telethon.errors.rpcerrorlist import AuthKeyDuplicatedError
 from telethon.sessions.string import _STRUCT_PREFORMAT, CURRENT_VERSION, StringSession
 
 from .._database._var import Var, Database
