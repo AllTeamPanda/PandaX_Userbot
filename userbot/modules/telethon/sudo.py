@@ -224,21 +224,21 @@ async def _(event):  # sourcery no-metrics
         )
         totalcmds = CMD_INFO.keys()
         flagcmds = (
-            PLG_INFO["botcontrols"]
+            PLG_INFO["chain"]
             + PLG_INFO["autoprofile"]
             + PLG_INFO["evaluators"]
             + PLG_INFO["execmod"]
             + PLG_INFO["database"]
             + PLG_INFO["afk"]
-            + PLG_INFO["pmpanda"]
+            + PLG_INFO["lockchat"]
             + PLG_INFO["custom"]
-            + PLG_INFO["blacklistchats"]
+            + PLG_INFO["carbon"]
             + PLG_INFO["corecmds"]
             + PLG_INFO["groupactions"]
             + PLG_INFO["sudo"]
             + PLG_INFO["transfer_channel"]
-            + ["gauth"]
-            + ["greset"]
+            + ["climate"]
+            + ["covid"]
         )
         loadcmds = list(set(totalcmds) - set(flagcmds))
         if len(sudocmds) > 0:
@@ -327,21 +327,21 @@ async def _(event):  # sourcery no-metrics
             event, "__Disabling all flagged cmds for sudo.....__"
         )
         flagcmds = (
-            PLG_INFO["botcontrols"]
+            PLG_INFO["chain"]
             + PLG_INFO["autoprofile"]
             + PLG_INFO["evaluators"]
             + PLG_INFO["execmod"]
             + PLG_INFO["database"]
             + PLG_INFO["afk"]
-            + PLG_INFO["pmpanda"]
+            + PLG_INFO["lockchat"]
             + PLG_INFO["custom"]
-            + PLG_INFO["blacklistchats"]
+            + PLG_INFO["carbon"]
             + PLG_INFO["corecmds"]
             + PLG_INFO["groupactions"]
             + PLG_INFO["sudo"]
             + PLG_INFO["transfer_channel"]
-            + ["gauth"]
-            + ["greset"]
+            + ["climate"]
+            + ["covid"]
         )
     elif input_str[0] == "-p":
         pandaevent = event
