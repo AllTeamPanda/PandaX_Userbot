@@ -1,5 +1,5 @@
    
-rom ... import PandaBot, udB
+from ... import PandaBot, udB
 
 from ..._misc.managers import edit_or_reply
 from ..._database.dB.warn_db import add_warn, reset_warn, warns
