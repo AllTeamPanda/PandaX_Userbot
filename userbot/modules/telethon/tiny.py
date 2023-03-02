@@ -1,11 +1,15 @@
 import os
-import cv2
+
 from PIL import Image
 
 from . import pandaub
 
 plugin_category = "plugins"
 
+try:
+    import cv2
+except ImportError:
+    cv2 = None
 
 @pandaub.ilhammansiz_cmd(
     pattern="tiny(?: |$)(.*)",
