@@ -13,36 +13,36 @@ def get_stuff():
     return udB.get_key("FILTERS") or {}
 
 
-def add_filter(chat, word, msg, media, button):
+def add_filter(chat_id, keyword, reply, f_mesg_id):
     ok = get_stuff()
-    if ok.get(chat):
-        ok[chat].update({word: {"msg": msg, "media": media, "button": button}})
+    if ok.get(chat_id):
+        ok[chat_id].update({str(chat_id), keyword, reply, f_mesg_id})
     else:
-        ok.update({chat: {word: {"msg": msg, "media": media, "button": button}}})
+        ok.update({str(chat_id), keyword, reply, f_mesg_id})
     udB.set_key("FILTERS", ok)
 
 
-def rem_filter(chat, word):
+def rem_filter(chat_id, keyword):
     ok = get_stuff()
-    if ok.get(chat) and ok[chat].get(word):
-        ok[chat].pop(word)
+    if ok.get(chat_id) and ok[chat].get(keyword):
+        ok[chat_id].pop(keyword)
         udB.set_key("FILTERS", ok)
 
 
-def rem_all_filter(chat):
+def rem_all_filter(chat_id):
     ok = get_stuff()
-    if ok.get(chat):
-        ok.pop(chat)
+    if ok.get(chat_id):
+        ok.pop(chat_id)
         udB.set_key("FILTERS", ok)
 
 
-def get_filter(chat):
+def get_filter(chat_id):
     ok = get_stuff()
-    if ok.get(chat):
-        return ok[chat]
+    if ok.get(chat_id):
+        return ok[chat_id]
 
 
-def list_filter(chat):
+def list_filter(chat_id):
     ok = get_stuff()
-    if ok.get(chat):
-        return "".join(f"👉 `{z}`\n" for z in ok[chat])
+    if ok.get(chat_id):
+        return "".join(f"👉 `{z}`\n" for z in ok[chat_id])
