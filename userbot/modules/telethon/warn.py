@@ -35,7 +35,7 @@ async def warn(e):
             else:
                 user = int(user)
         except BaseException:
-            return await edit_or_reply("Reply To A User", time=5)
+            return await edit_or_reply(e, "Reply To A User", time=5)
         try:
             reason = e.text.split(maxsplit=2)[-1]
         except BaseException:
