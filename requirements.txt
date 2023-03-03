@@ -16,3 +16,11 @@ jikanpy
 moviepy
 html_telegraph_poster
 telegraph==2.1.0
+validators
+ujson
+youtube_dl==2021.6.6
+youtube-search-python==1.4.7
+pytz
+requests
+httpx
+pytube
