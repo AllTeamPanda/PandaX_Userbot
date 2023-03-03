@@ -149,7 +149,7 @@ except Exception as e:
     sys.exit()
 
 try:
-    if Var.STRING_SESSION and Database.BOT_TOKEN:
+    if Database.BOT_TOKEN:
         tgbot = TelegramClient(
             "BOT_TOKEN",
             api_id=Var.APP_ID,
