@@ -15,38 +15,38 @@ def list_gbanned():
 
 def gban(chat_id, reason):
     ok = list_gbanned()
-    ok.update({str(chat_id): str(reason) or "No Reason. "})
+    ok.update({chat_id: reason or "No Reason. "})
     return udB.set_key("GBAN", ok)
 
 
 def ungban(chat_id):
     ok = list_gbanned()
-    if ok.get(str(chat_id)):
-        del ok[str(chat_id)]
+    if ok.get(chat_id):
+        del ok[chat_id]
         return udB.set_key("GBAN", ok)
 
 
 def is_gbanned(chat_id):
     ok = list_gbanned()
-    if ok.get(str(chat_id)):
-        return ok[str(chat_id)]
+    if ok.get(chat_id):
+        return ok[chat_id]
 
 
 def gmute(sender):
     ok = list_gmuted()
-    ok.append(str(sender))
+    ok.append(sender)
     return udB.set_key("GMUTE", ok)
 
 
 def ungmute(sender):
     ok = list_gmuted()
     if sender in ok:
-        ok.remove(str(sender))
+        ok.remove(sender)
         return udB.set_key("GMUTE", ok)
 
 
 def is_gmuted(sender_id):
-    return str(sender_id) in list_gmuted()
+    return sender_id in list_gmuted()
 
 
 def list_gmuted():
