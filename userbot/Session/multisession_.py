@@ -59,7 +59,7 @@ def Telethon():
                     PandaBot.session.set_dc(option.id, option.ip_address, option.port)
                     PandaBot.session.save()
                     break
-            bot_details = tgbot.get_me()
+            tgbot.get_me()
             PandaBot.me = PandaBot.get_me()
             PandaBot.uid = tgbot.uid = utils.get_peer_id(PandaBot.me)
             if Var.OWNER_ID == 0:
@@ -83,7 +83,7 @@ def Telethon():
                     PandaBot2.session.set_dc(option.id, option.ip_address, option.port)
                     PandaBot2.session.save()
                     break
-            bot_details = tgbot.get_me()
+            tgbot.get_me()
             PandaBot2.me = PandaBot2.get_me()
             PandaBot2.uid = tgbot.uid = utils.get_peer_id(PandaBot2.me)
             if Var.OWNER_ID == 0:
@@ -106,7 +106,7 @@ def Telethon():
                     PandaBot3.session.set_dc(option.id, option.ip_address, option.port)
                     PandaBot3.session.save()
                     break
-            bot_details = tgbot.get_me()
+            tgbot.get_me()
             PandaBot3.me = PandaBot3.get_me()
             PandaBot3.uid = tgbot.uid = utils.get_peer_id(PandaBot3.me)
             if Var.OWNER_ID == 0:
