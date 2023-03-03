@@ -47,86 +47,72 @@ THON_ON = """
 def Telethon():
     if Var.STRING_SESSION:
         try:
-            PandaBot.start()
-            delta = PandaBot(functions.help.GetConfigRequest())
-            for option in delta.dc_options:
+            PandaBot.connect()
+            config = PandaBot(functions.help.GetConfigRequest())
+            for option in config.dc_options:
                 if option.ip_address == PandaBot.session.server_address:
                     if PandaBot.session.dc_id != option.id:
                         LOGS.warning(
                             f"Fixed DC ID in session from {PandaBot.session.dc_id}"
                             f" to {option.id}"
-                        )
+                    )
                     PandaBot.session.set_dc(option.id, option.ip_address, option.port)
                     PandaBot.session.save()
                     break
+            bot_details = tgbot.get_me()
             PandaBot.me = PandaBot.get_me()
-            tgbot.get_me()
             PandaBot.uid = tgbot.uid = utils.get_peer_id(PandaBot.me)
             if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot.me)
-            """
-            needed_mods = plugin_collecter("./userbot/modules/telethon/")
-            for nm in needed_mods:
-                try:
-                    load_modulesTelethon(nm)
-                except Exception as e:
-                    logging.error("[USER] - Failed To Load : " + f"{nm} - {str(e)}")
-            assistant_mods = plugin_collecter("./userbot/modules/telethon/assistant/")
-            for mods in assistant_mods:
-                try:
-                    load_modulesTelethon(mods, assistant=True)
-                except Exception as e:
-                    logging.error("[ASSISTANT] - Failed To Load : " + f"{mods} - {str(e)}")
-            """
         except Exception as e:
-            LOGS.error(f"STRING_SESSION - {str(e)}")
+            LOGS.error(f"STRING_SESSION1 - {e}")
             sys.exit()
 
 
     if Var.STRING_SESSION2:
         try:
-            PandaBot2.start()
-            delta = PandaBot2(functions.help.GetConfigRequest())
-            for option in delta.dc_options:
+            PandaBot2.connect()
+            config = PandaBot2(functions.help.GetConfigRequest())
+            for option in config.dc_options:
                 if option.ip_address == PandaBot2.session.server_address:
                     if PandaBot2.session.dc_id != option.id:
                         LOGS.warning(
                             f"Fixed DC ID in session from {PandaBot2.session.dc_id}"
                             f" to {option.id}"
-                        )
+                    )
                     PandaBot2.session.set_dc(option.id, option.ip_address, option.port)
                     PandaBot2.session.save()
                     break
+            bot_details = tgbot.get_me()
             PandaBot2.me = PandaBot2.get_me()
-            tgbot.get_me()     
             PandaBot2.uid = tgbot.uid = utils.get_peer_id(PandaBot2.me)
             if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot2.me)
         except Exception as e:
-            LOGS.error(f"STRING_SESSION - {str(e)}")
+            LOGS.error(f"STRING_SESSION2 - {e}")
             sys.exit()
      
     if Var.STRING_SESSION3:
         try:
-            PandaBot3.start()
-            delta = PandaBot3(functions.help.GetConfigRequest())
-            for option in delta.dc_options:
+            PandaBot3.connect()
+            config = PandaBot3(functions.help.GetConfigRequest())
+            for option in config.dc_options:
                 if option.ip_address == PandaBot3.session.server_address:
                     if PandaBot3.session.dc_id != option.id:
                         LOGS.warning(
                             f"Fixed DC ID in session from {PandaBot3.session.dc_id}"
                             f" to {option.id}"
-                        )
+                    )
                     PandaBot3.session.set_dc(option.id, option.ip_address, option.port)
                     PandaBot3.session.save()
                     break
+            bot_details = tgbot.get_me()
             PandaBot3.me = PandaBot3.get_me()
-            tgbot.get_me()      
             PandaBot3.uid = tgbot.uid = utils.get_peer_id(PandaBot3.me)
             if Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot3.me)
         except Exception as e:
-            LOGS.error(f"STRING_SESSION - {str(e)}")
+            LOGS.error(f"STRING_SESSION3 - {e}")
             sys.exit()
 
 
