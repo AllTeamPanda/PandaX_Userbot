@@ -2,3 +2,6 @@
 pyrogram==1.4.16
 telethon==1.24.0
 heroku3
+pymongo[srv]
+psycopg2-binary
+redis>=3.3.10
