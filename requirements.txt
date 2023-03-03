@@ -24,3 +24,7 @@ pytz
 requests
 httpx
 pytube
+hachoir
+pysimplelog
+ryoishin
+gtts
