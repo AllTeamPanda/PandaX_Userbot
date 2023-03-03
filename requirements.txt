@@ -10,3 +10,9 @@ python-decouple==3.3
 ublackdev
 pillow>=7.0.0
 emoji==1.7.0
+bs4
+markdown
+jikanpy
+moviepy
+html_telegraph_poster
+telegraph==2.1.0
