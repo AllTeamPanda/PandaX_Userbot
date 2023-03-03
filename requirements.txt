@@ -9,3 +9,4 @@ python-dotenv
 python-decouple==3.3
 ublackdev
 pillow>=7.0.0
+emoji==1.7.0
