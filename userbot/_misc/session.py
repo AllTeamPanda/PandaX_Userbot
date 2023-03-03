@@ -6,7 +6,7 @@
 # t.me/pandac0de t.me/pandauserbot
 
 
-from .. import PandaBot, tgbot, PandaBot2, PandaBot3
+from ..Session import PandaBot, tgbot, PandaBot2, PandaBot3
 Bot = PandaBot
 Stark = PandaBot
 tgbot = tgbot
