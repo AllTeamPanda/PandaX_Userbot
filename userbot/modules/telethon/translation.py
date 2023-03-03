@@ -1,16 +1,15 @@
-from asyncio import sleep
-
 from googletrans import LANGUAGES, Translator
 
-from . import pandaub
+from ... import PandaBot
 
-from ..._misc.managers import edit_delete, edit_or_reply
+from . import edit_delete, edit_or_reply
 from ... import addgvar, gvarstatus
-from . import BOTLOG, BOTLOG_CHATID
+from . import BOTLOG, BOTLOG_CHATID, deEmojify
 
 plugin_category = "plugins"
 
-# https://github.com/ssut/py-googletrans/issues/234#issuecomment-722379788
+
+
 async def getTranslate(text, **kwargs):
     translator = Translator()
     result = None
@@ -19,16 +18,16 @@ async def getTranslate(text, **kwargs):
             result = translator.translate(text, **kwargs)
         except Exception:
             translator = Translator()
-            await sleep(0.1)
+            await asyncio.sleep(0.1)
     return result
 
 
-@pandaub.ilhammansiz_cmd(
-    pattern="tl (.*)",
+@PandaBot.ilhamansiz_cmd(
+    pattern="tl ([\s\S]*)",
     command=("tl", plugin_category),
     info={
         "header": "To translate the text to required language.",
-        "note": "For langugage codes check [this link](https://telegra.ph/Language-codes-11-01)",
+        "note": "For langugage codes check [this link](https://bit.ly/2SRQ6WU)",
         "usage": [
             "{tr}tl <language code> ; <text>",
             "{tr}tl <language codes>",
@@ -49,7 +48,7 @@ async def _(event):
         return await edit_delete(
             event, "`.tl LanguageCode` as reply to a message", time=5
         )
-    text = text.strip()
+    text = deEmojify(text.strip())
     lan = lan.strip()
     Translator()
     try:
@@ -59,18 +58,18 @@ async def _(event):
                 \n`{after_tr_text}`"
         await edit_or_reply(event, output_str)
     except Exception as exc:
-        await edit_delete(event, f"**Error:**\n`{str(exc)}`", time=5)
+        await edit_delete(event, f"**Error:**\n`{exc}`", time=5)
 
 
-@pandaub.ilhammansiz_cmd(
-    pattern="tr(?: |$)([\s\S]*)",
-    command=("tr", plugin_category),
+@PandaBot.ilhamansiz_cmd(
+    pattern="trt(?: |$)([\s\S]*)",
+    command=("trt", plugin_category),
     info={
         "header": "To translate the text to required language.",
-        "note": "for this set command set lanuage by lang tst command.",
+        "note": "for this command set lanuage by `{tr}lang trt` command.",
         "usage": [
-            "{tr}tr",
-            "{tr}tr <text>",
+            "{tr}trt",
+            "{tr}trt <text>",
         ],
     },
 )
@@ -86,9 +85,9 @@ async def translateme(trans):
         return await edit_or_reply(
             trans, "`Give a text or reply to a message to translate!`"
         )
-    TRT_LANG = gvarstatus("TRT_LANG") or "id"
+    TRT_LANG = gvarstatus("TRT_LANG") or "en"
     try:
-        reply_text = await getTranslate(message, dest=TRT_LANG)
+        reply_text = await getTranslate(deEmojify(message), dest=TRT_LANG)
     except ValueError:
         return await edit_delete(trans, "`Invalid destination language.`", time=5)
     source_lan = LANGUAGES[f"{reply_text.src.lower()}"]
@@ -103,20 +102,22 @@ async def translateme(trans):
         )
 
 
-@pandaub.ilhammansiz_cmd(
-    pattern="lang (ai|trt) (.*)",
+@PandaBot.ilhamansiz_cmd(
+    pattern="lang (ai|trt|tocr) ([\s\S]*)",
     command=("lang", plugin_category),
     info={
         "header": "To set language for trt/ai command.",
-        "description": "Check here [Language codes](https://telegra.ph/Language-Codes-05-24-2)",
+        "description": "Check here [Language codes](https://bit.ly/2SRQ6WU)",
         "options": {
             "trt": "default language for trt command",
+            "tocr": "default language for tocr command",
             "ai": "default language for chatbot(ai)",
         },
         "usage": "{tr}lang option <language codes>",
         "examples": [
             "{tr}lang trt te",
-            "{tr}lang ai hi",
+            "{tr}lang tocr bn",
+            "{tr}lang ai id",
         ],
     },
 )
@@ -133,21 +134,32 @@ async def lang(value):
     if input_str == "trt":
         addgvar("TRT_LANG", arg)
         await edit_or_reply(
-            value, f"`Language for Translator changed to {LANG.title()}.`"
+            value, f"**Language for Translator changed to:** `{LANG.title()}`"
+        )
+    elif input_str == "tocr":
+        addgvar("TOCR_LANG", arg)
+        await edit_or_reply(
+            value, f"**Language for Translated Ocr changed to:** `{LANG.title()}`"
         )
     else:
         addgvar("AI_LANG", arg)
         await edit_or_reply(
-            value, f"`Language for chatbot is changed to {LANG.title()}.`"
+            value, f"**Language for Chatbot is changed to:** `{LANG.title()}`"
         )
     LANG = LANGUAGES[arg]
 
+    if BOTLOG and input_str == "trt":
+        await value.client.send_message(
+            BOTLOG_CHATID, f"**Language for Translator changed to:** `{LANG.title()}`"
+        )
     if BOTLOG:
-        if input_str == "trt":
+        if input_str == "tocr":
             await value.client.send_message(
-                BOTLOG_CHATID, f"`Language for Translator changed to {LANG.title()}.`"
+                BOTLOG_CHATID,
+                f"**Language for Translated Ocr changed to:** `{LANG.title()}`",
             )
         if input_str == "ai":
             await value.client.send_message(
-                BOTLOG_CHATID, f"`Language for chatbot is changed to {LANG.title()}.`"
+                BOTLOG_CHATID,
+                f"**Language for Chatbot is changed to:** `{LANG.title()}`",
             )
