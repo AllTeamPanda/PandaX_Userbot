@@ -45,16 +45,6 @@ TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME", None)
 LOG_CHANNEL = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
 
 
-if BOT_MODE:
-    tgbot = PandaBot
-else:
-    PandaBot = tgbot
-
-
-
-
-
-
 # Global Configiables
 COUNT_MSG = 0
 USERS = {}
