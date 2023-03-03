@@ -15,11 +15,11 @@ import sys
 from telethon.sessions.string import _STRUCT_PREFORMAT, CURRENT_VERSION, StringSession
 
 from .._database._var import Var, Database
-from telethon import TelegramClient
+
 import os
 
 from .._misc.client import PandaUserbotSession, TelegramClient
-
+from .._misc.botclient import PandaUserbotToken
 from .._database import pyDatabase
 DB = pyDatabase()
 
@@ -149,8 +149,8 @@ except Exception as e:
     sys.exit()
 
 try:
-    if Database.BOT_TOKEN:
-        tgbot = TelegramClient(
+    if Var.STRING_SESSION and Database.BOT_TOKEN:
+        tgbot = PandaUserbotToken(
             "BOT_TOKEN",
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
