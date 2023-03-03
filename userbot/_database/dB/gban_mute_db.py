@@ -15,7 +15,7 @@ def list_gbanned():
 
 def gban(chat_id, reason):
     ok = list_gbanned()
-    ok.update({chat_id: reason or "No Reason. "})
+    ok.update(chat_id: reason or "No Reason. ")
     return udB.set_key("GBAN", ok)
 
 
