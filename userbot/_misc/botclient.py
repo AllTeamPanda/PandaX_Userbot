@@ -18,18 +18,6 @@ from .logger import logging
 LOGS = logging.getLogger(__name__)
 
 
-def dual_duall():
-    try:
-        if Config.COMMAND_HAND_LER :
-            duall = Config.COMMAND_HAND_LER
-            return duall
-        else:
-            duall = Config.COMMAND_HAND_LER
-            return duall
-    except Exception as e:
-        print(f"{str(e)}")
-        sys.exit()
-
 class PandaUserbotToken(TelegramClient):
     def bot_cmd(
         self: TelegramClient,
