@@ -5,3 +5,5 @@ heroku3
 pymongo[srv]
 psycopg2-binary
 redis>=3.3.10
+python-dotenv
+python-decouple==3.3
