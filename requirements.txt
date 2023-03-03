@@ -8,5 +8,4 @@ redis>=3.3.10
 python-dotenv
 python-decouple==3.3
 ublackdev
-aiofiles
-aiohttp
+pillow>=7.0.0
