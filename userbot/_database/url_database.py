@@ -138,7 +138,7 @@ class MongoDB(_BaseDatabase):
 
     @property
     def name(self):
-        return "DatabaseMongo"
+        return "MONGODB"
 
     @property
     def usage(self):
@@ -201,7 +201,7 @@ class SqlDB(_BaseDatabase):
 
     @property
     def name(self):
-        return "DatabaseSQL"
+        return "SQL"
 
     @property
     def usage(self):
@@ -307,7 +307,7 @@ class RedisDB(_BaseDatabase):
 
     @property
     def name(self):
-        return "DatabaseRedis"
+        return "REDIS"
 
     @property
     def usage(self):
