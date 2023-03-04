@@ -555,7 +555,7 @@ async def on_plugin_callback_query_handler(event):
          Button.inline("Menu Utama", data="mainmenu"),
          Button.inline("Delete", data="closes"),
     ]
-    await event.edit("Menu Utama", buttons=buttons)
+    xx = await event.edit("Menu Utama", buttons=buttons)
   
 
 ## Close by ilham
@@ -565,12 +565,12 @@ async def on_plugin_callback_query_handler(event):
 @check_owner
 async def on_plugin_callback_query_handler(event):
     i = 1
-    async for message in event.client.iter_messages(event.chat_id, from_user="me"):
+    async for message in PandaBot.iter_messages(event.chat_id, from_user="me"):
         if query:
             if i:
                 await message.delete()
         else:
-            await event.delete()
+            await xx.delete()
 
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
