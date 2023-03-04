@@ -216,9 +216,8 @@ async def gablist(event):
                  name = await event.client.get_entity(int(a_user))
             except BaseException:
                 name = a_user
-            GBANNED_LIST += f"List : {name}\n"
             reason = gbanned_users[a_user]
-            GBANNED_LIST += f"Reason: {reason}\n\n" if reason is not None else "\n"
+            GBANNED_LIST = f"List : {name}\nReason: {reason}\n\n" if reason is not None else "\n"
     else:
         GBANNED_LIST = "no Gbanned Users (yet)"
     await edit_or_reply(event, GBANNED_LIST)
