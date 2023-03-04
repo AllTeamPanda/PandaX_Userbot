@@ -1,5 +1,5 @@
 from googletrans import LANGUAGES, Translator
-
+import asyncio
 from ... import PandaBot
 
 from . import edit_delete, edit_or_reply
