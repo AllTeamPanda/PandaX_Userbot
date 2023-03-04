@@ -72,43 +72,6 @@ REGEX_ = REGEX()
 sudo_enabledcmds = sudo_enabled_cmds()
 
 class PandaUserbotSession(TelegramClient):
-
-    async def sleep(self, events: events.NewMessage, sec: int = 0, delmsg=False):
-        """
-        params:
-                1. events (update) :: incoming update
-                2. sec :: time to sleep in seconds
-                3. delme, default=False :: delete the events if it is True
-        use:
-                this function deletes the events after sleeping for a given time,
-                this function blocks the code
-        ex: (async)
-                await PandaBot.sleep(events, 10, delme=True)
-        """
-        msg = None
-        await asyncio.sleep(sec)
-        if delmsg and events.from_user.is_self:
-            msg = await events.delete()
-        return msg
-
-    async def delete_message(self, events: events.NewMessage, sec: int = 0):
-        """
-        params:
-                1. events (update) :: incoming update
-                2. sec: int, default=0 :: time to sleep in seconds
-        use:
-                this function deletes a message after given time period
-                this function works without blocking the entire execution
-        ex: (async)
-                await app.delete(events, 10)
-        """
-
-        if sec <= 600:  # 10 min
-            asyncio.create_task(self.sleep(events, sec=sec, delmsg=True))
-            return True
-        else:
-            LOGS.error("Delete function can only sleep for 10 ( 600 sec ) minutes")
-
     def ilhammansiz_cmd(
         self: TelegramClient,
         pattern: str or tuple = None,
