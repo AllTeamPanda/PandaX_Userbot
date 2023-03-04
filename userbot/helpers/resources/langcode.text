@@ -1,0 +1,112 @@
++-----------------------------------------+
+|              Language Codes             |
++------+----------+-----------------------+
+| S.no |   Code.  |        Language       |
++------+----------+-----------------------+
+|  1   |    af    |       afrikaans       |
+|  2   |    am    |        amharic        |
+|  3   |    ar    |         arabic        |
+|  4   |    az    |      azerbaijani      |
+|  5   |    be    |       belarusian      |
+|  6   |    bg    |       bulgarian       |
+|  7   |    bn    |        bengali        |
+|  8   |    bs    |        bosnian        |
+|  9   |    ca    |        catalan        |
+|  10  |   ceb    |        cebuano        |
+|  11  |    co    |        corsican       |
+|  12  |    cs    |         czech         |
+|  13  |    cy    |         welsh         |
+|  14  |    da    |         danish        |
+|  15  |    de    |         german        |
+|  16  |    el    |         greek         |
+|  17  |    en    |        english        |
+|  18  |    eo    |       esperanto       |
+|  19  |    es    |        spanish        |
+|  20  |    et    |        estonian       |
+|  21  |    eu    |         basque        |
+|  22  |    fa    |        persian        |
+|  23  |    fi    |        finnish        |
+|  24  |   fil    |        Filipino       |
+|  25  |    fr    |         french        |
+|  26  |    fy    |        frisian        |
+|  27  |    ga    |         irish         |
+|  28  |    gd    |      scots gaelic     |
+|  29  |    gl    |        galician       |
+|  30  |    gu    |        gujarati       |
+|  31  |    ha    |         hausa         |
+|  32  |   haw    |        hawaiian       |
+|  33  |    he    |         Hebrew        |
+|  34  |    hi    |         hindi         |
+|  35  |   hmn    |         hmong         |
+|  36  |    hr    |        croatian       |
+|  37  |    ht    |     haitian creole    |
+|  38  |    hu    |       hungarian       |
+|  39  |    hy    |        armenian       |
+|  40  |    id    |       indonesian      |
+|  41  |    ig    |          igbo         |
+|  42  |    is    |       icelandic       |
+|  43  |    it    |        italian        |
+|  44  |    iw    |         hebrew        |
+|  45  |    ja    |        japanese       |
+|  46  |    jw    |        javanese       |
+|  47  |    ka    |        georgian       |
+|  48  |    kk    |         kazakh        |
+|  49  |    km    |         khmer         |
+|  50  |    kn    |        kannada        |
+|  51  |    ko    |         korean        |
+|  52  |    ku    |   kurdish (kurmanji)  |
+|  53  |    ky    |         kyrgyz        |
+|  54  |    la    |         latin         |
+|  55  |    lb    |     luxembourgish     |
+|  56  |    lo    |          lao          |
+|  57  |    lt    |       lithuanian      |
+|  58  |    lv    |        latvian        |
+|  59  |    mg    |        malagasy       |
+|  60  |    mi    |         maori         |
+|  61  |    mk    |       macedonian      |
+|  62  |    ml    |       malayalam       |
+|  63  |    mn    |       mongolian       |
+|  64  |    mr    |        marathi        |
+|  65  |    ms    |         malay         |
+|  66  |    mt    |        maltese        |
+|  67  |    my    |   myanmar (burmese)   |
+|  68  |    ne    |         nepali        |
+|  69  |    nl    |         dutch         |
+|  70  |    no    |       norwegian       |
+|  71  |    ny    |        chichewa       |
+|  72  |    pa    |        punjabi        |
+|  73  |    pl    |         polish        |
+|  74  |    ps    |         pashto        |
+|  75  |    pt    |       portuguese      |
+|  76  |    ro    |        romanian       |
+|  77  |    ru    |        russian        |
+|  78  |    sd    |         sindhi        |
+|  79  |    si    |        sinhala        |
+|  80  |    sk    |         slovak        |
+|  81  |    sl    |       slovenian       |
+|  82  |    sm    |         samoan        |
+|  83  |    sn    |         shona         |
+|  84  |    so    |         somali        |
+|  85  |    sq    |        albanian       |
+|  86  |    sr    |        serbian        |
+|  87  |    st    |        sesotho        |
+|  88  |    su    |       sundanese       |
+|  89  |    sv    |        swedish        |
+|  90  |    sw    |        swahili        |
+|  91  |    ta    |         tamil         |
+|  92  |    te    |         telugu        |
+|  93  |    tg    |         tajik         |
+|  94  |    th    |          thai         |
+|  95  |    tl    |        filipino       |
+|  96  |    tr    |        turkish        |
+|  97  |    uk    |       ukrainian       |
+|  98  |    ur    |          urdu         |
+|  99  |    uz    |         uzbek         |
+| 100  |    vi    |       vietnamese      |
+| 101  |    xh    |         xhosa         |
+| 102  |    yi    |        yiddish        |
+| 103  |    yo    |         yoruba        |
+| 104  |  zh-cn   |  chinese (simplified) |
+| 105  |  zh-tw   | chinese (traditional) |
+| 106  |    zu    |          zulu         |
++------+----------+-----------------------+
