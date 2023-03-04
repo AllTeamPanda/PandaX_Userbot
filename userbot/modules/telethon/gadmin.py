@@ -212,7 +212,13 @@ async def gablist(event):
     GBANNED_LIST = "Current Gbanned Users\n"
     if len(gbanned_users) > 0:
         for a_user in gbanned_users:
-            GBANNED_LIST = f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
+            try:
+                 name = await event.client.get_entity(int(a_user))
+            except BaseException:
+                name = a_user
+            GBANNED_LIST += f"List : {name}\n"
+            reason = users[a_user]
+            GBANNED_LIST += f"Reason: {reason}\n\n" if reason is not None else "\n"
     else:
         GBANNED_LIST = "no Gbanned Users (yet)"
     await edit_or_reply(event, GBANNED_LIST)
