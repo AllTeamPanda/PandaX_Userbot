@@ -27,7 +27,7 @@ def where_hosted():
         return "github actions"
     if os.getenv("ANDROID_ROOT"):
         return "termux"
-    return "local"
+    return "vps"
 
 
 HOSTED_ON = where_hosted()
@@ -357,6 +357,6 @@ def pyDatabase():
         LOGS.critical(
             "No DB requirement fullfilled!\nPlease install redis, mongo or sql dependencies...\nTill then using local file as database."
         )
-    if HOSTED_ON == "local":
+    if HOSTED_ON == "vps":
         return LocalDB()
     exit()
