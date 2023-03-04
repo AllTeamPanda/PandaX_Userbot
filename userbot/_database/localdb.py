@@ -21,7 +21,7 @@ class Database:
             with open(self.name, "r") as data:
                 try:
                     return json.load(data)
-                except Exception as er:
+                except Exception:
                     return data.read()
         except FileNotFoundError:
             self._create_database(self.name)
