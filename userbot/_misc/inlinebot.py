@@ -566,9 +566,8 @@ async def on_plugin_callback_query_handler(event):
 async def on_plugin_callback_query_handler(event):
     i = 1
     async for message in PandaBot.iter_messages(event.chat_id, from_user="me"):
-        if query:
-            if i:
-                await message.delete()
+        if i:
+            await message.delete()
         else:
             await xx.delete()
 
