@@ -20,7 +20,7 @@ async def getTranslate(text, **kwargs):
     return result
 
 
-@PandaBot.ilhamansiz_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern="tl ([\s\S]*)",
     command=("tl", plugin_category),
     info={
@@ -59,7 +59,7 @@ async def _(event):
         await edit_delete(event, f"**Error:**\n`{exc}`", time=5)
 
 
-@PandaBot.ilhamansiz_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern="trt(?: |$)([\s\S]*)",
     command=("trt", plugin_category),
     info={
@@ -100,7 +100,7 @@ async def translateme(trans):
         )
 
 
-@PandaBot.ilhamansiz_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern="lang (ai|trt|tocr) ([\s\S]*)",
     command=("lang", plugin_category),
     info={
