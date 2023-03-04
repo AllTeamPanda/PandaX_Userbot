@@ -560,9 +560,6 @@ async def on_plugin_callback_query_handler(event):
 
 ## Close by ilham
 
-import struct
-import base64
-from telethon.errors import PeerIdInvalidError
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
