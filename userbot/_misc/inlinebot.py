@@ -568,12 +568,12 @@ from telethon.errors import PeerIdInvalidError
 @check_owner
 async def on_plugin_callback_query_handler(event):
     try:
-        if event:
+        if event.query:
             dc_id, event.user_id, chat_id = struct.unpack(
                 "<iiiq",
                 base64.urlsafe_b64decode(
-                    event + '=' * (
-                        len(event) % 4
+                    event.query + '=' * (
+                        len(event.query) % 4
                     )
                 )
             )
