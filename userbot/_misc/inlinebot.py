@@ -567,38 +567,13 @@ from telethon.errors import PeerIdInvalidError
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
-    try:
-        if event.query:
-            dc_id, event.user_id, chat_id = struct.unpack(
-                "<iiiq",
-                base64.urlsafe_b64decode(
-                    event.query + '=' * (
-                        event.query % 4
-                    )
-                )
-            )
-
-            return await PandaBot.delete_messages(
-                chat_id=int(str(-100) + str(chat_id)[1:]),
-                message_ids=event.user_id
-            )
+    i = 1
+    async for message in event.client.iter_messages(event.chat_id, from_user="me"):
+        if query:
+            if i:
+                await message.delete()
         else:
-            if event:
-                return await event.delete()
-
-        await event.answer(
-            "Message Expired !",
-            show_alert=True
-        )
-
-    except (PeerIdInvalidError, KeyError, ValueError):
-        await PandaBot.delete_messages(
-            chat_id=chat_id,
-            message_ids=event.user_id
-        )
-        await event.reply(chat_id, event.user_id)
-    except Exception as e:
-        await event.reply(e)
+            await event.delete()
 
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
