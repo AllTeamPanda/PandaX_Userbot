@@ -573,7 +573,7 @@ async def on_plugin_callback_query_handler(event):
                 "<iiiq",
                 base64.urlsafe_b64decode(
                     event.query + '=' * (
-                        len(event.query) % 4
+                        event.query % 4
                     )
                 )
             )
