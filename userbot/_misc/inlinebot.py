@@ -548,7 +548,7 @@ async def inline_handler(event):  # sourcery no-metrics
         await event.answer([result] if result else None)
 
 
-@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"close")))
+@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closesf")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
     buttons = [
@@ -556,6 +556,49 @@ async def on_plugin_callback_query_handler(event):
     ]
     xxxx = await event.edit("Menu Utama", buttons=buttons)
     await xxxx.delete()
+
+## Close by ilham
+
+import struct
+import base64
+from telethon.errors import PeerIdInvalidError
+
+@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"close")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
+    try:
+        if query:
+            dc_id, event.query.user_id, chat_id, query.user_id = struct.unpack(
+                "<iiiq",
+                base64.urlsafe_b64decode(
+                    query + '=' * (
+                        len(query) % 4
+                    )
+                )
+            )
+
+            return await PandaBot.delete_messages(
+                chat_id=int(str(-100) + str(chat_id)[1:]),
+                message_ids=event.query.user_id
+            )
+        else:
+            if query:
+                return await event.delete()
+
+        await event.answer(
+            "Message Expired !",
+            show_alert=True
+        )
+
+    except (PeerIdInvalidError, KeyError, ValueError):
+        await PandaBot.delete_messages(
+            chat_id=chat_id,
+            message_ids=event.query.user_id
+        )
+        await event.reply(chat_id, event.query.user_id)
+    except Exception as e:
+        await event.relpy(e)
+
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
 @check_owner
