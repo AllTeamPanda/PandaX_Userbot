@@ -548,11 +548,12 @@ async def inline_handler(event):  # sourcery no-metrics
         await event.answer([result] if result else None)
 
 
-@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closesf")))
+@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"close")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
     buttons = [
         (Button.inline("Menu Utama", data="mainmenu"),),
+        (Button.inline("Delete", data="closes"),),
     ]
     xxxx = await event.edit("Menu Utama", buttons=buttons)
     await xxxx.delete()
@@ -563,26 +564,26 @@ import struct
 import base64
 from telethon.errors import PeerIdInvalidError
 
-@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"close")))
+@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
     try:
-        if query:
-            dc_id, event.query.user_id, chat_id, query.user_id = struct.unpack(
+        if event:
+            dc_id, event.user_id, chat_id = struct.unpack(
                 "<iiiq",
                 base64.urlsafe_b64decode(
-                    query + '=' * (
-                        len(query) % 4
+                    event + '=' * (
+                        len(event) % 4
                     )
                 )
             )
 
             return await PandaBot.delete_messages(
                 chat_id=int(str(-100) + str(chat_id)[1:]),
-                message_ids=event.query.user_id
+                message_ids=event.user_id
             )
         else:
-            if query:
+            if event:
                 return await event.delete()
 
         await event.answer(
@@ -593,11 +594,11 @@ async def on_plugin_callback_query_handler(event):
     except (PeerIdInvalidError, KeyError, ValueError):
         await PandaBot.delete_messages(
             chat_id=chat_id,
-            message_ids=event.query.user_id
+            message_ids=event.user_id
         )
-        await event.reply(chat_id, event.query.user_id)
+        await event.reply(chat_id, event.user_id)
     except Exception as e:
-        await event.relpy(e)
+        await event.reply(e)
 
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
