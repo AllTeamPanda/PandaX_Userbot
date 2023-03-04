@@ -552,11 +552,11 @@ async def inline_handler(event):  # sourcery no-metrics
 @check_owner
 async def on_plugin_callback_query_handler(event):
     buttons = [
-        (Button.inline("Menu Utama", data="mainmenu"),),
-        (Button.inline("Delete", data="closes"),),
+         Button.inline("Menu Utama", data="mainmenu"),
+         Button.inline("Delete", data="closes"),
     ]
-    xxxx = await event.edit("Menu Utama", buttons=buttons)
-    await xxxx.delete()
+    await event.edit("Menu Utama", buttons=buttons)
+  
 
 ## Close by ilham
 
