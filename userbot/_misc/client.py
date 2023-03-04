@@ -73,6 +73,24 @@ sudo_enabledcmds = sudo_enabled_cmds()
 
 class PandaUserbotSession(TelegramClient):
 
+    async def sleep(self, events: events.NewMessage, sec: int = 0, delmsg=False):
+        """
+        params:
+                1. events (update) :: incoming update
+                2. sec :: time to sleep in seconds
+                3. delme, default=False :: delete the events if it is True
+        use:
+                this function deletes the events after sleeping for a given time,
+                this function blocks the code
+        ex: (async)
+                await PandaBot.sleep(events, 10, delme=True)
+        """
+        msg = None
+        await asyncio.sleep(sec)
+        if delmsg and events.from_user.is_self:
+            msg = await events.delete()
+        return msg
+
     async def delete_message(self, events: events.NewMessage, sec: int = 0):
         """
         params:
