@@ -27,7 +27,7 @@ async def getTranslate(text, **kwargs):
     command=("tl", plugin_category),
     info={
         "header": "To translate the text to required language.",
-        "note": "For langugage codes check [this link](https://bit.ly/2SRQ6WU)",
+        "note": "For langugage codes check [click link](https://github.com/ilhammansiz/PandaX_Userbot/blob/update/userbot/helpers/resources/langcode.text)",
         "usage": [
             "{tr}tl <language code> ; <text>",
             "{tr}tl <language codes>",
