@@ -210,14 +210,14 @@ async def gablist(event):
     "Shows you the list of all gbanned users by you."
     gbanned_users = list_gbanned()
     GBANNED_LIST = "Current Gbanned Users\n"
-    if len(gbanned_users) > 0:
+    if len(gbanned_users) > 4096:
         for a_user in gbanned_users:
             try:
                  name = await event.client.get_entity(int(a_user))
             except BaseException:
                 name = a_user
             GBANNED_LIST += f"List : {name}\n"
-            reason = users[a_user]
+            reason = gbanned_users[a_user]
             GBANNED_LIST += f"Reason: {reason}\n\n" if reason is not None else "\n"
     else:
         GBANNED_LIST = "no Gbanned Users (yet)"
