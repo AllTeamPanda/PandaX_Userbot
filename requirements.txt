@@ -1,41 +1,82 @@
 # Important Requirements Telethon & Pyrogram
-telethon==1.24.0
-pyrogram==1.4.16
-pymongo[srv]
-psycopg2-binary
-redis>=3.3.10
-python-decouple==3.3
-wand
-emoji==1.7.0
+# A
 aiofiles
 aiohttp
+
+# B
+bs4
+bing-image-downloader
+
+# C
 cloudscraper
 colour
 covid
-bs4
 cowpy
+countryinfo
+currencyconverter
+
+# D
 dataclasses
 DateTime
+deep_translator
+
+# E
+emoji==1.7.0
+emoji-country-flag
+
+# F
 fonttools
+filesplit
+ffmpeg-python
+faker>=6.6.2
+
+# G
 geopy
 gitpython
 glitch_this
 google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
-yt-dlp==2021.11.10.1
 gtts
+google-trans-new==1.1.9
+googletrans>=3.0.0
+gpytranslate==1.4.0
+git+https://github.com/1danish-00/carbon-now-sh-api-wrapper.git
+git-python
+
+# H
 hachoir
 heroku3
-ublackdev
 html-telegraph-poster
 humanize
+httpx
+
+
+# I
+img2pdf>=0.4.0
+
+# J
 jikanpy
 justwatch
+
+# L
+lyrics_extractor
 lottie
 lyricsgenius
+langdetect>=1.0.8
+
+# M
 motor
+moviepy
+
+# N
 nekos.py
+NoteShrinker>=0.2.0
+
+# P
+pyrogram==1.4.16
+pymongo[srv]
+psycopg2-binary
 Pillow
 prettytable
 prsaw
@@ -49,54 +90,57 @@ pySmartDL
 python-barcode
 python-dotenv
 pytz
+python-decouple==3.3
+pyyaml==5.4.1
+pyshorteners>=1.0.1
+pyshorteners>=1.0.1
+pybase64
+pyDownload
+pytube
+pysimplelog
+
+# Q 
 qrcode
+
+# R
+redis>=3.3.10
 regex
 requests
+ryoishin
+
+# S
 search-engine-parser
 selenium
 setuptools
 ShazamAPI
 spamwatch
-speedtest-cli
+speedtest-cli==2.1.3
+
+# T
+telethon==1.24.0
 telegraph
-ffmpeg-python
-wheel
 TgCrypto
 tswift
+tinydb>=4.4.0
+twitter_scraper
+
+# U
+ublackdev
 ujson
 urlextract
+
+# V
+validators
 vcsi
+
+# W
+wand
+wheel
 wget
 wikipedia
-lyrics_extractor
+wikipedia-api
+
+# Y
+yt-dlp==2021.11.10.1
 youtube-search-python==1.4.7
 youtube_dl==2021.6.6
-pyyaml==5.4.1
-countryinfo
-emoji-country-flag
-tinydb>=4.4.0
-NoteShrinker>=0.2.0
-img2pdf>=0.4.0
-filesplit
-google-trans-new==1.1.9
-googletrans>=3.0.0
-pyshorteners>=1.0.1
-langdetect>=1.0.8
-faker>=6.6.2
-gpytranslate==1.4.0
-git+https://github.com/1danish-00/carbon-now-sh-api-wrapper.git
-pybase64
-validators
-twitter_scraper
-moviepy
-wikipedia-api
-ryoishin
-currencyconverter
-deep_translator
-speedtest-cli==2.1.3
-httpx
-pyDownload
-pytube
-pysimplelog
-bing-image-downloader
-git-python
