@@ -44,22 +44,35 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 
 </details>
 
-<details>
-    <summary> <b>🔗 Deploy Termux Panda Userbot</b></summary><br/>
-
-### Tutorial Deploy di Termux
--  `bash <(curl -L https://gitlab.com/ilhammansiz/userbot/-/raw/main/termux.sh)`
-
-</details>
-
-
-
 
 <details>
     <summary> <b>🔗 Deploy Vps Panda Userbot</b></summary><br/>
 
 ### Tutorial Deploy di Vps
--  `bash <(curl -L https://gitlab.com/ilhammansiz/userbot/-/raw/main/vps.sh)`
+- `sudo apt update && upgrade -y`
+- `sudo apt install git -y`
+- `sudo apt install python3`
+- `sudo apt install python3-pip`
+- `sudo apt install postgresql`
+- `sudo apt install neofetch`
+- `sudo apt install ffmpeg`
+- `sudo apt install curl`
+- `sudo apt install megatools`
+- `sudo apt install unzip`
+- `sudo apt install wget
+- sudo apt install liblapack-dev`
+- `sudo apt install aria2`
+- `sudo apt install zip`
+- `sudo apt install nano`
+- `sudo apt install sudo`
+- `sudo apt install python3-wand`
+- `sudo apt install python3-lxml`
+- `sudo apt install postgresql-client`
+- `wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`
+- `git clone https://github.com/ilhammansiz/PandaX_Userbot`
+- `cd PandaX_Userbot`
+- `pip3 install --no-cache-dir -r requirements.txt`
+- `python3 pyPanda/start.py`
 
 </details>
 
@@ -68,7 +81,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 <details>
     <summary> <b>🔗 Deploy Heroku Panda Userbot</b></summary><br/>
 
-<p align="center"><a href="https://heroku.com/deploy"><img src="https://img.shields.io/badge/Deploy%20Lewat%20Web%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"" /></a></p>
+<p align="center"><a href="https://github.com/ilhammansiz/deploy"><img src="https://img.shields.io/badge/Deploy%20Lewat%20Web%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"" /></a></p>
 
 <p align="center"><a href="https://t.me/PandaUserbot"><img src="https://img.shields.io/badge/Deploy%20Lewat%20Bot%20Telegram%3F-Heroku-blueviolet?&style=flat-square?&logo=telegram" width="200"" /></a></p>
 </details>
