@@ -568,9 +568,9 @@ async def on_plugin_callback_query_handler(event):
     query = event.text
     string = query.lower()
     query.split(" ", 2)
-    str_y = query.split(" ", 1)
+    query.split(" ", 1)
     string.split()
-    query_user_id = event.query.user_id
+    event.query.user_id
     if string:
         dc_id, message_id, chat_id, query_id = struct.unpack(
             "<iiiq",
