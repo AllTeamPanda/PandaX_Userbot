@@ -546,7 +546,7 @@ async def inline_handler(event):  # sourcery no-metrics
             ),
         )
         await event.answer([result] if result else None)
-
+## Close by ilham
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"close")))
 @check_owner
@@ -556,32 +556,10 @@ async def on_plugin_callback_query_handler(event):
          Button.inline("Delete", data="closes"),
     ]
     xx = await event.edit("Menu Utama", buttons=buttons)
-  
+    await PandaBot.delete_messages(xx)
 
 ## Close by ilham
 
-import struct
-import base64
-
-@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
-@check_owner
-async def on_plugin_callback_query_handler(event):
-    query = event.text   
-    query_user_id = event.query.user_id
-    if query:
-        dc_id, query, chat_id, query_user_id = struct.unpack(
-            "<iiiq",
-            base64.urlsafe_b64decode(
-                query + '=' * (
-                    len(query) % 4
-                )
-            )
-        )
-
-        return await PandaBot.delete_messages(
-            chat_id=int(str(-100) + str(chat_id)[1:]),
-            message_ids=query
-        )
 
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
