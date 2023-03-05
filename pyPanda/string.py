@@ -4,7 +4,11 @@ from typing import Any, Dict, List, Union
 
 from userbot import *
 from userbot._misc.tools import translate
-from yaml import safe_load
+
+try:
+    from yaml import safe_load
+except ModuleNotFoundError:
+    from userbot._misc.tools import safe_load
 
 Plang = udB.get_key("language") or os.getenv("LANGUAGE", "en")
 
