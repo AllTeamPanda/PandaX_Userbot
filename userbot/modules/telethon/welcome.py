@@ -229,7 +229,19 @@ async def listgd(event):
     await event.delete()
 
 
-@ultroid_cmd(pattern="thankmembers (on|off)", groups_only=True)
+
+@PandaBot.ilhammansiz_cmd(
+    pattern="thankmembers (on|off)$",
+    command=("thankmembers", plugin_category),
+    info={
+       "description": "thankmembers message in the current chat.",
+        "usage": [
+            "{tr}thankmembers on/off",
+        ],
+    },
+    groups_only=True,
+    require_admin=True,
+)
 async def thank_set(event):
     type_ = event.pattern_match.group(1).strip()
     if not type_ or type_ == "":
