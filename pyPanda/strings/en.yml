@@ -10,10 +10,10 @@ authors:
 
 #Admin
 
-help_gpic: "{ "header": "For changing group display pic or deleting display pic", "description": "Reply to Image for changing display picture", "flags": {"-s": "To set group pic", "-d": "To delete group pic", }, "usage": [ "{tr}gpic -s <reply to image>", "{tr}gpic -d", ], }"
-help_promote: "{ "header": "To give admin rights for a person", "description": "Provides admin rights to the person in the chat\nNote : You need proper rights for this", "usage": [ "{tr}promote <userid/username/reply>", "{tr}promote <userid/username/reply> <custom title>", ], }"
-help_remote: "{ "header": "To remove a person from admin list", "description": "Removes all admin rights for that peron in that chat\nNote : You need proper rights for this and also u must be owner or admin who promoted that guy", "usage": [ "{tr}demote <userid/username/reply>", "{tr}demote <userid/username/reply> <custom title>", ], }"
+help_gpic: "{"header":"For changing group display pic or deleting display pic", "description":"Reply to Image for changing display picture", "flags": {"-s": "To set group pic", "-d": "To delete group pic", }, "usage": ["{tr}gpic -s <reply to image>", "{tr}gpic -d",],}"
+help_promote: "{"header":"To give admin rights for a person", "description":"Provides admin rights to the person in the chat\nNote : You need proper rights for this", "usage": [ "{tr}promote <userid/username/reply>", "{tr}promote <userid/username/reply> <custom title>",],}"
+help_remote: "{"header":"To remove a person from admin list", "description":"Removes all admin rights for that peron in that chat\nNote : You need proper rights for this and also u must be owner or admin who promoted that guy", "usage": [ "{tr}demote <userid/username/reply>", "{tr}demote <userid/username/reply> <custom title>",],}"
 
 
 #ping
-help_ping: "{ "header": "check how long it takes to ping your userbot", "flags": {"-a": "average ping"}, "usage": ["{tr}ping", "{tr}ping -a"], }"
+help_ping: "{"header": "check how long it takes to ping your userbot", "flags": {"-a": "average ping"}, "usage": ["{tr}ping", "{tr}ping -a"],}"
