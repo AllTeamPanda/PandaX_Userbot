@@ -1,5 +1,5 @@
 
-# Based 
+# Panda Userbot
 `Telethon and Pyrogram` Editor & create by [@pandac0de](https://t.me/pandauserbot)
 
 
