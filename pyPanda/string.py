@@ -63,7 +63,7 @@ def get_string(key: str, _res: bool = True) -> Any:
 
 
 def get_help(key):
-    get_string(f"help_{key}")
+    get_string(f"help_{key}", _res=False)
     
 
 def get_languages() -> Dict[str, Union[str, List[str]]]:
