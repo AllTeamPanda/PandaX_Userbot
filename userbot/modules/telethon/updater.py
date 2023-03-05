@@ -149,7 +149,7 @@ async def upstream(event):
             "**Pembaruan Tidak Dapat Di Lanjutkan Karna "
             + "Terjadi Beberapa ERROR**\n\n**LOGTRACE:**\n"
         )
-        repo = Repo()
+        repo = REPO_URL
     except NoSuchPathError as error:
         await xx.edit(f"{txt}\n**Directory** `{error}` **Tidak Dapat Di Temukan.**")
         return repo.__del__()
@@ -165,10 +165,10 @@ async def upstream(event):
         origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
         force_update = True
-        repo.create_head("master", origin.refs.master)
-        repo.heads.master.set_tracking_branch(origin.refs.master)
-        repo.heads.master.checkout(True)
-    ac_br = repo.active_branch.name
+        repo.create_head("update", origin.refs.update)
+        repo.heads.update.set_tracking_branch(origin.refs.update)
+        repo.heads.update.checkout(True)
+    ac_br = "update"
     try:
         repo.create_remote("upstream", off_repo)
     except BaseException:
