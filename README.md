@@ -1,6 +1,6 @@
 
 # Based 
-Telethon and Pyrogram Editor & create by [@pandac0de](https://t.me/pandauserbot)
+`Telethon and Pyrogram` Editor & create by [@pandac0de](https://t.me/pandauserbot)
 
 
 <p align="center">
