@@ -565,7 +565,7 @@ import base64
 @check_owner
 @tgbot.on(InlineQuery)
 async def on_plugin_callback_query_handler(event):
-    query = event.text
+    query = event
     string = query.lower()
     query.split(" ", 2)
     query.split(" ", 1)
