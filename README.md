@@ -96,19 +96,17 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 
 
 #### Thanks To [Everyone](https://github.com/ilhammansiz/PandaX_Userbot/graphs/contributors) Who Has Helped Make This Userbot Awesome!
-*   [AdekMaulana](https://github.com/adekmaulana) : ProjectBish
-*   [RaphielGang](https://github.com/RaphielGang) : Paperplane
 *   [TeamUltroid](https://github.com/TeamUltroid/Ultroid) :  UltroidUserbot
-*   [BianSepang](https://github.com/BianSepang/WeebProject) : WeebProject
-*   [Sandy1709](https://github.com/sandy1709/catuserbot) : CatUserbot
+*   [TeamUserge](https://github.com/TeamUserge/Userge) : Userge
+*   [CatUserbot](https://github.com/TgCatUB/catuserbot) : CatUserbot
 
 ## © Credits
 * [Lonamiwebs](https://github.com/LonamiWebs) for [Telethon](https://github.com/LonamiWebs/Telethon)
 * [Dan](https://github.com/pyrogram) for [Pyrogram](https://github.com/pyrogram/pyrogram)
-* [MarshalX](https://github.com/MarshalX/tgcalls) for [PyTgcalls](https://github.com/MarshalX/tgcalls)
 * [Ilham Mansiz](https://github.com/ilhammansiz) for [PandaX_Userbot](https://github.com/ilhammansiz/PandaX_Userbot)
 
 ## License
-Licensed under [PandaUserbot Public License](https://github.com/ilhammansiz/PandaX_Userbot/blob/PandaUserbot/LICENSE) - Version 1.d, February 2020
+[![License](https://www.gnu.org/graphics/gplv3-with-text-136x68.png)](LICENSE)   
+Licensed under [PandaUserbot Public License](https://www.gnu.org/licenses/agpl-3.0.html)
 
 # <p align="center">Panda Userbot</p>
