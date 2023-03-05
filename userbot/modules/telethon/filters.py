@@ -52,7 +52,7 @@ async def af(e):
     wt = await e.get_reply_message()
     chat = e.chat_id
     if not (wt and wrd):
-        return await e.eor(get_string("flr_1"))
+        return await edit_or_reply(e, get_string("flr_1"))
     btn = format_btn(wt.buttons) if wt.buttons else None
     if wt and wt.media:
         wut = mediainfo(wt.media)
@@ -62,7 +62,7 @@ async def af(e):
             m = f"https://graph.org{variable[0]}"
         elif wut == "video":
             if wt.media.document.size > 8 * 1000 * 1000:
-                return await e.eor(get_string("com_4"), time=5)
+                return await edit_or_reply(e, get_string("com_4"), time=5)
             dl = await wt.download_media()
             variable = uf(dl)
             os.remove(dl)
@@ -81,7 +81,7 @@ async def af(e):
         if not btn:
             txt, btn = get_msg_button(wt.text)
         add_filter(chat, wrd, txt, None, btn)
-    await e.eor(get_string("flr_4").format(wrd))
+    await edit_or_reply(e, get_string("flr_4").format(wrd))
     PandaBot.add_handler(filter_func, events.NewMessage())
 
 
@@ -97,9 +97,9 @@ async def rf(e):
     wrd = (e.pattern_match.group(1).strip()).lower()
     chat = e.chat_id
     if not wrd:
-        return await e.eor(get_string("flr_3"))
+        return await edit_or_reply(e, get_string("flr_3"))
     rem_filter(int(chat), wrd)
-    await e.eor(get_string("flr_5").format(wrd))
+    await edit_or_reply(e, get_string("flr_5").format(wrd))
 
 
 @PandaBot.ilhammansiz_cmd(
@@ -114,5 +114,5 @@ async def rf(e):
 async def lsnote(e):
     if x := list_filter(e.chat_id):
         sd = "Filters Found In This Chats Are\n\n"
-        return await e.eor(sd + x)
-    await e.eor(get_string("flr_6"))
+        return await edit_or_reply(e, sd + x)
+    await edit_or_reply(e, get_string("flr_6"))
