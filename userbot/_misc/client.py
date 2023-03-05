@@ -41,14 +41,15 @@ from .pluginManager import restart_script
 
 LOGS = logging.getLogger(__name__)
 
+DUALL = "/"
 
 def dual_duall():
     try:
-        if Config.COMMAND_HAND_LER :
-            duall = Config.COMMAND_HAND_LER
+        if DUALL :
+            duall = DUALL
             return duall
         else:
-            duall = Config.COMMAND_HAND_LER
+            duall = DUALL
             return duall
     except Exception as e:
         print(f"{str(e)}")
