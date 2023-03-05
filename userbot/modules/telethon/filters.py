@@ -10,6 +10,7 @@ plugin_category = "modules"
 
 import os
 
+from telethon.tl.types import User
 from telegraph import upload_file as uf
 from telethon.utils import pack_bot_file_id
 
@@ -82,7 +83,7 @@ async def af(e):
             txt, btn = get_msg_button(wt.text)
         add_filter(chat, wrd, txt, None, btn)
     await edit_or_reply(e, get_string("flr_4").format(wrd))
-    PandaBot.add_handler(filter_func, events.NewMessage())
+    PandaBot.add_event_handler(filter_func, events.NewMessage())
 
 
 @PandaBot.ilhammansiz_cmd(
@@ -116,3 +117,27 @@ async def lsnote(e):
         sd = "Filters Found In This Chats Are\n\n"
         return await edit_or_reply(e, sd + x)
     await edit_or_reply(e, get_string("flr_6"))
+
+
+
+
+async def filter_func(e):
+    if isinstance(e.sender, User) and e.sender.bot:
+        return
+    xx = (e.text).lower()
+    chat = e.chat_id
+    if x := get_filter(chat):
+        for c in x:
+            pat = r"( |^|[^\w])" + re.escape(c) + r"( |$|[^\w])"
+            if re.search(pat, xx):
+                if k := x.get(c):
+                    msg = k["msg"]
+                    media = k["media"]
+                    if k.get("button"):
+                        btn = create_tl_btn(k["button"])
+                        return await something(e, msg, media, btn)
+                    await e.reply(msg, file=media)
+
+
+if udB.get_key("FILTERS"):
+    PandaBot.add_event_handler(filter_func, events.NewMessage())
