@@ -1,0 +1,10 @@
+name: English
+natively: English
+
+authors:
+  - ilham mansiz
+
+
+
+
+help_gpic: ""header": "For changing group display pic or deleting display pic", "description": "Reply to Image for changing display picture", "flags": {"-s": "To set group pic", "-d": "To delete group pic", }, "usage": [ "{tr}gpic -s <reply to image>","{tr}gpic -d", ],"
