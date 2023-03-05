@@ -27,11 +27,10 @@ Panda_Userbot is a modular Telegram userbot running on Python3 with database:
 
 ## Disclaimer
 
-```
-Saya tidak bertanggung jawab atas penyalahgunaan bot ini.
-Bot ini dimaksudkan untuk bersenang-senang sekaligus membantu Anda
-mengelola grup secara efisien dan mengotomatiskan beberapa hal yang membosankan.
-Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
+``` 
+I am not responsible for any misuse of this bot. 
+These bots are meant to have fun as well as help you manage groups efficiently and automate some tedious things. 
+Use this bot at your own risk, and use it wisely.
 ```
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
