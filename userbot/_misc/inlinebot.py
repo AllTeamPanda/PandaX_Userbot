@@ -565,16 +565,14 @@ async def on_plugin_callback_query_handler(event):
     msgs = []
     chat = await event.get_input_chat()
     input_str = str(event.pattern_match.group(1).decode("UTF-8"))
-    if input_str:
-        async for msg in event.client.iter_messages(
-                chat
-            ):
-                msgs.append(msg)
-                if len(msgs) == 100:
-                    await event.client.delete_messages(chat, msgs)
-                    msgs = []
-        return await event.client.delete_messages(chat, msgs)
-
+    async for msg in event.client.iter_messages(
+            chat, message_ids=event.reply_to_msg_id
+        ):
+            msgs.append(msg)
+            if len(msgs) == 100:
+                await event.client.delete_messages(chat, msgs)
+                msgs = []
+        
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
 @check_owner
 async def on_plug_in_callback_query_handler(event):
