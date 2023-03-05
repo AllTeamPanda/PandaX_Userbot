@@ -14,7 +14,7 @@ from telethon.tl.types import User
 from telegraph import upload_file as uf
 from telethon.utils import pack_bot_file_id
 
-from ..._database.dB.filter_db import add_filter, list_filter, rem_filter
+from ..._database.dB.filter_db import add_filter, list_filter, rem_filter, get_filter
 from ..._misc.tools import format_btn, get_msg_button, mediainfo
 
 from ... import PandaBot, udB
