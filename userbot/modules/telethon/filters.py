@@ -82,7 +82,7 @@ async def af(e):
             txt, btn = get_msg_button(wt.text)
         add_filter(chat, wrd, txt, None, btn)
     await e.eor(get_string("flr_4").format(wrd))
-    ultroid_bot.add_handler(filter_func, events.NewMessage())
+    PandaBot.add_handler(filter_func, events.NewMessage())
 
 
 @PandaBot.ilhammansiz_cmd(
