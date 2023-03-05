@@ -6,7 +6,7 @@ from userbot import *
 from userbot._misc.tools import translate
 
 try:
-    from yaml import safe_load
+    from userbot._misc.tools import safe_load
 except ModuleNotFoundError:
     from userbot._misc.tools import safe_load
 
