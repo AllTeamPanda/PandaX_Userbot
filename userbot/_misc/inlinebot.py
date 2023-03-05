@@ -558,14 +558,11 @@ async def on_plugin_callback_query_handler(event):
     await event.edit("Menu Utama", buttons=buttons)
     
 ## Close by ilham
-import struct
-import base64
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
     msgs = []
-    string = query
     chat = await event.get_input_chat()
     input_str = str(event.pattern_match.group(1).decode("UTF-8"))
     if input_str:
