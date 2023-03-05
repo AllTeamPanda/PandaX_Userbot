@@ -8,12 +8,13 @@ import lottie
 import requests
 import spamwatch as spam_watch
 from validators.url import url
+from telethon.tl.types import InputWebDocument, Message
 
 from ... import *
 from ...config import Config
 from ..._misc.logger import logging
 from ..._misc.managers import edit_delete, edit_or_reply
-from ..._misc.session import PandaBot
+from ..._misc.session import PandaBot, tgbot
 from ...helpers import *
 from ...helpers.utils import _format, _pandatools, _pandautils, install_pip, reply_id
 from telethon import events
@@ -122,3 +123,26 @@ async def make_gif(event, reply, quality=None, fps=None):
             lottie.exporters.gif.export_gif, animation, result, quality, fps
         )
     return result_p
+
+
+
+
+STUFF = {}
+
+
+async def something(e, msg, media, button, reply=True, chat=None):
+    if e.client._bot:
+        return await e.reply(msg, file=media, buttons=button)
+    num = len(STUFF) + 1
+    STUFF.update({num: {"msg": msg, "media": media, "button": button}})
+    try:
+        res = await e.client.inline_query(Config.TG_BOT_USERNAME, f"stf{num}")
+        return await res[0].click(
+            chat or e.chat_id,
+            reply_to=bool(isinstance(e, Message) and reply),
+            hide_via=True,
+            silent=True,
+        )
+
+    except Exception as er:
+        LOGS.exception(er)
