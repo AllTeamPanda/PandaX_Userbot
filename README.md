@@ -60,7 +60,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 - `sudo apt install megatools`
 - `sudo apt install unzip`
 - `sudo apt install wget`
-- sudo apt install liblapack-dev`
+- `sudo apt install liblapack-dev`
 - `sudo apt install aria2`
 - `sudo apt install zip`
 - `sudo apt install nano`
