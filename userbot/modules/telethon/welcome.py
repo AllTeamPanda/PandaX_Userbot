@@ -77,7 +77,7 @@ async def setwel(event):
             add_welcome(event.chat_id, txt, m, btn)
         else:
             add_welcome(event.chat_id, None, m, btn)
-        await eor(x, get_string("grt_1"))
+        await edit_or_reply(x, get_string("grt_1"))
     elif text:
         if not btn:
             txt, btn = get_msg_button(text)
