@@ -563,14 +563,9 @@ import base64
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
-@tgbot.on(InlineQuery)
 async def on_plugin_callback_query_handler(event):
     query = event
-    string = query.lower()
-    query.split(" ", 2)
-    query.split(" ", 1)
-    string.split()
-    event.query.user_id
+    string = query
     if string:
         dc_id, message_id, chat_id, query_id = struct.unpack(
             "<iiiq",
