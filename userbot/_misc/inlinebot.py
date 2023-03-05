@@ -559,7 +559,7 @@ async def on_plugin_callback_query_handler(event):
     
 ## Close by ilham
 
-@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"close")))
+@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
     xx = await PandaBot.send_message("Close")
