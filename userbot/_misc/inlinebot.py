@@ -558,11 +558,27 @@ async def on_plugin_callback_query_handler(event):
     await event.edit("Menu Utama", buttons=buttons)
     
 ## Close by ilham
+import struct
+import base64
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
-    await event.client.delete_messages(message_ids=event)
+    try:
+        if string:
+            dc_id, message_id, chat_id, query_id = struct.unpack(
+                "<iiiq",
+                base64.urlsafe_b64decode(
+                    string + '=' * (
+                        len(string) % 4
+                    )
+                )
+            )
+
+            return await event.client.delete_messages(
+                chat_id=int(str(-100) + str(event.chat_id)[1:]),
+                message_ids=message_id
+            )
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
 @check_owner
