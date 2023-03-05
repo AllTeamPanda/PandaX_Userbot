@@ -567,10 +567,9 @@ async def on_plugin_callback_query_handler(event):
     input_str = str(event.pattern_match.group(1).decode("UTF-8"))
     if input_str:
         async for msg in event.client.iter_messages(
-                chat, min_id=input_str
+                chat
             ):
                 msgs.append(msg)
-                msgs.append(input_str)
                 if len(msgs) == 100:
                     await event.client.delete_messages(chat, msgs)
                     msgs = []
