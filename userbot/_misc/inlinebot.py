@@ -563,7 +563,7 @@ async def on_plugin_callback_query_handler(event):
 @check_owner
 async def on_plugin_callback_query_handler(event):
     xx = await event.edit("close")
-    await xx.delete(event.chat_id)
+    await event.client.delete_messages(event.chat_id, xx)
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
 @check_owner
