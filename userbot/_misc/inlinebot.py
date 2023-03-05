@@ -564,22 +564,20 @@ import base64
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
-    query = []
+    msgs = []
     string = query
-    if string:
-        dc_id, message_id, chat_id, query_id = struct.unpack(
-            "<iiiq",
-            base64.urlsafe_b64decode(
-               string + '=' * (
-                    len(string) % 4
-                )
-            )
-        )
-
-        return await event.client.delete_messages(
-            chat_id=int(str(-100) + str(event.chat_id)[1:]),
-            message_ids=message_id
-        )
+    chat = await event.get_input_chat()
+    input_str = str(event.pattern_match.group(1).decode("UTF-8"))
+    if input_str:
+        async for msg in event.client.iter_messages(
+                chat, min_id=input_str
+            ):
+                msgs.append(msg)
+                msgs.append(input_str)
+                if len(msgs) == 100:
+                    await event.client.delete_messages(chat, msgs)
+                    msgs = []
+        return await event.client.delete_messages(chat, msgs)
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
 @check_owner
