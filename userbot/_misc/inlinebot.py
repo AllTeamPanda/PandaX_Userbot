@@ -562,7 +562,7 @@ async def on_plugin_callback_query_handler(event):
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"close")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
-    xx = await event.edit("Close")
+    xx = await PandaBot.send_message("Close")
     await PandaBot.delete_messages(xx)
 
 
