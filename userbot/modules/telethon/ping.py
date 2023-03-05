@@ -15,7 +15,7 @@ plugin_category = "plugins"
 @pandaub.ilhammansiz_cmd(
     pattern="ping( -a|$)",
     command=("ping", plugin_category),
-    info=get_help("help_ping"),
+    info={get_help("help_ping")},
 )
 async def _(event):
     "To check ping"
