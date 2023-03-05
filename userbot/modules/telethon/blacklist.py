@@ -42,7 +42,7 @@ async def af(e):
     heh = wrd.split(" ")
     for z in heh:
         add_blacklist(int(chat), z.lower())
-    PandaBot.add_handler(blacklist, events.NewMessage(incoming=True))
+    PandaBot.add_event_handler(blacklist, events.NewMessage(incoming=True))
     await edit_or_reply(e, get_string("blk_2").format(wrd))
 
 
