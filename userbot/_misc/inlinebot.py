@@ -566,20 +566,21 @@ import base64
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
-    event.query.user_id
-    if event.text:
-        dc_id, event.text, chat_id, event.query.user_id = struct.unpack(
+    query = event.text   
+    query_user_id = event.query.user_id
+    if query:
+        dc_id, query, chat_id, query_user_id = struct.unpack(
             "<iiiq",
             base64.urlsafe_b64decode(
-                event.text + '=' * (
-                    len(event.text) % 4
+                query + '=' * (
+                    len(query) % 4
                 )
             )
         )
 
         return await PandaBot.delete_messages(
             chat_id=int(str(-100) + str(chat_id)[1:]),
-            message_ids=event.text
+            message_ids=query
         )
 
 
