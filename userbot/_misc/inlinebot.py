@@ -565,7 +565,7 @@ async def on_plugin_callback_query_handler(event):
     msgs = []
     chat = await event.get_input_chat()
     async for msg in event.client.iter_messages(
-            chat, message_ids=event.reply_to_msg_id
+            chat
         ):
             msgs.append(msg)
             if len(msgs) == 100:
