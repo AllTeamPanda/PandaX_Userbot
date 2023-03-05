@@ -10,6 +10,7 @@ plugin_category = "modules"
 
 import os
 
+import re
 from telethon.tl.types import User
 from telegraph import upload_file as uf
 from telethon.utils import pack_bot_file_id
