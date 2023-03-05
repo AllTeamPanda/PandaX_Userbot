@@ -101,4 +101,4 @@ async def blacklist(e):
 
 
 if udB.get_key("BLACKLIST_DB"):
-    PandaBot.add_handler(blacklist, events.NewMessage(incoming=True))
+    PandaBot.add_event_handler(blacklist, events.NewMessage(incoming=True))
