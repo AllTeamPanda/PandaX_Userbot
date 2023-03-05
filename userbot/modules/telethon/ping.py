@@ -4,6 +4,10 @@ from datetime import datetime
 from ... import pandaub
 from . import mention
 from ..._misc.managers import edit_or_reply
+from pyPanda import get_help
+
+
+
 
 plugin_category = "plugins"
 
@@ -11,11 +15,7 @@ plugin_category = "plugins"
 @pandaub.ilhammansiz_cmd(
     pattern="ping( -a|$)",
     command=("ping", plugin_category),
-    info={
-        "header": "check how long it takes to ping your userbot",
-        "flags": {"-a": "average ping"},
-        "usage": ["{tr}ping", "{tr}ping -a"],
-    },
+    info=get_help("help_ping"),
 )
 async def _(event):
     "To check ping"
