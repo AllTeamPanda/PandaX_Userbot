@@ -555,11 +555,15 @@ async def on_plugin_callback_query_handler(event):
          Button.inline("Menu Utama", data="mainmenu"),
          Button.inline("Delete", data="closes"),
     ]
-    xx = await event.edit("Menu Utama", buttons=buttons)
-    await PandaBot.delete_messages(xx)
-
+    await event.edit("Menu Utama", buttons=buttons)
+    
 ## Close by ilham
 
+@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"close")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
+    xx = await event.edit("Close")
+    await PandaBot.delete_messages(xx)
 
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
