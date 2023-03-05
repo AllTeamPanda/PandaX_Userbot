@@ -560,14 +560,27 @@ async def on_plugin_callback_query_handler(event):
 
 ## Close by ilham
 
+import struct
+import base64
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
-    i = 1
-    async for message in PandaBot.iter_messages(event.chat_id, from_user="me"):
-        if i:
-             await message.delete()
+    query = event.query.user_id
+    if event.text:
+        dc_id, event.text, chat_id, event.query.user_id = struct.unpack(
+            "<iiiq",
+            base64.urlsafe_b64decode(
+                event.text + '=' * (
+                    len(event.text) % 4
+                )
+            )
+        )
+
+        return await PandaBot.delete_messages(
+            chat_id=int(str(-100) + str(chat_id)[1:]),
+            message_ids=event.text
+        )
 
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
