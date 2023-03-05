@@ -564,7 +564,7 @@ async def on_plugin_callback_query_handler(event):
 async def on_plugin_callback_query_handler(event):
     msgs = []
     chat = await event.get_input_chat()
-    input_str = str(event.pattern_match.group(1).decode("UTF-8"))
+    str(event.pattern_match.group(1).decode("UTF-8"))
     async for msg in event.client.iter_messages(
             chat, message_ids=event.reply_to_msg_id
         ):
