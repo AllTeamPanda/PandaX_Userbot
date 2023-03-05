@@ -4,7 +4,6 @@ from datetime import datetime
 from ... import pandaub
 from . import mention
 from ..._misc.managers import edit_or_reply
-from pyPanda import get_help
 
 
 
