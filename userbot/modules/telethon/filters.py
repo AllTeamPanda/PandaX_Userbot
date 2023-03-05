@@ -9,19 +9,17 @@
 plugin_category = "modules"
 
 import os
-import re
 
 from telegraph import upload_file as uf
-from telethon.tl.types import User
 from telethon.utils import pack_bot_file_id
 
-from ..._misc.dB.filter_db import add_filter, get_filter, list_filter, rem_filter
-from ..._misc.tools import create_tl_btn, format_btn, get_msg_button, mediainfo
+from ..._misc.dB.filter_db import add_filter, list_filter, rem_filter
+from ..._misc.tools import format_btn, get_msg_button, mediainfo
 
-from ... import udB, PandaBot
+from ... import PandaBot
 from telethon import events
 from pyPanda import get_string
-from . import something, edit_or_reply
+from . import edit_or_reply
 eor = edit_or_reply
 
 
