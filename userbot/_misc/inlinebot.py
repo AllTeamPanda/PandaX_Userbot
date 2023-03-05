@@ -571,7 +571,7 @@ async def on_plugin_callback_query_handler(event):
                 await message.delete()
         else:
             if event:
-                await xx.delete()
+                await event.delete()
 
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
