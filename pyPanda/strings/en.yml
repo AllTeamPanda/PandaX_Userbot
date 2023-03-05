@@ -1,8 +1,8 @@
-name: English
-natively: English
+nama: English
+asli: English
 
-authors:
-  - ilham mansiz
+penulis:
+  - Ilham Mansiz
 
 #Admin help
 help_gpic: ""header":"For changing group display pic or deleting display pic", "description":"Reply to Image for changing display picture", "flags": {"-s": "To set group pic", "-d": "To delete group pic", }, "usage": ["{tr}gpic -s <reply to image>", "{tr}gpic -d",],"
