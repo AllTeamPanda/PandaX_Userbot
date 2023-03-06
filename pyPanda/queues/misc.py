@@ -1,4 +1,4 @@
-from telethon.tl import types, functions
+from telethon.tl import types
 from telethon.utils import get_display_name
 from youtubesearchpython import VideosSearch
 from .bash import bash
