@@ -4,12 +4,11 @@
 # t.me/PandaUserbot
 
 plugin_category = "music"
-from ... import call_py, PandaBot, Config
+from ... import PandaBot, call_py
 from ..._misc.managers import edit_delete, edit_or_reply
 
 from pyPanda.queues import *
     
-import asyncio
 import logging
 
 from telethon.tl.types import User
