@@ -8,9 +8,9 @@ from telethon.tl.types import User
 from ... import Config, PandaBot, udB
 from ..._misc.managers import edit_delete, edit_or_reply
 
-from ._helper.VC.stream_helper import Stream
-from ._helper.VC.tg_downloader import tg_dl
-from ._helper.VC.vcp_helper import VCTools
+from ..._helper.VC.stream_helper import Stream
+from ..._helper.VC.tg_downloader import tg_dl
+from ..._helper.VC.vcp_helper import VCTools
 
 plugin_category = "music"
 
