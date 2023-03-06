@@ -180,4 +180,22 @@ else:
 
 from pytgcalls import PyTgCalls
 
-call_py = PyTgCalls(PandaBot)
+
+try:
+    if Var.STRING_SESSION:
+        bot = TelegramClient(
+            PandaSession(Var.STRING_SESSION, LOGS),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+        )
+    else:
+        bot = None
+except Exception as e:
+    print(f"STRING_SESSION- {str(e)}")
+    sys.exit()
+
+
+call_py = PyTgCalls(bot)
