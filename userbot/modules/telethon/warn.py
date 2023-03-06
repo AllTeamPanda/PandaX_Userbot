@@ -4,7 +4,7 @@ from ... import PandaBot, udB
 from ..._misc.managers import edit_or_reply
 from ..._database.dB.warn_db import add_warn, reset_warn, warns
 
-from ...resources.tools import inline_mention
+from ...resources import inline_mention
 plugin_category = "modules"    
 
 
