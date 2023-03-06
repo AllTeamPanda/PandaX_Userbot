@@ -30,7 +30,7 @@ from pyPanda import get_string
 from . import something, edit_or_reply, PandaBot
 
 Note = "\n\nNote: `{mention}`, `{group}`, `{count}`, `{name}`, `{fullname}`, `{username}`, `{userid}` can be used as formatting parameters.\n\n"
-
+HNDLR = Config.COMMAND_HAND_LER
 
 @PandaBot.ilhammansiz_cmd(
     pattern="setwelcome$",
