@@ -59,9 +59,9 @@ ALLOWED_USERS = set()
         ],
         "examples": [
             "{tr}joinvc",
-            "{tr}joinvc -1005895485",
-            "{tr}joinvc -as -1005895485",
-            "{tr}joinvc -1005895485 -as -1005895485",
+            "{tr}joinvc -1001556371377",
+            "{tr}joinvc -as -1001556371377",
+            "{tr}joinvc -1001556371377 -as -1001556371377",
         ],
     },
 )
@@ -84,7 +84,7 @@ async def joinVoicechat(event):
         )
 
     try:
-        vc_chat = await catub.get_entity(chat)
+        vc_chat = await PandaBot.get_entity(chat)
     except Exception as e:
         return await edit_delete(event, f'ERROR : \n{e or "UNKNOWN CHAT"}')
 
@@ -151,13 +151,13 @@ async def get_playlist(event):
     if not playl:
         await edit_delete(event, "Playlist empty", time=10)
     else:
-        cat = ""
+        panda = ""
         for num, item in enumerate(playl, 1):
             if item["stream"] == Stream.audio:
-                cat += f"{num}. 🔉  `{item['title']}`\n"
+                panda += f"{num}. 🔉  `{item['title']}`\n"
             else:
-                cat += f"{num}. 📺  `{item['title']}`\n"
-        await edit_delete(event, f"**Playlist:**\n\n{cat}\n**Enjoy the show**")
+                panda += f"{num}. 📺  `{item['title']}`\n"
+        await edit_delete(event, f"**Playlist:**\n\n{panda}\n**Enjoy the show**")
 
 
 
