@@ -29,7 +29,7 @@ else:
 vc_client.__class__.__module__ = "telethon.client.telegramclient"
 vc_player = VCTools(vc_client)
 
-asyncio.create_task(vc_player.start())
+
 
 
 @vc_player.app.on_stream_end()
