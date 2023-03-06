@@ -3,7 +3,6 @@
 # Recode by Ilham Mansiz
 # t.me/PandaUserbot
 
-plugin_category = "music"
 from ... import PandaBot, call_py
 from ..._misc.managers import edit_delete, edit_or_reply
 
