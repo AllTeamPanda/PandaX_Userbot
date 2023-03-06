@@ -8,7 +8,7 @@ import os
 import re
 
 from telethon import Button
-
+from ... import tgbot
 from ...config import Config
 from . import edit_delete, pandaub, reply_id
 
@@ -72,7 +72,7 @@ async def _(event):
         tgbot_reply_message = await event.client.download_media(reply_message.media)
     if tl_ib_buttons == []:
         tl_ib_buttons = None
-    await event.client.tgbot.send_message(
+    await tgbot.send_message(
         entity=event.chat_id,
         message=message_text,
         parse_mode="html",
