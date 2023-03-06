@@ -8,7 +8,7 @@
 import os
 import random
 from carbonnow import Carbon
-from ...resources.tools import inline_mention
+from ...resources import inline_mention
 from ..._misc.managers import edit_delete, edit_or_reply
 from . import PandaBot
 plugin_category = "plugins"
