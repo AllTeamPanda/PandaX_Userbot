@@ -173,7 +173,7 @@ from pytgcalls.exceptions import (
     NotInGroupCallError,
     TooOldNodeJSVersion,
 )
-from pytgcalls.types import AudioPiped, AudioVideoPiped
+from pytgcalls.types import AudioPiped
 from pytgcalls.types.stream import StreamAudioEnded
 from telethon import functions
 from telethon.errors import ChatAdminRequiredError
