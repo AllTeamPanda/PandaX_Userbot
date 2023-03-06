@@ -2,7 +2,7 @@ import os
 
 from PIL import Image
 
-from . import pandaub
+from . import pandaub, edit_or_reply
 
 plugin_category = "plugins"
 
@@ -22,10 +22,10 @@ except ImportError:
 async def ultiny(event):
     reply = await event.get_reply_message()
     if not (reply and (reply.media)):
-        await event.edit("`🐼 Panda, Mohon Balas Ke Sticker ,Tiny,Tono,Dongo😶`")
+        await edit_or_reply(event, "`🐼 Panda, Mohon Balas Ke Sticker ,Tiny,Tono,Dongo😶`")
         return
-    xx = await event.edit("`Memproses Tiny....`")
-    ik = await bot.download_media(reply)
+    xx = await edit_or_reply(event, "`Memproses Tiny....`")
+    ik = await pandaub.download_media(reply)
     im1 = Image.open("userbot/resources/PandaBlanck.jpg")
     if ik.endswith(".tgs"):
         await event.client.download_media(reply, "ult.tgs")
