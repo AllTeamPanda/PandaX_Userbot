@@ -112,7 +112,7 @@ async def vc_play(event):
     ):
         return await edit_or_reply(event, "**Silahkan Masukan Judul Lagu**")
     elif replied and not replied.audio and not replied.voice or not replied:
-        botman = await edit_or_reply(event, "`Searching...`")
+        botpanda = await edit_or_reply(event, "`Searching...`")
         query = event.text.split(maxsplit=1)[1]
         search = ytsearch(query)
         if search == 0:
@@ -131,11 +131,11 @@ async def vc_play(event):
             thumb = await gen_thumb(thumbnail, title, videoid, ctitle)
             hm, ytlink = await ytdl(url)
             if hm == 0:
-                await botman.edit(f"`{ytlink}`")
+                await botpanda.edit(f"`{ytlink}`")
             elif chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                 caption = f"💡 **Lagu Ditambahkan Ke antrian »** `#{pos}`\n\n**🏷 Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n🎧 **Atas permintaan:** {from_user}"
-                await botman.delete()
+                await botpanda.delete()
                 await event.client.send_file(
                     chat_id, thumb, caption=caption, reply_to=event.reply_to_msg_id
                 )
@@ -151,13 +151,13 @@ async def vc_play(event):
                     )
                     add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                     caption = f"🏷 **Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n💡 **Status:** `Sedang Memutar`\n🎧 **Atas permintaan:** {from_user}"
-                    await botman.delete()
+                    await botpanda.delete()
                     await event.client.send_file(
                         chat_id, thumb, caption=caption, reply_to=event.reply_to_msg_id
                     )
                 except Exception as ep:
                     clear_queue(chat_id)
-                    await botman.edit(f"`{ep}`")
+                    await botpanda.edit(f"`{ep}`")
 
     else:
         botpanda = await edit_or_reply(event, "📥 **Sedang Mendownload**")
