@@ -177,8 +177,8 @@ async def get_playlist(event):
         ],
         "examples": [
             "{tr}vplay",
-            "{tr}vplay https://www.youtube.com/watch?v=c05GBLT_Ds0",
-            "{tr}vplay -f https://www.youtube.com/watch?v=c05GBLT_Ds0",
+            "{tr}vplay https://youtube.com/playlist?list=RDz-CyTv5TNx8&playnext=1",
+            "{tr}vplay -f https://youtube.com/playlist?list=RDz-CyTv5TNx8&playnext=1",
         ],
     },
 )
@@ -221,8 +221,8 @@ async def play_video(event):
         ],
         "examples": [
             "{tr}play",
-            "{tr}play https://www.youtube.com/watch?v=c05GBLT_Ds0",
-            "{tr}play -f https://www.youtube.com/watch?v=c05GBLT_Ds0",
+            "{tr}play https://youtube.com/playlist?list=RDz-CyTv5TNx8&playnext=1",
+            "{tr}play -f https://youtube.com/playlist?list=RDz-CyTv5TNx8&playnext=1",
         ],
     },
 )
