@@ -22,7 +22,7 @@ from ... import udB
 from . import edit_or_reply, PandaBot
 
 @PandaBot.ilhammansiz_cmd(
-    pattern="blacklist$",
+    pattern="blacklist(?: |$)(.*)$",
     command=("blacklist", plugin_category),
     info={
        "description": "blacklist the choosen word in that chat",
@@ -47,7 +47,7 @@ async def af(e):
 
 
 @PandaBot.ilhammansiz_cmd(
-    pattern="remblacklist$",
+    pattern="remblacklist(?: |$)(.*)",
     command=("remblacklist", plugin_category),
     info={
        "description": "Remove the word from blacklist",
@@ -72,7 +72,7 @@ async def rf(e):
 
 
 @PandaBot.ilhammansiz_cmd(
-    pattern="listblacklist$",
+    pattern="listblacklist(?: |$)(.*)",
     command=("listblacklist", plugin_category),
     info={
        "description": "List the word from blacklist",
