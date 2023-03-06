@@ -1,10 +1,10 @@
-from telethon.tl import types
+from telethon.tl import types, functions
 from telethon.utils import get_display_name
 from youtubesearchpython import VideosSearch
 from .bash import bash
 
 from .queues import *
-from userbot import call_py
+from userbot import call_py, udB
 
 from pytgcalls import StreamType
 from pytgcalls.types import Update
@@ -111,4 +111,11 @@ StreamType = StreamType
 Update = Update
 InputAudioStream = InputAudioStream
 InputStream = InputStream
+functions = functions
 
+
+PLAY_PIC = udB.get_key("PLAY_PIC") or "https://telegra.ph/file/6213d2673486beca02967.png"
+QUEUE_PIC = udB.get_key("QUEUE_PIC") or "https://telegra.ph/file/d6f92c979ad96b2031cba.png"
+
+fotoplay = PLAY_PIC
+ngantri = QUEUE_PIC
