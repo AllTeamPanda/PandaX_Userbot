@@ -188,11 +188,7 @@ class PandaUserbotSession(TelegramClient):
                         if Config.PRIVATE_GROUP_BOT_API_ID == 0:
                             return
                         date = (datetime.datetime.now()).strftime("%m/%d/%Y, %H:%M:%S")
-                        ftext = f"\nDisclaimer:\nFile ini hanya disisipkan di sini HANYA di sini,\
-                                  \nkami hanya mencatat fakta kesalahan dan tanggal,\nKami menghormati privasi anda,\
-                                  \nyou may not report this error if you've\
-                                  \nany confidential data here, no one will see your data\
-                                  \n\n--------BEGIN USERBOT TRACEBACK LOG--------\
+                        ftext = f"\n\n--------BEGIN USERBOT TRACEBACK LOG--------\
                                   \nDate: {date}\nGroup ID: {str(check.chat_id)}\
                                   \nSender ID: {str(check.sender_id)}\
                                   \n\nEvent Trigger:\n{str(check.text)}\
@@ -211,12 +207,8 @@ class PandaUserbotSession(TelegramClient):
                         pastelink = ftext
                         text = "**PandaUserbot Error report**\n\n"
                         link = "[Klik](https://t.me/TEAMSquadUserbotSupport)"
-                        text += "If you wanna you can report it"
-                        text += f"- just forward this message {link}.\n"
-                        text += (
-                            "Nothing is logged except the fact of error and date\n\n"
-                        )
-                        text += f"**Error report : ** [{new['error']}]({pastelink})"
+                        text += f"- Forward and join support grup {link}.\n"
+                        text += f"**Error Code : ** [{new['error']}]({pastelink})"
                         await check.client.send_message(
                             Config.PRIVATE_GROUP_BOT_API_ID, text, link_preview=False
                         )
@@ -494,11 +486,7 @@ class PandaUserbotSession(TelegramClient):
                         if Config.PRIVATE_GROUP_BOT_API_ID == 0:
                             return
                         date = (datetime.datetime.now()).strftime("%m/%d/%Y, %H:%M:%S")
-                        ftext = f"\nDisclaimer:\nFile ini hanya disisipkan di sini HANYA di sini,\
-                                  \nkami hanya mencatat fakta kesalahan dan tanggal,\nKami menghormati privasi anda,\
-                                  \nyou may not report this error if you've\
-                                  \nany confidential data here, no one will see your data\
-                                  \n\n--------BEGIN USERBOT TRACEBACK LOG--------\
+                        ftext = f"\n\n--------BEGIN USERBOT TRACEBACK LOG--------\
                                   \nDate: {date}\nGroup ID: {str(check.chat_id)}\
                                   \nSender ID: {str(check.sender_id)}\
                                   \n\nEvent Trigger:\n{str(check.text)}\
@@ -517,12 +505,8 @@ class PandaUserbotSession(TelegramClient):
                         pastelink = ftext
                         text = "**PandaUserbot Error report**\n\n"
                         link = "[Klik](https://t.me/TEAMSquadUserbotSupport)"
-                        text += "If you wanna you can report it"
-                        text += f"- just forward this message {link}.\n"
-                        text += (
-                            "Nothing is logged except the fact of error and date\n\n"
-                        )
-                        text += f"**Error report : ** [{new['error']}]({pastelink})"
+                        text += f"- Forward and join support grup {link}.\n"
+                        text += f"**Error Code : ** [{new['error']}]({pastelink})"
                         await check.client.send_message(
                             Config.PRIVATE_GROUP_BOT_API_ID, text, link_preview=False
                         )
