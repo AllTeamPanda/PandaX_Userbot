@@ -67,6 +67,7 @@ Use this bot at your own risk, and use it wisely.
 - `sudo apt install python3-wand`
 - `sudo apt install python3-lxml`
 - `sudo apt install postgresql-client`
+- `curl -sL https://deb.nodesource.com/setup_16.x | bash - && apt-get install -y nodejs && npm i -g npm`
 - `wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`
 - `git clone https://github.com/ilhammansiz/PandaX_Userbot`
 - `cd PandaX_Userbot`
