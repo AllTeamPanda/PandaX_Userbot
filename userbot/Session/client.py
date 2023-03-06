@@ -178,7 +178,8 @@ else:
 
 
 
-from pytgcalls import PyTgCalls
+from pyPanda.queues import *
+    
 
 
 try:
@@ -198,4 +199,4 @@ except Exception as e:
     sys.exit()
 
 
-call_py = PyTgCalls(bot)
+call_py = VCTools(bot)
