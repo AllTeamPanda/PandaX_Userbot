@@ -17,7 +17,7 @@ logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 
 OWNER_ID = PandaBot.uid
 
-vc_session = udB.get_key("SESSION") or Config.STRING_SESSION
+vc_session = udB.get_key("VC_SESSION")
 
 if vc_session:
     vc_client = TelegramClient(
