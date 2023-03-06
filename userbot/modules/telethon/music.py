@@ -33,7 +33,7 @@ async def joinvc(event):
     else:
         chat_id = event.chat_id
         await event.get_chat()
-        file = 'Panda/Version/literasi.mp3'
+        file = 'userbot/resources/literasi.mp3'
     if chat_id:
         try:
             if chat_id:
