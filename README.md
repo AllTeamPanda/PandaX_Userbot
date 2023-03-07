@@ -24,6 +24,7 @@ Panda_Userbot is a modular Telegram userbot running on Python3 with database:
 
      `For MONGODB`
       MONGO_URI - Get it from [mongodb](https://mongodb.com/atlas)
+better to use MongoDb database or Redis
 
 ## Disclaimer
 
