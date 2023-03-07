@@ -199,4 +199,4 @@ except Exception as e:
     sys.exit()
 
 
-call_py = PyTgCalls(bot)
+
