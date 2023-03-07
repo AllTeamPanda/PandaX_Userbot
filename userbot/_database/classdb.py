@@ -7,12 +7,13 @@ class AFK(object):
         global MY_AFK
         afk_db = pdB.get_key("AFK_DB") or {}
         if afk_db:
-            pdB.del_key("WELCOME")
-        afk_db = pdB.set_key("AFK_DB", {0: {"afk": afk, "reason": reason, "afktime": afktime}})
+            pdB.del_key("AFK_DB")
+        afk_db.update({0: {"afk": afk, "reason": reason, "afktime": afktime}})
+        pdB.set_key("AFK_DB", afk_db)
         MY_AFK[0] = {"afk": afk, "reason": reason, "afktime": afktime}
 
     def get_afk(self):
-        return MY_AFK.get(0)
+        return pdB.get_key("AFK_DB")
 
     def load_afk():
         global MY_AFK
