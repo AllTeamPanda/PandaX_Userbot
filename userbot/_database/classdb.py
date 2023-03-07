@@ -1,5 +1,35 @@
 from . import pdB
 
+class AFK(object):
+    """AMC -> Afk Modification Class"""
+
+    def set_afk(self, afk, reason, afktime):
+        global MY_AFK
+        afk_db = pdB.get_key("AFK_DB") or {}
+        if afk_db:
+            pdB.del_key("WELCOME")
+        afk_db = pdB.set_key({0: {"afk": afk, "reason": reason, "afktime": afktime}}
+        MY_AFK[0] = {"afk": afk, "reason": reason, "afktime": afktime}
+
+    def get_afk(self):
+        return MY_AFK.get(0)
+
+    def load_afk():
+        global MY_AFK
+        try:
+            MY_AFK = {}
+            listall = pdB.get_key("AFK_DB")
+            for x in listall:
+                MY_AFK[(x.user_id)] = {
+                    "afk": x.is_afk,
+                    "reason": x.reason,
+                    "afktime": x.afktime,
+                }
+        return
+            
+
+
+
 class WELCOME():
     try:
         pdB.get_key("WELCOME") or {}
@@ -51,5 +81,5 @@ class DV():
 
 
 
-class Database(DV, WELCOME):
+class Database(DV, WELCOME, AFK):
     pass
