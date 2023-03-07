@@ -6,8 +6,7 @@ import inspect
 import re
 from pathlib import Path
 
-from .HELP import LOADED_CMDS
-
+LOADED_CMDS = {}
 
 from telethon import events
 from ..config import Config
