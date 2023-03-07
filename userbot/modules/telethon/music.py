@@ -3,7 +3,8 @@
 # Recode by Ilham Mansiz
 # t.me/PandaUserbot
 
-from ... import PandaBot, call_py
+import asyncio
+from ... import PandaBot, vcbot
 from ..._misc.managers import edit_delete, edit_or_reply
 
 from pyPanda.queues import *
@@ -18,7 +19,9 @@ logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 
 OWNER_ID = PandaBot.uid
 
-vc_player = call_py
+vc_player = VCTools(vc_client)
+
+asyncio.create_task(vc_player.start())
 
 
 
