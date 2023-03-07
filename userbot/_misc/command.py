@@ -10,7 +10,6 @@ LOADED_CMDS = {}
 
 from telethon import events
 from ..config import Config
-from .data import blacklist_chats_list
 
 from ..Session import (
     vcbot,
