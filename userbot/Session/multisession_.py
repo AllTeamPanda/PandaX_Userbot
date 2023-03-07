@@ -7,6 +7,7 @@
 
 from telethon import functions, utils
 from pyrogram import idle
+from pytgcalls import idle as pytgcalls
 from .._database._var import Var, Database
 from logging import getLogger
 
@@ -48,6 +49,7 @@ def Telethon():
     if Var.STRING_SESSION:
         try:
             PandaBot.connect()
+            call_py.start()
             config = PandaBot(functions.help.GetConfigRequest())
             for option in config.dc_options:
                 if option.ip_address == PandaBot.session.server_address:
@@ -67,7 +69,7 @@ def Telethon():
         except Exception as e:
             LOGS.error(f"STRING_SESSION1 - {e}")
             sys.exit()
-            
+            pytgcalls()
 
     if Var.STRING_SESSION2:
         try:
