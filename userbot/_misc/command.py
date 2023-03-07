@@ -86,13 +86,13 @@ def pandacute(
                 vcbot.add_event_handler(
                     func,
                     events.MessageEdited(
-                        **args, from_users=_sudousers_list(), pattern=sudo_reg
+                        **args, from_users=Config.SUDO_USERS, pattern=sudo_reg
                     ),
                 )
             vcbot.add_event_handler(
                 func,
                 events.NewMessage(
-                    **args, from_users=_sudousers_list(), pattern=sudo_reg
+                    **args, from_users=Config.SUDO_USERS, pattern=sudo_reg
                 ),
             )
         try:
