@@ -5,13 +5,13 @@
 
 plugin_category = "music"
 
-from ... import call_py, PandaBot
+from ... import call_py, vcbot
 from ..._misc.managers import edit_delete, edit_or_reply
 from ..._misc.command import *
 
 from pyPanda.queues import *
 
-bot = PandaBot
+bot = vcbot
 ## Ported by ilham mansiz for TeamUltroid
 
 
