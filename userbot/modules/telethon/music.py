@@ -4,7 +4,7 @@
 # t.me/PandaUserbot
 
 import asyncio
-from ... import PandaBot, vcbot
+from ... import PandaBot
 from ..._misc.managers import edit_delete, edit_or_reply
 
 from pyPanda.queues import *
