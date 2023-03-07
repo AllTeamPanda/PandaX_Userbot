@@ -177,9 +177,9 @@ else:
 
 
 try:
-    if Var.STRING_SESSION:
+    if Var.VC_SESSION:
         vcbot = TelegramClient(
-            PandaSession(Var.STRING_SESSION, LOGS),
+            StringSession(str(Var.VC_SESSION)),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -196,4 +196,7 @@ except Exception as e:
 
 from pytgcalls import PyTgCalls
 
-call_py = PyTgCalls(vcbot)
+if Var.VC_SESSION:
+    call_py = PyTgCalls(vcbot)
+else:
+    call_py = None
