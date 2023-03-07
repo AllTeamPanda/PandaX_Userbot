@@ -2,7 +2,7 @@ from . import pdB
 
 class WELCOME():
     try:
-        pdB.get_key("WELCOME")
+        pdB.get_key("WELCOME") or {}
     except BaseException:
         pdB.set_key("WELCOME", "{}")
 
