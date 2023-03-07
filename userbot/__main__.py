@@ -52,5 +52,13 @@ if PandaBot:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
-if call_py:
-    pytgcalls()
+if vcbot and call_py:
+    try:
+        if len(sys.argv) not in (1, 3, 4):
+            vcbot.disconnect()
+        else:
+            vcbot.run_until_disconnected()
+    except Exception as e:
+        LOGS.info(str(e), exc_info=True)
+        sys.exit(1)
+        pytgcalls()
