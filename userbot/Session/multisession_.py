@@ -45,7 +45,7 @@ THON_ON = """
 
 
 def Telethon():
-    if Var.STRING_SESSION:
+    if Var.STRING_SESSION and Database.BOT_TOKEN:
         try:
             PandaBot.connect()
             if Var.VC_SESSION:
@@ -72,7 +72,7 @@ def Telethon():
             sys.exit()
             
 
-    if Var.STRING_SESSION2:
+    if Var.STRING_SESSION2 and Database.BOT_TOKEN:
         try:
             PandaBot2.connect()
             config = PandaBot2(functions.help.GetConfigRequest())
@@ -95,7 +95,7 @@ def Telethon():
             LOGS.error(f"STRING_SESSION2 - {e}")
             sys.exit()
      
-    if Var.STRING_SESSION3:
+    if Var.STRING_SESSION3 and Database.BOT_TOKEN:
         try:
             PandaBot3.connect()
             config = PandaBot3(functions.help.GetConfigRequest())
