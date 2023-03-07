@@ -816,13 +816,17 @@ async def on_plugin_callback_query_handler(event):
             [
                 Button.inline("ALIVE_LOGO", data="alivename"),
                 Button.inline("HANDLER", data="cmd"),
-                Button.inline("LOGO HELP", data="helplogo"),
             ],
             [
+                Button.inline("LOGO HELP", data="helplogo"),
                 Button.inline("BOT_TOKEN", data="bottoken"),
+            ],
+            [
                 Button.inline("BOT_USER", data="botusername"),
                 Button.inline("REPO_URL", data="url"),
-                Button.inline("REPO_URL", data="vcbots"),
+            ],
+            [
+                Button.inline("VC_SESSION", data="vcbots"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="menubot")],
         ],
