@@ -10,8 +10,7 @@ import time
 from pyrogram import filters
 from pyrogram.types import Message
 
-from ... import app, gen, pdB
-
+from ... import app, gen
 
 app.CMD_HELP.update(
     {
@@ -29,10 +28,7 @@ async def go_offline(_, m: Message):
         start = int(time.time())
         if app.long(m) >= 2:
             reason = m.text.split(None, 1)[1]
-            if pdB.get_key("AFK_VAR"):
-                pdB.del_key("AFK_VAR")
-            if reason:
-                pdB.set_key("AFK_VAR", [reason, start])  # with reason
+            app.set_afk(True, reason, start)  # with reason
             await app.send_edit(
                 m, f"{app.UserMention()} is now Offline.\nBecause: {reason}", delme=2
             )
@@ -46,14 +42,14 @@ async def go_offline(_, m: Message):
                 reason = False
 
             if reason:
-                pdB.set_key("AFK_VAR", [reason, start])  # with reason
+                app.set_afk(True, reason, start)  # with reason
                 await app.send_edit(
                     m,
                     f"{app.UserMention()} is now offline.\nBecause: {reason}",
                     delme=2,
                 )
             else:
-                pdB.set_key("AFK_VAR", [reason, start])  # without reason
+                app.set_afk(True, "", start)  # without reason
                 await app.send_edit(m, f"{app.UserMention()} is now offline.", delme=2)
 
     except Exception as e:
@@ -66,8 +62,8 @@ async def go_offline(_, m: Message):
 )
 async def offline_mention(_, m: Message):
     try:
-        get = pdB.get_key("AFK_VAR")
-        if get:
+        get = app.get_afk()
+        if get and get["afk"]:
             if m.from_user.id == app.id:
                 return
 
@@ -76,17 +72,18 @@ async def offline_mention(_, m: Message):
             else:
                 cid = str(m.chat.id)
 
-            end = time.time()
-            if get:
+            end = int(time.time())
+            otime = app.GetReadableTime(end - get["afktime"])
+            if get["reason"] and get["afktime"]:
                 msg = await app.send_message(
                     m.chat.id,
                     "Sorry {} is currently offline !\n**Time:** {}\n**Because:** {}".format(
-                        app.UserMention(), end, get
+                        app.UserMention(), otime, get["reason"]
                     ),
                     reply_to_message_id=m.message_id,
                 )
-                await m.delete(msg, 3)
-            elif get:
+                await app.delete(msg, 3)
+            elif get["afktime"] and not get["reason"]:
                 msg = await app.send_message(
                     m.chat.id,
                     "Sorry {} is currently offline !\n**Time:** {}".format(
@@ -94,7 +91,7 @@ async def offline_mention(_, m: Message):
                     ),
                     reply_to_message_id=m.message_id,
                 )
-                await m.delete(msg, 3)
+                await app.delete(msg, 3)
             content, message_type = app.GetMessageType(m)
             if message_type == app.TEXT:
                 if m.text:
@@ -132,14 +129,15 @@ async def afkme_handler(_, m: Message):
         elif m.media:
             pass
 
-        get = pdB.get_key("AFK_VAR")
-        if get:
+        get = app.get_afk()
+        if get and get["afk"] and filters.outgoing:
             end = int(time.time())
+            afk_time = app.GetReadableTime(end - get["afktime"])
             msg = await app.send_message(
                 m.chat.id,
-                f"{app.UserMention()} is now online !\n**Offline Time:** `{end}`",
+                f"{app.UserMention()} is now online !\n**Offline Time:** `{afk_time}`",
             )
-            pdB.set_key("AFK_VAR", [reason, start])
+            app.set_afk(False, "", 0)
 
     except Exception as e:
         await app.error(m, e)
