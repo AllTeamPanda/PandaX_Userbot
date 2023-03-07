@@ -155,7 +155,7 @@ try:
             connection=ConnectionTcpAbridged,
             auto_reconnect=True,
             connection_retries=None,
-        ).start(bot_token=BOT_TOKEN)
+        ).start(bot_token=Database.BOT_TOKEN)
 
     else:
         tgbot = None
@@ -179,7 +179,7 @@ else:
 try:
     if DB.get_key("VC_SESSION") or Var.VC_SESSION:
         vcbot = TelegramClient(
-            StringSession(str(DB.get_key("VC_SESSION") or Var.VC_SESSION)),
+            StringSession(str(Var.VC_SESSION)),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
