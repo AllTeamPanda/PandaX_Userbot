@@ -176,14 +176,9 @@ else:
     cekbot = None
 
 
-
-
-    
-
-
 try:
     if Var.STRING_SESSION:
-        vcbot = TelegramClient(
+        bot = TelegramClient(
             PandaSession(Var.STRING_SESSION, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
@@ -192,10 +187,13 @@ try:
             connection_retries=None,
         )
     else:
-        vcbot = None
+        bot = None
 except Exception as e:
     print(f"STRING_SESSION- {str(e)}")
     sys.exit()
 
 
 
+from pytgcalls import PyTgCalls
+
+call_py = PyTgCalls(bot)
