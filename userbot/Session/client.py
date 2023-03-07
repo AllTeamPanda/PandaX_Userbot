@@ -199,4 +199,4 @@ except Exception as e:
     sys.exit()
 
 
-call_py = VCTools(bot)
+call_py = VCTools(PandaBot)
