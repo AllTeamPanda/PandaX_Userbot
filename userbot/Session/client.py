@@ -25,7 +25,7 @@ import sys
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 import logging
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
+BOT_TOKEN = DB.get_key("BOT_TOKEN") or os.environ.get("BOT_TOKEN", None)
 CEKBOT = "5293882146:AAFQIjmaC9ObBu98PAvctLu0QxkckfOJrz4"
 
 LOGS = logging.getLogger("PandaUserbot")
@@ -147,7 +147,7 @@ except Exception as e:
     sys.exit()
 
 try:
-    if Var.STRING_SESSION and Database.BOT_TOKEN:
+    if Var.STRING_SESSION and DB.get_key("BOT_TOKEN") or Database.BOT_TOKEN:
         tgbot = PandaUserbotToken(
             "BOT_TOKEN",
             api_id=Var.APP_ID,
@@ -155,7 +155,7 @@ try:
             connection=ConnectionTcpAbridged,
             auto_reconnect=True,
             connection_retries=None,
-        ).start(bot_token=Database.BOT_TOKEN)
+        ).start(bot_token=BOT_TOKEN)
 
     else:
         tgbot = None
@@ -177,9 +177,9 @@ else:
 
 
 try:
-    if Var.VC_SESSION:
+    if DB.get_key("VC_SESSION") or Var.VC_SESSION:
         vcbot = TelegramClient(
-            StringSession(str(Var.VC_SESSION)),
+            StringSession(str(DB.get_key("VC_SESSION") or Var.VC_SESSION)),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
