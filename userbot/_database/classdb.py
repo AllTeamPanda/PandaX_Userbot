@@ -25,7 +25,8 @@ class AFK(object):
                     "reason": x.reason,
                     "afktime": x.afktime,
                 }
-        return
+        except Exception as e:
+            print(f"{e}")
             
 
 
