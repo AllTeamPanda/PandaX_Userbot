@@ -7,6 +7,7 @@ plugin_category = "music"
 
 from ... import call_py, PandaBot
 from ..._misc.managers import edit_delete, edit_or_reply
+from ..._misc.command import *
 
 from pyPanda.queues import *
 
@@ -15,13 +16,13 @@ bot = PandaBot
 
 
 @PandaBot.ilhammansiz_cmd(
-    pattern="joinvc(?: |$)(.*)",
     command=("joinvc", plugin_category),
     info={
         "header": "Untuk Join dan leveave Vc Grup ",
         "usage": "{tr}joinvc",
     },
 )
+@pandacute(pattern="joinvc$")
 async def joinvc(event):
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
@@ -61,13 +62,13 @@ async def joinvc(event):
 
 
 @PandaBot.ilhammansiz_cmd(
-    pattern="leavevc(?: |$)(.*)",
     command=("leavevc", plugin_category),
     info={
         "header": "leveave Vc Grup ",
         "usage": "{tr}leavevc",
     },
 )
+@pandacute(pattern="leavevc$")
 async def leavevc(event):
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
@@ -89,13 +90,13 @@ async def leavevc(event):
 
 
 @PandaBot.ilhammansiz_cmd(
-    pattern="play(?: |$)(.*)",
     command=("play", plugin_category),
     info={
         "header": "play music ",
         "usage": "{tr}play <Judul Lagu/Link YT>",
     },
 )
+@pandacute(pattern="play(?:\s|$)([\s\S]*)")
 async def vc_play(event):
     title = event.pattern_match.group(1)
     replied = await event.get_reply_message()
@@ -198,13 +199,13 @@ async def vc_play(event):
 
 
 @PandaBot.ilhammansiz_cmd(
-    pattern="vplay(?: |$)(.*)",
     command=("vplay", plugin_category),
     info={
         "header": "video play music ",
         "usage": "{tr}vplay <Judul Lagu/Link YT>",
     },
 )
+@pandacute(pattern="videoplay(?:\s|$)([\s\S]*)")
 async def vc_vplay(event):
     title = event.pattern_match.group(1)
     replied = await event.get_reply_message()
@@ -365,13 +366,13 @@ async def vc_vplay(event):
 
 
 @PandaBot.ilhammansiz_cmd(
-    pattern="endvc(?: |$)(.*)",
     command=("endvc", plugin_category),
     info={
         "header": "stop music ",
         "usage": "{tr}endvc",
     },
 )
+@pandacute(pattern="endvc$")
 async def vc_end(event):
     chat_id = event.chat_id
     if chat_id in QUEUE:
@@ -386,13 +387,13 @@ async def vc_end(event):
 
 
 @PandaBot.ilhammansiz_cmd(
-    pattern="skipvc(?: |$)(.*)",
     command=("skipvc", plugin_category),
     info={
         "header": "skip music ",
         "usage": "{tr}skipvc",
     },
 )
+@pandacute(pattern="skip(?:\s|$)([\s\S]*)")
 async def vc_skip(event):
     chat_id = event.chat_id
     if len(event.text.split()) < 2:
@@ -423,13 +424,13 @@ async def vc_skip(event):
 
 
 @PandaBot.ilhammansiz_cmd(
-    pattern="pause(?: |$)(.*)",
     command=("pause", plugin_category),
     info={
         "header": "pause music ",
         "usage": "{tr}pause",
     },
 )
+@pandacute(pattern="pause$")
 async def vc_pause(event):
     chat_id = event.chat_id
     if chat_id in QUEUE:
@@ -444,13 +445,13 @@ async def vc_pause(event):
 
 
 @PandaBot.ilhammansiz_cmd(
-    pattern="resume(?: |$)(.*)",
     command=("resume", plugin_category),
     info={
         "header": "resume music ",
         "usage": "{tr}resume",
     },
 )
+@pandacute(pattern="resumevc$")
 async def vc_resume(event):
     chat_id = event.chat_id
     if chat_id in QUEUE:
@@ -464,13 +465,13 @@ async def vc_resume(event):
 
 
 @PandaBot.ilhammansiz_cmd(
-    pattern="volume(?: |$)(.*)",
     command=("volume", plugin_category),
     info={
         "header": "volume music ",
         "usage": "{tr}volume 1-200",
     },
 )
+@pandacute(pattern=r"volume(?: |$)(.*)")
 async def vc_volume(event):
     query = event.pattern_match.group(1)
     me = await event.client.get_me()
@@ -495,13 +496,13 @@ async def vc_volume(event):
 
 
 @PandaBot.ilhammansiz_cmd(
-    pattern="playlist(?: |$)(.*)",
     command=("playlist", plugin_category),
     info={
         "header": "palaylist music ",
         "usage": "{tr}playlist",
     },
 )
+@pandacute(pattern="playlist$")
 async def vc_playlist(event):
     chat_id = event.chat_id
     if chat_id in QUEUE:
