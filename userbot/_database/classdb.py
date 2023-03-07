@@ -39,8 +39,15 @@ class WELCOME():
 class DV():
     setdv = pdB.set_key
     getdv = pdB.get_key
-    getalldv = pdB.get_key
     deldv = pdB.del_key
+
+    def getalldv(self):
+        kv_data = {}
+        mydata = pdB.get_key
+        for x in mydata:
+            kv_data.update({x.keys: x.values})
+
+        return kv_data
 
 
 
