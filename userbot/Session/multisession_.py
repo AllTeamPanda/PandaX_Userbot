@@ -70,7 +70,7 @@ def Telethon():
         except Exception as e:
             LOGS.error(f"STRING_SESSION1 - {e}")
             sys.exit()
-            pytgcalls()
+            
 
     if Var.STRING_SESSION2:
         try:
