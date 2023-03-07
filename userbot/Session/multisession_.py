@@ -49,6 +49,7 @@ def Telethon():
         try:
             PandaBot.connect()
             if Var.VC_SESSION:
+                vcbot.start()
                 call_py.start()
             config = PandaBot(functions.help.GetConfigRequest())
             for option in config.dc_options:
