@@ -4,7 +4,7 @@ from youtubesearchpython import VideosSearch
 from .bash import bash
 
 from .queues import *
-from userbot import vcbot as call_py, udB
+from userbot import call_py, udB
 
 from pytgcalls import StreamType
 from pytgcalls.types import Update
