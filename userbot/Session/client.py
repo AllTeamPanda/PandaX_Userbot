@@ -177,7 +177,7 @@ else:
 
 
 try:
-    if DB.get_key("VC_SESSION") or Var.VC_SESSION:
+    if Var.VC_SESSION:
         vcbot = TelegramClient(
             StringSession(str(Var.VC_SESSION)),
             api_id=Var.APP_ID,
