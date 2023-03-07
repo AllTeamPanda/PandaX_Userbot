@@ -10,7 +10,7 @@ from userbot import LOGS
 
 from . import *
 from .Session.multisession_ import *
-
+from pytgcalls import idle as pytgcalls
 
 from . import resources
 
@@ -51,3 +51,6 @@ if PandaBot:
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
+
+if call_py:
+    pytgcalls()
