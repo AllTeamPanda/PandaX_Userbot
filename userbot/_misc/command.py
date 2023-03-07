@@ -6,7 +6,7 @@ import inspect
 import re
 from pathlib import Path
 
-from .HELP import BOT_INFO, CMD_INFO, GRP_INFO, LOADED_CMDS, PLG_INFO
+from .HELP import LOADED_CMDS
 
 
 from telethon import events
