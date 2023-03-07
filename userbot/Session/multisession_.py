@@ -7,7 +7,6 @@
 
 from telethon import functions, utils
 from pyrogram import idle
-from pytgcalls import idle as pytgcalls
 from .._database._var import Var, Database
 from logging import getLogger
 
