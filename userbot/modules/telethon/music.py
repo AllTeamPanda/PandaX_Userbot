@@ -18,7 +18,7 @@ plugin_category = "music"
 logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 
 OWNER_ID = PandaBot.uid
-
+vc_client = vcbot
 vc_player = VCTools(vc_client)
 
 asyncio.create_task(vc_player.start())
