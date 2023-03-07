@@ -13,7 +13,7 @@
     <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.10.4-blue?style=for-the-badge&logo=appveyor"/>
    </p>
 
-## Panda_Userbot is a modular Telegram userbot running on Python3 with database  better to use MongoDb database or Redis:
+Panda_Userbot is a modular Telegram userbot running on Python3 with database  better to use MongoDb database or Redis:
 -  `For SQLDB`
      °DATABASE_URL - Get it from
       [Elephantsql](https://elephantsql.com/)
