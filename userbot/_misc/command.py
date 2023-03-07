@@ -5,25 +5,15 @@
 import inspect
 import re
 from pathlib import Path
-from typing import Dict, List, Union
 
-import sys
-from asyncio import create_subprocess_shell as asyncsubshell
-from asyncio import subprocess as asyncsub
 from pathlib import Path
-from time import gmtime, strftime
-from traceback import format_exc
 
 
 from telethon import events
-from ..config import Osdb, CMD_HANDLER, DEFAULT, Config
-from .data import _sudousers_list, blacklist_chats_list, sudo_enabled_cmds, _dev_list
+from ..config import Config
+from .data import _sudousers_list, blacklist_chats_list
 
 from ..Session import (
-    PandaBot,
-    PandaBot2,
-    PandaBot3,
-    tgbot,
     vcbot,
 )
 
