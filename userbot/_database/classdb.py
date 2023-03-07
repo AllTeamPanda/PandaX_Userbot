@@ -1,9 +1,5 @@
 from . import pdB
 
-
-
-
-
 class WELCOME():
     try:
         eval(pdB.get_key("WELCOME"))
