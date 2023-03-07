@@ -36,7 +36,7 @@ def pandacute(
         del args["disable_edited"]
 
     args["blacklist_chats"] = True
-    black_list_chats = blacklist_chats_list()
+    black_list_chats = list(Config.UB_BLACK_LIST_CHAT)
     if len(black_list_chats) > 0:
         args["chats"] = black_list_chats
 
@@ -86,13 +86,13 @@ def pandacute(
                 vcbot.add_event_handler(
                     func,
                     events.MessageEdited(
-                        **args, from_users=Config.SUDO_USERS, pattern=sudo_reg
+                        **args, from_users=list(Config.SUDO_USERS), pattern=sudo_reg
                     ),
                 )
             vcbot.add_event_handler(
                 func,
                 events.NewMessage(
-                    **args, from_users=Config.SUDO_USERS, pattern=sudo_reg
+                    **args, from_users=list(Config.SUDO_USERS), pattern=sudo_reg
                 ),
             )
         try:
