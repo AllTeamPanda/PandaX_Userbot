@@ -48,6 +48,7 @@ def Telethon():
     if Var.STRING_SESSION and Database.BOT_TOKEN:
         try:
             PandaBot.connect()
+            tgbot.start(bot_token=Database.BOT_TOKEN)
             if Var.VC_SESSION:
                 vcbot.start()
                 call_py.start()
