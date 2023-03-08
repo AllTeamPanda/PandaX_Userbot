@@ -59,7 +59,7 @@ async def delsudo_handler(_, m: Message):
             m, "Reply to a user to add him in sudo list", text_type=["mono"], delme=4
         )
 
-    sudo_list = [x for x in app.getdv("SUDO_USERS").split()]
+    sudo_list = [x for x in app.getdv("SUDO_USERS")]
     if user_id in sudo_list:
         sudo_list.remove(user_id)
         app.setdv("SUDO_USERS", " ".join(sudo_list))
