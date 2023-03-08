@@ -34,7 +34,7 @@ async def addsudo_handler(_, m: Message):
 
     sudo_list = app.getdv("SUDO_USERS")
     if sudo_list:
-        all_sudo = [x for x in sudo_list.split()] + [str(reply.from_user.id)]
+        all_sudo = [x for x in sudo_list] + [str(reply.from_user.id)]
     else:
         all_sudo = [str(reply.from_user.id)]
 
