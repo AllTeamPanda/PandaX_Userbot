@@ -12,7 +12,7 @@ class AFK(object):
         
     
     def get_afk():
-        afk = pdB.get_key("AFK_DB") or []
+        afk = pdB.get_key("AFK_DB")
         if afk:
             return afk[0], afk[1], afk[2]
         return False
