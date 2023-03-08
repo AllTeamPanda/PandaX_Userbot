@@ -31,7 +31,7 @@ DEVS = [5057493677, 1593802955]
 GCAST_BLACKLIST = [-1001718757023, -1001161992503]
 
 @app.on_message(gen("gcast", allow=["sudo"]))
-async def gcast_handler(_, message: Message):
+async def gcast_handler(client, message: Message):
     text = (
         message.text.split(None, 1)[1]
         if len(
