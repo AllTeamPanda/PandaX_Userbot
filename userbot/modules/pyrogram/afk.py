@@ -82,7 +82,7 @@ async def offline_mention(_, m: Message):
                     ),
                     reply_to_message_id=m.message_id,
                 )
-                await app.delete(msg, 3)
+                await app.delete_message(msg, 3)
             elif get["afktime"] and not get["reason"]:
                 msg = await app.send_message(
                     m.chat.id,
@@ -91,7 +91,7 @@ async def offline_mention(_, m: Message):
                     ),
                     reply_to_message_id=m.message_id,
                 )
-                await app.delete(msg, 3)
+                await app.delete_message(msg, 3)
             content, message_type = app.GetMessageType(m)
             if message_type == app.TEXT:
                 if m.text:
