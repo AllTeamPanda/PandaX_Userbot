@@ -7,8 +7,7 @@ class AFK(object):
         afk_db = pdB.get_key("AFK_DB") or []
         if afk_db:
             pdB.del_key("AFK_DB")
-        afk_db.update([afk, reason, afktime])
-        pdB.set_key("AFK_DB", afk_db)
+        pdB.set_key("AFK_DB", [afk, reason, afktime])
         
     
     def get_afk():
