@@ -73,7 +73,7 @@ async def update_handler(_, m):
         repo.heads.master.set_tracking_branch(origin.refs.master)
         repo.heads.master.checkout(True)
     ACTIVE_BRANCH = repo.active_branch.name
-    if ACTIVE_BRANCH != "master":
+    if ACTIVE_BRANCH != "update":
         await app.send_edit(
             m,
             f"**[ UPDATER ]:** You are on [ {ACTIVE_BRANCH} ]\n\nPlease change to `master` branch.`",
