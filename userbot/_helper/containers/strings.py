@@ -7,7 +7,7 @@
 class Strings(object):
     def stat_string(self):
         return f"""
-			 **Name:** {self.UserName()}
+		        **Name:** {self.UserName()}
 			**Version:** {self.assistant_version}
 			**Python version:** {self.python_version}
 			**Pyrogram version:** {self.pyrogram_version}
