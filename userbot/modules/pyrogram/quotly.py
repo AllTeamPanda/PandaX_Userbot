@@ -214,7 +214,7 @@ async def quotly_handler(_, m: Message):
     if match == "random":
         match = choice(all_col)
     try:
-        file = await create_quotly(reply_, bg=match, reply=replied_to, sender=user)
+        file = await create_quotly(reply_, bg=match, reply=replied_to)
     except Exception as er:
         return await app.send_edit(m, f"**ERROR:** `{er}`")
     message = await reply.reply("Quotly by PandaUserbot", file=file)
