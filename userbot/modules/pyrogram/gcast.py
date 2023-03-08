@@ -13,8 +13,8 @@ from ... import app, gen
 
 app.CMD_HELP.update(
     {
-        "ping": (
-            "ping",
+        "gcast": (
+            "gcast",
             {
                 "gcast": "Global message too grup U.",
                 "gcast": "text/reply",
@@ -63,7 +63,7 @@ async def gcast_handler(client, message: Message):
 
 
 @app.on_message(gen("gucast", allow=["sudo"]))
-async def gucast_handler(_, message: Message):
+async def gucast_handler(client, message: Message):
     text = (
         message.text.split(None, 1)[1]
         if len(
