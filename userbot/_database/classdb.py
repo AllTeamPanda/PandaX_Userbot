@@ -1,4 +1,86 @@
+# Copyright (C) 2021 PandaUserbot <https://github.com/ilhammansiz/PandaX_Userbot>
+# maintaince 2023 pyrogram & telethon
+# jangan di hapus ga semuanya dihapus lu paham 😏
+# Pembaruan 2023 skala besar dengan menggabungkan 2 basis telethon and pyrogram.
+# Dibuat dari berbagai userbot yang pernah ada.
+# t.me/pandac0de t.me/pandauserbot
+
 from . import pdB
+
+
+class PMPERMIT(object):
+    # add message id of a user
+    def set_msgid(self, user_id, msg_id):
+        user = pdB.get_key("set_msgid") or {}
+        if not user:
+            user.update({user_id: msg_id})
+            user = pdB.set_key("set_msgid", user)
+        else:
+            user.msg_id = msg_id
+            
+
+    # get warn message id
+    def get_msgid(self, user_id):
+        user = pdB.get_key("set_msgid")
+        msg_id = None
+        if user:
+            msg_id = user.msg_id
+            return msg_id
+        
+
+    # add user id to whitelist
+    def set_whitelist(self, user_id, boolvalue):
+        user = pdB.get_key("whitelist") or {}
+        if not user:
+            user.update({user_id: boolvalue})
+            user = pdB.set_key("whitelist", {user_id: boolvalue})
+        else:
+            user.boolvalue = str(boolvalue)
+           
+        return user_id
+
+    # remove user id from whitelist
+    def del_whitelist(self, user_id):
+        user = pdB.get_key("whitelist")
+        if user:
+            pdB.del_key("whitelist")
+                
+        return False
+
+    # get whitelist (approved)
+    def get_whitelist(self, user_id):
+        user = pdB.get_key("whitelist")
+        rep = ""
+        if user:
+            rep = str(user.boolvalue)
+        return rep
+
+    # warn table func
+    def set_warn(self, user_id, warn_count):
+        user = pdB.get_key("warns") or {}
+        if not user:
+            user.update({user_id: warn_count})
+            user = pdB.set_key("warns", {user_id: warn_count})
+        else:
+            user.warn_count = warn_count
+                
+
+    # get warn func
+    def get_warn(self, user_id):
+        user = pdB.get_key("warns")
+        rep = ""
+        if user:
+            rep = str(user.warn_count)
+        return rep
+
+    # del warn func
+    def del_warn(self, user_id):
+        user = pdB.get_key("warns")
+        if user:
+            pdB.del_key("warns")
+                    
+        return False
+
 
 
 MY_AFK = {}
@@ -75,5 +157,5 @@ class DV():
 
 
 
-class Database(DV, WELCOME, AFK):
+class Database(DV, WELCOME, AFK, PMPERMIT):
     pass
