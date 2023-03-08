@@ -138,7 +138,7 @@ class MongoDB(_BaseDatabase):
 
     @property
     def name(self):
-        return "MONGODB"
+        return "MONGO"
 
     @property
     def usage(self):
