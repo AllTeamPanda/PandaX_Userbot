@@ -46,7 +46,7 @@ async def addsudo_handler(_, m: Message):
 
 @app.on_message(gen("listsudo", allow=["sudo"]))
 async def getsudo_handler(_, m: Message):
-    sudo_list = [x for x in app.getdv("SUDO_USERS").split()]
+    sudo_list = [x for x in app.getdv("SUDO_USERS")]
     await app.send_edit(m, "**Available Sudo id:**\n\n" + "\n".join(sudo_list))
 
 
