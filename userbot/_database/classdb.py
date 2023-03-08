@@ -1,20 +1,23 @@
 from . import pdB
 
-class AFK(object):
+
+MY_AFK = {}
+
+class AFKSQL(object):
     """AMC -> Afk Modification Class"""
 
     def set_afk(self, afk, reason, afktime):
-        afk_db = pdB.get_key("AFK_DB") or []
+        global MY_AFK
+        afk_db = pdB.get_key("AFK_DB") or {}
         if afk_db:
             pdB.del_key("AFK_DB")
-        pdB.set_key("AFK_DB", [afk, reason, afktime])
-        
-    
-    def get_afk():
-        afk = pdB.get_key("AFK_DB")
-        if afk:
-            return afk[0], afk[1], afk[2]
-        return False
+        afk_db.update({0: {"afk": afk, "reason": reason, "afktime": afktime}})
+        pdB.set_key("AFK_DB", afk_db)
+        MY_AFK[0] = {"afk": afk, "reason": reason, "afktime": afktime}
+
+    def get_afk(self):
+        return MY_AFK.get(0)
+
 
     
             
