@@ -161,7 +161,6 @@ all_col = [
 from os import remove
 from random import choice
 
-import asyncio
 from ...helpers.utils.misc import create_quotly
 from pyrogram.types import Message
 
