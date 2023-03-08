@@ -5,7 +5,7 @@
 # t.me/PandaUserbot
 # ••••••••••••••••••••••√•••••••••••••√√√••••••••
  
-
+from pyrogram.types import Message
 import asyncio
 
 from ... import app, gen
