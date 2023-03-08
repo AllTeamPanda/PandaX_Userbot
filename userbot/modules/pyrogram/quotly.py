@@ -173,13 +173,13 @@ app.CMD_HELP.update(
 
 @app.on_message(gen(["q"], allow=["sudo", "channel"]))
 async def quotly_handler(_, m: Message):
-    match = m.text.split(None, 1)[1]
+    match = m.text
     if not m.reply_to_message:
         return await app.send_edit(m, "**Mohon Balas ke Pesan**")
     msg = await app.send_edit(m, "`Processing...`")
     reply = await m.reply_to_message
     replied_to, reply_ = None, None
-    user__ = reply.from_user.id
+    user__ = m.from_user.id
     if match:
         spli_ = match.split(maxsplit=1)
         if (spli_[0] in ["r", "reply"]) or (
