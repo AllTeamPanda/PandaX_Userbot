@@ -179,7 +179,7 @@ async def quotly_handler(_, m: Message):
     msg = await app.send_edit(m, "`Processing...`")
     reply = await m.reply_to_message
     replied_to, reply_ = None, None
-    user__ = m.from_user.id
+    user__ = reply.from_user.id
     if match:
         spli_ = match.split(maxsplit=1)
         if (spli_[0] in ["r", "reply"]) or (
