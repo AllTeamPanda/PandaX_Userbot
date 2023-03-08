@@ -206,7 +206,6 @@ async def quotly_handler(_, m: Message):
                 match = spli_[1]
             except IndexError:
                 match = None
-    user = None
     if not reply_:
         reply_ = reply
     if match:
