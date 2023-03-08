@@ -33,7 +33,7 @@ class PMPERMIT(object):
         user = pdB.get_key("whitelist") or {}
         if not user:
             user.update({user_id: boolvalue})
-            user = pdB.set_key("whitelist", {user_id: boolvalue})
+            user = pdB.set_key("whitelist", user)
         else:
             user.boolvalue = str(boolvalue)
            
@@ -60,7 +60,7 @@ class PMPERMIT(object):
         user = pdB.get_key("warns") or {}
         if not user:
             user.update({user_id: warn_count})
-            user = pdB.set_key("warns", {user_id: warn_count})
+            user = pdB.set_key("warns", user)
         else:
             user.warn_count = warn_count
                 
