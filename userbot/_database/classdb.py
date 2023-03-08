@@ -4,30 +4,20 @@ class AFK(object):
     """AMC -> Afk Modification Class"""
 
     def set_afk(self, afk, reason, afktime):
-        global MY_AFK
-        afk_db = pdB.get_key("AFK_DB") or {}
+        afk_db = pdB.get_key("AFK_DB") or []
         if afk_db:
             pdB.del_key("AFK_DB")
-        afk_db.update({0: {"afk": afk, "reason": reason, "afktime": afktime}})
+        afk_db.update([afk, reason, afktime])
         pdB.set_key("AFK_DB", afk_db)
-        MY_AFK[0] = {"afk": afk, "reason": reason, "afktime": afktime}
+        
+    
+    def get_afk():
+        afk = pdB.get_key("AFK_DB") or []
+        if afk:
+            return afk[0], afk[1], afk[2]
+        return False
 
-    def get_afk(self):
-        return pdB.get_key("AFK_DB")
-
-    def load_afk():
-        global MY_AFK
-        try:
-            MY_AFK = {}
-            listall = pdB.get_key("AFK_DB")
-            for x in listall:
-                MY_AFK[(x.user_id)] = {
-                    "afk": x.is_afk,
-                    "reason": x.reason,
-                    "afktime": x.afktime,
-                }
-        except Exception as e:
-            print(f"{e}")
+    
             
 
 
