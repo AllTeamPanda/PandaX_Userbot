@@ -4,14 +4,14 @@ from ... import app, gen
 
 app.CMD_HELP.update(
     {
-        "dv": (
-            "dv",
+        "database": (
+            "database",
             {
-                "setdv [varname] [value]": "Set any database vars, for ex: .setdv [USER_NAME] [RYOISHIN]",
+                "setdb [varname] [value]": "Set any database vars, for ex: .setdv [USER_NAME] [RYOISHIN]",
                 "getdv [varname]": "Get a existing database vars value.",
-                "deldv [varname]": "Delete a existing database var with its value.",
-                "alldv": "Get all existing database vars.",
-                "listdv": "Get all available dv vars which you set.",
+                "deldb [varname]": "Delete a existing database var with its value.",
+                "alldb": "Get all existing database vars.",
+                "listdb": "Get all available dv vars which you set.",
                 "pm [on | off]": "Turn on & off your pmguard",
             },
         )
@@ -19,7 +19,7 @@ app.CMD_HELP.update(
 )
 
 
-@app.on_message(gen("setdv", allow=["sudo"]))
+@app.on_message(gen("setdb", allow=["sudo"]))
 async def setdv_handler(_, m: Message):
     if app.long(m) == 1:
         await app.send_edit(
@@ -59,7 +59,7 @@ async def setdv_handler(_, m: Message):
             )
 
 
-@app.on_message(gen("deldv", allow=["sudo"]))
+@app.on_message(gen("deldb", allow=["sudo"]))
 async def deldv_handler(_, m: Message):
     if app.long(m) == 1:
         await app.send_edit(
@@ -91,7 +91,7 @@ async def deldv_handler(_, m: Message):
         )
 
 
-@app.on_message(gen("getdv", allow=["sudo"]))
+@app.on_message(gen("getdb", allow=["sudo"]))
 async def getdv_handler(_, m: Message):
     if app.long(m) == 1:
         await app.send_edit(
@@ -175,7 +175,7 @@ async def pm_handler(_, m: Message):
         )
 
 
-@app.on_message(gen("alldv", allow=["sudo"]))
+@app.on_message(gen("alldb", allow=["sudo"]))
 async def alldv_handler(_, m: Message):
     if app.getalldv() is True:
         m = await app.send_edit(
@@ -195,7 +195,7 @@ async def alldv_handler(_, m: Message):
         )
 
 
-@app.on_message(gen("listdv", allow=["sudo"]))
+@app.on_message(gen("listdb", allow=["sudo"]))
 async def dvlist_handler(_, m: Message):
     allvars = [f"`{x}`" for x in app.DVLIST]
     await app.send_edit(m, "**AVAILABLE DB VARS:**\n\n" + "\n".join(allvars))
