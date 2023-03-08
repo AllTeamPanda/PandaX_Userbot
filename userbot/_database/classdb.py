@@ -3,7 +3,7 @@ from . import pdB
 
 MY_AFK = {}
 
-class AFKSQL(object):
+class AFK(object):
     """AMC -> Afk Modification Class"""
 
     def set_afk(self, afk, reason, afktime):
