@@ -9,7 +9,7 @@ from pyrogram import filters
 from pyrogram.errors import PeerIdInvalid, UsernameInvalid, UsernameNotOccupied
 from pyrogram.types import Message
 from ..._func.logger import LogIt
-from ... import app, gen, pdB, Config
+from ... import app, gen, udB as pdB, Config
 import asyncio
 
 PM_WARNS = {}
