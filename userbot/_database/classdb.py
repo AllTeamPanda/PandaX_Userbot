@@ -9,27 +9,25 @@ from . import pdB
 
 
 class PMPERMIT(object):
-    def get_approved():
-        return pdB.get_key("PMPERMIT") or {}
+    def is_user_approved(self, chat_id):
+        ok = pdB.get_key("PMPERMIT") or {}
+        wl = ok.get(chat_id)
+        if wl:
+            return wl
+        return
 
-    def approve_user(chat_id):
-        ok = get_approved()
-        if chat_id in ok:
-            return None
-        ok.append(chat_id)
+    def approve_user(self, chat_id):
+        ok = pdB.get_key("PMPERMIT")
+        ok.update({chat_id})
         return pdB.set_key("PMPERMIT", ok)
 
 
-    def disapprove_user(chat_id):
-        ok = get_approved()
-        if chat_id in ok:
-            ok.remove(chat_id)
-            return pdB.set_key("PMPERMIT", ok)
-
-
-    def is_user_approved(chat_id):
-        return get_approved()
-
+    def disapprove_user(self, chat_id):
+        ok = pdB.get_key("PMPERMIT")
+        if ok:
+            return pdB.del_key("PMPERMIT")
+        return
+    
 
 
 MY_AFK = {}
