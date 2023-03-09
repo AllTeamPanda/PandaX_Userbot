@@ -24,13 +24,13 @@ class OtherConfig(object):
     def NoLoad(self):
         """Get your No load module list"""
         noloadvar = self.getdv("NO_LOAD") or os.getenv("NO_LOAD")
-        data_list = noloadvar.split() if noloadvar else False
+        data_list = noloadvar if noloadvar else False
         return data_list or self.NO_LOAD or []
 
     def SudoUsers(self):
         """Get sudo users"""
         sudovar = self.getdv("SUDO_USERS") or os.getenv("SUDO_USERS")
-        data_list = [int(x) for x in sudovar.split()] if sudovar else False
+        data_list = [int(x) for x in sudovar] if sudovar else False
         return data_list or self.SUDO_USERS or []
 
     def Pmpermit(self):
