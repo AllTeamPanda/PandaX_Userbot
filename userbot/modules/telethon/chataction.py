@@ -6,7 +6,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import UserNotParticipantError
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.utils import get_display_name
-
+from ..._database.dB.gban_mute_db import is_gbanned
 from ..._database.dB import stickers
 from ..._database.dB.echo_db import check_echo
 from ..._database.dB.forcesub_db import get_forcesetting
@@ -73,7 +73,8 @@ async def DummyHandler(ult):
     if ult.user_joined or ult.added_by:
         user = await ult.get_user()
         chat = await ult.get_chat()
-      
+
+        reason = is_gbanned(user.id)
         if reason and chat.admin_rights:
             try:
                 await ult.client.edit_permissions(
