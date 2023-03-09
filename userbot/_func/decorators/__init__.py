@@ -15,12 +15,8 @@ from pyrogram.handlers import MessageHandler
 
 from ...Session.pyroclient import (
     app,
-    pyrobot2,
-    pyrobot3,
-    pyrobot4,
 )
 
-from ._helpers import is_admin_or_owner, edit_or_reply
 
 
 
