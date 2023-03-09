@@ -12,7 +12,6 @@ app.CMD_HELP.update(
                 "deldb [varname]": "Delete a existing database var with its value.",
                 "alldb": "Get all existing database vars.",
                 "listdb": "Get all available dv vars which you set.",
-                "pm [on | off]": "Turn on & off your pmguard",
             },
         )
     }
@@ -122,57 +121,7 @@ async def getdv_handler(_, m: Message):
         )
 
 
-@app.on_message(gen("pm", allow=["sudo"]))
-async def pm_handler(_, m: Message):
-    arg = m.command
-    if app.long(m) == 1:
-        await app.send_edit(
-            m, "Provide me a suffix to do some work.\n\nSuffix: `on` & `off`", delme=4
-        )
 
-    elif app.long(m) > 1 and arg[1] == "on":
-        if app.Pmpermit() is True:
-            return await app.send_edit(
-                m, "Pmguard is already active !", text_type=["mono"], delme=4
-            )
-
-        done = app.setdv("PMPERMIT", "True")
-        if done:
-            await app.send_edit(
-                m, "Pmguard is now turned on.", text_type=["mono"], delme=4
-            )
-        else:
-            await app.send_edit(
-                m, "Failed to turn on pmguard.", text_type=["mono"], delme=4
-            )
-
-    elif app.long(m) > 1 and arg[1] == "off":
-        if app.Pmpermit() is False:
-            return await app.send_edit(
-                m, "Pmguard is already off !", text_type=["mono"], delme=4
-            )
-
-        done = app.deldv("PMPERMIT")
-        if done:
-            await app.send_edit(
-                m, "Pmguard is now turned off.", text_type=["mono"], delme=4
-            )
-        else:
-            await app.send_edit(
-                m, "Failed to turn off pmguard.", text_type=["mono"], delme=4
-            )
-
-    elif app.long(m) > 1 and arg[1] not in ("on", "off"):
-        await app.send_edit(
-            m, "Use `on` or `off` after command to turn on & off pmguard.", delme=4
-        )
-    else:
-        await app.send_edit(
-            m,
-            "Something went wrong, please try again later !",
-            text_type=["mono"],
-            delme=4,
-        )
 
 
 @app.on_message(gen("alldb", allow=["sudo"]))
