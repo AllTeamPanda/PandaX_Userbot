@@ -41,7 +41,7 @@ from .pluginManager import restart_script
 
 LOGS = logging.getLogger(__name__)
 
-DUALL = "/"
+DUALL = "?"
 
 def dual_duall():
     try:
