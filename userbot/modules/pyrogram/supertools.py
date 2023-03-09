@@ -32,9 +32,9 @@ app.CMD_HELP.update(
 )
 
 
-weather_lang_code = "en"
+weather_lang_code = "id"
 
-lang_code = os.getenv("LANG_CODE", "en")
+lang_code = os.getenv("LANG_CODE", "id")
 
 
 def replace_text(text):
