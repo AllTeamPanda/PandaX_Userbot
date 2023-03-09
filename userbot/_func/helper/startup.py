@@ -2,12 +2,8 @@ import asyncio
 
 import shlex
 
-import ntpath
 import shlex
 from typing import Tuple
-import importlib
-from pathlib import Path
-import os
 
 async def run_cmd(cmd: str) -> Tuple[str, str, int, int]:
     """Run Commands"""
