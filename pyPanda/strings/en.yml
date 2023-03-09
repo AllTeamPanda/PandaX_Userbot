@@ -111,3 +111,7 @@ notes_4: "Notes Found In This Chats Are\n\n"
 notes_5: "No Notes Found Here"
 
 
+can_1: "#GBanned_User Joined.\n\n**User** : {}\n**Reason**: {}\n\n`User Banned.`"
+can_2: "∆ #UsernameUpdate\n\n@{} changed username to @{}"
+can_3: "∆ #UsernameUpdate\n\n{} removed its username. (@{})"
+can_4: "∆ #UsernameUpdate\n\n{}'s new username --> @{}"
