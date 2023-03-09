@@ -10,6 +10,7 @@ from pyrogram.errors import PeerIdInvalid, UsernameInvalid, UsernameNotOccupied
 from pyrogram.types import Message
 from ..._func.logger import LogIt
 from ... import app, gen, pdB, Config
+import asyncio
 
 PM_WARNS = {}
 OLD_MSG = {}
