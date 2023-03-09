@@ -789,6 +789,35 @@ class RawFunctions(object):
                 reason_ = asplit[1]
         return user_s, reason_
 
+    def forward(message, chat_id):
+        try:
+            return message.forward(chat_id or 'me')
+        except Exception as e:
+            raise e
+
+    async def is_admin_or_owner(message, user_id) -> bool:
+        """Check If A User Is Creator Or Admin Of The Current Group"""
+        if message.chat.type in ["private", "bot"]:
+            # You Are Boss Of Pvt Chats.
+            return True
+        user_s = await message.chat.get_member(int(user_id))
+        if user_s.status in ("creator", "administrator"):
+            return True
+        return False
+
+    def get_text(message: Message) -> [None, str]:
+        """Extract Text From Commands"""
+        text_to_return = message.text
+        if message.text is None:
+            return None
+        if " " in text_to_return:
+            try:
+                return message.text.split(None, 1)[1]
+            except IndexError:
+                return None
+        else:
+            return None
+  
     def db_status(self):
         from ..._database import pdB
         """
