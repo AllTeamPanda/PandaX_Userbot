@@ -8,7 +8,6 @@
 
 from userbot._func.decorators import listen
 from pyrogram import filters
-from pyrogram.errors import PeerIdInvalid, UsernameInvalid, UsernameNotOccupied
 from pyrogram.types import Message
 from ..._func.logger import LogIt
 from ... import app, gen, udB as pdB, Config
