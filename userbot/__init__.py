@@ -62,7 +62,11 @@ INT_PLUG = ""
 LOAD_PLUG = {}
 
 
- 
+if BOT_MODE:
+    tgbot = PandaBot
+    PandaBot = tgbot
+else: 
+    tgbot == Pandabot
 
 bot = PandaBot
 pandaub = PandaBot
