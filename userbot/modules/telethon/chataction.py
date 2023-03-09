@@ -26,6 +26,7 @@ from . import something, PandaBot, tgbot as asst, LOGS, BOTLOG_CHATID
 LOG_CHANNEL = BOTLOG_CHATID
 
 @PandaBot.on(events.ChatAction())
+@asst.on(events.ChatAction())
 async def Function(event):
     try:
         await DummyHandler(event)
@@ -169,6 +170,7 @@ async def DummyHandler(ult):
 
 
 @PandaBot.on(events.NewMessage(incoming=True))
+
 async def chatBot_replies(e):
     sender = await e.get_sender()
     if not isinstance(sender, types.User) or sender.bot:
