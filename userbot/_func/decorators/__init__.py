@@ -58,5 +58,5 @@ def listen(filter_s):
             message.continue_propagation()
         if app:
             app.add_handler(MessageHandler(wrapper, filters=filter_s), group=0)
-            return wrapper
+        return wrapper
     return decorator
