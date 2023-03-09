@@ -28,7 +28,7 @@ class PMPERMIT(object):
 
 
     def is_user_approved(chat_id):
-        return chat_id in get_approved()
+        return get_approved()
 
 
 
