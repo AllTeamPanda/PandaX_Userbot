@@ -39,4 +39,6 @@ class LogIt:
             logging.error(str(e))
             return None
 
-
+def make_file(text):
+    open("logger.log", "w").write(text)
+    return "logger.log"
