@@ -17,7 +17,7 @@ from telethon.utils import pack_bot_file_id
 
 from ..._database.dB.filter_db import add_filter, list_filter, rem_filter, get_filter
 from ..._misc.tools import format_btn, get_msg_button, mediainfo, create_tl_btn
-
+from . import something
 from ... import PandaBot, udB
 from telethon import events
 from pyPanda import get_string
