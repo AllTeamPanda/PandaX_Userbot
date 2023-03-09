@@ -5,6 +5,8 @@
 # Dibuat dari berbagai userbot yang pernah ada.
 # t.me/pandac0de t.me/pandauserbot
 
+
+from userbot._func.decorators import listen
 from pyrogram import filters
 from pyrogram.errors import PeerIdInvalid, UsernameInvalid, UsernameNotOccupied
 from pyrogram.types import Message
@@ -65,10 +67,8 @@ app.CMD_HELP.update(
 
 
 
-@app.on_message(
-    filters.private & filters.incoming & (~filters.bot & ~filters.me), group=-1
-)
-async def pmpermit_handler(client, message: Message):
+@listen(filters.incoming & filters.private & ~filters.edited & ~filters.me & ~filters.service)
+async def pmPermit(client, message):
     if not Config.PM_PSW:
         return
     if not message.from_user:   
@@ -145,70 +145,46 @@ async def pmpermit_handler(client, message: Message):
 
 
 @app.on_message(gen(["a", "approve"], allow=["sudo"]), group=0)
-async def approve_handler(_, m: Message):
-    if m.chat.type == "bot":
-        return await app.send_edit(
-            m, "No need to approve innocent bots !", text_type=["mono"], delme=4
-        )
-
-    reply = m.reply_to_message
-    cmd = m.command
-    user_data = False
-
-    if m.chat.type == "private":
-        user_id = m.chat.id
-
-    elif m.chat.type != "private":
-        if reply:
-            user_id = reply.from_user.id
-
-        elif not reply and app.long(m) == 1:
-            return await app.send_edit(
-                m, "Whom should i approve, piro ?", text_type=["mono"], delme=4
-            )
-
-        elif not reply and app.long(m) > 1:
-            try:
-                user_data = await app.get_users(cmd[1])
-                user_id = user_data.id
-            except PeerIdInvalid:
-                return await app.send_edit(
-                    m,
-                    "You have to pass username instead of user id.",
-                    text_type=["mono"],
-                    delme=4,
-                )
-            except UsernameNotOccupied:
-                return await app.send_edit(
-                    m,
-                    "This user doesn't exists in telegram.",
-                    text_type=["mono"],
-                    delme=4,
-                )
-            except UsernameInvalid:
-                return await app.send_edit(
-                    m, "The username | user id is invalid.", text_type=["mono"], delme=4
-                )
-
+async def approve_handler(client, message: Message):
+    if not Config.PM_PSW:
+        await app.send_edit(message, "`Pm Permit Is Disabled. Whats The Use Of Approving User?`")
+        return
+    if message.chat.type == "private":
+        if int(message.chat.id) in OLD_MSG:
+            await OLD_MSG[int(message.chat.id)].delete()
+        user_ = await client.get_users(int(message.chat.id))
+        firstname = user_.first_name
+        if not app.is_user_approved(int(message.chat.id)):
+            app.approve_user(int(message.chat.id))
         else:
-            return await app.send_edit(
-                m, "Something went wrong.", text_type=["mono"], delme=4
-            )
-    if user_data:
-        info = user_data
-    else:
-        info = await app.get_users(user_id)
-
-    try:
-        if not app.is_user_approved(int(m.chat.id)):
-            app.approve_user(int(m.chat.id))
-        else:
-            await app.send_edit(m, "`User is Already Approved!`")
+            await message.edit("`User is Already Approved!`")
             await asyncio.sleep(3)
-            await m.delete()
+            await message.delete()
             return
-        await app.send_edit(m, f"{info.mention} `is now approved.`", delme=4)   
-    except Exception as e:
-        await app.send_edit(m, f"Something went wrong.", text_type=["mono"], delme=4)
-        await app.error(m, e)
-
+        await message.edit(
+            "Approved to pm [{}](tg://user?id={})".format(
+                firstname, int(message.chat.id)
+            )
+        )
+        await asyncio.sleep(3)
+        await message.delete()
+    elif message.chat.type == "supergroup":
+        if not message.reply_to_message:
+            await message.edit("`Reply To User To Approve Him !`")
+            return
+        user_ = await client.get_users(message.reply_to_message.from_user.id)
+        firstname = user_.first_name
+        if not app.is_user_approved(message.reply_to_message.from_user.id):
+            app.approve_user(message.reply_to_message.from_user.id)
+        else:
+            await message.edit("`User is Already Approved!`")
+            await asyncio.sleep(3)
+            await message.delete()
+            return
+        await message.edit(
+            "Approved to pm [{}](tg://user?id={})".format(
+                firstname, message.reply_to_message.from_user.id
+            )
+        )
+        await asyncio.sleep(3)
+        await message.delete()
