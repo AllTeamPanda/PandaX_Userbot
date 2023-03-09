@@ -10,12 +10,12 @@ from . import pdB
 
 class PMPERMIT(object):
     def get_approved():
-        return pdB.get_key("PMPERMIT") or []
+        return pdB.get_key("PMPERMIT") or {}
 
     def approve_user(chat_id):
         ok = get_approved()
         if chat_id in ok:
-            return True
+            return None
         ok.append(chat_id)
         return pdB.set_key("PMPERMIT", ok)
 
