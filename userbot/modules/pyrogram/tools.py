@@ -17,8 +17,8 @@ from ... import app, gen
 
 app.CMD_HELP.update(
     {
-        "supertools": (
-            "supertools",
+        "tools": (
+            "tools",
             {
                 "wlink": "Get message links which contain the query word.",
                 "cur [10 USD INR]": "Converts Other Money value In Your Currency value. Just Use The Right Currency Code.",
