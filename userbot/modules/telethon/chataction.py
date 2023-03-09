@@ -10,10 +10,9 @@ from telethon.utils import get_display_name
 from ..._database.dB import stickers
 from ..._database.dB.echo_db import check_echo
 from ..._database.dB.forcesub_db import get_forcesetting
-from ..._database.dB.gban_mute_db import is_gbanned
 from ..._database.dB.greetings_db import get_goodbye, get_welcome, must_thank
 from ..._database.dB.nsfw_db import is_profan
-from pyPanda.RawUtilities import inline_mention, async_searcher, get_chatbot_reply
+from pyPanda.RawUtilities import get_chatbot_reply, inline_mention
 from ..._misc.tools import create_tl_btn
 from telethon import types, events
 from ... import udB
