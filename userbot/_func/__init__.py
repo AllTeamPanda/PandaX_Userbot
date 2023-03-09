@@ -6,7 +6,6 @@
 
 
 from .methods import Decorators
-from .logger import LogIt
 
-class Methods(Decorators, LogIt):
+class Methods(Decorators):
     pass
