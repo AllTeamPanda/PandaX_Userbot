@@ -13,10 +13,12 @@ from pyrogram.types import Message
 
 from ... import app, gen
 
+
+
 app.CMD_HELP.update(
     {
-        "tools": (
-            "tools",
+        "supertools": (
+            "supertools",
             {
                 "wlink": "Get message links which contain the query word.",
                 "cur [10 USD INR]": "Converts Other Money value In Your Currency value. Just Use The Right Currency Code.",
@@ -32,6 +34,8 @@ app.CMD_HELP.update(
         )
     }
 )
+
+
 
 
 c = CurrencyConverter()
