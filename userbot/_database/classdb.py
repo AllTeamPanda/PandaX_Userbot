@@ -9,77 +9,26 @@ from . import pdB
 
 
 class PMPERMIT(object):
-    # add message id of a user
-    def set_msgid(self, user_id, msg_id):
-        user = pdB.get_key("set_msgid") or {}
-        if not user:
-            user.update({user_id: msg_id})
-            user = pdB.set_key("set_msgid", user)
-        else:
-            user.msg_id = msg_id
-            
+    def get_approved():
+        return udB.get_key("PMPERMIT") or []
 
-    # get warn message id
-    def get_msgid(self, user_id):
-        user = pdB.get_key("set_msgid")
-        msg_id = None
-        if user:
-            msg_id = user.msg_id
-            return msg_id
-        
+    def approve_user(chat_id):
+        ok = get_approved()
+        if chat_id in ok:
+            return True
+        ok.append(chat_id)
+        return udB.set_key("PMPERMIT", ok)
 
-    # add user id to whitelist
-    def set_whitelist(self, user_id, boolvalue):
-        user = pdB.get_key("whitelist") or {}
-        if not user:
-            user.update({user_id: boolvalue})
-            user = pdB.set_key("whitelist", user)
-        else:
-            user.boolvalue = str(boolvalue)
-           
-        return user_id
 
-    # remove user id from whitelist
-    def del_whitelist(self, user_id):
-        user = pdB.get_key("whitelist")
-        if user:
-            pdB.del_key("whitelist")
-                
-        return False
+    def disapprove_user(chat_id):
+        ok = get_approved()
+        if chat_id in ok:
+            ok.remove(chat_id)
+            return udB.set_key("PMPERMIT", ok)
 
-    # get whitelist (approved)
-    def get_whitelist(self, user_id):
-        user = pdB.get_key("whitelist")
-        rep = ""
-        if user:
-            rep = str(user.boolvalue)
-        return rep
 
-    # warn table func
-    def set_warn(self, user_id, warn_count):
-        user = pdB.get_key("warns") or {}
-        if not user:
-            user.update({user_id: warn_count})
-            user = pdB.set_key("warns", user)
-        else:
-            user.warn_count = warn_count
-                
-
-    # get warn func
-    def get_warn(self, user_id):
-        user = pdB.get_key("warns")
-        rep = ""
-        if user:
-            rep = str(user.warn_count)
-        return rep
-
-    # del warn func
-    def del_warn(self, user_id):
-        user = pdB.get_key("warns")
-        if user:
-            pdB.del_key("warns")
-                    
-        return False
+    def is_user_approved(chat_id):
+        return chat_id in get_approved()
 
 
 
