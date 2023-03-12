@@ -12,11 +12,11 @@ from . import *
 from .Session.multisession_ import *
 from pytgcalls import idle as pytgcalls
 
-"""
+
 from . import resources
 
 
-
+"""
 async def memulai():
     await resources.buka(f"telethon")
     await resources.bukabot(f"assistant")
@@ -39,7 +39,7 @@ def start():
 if __name__ == "__main__":
     if Database.SESSION:
         Telethon()
-        userbot.ClientMultiTelethon()
+        resources.ClientMultiTelethon()
         start()
     if Database.PyroSESSION:
         Pyrogram()
