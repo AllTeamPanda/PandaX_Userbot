@@ -16,7 +16,7 @@ from telethon import functions, types, utils
 
 from userbot import *
 
-from userbot.config import Config, Var
+from userbot.config import Config, Var, Database
 from userbot._misc.logger import logging
 from userbot._misc.session import PandaBot, PandaBot2, PandaBot3, tgbot
 from userbot.helpers.utils import install_pip
