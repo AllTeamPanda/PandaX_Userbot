@@ -78,7 +78,7 @@ def dual_mode():
         sys.exit()
 
 if BOT_MODE:
-    tgbot = PandaBot
+    tgbot = tgbot
     PandaBot = tgbot
 else: 
     tgbot == Pandabot
