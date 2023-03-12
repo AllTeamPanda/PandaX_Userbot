@@ -177,7 +177,7 @@ def ClientMultiTelethon():
                         manage_call=True,
                     )
                     try:
-                        await PandaBot(
+                        PandaBot(
                             EditAdminRequest(
                                 Config.PRIVATE_GROUP_BOT_API_ID, tgbot.me.username, rights, "Assistant"
                             )
