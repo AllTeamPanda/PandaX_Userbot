@@ -103,7 +103,7 @@ async def cpu(event):
     command=("sysd", plugin_category),
     info={
         "header": "Shows system information using neofetch",
-        "usage": "{tr}cpu",
+        "usage": "{tr}sysd",
     },
 )
 async def sysdetails(sysd):
