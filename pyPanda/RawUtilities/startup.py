@@ -311,26 +311,17 @@ A = "AsistenBot"
 
 
 from telethon.tl.functions.channels import (
-    CreateChannelRequest,
     EditAdminRequest,
-    EditPhotoRequest,
     InviteToChannelRequest,
 )
 
 from telethon.errors import (
-    ChannelsTooMuchError,
     ChatAdminRequiredError,
-    MessageIdInvalidError,
-    MessageNotModifiedError,
-    UserNotParticipantError,
 )
 
 
 from telethon.tl.types import (
     ChatAdminRights,
-    ChatPhotoEmpty,
-    InputChatUploadedPhoto,
-    InputMessagesFilterDocument,
 )
 
 
