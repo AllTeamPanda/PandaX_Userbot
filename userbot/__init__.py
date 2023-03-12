@@ -33,9 +33,6 @@ __license__ = __license__
 __author__ = __author__
 __copyright__ = __copyright__
 
-LOGS.info(f"Memeriksa {DB.name}...")
-LOGS.info(f"Terkoneksi {DB.name} Successfully!")
-
 pandaversion = __version__
 StartTime = time.time()
 BOT_MODE = SqL.get_key("MODE_DUAL")
@@ -61,12 +58,6 @@ AFF_LIST = {}
 INT_PLUG = ""
 LOAD_PLUG = {}
 
-
-if BOT_MODE:
-    tgbot = PandaBot
-    PandaBot = tgbot
-else: 
-    tgbot == Pandabot
 
 bot = PandaBot
 pandaub = PandaBot
@@ -131,6 +122,81 @@ except Exception:
     HEROKU_APP = None
 
 LOGSPAMMER = os.environ.get("LOGSPAMMER", "False")
+
+
+from telethon.tl.functions.channels import (
+    CreateChannelRequest,
+    EditAdminRequest,
+    EditPhotoRequest,
+    InviteToChannelRequest,
+)
+
+from telethon.errors import (
+    ChannelsTooMuchError,
+    ChatAdminRequiredError,
+    MessageIdInvalidError,
+    MessageNotModifiedError,
+    UserNotParticipantError,
+)
+
+
+from telethon.tl.types import (
+    ChatAdminRights,
+    ChatPhotoEmpty,
+    InputChatUploadedPhoto,
+    InputMessagesFilterDocument,
+)
+
+
+from . import resources
+
+def ClientMultiTelethon():
+    if Var.STRING_SESSION and Database.BOT_TOKEN:
+        if PandaBot:
+            try:
+                PandaBot(InviteToChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID, [tgbot.me.username]))
+            except BaseException as er:
+                LOGS.info("Error while Adding Assistant to Log Channel")
+                LOGS.exception(er)
+            if Config.PRIVATE_GROUP_BOT_API_ID:
+                try:
+                    achat = tgbot.get_entity(Config.PRIVATE_GROUP_BOT_API_ID)
+                except BaseException as er:
+                    achat = None
+                    LOGS.info("Error while getting Log channel from Assistant")
+                    LOGS.exception(er)
+                if achat and not achat.admin_rights:
+                    rights = ChatAdminRights(
+                        add_admins=True,
+                        invite_users=True,
+                        change_info=True,
+                        ban_users=True,
+                        delete_messages=True,
+                        pin_messages=True,
+                        anonymous=False,
+                        manage_call=True,
+                    )
+                    try:
+                        await PandaBot(
+                            EditAdminRequest(
+                                Config.PRIVATE_GROUP_BOT_API_ID, tgbot.me.username, rights, "Assistant"
+                            )
+                        )
+                    except ChatAdminRequiredError:
+                        LOGS.info(
+                             "Failed to promote 'Assistant Bot' in 'Log Channel' due to 'Admin Privileges'"
+                        )
+        
+        if tgbot:
+            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Memeriksa {DB.name}...")
+            tgbot.edit_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Terkoneksi {DB.name} Successfully")
+            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, resources.buka(f"telethon"))
+            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, resources.bukabot(f"assistant"))
+             
+
+
+
+
 
 
 class Auto(object):
