@@ -79,9 +79,9 @@ def dual_mode():
 
 if BOT_MODE:
     tgbot = tgbot
-    PandaBot = tgbot
+    PandaBot = PandaBot
 else: 
-    tgbot == Pandabot
+    PandaBot == tgbot
 
 from .config import *
 
