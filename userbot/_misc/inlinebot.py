@@ -18,7 +18,7 @@ from telethon import Button, types, events
 
 from youtubesearchpython import VideosSearch
 from telethon.events import InlineQuery, callbackquery, CallbackQuery
-from .. import PandaBot, SqL, tgbot, HOSTED_ON, gvarstatus
+from .. import SqL, HOSTED_ON, gvarstatus
 from ..config import Config
 from ..helpers.functions import rand_key
 from ..helpers.functions.utube import (
@@ -30,7 +30,7 @@ from ..helpers.functions.utube import (
 )
 from . import CMD_INFO, GRP_INFO, PLG_INFO, check_owner
 from .logger import logging
-
+from .session import PandaBot, tgbot
 LOGS = logging.getLogger(__name__)
 
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
