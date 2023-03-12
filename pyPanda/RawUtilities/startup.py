@@ -142,8 +142,7 @@ async def buka(folder):
                                 break
                 else:
                     os.remove(Path(f"userbot/modules/{folder}/{shortname}.py"))
-                    if tgbot:
-                        await tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"{shortname}")
+                    
             except Exception as e:
                 os.remove(Path(f"userbot/modules/{folder}/{shortname}.py"))
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
@@ -177,8 +176,7 @@ async def bukabot(folder):
                                 break
                 else:
                     os.remove(Path(f"userbot/modules/telethon/{folder}/{shortname}.py"))
-                    if tgbot:
-                        await tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"{shortname}")
+                    
             except Exception as e:
                 os.remove(Path(f"userbot/modules/telethon/{folder}/{shortname}.py"))
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
