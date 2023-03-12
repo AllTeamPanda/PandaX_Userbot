@@ -32,9 +32,9 @@ def load_module(shortname, plugin_path=None):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        if tgbot:
-            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Successfully imported {shortname}")
-        #LOGS.info("Successfully imported " + shortname)
+        if PandaBot:
+            PandaBot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Successfully imported {shortname}")
+        LOGS.info("Successfully imported " + shortname)
     else:
         if plugin_path is None:
             path = Path(f"userbot/modules/{shortname}.py")
@@ -71,9 +71,9 @@ def load_module(shortname, plugin_path=None):
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["userbot.modules." + shortname] = mod
-        #LOGS.info("Successfully imported " + shortname)
-        if tgbot:
-            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Successfully imported {shortname}")
+        LOGS.info("Successfully imported " + shortname)
+        if PandaBot:
+            PandaBot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Successfully imported {shortname}")
          
 
 def remove_plugin(shortname):
