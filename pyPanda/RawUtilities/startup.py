@@ -142,6 +142,8 @@ async def buka(folder):
                                 break
                 else:
                     os.remove(Path(f"userbot/modules/{folder}/{shortname}.py"))
+                    if tgbot:
+                        await tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"{shortname}")
             except Exception as e:
                 os.remove(Path(f"userbot/modules/{folder}/{shortname}.py"))
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
@@ -175,6 +177,8 @@ async def bukabot(folder):
                                 break
                 else:
                     os.remove(Path(f"userbot/modules/telethon/{folder}/{shortname}.py"))
+                    if tgbot:
+                        await tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"{shortname}")
             except Exception as e:
                 os.remove(Path(f"userbot/modules/telethon/{folder}/{shortname}.py"))
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
@@ -325,6 +329,11 @@ from telethon.tl.types import (
 )
 
 
+
+async def memulai():
+    await buka(f"telethon")
+    await bukabot(f"assistant")
+
 def ClientMultiTelethon():
     if Var.STRING_SESSION and Database.BOT_TOKEN:
         if PandaBot:
@@ -366,7 +375,5 @@ def ClientMultiTelethon():
         if tgbot:
             tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Memeriksa Database {DB.name}...")
             tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Terkoneksi Database {DB.name} Successfully")
-            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, buka(f"telethon"))
-            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, bukabot(f"assistant"))
-             
+            
 
