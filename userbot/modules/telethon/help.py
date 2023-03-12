@@ -175,7 +175,7 @@ async def _(event):
 async def _(event):
     tgbot.me = tgbot.get_me()
     reply_to_id = await reply_id(event)
-    results = await event.client.inline_query(tgbot.me.username, "help")
+    results = await event.client.inline_query(Config.BOT_USERNAME, "help")
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     await event.delete()
 
