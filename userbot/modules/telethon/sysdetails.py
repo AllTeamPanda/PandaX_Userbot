@@ -78,7 +78,7 @@ async def psu(event):
     help_string += "**Engine Info**\n"
     help_string += f"`Python {sys.version}`\n"
     help_string += f"`Telethon {__version__}`"
-    await event.edit(help_string)
+    await edit_or_reply(event, help_string)
 
 
 @PandaBot.ilhammansiz_cmd(
