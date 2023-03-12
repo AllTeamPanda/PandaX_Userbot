@@ -364,7 +364,7 @@ def ClientMultiTelethon():
         
         if tgbot:
             tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Memeriksa {DB.name}...")
-            tgbot.edit_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Terkoneksi {DB.name} Successfully")
+            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Terkoneksi {DB.name} Successfully")
             tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, resources.buka(f"telethon"))
             tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, resources.bukabot(f"assistant"))
              
