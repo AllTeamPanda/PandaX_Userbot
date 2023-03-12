@@ -329,6 +329,7 @@ def ClientMultiTelethon():
     if Var.STRING_SESSION and Database.BOT_TOKEN:
         if PandaBot:
             try:
+                tgbot.me = tgbot.get_me()
                 PandaBot(InviteToChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID, [tgbot.me.username]))
             except BaseException as er:
                 LOGS.info("Error while Adding Assistant to Log Channel")
@@ -365,7 +366,7 @@ def ClientMultiTelethon():
         if tgbot:
             tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Memeriksa Database {DB.name}...")
             tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Terkoneksi Database {DB.name} Successfully")
-            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, resources.buka(f"telethon"))
-            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, resources.bukabot(f"assistant"))
+            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, buka(f"telethon"))
+            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, bukabot(f"assistant"))
              
 
