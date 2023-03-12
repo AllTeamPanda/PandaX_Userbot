@@ -16,7 +16,7 @@ from telethon import functions, types, utils
 
 from userbot import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 
-from userbot.config import Config
+from userbot.config import Config, Var
 from userbot._misc.logger import logging
 from userbot._misc.session import PandaBot, PandaBot2, PandaBot3, tgbot
 from userbot.helpers.utils import install_pip
@@ -306,3 +306,75 @@ P = "plugins"
 M = "modules"
 V = "VCPlugins"
 A = "AsistenBot"
+
+
+
+
+from telethon.tl.functions.channels import (
+    CreateChannelRequest,
+    EditAdminRequest,
+    EditPhotoRequest,
+    InviteToChannelRequest,
+)
+
+from telethon.errors import (
+    ChannelsTooMuchError,
+    ChatAdminRequiredError,
+    MessageIdInvalidError,
+    MessageNotModifiedError,
+    UserNotParticipantError,
+)
+
+
+from telethon.tl.types import (
+    ChatAdminRights,
+    ChatPhotoEmpty,
+    InputChatUploadedPhoto,
+    InputMessagesFilterDocument,
+)
+
+
+def ClientMultiTelethon():
+    if Var.STRING_SESSION and Database.BOT_TOKEN:
+        if PandaBot:
+            try:
+                PandaBot(InviteToChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID, [tgbot.me.username]))
+            except BaseException as er:
+                LOGS.info("Error while Adding Assistant to Log Channel")
+                LOGS.exception(er)
+            if Config.PRIVATE_GROUP_BOT_API_ID:
+                try:
+                    achat = tgbot.get_entity(Config.PRIVATE_GROUP_BOT_API_ID)
+                except BaseException as er:
+                    achat = None
+                    LOGS.info("Error while getting Log channel from Assistant")
+                    LOGS.exception(er)
+                if achat and not achat.admin_rights:
+                    rights = ChatAdminRights(
+                        add_admins=True,
+                        invite_users=True,
+                        change_info=True,
+                        ban_users=True,
+                        delete_messages=True,
+                        pin_messages=True,
+                        anonymous=False,
+                        manage_call=True,
+                    )
+                    try:
+                        PandaBot(
+                            EditAdminRequest(
+                                Config.PRIVATE_GROUP_BOT_API_ID, tgbot.me.username, rights, "Assistant"
+                            )
+                        )
+                    except ChatAdminRequiredError:
+                        LOGS.info(
+                             "Failed to promote 'Assistant Bot' in 'Log Channel' due to 'Admin Privileges'"
+                        )
+        
+        if tgbot:
+            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Memeriksa {DB.name}...")
+            tgbot.edit_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Terkoneksi {DB.name} Successfully")
+            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, resources.buka(f"telethon"))
+            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, resources.bukabot(f"assistant"))
+             
+
