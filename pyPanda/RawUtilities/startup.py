@@ -14,7 +14,7 @@ from telethon.tl.functions.channels import JoinChannelRequest
 import requests
 from telethon import functions, types, utils
 
-from userbot import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
+from userbot import *
 
 from userbot.config import Config, Var
 from userbot._misc.logger import logging
