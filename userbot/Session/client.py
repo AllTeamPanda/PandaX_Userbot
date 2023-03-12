@@ -179,7 +179,7 @@ else:
 try:
     if Var.VC_SESSION:
         vcbot = TelegramClient(
-            StringSession(str(Var.VC_SESSION)),
+            PandaSession(Var.VC_SESSION, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
