@@ -73,7 +73,7 @@ def load_module(shortname, plugin_path=None):
         sys.modules["userbot.modules." + shortname] = mod
         #LOGS.info("Successfully imported " + shortname)
         if tgbot:
-            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Successfully imported{ shortname}")
+            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Successfully imported {shortname}")
          
 
 def remove_plugin(shortname):
