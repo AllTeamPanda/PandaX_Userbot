@@ -114,7 +114,7 @@ except Exception as e:
 
 try:
     if Var.STRING_SESSION2:
-        session2 = StringSession(str(Var.STRING_SESSION3))
+        session2 = StringSession(str(Var.STRING_SESSION2))
         PandaBot2 = PandaUserbotSession(
             PandaSession(Var.STRING_SESSION2, LOGS),
             api_id=Var.APP_ID,
