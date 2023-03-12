@@ -67,17 +67,21 @@ petercordpanda_bot = pandaub
 
 def dual_mode():
     try:
-        if SqL.get_key("DUAL_MODE") is not None:
-            mode = SqL.set_key("DUAL_MODE", "DUAL") or "DUAL"
+        if DUAL_MODE is not None:
+            mode = SqL.set_key("DUAL_MODE", "DUAL")
             return mode
         else:
-            mode = SqL.set_key("DUAL_MODE", "False")
+            mode = SqL.set_key("DUAL_MODE", "USER")
             return mode
     except Exception as e:
         print(f"{str(e)}")
         sys.exit()
 
-
+if BOT_MODE:
+    tgbot = PandaBot
+    PandaBot = tgbot
+else: 
+    tgbot == Pandabot
 
 from .config import *
 
