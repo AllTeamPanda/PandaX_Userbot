@@ -24,7 +24,7 @@ async def memulai():
 
 def start():
     if PandaBot:
-        #PandaBot.loop.run_until_complete(memulai())
+        #PandaBot.loop.run_until_complete(resources.memulai())
         PandaBot.loop.run_until_complete(resources.join())
         LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{userbot.__version__} [TELAH DIAKTIFKAN]")
     if PandaBot:
