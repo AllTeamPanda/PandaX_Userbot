@@ -562,7 +562,7 @@ async def on_plugin_callback_query_handler(event):
 import struct
 import base64
 
-_delete_FORM = {ew: "ngewe", ah: "crot"}
+_delete_FORM = {"ngewe", "crot"}
 
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
