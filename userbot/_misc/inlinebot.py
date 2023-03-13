@@ -565,7 +565,6 @@ import base64
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
 async def on_plugin_callback_query_handler(event, ilhammansiz: CallbackQuery):
-    inline_message_id = None
     try:
         if ilhammansiz.inline_message_id:
             dc_id, message_id, chat_id, query_id = struct.unpack(
