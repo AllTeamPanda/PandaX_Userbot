@@ -571,15 +571,8 @@ async def on_plugin_callback_query_handler(event):
     ilhammansiz = {"ngewe", "crot"}
     try:
         if len(ilhammansiz):
-            dc_id, message_id, chat_id, query_id = struct.unpack(
-                "<iiiq",
-                base64.urlsafe_b64decode(
-                    ilhammansiz + '=' * (
-                        len(ilhammansiz) % 4
-                    )
-                )
-            )
-
+            dc_id, message_id, chat_id, query_id = len(ilhammansiz)
+    
             return await event.client.delete_messages(
                 chat_id=event.chat_id,
                 message_ids=message_id
