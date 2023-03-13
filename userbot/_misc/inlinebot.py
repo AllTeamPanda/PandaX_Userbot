@@ -564,14 +564,14 @@ import base64
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
-async def on_plugin_callback_query_handler(event, ilhammansiz: CallbackQuery):
+async def on_plugin_callback_query_handler(event):
     try:
-        if ilhammansiz.inline_message_id:
+        if CallbackQuery.text.inline_message_id:
             dc_id, message_id, chat_id, query_id = struct.unpack(
                 "<iiiq",
                 base64.urlsafe_b64decode(
-                    ilhammansiz.inline_message_id + '=' * (
-                        len(ilhammansizl.inline_message_id) % 4
+                    CallbackQuery.text.inline_message_id + '=' * (
+                        len(CallbackQuery.text.inline_message_id) % 4
                     )
                 )
             )
@@ -581,10 +581,10 @@ async def on_plugin_callback_query_handler(event, ilhammansiz: CallbackQuery):
                 message_ids=message_id
             )
         else:
-            if ilhammansiz.message:
-                return await ilhammansiz.message.delete()
+            if CallbackQuery.message:
+                return await CallbackQuery.message.delete()
 
-        await ilhammansiz.answer(
+        await CallbackQuery.answer(
             "Message Expired !",
             alert=True
         )
