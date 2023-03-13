@@ -566,12 +566,12 @@ import base64
 @check_owner
 async def on_plugin_callback_query_handler(event):
     try:
-        if CallbackQuery.text.inline_message_id:
+        if CallbackQuery:
             dc_id, message_id, chat_id, query_id = struct.unpack(
                 "<iiiq",
                 base64.urlsafe_b64decode(
-                    CallbackQuery.text.inline_message_id + '=' * (
-                        len(CallbackQuery.text.inline_message_id) % 4
+                    CallbackQuery + '=' * (
+                        len(CallbackQuery) % 4
                     )
                 )
             )
@@ -581,8 +581,8 @@ async def on_plugin_callback_query_handler(event):
                 message_ids=message_id
             )
         else:
-            if CallbackQuery.message:
-                return await CallbackQuery.message.delete()
+            if CallbackQuery:
+                return await CallbackQuery.delete()
 
         await CallbackQuery.answer(
             "Message Expired !",
