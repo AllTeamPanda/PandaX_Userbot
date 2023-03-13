@@ -568,7 +568,7 @@ _delete_FORM = {"ngewe", "crot"}
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
-    ilhammansiz = None
+    ilhammansiz = {"ngewe", "crot"}
     try:
         if len(ilhammansiz) in _delete_FORM.keys():
             dc_id, message_id, chat_id, query_id = struct.unpack(
