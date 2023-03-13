@@ -570,12 +570,12 @@ _delete_FORM = {"ngewe", "crot"}
 async def on_plugin_callback_query_handler(event):
     ilhammansiz = {"ngewe", "crot"}
     try:
-        if len(ilhammansiz) in _delete_FORM.keys():
+        if len(ilhammansiz):
             dc_id, message_id, chat_id, query_id = struct.unpack(
                 "<iiiq",
                 base64.urlsafe_b64decode(
                     ilhammansiz + '=' * (
-                        len(-ilhammansiz) % 4
+                        len(ilhammansiz) % 4
                     )
                 )
             )
