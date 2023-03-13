@@ -559,18 +559,45 @@ async def on_plugin_callback_query_handler(event):
     
 ## Close by ilham
 
+import struct
+import base64
+
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
-async def on_plugin_callback_query_handler(event):
-    msgs = []
-    chat = await event.get_input_chat()
-    async for msg in event.client.iter_messages(
-            chat
-        ):
-            msgs.append(msg)
-            if len(msgs) == 100:
-                await event.client.delete_messages(chat, msgs)
-                msgs = []
+async def on_plugin_callback_query_handler(event, ilhammansiz: CallbackQuery):
+    inline_message_id = None
+    try:
+        if ilhammansiz.inline_message_id:
+            dc_id, message_id, chat_id, query_id = struct.unpack(
+                "<iiiq",
+                base64.urlsafe_b64decode(
+                    ilhammansiz.inline_message_id + '=' * (
+                        len(ilhammansizl.inline_message_id) % 4
+                    )
+                )
+            )
+
+            return await event.client.delete_messages(
+                chat_id=int(str(-100) + str(chat_id)[1:]),
+                message_ids=message_id
+            )
+        else:
+            if ilhammansiz.message:
+                return await ilhammansiz.message.delete()
+
+        await ilhammansiz.answer(
+            "Message Expired !",
+            alert=True
+        )
+
+    except (KeyError, ValueError):
+        await event.client.delete_messages(
+            chat_id=chat_id,
+            message_ids=message_id
+        )
+        print(chat_id, message_id)
+    except Exception as e:
+        LOGS.error(e)
         
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
 @check_owner
