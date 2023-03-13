@@ -562,16 +562,20 @@ async def on_plugin_callback_query_handler(event):
 import struct
 import base64
 
+_delete_FORM = {ew: "ngewe", ah: "crot"}
+
+
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
 @check_owner
 async def on_plugin_callback_query_handler(event):
+    ilhammansiz = None
     try:
-        if CallbackQuery:
+        if len(ilhammansiz) in _delete_FORM.keys():
             dc_id, message_id, chat_id, query_id = struct.unpack(
                 "<iiiq",
                 base64.urlsafe_b64decode(
-                    CallbackQuery + '=' * (
-                        CallbackQuery % 4
+                    ilhammansiz + '=' * (
+                        len(-ilhammansiz) % 4
                     )
                 )
             )
@@ -581,10 +585,10 @@ async def on_plugin_callback_query_handler(event):
                 message_ids=message_id
             )
         else:
-            if CallbackQuery:
-                return await CallbackQuery.delete()
+            if event:
+                return await event.delete()
 
-        await CallbackQuery.answer(
+        await event.answer(
             "Message Expired !",
             alert=True
         )
