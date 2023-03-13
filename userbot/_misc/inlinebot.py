@@ -581,7 +581,7 @@ async def on_plugin_callback_query_handler(event):
             )
 
             return await event.client.delete_messages(
-                chat_id=int(str(-100) + str(chat_id)[1:]),
+                chat_id=event.chat_id,
                 message_ids=message_id
             )
         else:
@@ -595,7 +595,7 @@ async def on_plugin_callback_query_handler(event):
 
     except (KeyError, ValueError):
         await event.client.delete_messages(
-            chat_id=chat_id,
+            chat_id=event.chat_id,
             message_ids=message_id
         )
         print(chat_id, message_id)
