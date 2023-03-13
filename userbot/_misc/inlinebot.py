@@ -559,8 +559,6 @@ async def on_plugin_callback_query_handler(event):
     
 ## Close by ilham
 
-import struct
-import base64
 
 _delete_FORM = {"ngewe", "crot"}
 
