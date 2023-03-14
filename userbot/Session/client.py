@@ -8,7 +8,6 @@
 
 import sys
 
-from telethon.sessions.string import _STRUCT_PREFORMAT, CURRENT_VERSION, StringSession
 
 from .._database._var import Var, Database
 
@@ -20,7 +19,6 @@ from .._database import pyDatabase
 DB = pyDatabase()
 
 import sys
-from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 import logging
 
 BOT_TOKEN = DB.get_key("BOT_TOKEN") or os.environ.get("BOT_TOKEN", None)
