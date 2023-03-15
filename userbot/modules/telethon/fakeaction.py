@@ -14,10 +14,10 @@ from . import ALIVE_NAME
 plugin_category = "modules"
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="f(?:\s|$)([\s\S]*)",
     command=("f", plugin_category),
-    help={
+    info={
         "header": "To show fake actions for a paticular period of time",
         "description": "if time is not mentioned then it may choose random time 5 or 6 mintues for mentioning time use in seconds",
         "usage": [
@@ -78,7 +78,7 @@ async def _(event):
         return
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="prankpromote(?:\s|$)([\s\S]*)",
     command=("prankpromote", plugin_category),
     help={
@@ -110,7 +110,7 @@ async def _(event):
     await pandaevent.edit("`Promoted Successfully! Now gib Party`")
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="padmin$",
     command=("padmin", plugin_category),
     help={
