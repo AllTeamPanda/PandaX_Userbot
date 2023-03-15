@@ -6,7 +6,7 @@
 
 import sys
 import userbot
-from userbot import LOGS
+from userbot import LOGS, Database
 
 from .Session.multisession_ import *
 from pytgcalls import idle as pytgcalls
