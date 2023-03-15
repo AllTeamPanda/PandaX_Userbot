@@ -40,7 +40,7 @@ class AFK:
 AFK_ = AFK()
 
 
-@PandaBot.register(outgoing=True, edited=False)
+@PandaBot.ilhammansiz_cmd(outgoing=True, edited=False)
 async def set_not_afk(event):
     if AFK_.afk_on is False:
         return
@@ -86,7 +86,7 @@ async def set_not_afk(event):
             )
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     incoming=True, func=lambda e: bool(e.mentioned or e.is_private), edited=False
 )
 async def on_afk(event):  # sourcery no-metrics
@@ -180,10 +180,10 @@ async def on_afk(event):  # sourcery no-metrics
             )
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="afk(?:\s|$)([\s\S]*)",
     command=("afk", plugin_category),
-    help={
+    info={
         "header": "Enables afk for your account",
         "description": "When you are in afk if any one tags you then your bot will reply as he is offline.\
         AFK mean away from keyboard.",
@@ -240,10 +240,10 @@ async def _(event):
                 )
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="mafk(?:\s|$)([\s\S]*)",
     command=("mafk", plugin_category),
-    help={
+    info={
         "header": "Enables afk for your account",
         "description": "When you are in afk if any one tags you then your bot will reply as he is offline.\
          AFK mean away from keyboard. Here it supports media unlike afk command",
