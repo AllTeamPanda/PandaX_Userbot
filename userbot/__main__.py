@@ -6,10 +6,12 @@
 
 import sys
 import userbot
-from userbot import LOGS, Database
+from userbot import LOGS, Database, Config
 
 from .Session.multisession_ import *
 from pytgcalls import idle as pytgcalls
+cmdhr = Config.COMMAND_HAND_LER
+
 
 
 from . import resources
@@ -27,11 +29,11 @@ def start():
         PandaBot.loop.run_until_complete(resources.join())
         LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{userbot.__version__} [TELAH DIAKTIFKAN]")
     if PandaBot:
-        PandaBot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
+        PandaBot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, userbot.__version__, cmdhr))
     if PandaBot2:
-        PandaBot2.send_message(PRIVATE, THON_ON.format(PandaBot2.me.username, version.__version__, cmdhr))
+        PandaBot2.send_message(PRIVATE, THON_ON.format(PandaBot2.me.username, userbot.__version__, cmdhr))
     if PandaBot3:
-        PandaBot3.send_message(PRIVATE, THON_ON.format(PandaBot3.me.username, version.__version__, cmdhr))
+        PandaBot3.send_message(PRIVATE, THON_ON.format(PandaBot3.me.username, userbot.__version__, cmdhr))
              
 
 
