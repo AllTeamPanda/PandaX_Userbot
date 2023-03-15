@@ -84,7 +84,7 @@ def main_menu():
                 "https://t.me/PandaUserbot",
             ),
             Button.inline(
-                f"💎 𝙸𝚗𝚏𝚘",
+                f"⚙️ Info",
                 data="check",
             ),
         ),
@@ -848,6 +848,8 @@ async def on_plugin_callback_query_handler(event):
             ],
             [
                 Button.inline("VC_SESSION", data="vcbots"),
+                Button.inline("SESSION2", data="session2"),
+                Button.inline("SESSION3", data="session3"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="menubot")],
         ],
@@ -1005,7 +1007,7 @@ async def on_plugin_callback_query_handler(event):
     var = "VC_SESSION"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "**Silahkan Kirimkan String Telethon Untuk bot music\n\nGunakan /cancel untuk membatalkan."
+            "**Silahkan Kirimkan String Telethon atau pyrogran Untuk bot music\n\nGunakan /cancel untuk membatalkan."
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
@@ -1020,6 +1022,56 @@ async def on_plugin_callback_query_handler(event):
             f"**Link Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart untuk Menerapkan Perubahan.",
             buttons=get_back_button("menuset"),
         )
+
+
+@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"session2")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
+    pru = event.sender_id
+    var = "SESSION2"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan String Telethon atau pyrogram untuk pengguna kedua\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("menuset"),
+            )
+        await setting(event, var, themssg)
+        await conv.send_message(
+            f"**Link Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart untuk Menerapkan Perubahan.",
+            buttons=get_back_button("menuset"),
+        )
+
+
+
+@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"session3")))
+@check_owner
+async def on_plugin_callback_query_handler(event):
+    pru = event.sender_id
+    var = "SESSION3"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan String Telethon atau pyrogram untuk pengguna ketiga\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("menuset"),
+            )
+        await setting(event, var, themssg)
+        await conv.send_message(
+            f"**Link Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart untuk Menerapkan Perubahan.",
+            buttons=get_back_button("menuset"),
+        )
+
 
 
 
