@@ -1,3 +1,3 @@
-from pyPanda.RawUtilities import bash
+from exportir.RawUtilities import bash
 
 bash = bash
