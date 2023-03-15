@@ -574,7 +574,7 @@ async def on_plugin_callback_query_handler(event):
                 dc_id, message_id, chat_id, query_id = struct.unpack(
                     "<iiiq",
                     base64.urlsafe_b64decode(
-                        event.msg_id + '=' * (
+                        event.message_id + '=' * (
                             len(event.message_id) % 4
                         )
                     )
