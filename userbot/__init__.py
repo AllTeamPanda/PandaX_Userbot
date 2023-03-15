@@ -87,7 +87,7 @@ from .config import *
 
 
 if Config.UPSTREAM_REPO == "PANDA_USERBOT":
-    UPSTREAM_REPO_URL = "https://github.com/ilhammansiz/PandaX_Userbot"
+    UPSTREAM_REPO_URL = "https://github.com/TeamXPanda/Panda"
 else:
     UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
 
