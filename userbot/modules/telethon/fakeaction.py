@@ -81,7 +81,7 @@ async def _(event):
 @PandaBot.ilhammansiz_cmd(
     pattern="prankpromote(?:\s|$)([\s\S]*)",
     command=("prankpromote", plugin_category),
-    help={
+    info={
         "header": "To promote a person without admin rights",
         "note": "You need proper rights for this",
         "usage": [
@@ -113,7 +113,7 @@ async def _(event):
 @PandaBot.ilhammansiz_cmd(
     pattern="padmin$",
     command=("padmin", plugin_category),
-    help={
+    info={
         "header": "Fun animation for faking user promotion",
         "description": "An animation that shows enabling all permissions to him that he is admin(fake promotion)",
         "usage": "{tr}padmin",
