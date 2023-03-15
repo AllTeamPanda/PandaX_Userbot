@@ -71,7 +71,7 @@ def PandaSession(session, logger=LOGS, _exit=True):
 
 
 
-def idhash(ModeRuns=True):
+def idhash(api_id=Var.APP_ID, api_hash=Var.API_HASH, connection=ConnectionTcpAbridged, auto_reconnect=True, connection_retries=None, app_version=__version__, ModeRuns=True):
     if ModeRuns:
         api_id=Var.APP_ID
         api_hash=Var.API_HASH
