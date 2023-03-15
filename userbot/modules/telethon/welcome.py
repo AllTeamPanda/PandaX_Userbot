@@ -26,7 +26,7 @@ from ..._database.dB.greetings_db import (
 )
 from ..._misc.tools import create_tl_btn, format_btn, get_msg_button, mediainfo
 
-from pyPanda import get_string
+from exportir import get_string
 from . import something, edit_or_reply, PandaBot
 
 Note = "\n\nNote: `{mention}`, `{group}`, `{count}`, `{name}`, `{fullname}`, `{username}`, `{userid}` can be used as formatting parameters.\n\n"
