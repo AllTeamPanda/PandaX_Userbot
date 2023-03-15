@@ -9,7 +9,7 @@ from telethon import functions, utils
 from pyrogram import idle
 from .._database._var import Var, Database
 from logging import getLogger
-
+from .._database import pdB
 from .client import *
 
 from .pyroclient import *
@@ -73,7 +73,7 @@ def Telethon():
             sys.exit()
             
 
-    if Var.STRING_SESSION2 and Database.BOT_TOKEN:
+    if pdB.get_key("SESSION2") or Var.STRING_SESSION2 and Database.BOT_TOKEN:
         try:
             PandaBot2.connect()
             config = PandaBot2(functions.help.GetConfigRequest())
@@ -96,7 +96,7 @@ def Telethon():
             LOGS.error(f"STRING_SESSION2 - {e}")
             sys.exit()
      
-    if Var.STRING_SESSION3 and Database.BOT_TOKEN:
+    if pdB.get_key("SESSION3") or Var.STRING_SESSION3 and Database.BOT_TOKEN:
         try:
             PandaBot3.connect()
             config = PandaBot3(functions.help.GetConfigRequest())
