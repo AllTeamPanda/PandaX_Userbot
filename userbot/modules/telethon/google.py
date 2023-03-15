@@ -60,10 +60,10 @@ async def scam(results, lim):
     return imglinks
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="gs ([\s\S]*)",
     command=("gs", plugin_category),
-    help={
+    info={
         "header": "Google search command.",
         "flags": {
             "-l": "for number of search results.",
@@ -143,10 +143,10 @@ async def gsearch(q_event):
         )
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="grs$",
     command=("grs", plugin_category),
-    help={
+    info={
         "header": "Google reverse search command.",
         "description": "reverse search replied image or sticker in google and shows results.",
         "usage": "{tr}grs",
@@ -213,14 +213,14 @@ async def _(event):
             **locals()
         )
     else:
-        catevent = event
+        pandaevent = event
     await edit_or_reply(pandaevent, OUTPUT_STR, parse_mode="HTML", link_preview=False)
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="reverse(?:\s|$)([\s\S]*)",
     command=("reverse", plugin_category),
-    help={
+    info={
         "header": "Google reverse search command.",
         "description": "reverse search replied image or sticker in google and shows results. if count is not used then it send 1 image by default.",
         "usage": "{tr}reverse <count>",
@@ -288,10 +288,10 @@ async def _(img):
         )
 
 
-@PandaBot.register(
+@PandaBot.ilhamansiz_cmd(
     pattern="google(?:\s|$)([\s\S]*)",
     command=("google", plugin_category),
-    help={
+    info={
         "header": "To get link for google search",
         "description": "Will show google search link as button instead of google search results try {tr}gs for google search results.",
         "usage": [
