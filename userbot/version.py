@@ -2,7 +2,7 @@ from subprocess import run
 
 
 
-__pversion__ = "`2023-Feb-25@mastergit`."
+__pversion__ = "`@main`."
 __version_code__ = (
     run(["git", "rev-list", "--count", "HEAD"], capture_output=True)
     .stdout.decode()
@@ -20,7 +20,7 @@ from sys import version_info
 
 
 
-branch = f"Python"
+branch = f"@main"
 
 
 __Tgl__ = "26"
