@@ -79,6 +79,7 @@ def idhash(ModeRuns=True):
         auto_reconnect=True
         connection_retries=None
         app_version=__version__
-
+        return api_id, api_hash, connection, auto_reconnect, connection_retries, app_version
+     
     return api_id, api_hash, connection, auto_reconnect, connection_retries, app_version
      
