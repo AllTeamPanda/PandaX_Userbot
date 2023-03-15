@@ -600,7 +600,7 @@ async def on_plugin_callback_query_handler(event):
             )
             print(chat_id, message_id)
         except Exception as e:
-            await LOGS.error(e)
+            LOGS.error(e)
         
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
 @check_owner
