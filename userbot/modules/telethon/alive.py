@@ -89,7 +89,7 @@ async def redis(alive):
         try:
             logo = LOGO 
             await alive.delete()
-            msg = await PandaBot.send_file(alive.chat_id, logo, caption=aliveess)
+            msg = await alive.client.send_file(alive.chat_id, logo, caption=aliveess)
             if tgbot:
                 await tgbot.send_file(alive.chat_id, logo, caption=aliveess, buttons=menu())
             await asyncio.sleep(500)
