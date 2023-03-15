@@ -1,29 +1,34 @@
 
-# Panda Userbot
+<p align="center"><a href="https://github.com/TeamXPanda/Panda"><img src="https://img.shields.io/badge/Panda Userbot-dark?style=for-the-badge&logo=github" width="1000"" /></a></p>
+<img src="https://media.giphy.com/media/sY6DRXWTn9a2k/giphy.gif">
+
 `Telethon and Pyrogram` Editor & create by [@pandac0de](https://t.me/pandauserbot)
 
 
 <p align="center">
-    <img alt="Panda Version" src="https://img.shields.io/badge/Panda%20Version-01.03.2023-brightgreen"/>
-               <a href="https://travis-ci.com/ilhammansiz/PandaX_Userbot.svg?branch=PandaUserbot" /></a>
-    <a href="https://github.com/ilhammansiz/PandaX_Userbot/network/members"> <img src="https://img.shields.io/github/forks/ilhammansiz/PandaX_Userbot?logo=github&style=for-the-badge" /></a>
-    <a href="https://github.com/ilhammansiz/PandaX_Userbot"> <img src="https://img.shields.io/github/repo-size/ilhammansiz/PandaX_Userbot?logo=github&style=for-the-badge" /></a>
+               <a href="https://travis-ci.com/TeamXPanda/Panda.svg?branch=main" /></a>
+    <a href="https://github.com/TeamXPanda/Panda/network/members"> <img src="https://img.shields.io/github/forks/TeamXPanda/Panda?logo=github&style=for-the-badge" /></a>
+    <a href="https://github.com/TeamXPanda/Panda"> <img src="https://img.shields.io/github/repo-size/TeamXPanda/Panda?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
-    <a href="https://pypi.org/project/pyrogram==1.4.16/"> <img src="https://img.shields.io/pypi/v/pyrogram?label=pyrogram==1.4.16&logo=pypi&logoColor=white&style=for-the-badge" /></a>
+    <a href="https://pypi.org/project/pyrogram/"> <img src="https://img.shields.io/pypi/v/pyrogram?label=pyrogram&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.10.4-blue?style=for-the-badge&logo=appveyor"/>
    </p>
 
-Panda_Userbot is a modular Telegram userbot running on Python3 with database  better to use MongoDb database or Redis:
--  `For SQLDB`
-     °DATABASE_URL - Get it from
-      [Elephantsql](https://elephantsql.com/)
-    
-   `For Redis`
-     °REDIS_URI - Redis endpoint URL, from [redislabs](http://redislabs.com/)
-      REDIS_PASSWORD - Redis endpoint Password, from [redislabs](http://redislabs.com/)
+Panda_Userbot is a modular Telegram userbot runs on Python3 with the following databases!, better use MongoDb or Redis databases:
+-  `For SQLDB` 
+Value °DATABASE_URL - Get it from
+ <p align="center"><a href="https://elephantsql.com/"><img src="https://img.shields.io/badge/🐘postgres%20elephantsql-yellow?style=for-the-badge&logo=ElephantSQL" width="200"" /></a></p> 
 
-     `For MONGODB`
-      MONGO_URI - Get it from [mongodb](https://mongodb.com/atlas)
+-  `For Redis` 
+Value °REDIS_URI - Redis endpoint URL, and Value °REDIS_PASSWORD - Redis endpoint Password from
+<p align="center"><a href="http://redislabs.com/"><img src="https://img.shields.io/badge/Redis-blue?style=for-the-badge&logo=redis" width="100"" /></a></p>
+ 
+
+
+-  `For MONGODB`
+ Value °MONGO_URI - Get it from
+<p align="center"><a href="https://mongodb.com/atlas"><img src="https://img.shields.io/badge/MongoDB-green?style=for-the-badge&logo=MongoDB" width="100"" /></a></p>
+
 
 ## Disclaimer
 
@@ -69,10 +74,10 @@ Use this bot at your own risk, and use it wisely.
 - `sudo apt install postgresql-client`
 - `curl -sL https://deb.nodesource.com/setup_16.x | bash - && apt-get install -y nodejs && npm i -g npm`
 - `wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`
-- `git clone https://github.com/ilhammansiz/PandaX_Userbot`
-- `cd PandaX_Userbot`
+- `git clone https://github.com/TeamXPanda/Panda`
+- `cd Panda`
 - `pip3 install --no-cache-dir -r requirements.txt`
-- `python3 pyPanda/start.py`
+- `python3 exportir/start.py`
 
 </details>
 
@@ -101,10 +106,10 @@ Use this bot at your own risk, and use it wisely.
 *   [CatUserbot](https://github.com/TgCatUB/catuserbot) : CatUserbot
 
 ## © Credits
-* [Laky-64](https://github.com/Laky-64) for [PyTgcalls](https://github.com/pytgcalls/pytgcalls)
+* [Laky-64](https://github.com/pytgcalls/) for [PyTgcalls](https://github.com/pytgcalls/pytgcalls)
 * [Lonamiwebs](https://github.com/LonamiWebs) for [Telethon](https://github.com/LonamiWebs/Telethon)
 * [Dan](https://github.com/pyrogram) for [Pyrogram](https://github.com/pyrogram/pyrogram)
-* [Ilham Mansiz](https://github.com/ilhammansiz) for [PandaX_Userbot](https://github.com/ilhammansiz/PandaX_Userbot)
+* [Ilham Mansiz](https://github.com/ilhammansiz) for [PandaX_Userbot](https://github.com/TeamXPanda/Panda)
 
 ## License
 [![License](https://www.gnu.org/graphics/gplv3-with-text-136x68.png)](LICENSE)   
