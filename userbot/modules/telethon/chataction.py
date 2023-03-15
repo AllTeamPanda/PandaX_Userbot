@@ -12,7 +12,7 @@ from ..._database.dB.echo_db import check_echo
 from ..._database.dB.forcesub_db import get_forcesetting
 from ..._database.dB.greetings_db import get_goodbye, get_welcome, must_thank
 from ..._database.dB.nsfw_db import is_profan
-from pyPanda.RawUtilities import get_chatbot_reply, inline_mention
+from exportir.RawUtilities import get_chatbot_reply, inline_mention
 from ..._misc.tools import create_tl_btn
 from telethon import types, events
 from ... import udB
@@ -21,7 +21,7 @@ try:
     from ProfanityDetector import detector
 except ImportError:
     detector = None
-from pyPanda import get_string
+from exportir import get_string
 from . import something, PandaBot, tgbot as asst, LOGS, BOTLOG_CHATID
 LOG_CHANNEL = BOTLOG_CHATID
 
