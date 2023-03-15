@@ -10,10 +10,10 @@ pandaub = PandaBot
 plugin_category = "modules"
 
 
-@PandaBot.register(
+@PandaBot.ilhamamnsiz_cmd(
     pattern="gifs(?:\s|$)([\s\S]*)",
     command=("gifs", plugin_category),
-    help={
+    info={
         "header": "Sends random gifs",
         "usage": "Search and send your desire gif randomly and in bulk",
         "examples": [
