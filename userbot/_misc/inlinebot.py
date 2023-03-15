@@ -80,7 +80,7 @@ def main_menu():
     buttons = [
         (
             Button.url(
-                "Support",
+                "⚙️ Settings",
                 f"https://t.me/{Config.BOT_USERNAME}?start=menuset",
             ),
             Button.inline(
@@ -118,8 +118,8 @@ def Helpeororr():
     buttons = [
         (
             Button.url(
-                "⚙️ Sessting",
-                "https://t.me/PandaUserbot",
+                "⚙️ Setting",
+                f"https://t.me/{Config.BOT_USERNAME}?start=menuset",
             ),
             Button.inline(
                 f"💎 𝙸𝚗𝚏𝚘",
