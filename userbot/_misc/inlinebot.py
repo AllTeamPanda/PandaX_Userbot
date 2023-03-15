@@ -1007,7 +1007,7 @@ async def on_plugin_callback_query_handler(event):
     var = "VC_SESSION"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "**Silahkan Kirimkan String Telethon atau pyrogran Untuk bot music\n\nGunakan /cancel untuk membatalkan."
+            "**Silahkan Kirimkan String Telethon atau pyrogram Untuk bot music\n\nGunakan /cancel untuk membatalkan."
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
