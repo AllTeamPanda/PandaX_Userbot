@@ -288,7 +288,7 @@ async def _(img):
         )
 
 
-@PandaBot.ilhamansiz_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern="google(?:\s|$)([\s\S]*)",
     command=("google", plugin_category),
     info={
