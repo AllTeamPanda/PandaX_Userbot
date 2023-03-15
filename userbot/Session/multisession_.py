@@ -38,7 +38,7 @@ THON_ON = """
 
 👿 Pengguna - @{}
 
-⚙️ Telethon Version - `{}'
+⚙️ Version - `{}'
 `[TELAH DIAKTIFKAN]`
 °Ketik `{}alive` untuk Mengecheck Bot
 """
