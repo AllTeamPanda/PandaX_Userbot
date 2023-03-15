@@ -20,7 +20,7 @@ from ..._misc.tools import format_btn, get_msg_button, mediainfo, create_tl_btn
 from . import something
 from ... import PandaBot, udB
 from telethon import events
-from pyPanda import get_string
+from exportir import get_string
 from . import edit_or_reply
 eor = edit_or_reply
 
