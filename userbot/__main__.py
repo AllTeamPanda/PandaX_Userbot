@@ -51,16 +51,28 @@ if PandaBot:
     try:
         if len(sys.argv) not in (1, 3, 4):
             PandaBot.disconnect()
-            if PandaBot2:
-                PandaBot2.disconnect()
-            if PandaBot3:
-                PandaBot3.disconnect()
         else:
             PandaBot.run_until_disconnected()
-            if PandaBot2:
-                PandaBot2.run_until_disconnected()
-            if PandaBot3:
-                PandaBot3.run_until_disconnected()
+    except Exception as e:
+        LOGS.info(str(e), exc_info=True)
+        sys.exit(1)
+
+if PandaBot2:
+    try:
+        if len(sys.argv) not in (1, 3, 4):
+            PandaBot2.disconnect()
+        else:
+            PandaBot2.run_until_disconnected()    
+    except Exception as e:
+        LOGS.info(str(e), exc_info=True)
+        sys.exit(1)
+
+if PandaBot3:
+    try:
+        if len(sys.argv) not in (1, 3, 4):
+            PandaBot3.disconnect()
+        else:
+            PandaBot3.run_until_disconnected()
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
