@@ -30,8 +30,10 @@ def start():
     if PandaBot:
         PandaBot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
     if PandaBot2:
+        PandaBot2.me = PandaBot2.get_me()
         PandaBot2.send_message(PRIVATE, THON_ON.format(PandaBot2.me.username, version.__version__, cmdhr))
     if PandaBot3:
+        PandaBot3.me = PandaBot3.get_me()
         PandaBot3.send_message(PRIVATE, THON_ON.format(PandaBot3.me.username, version.__version__, cmdhr))
              
 
