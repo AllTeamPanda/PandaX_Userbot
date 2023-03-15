@@ -8,7 +8,6 @@ import sys
 import userbot
 from userbot import LOGS
 
-from . import *
 from .Session.multisession_ import *
 from pytgcalls import idle as pytgcalls
 
@@ -30,9 +29,9 @@ def start():
     if PandaBot:
         PandaBot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, version.__version__, cmdhr))
     if PandaBot2:
-        PandaBot2.send_message(PRIVATE, THON_ON.format("2", version.__version__, cmdhr))
+        PandaBot2.send_message(PRIVATE, THON_ON.format(PandaBot2.me.username, version.__version__, cmdhr))
     if PandaBot3:
-        PandaBot3.send_message(PRIVATE, THON_ON.format("3", version.__version__, cmdhr))
+        PandaBot3.send_message(PRIVATE, THON_ON.format(PandaBot3.me.username, version.__version__, cmdhr))
              
 
 
