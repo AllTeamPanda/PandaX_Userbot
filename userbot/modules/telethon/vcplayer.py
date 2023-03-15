@@ -9,7 +9,7 @@ from ... import call_py, vcbot, PandaBot
 from ..._misc.managers import edit_delete, edit_or_reply
 from ..._misc.command import *
 
-from pyPanda.queues import *
+from exportir.queues import *
 
 bot = vcbot
 ## Ported by ilham mansiz for TeamUltroid
