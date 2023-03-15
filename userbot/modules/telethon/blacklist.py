@@ -17,7 +17,7 @@ from ..._database.dB.blacklist_db import (
     rem_blacklist,
 )
 from telethon import events
-from pyPanda import get_string
+from exportir import get_string
 from ... import udB
 from . import edit_or_reply, PandaBot
 
