@@ -7,11 +7,10 @@ from ... import PandaBot
 
 plugin_category = "modules"
 
-
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="sayang$",
     command=("sayang", plugin_category),
-    help={
+    info={
         "header": "Sayang aku sayang kamu",
         "usage": "{tr}sayang",
     },
@@ -44,10 +43,10 @@ async def koc(e):
         await e.edit("GA DITERIMA🥺🥺💞")
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="dino$",
     command=("dino", plugin_category),
-    help={
+    info={
         "header": "Dikejar dino",
         "usage": "{tr}dino",
     },
@@ -109,10 +108,10 @@ async def typewriter(typew):
     await typew.edit("`-NUNGGUIN YA DAH HABIS BATERAINYA☹️-`")
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="gabut$",
     command=("gabut", plugin_category),
-    help={
+    info={
         "header": "Gabut aku",
         "usage": "{tr}gabut",
     },
@@ -380,10 +379,10 @@ async def koc(e):
         await e.edit("`GABUT`")
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="terkadang$",
     command=("terkadang", plugin_category),
-    help={
+    info={
         "header": "Fun animation try yourself to know more",
         "usage": "{tr}terkadang",
     },
@@ -406,10 +405,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="mf$",
     command=("mf", plugin_category),
-    help={
+    info={
         "header": "Fun animation try yourself to know more",
         "usage": "{tr}mf",
     },
@@ -457,10 +456,10 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="gombal$",
     command=("gombal", plugin_category),
-    help={
+    info={
         "header": "Gombalin",
         "usage": "{tr}gombal",
     },
@@ -492,10 +491,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="mantan$",
     command=("mantan", plugin_category),
-    help={
+    info={
         "header": "teringat mantan",
         "usage": "{tr}mantan",
     },
@@ -533,10 +532,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="sedih$",
     command=("sedih", plugin_category),
-    help={
+    info={
         "header": "sedih kaki kali",
         "usage": "{tr}sedih",
     },
@@ -568,10 +567,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="salam$",
     command=("salam", plugin_category),
-    help={
+    info={
         "header": "salam",
         "usage": "{tr}salam",
     },
@@ -587,10 +586,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="jawab$",
     command=("jawab", plugin_category),
-    help={
+    info={
         "header": "jawab salam",
         "usage": "{tr}jawab",
     },
@@ -606,10 +605,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="pantun$",
     command=("pantun", plugin_category),
-    help={
+    info={
         "header": "Fun animation try yourself to know more",
         "usage": "{tr}pantun",
     },
@@ -669,10 +668,10 @@ async def koc(e):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="galau$",
     command=("galau", plugin_category),
-    help={
+    info={
         "header": "Fun animation try yourself to know more",
         "usage": "{tr}galau",
     },
@@ -700,10 +699,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="sad$",
     command=("sad", plugin_category),
-    help={
+    info={
         "header": "Fun animation try yourself to know more",
         "usage": "{tr}sad",
     },
@@ -731,10 +730,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="razia$",
     command=("razia", plugin_category),
-    help={
+    info={
         "header": "Fun animation try yourself to know more",
         "usage": "{tr}razia",
     },
@@ -762,10 +761,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="wkwk$",
     command=("wkwk", plugin_category),
-    help={
+    info={
         "header": "Fun animation try yourself to know more",
         "usage": "{tr}wkwk",
     },
@@ -793,10 +792,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="melamar$",
     command=("melamar", plugin_category),
-    help={
+    info={
         "header": "Fun animation try yourself to know more",
         "usage": "{tr}melamar",
     },
@@ -824,10 +823,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="buaya$",
     command=("buaya", plugin_category),
-    help={
+    info={
         "header": "Fun animation try yourself to know more",
         "usage": "{tr}buaya",
     },
@@ -855,10 +854,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="yang$",
     command=("yang", plugin_category),
-    help={
+    info={
         "header": "Fun animation try yourself to know more",
         "usage": "{tr}yang",
     },
@@ -886,10 +885,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="raziamasker$",
     command=("eaziamasker", plugin_category),
-    help={
+    info={
         "header": "Fun animation try yourself to know more",
         "usage": "{tr}raziamasker",
     },
@@ -954,10 +953,10 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="jalan$",
     command=("jalan", plugin_category),
-    help={
+    info={
         "header": "Fun animation try yourself to know more",
         "usage": "{tr}jalan",
     },
@@ -1115,10 +1114,10 @@ async def koc(e):
 # Create by myself @localheart
 
 
-@PandaBot.register(
+@PandaBot.ilhammansiz_cmd(
     pattern="fuck$",
     command=("fuck", plugin_category),
-    help={
+    info={
         "header": "Fun animation try yourself to know more",
         "usage": "{tr}fuck",
     },
