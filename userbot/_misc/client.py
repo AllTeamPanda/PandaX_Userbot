@@ -28,7 +28,6 @@ from telethon.errors import (
 )
 from ..config import Config
 from ..helpers.utils.events import checking
-from ..helpers.utils.format import paste_text
 from ..helpers.utils.utils import runcmd
 from . import BOT_INFO, CMD_INFO, GRP_INFO, LOADED_CMDS, PLG_INFO
 from .cmdinfo import _format_about
