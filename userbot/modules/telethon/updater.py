@@ -168,7 +168,7 @@ async def upstream(event):
         repo.create_head("update", origin.refs.update)
         repo.heads.update.set_tracking_branch(origin.refs.update)
         repo.heads.update.checkout(True)
-    ac_br = "update"
+    ac_br = "main"
     try:
         repo.create_remote("upstream", off_repo)
     except BaseException:
