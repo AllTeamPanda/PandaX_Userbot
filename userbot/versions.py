@@ -5,7 +5,7 @@ from sys import version_info
 
 
 
-branch = f"`@main`"
+branch = f"@main"
 
 
 __Tgl__ = "0"
