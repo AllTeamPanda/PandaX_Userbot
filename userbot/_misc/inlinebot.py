@@ -278,6 +278,7 @@ def paginate_help(
 
 
 @tgbot.on(InlineQuery)
+@tgbot.inline_query()
 async def inline_handler(event):  # sourcery no-metrics
     builder = event.builder
     result = None
@@ -562,36 +563,45 @@ async def on_plugin_callback_query_handler(event):
 
 _delete_FORM = {"ngewe", "crot"}
 
+import struct
+import base64
 
-@tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"closes")))
+@tgbot.on(callbackquery.CallbackQuery)
 @check_owner
 async def on_plugin_callback_query_handler(event):
-    ilhammansiz = {"ngewe", "crot"}
-    try:
-        if len(ilhammansiz):
-            dc_id, message_id, chat_id, query_id = len(ilhammansiz)
-    
-            return await event.client.delete_messages(
-                chat_id=event.chat_id,
+    if event.data == b'close':
+        try:
+            if event.msg_id:
+                dc_id, message_id, chat_id, query_id = struct.unpack(
+                    "<iiiq",
+                    base64.urlsafe_b64decode(
+                        event.msg_id + '=' * (
+                            len(event.msg_id) % 4
+                        )
+                    )
+                )
+
+                return await event.client.delete_messages(
+                    chat_id=int(str(-100) + str(chat_id)[1:]),
+                    message_ids=message_id
+                )
+            else:
+                if Button:
+                    return Button.clear()
+
+            await event.answer(
+                "Message Expired !",
+                alert=True
+            )
+
+        except (KeyError, ValueError):
+            await event.client.delete_messages(
+                chat_id=chat_id,
                 message_ids=message_id
             )
-        else:
-            if event:
-                return await event.delete()
-
-        await event.answer(
-            "Message Expired !",
-            alert=True
-        )
-
-    except (KeyError, ValueError):
-        await event.client.delete_messages(
-            chat_id=event.chat_id,
-            message_ids=message_id
-        )
-        print(chat_id, message_id)
-    except Exception as e:
-        LOGS.error(e)
+            print(chat_id, message_id)
+        except Exception as e:
+            await LOGS.error(e)
         
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
 @check_owner
