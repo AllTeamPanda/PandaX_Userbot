@@ -167,7 +167,12 @@ try:
     if Var.STRING_SESSION:
         PandaBot = PandaUserbotSession(
             PandaSession(Var.STRING_SESSION, LOGS),
-            idhash(),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+            app_version=__version__,
         )
     else:
         PandaBot = None
@@ -179,7 +184,12 @@ try:
     if DB.get_key("SESSION2") or Var.STRING_SESSION2:
         PandaBot2 = PandaUserbotSession(
             PandaSession(DB.get_key("SESSION2") or Var.STRING_SESSION2, LOGS),
-            idhash(),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+            app_version=__version__,
         )
     else:
         PandaBot2 = None
@@ -191,7 +201,12 @@ try:
     if DB.get_key("SESSION3") or Var.STRING_SESSION3:
         PandaBot3 = PandaUserbotSession(
             PandaSession(DB.get_key("SESSION3") or Var.STRING_SESSION3, LOGS),
-            idhash(),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+            app_version=__version__,
         )
     else:
         PandaBot3 = None
@@ -204,7 +219,12 @@ try:
     if Var.STRING_SESSION and DB.get_key("BOT_TOKEN") or Database.BOT_TOKEN:
         tgbot = PandaUserbotToken(
             "BOT_TOKEN",
-            idhash(),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+            app_version=__version__,
         )
 
     else:
@@ -229,7 +249,12 @@ try:
     if Var.VC_SESSION:
         vcbot = TelegramClient(
             PandaSession(Var.VC_SESSION, LOGS),
-            idhash(),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+            app_version=__version__,
         )
     else:
         vcbot = None
