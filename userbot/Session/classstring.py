@@ -73,12 +73,12 @@ def PandaSession(session, logger=LOGS, _exit=True):
 
 def idhash(ModeRuns=True):
     if ModeRuns:
-        cat = api_id or Var.APP_ID
-        panda = api_hash or Var.API_HASH
-        conect = connection or ConnectionTcpAbridged
-        autoconect = auto_reconnect or True
-        hmm = connection_retries or None
-        versi = app_version or __version__
+        api_id=Var.APP_ID
+        api_hash=Var.API_HASH
+        connection=ConnectionTcpAbridged
+        auto_reconnect=True
+        connection_retries=None
+        app_version=__version__
 
-    return cat, panda, conect, autoconect, hmm, versi
+    return api_id, api_hash, connection, auto_reconnect, connection_retries, app_version
      
