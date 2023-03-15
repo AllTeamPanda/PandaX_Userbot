@@ -113,9 +113,9 @@ else:
 
 
 try:
-    if Var.VC_SESSION:
+    if DB.get_key("VC_SESSION") or Var.VC_SESSION:
         vcbot = TelegramClient(
-            PandaSession(Var.VC_SESSION, LOGS),
+            PandaSession(DB.get_key("VC_SESSION") or Var.VC_SESSION, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
