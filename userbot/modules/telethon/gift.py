@@ -10,7 +10,7 @@ pandaub = PandaBot
 plugin_category = "modules"
 
 
-@PandaBot.ilhamamnsiz_cmd(
+@PandaBot.ilhammansiz_cmd(
     pattern="gifs(?:\s|$)([\s\S]*)",
     command=("gifs", plugin_category),
     info={
