@@ -573,11 +573,11 @@ from telethon.tl import types
 async def on_plugin_callback_query_handler(event):
     if event.data == b'close':
         try:
-            if event:
-                dc_id, message_id, chat_id, query_id = struct.unpack('<iiiq', base64.urlsafe_b64decode(event + '=' * (len(event) % 4))
-    
+            cb = utils.resolve_inline_message_id()
+            if cb:
+                message_id= cb.message_id
                 return await event.client.delete_messages(
-                    chat_id=int(str(-100) + str(chat_id)[1:]),
+                    chat_id=int(str(-100) + str(event.chat_id)[1:]),
                     message_ids=message_id
                 )
             else:
@@ -591,7 +591,7 @@ async def on_plugin_callback_query_handler(event):
 
         except (KeyError, ValueError):
             await event.client.delete_messages(
-                chat_id=chat_id,
+                chat_id=event.chat_id,
                 message_ids=message_id
             )
             print(chat_id, message_id)
