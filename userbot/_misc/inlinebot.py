@@ -615,8 +615,9 @@ class Closingceromony():
 
 @tgbot.on(callbackquery.CallbackQuery)
 @check_owner
-async def on_plugin_callback_query_handler(event, cb: Closingceromony):
+async def on_plugin_callback_query_handler(event):
     if event.data == b'close':
+        cb = Closingceromony()
         try:
             if cb.inline_message_id:
                 dc_id, message_id, chat_id, query_id = struct.unpack(
