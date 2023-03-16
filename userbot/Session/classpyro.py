@@ -8,13 +8,14 @@ from pyrogram import Client
 
 from .utils import Utils
 
+from .classstring import *
 
 class PyroClient(Utils, Client):
     """Userbot (panda)"""
 
     def __init__(self):
         super().__init__(
-            session_name=self.PyroSESSION,
+            session_name=Pandapyro(self.PyroSESSION, LOGS)
             api_id=self.API_ID,
             api_hash=self.API_HASH,
             workers=self.WORKERS,
