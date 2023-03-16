@@ -70,7 +70,7 @@ def Pandapyro(session_name, logger=LOGS, _exit=True):
                 user_id,
                 is_bot
             )
-            base64.urlsafe_b64encode(packed).decode().rstrip("=")
+            return base64.urlsafe_b64encode(packed).decode().rstrip("=")
 
 
 
