@@ -567,7 +567,7 @@ import base64
 from telethon import TelegramClient
 from telethon.tl import types
 
-def pack_inline_message_id(msg_id=types.InputBotInlineMessageID):
+def pack_inline_message_id(msg_id: types.InputBotInlineMessageID):
     if isinstance(msg_id, types.InputBotInlineMessageID):
         inline_message_id_packed = struct.pack(
             "<iqq",
@@ -579,14 +579,13 @@ def pack_inline_message_id(msg_id=types.InputBotInlineMessageID):
         inline_message_id_packed = struct.pack(
             "<iqiq",
             msg_id.dc_id,
-            msg_id.owner_id,
             msg_id.id,
             msg_id.access_hash
         )
 
     return base64.urlsafe_b64encode(inline_message_id_packed).decode().rstrip("=")
 
-class Closingceromony(InlineQuery):
+class Closingceromony():
     def __init__(
         self,
         inline_message_id: str = None,
