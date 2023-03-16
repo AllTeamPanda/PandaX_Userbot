@@ -587,17 +587,14 @@ def pack_inline_message_id(msg_id: "types.InputBotInlineMessageID"):
     return base64.urlsafe_b64encode(inline_message_id_packed).decode().rstrip("=")
 
 class Closingceromony():
-    def __init__(
+    def wokey(
         self,
-        *,
-        client: "TelegramClient" = None,
         inline_message_id: str = None,
     ):
-        super().__init__(client)
         self.inline_message_id = inline_message_id
 
     @staticmethod
-    async def _parse(client: "TelegramClient", callback_query, users) -> "Closingceromony":
+    async def _parse(callback_query, users) -> "Closingceromony":
         inline_message_id = None
 
         if isinstance(callback_query, types.UpdateBotCallbackQuery):
@@ -610,7 +607,6 @@ class Closingceromony():
 
         return Closingceromony(
             inline_message_id=inline_message_id,
-            client=client
         )
 
 @tgbot.on(callbackquery.CallbackQuery)
