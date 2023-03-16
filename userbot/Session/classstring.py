@@ -36,26 +36,6 @@ DEFAULT_IPV4_IP = '149.154.167.51'
 DEFAULT_IPV6_IP = '2001:67c:4e8:f002::a'
 DEFAULT_PORT = 443
 
-def Pandapyro(session_name, logger=LOGS, _exit=True):
-    if session_name:
-        if session_name:
-            return session_name
-
-        elif len(session_name) in _TELEHON_FORM:
-            string = session_name[1:]
-            dc_id, auth_key, test_mode, user_id, is_bot = struct.unpack(
-                _STRUCT_PREFORMAT.format(2), base64.urlsafe_b64decode(string))
-            packed = struct.pack(
-                SESSION_STRING_FORMAT,
-                dc_id,
-                api_id,
-                test_mode,
-                auth_key,
-                user_id,
-                is_bot
-            )
-            return base64.urlsafe_b64encode(packed).decode().rstrip("=")
-
 
 
 def PandaSession(session, logger=LOGS, _exit=True):
