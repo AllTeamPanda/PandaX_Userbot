@@ -567,7 +567,7 @@ import base64
 from telethon import TelegramClient
 from telethon.tl import types
 
-def pack_inline_message_id(msg_id: "types.InputBotInlineMessageID"):
+def pack_inline_message_id(msg_id=types.InputBotInlineMessageID):
     if isinstance(msg_id, types.InputBotInlineMessageID):
         inline_message_id_packed = struct.pack(
             "<iqq",
