@@ -79,9 +79,9 @@ def main_menu():
     text = f"**{CUSTOM_HELP_TEXT}**\n\n  **Pengguna :** {mention}\n  Plugins:** {len(GRP_INFO['plugins'])}\n**  Modules: **{len(GRP_INFO['modules'])}**\n  Commands:** {len(CMD_INFO)}\n**"
     buttons = [
         (
-            Button.inline(
+            Button.url(
                 "⚙️ Settings",
-                data="settingbot",
+                f"t.me/{Config.BOT_USERNAME}?start=",
             ),
             Button.inline(
                 f"⚙️ Info",
@@ -117,9 +117,9 @@ def main_menu():
 def Helpeororr():
     buttons = [
         (
-            Button.inline(
+            Button.url(
                 "⚙️ Settings",
-                data="settingbot",
+                f"t.me/{Config.BOT_USERNAME}?start=",
             ),
             Button.inline(
                 f"💎 𝙸𝚗𝚏𝚘",
