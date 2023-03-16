@@ -569,7 +569,7 @@ import base64
 @check_owner
 async def on_plugin_callback_query_handler(event):
     if event.data == b'close':
-        ngeweah = utils.resolve_inline_message_id(inline_msg_id)
+        ngeweah = utils.resolve_inline_message_id(event.message_id)
         try:
             if ngeweah:
                 dc_id, message_id, chat_id, query_id = struct.unpack(
