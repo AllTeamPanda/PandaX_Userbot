@@ -573,7 +573,7 @@ from telethon.tl import types
 async def on_plugin_callback_query_handler(event):
     if event.data == b'close':
         try:
-            cb = utils.resolve_inline_message_id()
+            cb = utils.resolve_inline_message_id(event.message_id)
             if cb:
                 message_id= cb.message_id
                 return await event.client.delete_messages(
