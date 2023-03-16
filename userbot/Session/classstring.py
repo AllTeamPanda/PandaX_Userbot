@@ -12,7 +12,6 @@ import struct
 import sys
 import logging
 LOGS = logging.getLogger("PandaUserbot")
-from pyrogram.storage.storage import SESSION_STRING_FORMAT
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions.string import _STRUCT_PREFORMAT, CURRENT_VERSION, StringSession
 from ..versions import __version__
@@ -28,7 +27,7 @@ DC_IPV4 = {
     5: "91.108.56.130",
 }
 
-
+SESSION_STRING_FORMAT = ">BI?256sQ?"
 _TELEHON_FORM = {355: '>B{}sH256s'}
 
 
