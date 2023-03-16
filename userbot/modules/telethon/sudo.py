@@ -427,7 +427,7 @@ async def _(event):  # sourcery no-metrics
             error += "__You have enabled every cmd as sudo for sudo users.__"
         count = len(cmdlist)
     if error != "":
-        return await edit_or_reply(event, error, 10)
+        return await edit_delete(event, error, 10)
     pkeys = clist.keys()
     n_pkeys = [i for i in pkeys if i is not None]
     pkeys = sorted(n_pkeys)
