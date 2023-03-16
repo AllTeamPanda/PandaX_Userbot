@@ -39,7 +39,7 @@ DEFAULT_PORT = 443
 def Pandapyro(session_name, logger=LOGS, _exit=True):
     if session_name:
         if session_name:
-        return session_name
+            return session_name
 
         elif len(session_name) in _TELEHON_FORM.keys():
             string = session_name[1:]
@@ -54,7 +54,7 @@ def Pandapyro(session_name, logger=LOGS, _exit=True):
                 user_id,
                 is_bot
             )
-        return base64.urlsafe_b64encode(packed).decode().rstrip("=")
+            return base64.urlsafe_b64encode(packed).decode().rstrip("=")
 
 
 
