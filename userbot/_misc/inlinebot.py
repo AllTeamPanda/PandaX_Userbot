@@ -597,7 +597,7 @@ class Closingceromony():
         inline_message_id = None
 
         if isinstance(callback_query, types.UpdateBotCallbackQuery):
-            chat_id = utils.get_peer_id(callback_query.query.user_id)
+            chat_id = utils.get_peer_id(callback_query.msg_id)
             message_id = callback_query.msg_id
             
         elif isinstance(callback_query, types.UpdateInlineBotCallbackQuery):
