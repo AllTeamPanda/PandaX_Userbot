@@ -44,7 +44,7 @@ def Pandapyro(session_name, logger=LOGS, _exit=True):
         elif len(session_name) in _TELEHON_FORM.keys():
             string = session_name[1:]
             dc_id, auth_key, test_mode, user_id, is_bot = struct.unpack(
-                _STRUCT_PREFORMAT.format(2), base64.urlsafe_b64decode(string)
+                _STRUCT_PREFORMAT.format(2), base64.urlsafe_b64decode(string))
             packed = struct.pack(
                 SESSION_STRING_FORMAT,
                 dc_id,
