@@ -12,6 +12,7 @@ import struct
 import sys
 import logging
 LOGS = logging.getLogger("PandaUserbot")
+from pyrogram.storage.storage import SESSION_STRING_FORMAT
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions.string import _STRUCT_PREFORMAT, CURRENT_VERSION, StringSession
 from ..versions import __version__
@@ -26,6 +27,50 @@ DC_IPV4 = {
     4: "149.154.167.91",
     5: "91.108.56.130",
 }
+
+
+_TELEHON_FORM = {355: '>B{}sH256s'}
+
+
+DEFAULT_DC_ID = 2
+DEFAULT_IPV4_IP = '149.154.167.51'
+DEFAULT_IPV6_IP = '2001:67c:4e8:f002::a'
+DEFAULT_PORT = 443
+
+def Pandapyro(session_name, logger=LOGS, _exit=True):
+    if session_name:
+        # pyrogram Session
+        if session_name.startswith():
+            if len(session_name.strip()) != 351:
+                logger.exception("Wrong string session. Copy paste correctly!")
+                sys.exit()
+            return session_name
+
+        elif len(session_name) in _TELEHON_FORM.keys():
+            data_ = struct.unpack(CURRENT_VERSION
+                + _TELEHON_FORM[len(session_name)],
+                base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4)),
+            )
+            if len(session_name) in [355]:
+                auth_id = 2
+            else:
+                auth_id = 3
+
+            dc_id, auth_key = data_[0], data_[auth_id]
+            api_id = Var.APP_ID
+            test_mode = Var.APP_ID
+            user_id = Var.APP_ID
+            is_bot = Var.APP_ID
+            packed = struct.pack(
+                SESSION_STRING_FORMAT,
+                dc_id,
+                api_id,
+                test_mode,
+                auth_key,
+                user_id,
+                is_bot
+            )
+            base64.urlsafe_b64encode(packed).decode().rstrip("=")
 
 
 
