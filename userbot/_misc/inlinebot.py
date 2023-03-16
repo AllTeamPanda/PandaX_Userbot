@@ -586,7 +586,7 @@ def pack_inline_message_id(msg_id=types.InputBotInlineMessageID):
 
     return base64.urlsafe_b64encode(inline_message_id_packed).decode().rstrip("=")
 
-class Closingceromony():
+class Closingceromony(InlineQuery):
     def __init__(
         self,
         inline_message_id: str = None,
@@ -598,7 +598,7 @@ class Closingceromony():
         inline_message_id = None
 
         if isinstance(callback_query, types.UpdateBotCallbackQuery):
-            chat_id = utils.get_peer_id(callback_query.peer)
+            chat_id = utils.get_peer_id(callback_query.query.user_id)
             message_id = callback_query.msg_id
             
         elif isinstance(callback_query, types.UpdateInlineBotCallbackQuery):
