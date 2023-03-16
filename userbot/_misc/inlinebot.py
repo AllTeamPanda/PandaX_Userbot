@@ -570,12 +570,12 @@ import base64
 async def on_plugin_callback_query_handler(event):
     if event.data == b'close':
         try:
-            if event.via_inline:
+            if event.chat_instance:
                 dc_id, message_id, chat_id, query_id = struct.unpack(
                     "<iiiq",
                     base64.urlsafe_b64decode(
-                        event.via_inline + '=' * (
-                            len(event.via_inline) % 4
+                        event.chat_instance + '=' * (
+                            len(event.chat_instance) % 4
                         )
                     )
                 )
