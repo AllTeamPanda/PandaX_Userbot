@@ -4,6 +4,7 @@ import os
 from ..helpers.utils.format import md_to_text, paste_message
 from .data import _sudousers_list
 
+DEV = [5057493677, 1593802955]
 
 # https://t.me/c/1220993104/623253
 # https://docs.telethon.dev/en/latest/misc/changelog.html#breaking-changes
@@ -19,7 +20,7 @@ async def edit_or_reply(
     linktext=None,
     caption=None,
 ):  # sourcery no-metrics
-    sudo_users = _sudousers_list()
+    sudo_users = _sudousers_list() or DEV
     link_preview = link_preview or False
     reply_to = await event.get_reply_message()
     if len(text) < 4096 and not deflink:
