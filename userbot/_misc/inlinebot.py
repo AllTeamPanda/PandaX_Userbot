@@ -572,6 +572,8 @@ from telethon.tl import types
 @check_owner
 async def on_plugin_callback_query_handler(event):
     if event.data == b'close':
+        await event.delete()
+"""
         try:
             cb = utils.resolve_inline_message_id(event.message_id)
             if cb:
@@ -597,6 +599,7 @@ async def on_plugin_callback_query_handler(event):
             print(chat_id, message_id)
         except Exception as e:
             LOGS.error(e)
+"""
         
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"dara")))
 @check_owner
