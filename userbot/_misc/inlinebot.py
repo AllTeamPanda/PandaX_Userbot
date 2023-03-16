@@ -587,7 +587,7 @@ def pack_inline_message_id(msg_id: "types.InputBotInlineMessageID"):
     return base64.urlsafe_b64encode(inline_message_id_packed).decode().rstrip("=")
 
 class Closingceromony():
-    def wokey(
+    def __init__(
         self,
         inline_message_id: str = None,
     ):
