@@ -14,7 +14,7 @@ import re
 import time
 from uuid import uuid4
 import heroku3
-from telethon import Button, types, events
+from telethon import Button, types, events, utils
 
 from youtubesearchpython import VideosSearch
 from telethon.events import InlineQuery, callbackquery, CallbackQuery
@@ -79,9 +79,9 @@ def main_menu():
     text = f"**{CUSTOM_HELP_TEXT}**\n\n  **Pengguna :** {mention}\n  Plugins:** {len(GRP_INFO['plugins'])}\n**  Modules: **{len(GRP_INFO['modules'])}**\n  Commands:** {len(CMD_INFO)}\n**"
     buttons = [
         (
-            Button.url(
+            Button.inline(
                 "⚙️ Settings",
-                f"https://t.me/{tgbot.me.username}",
+                data="settingbot",
             ),
             Button.inline(
                 f"⚙️ Info",
@@ -569,13 +569,14 @@ import base64
 @check_owner
 async def on_plugin_callback_query_handler(event):
     if event.data == b'close':
+        ngeweah = utils.resolve_inline_message_id(inline_msg_id)
         try:
-            if event.chat_instance:
+            if ngeweah:
                 dc_id, message_id, chat_id, query_id = struct.unpack(
                     "<iiiq",
                     base64.urlsafe_b64decode(
-                        event.chat_instance + '=' * (
-                            len(event.chat_instance) % 4
+                        ngeweah + '=' * (
+                            len(ngeweah) % 4
                         )
                     )
                 )
@@ -617,9 +618,9 @@ async def on_plugin_callback_query_handler(event):
     ilhamyt = await event.edit("__Terhapus__")
     await ilhamyt.delete()
 
-@settingvar("vinnna")
+@settingvar("settingbot")
 async def closet(lol):
-    await lol.delete()
+    await lol.edit(f"{Config.BOT_USERNAME}")
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"check")))
 async def on_plugin_callback_query_handler(event):
