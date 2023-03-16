@@ -9,13 +9,14 @@ from pyrogram import Client
 from .utils import Utils
 
 from .classstring import *
+from .._database._var import Var, Database
 
 class PyroClient(Utils, Client):
     """Userbot (panda)"""
 
     def __init__(self):
         super().__init__(
-            Pandapyro(self.PyroSESSION, LOGS)
+            Pandapyro(Database.PyroSESSION, LOGS)
             api_id=self.API_ID,
             api_hash=self.API_HASH,
             workers=self.WORKERS,
