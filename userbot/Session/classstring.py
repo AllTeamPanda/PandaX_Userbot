@@ -38,28 +38,15 @@ DEFAULT_PORT = 443
 
 def Pandapyro(session_name, logger=LOGS, _exit=True):
     if session_name:
-        # pyrogram Session
-        if session_name.startswith():
-            if len(session_name.strip()) != 351:
-                logger.exception("Wrong string session. Copy paste correctly!")
-                sys.exit()
-            return session_name
+
+        return session_name
 
         elif len(session_name) in _TELEHON_FORM.keys():
-            data_ = struct.unpack(CURRENT_VERSION
-                + _TELEHON_FORM[len(session_name)],
-                base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4)),
-            )
-            if len(session_name) in [355]:
-                auth_id = 2
-            else:
-                auth_id = 3
-
-            dc_id, auth_key = data_[0], data_[auth_id]
-            api_id = Var.APP_ID
-            test_mode = Var.APP_ID
-            user_id = Var.APP_ID
-            is_bot = Var.APP_ID
+            string = session_name[1:]
+            dc_id, auth_key, test_mode, user_id, is_bot = struct.unpack(
+                _STRUCT_PREFORMAT.format(2), base64.urlsafe_b64decode(string)
+                
+            
             packed = struct.pack(
                 SESSION_STRING_FORMAT,
                 dc_id,
