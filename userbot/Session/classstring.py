@@ -45,8 +45,6 @@ def Pandapyro(session_name, logger=LOGS, _exit=True):
             string = session_name[1:]
             dc_id, auth_key, test_mode, user_id, is_bot = struct.unpack(
                 _STRUCT_PREFORMAT.format(2), base64.urlsafe_b64decode(string)
-                
-            
             packed = struct.pack(
                 SESSION_STRING_FORMAT,
                 dc_id,
@@ -56,7 +54,7 @@ def Pandapyro(session_name, logger=LOGS, _exit=True):
                 user_id,
                 is_bot
             )
-        return base64.urlsafe_b64encode(packed).decode().rstrip("=")
+            return base64.urlsafe_b64encode(packed).decode().rstrip("=")
 
 
 
