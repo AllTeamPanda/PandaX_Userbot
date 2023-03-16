@@ -567,63 +567,15 @@ import base64
 from telethon import TelegramClient
 from telethon.tl import types
 
-def pack_inline_message_id(msg_id: types.InputBotInlineMessageID):
-    if isinstance(msg_id, types.InputBotInlineMessageID):
-        inline_message_id_packed = struct.pack(
-            "<iqq",
-            msg_id.dc_id,
-            msg_id.id,
-            msg_id.access_hash
-        )
-    else:
-        inline_message_id_packed = struct.pack(
-            "<iqiq",
-            msg_id.dc_id,
-            msg_id.id,
-            msg_id.access_hash
-        )
-
-    return base64.urlsafe_b64encode(inline_message_id_packed).decode().rstrip("=")
-
-class Closingceromony():
-    def __init__(
-        self,
-        inline_message_id: str = None,
-    ):
-        self.inline_message_id = inline_message_id
-
-    @staticmethod
-    async def _parse(callback_query, users) -> "Closingceromony":
-        inline_message_id = None
-
-        if isinstance(callback_query, types.UpdateBotCallbackQuery):
-            chat_id = utils.get_peer_id(callback_query.msg_id)
-            message_id = callback_query.msg_id
-            
-        elif isinstance(callback_query, types.UpdateInlineBotCallbackQuery):
-            inline_message_id = pack_inline_message_id(callback_query.msg_id)
-
-
-        return Closingceromony(
-            inline_message_id=inline_message_id,
-        )
 
 @tgbot.on(callbackquery.CallbackQuery)
 @check_owner
 async def on_plugin_callback_query_handler(event):
     if event.data == b'close':
-        cb = Closingceromony()
         try:
-            if cb.inline_message_id:
-                dc_id, message_id, chat_id, query_id = struct.unpack(
-                    "<iiiq",
-                    base64.urlsafe_b64decode(
-                        cb.inline_message_id + '=' * (
-                            len(cb.inline_message_id) % 4
-                        )
-                    )
-                )
-
+            if event:
+                dc_id, message_id, chat_id, query_id = struct.unpack('<iiiq', base64.urlsafe_b64decode(event + '=' * (len(event) % 4))
+    
                 return await event.client.delete_messages(
                     chat_id=int(str(-100) + str(chat_id)[1:]),
                     message_ids=message_id
