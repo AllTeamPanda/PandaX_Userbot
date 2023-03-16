@@ -16,7 +16,7 @@ class PyroClient(Utils, Client):
 
     def __init__(self):
         super().__init__(
-            Pandapyro(Database.PyroSESSION, LOGS)
+            session_name=self.PyroSESSION
             api_id=self.API_ID,
             api_hash=self.API_HASH,
             workers=self.WORKERS,
