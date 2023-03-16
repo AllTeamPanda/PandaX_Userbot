@@ -20,7 +20,7 @@ async def edit_or_reply(
     linktext=None,
     caption=None,
 ):  # sourcery no-metrics
-    sudo_users = _sudousers_list() = _dev_list
+    sudo_users = _sudousers_list() = _dev_list()
     link_preview = link_preview or False
     reply_to = await event.get_reply_message()
     if len(text) < 4096 and not deflink:
