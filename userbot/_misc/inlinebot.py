@@ -117,9 +117,9 @@ def main_menu():
 def Helpeororr():
     buttons = [
         (
-            Button.url(
-                "⚙️ Setting",
-                f"https://t.me/{tgbot.me.username}",
+            Button.inline(
+                "⚙️ Settings",
+                data="settingbot",
             ),
             Button.inline(
                 f"💎 𝙸𝚗𝚏𝚘",
