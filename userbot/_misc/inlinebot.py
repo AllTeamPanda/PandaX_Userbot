@@ -564,19 +564,66 @@ _delete_FORM = {"ngewe", "crot"}
 
 import struct
 import base64
+from telethon import TelegramClient
+from telethon.tl import types
+
+def pack_inline_message_id(msg_id: "types.InputBotInlineMessageID"):
+    if isinstance(msg_id, types.InputBotInlineMessageID):
+        inline_message_id_packed = struct.pack(
+            "<iqq",
+            msg_id.dc_id,
+            msg_id.id,
+            msg_id.access_hash
+        )
+    else:
+        inline_message_id_packed = struct.pack(
+            "<iqiq",
+            msg_id.dc_id,
+            msg_id.owner_id,
+            msg_id.id,
+            msg_id.access_hash
+        )
+
+    return base64.urlsafe_b64encode(inline_message_id_packed).decode().rstrip("=")
+
+class Closingceromony():
+    def __init__(
+        self,
+        *,
+        client: "TelegramClient" = None,
+        inline_message_id: str = None,
+    ):
+        super().__init__(client)
+        self.inline_message_id = inline_message_id
+
+    @staticmethod
+    async def _parse(client: "TelegramClient", callback_query, users) -> "Closingceromony":
+        inline_message_id = None
+
+        if isinstance(callback_query, types.UpdateBotCallbackQuery):
+            chat_id = utils.get_peer_id(callback_query.peer)
+            message_id = callback_query.msg_id
+            
+        elif isinstance(callback_query, types.UpdateInlineBotCallbackQuery):
+            inline_message_id = pack_inline_message_id(callback_query.msg_id)
+
+
+        return Closingceromony(
+            inline_message_id=inline_message_id,
+            client=client
+        )
 
 @tgbot.on(callbackquery.CallbackQuery)
 @check_owner
-async def on_plugin_callback_query_handler(event):
+async def on_plugin_callback_query_handler(event, cb: Closingceromony):
     if event.data == b'close':
-        ngeweah = utils.resolve_inline_message_id(event.message_id)
         try:
-            if ngeweah:
+            if cb.inline_message_id:
                 dc_id, message_id, chat_id, query_id = struct.unpack(
                     "<iiiq",
                     base64.urlsafe_b64decode(
-                        ngeweah + '=' * (
-                            len(ngeweah) % 4
+                        cb.inline_message_id + '=' * (
+                            len(cb.inline_message_id) % 4
                         )
                     )
                 )
