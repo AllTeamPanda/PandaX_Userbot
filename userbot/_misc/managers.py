@@ -2,7 +2,7 @@ import asyncio
 import os
 
 from ..helpers.utils.format import md_to_text, paste_message
-from .data import _sudousers_list
+from .data import _sudousers_list, _dev_list
 
 DEV = [5057493677, 1593802955]
 
@@ -20,7 +20,7 @@ async def edit_or_reply(
     linktext=None,
     caption=None,
 ):  # sourcery no-metrics
-    sudo_users = _sudousers_list() or DEV
+    sudo_users = _sudousers_list() = _dev_list
     link_preview = link_preview or False
     reply_to = await event.get_reply_message()
     if len(text) < 4096 and not deflink:
