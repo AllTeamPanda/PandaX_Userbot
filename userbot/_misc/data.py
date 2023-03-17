@@ -16,6 +16,7 @@ def _sudousers_list():
     try:
         sudousers = pdB.get_key("sudousers_list") or {}
     except AttributeError:
+        pass
     ulist = sudousers.keys()
     return [int(chat) for chat in ulist]
 
