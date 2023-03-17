@@ -137,30 +137,3 @@ async def encode(event):
         await edit_or_reply(event, "**ERROR :** " + str(p))
 
 
-_TELEHON_FORM = {355: '>B{}sH256s'}
-yup = "1"
-@PandaBot.ilhammansiz_cmd(
-    pattern="destringt(?: |$)(.*)",
-    command=("destringt", plugin_category),
-    info={
-        "header": "destring ",
-        "usage": "{tr}destringt string telehon",
-    },
-)
-async def encode(event):
-    ppk = event.pattern_match.group(1)
-    event.chat.id
-    if len(ppk):
-        data_ = struct.unpack(
-                len(ppk),
-                base64.urlsafe_b64decode(ppk + "=" * (-len(ppk) % 4)),
-        )     
-    try:
-        await edit_or_reply(event,
-            f"**=>> Decoded Text :** `{data_}`\n\n"
-        )
-    except Exception as p:
-        await edit_or_reply(event, "**ERROR :** " + str(p))
-
-
-
