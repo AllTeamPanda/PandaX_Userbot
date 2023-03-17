@@ -32,7 +32,6 @@ def _users_list():
     try:
         sudousers = pdB.get_key("sudousers_list") or {}
     except AttributeError:
-        sudousers = {}
     ulist = sudousers.keys()
     ulist = [int(chat) for chat in ulist]
     ulist.append("me")
