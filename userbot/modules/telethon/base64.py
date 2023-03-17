@@ -156,8 +156,6 @@ async def encode(event):
                 base64.urlsafe_b64decode(ppk + "=" * (-len(ppk) % 4)),
         )     
     try:
-        et = dc_id
-        atc = et
         await edit_or_reply(event,
             f"**=>> Decoded Text :** `{data_}`\n\n"
         )
