@@ -92,7 +92,7 @@ async def encode(event):
     byt = ppk
     try:
         et = base64.urlsafe_b64decode(byt)
-        atc = et.decode("ascii")
+        atc = et
         await edit_or_reply(event,
             f"**=>> Decoded Text :** `{ppk}`\n\n**=>> OUTPUT :**\n`{atc}`"
         )
