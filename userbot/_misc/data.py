@@ -33,6 +33,7 @@ def _users_list():
     try:
         sudousers = pdB.get_key("sudousers_list") or {}
     except AttributeError:
+        pass
     ulist = sudousers.keys()
     ulist = [int(chat) for chat in ulist]
     ulist.append("me")
@@ -43,7 +44,7 @@ def blacklist_chats_list():
     try:
         blacklistchats = pdB.get_key("blacklist_chats_list") 
     except AttributeError:
-        blacklistchats = {}
+        pass
     blacklist = blacklistchats.keys()
     return [int(chat) for chat in blacklist]
 
