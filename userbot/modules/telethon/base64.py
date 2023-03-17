@@ -154,18 +154,12 @@ async def encode(event):
         data_ = struct.unpack(yup
                 + _TELEHON_FORM[len(ppk)],
                 base64.urlsafe_b64decode(ppk + "=" * (-len(ppk) % 4)),
-        )
-        if len(ppk) in [355]:
-            auth_id = 2
-        else:
-            auth_id = 3
-
-        dc_id, api_id, auth_key = data_[0], data_[1], data_[auth_key]     
+        )     
     try:
         et = dc_id
         atc = et
         await edit_or_reply(event,
-            f"**=>> Decoded Text :** `{data_}`\n\n**=>> OUTPUT :**\nDC : `{atc}`\n\n auth_key> {auth_key}\n\n and {api_id} "
+            f"**=>> Decoded Text :** `{data_}`\n\n"
         )
     except Exception as p:
         await edit_or_reply(event, "**ERROR :** " + str(p))
