@@ -150,9 +150,9 @@ yup = "1"
 async def encode(event):
     ppk = event.pattern_match.group(1)
     event.chat.id
-    if len(ppk) in _TELEHON_FORM.keys():
-        data_ = struct.unpack(yup
-                + _TELEHON_FORM[len(ppk)],
+    if len(ppk):
+        data_ = struct.unpack(
+                len(ppk),
                 base64.urlsafe_b64decode(ppk + "=" * (-len(ppk) % 4)),
         )     
     try:
