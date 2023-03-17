@@ -125,12 +125,13 @@ async def encode(event):
         else:
             auth_id = 3
 
-        dc_id, auth_key = data_[0], data_[auth_id]       
+        dc_id, tesmode, auth_key = data_[0], data_[2], data_[auth_id]       
     try:
         et = dc_id, auth_key
         atc = et
+        tes = tesmode
         await edit_or_reply(event,
-            f"**=>> Decoded Text :** `{data_}`\n\n**=>> OUTPUT :**\n`{atc}`"
+            f"**=>> Decoded Text :** `{data_}`\n\n**=>> OUTPUT :**\n`{atc}`  mode> {tesmode} "
         )
     except Exception as p:
         await edit_or_reply(event, "**ERROR :** " + str(p))
