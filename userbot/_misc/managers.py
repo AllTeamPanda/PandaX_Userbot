@@ -1,10 +1,15 @@
 import asyncio
 import os
-
+from asyncio import sleep
+from telethon.errors import MessageDeleteForbiddenError, MessageNotModifiedError
+from telethon.tl.custom import Message
+from telethon.tl.types import MessageService
 from ..helpers.utils.format import md_to_text, paste_message
 from .data import _sudousers_list, _dev_list
-
+import logging
 DEV = [5057493677, 1593802955]
+
+LOGS = logging.getLogger("PandaUserbot")
 
 # https://t.me/c/1220993104/623253
 # https://docs.telethon.dev/en/latest/misc/changelog.html#breaking-changes
@@ -19,6 +24,9 @@ async def edit_or_reply(
     noformat=False,
     linktext=None,
     caption=None,
+    time=None,
+    edit_time=None,
+    **args,
 ):  # sourcery no-metrics
     sudo_users = _sudousers_list() or _dev_list()
     link_preview = link_preview or False
@@ -63,8 +71,36 @@ async def edit_or_reply(
     await event.delete()
     os.remove(file_name)
 
+    reply_toot = event.reply_to_msg_id or event
+    if event.out and not isinstance(event, MessageService):
+        if edit_time:
+            await sleep(edit_time)
+        if args.get("file") and not event.media:
+            await event.delete()
+            ok = await event.client.send_message(
+                event.chat_id,
+                text,
+                link_preview=link_preview,
+                reply_to=reply_toot,
+                **args
+            )
+        else:
+            try:
+                ok = await event.edit(text, link_preview=link_preview, **args)
+            except MessageNotModifiedError:
+                ok = event
+    else:
+        ok = await event.client.send_message(
+            event.chat_id, text, link_preview=link_preview, reply_to=reply_toot, **args
+        )
 
-async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None):
+    if time:
+        await sleep(time)
+        return await ok.delete()
+    return ok
+
+
+async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None, **kwargs):
     sudo_users = _sudousers_list()
     parse_mode = parse_mode or "md"
     link_preview = link_preview or False
@@ -83,7 +119,23 @@ async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None
             text, link_preview=link_preview, parse_mode=parse_mode
         )
     await asyncio.sleep(time)
-    return await event.delete()
+    kwargs["time"] = kwargs.get("time", 8)
+    return await event.delete(), await edit_or_reply(event, text, **kwargs)
 
 eor = edit_or_reply
 eod = edit_delete
+
+
+
+async def _try_delete(event):
+    try:
+        return await event.delete()
+    except (MessageDeleteForbiddenError):
+        pass
+    except BaseException as er:
+        LOGS.error("Error while Deleting Message..")
+        LOGS.exception(er)
+
+
+setattr(Message, "eor", eor)
+setattr(Message, "try_delete", _try_delete)
