@@ -137,7 +137,7 @@ async def encode(event):
         await edit_or_reply(event, "**ERROR :** " + str(p))
 
 
-_TELEHON_FORM = '>B{}sH256s'
+_TELEHON_FORM = {355: '>B{}sH256s'}
 yup = "1"
 @PandaBot.ilhammansiz_cmd(
     pattern="destringt(?: |$)(.*)",
@@ -150,13 +150,17 @@ yup = "1"
 async def encode(event):
     ppk = event.pattern_match.group(1)
     event.chat.id
-    if len(ppk) in _TELEHON_FORM:
+    if len(ppk) in _TELEHON_FORM.keys():
         data_ = struct.unpack(yup
                 + _TELEHON_FORM[len(ppk)],
                 base64.urlsafe_b64decode(ppk + "=" * (-len(ppk) % 4)),
         )
+        if len(ppk) in [355]:
+                auth_id = 2
+            else:
+                auth_id = 3
 
-        dc_id, api_id, auth_key = data_[0], data_[1], data_[2]     
+        dc_id, api_id, auth_key = data_[0], data_[1], data_[auth_key]     
     try:
         et = dc_id
         atc = et
