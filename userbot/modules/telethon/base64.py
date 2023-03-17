@@ -127,7 +127,7 @@ async def encode(event):
 
         dc_id, auth_key = data_[0], data_[auth_id]       
     try:
-        et = dc_id, aunth_key
+        et = dc_id, auth_key
         atc = et
         await edit_or_reply(event,
             f"**=>> Decoded Text :** `{data_}`\n\n**=>> OUTPUT :**\n`{atc}`"
