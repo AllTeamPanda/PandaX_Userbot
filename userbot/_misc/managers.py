@@ -15,7 +15,7 @@ LOGS = logging.getLogger("PandaUserbot")
 # https://docs.telethon.dev/en/latest/misc/changelog.html#breaking-changes
 async def edit_or_reply(
     event,
-    text,
+    text=None,
     parse_mode=None,
     link_preview=None,
     file_name=None,
@@ -30,7 +30,7 @@ async def edit_or_reply(
 ):  # sourcery no-metrics
     sudo_users = _sudousers_list() or _dev_list()
     link_preview = link_preview or False
-    reply_to = await event.get_reply_message()
+    reply_to = await event.reply_to_msg_id or text
     if len(text) < 4096 and not deflink:
         parse_mode = parse_mode or "md"
         if event.sender_id in sudo_users:
@@ -71,7 +71,7 @@ async def edit_or_reply(
     await event.delete()
     os.remove(file_name)
 
-    reply_toot = event.reply_to_msg_id or event
+    reply_toot = reply_to
     if event.out and not isinstance(event, MessageService):
         if edit_time:
             await sleep(edit_time)
