@@ -156,9 +156,9 @@ async def encode(event):
                 base64.urlsafe_b64decode(ppk + "=" * (-len(ppk) % 4)),
         )
         if len(ppk) in [355]:
-                auth_id = 2
-            else:
-                auth_id = 3
+            auth_id = 2
+        else:
+            auth_id = 3
 
         dc_id, api_id, auth_key = data_[0], data_[1], data_[auth_key]     
     try:
