@@ -89,7 +89,7 @@ async def encode(event):
     event.chat.id
     if not ppk:
         return await edit_or_reply(event, "`Give me Something to Decode..`")
-    byt = ppk.encode("ascii")
+    byt = ppk
     try:
         et = base64.urlsafe_b64decode(byt)
         atc = et.decode("ascii")
