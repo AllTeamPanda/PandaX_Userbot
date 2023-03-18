@@ -14,19 +14,19 @@ DEV = [5057493677, 1593802955]
 
 def _sudousers_list():
     try:
-        sudousers = pdB.get_key("sudousers_list") or {}
+        sudousers = pdB.get_key("sudousers_list") or []
     except AttributeError:
         pass
-    ulist = sudousers.keys()
-    return [int(chat) for chat in ulist]
+    ulist = sudousers
+    return ulist
 
 def _dev_list():
     try:
-        _users = pdB.get_key("devs_list") or {}
+        _users = pdB.get_key("devs_list") or []
     except AttributeError:
         pass
-    ulist = _users.keys()
-    return [int(chat) for chat in ulist]
+    ulist = _users
+    return ulist
 
 
 def _users_list():
@@ -34,7 +34,7 @@ def _users_list():
         sudousers = pdB.get_key("sudousers_list") or {}
     except AttributeError:
         pass
-    ulist = sudousers.keys()
+    ulist = sudousers
     ulist = [int(chat) for chat in ulist]
     ulist.append("me")
     return list(ulist)
@@ -45,8 +45,8 @@ def blacklist_chats_list():
         blacklistchats = pdB.get_key("blacklist_chats_list") 
     except AttributeError:
         pass
-    blacklist = blacklistchats.keys()
-    return [int(chat) for chat in blacklist]
+    blacklist = blacklistchats
+    return blacklist
 
 
 def sudo_enabled_cmds():
