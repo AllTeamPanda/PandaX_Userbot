@@ -132,7 +132,7 @@ async def add_sudo_user(ult):
         key.append(id)
         udB.set_key("sudousers_list", key)
         mmm = f"**Added** {name} **as SUDO User**"
-    msg = await edit_delete(mmm, time=5)
+    msg = await edit_delete(ult, mmm, time=5)
     await event.client.reload(msg)
 
 
