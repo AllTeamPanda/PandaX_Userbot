@@ -150,7 +150,7 @@ async def _(event):
         )
     del sudousers[str(replied_user.id)]
     SqL.del_key("sudousers_list")
-    SqL.set_key("sudousers_list", sudousers, {})
+    SqL.set_key("sudousers_list", [sudousers, {}])
     output = f"{mentionuser(get_display_name(replied_user),replied_user.id)} __is removed from your sudo users.__\n"
     output += "**Bot is reloading to apply the changes. Please wait for a minute**"
     msg = await edit_or_reply(event, output)
