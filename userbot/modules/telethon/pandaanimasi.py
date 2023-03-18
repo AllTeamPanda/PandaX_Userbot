@@ -52,7 +52,7 @@ async def koc(e):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
+    
     await typew.edit("`DIN DINNN.....`")
     sleep(2)
     await typew.edit("`DINOOOOSAURUSSSSS!!`")
@@ -388,7 +388,7 @@ async def koc(e):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
+    
     await typew.edit("`Terkadang`")
     sleep(1)
     await typew.edit("`Mencintai Seseorang`")
@@ -465,8 +465,6 @@ async def _(event):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
     await typew.edit("`Hai, I LOVE YOU 💞`")
     sleep(1)
     await typew.edit("`I LOVE YOU SO MUCH!`")
@@ -500,8 +498,7 @@ async def typewriter(typew):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
+    
     await typew.edit("`HAI MANTAN 🙂`")
     sleep(1)
     await typew.edit("`BERUBAH KARENA DIA`")
@@ -541,8 +538,7 @@ async def typewriter(typew):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
+    
     await typew.edit("`AKU SEDIH LOH `")
     sleep(1)
     await typew.edit("`KAU SEDIH GAK?`")
@@ -576,8 +572,7 @@ async def typewriter(typew):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
+    
     await typew.edit("`Bismillah semoga diterima salamnya`")
     sleep(1)
     await typew.edit("`Assalammuallaikum😊😊`")
@@ -595,8 +590,7 @@ async def typewriter(typew):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
+    
     await typew.edit("`Eh lupa jawab salam maaf atuh`")
     sleep(1)
     await typew.edit("`Walaikumsalam😊`")
@@ -677,8 +671,7 @@ async def koc(e):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(5)
+    
     await typew.edit("`🎸 JRENG JRENG JRENG `")
     sleep(3)
     await typew.edit("`KUMOHON KAU MENGERTI COBALAH KAU TAMBAHKAN HATI`")
@@ -708,8 +701,7 @@ async def typewriter(typew):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
+    
     await typew.edit("` MARI KITA NANGIS-NANGIS BUAT YANG LAGI PATAH HATI/BROKENHOME `")
     sleep(2)
     await typew.edit("`1`")
@@ -739,8 +731,7 @@ async def typewriter(typew):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
+    
     await typew.edit("` 🏍️ `")
     sleep(1)
     await typew.edit("`ADA POLISI`")
@@ -770,8 +761,7 @@ async def typewriter(typew):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
+    
     await typew.edit("` 😂 `")
     sleep(1)
     await typew.edit("`🤣`")
@@ -801,8 +791,7 @@ async def typewriter(typew):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
+    
     await typew.edit("` AKU ADALAH KAMU  `")
     sleep(1)
     await typew.edit("`AKU INGIN MENJADI TEMAN HIDUP UNTUKMU`")
@@ -832,8 +821,7 @@ async def typewriter(typew):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
+    
     await typew.edit("`KAMU MAU LIHAT BUAYA `")
     sleep(1)
     await typew.edit("`INISIAL R 🐊`")
@@ -863,8 +851,7 @@ async def typewriter(typew):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
+    
     await typew.edit("` Sayang udah makan? `")
     sleep(1)
     await typew.edit("`Apa Kabar mu`")
@@ -894,7 +881,7 @@ async def typewriter(typew):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
+    
     await typew.edit("`ADA SATPOL PP LARI.....`")
     sleep(1)
     await typew.edit("`WOI SATPOL PP MASKER KALIAN !!`")
@@ -1123,7 +1110,7 @@ async def koc(e):
     },
 )
 async def typewriter(typew):
-    typew.pattern_match.group(1)
+    
     await typew.edit(".                       /¯ )")
     await typew.edit(".                       /¯ )\n                      /¯  /")
     await typew.edit(
