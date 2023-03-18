@@ -119,7 +119,7 @@ async def add_sudo_user(event):
         sudousers = {}
     sudousers[str(replied_user.id)] = userdata
     SqL.del_key("sudousers_list")
-    SqL.set_key("sudousers_list", sudousers, {})
+    SqL.set_key("sudousers_list", [sudousers, {}])
     output = f"{mentionuser(userdata['chat_name'],userdata['chat_id'])} __is Added to your sudo users.__\n"
     output += "**Bot is reloading to apply the changes. Please wait for a minute**"
     msg = await edit_or_reply(event, output)
