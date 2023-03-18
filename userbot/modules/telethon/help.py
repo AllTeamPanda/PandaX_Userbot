@@ -85,13 +85,13 @@ async def plugininfo(input_str, event, flag):
     if category is not None:
         outstr += f"**Category :** `{category}`\n\n"
     for cmd in cmds:
-        outstr += f"⫸  **Syntax :** `{cmdprefix}{cmd}`\n"
+        outstr += f"⫸  **Syntax :** `{cmd}`\n"
         try:
             outstr += f"⫸  **info :** `{CMD_INFO[cmd][1]}`\n\n"
         except IndexError:
             outstr += f"⫸  **info :** `None`\n\n"
     outstr += f"**🗂 Usage : ** `{cmdprefix}help <command name>`\
-        \n**Note : **If command name is same as plugin name then use this `{cmdprefix}help -c <command name>`."
+        \n**Note : **If command name is same as plugin name then use this `{cmdprefix}help <command name>`."
     return outstr
 
 
