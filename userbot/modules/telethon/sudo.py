@@ -122,7 +122,7 @@ async def add_sudo_user(ult):
     if name and isinstance(name, User) and (name.bot or name.verified):
         return await edit_delete(ult, "Bots can't be added as Sudo Users.")
     name = inline_mention(name) if name else f"`{id}`"
-    if id == PandaBot.uid:
+    if id == pandaub.uid:
         mmm = "You cant add yourself as Sudo User..."
     elif id in _sudousers_list():
         mmm = f"{name} `is already a SUDO User ...`"
