@@ -16,7 +16,7 @@ plugin_category = "plugins"
     pattern="ping( -a|$)",
     command=("ping", plugin_category),
     info={
-        "header": "{Header}",
+        "header": "Check How Long It Takes To Ping Your Userbot",
         "flags": {"-a": "average ping"},
         "usage": ["{tr}ping", "{tr}ping -a"],
     },
