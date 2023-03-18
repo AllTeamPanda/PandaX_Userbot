@@ -31,7 +31,7 @@ def _dev_list():
 
 def _users_list():
     try:
-        sudousers = pdB.get_key("sudousers_list") or {}
+        sudousers = pdB.get_key("sudousers_list") or []
     except AttributeError:
         pass
     ulist = sudousers
