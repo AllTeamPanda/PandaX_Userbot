@@ -4,8 +4,9 @@ from datetime import datetime
 from ... import pandaub
 from . import mention
 from ..._misc.managers import edit_or_reply
+from exportir import get_help
 
-
+Header = get_help("help_ping_header")
 
 
 plugin_category = "plugins"
@@ -15,7 +16,7 @@ plugin_category = "plugins"
     pattern="ping( -a|$)",
     command=("ping", plugin_category),
     info={
-        "header": "check how long it takes to ping your userbot",
+        "header": "{Header}",
         "flags": {"-a": "average ping"},
         "usage": ["{tr}ping", "{tr}ping -a"],
     },
