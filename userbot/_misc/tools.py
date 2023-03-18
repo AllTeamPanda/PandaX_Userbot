@@ -144,3 +144,23 @@ def mediainfo(media):
         m = "web"
     return m
 
+from telethon.tl import types
+from telethon.utils import get_display_name
+
+def make_mention(user, custom=None):
+    if user.username:
+        return f"@{user.username}"
+    return inline_mention(user, custom=custom)
+
+
+def inline_mention(user, custom=None, html=False):
+    mention_text = get_display_name(user) or "Deleted Account" if not custom else custom
+    if isinstance(user, types.User):
+        if html:
+            return f"<a href=tg://user?id={user.id}>{mention_text}</a>"
+        return f"[{mention_text}](tg://user?id={user.id})"
+    if isinstance(user, types.Channel) and user.username:
+        if html:
+            return f"<a href=https://t.me/{user.username}>{mention_text}</a>"
+        return f"[{mention_text}](https://t.me/{user.username})"
+    return mention_text
