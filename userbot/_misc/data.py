@@ -50,7 +50,7 @@ def blacklist_chats_list():
 
 
 def sudo_enabled_cmds():
-    listcmds = pdB.get_key("sudo_enabled_cmds") or {}
+    listcmds = pdB.get_key("sudo_enabled_cmds") or []
     return list(listcmds)
 
 
