@@ -144,7 +144,7 @@ async def add_sudo_user(ult):
         "usage": "{tr}delsudo <username/reply/mention>",
     },
 )
-async def _(event):
+async def _(ult):
     "To del user from sudo."
     inputs = ult.pattern_match.group(1).strip()
     if ult.reply_to_msg_id:
@@ -188,7 +188,7 @@ async def _(event):
         "usage": "{tr}vsudo",
     },
 )
-async def _(event):
+async def _(ult):
     "To list Your sudo users"
     sudos = _sudousers_list()
     if not sudos:
