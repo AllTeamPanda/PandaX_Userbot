@@ -66,8 +66,11 @@ def Telethon():
             tgbot.get_me()
             PandaBot.me = PandaBot.get_me()
             PandaBot.uid = tgbot.uid = utils.get_peer_id(PandaBot.me)
-            if Var.OWNER_ID == 0:
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot.uid)
         except Exception as e:
             LOGS.error(f"STRING_SESSION1 - {e}")
             sys.exit()
@@ -90,8 +93,11 @@ def Telethon():
             tgbot.get_me()
             PandaBot2.me = PandaBot2.get_me()
             PandaBot2.uid = tgbot.uid = utils.get_peer_id(PandaBot2.me)
-            if Var.OWNER_ID == 0:
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot2.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot2.uid)
         except Exception as e:
             LOGS.error(f"STRING_SESSION2 - {e}")
             sys.exit()
@@ -113,8 +119,11 @@ def Telethon():
             tgbot.get_me()
             PandaBot3.me = PandaBot3.get_me()
             PandaBot3.uid = tgbot.uid = utils.get_peer_id(PandaBot3.me)
-            if Var.OWNER_ID == 0:
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot3.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot3.uid)
         except Exception as e:
             LOGS.error(f"STRING_SESSION3 - {e}")
             sys.exit()
