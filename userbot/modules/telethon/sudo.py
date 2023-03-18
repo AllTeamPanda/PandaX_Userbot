@@ -2,15 +2,16 @@ from datetime import datetime
 
 from telethon.utils import get_display_name
 
-from ... import pandaub, SqL
+from ... import pandaub, SqL, udB
 import logging
 
 from ...config import Config
+from ..._misc.tools import inline_mention
 from ..._misc import CMD_INFO, PLG_INFO
 from ..._misc.data import _sudousers_list, sudo_enabled_cmds
 from . import edit_delete, edit_or_reply
 from ...helpers.utils import get_user_from_event, mentionuser
-
+from telethon.tl.types import User
 
 plugin_category = "plugins"
 
@@ -94,35 +95,44 @@ async def chat_blacklist(event):
         "usage": "{tr}addsudo <username/reply/mention>",
     },
 )
-async def add_sudo_user(event):
+async def add_sudo_user(ult):
     "To add user to sudo."
-    replied_user, error_i_a = await get_user_from_event(event)
-    if replied_user is None:
-        return
-    if replied_user.id == event.client.uid:
-        return await edit_delete(event, "__You can't add yourself to sudo.__.")
-    if replied_user.id in _sudousers_list():
-        return await edit_delete(
-            event,
-            f"{mentionuser(get_display_name(replied_user)),replied_user.id} __is already in your sudo list.__",
-        )
-    date = str(datetime.now().strftime("%B %d, %Y"))
-    userdata = {
-        "chat_id": replied_user.id,
-        "chat_name": get_display_name(replied_user),
-        "chat_username": replied_user.username,
-        "date": date,
-    }
-    try:
-        sudousers = SqL.get_key("sudousers_list") or {}
-    except AttributeError:
-        sudousers = {}
-    sudousers[str(replied_user.id)] = userdata
-    SqL.del_key("sudousers_list")
-    SqL.set_key("sudousers_list", [sudousers, {}])
-    output = f"{mentionuser(userdata['chat_name'],userdata['chat_id'])} __is Added to your sudo users.__\n"
-    output += "**Bot is reloading to apply the changes. Please wait for a minute**"
-    msg = await edit_or_reply(event, output)
+    inputs = ult.pattern_match.group(1).strip()
+    if ult.reply_to_msg_id:
+        replied_to = await ult.get_reply_message()
+        id = replied_to.sender_id
+        name = await replied_to.get_sender()
+    elif inputs:
+        try:
+            id = await ult.client.parse_id(inputs)
+        except ValueError:
+            try:
+                id = int(inputs)
+            except ValueError:
+                id = inputs
+        try:
+            name = await ult.client.get_entity(int(id))
+        except BaseException:
+            name = None
+    elif ult.is_private:
+        id = ult.chat_id
+        name = await ult.get_chat()
+    else:
+        return await edit_delete(ult, "`Reply to a msg or add it's id/username.`", time=5)
+    if name and isinstance(name, User) and (name.bot or name.verified):
+        return await edit_delete(ult, "Bots can't be added as Sudo Users.")
+    name = inline_mention(name) if name else f"`{id}`"
+    if id == PandaBot.uid:
+        mmm = "You cant add yourself as Sudo User..."
+    elif id in _sudousers_list():
+        mmm = f"{name} `is already a SUDO User ...`"
+    else:
+        udB.set_key("sudoenable", "True")
+        key = _sudousers_list()
+        key.append(id)
+        udB.set_key("sudousers_list", key)
+        mmm = f"**Added** {name} **as SUDO User**"
+    msg = await edit_delete(mmm, time=5)
     await event.client.reload(msg)
 
 
@@ -136,24 +146,37 @@ async def add_sudo_user(event):
 )
 async def _(event):
     "To del user from sudo."
-    replied_user, error_i_a = await get_user_from_event(event)
-    if replied_user is None:
-        return
-    try:
-        sudousers = SqL.get_key("sudousers_list") or {}
-    except AttributeError:
-        sudousers = {}
-    if str(replied_user.id) not in sudousers:
-        return await edit_delete(
-            event,
-            f"{mentionuser(get_display_name(replied_user)),replied_user.id} __is not in your sudo__.",
-        )
-    del sudousers[str(replied_user.id)]
-    SqL.del_key("sudousers_list")
-    SqL.set_key("sudousers_list", [sudousers, {}])
-    output = f"{mentionuser(get_display_name(replied_user),replied_user.id)} __is removed from your sudo users.__\n"
-    output += "**Bot is reloading to apply the changes. Please wait for a minute**"
-    msg = await edit_or_reply(event, output)
+    inputs = ult.pattern_match.group(1).strip()
+    if ult.reply_to_msg_id:
+        replied_to = await ult.get_reply_message()
+        id = replied_to.sender_id
+        name = await replied_to.get_sender()
+    elif inputs:
+        try:
+            id = await ult.client.parse_id(inputs)
+        except ValueError:
+            try:
+                id = int(inputs)
+            except ValueError:
+                id = inputs
+        try:
+            name = await ult.client.get_entity(int(id))
+        except BaseException:
+            name = None
+    elif ult.is_private:
+        id = ult.chat_id
+        name = await ult.get_chat()
+    else:
+        return await edit_delete(ult, "`Reply to a msg or add it's id/username.`", time=5)
+    name = inline_mention(name) if name else f"`{id}`"
+    if id not in _sudousers_list():
+        mmm = f"{name} `wasn't a SUDO User ...`"
+    else:
+        key = _sudousers_list()
+        key.remove(id)
+        udB.set_key("sudousers_list", key)
+        mmm = f"**Removed** {name} **from SUDO User(s)**"
+    msg = await edit_delete(ult, mmm, time=5)
     await event.client.reload(msg)
 
 
@@ -167,24 +190,26 @@ async def _(event):
 )
 async def _(event):
     "To list Your sudo users"
-    sudochats = _sudousers_list()
-    try:
-        sudousers = SqL.get_key("sudousers_list") or {}
-    except AttributeError:
-        sudousers = {}
-    if len(sudochats) == 0:
-        return await edit_delete(
-            event, "__There are no sudo users for your Pandauserbot.__"
-        )
-    result = "**The list of sudo users for your Pandauserbot are :**\n\n"
-    for chat in sudochats:
-        result += f"☞ **Name:** {mentionuser(sudousers[str(chat)]['chat_name'],sudousers[str(chat)]['chat_id'])}\n"
-        result += f"**Chat Id :** `{chat}`\n"
-        username = f"@{sudousers[str(chat)]['chat_username']}" or "__None__"
-        result += f"**Username :** {username}\n"
-        result += f"Added on {sudousers[str(chat)]['date']}\n\n"
-    await edit_or_reply(event, result)
-
+    sudos = _sudousers_list()
+    if not sudos:
+        return await edit_delete(ult, "No SUDO User was assigned ...", time=5)
+    msg = ""
+    for i in sudos:
+        try:
+            name = await ult.client.get_entity(int(i))
+        except BaseException:
+            name = None
+        if name:
+            msg += f"• {inline_mention(name)} ( `{i}` )\n"
+        else:
+            msg += f"• `{i}` -> Invalid User\n"
+    m = udB.get_key("sudoenable") or True
+    if not m:
+        m = ".sudo on"
+    return await edit_delete(ult,
+        f"**SUDO MODE : {m}\n\nList of SUDO Users :**\n{msg}", link_preview=False
+    )
+    
 
 @pandaub.ilhammansiz_cmd(
     pattern="addscmd(s)? ((.|\n)*)",
