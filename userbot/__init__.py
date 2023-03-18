@@ -77,11 +77,7 @@ def dual_mode():
         print(f"{str(e)}")
         sys.exit()
 
-if BOT_MODE:
-    tgbot = tgbot
-    PandaBot = PandaBot
-else: 
-    PandaBot == tgbot
+
 
 from .config import *
 
