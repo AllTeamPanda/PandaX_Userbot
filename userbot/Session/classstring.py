@@ -29,7 +29,7 @@ DC_IPV4 = {
 }
 
 SESSION_STRING_FORMAT = ">BI?256sQ?"
-_TELEHON_FORM = {352: ">B{}sH256s"}
+_TELEHON_FORM = {353: ">B{}sH256s"}
 
 
 DEFAULT_DC_ID = 2
@@ -92,15 +92,16 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                 if session_name[0] != CURRENT_VERSION:
                     logger.exception("Wrong string session. Copy paste correctly!")
             session_name = session_name[1:]
-            if len(session_name) in [352]:
+            if len(session_name) in [353]:
                  auth_id = 2
             else:
                 auth_id = 3
 
             dc_id, api_id, test_mode, auth_key, user_id, is_bot = struct.unpack(
-                _TELEHON_FORM[len(session_name)],
+                _TELEHON_FORM,
                 base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4)),
             )
+
             return base64.urlsafe_b64encode(
                     struct.pack(
                         SESSION_STRING_FORMAT,
