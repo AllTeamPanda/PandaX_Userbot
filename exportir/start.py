@@ -54,7 +54,7 @@ def envbot():
         system("screen -S Panda")
         
 def Zip():
-    local regex
+    global regex
     regex='(https?)://github.com/.+/.+'
     if Config.UPSTREAM_REPO == "PANDA_USERBOT":
         Zip = "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1YUGFuZGEvUGFuZGEvYXJjaGl2ZS9tYWluLnppcA=="
