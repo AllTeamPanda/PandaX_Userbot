@@ -835,9 +835,8 @@ async def on_plugin_callback_query_handler(event):
     await event.edit(
         "**Daftar Help & Setting Asisten**",
         buttons=[
-            [
-                Button.inline("⚙ Setting ⚙", data="menuset"),],
-                Button.inline("Close", data="closebot"),],
+                Button.inline("⚙ Setting ⚙", data="menuset"),
+                Button.inline("Close", data="closebot"),
             ],
     )
 
