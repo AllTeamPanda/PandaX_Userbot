@@ -837,8 +837,14 @@ async def on_plugin_callback_query_handler(event):
         buttons=[
             [
                 Button.inline("⚙ Setting ⚙", data="menuset"),],
+                Button.inline("Close", data="closebot"),],
             ],
     )
+
+@settingvar("closebot")
+async def closet(lol):
+    await Button.clear()
+
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"menuset")))
 @check_owner
