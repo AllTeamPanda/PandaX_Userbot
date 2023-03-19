@@ -50,8 +50,7 @@ def envbot():
             for var in ["API_ID", "API_HASH", "SESSION", "MONGO_URI", "PRIVATE_GROUP_BOT_API_ID", "BOT_TOKEN"]:   
                 inp = input(f"Enter {var}\n- ")
                 file.write(f"{var}={inp}\n")
-        sleep(0.1)
-        system("screen -S Panda")
+        
         
 def Zip():
     global regex
@@ -86,4 +85,5 @@ def Zip():
 if not path.exists(".env"):
     print(Start("Typing y for start env"))
     envbot()
+    print(system("screen -S Panda"))
     print(Zip())
