@@ -111,7 +111,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                         user_id,
                         is_bot
                     )
-                ).decode("ascii")
+                ).decode().rstrip("=")
         else:
             logger.exception("Wrong string session. Copy paste correctly!")
             if _exit:
