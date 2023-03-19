@@ -32,10 +32,10 @@ SESSION_STRING_FORMAT = ">BI?256sQ?"
 _TELEHON_FORM = {353: ">B{}sH256s"}
 
 
-DEFAULT_DC_ID = 2
-DEFAULT_IPV4_IP = '149.154.167.51'
-DEFAULT_IPV6_IP = '2001:67c:4e8:f002::a'
-DEFAULT_PORT = 443
+OLD_SESSION_STRING_FORMAT = ">B?256sI?"
+OLD_SESSION_STRING_FORMAT_64 = ">B?256sQ?"
+SESSION_STRING_SIZE = 351
+SESSION_STRING_SIZE_64 = 356
 
 
 
@@ -94,14 +94,16 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
             session_name = session_name[1:]
             ip_len = 4 if len(session_name) == 352 else 16
 
-            dc_id, ip, port, auth_key= struct.unpack(
-                _STRUCT_PREFORMAT.format(4),
-                base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4)),
-            )
-            api_id = False
-            tes_mode = False
-            user_id = False
-            is_bot = False
+            
+            if len(session_name) in [351, 356]:
+                dc_id, test_mode, auth_key, user_id, is_bot = struct.unpack(
+                    (OLD_SESSION_STRING_FORMAT
+                     if len(session_name) == SESSION_STRING_SIZE else
+                     OLD_SESSION_STRING_FORMAT_64),
+                    base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4))
+                )
+
+            
             return base64.urlsafe_b64encode(
                     struct.pack(
                         SESSION_STRING_FORMAT,
