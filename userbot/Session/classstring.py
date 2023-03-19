@@ -93,8 +93,13 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                     logger.exception("Wrong string session. Copy paste correctly!")
             session_name = session_name[1:]
             iplen = 4 if len(session_name) == 352 else 16
-            dc_id, api_id, test_mode, auth_key, user_id, is_bot = struct.unpack(
-                _TELEHON_FORM.format(iplen),
+            if len(session_name) in [351, 356]:
+                 auth_id = 2
+            else:
+                auth_id = 3
+
+            dc_id, api_id, test_mode, auth_key, user_id, is_bot = struct.unpack(CURRENT_VERSION
+                + _TELEHON_FORM,
                 base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4)),
             )
             return base64.urlsafe_b64encode(
