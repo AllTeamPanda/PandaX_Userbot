@@ -855,7 +855,7 @@ async def on_plugin_callback_query_handler(event):
                 Button.inline("BOT_TOKEN", data="bottoken"),
             ],
             [
-                Button.inline("BOT_USER", data="botusername"),
+                Button.inline("BOT_USERNAME", data="botusername"),
                 Button.inline("REPO_URL", data="url"),
             ],
             [
