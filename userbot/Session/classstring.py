@@ -110,7 +110,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                         test_mode,
                         auth_key,
                         user_id,
-                        is_bot
+                        is_bot,
                     )
                 ).decode().rstrip("=")
         else:
