@@ -46,7 +46,7 @@ def envbot():
     starthon = input("").strip().lower()
     if starthon in ["yas", "y"]:
         with open(".env", "a") as file:
-            for var in ["API_ID", "API_HASH", "SESSION", "MONGO_URI", "PRIVATE_GROUP_BOT_API_ID", "BOT_TOKEN", "BOT_USERNAME"]:   
+            for var in ["API_ID", "API_HASH", "SESSION", "MONGO_URI", "PRIVATE_GROUP_BOT_API_ID", "BOT_TOKEN"]:   
              inp = input(f"Enter {var}\n- ")
                 file.write(f"{var}={inp}\n")
         sleep(0.1)
