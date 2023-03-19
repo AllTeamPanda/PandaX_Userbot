@@ -79,8 +79,8 @@ def PandaSession(session, logger=LOGS, _exit=True):
     if _exit:
         sys.exit()
 
-from pyrogram.storage import Storage
-pyropanda = Storage()
+from pyrogram.memory_storage import MemoryStorage
+pyropanda = MemoryStorage()
 
 def PyroSession(session_name, logger=LOGS, _exit=True):
     if session_name:
@@ -102,12 +102,12 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
         
             packed = struct.pack(
                 SESSION_STRING_FORMAT,
-                pyropanda.dc_id(dc_id=dc_id),
-                pyropanda.api_id(api_id=api_id),
-                pyropanda.test_mode(test_mode=test_mode),
-                pyropanda.auth_key(auth_key=auth_key),
-                pyropanda.user_id(user_id=user_id),
-                pyropanda.is_bot(is_bot=is_bot)
+                pyropanda.dc_id(dc_id),
+                pyropanda.api_id(api_id),
+                pyropanda.test_mode(test_mode),
+                pyropanda.auth_key(auth_key),
+                pyropanda.user_id(user_id),
+                pyropanda.is_bot(is_bot)
             )
             return base64.urlsafe_b64encode(packed).decode().rstrip("=")
         else:
