@@ -79,7 +79,8 @@ def PandaSession(session, logger=LOGS, _exit=True):
     if _exit:
         sys.exit()
 
-
+from pyrogram.storage import Storage
+pyropanda = Storage()
 
 def PyroSession(session_name, logger=LOGS, _exit=True):
     if session_name:
@@ -94,25 +95,19 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                     logger.exception("Wrong string session. Copy paste correctly!")
             session_name = session_name[1:]
             iplen = 4 if len(session_name) == 352 else 16
-            dc_id, ip, port, auth_key = struct.unpack(
+            dc_id, api_id, test_mode, auth_key, user_id, is_bot = struct.unpack(
                 _TELEHON_FORM.format(iplen),
                 base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4)),
             )
-            if any(key):
-                auth_key = AuthKey(key)
-
-            api_id = False
-            test_mode = auth_key
-            is_bot = False
-            user_id = 5057493677
+        
             packed = struct.pack(
                 SESSION_STRING_FORMAT,
-                dc_id,
-                api_id,
-                test_mode,
-                auth_key,
-                user_id,
-                is_bot
+                await pyropanda.dc_id(dc_id),
+                await pyropanda.api_id(api_id),
+                await pyropanda.test_mode(test_mode),
+                await pyropanda.auth_key(auth_key),
+                await pyropanda.user_id(user_id),
+                await pyropanda.is_bot(is_bot)
             )
             return base64.urlsafe_b64encode(packed).decode().rstrip("=")
         else:
