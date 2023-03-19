@@ -65,8 +65,8 @@ def Zip():
         system("bash start")
 
     elif Config.UPSTREAM_REPO == regex:
-          if U_BRANCH:
-              Url = f"{Config.UPSTREAM_REPO}/archive/{U_BRANCH}.zip"
+          if Config.U_BRANCH:
+              Url = f"{Config.UPSTREAM_REPO}/archive/{Config.U_BRANCH}.zip"
               system("wget Url")
               system("bash start")      
           else:
