@@ -88,15 +88,23 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
 
         # Telethon to pyro Session
         elif len(session_name) in StringSession(session_name): 
-            if len(session_name) in [351, 356]:
-                dc_id, test_mode, auth_key, user_id, is_bot = struct.unpack(
-                    (CURRENT_VERSION + OLD_SESSION_STRING_FORMAT
-                     if len(session_name) == SESSION_STRING_SIZE else
-                    CURRENT_VERSION + OLD_SESSION_STRING_FORMAT_64),
-                    base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4))
-                )
+            if session_name:
+                if session_name[0] != CURRENT_VERSION:
+                    logger.exception("Wrong string session. Copy paste correctly!")
+            session_name = session_name[1:]
+            ip_len = 4 if len(session_name) == 352 else 16
+            dc_id, ip, port, key = struct.unpack(
+                _STRUCT_PREFORMAT.format(ip_len), StringSession.decode(session_name))
+            server_address = ipaddress.ip_address(ip).compressed
 
+            if any(key):
+                auth_key = AuthKey(key)
             
+            auth_key = key
+            api_id = False
+            test_mode = False
+            user_id = False
+            is_bot = False
             return base64.urlsafe_b64encode(
                     struct.pack(
                         SESSION_STRING_FORMAT,
@@ -105,7 +113,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                         test_mode,
                         auth_key,
                         user_id,
-                        is_bot
+                        is_bot,
                     )
                 ).decode().rstrip("=")
         else:
