@@ -79,7 +79,7 @@ def PandaSession(session, logger=LOGS, _exit=True):
     if _exit:
         sys.exit()
 
-from pyrogram.memory_storage import MemoryStorage
+from pyrogram.storage import MemoryStorage
 pyropanda = MemoryStorage()
 
 def PyroSession(session_name, logger=LOGS, _exit=True):
