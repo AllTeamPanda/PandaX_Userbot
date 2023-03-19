@@ -105,6 +105,20 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
             test_mode = False
             user_id = False
             is_bot = False
+            if len(session_name) in [351, 356]:
+                base64.urlsafe_b64encode(
+                    struct.pack(
+                        (self.OLD_SESSION_STRING_FORMAT
+                         if len(session_name) == SESSION_STRING_SIZE else
+                         OLD_SESSION_STRING_FORMAT_64),
+                        dc_id,
+                        api_id,
+                        test_mode,
+                        auth_key,
+                        user_id,
+                        is_bot,
+                    )
+                ).decode().rstrip("=")
             return base64.urlsafe_b64encode(
                     struct.pack(
                         SESSION_STRING_FORMAT,
