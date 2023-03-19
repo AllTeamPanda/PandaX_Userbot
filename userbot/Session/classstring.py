@@ -32,8 +32,8 @@ SESSION_STRING_FORMAT = ">BI?256sQ?"
 _TELEHON_FORM = {353: ">B{}sH256s"}
 
 
-OLD_SESSION_STRING_FORMAT = ">B?256sI?"
-OLD_SESSION_STRING_FORMAT_64 = ">B?256sQ?"
+OLD_SESSION_STRING_FORMAT = ">B{}sH256s"
+OLD_SESSION_STRING_FORMAT_64 = ">B{}sH256s"
 SESSION_STRING_SIZE = 351
 SESSION_STRING_SIZE_64 = 356
 
@@ -97,9 +97,9 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
             
             if len(session_name) in [351, 356]:
                 dc_id, test_mode, auth_key, user_id, is_bot = struct.unpack(
-                    (OLD_SESSION_STRING_FORMAT
+                    (CURRENT_VERSION + OLD_SESSION_STRING_FORMAT
                      if len(session_name) == SESSION_STRING_SIZE else
-                     OLD_SESSION_STRING_FORMAT_64),
+                    CURRENT_VERSION + OLD_SESSION_STRING_FORMAT_64),
                     base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4))
                 )
 
@@ -112,7 +112,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                         test_mode,
                         auth_key,
                         user_id,
-                        is_bot,
+                        is_bot
                     )
                 ).decode().rstrip("=")
         else:
