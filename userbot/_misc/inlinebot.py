@@ -842,7 +842,7 @@ async def on_plugin_callback_query_handler(event):
 
 @settingvar("closebot")
 async def closet(lol):
-    await Button.clear()
+    Button.clear()
 
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"menuset")))
