@@ -102,12 +102,12 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
         
             packed = struct.pack(
                 SESSION_STRING_FORMAT,
-                await pyropanda.dc_id(dc_id),
-                await pyropanda.api_id(api_id),
-                await pyropanda.test_mode(test_mode),
-                await pyropanda.auth_key(auth_key),
-                await pyropanda.user_id(user_id),
-                await pyropanda.is_bot(is_bot)
+                pyropanda.dc_id(dc_id),
+                pyropanda.api_id(api_id),
+                pyropanda.test_mode(test_mode),
+                pyropanda.auth_key(auth_key),
+                pyropanda.user_id(user_id),
+                pyropanda.is_bot(is_bot)
             )
             return base64.urlsafe_b64encode(packed).decode().rstrip("=")
         else:
