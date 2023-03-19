@@ -571,7 +571,7 @@ from telethon.tl import types
 @tgbot.on(callbackquery.CallbackQuery)
 @check_owner
 async def on_plugin_callback_query_handler(event):
-    if event.data == b'close':
+    if event.data == b'closeh':
         try:
             
             if event.mid:
