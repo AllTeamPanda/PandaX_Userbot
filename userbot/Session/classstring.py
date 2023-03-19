@@ -99,8 +99,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                 auth_id = 3
 
             dc_id, api_id, test_mode, auth_key, user_id, is_bot = struct.unpack(
-                CURRENT_VERSION
-                + _TELEHON_FORM,
+                _TELEHON_FORM,
                 base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4)),
             )
             return base64.urlsafe_b64encode(
