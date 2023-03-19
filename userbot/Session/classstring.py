@@ -16,7 +16,7 @@ from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions.string import _STRUCT_PREFORMAT, CURRENT_VERSION, StringSession
 from telethon.crypto import AuthKey
 from ..versions import __version__
-_PYRO_FORM = {351: ">B?256sI?", 356: ">B?256sQ?", 362: ">BI?256sQ?"}
+_PYRO_FORM = {351: ">B?256sI?", 356: ">B?256sQ?", 362: ">BI?256sQ?", 352: ">B{}sH256s"}
 
 # https://github.com/pyrogram/pyrogram/blob/master/docs/source/faq/what-are-the-ip-addresses-of-telegram-data-centers.rst
 
@@ -87,19 +87,18 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
             return session_name
 
         # Telethon to pyro Session
-        elif len(session_name) in _TELEHON_FORM:
+        elif len(session_name) in _PYRO_FORM.keys():
             if session_name:
                 if session_name[0] != CURRENT_VERSION:
                     logger.exception("Wrong string session. Copy paste correctly!")
             session_name = session_name[1:]
-            iplen = 4 if len(session_name) == 352 else 16
-            if len(session_name) in [351, 356]:
+            if len(session_name) in [352]:
                  auth_id = 2
             else:
                 auth_id = 3
 
             dc_id, api_id, test_mode, auth_key, user_id, is_bot = struct.unpack(
-                _TELEHON_FORM,
+                _PYRO_FORM[len(session_name)],
                 base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4)),
             )
             return base64.urlsafe_b64encode(
