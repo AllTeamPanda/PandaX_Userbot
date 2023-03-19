@@ -63,9 +63,11 @@ def Telethon():
                     PandaBot.session.set_dc(option.id, option.ip_address, option.port)
                     PandaBot.session.save()
                     break
-            tgbot.get_me()
+            tgbot.me = tgbot.get_me()
             PandaBot.me = PandaBot.get_me()
             PandaBot.uid = tgbot.uid = utils.get_peer_id(PandaBot.me)
+            if pdB.get_key("BOT_USERNAME"):
+                pdB.set_key("BOT_USERNAME, tgbot.me.username)
             if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot.me)
                 pdB.set_key("OWNER_ID", Var.OWNER_ID)
