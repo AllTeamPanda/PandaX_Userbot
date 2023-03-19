@@ -105,7 +105,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
             return base64.urlsafe_b64encode(
                     struct.pack(
                         SESSION_STRING_FORMAT,
-                        dc_id,
+                        2,
                         api_id,
                         test_mode,
                         auth_key,
