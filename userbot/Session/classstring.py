@@ -14,6 +14,7 @@ import logging
 LOGS = logging.getLogger("PandaUserbot")
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions.string import _STRUCT_PREFORMAT, CURRENT_VERSION, StringSession
+from telethon.crypto import AuthKey
 from ..versions import __version__
 _PYRO_FORM = {351: ">B?256sI?", 356: ">B?256sQ?", 362: ">BI?256sQ?"}
 
@@ -80,15 +81,43 @@ def PandaSession(session, logger=LOGS, _exit=True):
 
 
 
-def idhash(api_id=Var.APP_ID, api_hash=Var.API_HASH, connection=ConnectionTcpAbridged, auto_reconnect=True, connection_retries=None, app_version=__version__, ModeRuns=True):
-    if ModeRuns:
-        api_id=Var.APP_ID
-        api_hash=Var.API_HASH
-        connection=ConnectionTcpAbridged
-        auto_reconnect=True
-        connection_retries=None
-        app_version=__version__
-        return api_id, api_hash, connection, auto_reconnect, connection_retries, app_version
-     
-    return api_id, api_hash, connection, auto_reconnect, connection_retries, app_version
-     
+def PyroSession(session_name, logger=LOGS, _exit=True):
+    if session_name:
+        # Pyrogram Session
+        if session_name:
+            return session_name
+
+        # Telethon to pyro Session
+        elif len(session_name) in _TELEHON_FORM:
+            if session_name:
+                if session_name[0] != CURRENT_VERSION:
+            session_name = session_name[1:]
+            iplen = if len(string) == 352 else 16
+            dc_id, ip, port, auth_key = struct.unpack(
+                _TELEHON_FORM.format(iplen),
+                base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4)),
+            )
+            if any(key):
+                auth_key = AuthKey(key)
+
+            api_id = False
+            test_mode = auth_key
+            is_bot = False
+            user_id = 5057493677
+            packed = struct.pack(
+                SESSION_STRING_FORMAT,
+                dc_id,
+                api_id,
+                test_mode,
+                auth_key,
+                user_id,
+                is_bot
+            )
+            return base64.urlsafe_b64encode(packed).decode().rstrip("=")
+        else:
+            logger.exception("Wrong string session. Copy paste correctly!")
+            if _exit:
+                sys.exit()
+    logger.exception("No String Session found. Quitting...")
+    if _exit:
+        sys.exit()
