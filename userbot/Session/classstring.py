@@ -91,6 +91,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
         elif len(session_name) in _TELEHON_FORM:
             if session_name:
                 if session_name[0] != CURRENT_VERSION:
+                    logger.exception("Wrong string session. Copy paste correctly!")
             session_name = session_name[1:]
             iplen = if len(session_name) == 352 else 16
             dc_id, ip, port, auth_key = struct.unpack(
