@@ -87,25 +87,25 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
             return session_name
 
         # Telethon to pyro Session
-        elif len(session_name) in _TELEHON_FORM.keys():
+        elif len(session_name) in StringSession(session_name):
             if session_name:
                 if session_name[0] != CURRENT_VERSION:
                     logger.exception("Wrong string session. Copy paste correctly!")
             session_name = session_name[1:]
-            if len(session_name) in [353]:
-                 auth_id = 2
-            else:
-                auth_id = 3
+            ip_len = 4 if len(session_name) == 352 else 16
 
-            dc_id, api_id, test_mode, auth_key, user_id, is_bot = struct.unpack(
-                _TELEHON_FORM,
+            dc_id, ip, port, auth_key= struct.unpack(
+                _STRUCT_PREFORMAT.format(4),
                 base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4)),
             )
-
+            api_id = False
+            tes_mode = False
+            user_id = False
+            is_bot = False
             return base64.urlsafe_b64encode(
                     struct.pack(
                         SESSION_STRING_FORMAT,
-                        2,
+                        dc_id,
                         api_id,
                         test_mode,
                         auth_key,
