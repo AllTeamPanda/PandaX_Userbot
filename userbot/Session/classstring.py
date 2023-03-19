@@ -100,9 +100,9 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
             if any(key):
                 auth_key = AuthKey(key)
             
-            auth_key = key
+            auth_key = auth_key
             api_id = False
-            test_mode = key
+            test_mode = False
             user_id = False
             is_bot = False
             FORMAT2 = base64.urlsafe_b64encode(
