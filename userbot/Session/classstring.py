@@ -115,7 +115,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                         user_id,
                         is_bot,
                     )
-                ).decode().rstrip("=")
+                ).decode('ascii')
             
             FORMAT3 = base64.urlsafe_b64encode(
                     struct.pack(
@@ -127,7 +127,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                         user_id,
                         is_bot,
                     )
-                ).decode().rstrip("=")
+                ).decode('ascii')
 
             FORMAT = base64.urlsafe_b64encode(
                     struct.pack(
@@ -139,7 +139,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                         user_id,
                         is_bot,
                     )
-                ).decode().rstrip("=")
+                ).decode('ascii')
 
             return FORMAT, FORMAT2, FORMAT3
         else:
