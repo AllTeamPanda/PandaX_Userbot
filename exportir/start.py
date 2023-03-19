@@ -52,10 +52,10 @@ def envbot():
         sleep(0.1)
         system("screen -S Panda")
         sleep(0.1)
-        system("bash start")
+        
    
 
 if not path.exists(".env"):
     print(Start("Typing y for start env"))
     envbot()
-    
+    print(system("bash start"))
