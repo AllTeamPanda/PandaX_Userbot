@@ -1,7 +1,7 @@
 import asyncio
 import base64
 from . import PandaBot, edit_or_reply, LOGS
-
+from ... import pdB
 
 plugin_category = "plugins"
 
@@ -138,7 +138,7 @@ async def encode(event):
 
 
 _STRUCT_PREFORMAT = '>B{}sH256s'
-
+SESSION_STRING_FORMAT = ">BI?256sQ?"
 CURRENT_VERSION = '1'
 
 @PandaBot.ilhammansiz_cmd(
@@ -160,6 +160,23 @@ async def encode(event):
         ip_len = 4 if len(ppk) == 352 else 16
         dc_id, ip, port, key = struct.unpack(
             _STRUCT_PREFORMAT.format(ip_len), base64.urlsafe_b64decode(ppk))
+
+        api_id = False
+        test_mode = key
+        auth_key = key
+        user_id = pdB.get_key("OWNER_ID")
+        is_bot = False
+        packed = struct.pack(
+            SESSION_STRING_FORMAT,
+            dc_id,
+            api_id,
+            test_mode,
+            atuh_key,
+            user_id,
+            is_bot
+        )
+
+    strings = base64.urlsafe_b64encode(packed).decode().rstrip("=")
     await edit_or_reply(event,
-            f"**=>> Decoded Text :** `{dc_id}`\n\n**=>> OUTPUT :**\n`{ip}` \n\n Mode> {key} "
+            f"**=>> {strings}"
         )
