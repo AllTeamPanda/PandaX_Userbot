@@ -162,10 +162,6 @@ BOTLOG = Config.BOTLOG
 BOTLOG_CHATID = Config.BOTLOG_CHATID
 PM_LOGGER_GROUP_ID = Config.PM_LOGGER_GROUP_ID
 
-def where_hosted():
-    if os.getenv("DYNO"):
-        return "heroku"
-
 
 from asyncio import get_event_loop
 LOOP = get_event_loop()
@@ -208,7 +204,7 @@ def where_hosted():
         return "github actions"
     if os.getenv("ANDROID_ROOT"):
         return "termux"
-    return "local"
+    return "local vps"
 
 
 HOSTED_ON = where_hosted()
