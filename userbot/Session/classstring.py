@@ -93,7 +93,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                 dc_id,
                 api_id,
                 test_mode,
-                atuh_key,
+                auth_key,
                 user_id,
                 is_bot
             )
