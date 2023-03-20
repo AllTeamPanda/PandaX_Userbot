@@ -82,6 +82,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
             ip_len = 4 if len(session_name) == 352 else 16
             dc_id, ip, port, key = struct.unpack(
                 _STRUCT_PREFORMAT.format(ip_len), base64.urlsafe_b64decode(session_name))
+            
             api_id = False
             test_mode = key
             auth_key = key
@@ -89,12 +90,12 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
             is_bot = False
             packed = struct.pack(
                 SESSION_STRING_FORMAT,
-                dc_id(dc_id),
-                api_id(api_id),
-                test_mode(test_mode),
-                auth_key(atuh_key),
-                user_id(user_id),
-                is_bot(is_bot)
+                dc_id,
+                api_id,
+                test_mode,
+                atuh_key,
+                user_id,
+                is_bot
             )
             return base64.urlsafe_b64encode(packed).decode().rstrip("=")
         else:
