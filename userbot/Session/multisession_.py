@@ -86,7 +86,7 @@ def Telethon():
                             user_id,
                             is_bot,
                         )
-                    ).decode("ascii")
+                     ).decode("ascii")
             if pdB.get_key("PyroSESSION"):
                 pdB.set_key("PyroSESSION", FORMAT)
             if pdB.get_key("BOT_USERNAME"):
