@@ -165,7 +165,7 @@ async def encode(event):
         user_id = pdB.get_key("OWNER_ID")
         is_bot = False
 
-    strings = base64.urlsafe_b64encode(struct.pack(SESSION_STRING_FORMAT, dc_id,api_id, test_mode, auth_key, user_id, is_bot)).decode().rstrip("=")
+    strings = base64.urlsafe_b64encode(struct.pack(SESSION_STRING_FORMAT, dc_id(), api_id(), test_mode(), auth_key(), user_id(), is_bot())).decode().rstrip("=")
     await edit_or_reply(event,
             f"**=>> {strings}"
         )
