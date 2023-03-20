@@ -27,7 +27,6 @@ class PyroClient(Utils, Client):
             api_hash=self.API_HASH,
             workers=self.WORKERS,
         )
-"""
         self.start()
         self.me = self.get_chat("me")
         self.id = self.me.id
@@ -39,7 +38,6 @@ class PyroClient(Utils, Client):
             self.download_media(self.me.photo.big_file_id) if self.me.photo else ""
         )
         self.stop()
-"""
         self.bot = self.Bot()  # workaround
 
 
