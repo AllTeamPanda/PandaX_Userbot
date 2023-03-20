@@ -12,34 +12,9 @@ from .utils import Utils
 from telethon import functions, utils
 from .classstring import *
 from .._database._var import Var, Database
-from .client import PandaBot
-SESSION_STRING_FORMAT = ">BI?256sQ?"
+
 from .._database import pdB
 
-if pdB.get_key("PyroSESSION"):
-    if PandaBot:
-        PandaBot.connect()
-        config = PandaBot(functions.help.GetConfigRequest())
-        PandaBot.me = PandaBot.get_me()
-        PandaBot.uid = utils.get_peer_id(PandaBot.me)
-        user_id = PandaBot.uid
-        dc_id = PandaBot.session.dc_id
-        auth_key = PandaBot.session.auth_key
-        test_mode = False
-        api_id = False
-        is_bot = False
-        FORMAT = base64.urlsafe_b64encode(
-                    struct.pack(
-                        SESSION_STRING_FORMAT,
-                        dc_id,
-                        api_id,
-                        test_mode,
-                        auth_key,
-                        user_id,
-                        is_bot,
-                    )
-                ).decode().rstrip("=")
-        pdB.set_key("PyroSESSION", FORMAT)
 
 
 class PyroClient(Utils, Client):
