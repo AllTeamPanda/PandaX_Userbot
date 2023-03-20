@@ -120,7 +120,7 @@ async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None
         )
     await asyncio.sleep(time)
     kwargs["time"] = kwargs.get("time", 8)
-    return await event.delete(), await edit_or_reply(event, text, **kwargs)
+    return await event.delete()
 
 eor = edit_or_reply
 eod = edit_delete
