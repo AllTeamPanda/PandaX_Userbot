@@ -136,6 +136,8 @@ def Pyrogram():
     if Database.PyroSESSION and Database.BOT_TOKEN:
         if pyrobot:
             pyrobot.start()
+            print(f"⚙️ Panda Userbot {pyrover} Telah Aktif")
+            idle()
 """
         if app.bot:
             print("Activating assistant.\n")
@@ -158,6 +160,4 @@ def Pyrogram():
     modules = app.import_module("userbot/modules/pyrogram/", exclude=app.NoLoad())
     print(f"\n\n{modules} modules Loaded Sucesfull\n\n")
 """
-    print(f"⚙️ Panda Userbot {pyrover} Telah Aktif")
-    idle()
-
+    
