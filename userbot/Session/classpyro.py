@@ -16,7 +16,7 @@ from .client import PandaBot
 SESSION_STRING_FORMAT = ">BI?256sQ?"
 from .._database import pdB
 
-if pdB.get_key("PyroSESSION") in PandaBot:
+if pdB.get_key("PyroSESSION"):
     if PandaBot:
         PandaBot.connect()
         config = PandaBot(functions.help.GetConfigRequest())
