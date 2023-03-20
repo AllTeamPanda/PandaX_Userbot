@@ -35,7 +35,7 @@ async def edit_or_reply(
         parse_mode = parse_mode or "md"
         if event.sender_id in sudo_users:
             if reply_to:
-                return await reply_to.reply(
+                return await event.client.send_message(
                     text, parse_mode=parse_mode, link_preview=link_preview
                 )
             return await event.reply(
@@ -51,7 +51,7 @@ async def edit_or_reply(
         text = f"{linktext} [here]({response})"
         if event.sender_id in sudo_users:
             if reply_to:
-                return await reply_to.reply(text, link_preview=link_preview)
+                return await event.client.send_message(text, link_preview=link_preview)
             return await event.reply(text, link_preview=link_preview)
         await event.edit(text, link_preview=link_preview)
         return event
@@ -60,7 +60,7 @@ async def edit_or_reply(
     with open(file_name, "w+") as output:
         output.write(text)
     if reply_to:
-        await reply_to.reply(caption, file=file_name)
+        await event.client.send_message(caption, file=file_name)
         await event.delete()
         return os.remove(file_name)
     if event.sender_id in sudo_users:
