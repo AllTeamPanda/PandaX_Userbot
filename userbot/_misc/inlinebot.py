@@ -842,8 +842,9 @@ async def on_plugin_callback_query_handler(event):
 
 @settingvar("closebot")
 async def closet(lol):
+    b = await lol.get_input_chat()
     a = await lol.edit("Close")
-    await lol.delete(a)
+    await lol.delete(b, a)
 
 
 @tgbot.on(callbackquery.CallbackQuery(data=re.compile(b"menuset")))
