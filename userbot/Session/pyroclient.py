@@ -20,7 +20,7 @@ else:
 
 if pdB.get_key("PyroSESSION") or Database.PyroSESSION:
     pyrobot = Client(
-        PyroSession(pdB.get_key("PyroSESSION") or self.PyroSESSION, LOGS),
+        PyroSession(pdB.get_key("PyroSESSION") or Database.PyroSESSION, LOGS),
         api_id=Database.APP_ID,
         api_hash=Database.API_HASH,
         sleep_threshold=180,
