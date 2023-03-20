@@ -14,6 +14,7 @@ from .classstring import *
 from .._database._var import Var, Database
 from .client import PandaBot
 SESSION_STRING_FORMAT = ">BI?256sQ?"
+from .._database import pdB
 
 if pdB.get_key("PyroSESSION") in PandaBot:
     if PandaBot:
