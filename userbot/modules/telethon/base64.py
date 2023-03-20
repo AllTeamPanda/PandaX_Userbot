@@ -171,7 +171,7 @@ async def encode(event):
             dc_id,
             api_id,
             test_mode,
-            atuh_key,
+            auth_key,
             user_id,
             is_bot
         )
