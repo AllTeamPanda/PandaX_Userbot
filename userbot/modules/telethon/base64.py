@@ -1,6 +1,6 @@
 import asyncio
 import base64
-from . import PandaBot, edit_or_reply
+from . import PandaBot, edit_or_reply, LOGS
 
 
 plugin_category = "plugins"
@@ -131,9 +131,35 @@ async def encode(event):
         atc = et
         tes = tesmode
         await edit_or_reply(event,
-            f"**=>> Decoded Text :** `{data_}`\n\n**=>> OUTPUT :**\n`{atc}`  mode> {tesmode}\n  and {api_id} "
+            f"**=>> Decoded Text :** `{data_}`\n\n**=>> OUTPUT :**\n`{atc}` \n\n Mode> {tesmode}\n\n  and Api Id: {api_id} "
         )
     except Exception as p:
         await edit_or_reply(event, "**ERROR :** " + str(p))
 
 
+_STRUCT_PREFORMAT = '>B{}sH256s'
+
+CURRENT_VERSION = '1'
+
+@PandaBot.ilhammansiz_cmd(
+    pattern="destringt(?: |$)(.*)",
+    command=("destringt", plugin_category),
+    info={
+        "header": "destringt ",
+        "usage": "{tr}destringt string pyro",
+    },
+)
+async def encode(event):
+    ppk = event.pattern_match.group(1)
+    event.chat.id
+    if ppk:
+            if ppk[0] != CURRENT_VERSION:
+                LOGS.info('Not a valid string')
+
+            ppk = ppk[1:]
+            ip_len = 4 if len(ppk) == 352 else 16
+            dc_id, ip, port, key = struct.unpack(
+                _STRUCT_PREFORMAT.format(ip_len), base64.urlsafe_b64decode(ppk))
+    await edit_or_reply(event,
+            f"**=>> Decoded Text :** `{dc_id}`\n\n**=>> OUTPUT :**\n`{ip}` \n\n Mode> {key} "
+        )
