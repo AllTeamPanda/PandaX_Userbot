@@ -14,7 +14,7 @@ import logging
 LOGS = logging.getLogger("PandaUserbot")
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions.string import _STRUCT_PREFORMAT, CURRENT_VERSION, StringSession
-from telethon.crypto import AuthKey
+
 from ..versions import __version__
 _PYRO_FORM = {351: ">B?256sI?", 356: ">B?256sQ?", 362: ">BI?256sQ?"}
 
@@ -27,16 +27,6 @@ DC_IPV4 = {
     4: "149.154.167.91",
     5: "91.108.56.130",
 }
-
-SESSION_STRING_FORMAT = ">BI?256sQ?"
-_TELEHON_FORM = {353: ">B{}sH256s"}
-
-
-OLD_SESSION_STRING_FORMAT = ">B{}sH256s"
-OLD_SESSION_STRING_FORMAT_64 = ">B{}sH256s"
-SESSION_STRING_SIZE = 351
-SESSION_STRING_SIZE_64 = 356
-
 
 
 def PandaSession(session, logger=LOGS, _exit=True):
@@ -85,57 +75,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
         # Pyrogram Session
         if session_name:
             return session_name
-
-        # Telethon to pyro Session
-        elif StringSession(session_name):
-            if session_name:
-                dc_id, ip, port, key = struct.unpack(
-                    len(session_name),
-                    base64.urlsafe_b64decode(session_name + "=" * (-len(session_name) % 4)),
-                )
-            
-            auth_key = key
-            api_id = False
-            test_mode = False
-            user_id = False
-            is_bot = False
-            FORMAT2 = base64.urlsafe_b64encode(
-                    struct.pack(
-                        OLD_SESSION_STRING_FORMAT,
-                        dc_id,
-                        api_id,
-                        test_mode,
-                        auth_key,
-                        user_id,
-                        is_bot,
-                    )
-                ).decode().rstrip("=")
-            
-            FORMAT3 = base64.urlsafe_b64encode(
-                    struct.pack(
-                        OLD_SESSION_STRING_FORMAT_64,
-                        dc_id,
-                        api_id,
-                        test_mode,
-                        auth_key,
-                        user_id,
-                        is_bot,
-                    )
-                ).decode().rstrip("=")
-
-            FORMAT = base64.urlsafe_b64encode(
-                    struct.pack(
-                        SESSION_STRING_FORMAT,
-                        dc_id,
-                        api_id,
-                        test_mode,
-                        auth_key,
-                        user_id,
-                        is_bot,
-                    )
-                ).decode().rstrip("=")
-
-            return FORMAT, FORMAT2, FORMAT3
+        
         else:
             logger.exception("Wrong string session. Copy paste correctly!")
             if _exit:
