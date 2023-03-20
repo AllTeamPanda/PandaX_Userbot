@@ -39,9 +39,9 @@ class PyroClient(Utils, Client):
             self.download_media(self.me.photo.big_file_id) if self.me.photo else ""
         )
         self.stop()
-
-        self.bot = self.Bot()  # workaround
 """
+        self.bot = self.Bot()  # workaround
+
 
     class Bot(Client, Utils):
         """Assistant (Panda)"""
