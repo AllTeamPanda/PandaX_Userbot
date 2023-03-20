@@ -134,6 +134,9 @@ def Telethon():
 
 def Pyrogram():
     if Database.PyroSESSION and Database.BOT_TOKEN:
+        if pyrobot:
+            pyrobot.start()
+"""
         if app.bot:
             print("Activating assistant.\n")
             app.bot.start()
@@ -154,6 +157,7 @@ def Pyrogram():
     print("Modules: Installing.\n\n")
     modules = app.import_module("userbot/modules/pyrogram/", exclude=app.NoLoad())
     print(f"\n\n{modules} modules Loaded Sucesfull\n\n")
+"""
     print(f"⚙️ Panda Userbot {pyrover} Telah Aktif")
     idle()
 
