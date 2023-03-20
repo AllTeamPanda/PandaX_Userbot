@@ -6,6 +6,7 @@
 # Recode by Ilham Mansiz
 
 from .._database._var import Var
+from .._database import pdB
 import base64
 import ipaddress
 import struct
@@ -75,7 +76,27 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
         # Pyrogram Session
         if session_name:
             return session_name
-        
+
+        elif session_name[0] != CURRENT_VERSION:
+            session_name = session_name[1:]
+            ip_len = 4 if len(session_name) == 352 else 16
+            dc_id, ip, port, key = struct.unpack(
+                _STRUCT_PREFORMAT.format(ip_len), base64.urlsafe_b64decode(session_name))
+            api_id = False
+            test_mode = key
+            auth_key = key
+            user_id = pdB.get_key("OWNER_ID")
+            is_bot = False
+            packed = struct.pack(
+                SESSION_STRING_FORMAT,
+                dc_id,
+                api_id,
+                test_mode,
+                auth_key,
+                user_id,
+                is_bot
+            )
+            return base64.urlsafe_b64encode(packed).decode().rstrip("=")
         else:
             logger.exception("Wrong string session. Copy paste correctly!")
             if _exit:
