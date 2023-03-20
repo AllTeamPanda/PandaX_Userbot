@@ -9,21 +9,11 @@ from pyrogram import Client
 from .classpyro import PyroClient
 from .._database import pdB
 from .._database._var import Database
-from .classstring import *
 
-"""
+
+
 if pdB.get_key("PyroSESSION") or Database.PyroSESSION:
     app = PyroClient()
 else:
     app = None
-"""
 
-if pdB.get_key("PyroSESSION") or Database.PyroSESSION:
-    pyrobot = Client(
-        PyroSession(pdB.get_key("PyroSESSION") or Database.PyroSESSION, LOGS),
-        api_id=Database.APP_ID,
-        api_hash=Database.API_HASH,
-        sleep_threshold=180,
-    )
-else:
-    pyrobot = None
