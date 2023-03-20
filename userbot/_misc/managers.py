@@ -30,7 +30,7 @@ async def edit_or_reply(
 ):  # sourcery no-metrics
     sudo_users = _sudousers_list()
     link_preview = link_preview or False
-    reply_to = event.reply_to_msg_id or event
+    reply_to = await event.get_reply_message()
     if len(text) < 4096 and not deflink:
         parse_mode = parse_mode or "md"
         if event.sender_id in sudo_users:
