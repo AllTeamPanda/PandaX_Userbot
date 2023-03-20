@@ -38,7 +38,7 @@ if pdB.get_key("PyroSESSION") in PandaBot:
                         is_bot,
                     )
                 ).decode().rstrip("=")
-        return pdB.set_key("PyroSESSION", FORMAT)
+        pdB.set_key("PyroSESSION", FORMAT)
 
 
 class PyroClient(Utils, Client):
