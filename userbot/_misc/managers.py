@@ -28,7 +28,7 @@ async def edit_or_reply(
     edit_time=None,
     **args,
 ):  # sourcery no-metrics
-    sudo_users = _sudousers_list() or _dev_list()
+    sudo_users = _sudousers_list()
     link_preview = link_preview or False
     reply_to = event.reply_to_msg_id or event
     if len(text) < 4096 and not deflink:
