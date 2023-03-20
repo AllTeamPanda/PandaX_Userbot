@@ -158,18 +158,23 @@ async def encode(event):
 
         ppk = ppk[1:]
         ip_len = 4 if len(ppk) == 352 else 16
-        dc_id, ip, port, auth_key = struct.unpack(
+        data_ = struct.unpack(
             _STRUCT_PREFORMAT.format(ip_len), base64.urlsafe_b64decode(ppk))
+        if len(ppk) in [352]:
+            auth_id = 3
+        else:
+            auth_id = 3
+
+        dc_id, auth_key = data_[0], data_[auth_id]
         api_id = False
         test_mode = auth_key
-        auth_key = auth_key
         user_id = pdB.get_key("OWNER_ID")
         is_bot = False
         packed = struct.pack(
             SESSION_STRING_FORMAT,
             dc_id,
-            is_bot,
-            auth_key,
+            api_id,
+            test_mode,
             auth_key,
             user_id,
             is_bot
