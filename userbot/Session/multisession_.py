@@ -20,9 +20,6 @@ import os
 from pyrogram import __version__ as pyrover
 PRIVATE = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID"))
 
-SESSION_STRING_FORMAT = ">BI?256sQ?"
-import base64
-import struct
 
 cmdhr = os.environ.get("COMMAND_HAND_LER") or "."
 
@@ -69,26 +66,7 @@ def Telethon():
                     break
             tgbot.me = tgbot.get_me()
             PandaBot.me = PandaBot.get_me()
-            PandaBot.uid = tgbot.uid = utils.get_peer_id(PandaBot.me)
-            user_id = PandaBot.uid
-            dc_id = PandaBot.session.dc_id
-            auth_key = PandaBot.session.auth_key
-            test_mode = False
-            api_id = False
-            is_bot = False
-            FORMAT = base64.urlsafe_b64encode(
-                        struct.pack(
-                            SESSION_STRING_FORMAT,
-                            dc_id,
-                            api_id,
-                            test_mode,
-                            auth_key,
-                            user_id,
-                            is_bot,
-                        )
-                     ).decode("ascii")
-            if pdB.get_key("PyroSESSION"):
-                pdB.set_key("PyroSESSION", FORMAT)
+            PandaBot.uid = tgbot.uid = utils.get_peer_id(PandaBot.me)      
             if pdB.get_key("BOT_USERNAME"):
                 pdB.set_key("BOT_USERNAME", tgbot.me.username)
             if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
