@@ -168,6 +168,8 @@ async def encode(event):
         packed = struct.pack(
             SESSION_STRING_FORMAT,
             dc_id,
+            is_bot,
+            auth_key,
             auth_key,
             user_id,
             is_bot
