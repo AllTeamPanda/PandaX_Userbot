@@ -153,13 +153,13 @@ async def encode(event):
     ppk = event.pattern_match.group(1)
     event.chat.id
     if ppk:
-            if ppk[0] != CURRENT_VERSION:
-                LOGS.info('Not a valid string')
+        if ppk[0] != CURRENT_VERSION:
+            LOGS.info('Not a valid string')
 
-            ppk = ppk[1:]
-            ip_len = 4 if len(ppk) == 352 else 16
-            dc_id, ip, port, key = struct.unpack(
-                _STRUCT_PREFORMAT.format(ip_len), base64.urlsafe_b64decode(ppk))
+        ppk = ppk[1:]
+        ip_len = 4 if len(ppk) == 352 else 16
+        dc_id, ip, port, key = struct.unpack(
+            _STRUCT_PREFORMAT.format(ip_len), base64.urlsafe_b64decode(ppk))
     await edit_or_reply(event,
             f"**=>> Decoded Text :** `{dc_id}`\n\n**=>> OUTPUT :**\n`{ip}` \n\n Mode> {key} "
         )
