@@ -78,7 +78,7 @@ async def play_music_(event):
         return await eor(
             xx, "Please specify a song name or reply to a audio file !", time=5
         )
-    await eor(xx, get_string('vcbot_20'), parse_mode="md")
+    await eor(xx, "`Downloading and converting...`", parse_mode="md")
     if reply and reply.media and mediainfo(reply.media).startswith(("audio", "video")):
         song, thumb, song_name, link, duration = await file_download(xx, reply)
     else:
@@ -130,7 +130,7 @@ async def play_music_(event):
 )
 @PandaVc_cmd("playfrom")
 async def play_music_(event):
-    msg = await eor(event, get_string("com_1"))
+    msg = await eor(event, "`memproses...`")
     chat = event.chat_id
     limit = 10
     from_user = html_mention(event)
@@ -311,7 +311,7 @@ async def queue(event):
 )
 @PandaVc_cmd("radio")
 async def radio_mirchi(e):
-    xx = await eor(e, get_string("com_1"))
+    xx = await eor(e, "`memproses...`")
     if not len(e.text.split()) > 1:
         return await eor(xx, "Are You Kidding Me?\nWhat to Play?")
     input = e.text.split()
@@ -351,7 +351,7 @@ async def radio_mirchi(e):
 )
 @PandaVc_cmd("(live|ytlive)")
 async def live_stream(e):
-    xx = await eor(e, get_string("com_1"))
+    xx = await eor(e, "`memproses...`")
     if not len(e.text.split()) > 1:
         return await eor(xx, "Are You Kidding Me?\nWhat to Play?")
     input = e.text.split()
@@ -550,7 +550,7 @@ async def replayer(event):
 )
 @PandaVc_cmd("videoplay")
 async def video_c(event):
-    xx = await eor(event, get_string("com_1"))
+    xx = await eor(event, "`memproses...`")
     chat = event.chat_id
     from_user = inline_mention(event.sender)
     reply, song = None, None
@@ -673,7 +673,7 @@ async def volume_setter(event):
 )
 @PandaVc_cmd("ytplaylist")
 async def live_stream(e):
-    xx = await eor(e, get_string("com_1"))
+    xx = await eor(e, "`memproses...`")
     if not len(e.text.split()) > 1:
         return await eor(xx, "Are You Kidding Me?\nWhat to Play?")
     input = e.text.split()
