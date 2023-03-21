@@ -5,7 +5,7 @@
 #Panda Userbot
 
 
-from ...resources import *
+from exportir.RawUtilities.VCTools import *
 from pytgcalls.exceptions import NotConnectedError
 from requests.exceptions import MissingSchema
 from telethon import events
