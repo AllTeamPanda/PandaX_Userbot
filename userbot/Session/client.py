@@ -112,28 +112,3 @@ else:
     cekbot = None
 
 
-try:
-    if DB.get_key("VC_SESSION") or Var.VC_SESSION:
-        vcbot = TelegramClient(
-            PandaSession(DB.get_key("VC_SESSION") or Var.VC_SESSION, LOGS),
-            api_id=Var.APP_ID,
-            api_hash=Var.API_HASH,
-            connection=ConnectionTcpAbridged,
-            auto_reconnect=True,
-            connection_retries=None,
-            app_version=__version__,
-        )
-    else:
-        vcbot = None
-except Exception as e:
-    print(f"STRING_SESSION- {str(e)}")
-    sys.exit()
-
-
-
-from pytgcalls import PyTgCalls
-
-if Var.VC_SESSION:
-    call_py = PyTgCalls(vcbot)
-else:
-    call_py = None
