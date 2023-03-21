@@ -35,6 +35,7 @@ from youtubesearchpython import VideosSearch
 
 
 from exportir.RawUtilities.owner import admin_check
+from exportir.RawUtilities.rawfunctions import *
 from userbot import LOGS, PandaBot, tgbot, Config
 from userbot._database import gvarstatus, pdB
 from userbot._misc.data import _sudousers_list
