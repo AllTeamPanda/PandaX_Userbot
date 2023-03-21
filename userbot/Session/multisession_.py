@@ -50,9 +50,6 @@ def Telethon():
         try:
             PandaBot.connect()
             tgbot.start(bot_token=Database.BOT_TOKEN)
-            if Var.VC_SESSION:
-                vcbot.start()
-                call_py.start()
             config = PandaBot(functions.help.GetConfigRequest())
             for option in config.dc_options:
                 if option.ip_address == PandaBot.session.server_address:
