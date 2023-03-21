@@ -865,7 +865,7 @@ async def on_plugin_callback_query_handler(event):
                 Button.inline("REPO_URL", data="url"),
             ],
             [
-                Button.inline("VC_SESSION", data="vcbots"),
+                Button.inline("PyroSESSION", data="vcbots"),
                 Button.inline("SESSION2", data="session2"),
                 Button.inline("SESSION3", data="session3"),
             ],
@@ -1022,10 +1022,10 @@ async def on_plugin_callback_query_handler(event):
 @check_owner
 async def on_plugin_callback_query_handler(event):
     pru = event.sender_id
-    var = "VC_SESSION"
+    var = "PyroSESSION"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "**Silahkan Kirimkan String Telethon atau pyrogram Untuk bot music\n\nGunakan /cancel untuk membatalkan."
+            "**Silahkan Kirimkan String pyrogram Untuk bot based pyrogram\n\nGunakan /cancel untuk membatalkan."
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
