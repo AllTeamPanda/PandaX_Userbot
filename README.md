@@ -106,7 +106,7 @@ Use this bot at your own risk, and use it wisely.
 *   [CatUserbot](https://github.com/TgCatUB/catuserbot) : CatUserbot
 
 ## © Credits
-* [Laky-64](https://github.com/pytgcalls/) for [PyTgcalls](https://github.com/pytgcalls/pytgcalls)
+* [MarshalX](https://github.com/MarshalX) for [PyTgcalls](https://github.com/MarshalX/tgcalls)
 * [Lonamiwebs](https://github.com/LonamiWebs) for [Telethon](https://github.com/LonamiWebs/Telethon)
 * [Dan](https://github.com/pyrogram) for [Pyrogram](https://github.com/pyrogram/pyrogram)
 * [Ilham Mansiz](https://github.com/ilhammansiz) for [PandaX_Userbot](https://github.com/TeamXPanda/Panda)
