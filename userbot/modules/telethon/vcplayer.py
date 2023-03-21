@@ -47,7 +47,7 @@ plugin_category = "music"
 async def play_music_(event):
     if "playfrom" in event.text.split()[0]:
         return  # For PlayFrom Conflict
-    xx = await eor(event, get_string("com_1"), parse_mode="md")
+    xx = await eor(event, "`Downloading and converting...`", parse_mode="md")
     chat = event.chat_id
     from_user = html_mention(event)
     reply, song = None, None
