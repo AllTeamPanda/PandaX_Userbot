@@ -13,7 +13,7 @@ try:
     from pytgcalls.exceptions import GroupCallNotFoundError
 except ImportError:
     LOGS.info("Installing 'pytgcalls' for music.")
-    os.system("pip3 install -q pytgcalls==3.0.0.dev23 && pip3 install av -q --no-binary av")
+    os.system("pip3 install -q pytgcalls==3.0.0.dev24 && pip3 install av -q --no-binary av")
     from pytgcalls import GroupCallFactory
     from pytgcalls.exceptions import GroupCallNotFoundError
 
