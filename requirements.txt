@@ -98,7 +98,7 @@ pybase64
 pyDownload
 pytube
 pysimplelog
-pytgcalls==3.0.0.dev21
+pytgcalls==3.0.0.dev23
 
 # Q 
 qrcode
