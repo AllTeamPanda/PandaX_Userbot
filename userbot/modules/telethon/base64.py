@@ -174,7 +174,16 @@ async def encode(event):
             user_id,
             is_bot
         )
-    strings = base64.urlsafe_b64encode(packed).decode().rstrip("=")
+    strings = base64.urlsafe_b64encode(
+            struct.pack(
+                SESSION_STRING_FORMAT,
+                dc_id,
+                test_mode,
+                auth_key,
+                user_id,
+                is_bot
+            )
+        ).decode().rstrip("=")
     await edit_or_reply(event,
             f"**=>> {strings}"
         )
