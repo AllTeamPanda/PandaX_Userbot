@@ -163,7 +163,7 @@ async def encode(event):
         api_id = False
         test_mode = key
         auth_key = key
-        user_id = pdB.get_key("OWNER_ID")
+        user_id = False
         is_bot = False
         
     strings = base64.urlsafe_b64encode(
