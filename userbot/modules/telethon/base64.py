@@ -177,5 +177,5 @@ async def encode(event):
             )
         ).decode().rstrip("=")
     await edit_or_reply(event,
-            f"**=>> {strings}"
+            f"**=>> {strings}\n\n IP :{ip}"
         )
