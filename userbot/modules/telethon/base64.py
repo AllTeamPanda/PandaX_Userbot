@@ -169,7 +169,6 @@ async def encode(event):
     strings = base64.urlsafe_b64encode(
             struct.pack(
                 SESSION_STRING_FORMAT,
-                api_id,
                 dc_id,
                 test_mode,
                 auth_key,
