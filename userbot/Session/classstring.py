@@ -77,18 +77,19 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
         if session_name:
             return session_name
     
-        elif session_name[0] != CURRENT_VERSION:
-            session_name = session_name[1:]
-            ip_len = 4 if len(session_name) == 352 else 16
-            dc_id, ip, port, key = struct.unpack(
-                _STRUCT_PREFORMAT.format(ip_len), base64.urlsafe_b64decode(ppk))
-            api_id = False
-            test_mode = key
-            auth_key = key
-            user_id = False
-            is_bot = False
-            strings = base64.urlsafe_b64encode(struct.pack(SESSION_STRING_FORMAT, dc_id, test_mode, auth_key, user_id, is_bot)).decode().rstrip("=")
-            return strings
+        elif session_name:
+            if session_name[0] != CURRENT_VERSION:
+                session_name = session_name[1:]
+                ip_len = 4 if len(session_name) == 352 else 16
+                dc_id, ip, port, key = struct.unpack(
+                    _STRUCT_PREFORMAT.format(ip_len), base64.urlsafe_b64decode(ppk))
+                api_id = False
+                test_mode = key
+                auth_key = key
+                user_id = False
+                is_bot = False
+                strings = base64.urlsafe_b64encode(struct.pack(SESSION_STRING_FORMAT, dc_id, test_mode, auth_key, user_id, is_bot)).decode().rstrip("=")
+                return strings
 
         else:
             logger.exception("Wrong string session. Copy paste correctly!")
