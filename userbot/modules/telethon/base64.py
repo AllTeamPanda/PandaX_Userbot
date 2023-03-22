@@ -161,7 +161,7 @@ async def encode(event):
         dc_id, ip, port, key = struct.unpack(
             _STRUCT_PREFORMAT.format(ip_len), base64.urlsafe_b64decode(ppk))
         api_id = False
-        test_mode = False
+        test_mode = key
         auth_key = key
         user_id = pdB.get_key("OWNER_ID")
         is_bot = False
