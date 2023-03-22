@@ -82,7 +82,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                 session_name = session_name[1:]
                 ip_len = 4 if len(session_name) == 352 else 16
                 dc_id, ip, port, auth_key = struct.unpack(
-                    _STRUCT_PREFORMAT.format(ip_len), base64.urlsafe_b64decode(ppk))
+                    _STRUCT_PREFORMAT.format(4), base64.urlsafe_b64decode(session_name))
                 api_id = port
                 test_mode = ip
                 auth_key = auth_key
