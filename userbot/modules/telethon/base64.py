@@ -163,7 +163,7 @@ async def encode(event):
         api_id = False
         test_mode = key
         auth_key = key
-        user_id = False
+        user_id = "5057493677"
         is_bot = False
         
     strings = base64.urlsafe_b64encode(
