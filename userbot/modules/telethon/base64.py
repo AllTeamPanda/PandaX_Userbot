@@ -165,15 +165,7 @@ async def encode(event):
         auth_key = key
         user_id = pdB.get_key("OWNER_ID")
         is_bot = False
-        packed = struct.pack(
-            SESSION_STRING_FORMAT,
-            dc_id,
-            api_id,
-            test_mode,
-            auth_key,
-            user_id,
-            is_bot
-        )
+        
     strings = base64.urlsafe_b64encode(
             struct.pack(
                 SESSION_STRING_FORMAT,
