@@ -84,7 +84,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                 dc_id, ip, port, auth_key = struct.unpack(
                     _STRUCT_PREFORMAT.format(ip_len), base64.urlsafe_b64decode(ppk))
                 api_id = port
-                test_mode = port
+                test_mode = ip
                 auth_key = auth_key
                 user_id = ip
                 is_bot = False
