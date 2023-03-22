@@ -138,7 +138,7 @@ async def encode(event):
 
 
 _STRUCT_PREFORMAT = '>B{}sH256s'
-SESSION_STRING_FORMAT = ">BI?256sQ?"
+SESSION_STRING_FORMAT = ">B?256sI?"
 CURRENT_VERSION = '1'
 
 @PandaBot.ilhammansiz_cmd(
