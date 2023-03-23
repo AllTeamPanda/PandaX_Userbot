@@ -44,7 +44,7 @@ Use this bot at your own risk, and use it wisely.
 <details>
     <summary> <b>🔗 Generate String Session</b></summary><br/>
 
-<p align="center"><a href="https://t.me/TeamUserbotSession_bot"><img src="https://img.shields.io/badge/Ambil%20String%20Session-blue?style=for-the-badge&logo=telegram" width="200"" /></a></p>
+<p align="center"><a href="https://t.me/yoiiiiibnv_bot"><img src="https://img.shields.io/badge/Ambil%20String%20Session-blue?style=for-the-badge&logo=telegram" width="200"" /></a></p>
 
 </details>
 
@@ -88,7 +88,7 @@ Use this bot at your own risk, and use it wisely.
 
 <p align="center"><a href="https://github.com/ilhammansiz/deploy"><img src="https://img.shields.io/badge/Deploy%20Lewat%20Web%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"" /></a></p>
 
-<p align="center"><a href="https://t.me/PandaUserbot"><img src="https://img.shields.io/badge/Deploy%20Lewat%20Bot%20Telegram%3F-Heroku-blueviolet?&style=flat-square?&logo=telegram" width="200"" /></a></p>
+<p align="center"><a href="https://t.me/yoiiiiibnv_bot"><img src="https://img.shields.io/badge/Deploy%20Lewat%20Bot%20Telegram%3F-Heroku-blueviolet?&style=flat-square?&logo=telegram" width="200"" /></a></p>
 </details>
 
 
