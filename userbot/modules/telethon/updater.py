@@ -187,7 +187,8 @@ async def upstream(event):
         await edit_delete(xx, "**Panda-Userbot Sudah Versi Terbaru**")
         return repo.__del__()
 
-    if conf == "" and not force_update:
+    if conf == "":
+        await xx.edit("**Sinkronisasi Paksa Ke Kode Userbot Terbaru, Harap Tunggu...**")
         await print_changelogs(xx, ac_br, changelog)
         await xx.delete()
         return await event.respond(
