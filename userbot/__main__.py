@@ -24,10 +24,9 @@ async def memulai():
 """
 
 def start():
-    if PandaBot:
-        PandaBot.loop.run_until_complete(resources.memulai())
-        PandaBot.loop.run_until_complete(resources.join())
-        LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{userbot.__version__} [TELAH DIAKTIFKAN]")
+    userbot.LOOP.run_until_complete(resources.memulai())
+    userbot.LOOP.run_until_complete(resources.join())
+    LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{userbot.__version__} [TELAH DIAKTIFKAN]")
     if PandaBot:
         PandaBot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, userbot.__version__, cmdhr))
     if PandaBot2:
