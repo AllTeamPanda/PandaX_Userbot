@@ -23,7 +23,7 @@ async def gen_chlog(repo, diff):
 
 
 async def print_changelogs(xx, ac_br, changelog):
-    changelog_str = f"PandaUserbot {__version__} Tersedia Pembaruan Untuk Panda Userbot"
+    changelog_str = f"PandaUserbot {__version__} Tersedia Pembaruan Untuk Panda Userbot\n {changelog}"
     if len(changelog_str) > 4096:
         await edit_or_reply(xx, "**Changelog terlalu besar, dikirim sebagai file.**")
         with open("output.txt", "w+") as file:
