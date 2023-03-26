@@ -110,16 +110,16 @@ async def redis(alive):
 aliveess = f"""
 {CUSTOM_ALIVE_TEXT}
 
-☉ {random.choice(emoji_alive)} 𝗢𝘄𝗻𝗲𝗿: @{PandaBot.me.username}
-☉ {random.choice(emoji_alive)} 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: `𝚅{pandaversion}`
-☉ {random.choice(emoji_alive)} 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
-☉ {random.choice(emoji_alive)} 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`\n
+☉ 𝗢𝘄𝗻𝗲𝗿: @{PandaBot.me.username}
+☉ 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: `𝚅{pandaversion}`
+☉ 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
+☉ 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`\n
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
 ╭━─━─━─━─━─━─━─━─━╮
        𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲:
 
-☉ {random.choice(emoji_alive)} 𝗗𝗕: `{SqL.name} {SqL.ping()}` [ {HOSTED_ON} ]
-☉ {random.choice(emoji_alive)} 𝗦𝘂𝗱𝗼: {SUDO()}
+☉ 𝗗𝗕: `{SqL.name} {SqL.ping()}` [ {HOSTED_ON} ]
+☉ 𝗦𝘂𝗱𝗼: {SUDO()}
 
 ╰━─━─━─━─━─━─━─━─━╯
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
