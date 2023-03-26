@@ -48,12 +48,12 @@ def SUDO():
 alive_logo = [
     f"https://telegra.ph/file/{_}.jpg"
     for _ in [
-        "99dd9fbca84bc407ac4e8",
-        "c13edd5c46ad875d57bd7",
-        "d3c370234bf81c5bc2214",
-        "50c6b49f05129eff150c0",
-        "d27c36c92679d1fcaf662",
-        "995641228cd4c93895464",
+        "ecd71c1a58dd1788b174b",
+        "50f3461be2fcbc2bc6918",
+        "a84d82fb21e755d6e7e50",
+        "f7bc0c04ea7486f18bcc4",
+        "f504013cebca7d54f65e3",
+        "7f2507df4e94cc2d53968",
         "5d5c6e7c33046a14c0fea",
     ]
 ]
