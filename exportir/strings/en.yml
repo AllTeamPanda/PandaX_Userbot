@@ -118,3 +118,43 @@ can_4: "∆ #UsernameUpdate\n\n{}'s new username --> @{}"
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# HELP MENU LANGUAGE BY Panda Userbot
+
+# ADMIN
+help_ban: "**Intro** : Will Ban The Guy In The Group Where You Used This Command.\n\n**Description**: Permanently will remove him from this group and he can't join back\n**Note**: you need proper rights for this. \n\n**Syntax**: {tr}ban <userid/username/reply> {tr}ban <userid/username/reply> <reason>"
+help_demote: "**Intro** :To Remove A Person From Admin List\n\n**Description**:Removes all admin rights for that peron in that chat\n**Note**: you need proper rights for this and also u must be owner or admin who promoted that guy\n\n**Syntax**: {tr}demote <userid/username/reply>\n{tr}demote <userid/username/reply> <custom title>"
+help_gpic: "**Intro**:For Changing Group Display Pic Or Deleting Display Pi\n\n**Description** :Reply to image for changing display picture\n\n**Available Flags**:▫ -s : to set group pic\n▫ -d : to delete group pic\n\n**Syntax**:{tr}gpic -s <reply to image>\n{tr}gpic -d"
