@@ -1,0 +1,7 @@
+
+
+
+help_ban: "**Intro** :\nAkan Mencekal Orang Dalam Grup Tempat Anda Menggunakan Perintah Ini.\n\n**Deskripsi**:\nAkan secara permanen menghapusnya dari grup ini dan dia tidak dapat bergabung kembali\n **Catatan**: Anda membutuhkan hak yang sesuai untuk ini.\n\n**Sintaks**:\n{tr}ban <userid/username/reply>\n{tr}ban <userid/username/reply> < alasan>"
+help_demote: "**Pengenalan**:\nUntuk Menghapus Seseorang Dari Daftar Admin\n\n**Deskripsi**:\nMenghapus semua hak admin untuk orang tersebut dalam obrolan itu\n**Catatan**:\nAnda memerlukan yang tepat hak untuk ini dan juga Anda harus menjadi pemilik atau admin yang mempromosikan orang itu\n\n**Sintaks**:\n{tr}turunkan <userid/nama pengguna/balasan>\n{tr}turunkan <userid/nama pengguna/balasan > <judul ubahsuaian>" 
+help_gpic: "**Intro**:\nUntuk Mengubah Gambar Tampilan Grup Atau Menghapus Gambar Tampilan\n\n**Deskripsi** :\nBalas ke gambar untuk mengubah gambar tampilan\n\n**Bendera yang Tersedia**:▫ - s : untuk menyetel foto grup\n▫ -d : untuk menghapus foto grup\n\n**Sintaks**:{tr}gpic -s <balas ke gambar>\n{tr}gpic -d" 
+help_kick: "**Intro**:\nUntuk Mengeluarkan Seseorang Dari Grup\n\n**Deskripsi**:\nAkan mengeluarkan pengguna dari grup sehingga dia dapat bergabung kembali.\n**Catatan**:\ Anda memerlukan hak yang sesuai untuk ini.\n\n**Sintaks**:\n{tr}kick <userid/username/reply>\n{tr}kick <userid/username/reply> <reason>"
