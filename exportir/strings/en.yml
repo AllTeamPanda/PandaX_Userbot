@@ -196,3 +196,4 @@ help_akaizoku: "**Intro** :Shows You Anime Download Link.\n\n**Syntax** :{tr}aka
 help_anime: "**Intro** :Shows You The Details Of The Anime.\n\n**Description** :Fectchs anime information from anilist\n\nSyntax : {tr}anime <name of anime>\n\n**Examples** : {tr}anime fairy tail"
 help_char: "**Intro** :\nShows You Character Infomation.\n\n**Syntax** :\n{tr}char <char name>\n\n**Examples** :\n{tr}char erza scarlet"
 help_manga: "**Intro** :\nSearches For Manga.\n\n**Syntax** :\n{tr}manga <manga name\n\n**Examples** :\n{tr}manga fairy"
+help_sanime: "**Intro** :\nSearches For Anime.\n\n**Syntax** :\n{tr}sanime <anime name\n\n**Examples** :\n{tr}sanime black clover"
