@@ -189,3 +189,8 @@ help_device: "**Intro**:To Get Android Device Name/Model From Its Codename\n\n**
 help_magisk: "**Intro** :To Get Latest Magisk Releases\n\n**Syntax** :{tr}magisk"
 help_specs: "**Intro** :To Get Info About Android Device .\n\n**Syntax** :{tr}specs\n\n**Examples** :{tr}specs Xiaomi Redmi Note 5 Pro"
 help_twrp: "**Intro** :To Get Latest Twrp Download Links For Android Device.\n\n**Syntax** :{tr}twrp <codename>\n\n**Examples** : {tr}twrp whyred"
+
+# Anilist
+help_airing: "Intro : Shows You The Time Left For The New Episode Of Current Running Anime Show.\n\n**Syntax** :{tr}airing\n\nExamples :{tr}airing one piece"
+help_akaizoku: "**Intro** :Shows You Anime Download Link.\n\n**Syntax** :{tr}akaizoku <anime name>, {tr}akayo <anime name>\n\n**Examples** :{tr}akaizoku one piece, {tr}akayo tokyo revengers"
+help_anime: "**Intro** :Shows You The Details Of The Anime.\n\n**Description** :Fectchs anime information from anilist\n\nSyntax : {tr}anime <name of anime>\n\n**Examples** : {tr}anime fairy tail"
