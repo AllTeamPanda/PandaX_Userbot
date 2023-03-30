@@ -229,3 +229,8 @@ help_luck: "**Intro** :Art\n\n**Syntax** :{tr}luck"
 help_pistol: "**Intro** :Art\n\n**Syntax** :{tr}pistol"
 help_thanks: "**Intro** :Art\n\n**Syntax** :{tr}thanks"
 help_sprinkle: "**Intro** :Art\n\n**Syntax** :{tr}sprinkle"
+
+# autoprofile
+help_autobio: "**Intro** :\nChanges Your Bio With Time\n\n**Description** :\nUpdates your profile bio along with time. set default_bio var in heroku with your fav bio,\n\n**Syntax** :{tr}autobio\n\nNote :To stop this do `.end autobio`"
+help_autoname: "**Intro** :\nChanges Your Bio With Time\n\n**Description** :\nUpdates your profile bio along with time. set default_name var in heroku with your fav name,\n\n**Syntax** :{tr}autoname\n\nNote :To stop this do `.end autoname`"
+help_autopic: "**Intro** :\nChanges Profile Pic Every 1 Minute With The Custom Pic With Time\n\n**Description** :\nIf you like to change the time interval for every new pic change then set change_time var in heroku with time(in seconds) between each change of profilepic.\n\n**Available Options** :you can give integer input with cmd like 40,55,75 ..etc. So that your profile pic will rotate with that specific angle\n\n**Syntax** :{tr}autopic, {tr}autopic <any integer>\n\n**Note** :For functioning of this cmd you need to set DEFAULT_PIC var in heroku. To stop this do `.end autopic`"
