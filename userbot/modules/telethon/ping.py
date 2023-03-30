@@ -6,7 +6,6 @@ from . import mention
 from ..._misc.managers import edit_or_reply
 from exportir import get_help
 
-Header = get_help("help_ping_header")
 
 
 plugin_category = "plugins"
