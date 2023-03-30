@@ -182,3 +182,10 @@ help_amongus: "**Intro** :Create A Sticker Based On The Popular Game Among Us\n\
 help_imp: "**Intro** :Find Imposter With Stickers Animation.\n\n**Description** : Imp for imposter impn for not imposter\n\n**Syntax** :{tr}imp <name>, {tr}impn <name>\n\n**Examples** :{tr}imp blabla, {tr}impn blabla"
 help_imposter: "**Intro** :Fun Images For Imposter \n\n**Syntax** :{tr}imposter <username/userid/reply>"
 help_timp: "**Intro**: Find Imposter With Text Animation.\n\n**Description** :Timp for imposter timpn for not imposter\n\n**Syntax** :{tr}timp <name>, {tr}timpn <name>\n\n**Examples** :{tr}timp blabla, {tr}timpn blabla"
+
+# Android
+help_codename: "**Intro** :To Search For Android Device Codename\n\n**Syntax** :{tr}codename <brand> <device>\n\n**Examples** :{tr}codename Xiaomi Redmi Note 5 Pro"
+help_device: "**Intro**:To Get Android Device Name/Model From Its Codename\n\n**Syntax** :{tr}device <codename>\n\n**Examples** :{tr}device whyred"
+help_magisk: "**Intro** :To Get Latest Magisk Releases\n\n**Syntax** :{tr}magisk"
+help_specs: "**Intro** :To Get Info About Android Device .\n\n**Syntax** :{tr}specs\n\n**Examples** :{tr}specs Xiaomi Redmi Note 5 Pro"
+help_twrp: "**Intro** :To Get Latest Twrp Download Links For Android Device.\n\n**Syntax** :{tr}twrp <codename>\n\n**Examples** : {tr}twrp whyred"
