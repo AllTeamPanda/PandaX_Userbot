@@ -173,3 +173,12 @@ help_adzan: "**Intro** :\nMenemukan Waktu Shalat.\n\n**Syntax** :{tr}adzan <city
 # AFK
 help_afk: "**Intro** :\nEnables Afk For Your Account\n\n**Description** :\nWhen you are in afk if any one tags you then your bot will reply as he is offline. afk mean away from keyboard.\n\n**Available Options** :\nIf you want AFK reason with hyperlink use [ ; ] after reason, then paste the media link.\n\n**Syntax** :\n{tr}afk <reason>\n{tr}afk <reason> ; <link>\n\n**Examples** :{tr}afk Let Me Sleep\n\n**Note** :Switches off AFK when you type back anything, anywhere. You can use #afk in message to continue in afk without breaking it"
 help_mafk: "**Intro** :Enables Afk For Your Account\n\n**Description** :When you are in afk if any one tags you then your bot will reply as he is offline. afk mean away from keyboard. here it supports media unlike afk command\n\n**Available Options** :If you want AFK reason with hyperlink use [ ; ] after reason, then paste the media link.\n\n**Syntax** :{tr}mafk <reason> and reply to media\n\n**Examples** :{tr}mafk Let Me Sleep\n\n**Note** :Switches off AFK when you type back anything, anywhere. You can use #afk in message to continue in afk without breaking it"
+
+# ALIVE
+help_alive: "**Intro** :To Check Bot'S Alive Status\n\n**Available Options** :To show media in this cmd you need to set ALIVE_PIC with media link, get this by replying the media by .tgm\n\n**Syntax** :{tr}alive
+
+# amongus
+help_amongus: "**Intro** :Create A Sticker Based On The Popular Game Among Us\n\n**Available Flags** :\n▫ 1 : red\n▫ 2 : lime\n▫ 3 : green\n▫ 4 : blue\n▫ 5 : cyan\n▫ 6 : brown\n▫ 7 : purple\n▫ 8 : pink\n▫ 9 : orange\n▫ 10 : yellow\n▫ 11 : white\n▫ 12 : black\n\n**Syntax** :\n{tr}amongus <text/reply>\n{tr}amongus -c<colur number> <text/reply>\n\n**Examples** :\n{tr}amongus gather around\n{tr}amongus -c3 gather around"
+help_imp: "**Intro** :Find Imposter With Stickers Animation.\n\n**Description** : Imp for imposter impn for not imposter\n\n**Syntax** :{tr}imp <name>, {tr}impn <name>\n\n**Examples** :{tr}imp blabla, {tr}impn blabla"
+help_imposter: "**Intro** :Fun Images For Imposter \n\n**Syntax** :{tr}imposter <username/userid/reply>"
+help_timp: "**Intro**: Find Imposter With Text Animation.\n\n**Description** :Timp for imposter timpn for not imposter\n\n**Syntax** :{tr}timp <name>, {tr}timpn <name>\n\n**Examples** :{tr}timp blabla, {tr}timpn blabla"
