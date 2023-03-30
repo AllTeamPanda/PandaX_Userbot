@@ -177,7 +177,7 @@ async def _(ult):
         udB.set_key("sudousers_list", key)
         mmm = f"**Removed** {name} **from SUDO User(s)**"
     msg = await edit_delete(ult, mmm, time=5)
-    await event.client.reload(msg)
+    await ult.client.reload(msg)
 
 
 @pandaub.ilhammansiz_cmd(
