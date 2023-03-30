@@ -1,0 +1,7 @@
+
+
+
+help_ban: "**イントロ** :\nこのコマンドを使用したグループの男を禁止します。\n\n**説明**:\nこのグループから彼を永久に削除し、再び参加することはできません\n **注**: これには適切な権限が必要です。\n\n**構文**:\n{tr}ban <userid/username/reply>\n{tr}ban <userid/username/reply> <理由＞」"
+help_demote: "**イントロ**:\n管理者リストからユーザーを削除するには\n\n**説明**:\nそのチャットのそのペロンのすべての管理者権限を削除します\n**注**:\n適切な権限が必要ですこの権利と、あなたはその人を昇進させた所有者または管理者でなければなりません\n\n**構文**:\n{tr}demote <userid/username/reply>\n{tr}demote <userid/username/reply > <カスタムタイトル>" 
+help_gpic: "**イントロ**:\nグループ表示画像の変更または表示画像の削除\n\n**説明**:\n表示画像を変更するための画像への返信\n\n**使用可能なフラグ**:▫ - s : グループ pic を設定する\n▫ -d : グループ pic を削除する\n\n**構文**:{tr}gpic -s <画像への返信>\n{tr}gpic -d" 
+help_kick: "**イントロ**:\nグループからユーザーをキックするには\n\n**説明**:\nユーザーをグループからキックして、ユーザーが再び参加できるようにします。\n**注意**:\ nこれには適切な権限が必要です。\n\n**構文**:\n{tr}kick <userid/username/reply>\n{tr}kick <userid/username/reply> <reason>"
