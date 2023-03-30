@@ -2,7 +2,7 @@ nama: English
 asli: English
 
 penulis:
-  - Panda
+  - ilham mansiz
 
 # Prosess
 com_1: "`Processing...`"
@@ -197,3 +197,19 @@ help_anime: "**Intro** :Shows You The Details Of The Anime.\n\n**Description** :
 help_char: "**Intro** :\nShows You Character Infomation.\n\n**Syntax** :\n{tr}char <char name>\n\n**Examples** :\n{tr}char erza scarlet"
 help_manga: "**Intro** :\nSearches For Manga.\n\n**Syntax** :\n{tr}manga <manga name\n\n**Examples** :\n{tr}manga fairy"
 help_sanime: "**Intro** :\nSearches For Anime.\n\n**Syntax** :\n{tr}sanime <anime name\n\n**Examples** :\n{tr}sanime black clover"
+help_upcoming: "**Intro** :\nShows You Upcoming Anime'S.\n\n**Syntax** :\n{tr}upcoming"
+help_whatanime: "**Intro** :\nReverse Search Of Anime.\n\n**Syntax** :\n{tr}whatanime reply to photo/gif/video\n{tr}wanime reply to photo/gif/video"
+
+# antispambot
+help_cascheck: "**Intro** :\nTo Check The Users Who Are Banned In Cas\n\n**Description** :\nWhen you use this cmd it will check every user in the group where you used whether, he is banned in cas (combat antispam service) and will show there names if they are flagged in cas"
+help_spamcheck: "Intro :\nTo Check The Users Who Are Banned In Spamwatch\n\n»  Description :\nWhen you use this command it will check every user in the group where you used whether, he is banned in spamwatch federation and will show there names if they are banned in spamwatch federation"
+
+# app
+help_app: "**Intro** :\nTo Search Any App In Playstore\n\n**Description** :\nSearches the app in the playstore and provides the link to the app in playstore and fetchs app details"
+
+# archive
+help_tar: "**Intro** :\nTo Compress The File/Folders To Tar File\n\n**Description** :\nWill create a tar file for the given file path or folder path\n\n**Syntax** :{tr}tar <file/folder path>\n\n**Examples** :{tr}tar downloads, {tr}tar sample_config.py"
+help_untar: "**Intro :\nTo Unpack The Given Tar File\n\n**Description** :\nReply to a tar file or provide tar file path with command to unpack the given tar file\n\n**Syntax** :{tr}untar <reply/file path>"
+help_zip: "**Intro** :\nTo Compress The File/Folders\n\n**Description** :\nWill create a zip file for the given file path or folder path\n\n**Syntax** :\n{tr}zip <file/folder path>\n\n**Examples** :{tr}zip downloads, {tr}zip sample_config.py"
+help_unzip: "**Intro** :\nTo Unpack The Given Zip File\n\n**Description** :\nReply to a zip file or provide zip file path with command to unzip the given file\n\n**Syntax** :{tr}unzip <reply/file path>"
+
