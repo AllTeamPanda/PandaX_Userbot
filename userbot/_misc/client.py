@@ -58,7 +58,7 @@ def dual_duall():
 
 
 
-def _format_about()
+def _format_about():
     tmp_chelp = ""     
     return tmp_chelp.replace("{tr}", Config.COMMAND_HAND_LER)
 
