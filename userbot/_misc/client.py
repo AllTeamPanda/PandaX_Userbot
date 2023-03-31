@@ -75,7 +75,8 @@ class PandaUserbotSession(TelegramClient):
     def ilhammansiz_cmd(
         self: TelegramClient,
         pattern: str or tuple = None,
-        info: Union[str, Dict[str, Union[str, List[str], Dict[str, str]]]]
+        info: str or tuple = None,
+        help: Union[str, Dict[str, Union[str, List[str], Dict[str, str]]]]
         or tuple = None,
         groups_only: bool = False,
         private_only: bool = False,
@@ -114,7 +115,8 @@ class PandaUserbotSession(TelegramClient):
             except BaseException:
                 PLG_INFO.update({file_test: [command[0]]})
             if not command[0] in CMD_INFO:
-                CMD_INFO[command[0]] = [_format_about(info)]
+                #CMD_INFO[command[0]] = [_format_about(info)]
+                CMD_INFO[command[0]] = [info].format(tr=Config.COMMAND_HAND_LER)
         if pattern is not None:
             if (
                 pattern.startswith(r"\#")
