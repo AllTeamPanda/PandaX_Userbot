@@ -116,7 +116,7 @@ class PandaUserbotSession(TelegramClient):
                 PLG_INFO.update({file_test: [command[0]]})
             if not command[0] in CMD_INFO:
                 #CMD_INFO[command[0]] = [_format_about(info)]
-                CMD_INFO[command[0]] = [info].format(tr=Config.COMMAND_HAND_LER)
+                CMD_INFO[command[0]] = [info]
         if pattern is not None:
             if (
                 pattern.startswith(r"\#")
