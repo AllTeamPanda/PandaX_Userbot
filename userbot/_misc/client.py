@@ -58,7 +58,9 @@ def dual_duall():
 
 
 
-def _format_about():
+def _format_about(
+    about: Union[str, Dict[str, Union[str, List[str], Dict[str, str]]]]
+) -> str:  # sourcery no-metrics
     tmp_chelp = ""     
     return tmp_chelp.replace("{tr}", Config.COMMAND_HAND_LER)
 
