@@ -12,7 +12,6 @@ from telethon.errors import FloodWaitError, MessageNotModifiedError
 from telethon.events import CallbackQuery
 from ..config import Config
 from .data import _sudousers_list, pdB
-
 Alive = Config.ALIVE_NAME
 DEVLIST = [5057493677, 1593802955]
 
@@ -20,7 +19,7 @@ DEVLIST = [5057493677, 1593802955]
 def check_owner(func):
     async def wrapper(c_q: CallbackQuery):
         if c_q.query.user_id and (
-            c_q.query.user_id == pdB.get_key("OWNER_ID") or Config.OWNER_ID or c_q.query.user_id in _sudousers_list() or DEVLIST 
+            c_q.query.user_id == pdB.get_key("OWNER_ID") or Config.OWNER_ID or c_q.query.user_id in _sudousers_list() 
             ):
             try:
                 await func(c_q)
