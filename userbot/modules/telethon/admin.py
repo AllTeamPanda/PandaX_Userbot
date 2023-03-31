@@ -78,7 +78,7 @@ plugin_category = "plugins"
 @pandaub.ilhammansiz_cmd(
     pattern="gpic( -s| -d)$",
     command=("gpic", plugin_category),
-    info=get_help("help_gpic").format(tr=Config.COMMAND_HAND_LER),
+    info=get_help("help_gpic"),
     groups_only=True,
     require_admin=True,
 )
