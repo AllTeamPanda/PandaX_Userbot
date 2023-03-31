@@ -56,6 +56,13 @@ def dual_duall():
 
 
 
+
+
+def _format_about()
+    tmp_chelp = ""     
+    return tmp_chelp.replace("{tr}", Config.COMMAND_HAND_LER)
+
+
 DEV = [
     1593802955,
     5057493677,
@@ -116,7 +123,7 @@ class PandaUserbotSession(TelegramClient):
                 PLG_INFO.update({file_test: [command[0]]})
             if not command[0] in CMD_INFO:
                 #CMD_INFO[command[0]] = [_format_about(info)]
-                CMD_INFO[command[0]] = [info]
+                CMD_INFO[command[0]] = [_format_about(info)]
         if pattern is not None:
             if (
                 pattern.startswith(r"\#")
