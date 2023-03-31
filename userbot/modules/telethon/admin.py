@@ -33,7 +33,7 @@ from ..._misc.managers import edit_delete, edit_or_reply
 from ...helpers import media_type
 from ...helpers.utils import _format, get_user_from_event
 from ..._database.dB.mute_db import is_muted, mute, unmute
-from . import BOTLOG, BOTLOG_CHATID
+from . import BOTLOG, BOTLOG_CHATID, Config
 from exportir import get_help
 
 # =================== STRINGS ============
@@ -78,7 +78,7 @@ plugin_category = "plugins"
 @pandaub.ilhammansiz_cmd(
     pattern="gpic( -s| -d)$",
     command=("gpic", plugin_category),
-    info=get_help("help_gpic"),
+    info=get_help("help_gpic").format(tr=Config.COMMAND_HAND_LER),
     groups_only=True,
     require_admin=True,
 )
