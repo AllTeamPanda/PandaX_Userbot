@@ -157,43 +157,43 @@ can_4: "∆ #UsernameUpdate\n\n{}'s new username --> @{}"
 # ADMIN
 help_ban: "**Intro** :\nWill Ban The Guy In The Group Where You Used This Command.\n\n**Description**:\nPermanently will remove him from this group and he can't join back\n**Note**: you need proper rights for this.\n\n**Syntax**:\n{tr}ban <userid/username/reply>\n{tr}ban <userid/username/reply> <reason>"
 help_demote: "**Intro**:\nTo Remove A Person From Admin List\n\n**Description**:\nRemoves all admin rights for that peron in that chat\n**Note**:\nyou need proper rights for this and also u must be owner or admin who promoted that guy\n\n**Syntax**:\n{tr}demote <userid/username/reply>\n{tr}demote <userid/username/reply> <custom title>"
-help_gpic: "**Intro**:\nFor Changing Group Display Pic Or Deleting Display Pic\n\n**Description** :\nReply to image for changing display picture\n\n**Available Flags**:\n▫ -s : to set group pic\n▫ -d : to delete group pic\n\n**Syntax**:{tr}gpic -s <reply to image>\n{tr}gpic -d"
+help_gpic: "**Intro**:\nFor Changing Group Display Pic Or Deleting Display Pic\n\n**Description** :\nReply to image for changing display picture\n\n**Available Flags**:\n▫ -s : to set group pic\n▫ -d : to delete group pic\n\n**Syntax**:\n{tr}gpic -s <reply to image>\n{tr}gpic -d"
 help_kick: "**Intro**:\nTo Kick A Person From The Group\n\n**Description**:\nWill kick the user from the group so he can join back.\n**Note**:\nyou need proper rights for this.\n\n**Syntax**:\n{tr}kick <userid/username/reply>\n{tr}kick <userid/username/reply> <reason>"
 help_mute: "**Intro**:\nTo Stop Sending Messages From That User\n\n**Description**:\nIf is is not admin then changes his permission in group, if he is admin or if you try in personal chat then his messages will be deleted\nnote : you need proper rights for this.\n\n**Syntax**:\n{tr}mute <userid/username/reply>\n{tr}mute <userid/username/reply> <reason>"
 help_pin: "**Description**:\nReply to a message to pin it in that in chat.\n**Note**: you need proper rights for this if you want to use in group.\n\n**Available Options**:\n▫ **loud**: to notify everyone without this.it will pin silently\n\n**Syntax**:\n{tr}pin <reply>\n{tr}pin loud <reply>"
 help_promote: "**Intro**:\nTo Give Admin Rights For A Person\n\n**Description**:\nProvides admin rights to the person in the chat\n**Note**:you need proper rights for this\n\n**Syntax**:\n{tr}promote <userid/username/reply>\n{tr}promote <userid/username/reply> <custom title>"
 help_unban: "**Intro**:\nWill Unban The Guy In The Group Where You Used This Command.\n\n**Description**:\nRemoves the user account from the banned list of the group\n**Note**: you need proper rights for this.\n\n**Syntax**:\n{tr}unban <userid/username/reply>\n{tr}unban <userid/username/reply> <reason>"
-help_undlt: "**Intro**:Untuk Mendapatkan Pesan Yang Dihapus Baru-Baru Ini Di Grup\n\n**Description**:\nUntuk memeriksa pesan yang dihapus baru-baru ini di grup, secara default akan muncul 5. anda bisa mendapatkan 1 hingga 15 pesan.\n\n**Available Flags**:\n▫ u : gunakan tanda ini untuk mengunggah media ke obrolan yang lain hanya akan ditampilkan sebagai media.\n\n**Syntax**:{tr}undlt <count>\n{tr}undlt -u <count>\n\n**Examples**:\n{tr}undlt 7\n{tr}undlt -u 7 (ini akan membalas semua 7 pesan ke pesan ini"
-help_unmute: "**Intro**:To Allow User To Send Messages Again\n\n**Description**:Will change user permissions ingroup to send messages again.\nnote : you need proper rights for this\n\n**Syntax**:\n{tr}unmute <userid/username/reply>\n{tr}unmute <userid/username/reply> <reason>"
-help_unpin: "**Intro**:Untuk Melepas Pin Pesan Dalam Obrolan\n\n**Description**:Balas pesan untuk melepas pinnya di obrolan\n**Note** : anda memerlukan hak yang tepat untuk ini jika anda ingin menggunakan dalam grup.\n\n**Available Options**:\n▫ all : menghapus semua unpin di semua pesan grup \n\n**Syntax**:\n{tr}unpin <reply>\n{tr}unpin all"
+help_undlt: "**Intro**:\nUntuk Mendapatkan Pesan Yang Dihapus Baru-Baru Ini Di Grup\n\n**Description**:\nUntuk memeriksa pesan yang dihapus baru-baru ini di grup, secara default akan muncul 5. anda bisa mendapatkan 1 hingga 15 pesan.\n\n**Available Flags**:\n▫ u : gunakan tanda ini untuk mengunggah media ke obrolan yang lain hanya akan ditampilkan sebagai media.\n\n**Syntax**:{tr}undlt <count>\n{tr}undlt -u <count>\n\n**Examples**:\n{tr}undlt 7\n{tr}undlt -u 7 (ini akan membalas semua 7 pesan ke pesan ini"
+help_unmute: "**Intro**:\nTo Allow User To Send Messages Again\n\n**Description**:\nWill change user permissions ingroup to send messages again.\nnote : you need proper rights for this\n\n**Syntax**:\n{tr}unmute <userid/username/reply>\n{tr}unmute <userid/username/reply> <reason>"
+help_unpin: "**Intro**:\nUntuk Melepas Pin Pesan Dalam Obrolan\n\n**Description**:\nBalas pesan untuk melepas pinnya di obrolan\n**Note** : anda memerlukan hak yang tepat untuk ini jika anda ingin menggunakan dalam grup.\n\n**Available Options**:\n▫ all : menghapus semua unpin di semua pesan grup \n\n**Syntax**:\n{tr}unpin <reply>\n{tr}unpin all"
 
 # ADZAN
-help_adzan: "**Intro** :\nMenemukan Waktu Shalat.\n\n**Syntax** :{tr}adzan <city name>\n\n**Examples**:{tr}adzan Medan\n\nNote :you can set default city by using .adzan <city>."
+help_adzan: "**Intro** :\nMenemukan Waktu Shalat.\n\n**Syntax** :\n{tr}adzan <city name>\n\n**Examples**:{tr}adzan Medan\n\nNote :you can set default city by using .adzan <city>."
 
 # AFK
 help_afk: "**Intro** :\nEnables Afk For Your Account\n\n**Description** :\nWhen you are in afk if any one tags you then your bot will reply as he is offline. afk mean away from keyboard.\n\n**Available Options** :\nIf you want AFK reason with hyperlink use [ ; ] after reason, then paste the media link.\n\n**Syntax** :\n{tr}afk <reason>\n{tr}afk <reason> ; <link>\n\n**Examples** :{tr}afk Let Me Sleep\n\n**Note** :Switches off AFK when you type back anything, anywhere. You can use #afk in message to continue in afk without breaking it"
-help_mafk: "**Intro** :Enables Afk For Your Account\n\n**Description** :\nWhen you are in afk if any one tags you then your bot will reply as he is offline. afk mean away from keyboard. here it supports media unlike afk command\n\n**Available Options** :If you want AFK reason with hyperlink use [ ; ] after reason, then paste the media link.\n\n**Syntax** :{tr}mafk <reason> and reply to media\n\n**Examples** :{tr}mafk Let Me Sleep\n\n**Note** :Switches off AFK when you type back anything, anywhere. You can use #afk in message to continue in afk without breaking it"
+help_mafk: "**Intro** :\nEnables Afk For Your Account\n\n**Description** :\nWhen you are in afk if any one tags you then your bot will reply as he is offline. afk mean away from keyboard. here it supports media unlike afk command\n\n**Available Options** :\nIf you want AFK reason with hyperlink use [ ; ] after reason, then paste the media link.\n\n**Syntax** :\n{tr}mafk <reason> and reply to media\n\n**Examples** :\n{tr}mafk Let Me Sleep\n\n**Note** :Switches off AFK when you type back anything, anywhere. You can use #afk in message to continue in afk without breaking it"
 
 # ALIVE
 help_alive: "**Intro** :To Check Bot'S Alive Status\n\n**Available Options** :\nTo show media in this cmd you need to set ALIVE_PIC with media link, get this by replying the media by .tgm\n\n**Syntax** :{tr}alive"
 
 # AMONGOUS
-help_amongus: "**Intro** :Create A Sticker Based On The Popular Game Among Us\n\n**Available Flags** :\n1 for red\n 2 for lime\n 3 for green\n 4 for blue\n 5 for cyan\n 6 for brown\n 7 for purple\n 8 for pink\n 9 for orange\n 10 for yellow\n 11 for white\n 12 for black\n\n**Syntax** :\n{tr}amongus <text/reply>\n{tr}amongus -c<colur number> <text/reply>\n\n**Examples** :\n{tr}amongus gather around\n{tr}amongus -c3 gather around "
-help_imp: "**Intro** :Find Imposter With Stickers Animation.\n\n**Description** : Imp for imposter impn for not imposter\n\n**Syntax** :{tr}imp <name>, {tr}impn <name>\n\n**Examples** :{tr}imp blabla, {tr}impn blabla"
-help_imposter: "**Intro** :Fun Images For Imposter \n\n**Syntax** :{tr}imposter <username/userid/reply>"
-help_timp: "**Intro**: Find Imposter With Text Animation.\n\n**Description** :Timp for imposter timpn for not imposter\n\n**Syntax** :{tr}timp <name>, {tr}timpn <name>\n\n**Examples** :{tr}timp blabla, {tr}timpn blabla"
+help_amongus: "**Intro** :\nCreate A Sticker Based On The Popular Game Among Us\n\n**Available Flags** :\n1 for red\n 2 for lime\n 3 for green\n 4 for blue\n 5 for cyan\n 6 for brown\n 7 for purple\n 8 for pink\n 9 for orange\n 10 for yellow\n 11 for white\n 12 for black\n\n**Syntax** :\n{tr}amongus <text/reply>\n{tr}amongus -c<colur number> <text/reply>\n\n**Examples** :\n{tr}amongus gather around\n{tr}amongus -c3 gather around "
+help_imp: "**Intro** :\nFind Imposter With Stickers Animation.\n\n**Description** : Imp for imposter impn for not imposter\n\n**Syntax** :\n{tr}imp <name>, {tr}impn <name>\n\n**Examples** :\n{tr}imp blabla\n{tr}impn blabla"
+help_imposter: "**Intro** :\nFun Images For Imposter \n\n**Syntax** :\n{tr}imposter <username/userid/reply>"
+help_timp: "**Intro**: \nFind Imposter With Text Animation.\n\n**Description** :Timp for imposter timpn for not imposter\n\n**Syntax** :\n{tr}timp <name>, {tr}timpn <name>\n\n**Examples** :\n{tr}timp blabla\n{tr}timpn blabla"
 
 # Android
 help_codename: "**Intro** :To Search For Android Device Codename\n\n**Syntax** :{tr}codename <brand> <device>\n\n**Examples** :{tr}codename Xiaomi Redmi Note 5 Pro"
-help_device: "**Intro**:To Get Android Device Name/Model From Its Codename\n\n**Syntax** :{tr}device <codename>\n\n**Examples** :{tr}device whyred"
+help_device: "**Intro**:To Get Android Device Name/Model From Its Codename\n\n**Syntax** :\n{tr}device <codename>\n\n**Examples** :\n{tr}device whyred"
 help_magisk: "**Intro** :To Get Latest Magisk Releases\n\n**Syntax** :{tr}magisk"
-help_specs: "**Intro** :To Get Info About Android Device .\n\n**Syntax** :{tr}specs\n\n**Examples** :{tr}specs Xiaomi Redmi Note 5 Pro"
-help_twrp: "**Intro** :To Get Latest Twrp Download Links For Android Device.\n\n**Syntax** :{tr}twrp <codename>\n\n**Examples** : {tr}twrp whyred"
+help_specs: "**Intro** :To Get Info About Android Device .\n\n**Syntax** :{tr}specs\n\n**Examples** :\n{tr}specs Xiaomi Redmi Note 5 Pro"
+help_twrp: "**Intro** :To Get Latest Twrp Download Links For Android Device.\n\n**Syntax** :\n{tr}twrp <codename>\n\n**Examples** : \n{tr}twrp whyred"
 
 # Anilist
-help_airing: "Intro : Shows You The Time Left For The New Episode Of Current Running Anime Show.\n\n**Syntax** :{tr}airing\n\nExamples :{tr}airing one piece"
-help_akaizoku: "**Intro** :Shows You Anime Download Link.\n\n**Syntax** :{tr}akaizoku <anime name>, {tr}akayo <anime name>\n\n**Examples** :{tr}akaizoku one piece, {tr}akayo tokyo revengers"
-help_anime: "**Intro** :Shows You The Details Of The Anime.\n\n**Description** :Fectchs anime information from anilist\n\nSyntax : {tr}anime <name of anime>\n\n**Examples** : {tr}anime fairy tail"
+help_airing: "Intro : Shows You The Time Left For The New Episode Of Current Running Anime Show.\n\n**Syntax** :\n{tr}airing\n\nExamples :{tr}airing one piece"
+help_akaizoku: "**Intro** :Shows You Anime Download Link.\n\n**Syntax** :\n{tr}akaizoku <anime name>\n{tr}akayo <anime name>\n\n**Examples** :\n{tr}akaizoku one piece\n{tr}akayo tokyo revengers"
+help_anime: "**Intro** :Shows You The Details Of The Anime.\n\n**Description** :Fectchs anime information from anilist\n\nSyntax : \n{tr}anime <name of anime>\n\n**Examples** :\n{tr}anime fairy tail"
 help_char: "**Intro** :\nShows You Character Infomation.\n\n**Syntax** :\n{tr}char <char name>\n\n**Examples** :\n{tr}char erza scarlet"
 help_manga: "**Intro** :\nSearches For Manga.\n\n**Syntax** :\n{tr}manga <manga name\n\n**Examples** :\n{tr}manga fairy"
 help_sanime: "**Intro** :\nSearches For Anime.\n\n**Syntax** :\n{tr}sanime <anime name\n\n**Examples** :\n{tr}sanime black clover"
@@ -208,10 +208,10 @@ help_spamcheck: "Intro :\nTo Check The Users Who Are Banned In Spamwatch\n\n»  
 help_app: "**Intro** :\nTo Search Any App In Playstore\n\n**Description** :\nSearches the app in the playstore and provides the link to the app in playstore and fetchs app details"
 
 # archive
-help_tar: "**Intro** :\nTo Compress The File/Folders To Tar File\n\n**Description** :\nWill create a tar file for the given file path or folder path\n\n**Syntax** :{tr}tar <file/folder path>\n\n**Examples** :{tr}tar downloads, {tr}tar sample_config.py"
-help_untar: "**Intro :\nTo Unpack The Given Tar File\n\n**Description** :\nReply to a tar file or provide tar file path with command to unpack the given tar file\n\n**Syntax** :{tr}untar <reply/file path>"
-help_zip: "**Intro** :\nTo Compress The File/Folders\n\n**Description** :\nWill create a zip file for the given file path or folder path\n\n**Syntax** :\n{tr}zip <file/folder path>\n\n**Examples** :{tr}zip downloads, {tr}zip sample_config.py"
-help_unzip: "**Intro** :\nTo Unpack The Given Zip File\n\n**Description** :\nReply to a zip file or provide zip file path with command to unzip the given file\n\n**Syntax** :{tr}unzip <reply/file path>"
+help_tar: "**Intro** :\nTo Compress The File/Folders To Tar File\n\n**Description** :\nWill create a tar file for the given file path or folder path\n\n**Syntax** :\n{tr}tar <file/folder path>\n\n**Examples** :{tr}tar downloads, {tr}tar sample_config.py"
+help_untar: "**Intro :\nTo Unpack The Given Tar File\n\n**Description** :\nReply to a tar file or provide tar file path with command to unpack the given tar file\n\n**Syntax** :\n{tr}untar <reply/file path>"
+help_zip: "**Intro** :\nTo Compress The File/Folders\n\n**Description** :\nWill create a zip file for the given file path or folder path\n\n**Syntax** :\n{tr}zip <file/folder path>\n\n**Examples** :\n{tr}zip downloads\n{tr}zip sample_config.py"
+help_unzip: "**Intro** :\nTo Unpack The Given Zip File\n\n**Description** :\nReply to a zip file or provide zip file path with command to unzip the given file\n\n**Syntax** :\n{tr}unzip <reply/file path>"
 
 # artpanda
 help_baby: "**Intro** :Hi Baby Art\n\n**Syntax** :{tr}baby"
