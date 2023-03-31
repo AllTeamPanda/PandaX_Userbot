@@ -83,7 +83,7 @@ def get_string(key: str) -> Any:
         return languages["en"].get(key) or f"Gagal memuat string bahasa '{key}'"
 
 def get_help(key):
-    return get_string(f"help_{key}")
+    return get_string(f"{key}")
     
 
 def get_languages() -> Dict[str, Union[str, List[str]]]:
