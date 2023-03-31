@@ -247,3 +247,15 @@ help_addbalckuser: "Intro :To Check Bot'S Blacklist Status\n\nAvailable Options 
 help_cbutton: "**Intro** :To Create Button Posts\n\n**Available Options** :\nIf you button to be in same row as other button then follow this <buttonurl:link:same> in 2nd button.\n\n**Syntax** :\n{tr}cbutton <text> [Name on button]<buttonurl:link you want to open>\n\nExamples :\n{tr}cbutton test [google]<buttonurl:https://www.google.com> [pandauserbot]<buttonurl:https://t.me/TEAMSquadUserbotSupport> [support]<buttonurl:https://t.me/TEAMSquadUserbotSupport>\n\nNote :\nFor working of this you need your bot ({Config.TG_BOT_USERNAME) in the group/channel where you are using and Markdown is Default to html"
 help_ibutton: "**Intro** :To Create Button Posts Via Inline\n\n**Available Options** :\nIf you button to be in same row as other button then follow this <buttonurl:link:same> in 2nd button.\n\n**Syntax** :\n{tr}ibutton <text> [Name on button]<buttonurl:link you want to open>\n\n**Examples** :\n{tr}ibutton test [google]<buttonurl:https://www.google.com> [PandaUserbot]<buttonurl:https://t.me/pandauserbot:same> [support]<buttonurl:https://t.me/teamsquaduserbotsupport>\n\n**Note** :Markdown is Default to html"
 
+# carbon
+help_carbon: "**Intro** :Carbon Generators For Given Text (Fixed Style)\n\n**Syntax** :\n{tr}carbon <text>\n{tr}carbon <reply to text>"
+help_ccarbon: "**Intro** :Carbon Generators For Given Text (Fixed Style)\n\n**Syntax** :\n{tr}ccarbon <text>\n{tr}ccarbon <reply to text>"
+
+# Chain
+help_chain: "**Intro** :Reply This Command To Any Converstion(Or Message) And It Will Find The Chain Length Of That Message\n\n**Syntax** :{tr}chain <reply>"
+
+# climate
+help_climate: "**Intro** :To Get The Weather Report Of A City.\n\n**Description** :Shows you the weather report of a city. by default it is delhi, you can change it by .setcity command.\n\n**Syntax** :\n{tr}climate\n{tr}climate <city name>\n\n**Note** :For functioning of this plugin you need to set OPEN_WEATHER_MAP_APPID var you can  get value from https://openweathermap.org/"
+help_setcity: "**Intro** :To Set Default City For Climate Cmd\n\n**Description** :Sets your default city so you can just use .weather or .climate when ever you neededwithout typing city name each time\n\n**Syntax** :\n{tr}climate\n{tr}climate <city name>\n\n**Note** :For functioning of this plugin you need to set OPEN_WEATHER_MAP_APPID var you can  get value from https://openweathermap.org/"
+help_weather: "**Intro** :\nTo Get The Weather Report Of A City.\n\n**Description** :\nShows you the weather report of a city . by default it is delhi, you can change it by .setcity command.\n\n**Syntax** :\n{tr}wttr\n{tr}wttr <city name>"
+help_wttr: "**Intro** :\nTo Get The Weather Report Of A City.\n\n**Description** :\nShows you the weather report of a city for next 3 days . by default it is medan you can change it by .setcity command.\n\n**Syntax** :\n{tr}wttr\n{tr}wttr <city name>"
