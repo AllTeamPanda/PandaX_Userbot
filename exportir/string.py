@@ -2,7 +2,7 @@ import os
 from os import listdir, path
 from typing import Any, Dict, List, Union
 
-from userbot import LOGS
+from userbot import LOGS, Config
 try:
     from google_trans_new import google_translator
     Trs = google_translator()
@@ -83,7 +83,7 @@ def get_string(key: str) -> Any:
         return languages["en"].get(key) or f"Gagal memuat string bahasa '{key}'"
 
 def get_help(key):
-    return get_string(f"{key}")
+    return get_string(f"{key}").format(tr=Config.COMMAND_HAND_LER)
     
 
 def get_languages() -> Dict[str, Union[str, List[str]]]:
