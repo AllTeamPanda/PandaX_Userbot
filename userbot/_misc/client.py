@@ -58,11 +58,6 @@ def dual_duall():
 
 
 
-def _format_about(
-    about: str or tuple = None
-) -> str:  # sourcery no-metrics
-    tmp_chelp = ""     
-    return tmp_chelp.replace("{tr}", Config.COMMAND_HAND_LER)
 
 
 DEV = [
