@@ -34,6 +34,7 @@ from ...helpers import media_type
 from ...helpers.utils import _format, get_user_from_event
 from ..._database.dB.mute_db import is_muted, mute, unmute
 from . import BOTLOG, BOTLOG_CHATID
+from exportir import get_help
 
 # =================== STRINGS ============
 PP_TOO_SMOL = "`Ukuran Gambarnya terlalu kecil:)`"
@@ -77,18 +78,7 @@ plugin_category = "plugins"
 @pandaub.ilhammansiz_cmd(
     pattern="gpic( -s| -d)$",
     command=("gpic", plugin_category),
-    info={
-        "header": "For changing group display pic or deleting display pic",
-        "description": "Reply to Image for changing display picture",
-        "flags": {
-            "-s": "To set group pic",
-            "-d": "To delete group pic",
-        },
-        "usage": [
-            "{tr}gpic -s <reply to image>",
-            "{tr}gpic -d",
-        ],
-    },
+    info=get_help("help_gpic"),
     groups_only=True,
     require_admin=True,
 )
@@ -139,15 +129,7 @@ async def set_group_photo(event):  # sourcery no-metrics
 @pandaub.ilhammansiz_cmd(
     pattern="promote(?: |$)(.*)",
     command=("promote", plugin_category),
-    info={
-        "header": "To give admin rights for a person",
-        "description": "Provides admin rights to the person in the chat\
-            \nNote : You need proper rights for this",
-        "usage": [
-            "{tr}promote <userid/username/reply>",
-            "{tr}promote <userid/username/reply> <custom title>",
-        ],
-    },
+    info=get_help("help_promote"),
     groups_only=True,
     require_admin=True,
 )
@@ -184,15 +166,7 @@ async def promote(event):
 @pandaub.ilhammansiz_cmd(
     pattern="demote(?: |$)(.*)",
     command=("demote", plugin_category),
-    info={
-        "header": "To remove a person from admin list",
-        "description": "Removes all admin rights for that peron in that chat\
-            \nNote : You need proper rights for this and also u must be owner or admin who promoted that guy",
-        "usage": [
-            "{tr}demote <userid/username/reply>",
-            "{tr}demote <userid/username/reply> <custom title>",
-        ],
-    },
+    info=get_help("help_demote"),
     groups_only=True,
     require_admin=True,
 )
@@ -228,15 +202,7 @@ async def demote(event):
 @pandaub.ilhammansiz_cmd(
     pattern="ban(?: |$)(.*)",
     command=("ban", plugin_category),
-    info={
-        "header": "Will ban the guy in the group where you used this command.",
-        "description": "Permanently will remove him from this group and he can't join back\
-            \nNote : You need proper rights for this.",
-        "usage": [
-            "{tr}ban <userid/username/reply>",
-            "{tr}ban <userid/username/reply> <reason>",
-        ],
-    },
+    info=get_help("help_ban"),
     groups_only=True,
     require_admin=True,
 )
@@ -289,15 +255,7 @@ async def _ban_person(event):
 @pandaub.ilhammansiz_cmd(
     pattern="unban(?: |$)(.*)",
     command=("unban", plugin_category),
-    info={
-        "header": "Will unban the guy in the group where you used this command.",
-        "description": "Removes the user account from the banned list of the group\
-            \nNote : You need proper rights for this.",
-        "usage": [
-            "{tr}unban <userid/username/reply>",
-            "{tr}unban <userid/username/reply> <reason>",
-        ],
-    },
+    info=get_help("help_unban"),
     groups_only=True,
     require_admin=True,
 )
@@ -337,16 +295,7 @@ async def watcher(event):
 @pandaub.ilhammansiz_cmd(
     pattern="mute(?: |$)(.*)",
     command=("mute", plugin_category),
-    info={
-        "header": "To stop sending messages from that user",
-        "description": "If is is not admin then changes his permission in group,\
-            if he is admin or if you try in personal chat then his messages will be deleted\
-            \nNote : You need proper rights for this.",
-        "usage": [
-            "{tr}mute <userid/username/reply>",
-            "{tr}mute <userid/username/reply> <reason>",
-        ],
-    },  # sourcery no-metrics
+    info=get_help("help_mute"),
 )
 async def startmute(event):
     "To mute a person in that paticular chat"
@@ -442,15 +391,7 @@ async def startmute(event):
 @pandaub.ilhammansiz_cmd(
     pattern="unmute(?:\s|$)([\s\S]*)",
     command=("unmute", plugin_category),
-    info={
-        "header": "To allow user to send messages again",
-        "description": "Will change user permissions ingroup to send messages again.\
-        \nNote : You need proper rights for this.",
-        "usage": [
-            "{tr}unmute <userid/username/reply>",
-            "{tr}unmute <userid/username/reply> <reason>",
-        ],
-    },
+    info=get_help("help_unmute"),
 )
 async def endmute(event):
     "To mute a person in that paticular chat"
@@ -514,15 +455,7 @@ async def endmute(event):
 @pandaub.ilhammansiz_cmd(
     pattern="kick(?: |$)(.*)",
     command=("kick", plugin_category),
-    info={
-        "header": "To kick a person from the group",
-        "description": "Will kick the user from the group so he can join back.\
-        \nNote : You need proper rights for this.",
-        "usage": [
-            "{tr}kick <userid/username/reply>",
-            "{tr}kick <userid/username/reply> <reason>",
-        ],
-    },
+    info=get_help("help_kick"),
     groups_only=True,
     require_admin=True,
 )
@@ -556,16 +489,7 @@ async def endmute(event):
 @pandaub.ilhammansiz_cmd(
     pattern="pin( loud|$)",
     command=("pin", plugin_category),
-    info={
-        "header": "For pining messages in chat",
-        "description": "reply to a message to pin it in that in chat\
-        \nNote : You need proper rights for this if you want to use in group.",
-        "options": {"loud": "To notify everyone without this.it will pin silently"},
-        "usage": [
-            "{tr}pin <reply>",
-            "{tr}pin loud <reply>",
-        ],
-    },
+    info=get_help("help_pin"),
 )
 async def pin(event):
     "To pin a message in chat"
@@ -594,16 +518,7 @@ async def pin(event):
 @pandaub.ilhammansiz_cmd(
     pattern="unpin( all|$)",
     command=("unpin", plugin_category),
-    info={
-        "header": "Untuk melepas pin pesan dalam obrolan",
-        "description": "balas pesan untuk melepas pinnya di obrolan\
-        \nNote : Anda memerlukan hak yang tepat untuk ini jika Anda ingin menggunakan dalam grup.",
-        "options": {"all": "Menghapus semua unpin di semua pesan grup "},
-        "usage": [
-            "{tr}unpin <reply>",
-            "{tr}unpin all",
-        ],
-    },
+    info=get_help("help_unpin"),
 )
 async def pin(event):
     "To unpin message(s) in the group"
@@ -641,21 +556,7 @@ async def pin(event):
 @pandaub.ilhammansiz_cmd(
     pattern="undlt( -u)?(?: |$)(\d*)?",
     command=("undlt", plugin_category),
-    info={
-        "header": "Untuk mendapatkan pesan yang dihapus baru-baru ini di grup",
-        "description": "Untuk memeriksa pesan yang dihapus baru-baru ini di grup, secara default akan muncul 5. Anda bisa mendapatkan 1 hingga 15 pesan.",
-        "flags": {
-            "u": "gunakan tanda ini untuk mengunggah media ke obrolan yang lain hanya akan ditampilkan sebagai media."
-        },
-        "usage": [
-            "{tr}undlt <count>",
-            "{tr}undlt -u <count>",
-        ],
-        "examples": [
-            "{tr}undlt 7",
-            "{tr}undlt -u 7 (ini akan membalas semua 7 pesan ke pesan ini",
-        ],
-    },
+    info=get_help("help_undlt"),
     groups_only=True,
     require_admin=True,
 )
