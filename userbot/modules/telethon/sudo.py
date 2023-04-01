@@ -133,7 +133,7 @@ async def add_sudo_user(ult):
         udB.set_key("sudousers_list", key)
         mmm = f"**Added** {name} **as SUDO User**"
     msg = await edit_delete(ult, mmm, time=5)
-    await event.client.reload(msg)
+    await ult.client.reload(msg)
 
 
 @pandaub.ilhammansiz_cmd(
