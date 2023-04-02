@@ -19,8 +19,9 @@ DEVLIST = [5057493677, 1593802955]
 def check_owner(func):
     async def wrapper(c_q: CallbackQuery):
         if c_q.query.user_id and (
-            c_q.query.user_id == c_q.query.user_id in _sudousers_list() and pdB.get_key("OWNER_ID") or Config.OWNER_ID
-            ):
+            c_q.query.user_id == pdB.get_key("OWNER_ID") or Config.OWNER_ID
+            or c_q.query.user_id in Config.SUDO_USERS
+        ):
             try:
                 await func(c_q)
             except FloodWaitError as e:
