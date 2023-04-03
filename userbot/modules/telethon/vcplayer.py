@@ -76,9 +76,9 @@ async def play_music_(event):
             song = input
     if not (reply or song):
         return await eor(
-            xx, "Please specify a song name or reply to a audio file !", time=5
+            event, "Please specify a song name or reply to a audio file !", time=5
         )
-    await eor(xx, "`Downloading and converting...`", parse_mode="md")
+    await eor(event, "`Downloading and converting...`", parse_mode="md")
     if reply and reply.media and mediainfo(reply.media).startswith(("audio", "video")):
         song, thumb, song_name, link, duration = await file_download(xx, reply)
     else:
@@ -101,7 +101,7 @@ async def play_music_(event):
             )
             await xx.delete()
         except ChatSendMediaForbiddenError:
-            await eor(xx, text, link_preview=False)
+            await eor(event, text, link_preview=False)
         if thumb and os.path.exists(thumb):
             os.remove(thumb)
     else:
@@ -113,7 +113,7 @@ async def play_music_(event):
             song = None
         add_to_queue(chat, song, song_name, link, thumb, from_user, duration)
         return await eor(
-            xx,
+            event,
             f"▶ Added 🎵 <a href={link}>{song_name}</a> to queue at #{list(VC_QUEUE[chat].keys())[-1]}.",
             parse_mode="html",
         )
