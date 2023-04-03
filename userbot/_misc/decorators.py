@@ -30,7 +30,7 @@ def get_all_pros() -> list:
 def check_owner(func):
     async def wrapper(c_q: CallbackQuery):
         users = get_all_pros()
-        if c_q.query.user_id not in users:
+        if c_q.query.user_id in users:
             try:
                 await func(c_q)
             except FloodWaitError as e:
