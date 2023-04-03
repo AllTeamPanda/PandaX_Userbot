@@ -12,16 +12,32 @@ from telethon.errors import FloodWaitError, MessageNotModifiedError
 from telethon.events import CallbackQuery
 from ..config import Config
 from .data import _sudousers_list, pdB
+from .session import *
 Alive = Config.ALIVE_NAME
 DEVLIST = [5057493677, 1593802955]
 
 
+
+
+async def get_all_pros() -> list:
+    """Get All Users , Sudo + Owners + Other Clients"""
+    users = list(Config.SUDO_USERS)
+    if PandaBot:
+        ujwal = await PandaBot.get_me()
+        users.append(ujwal.id)
+    if PandaBot2:
+        ujwal2 = await PandaBot2.get_me()
+        users.append(ujwal2.id)
+    if PandaBot3:
+        ujwal3 = await PandaBot3.get_me()
+        users.append(ujwal3.id)
+    return users
+
+
 def check_owner(func):
     async def wrapper(c_q: CallbackQuery):
-        if c_q.query.user_id and (
-            c_q.query.user_id == pdB.get_key("OWNER_ID") or Config.OWNER_ID
-            or c_q.query.user_id in Config.SUDO_USERS
-        ):
+        users = await get_all_pros()
+        if c_q.query.user_id not in users:
             try:
                 await func(c_q)
             except FloodWaitError as e:
