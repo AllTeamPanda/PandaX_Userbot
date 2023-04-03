@@ -12,7 +12,7 @@ from telethon.errors import FloodWaitError, MessageNotModifiedError
 from telethon.events import CallbackQuery
 from ..config import Config
 from .data import _sudousers_list, pdB
-from .session import *
+
 Alive = Config.ALIVE_NAME
 DEVLIST = [5057493677, 1593802955]
 
@@ -22,15 +22,8 @@ DEVLIST = [5057493677, 1593802955]
 def get_all_pros() -> list:
     """Get All Users , Sudo + Owners + Other Clients"""
     users = list(Config.SUDO_USERS)
-    if PandaBot:
-        ujwal = PandaBot.get_me()
-        users.append(ujwal.id)
-    if PandaBot2:
-        ujwal2 = PandaBot2.get_me()
-        users.append(ujwal2.id)
-    if PandaBot3:
-        ujwal3 = PandaBot3.get_me()
-        users.append(ujwal3.id)
+    if pdB.get_key("OWNER_ID"):
+        users.append(pdB.get_key("OWNER_ID"))
     return users
 
 
