@@ -167,7 +167,7 @@ except Exception as e:
 
 try:
     if DB.get_key("SESSION7") or Var.STRING_SESSION7:
-        PandaBot3 = PandaUserbotSession(
+        PandaBot7 = PandaUserbotSession(
             PandaSession(DB.get_key("SESSION7") or Var.STRING_SESSION7, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
