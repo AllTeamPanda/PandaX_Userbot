@@ -387,7 +387,7 @@ class Config(object):
     COUNTRY = str(os.environ.get("COUNTRY", ""))
     TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))    
     UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "master")    
-    SUDO_USERS =  SqL.get_key("sudousers_list")
+    SUDO_USERS =  SUDO_USERS: Set[int] = set()
     LOGO = None
     LOG_GRP = PRIVATE_GROUP_BOT_API_ID
     COMMAND_HANDLER = COMMAND_HAND_LER
