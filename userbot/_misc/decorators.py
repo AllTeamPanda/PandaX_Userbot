@@ -24,16 +24,16 @@ def check_owner(func):
     async def wrapper(c_q: CallbackQuery):
         users = get_all_pros()
         if c_q.query.user_id and not (
-                c_q.query.user_id == pdB.get_key("OWNER_ID") or c_q.query.user_id in Config.SUDO_USERS
-            ):
-                await c_q.answer(
-                    f"𝐌𝐞𝐧𝐮 𝐇𝐞𝐥𝐩 ||𝗖𝗿𝗲𝗮𝘁𝗲 𝗯𝗼𝘁 𝗝𝗼𝗶𝗻 @𝗣𝗮𝗻𝗱𝗮𝗨𝘀𝗲𝗿𝗯𝗼𝘁",
-                    alert=True,
-                )
-            else:
-                try:
-                    await func(c_q)
-                except MessageNotModifiedError:
-                    pass
+            c_q.query.user_id == pdB.get_key("OWNER_ID") or c_q.query.user_id in Config.SUDO_USERS
+        ):
+            await c_q.answer(
+                f"𝐌𝐞𝐧𝐮 𝐇𝐞𝐥𝐩 ||𝗖𝗿𝗲𝗮𝘁𝗲 𝗯𝗼𝘁 𝗝𝗼𝗶𝗻 @𝗣𝗮𝗻𝗱𝗮𝗨𝘀𝗲𝗿𝗯𝗼𝘁",
+                alert=True,
+            )
+        else:
+            try:
+                await func(c_q)
+            except MessageNotModifiedError:
+                pass
 
     return wrapper
