@@ -15,7 +15,7 @@ LOGS = logging.getLogger("PandaUserbot")
 # https://docs.telethon.dev/en/latest/misc/changelog.html#breaking-changes
 async def edit_or_reply(
     event,
-    text=None,
+    text,
     parse_mode=None,
     link_preview=None,
     file_name=None,
