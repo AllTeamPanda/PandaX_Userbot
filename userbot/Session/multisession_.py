@@ -71,6 +71,8 @@ def Telethon():
                 pdB.set_key("OWNER_ID", Var.OWNER_ID)
             else:
                 pdB.set_key("OWNER_ID", PandaBot.uid)
+            if pdB.get_key("sudousers_list"):
+                pdB.set_key("sudousers_list", PandaBot.uid)
         except Exception as e:
             LOGS.error(f"STRING_SESSION1 - {e}")
             sys.exit()
