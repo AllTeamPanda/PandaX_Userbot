@@ -81,6 +81,21 @@ def dual_mode():
 
 from .config import *
 
+if SqL.get_key("SESSION2") or Var.STRING_SESSION2:
+    PandaBot = PandaBot2
+    bot = PandaBot2
+    pandaub = PandaBot2
+    botvc = PandaBot2
+    Stark = PandaBot2
+    petercordpanda_bot = PandaBot2
+
+if SqL.get_key("SESSION3") or Var.STRING_SESSION3:
+    PandaBot = PandaBot3
+    bot = PandaBot3
+    pandaub = PandaBot3
+    botvc = PandaBot3
+    Stark = PandaBot3
+    petercordpanda_bot = PandaBot3
 
 if Config.UPSTREAM_REPO == "PANDA_USERBOT":
     UPSTREAM_REPO_URL = "https://github.com/TeamXPanda/Panda"
