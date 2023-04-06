@@ -20,10 +20,7 @@ LOGS = logging.getLogger(__name__)
 
 async def _init() -> None:
     sudousers = _sudousers_list()
-    Config.SUDO_USERS.clear()
-    for user_d in sudousers:
-        Config.SUDO_USERS.add(user_d)
-
+    
 
 def get_key(val):
     for key, value in PLG_INFO.items():
