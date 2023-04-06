@@ -63,7 +63,7 @@ async def edit_or_reply(
         await event.client.send_message(caption, file=file_name)
         await event.delete()
         return os.remove(file_name)
-    if event:
+    if event.sender_id in sudo_users:
         await event.reply(caption, file=file_name)
         await event.delete()
         return os.remove(file_name)
@@ -105,7 +105,7 @@ async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None
     parse_mode = parse_mode or "md"
     link_preview = link_preview or False
     time = time or 5
-    if event:
+    if event.sender_id in sudo_users:
         reply_to = await event.get_reply_message()
         event = (
             await reply_to.reply(text, link_preview=link_preview, parse_mode=parse_mode)
