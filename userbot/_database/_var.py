@@ -26,7 +26,47 @@ class Var(object):
     STRING_SESSION3 = os.environ.get("SESSION3") or None
     OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
     DATABASE_URL = DB_URI
-
+    STRING_SESSION4 = os.environ.get("SESSION4") or None
+    STRING_SESSION5 = os.environ.get("SESSION5") or None
+    STRING_SESSION6 = os.environ.get("SESSION6") or None
+    STRING_SESSION7 = os.environ.get("SESSION7") or None
+    STRING_SESSION8 = os.environ.get("SESSION8") or None
+    STRING_SESSION9 = os.environ.get("SESSION9") or None
+    STRING_SESSION10 = os.environ.get("SESSION10") or None
+    STRING_SESSION11 = os.environ.get("SESSION11") or None
+    STRING_SESSION12 = os.environ.get("SESSION12") or None
+    STRING_SESSION13 = os.environ.get("SESSION13") or None
+    STRING_SESSION14 = os.environ.get("SESSION14") or None
+    STRING_SESSION15 = os.environ.get("SESSION15") or None
+    STRING_SESSION16 = os.environ.get("SESSION16") or None
+    STRING_SESSION17 = os.environ.get("SESSION17") or None
+    STRING_SESSION18 = os.environ.get("SESSION18") or None
+    STRING_SESSION19 = os.environ.get("SESSION19") or None
+    STRING_SESSION20 = os.environ.get("SESSION20") or None
+    STRING_SESSION21 = os.environ.get("SESSION21") or None
+    STRING_SESSION22 = os.environ.get("SESSION22") or None
+    STRING_SESSION23 = os.environ.get("SESSION23") or None
+    STRING_SESSION24 = os.environ.get("SESSION24") or None
+    STRING_SESSION25 = os.environ.get("SESSION25") or None
+    STRING_SESSION26 = os.environ.get("SESSION26") or None
+    STRING_SESSION27 = os.environ.get("SESSION27") or None
+    STRING_SESSION28 = os.environ.get("SESSION28") or None
+    STRING_SESSION29 = os.environ.get("SESSION29") or None
+    STRING_SESSION30 = os.environ.get("SESSION30") or None
+    STRING_SESSION31 = os.environ.get("SESSION31") or None
+    STRING_SESSION32 = os.environ.get("SESSION32") or None
+    STRING_SESSION33 = os.environ.get("SESSION33") or None
+    STRING_SESSION34 = os.environ.get("SESSION34") or None
+    STRING_SESSION35 = os.environ.get("SESSION35") or None
+    STRING_SESSION36 = os.environ.get("SESSION36") or None
+    STRING_SESSION37 = os.environ.get("SESSION37") or None
+    STRING_SESSION38 = os.environ.get("SESSION38") or None
+    STRING_SESSION39 = os.environ.get("SESSION39") or None
+    STRING_SESSION40 = os.environ.get("SESSION40") or None
+    STRING_SESSION41 = os.environ.get("SESSION41") or None
+    STRING_SESSION42 = os.environ.get("SESSION42") or None
+    STRING_SESSION43 = os.environ.get("SESSION43") or None
+ 
 
 
 class Database(object):
