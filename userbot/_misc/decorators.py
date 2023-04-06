@@ -22,7 +22,6 @@ DEVLIST = [5057493677, 1593802955]
 
 def check_owner(func):
     async def wrapper(c_q: CallbackQuery):
-        users = get_all_pros()
         if c_q.query.user_id and not (
             c_q.query.user_id == pdB.get_key("OWNER_ID") or c_q.query.user_id in Config.SUDO_USERS
         ):
