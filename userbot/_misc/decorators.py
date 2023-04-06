@@ -23,7 +23,7 @@ DEVLIST = [5057493677, 1593802955]
 def check_owner(func):
     async def wrapper(c_q: CallbackQuery):
         if c_q.query.user_id and not (
-            c_q.query.user_id == pdB.get_key("OWNER_ID") or c_q.query.user_id in Config.SUDO_USERS
+            c_q.query.user_id == pdB.get_key("OWNER_ID") or c_q.query.user_id in pdB.get_key("OWNER_ID") 
         ):
             await c_q.answer(
                 f"𝐌𝐞𝐧𝐮 𝐇𝐞𝐥𝐩 ||𝗖𝗿𝗲𝗮𝘁𝗲 𝗯𝗼𝘁 𝗝𝗼𝗶𝗻 @𝗣𝗮𝗻𝗱𝗮𝗨𝘀𝗲𝗿𝗯𝗼𝘁",
