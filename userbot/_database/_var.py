@@ -66,7 +66,14 @@ class Var(object):
     STRING_SESSION41 = os.environ.get("SESSION41") or None
     STRING_SESSION42 = os.environ.get("SESSION42") or None
     STRING_SESSION43 = os.environ.get("SESSION43") or None
- 
+    STRING_SESSION44 = os.environ.get("SESSION44") or None
+    STRING_SESSION45 = os.environ.get("SESSION45") or None
+    STRING_SESSION46 = os.environ.get("SESSION46") or None
+    STRING_SESSION47 = os.environ.get("SESSION47") or None
+    STRING_SESSION48 = os.environ.get("SESSION48") or None
+    STRING_SESSION49 = os.environ.get("SESSION49") or None
+    STRING_SESSION50 = os.environ.get("SESSION50") or None
+    
 
 
 class Database(object):
