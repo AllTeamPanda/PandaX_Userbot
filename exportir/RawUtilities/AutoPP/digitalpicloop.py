@@ -1,5 +1,5 @@
 
-
+from .autopicloop import *
 
 async def digitalpicloop():
     DIGITALPICSTART = gvarstatus("digitalpic") == "true"
