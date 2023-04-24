@@ -328,8 +328,6 @@ async def digitalpicloop():
                 if PandaBot29:
                     await PandaBot29(functions.photos.DeletePhotosRequest(await PandaBot29.get_profile_photos("me", limit=1)))
                 if PandaBot30:
-                    await PandaBot(functions.photos.DeletePhotosRequest(await PandaBot.get_profile_photos("me", limit=1)))
-                if PandaBot:
                     await PandaBot30(functions.photos.DeletePhotosRequest(await PandaBot30.get_profile_photos("me", limit=1)))
                 if PandaBot31:
                     await PandaBot31(functions.photos.DeletePhotosRequest(await PandaBot31.get_profile_photos("me", limit=1)))
