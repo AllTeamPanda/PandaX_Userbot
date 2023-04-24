@@ -18,7 +18,7 @@ from telethon.tl import functions
 
 from ...config import Config
 from ...helpers.utils import _format
-from ... import addgvar, delgvar, gvarstatus
+from ... import *
 from . import (
     AUTONAME,
     BOTLOG,
@@ -27,7 +27,6 @@ from . import (
     _pandautils,
     edit_delete,
     logging,
-    pandaub,
 )
 
 plugin_category = "plugins"
@@ -64,11 +63,107 @@ async def autopicloop():
     AUTOPICSTART = gvarstatus("autopic") == "true"
     if AUTOPICSTART and Config.DEFAULT_PIC is None:
         if BOTLOG:
-            return await pandaub.send_message(
-                BOTLOG_CHATID,
-                "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`",
-            )
-        return
+            if PandaBot:
+                await PandaBot.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot2:
+                await PandaBot2.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot3:
+                await PandaBot3.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot4:
+                await PandaBot4.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot5:
+                await PandaBot5.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot6:
+                await PandaBot6.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot7:
+                await PandaBot7.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot8:
+                await PandaBot8.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot9:
+                await PandaBot9.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot10:
+                await PandaBot10.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot11:
+                await PandaBot11.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot12:
+                await PandaBot12.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot13:
+                await PandaBot13.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot14:
+                await PandaBot14.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot15:
+                await PandaBot15.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot16:
+                await PandaBot16.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot17:
+                await PandaBot17.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot18:
+                await PandaBot18.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot19:
+                await PandaBot19.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot20:
+                await PandaBot20.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot21:
+                await PandaBot21.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot22:
+                await PandaBot22.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot23:
+                await PandaBot23.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot24:
+                await PandaBot24.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")  
+            if PandaBot25:
+                await PandaBot25.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot26:
+                await PandaBot26.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot27:
+                await PandaBot27.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot28:
+                await PandaBot28.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot29:
+                await PandaBot29.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot30:
+                await PandaBot30.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot31:
+                await PandaBot31.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot32:
+                await PandaBot32.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot33:
+                await PandaBot33.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot34:
+                await PandaBot34.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot35:
+                await PandaBot35.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot36:
+                await PandaBot36.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot37:
+                await PandaBot37.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot38:
+                await PandaBot38.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot39:
+                await PandaBot39.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot40:
+                await PandaBot40.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot41:
+                await PandaBot41.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot42:
+                await PandaBot42.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot43:
+                await PandaBot43.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot44:
+                await PandaBot44.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot45:
+                await PandaBot45.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot46:
+                await PandaBot46.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot47:
+                await PandaBot47.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot48:
+                await PandaBot48.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot48:
+                await PandaBot48.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            if PandaBot50:
+                await PandaBot50.send_message(BOTLOG_CHATID, "**Error**\n`For functing of autopic you need to set DEFAULT_PIC var in Heroku vars`")
+            return
     if gvarstatus("autopic") is not None:
         try:
             counter = int(gvarstatus("autopic_counter"))
