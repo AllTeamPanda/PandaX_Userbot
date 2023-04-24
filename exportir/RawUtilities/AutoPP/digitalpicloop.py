@@ -282,8 +282,8 @@ async def digitalpicloop():
 
             if PandaBot50:
                 await PandaBot50(functions.photos.UploadProfilePhotoRequest(file50))
-            os.remove(autophoto_path)
-            await asyncio.sleep(60)
+        os.remove(autophoto_path)
+        await asyncio.sleep(60)
         except BaseException:
             return
         DIGITALPICSTART = gvarstatus("digitalpic") == "true"
