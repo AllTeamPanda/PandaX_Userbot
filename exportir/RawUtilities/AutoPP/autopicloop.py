@@ -1,5 +1,5 @@
 
-t base64
+import base64
 import os
 import random
 import re
