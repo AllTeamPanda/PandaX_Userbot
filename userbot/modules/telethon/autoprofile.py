@@ -248,8 +248,8 @@ async def digitalpicloop():
         file30 = await PandaBot30.upload_file(autophoto_path)
         file31 = await PandaBot31.upload_file(autophoto_path)
         file32 = await PandaBot32.upload_file(autophoto_path)
-        file33 = await PandaBot.upload_file(autophoto_path)
-        file = await PandaBot33.upload_file(autophoto_path)
+        
+        file33 = await PandaBot33.upload_file(autophoto_path)
         file34 = await PandaBot34.upload_file(autophoto_path)
         file35 = await PandaBot35.upload_file(autophoto_path)
         file36 = await PandaBot36.upload_file(autophoto_path)
