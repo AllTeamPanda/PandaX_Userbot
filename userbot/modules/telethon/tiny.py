@@ -25,7 +25,7 @@ async def ultiny(event):
         await edit_or_reply(event, "`🐼 Panda, Mohon Balas Ke Sticker ,Tiny,Tono,Dongo😶`")
         return
     xx = await edit_or_reply(event, "`Memproses Tiny....`")
-    ik = await pandaub.download_media(reply)
+    ik = await event.client.download_media(reply)
     im1 = Image.open("userbot/resources/PandaBlanck.jpg")
     if ik.endswith(".tgs"):
         await event.client.download_media(reply, "ult.tgs")
