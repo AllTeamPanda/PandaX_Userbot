@@ -54,7 +54,7 @@ async def pandagban(event):  # sourcery no-metrics
     user, reason = await get_user_from_event(event, pandae)
     if not user:
         return
-    if user.id == pandaub.uid:
+    if user.id == event.client.uid:
         return await edit_delete(pandae, "`why would I ban myself`")
     if is_gbanned(user.id):
         await pandae.edit(
@@ -244,7 +244,7 @@ async def startgmute(event):
         user, reason = await get_user_from_event(event)
         if not user:
             return
-        if user.id == pandaub.uid:
+        if user.id == event.client.uid:
             return await edit_or_reply(event, "`Sorry, I can't gmute myself`")
         userid = user.id
     try:
@@ -310,7 +310,7 @@ async def endgmute(event):
         user, reason = await get_user_from_event(event)
         if not user:
             return
-        if user.id == pandaub.uid:
+        if user.id == event.client.uid:
             return await edit_or_reply(event, "`Sorry, I can't gmute myself`")
         userid = user.id
     try:
@@ -374,7 +374,7 @@ async def pandagkick(event):  # sourcery no-metrics
     user, reason = await get_user_from_event(event, cate)
     if not user:
         return
-    if user.id == pandaub.uid:
+    if user.id == event.client.uid:
         return await edit_delete(cate, "`why would I kick myself`")
     san = []
     san = await admin_groups(event)
