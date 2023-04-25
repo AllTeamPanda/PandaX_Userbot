@@ -703,7 +703,7 @@ def Telethon():
     if pdB.get_key("SESSION26") or Var.STRING_SESSION26 and Database.BOT_TOKEN:
         try:
             PandaBot26.connect()
-            config = PandaBot2(functions.help.GetConfigRequest())
+            config = PandaBot26(functions.help.GetConfigRequest())
             for option in config.dc_options:
                 if option.ip_address == PandaBot26.session.server_address:
                     if PandaBot26.session.dc_id != option.id:
@@ -711,8 +711,8 @@ def Telethon():
                             f"Fixed DC ID in session from {PandaBot26.session.dc_id}"
                             f" to {option.id}"
                     )
-                    PandaBot2.session.set_dc(option.id, option.ip_address, option.port)
-                    PandaBot2.session.save()
+                    PandaBot26.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot26.session.save()
                     break
             tgbot.get_me()
             PandaBot26.me = PandaBot26.get_me()
