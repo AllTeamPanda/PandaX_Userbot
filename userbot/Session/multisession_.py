@@ -836,7 +836,7 @@ def Telethon():
             config = PandaBot31(functions.help.GetConfigRequest())
             for option in config.dc_options:
                 if option.ip_address == PandaBot31.session.server_address:
-                    if PandaBot2.session.dc_id != option.id:
+                    if PandaBot31.session.dc_id != option.id:
                         LOGS.warning(
                             f"Fixed DC ID in session from {PandaBot31.session.dc_id}"
                             f" to {option.id}"
@@ -862,7 +862,7 @@ def Telethon():
             config = PandaBot32(functions.help.GetConfigRequest())
             for option in config.dc_options:
                 if option.ip_address == PandaBot32.session.server_address:
-                    if PandaBot2.session.dc_id != option.id:
+                    if PandaBot32.session.dc_id != option.id:
                         LOGS.warning(
                             f"Fixed DC ID in session from {PandaBot32.session.dc_id}"
                             f" to {option.id}"
@@ -888,7 +888,7 @@ def Telethon():
             config = PandaBot33(functions.help.GetConfigRequest())
             for option in config.dc_options:
                 if option.ip_address == PandaBot33.session.server_address:
-                    if PandaBot2.session.dc_id != option.id:
+                    if PandaBot33.session.dc_id != option.id:
                         LOGS.warning(
                             f"Fixed DC ID in session from {PandaBot33.session.dc_id}"
                             f" to {option.id}"
@@ -907,14 +907,14 @@ def Telethon():
         except Exception as e:
             LOGS.error(f"STRING_SESSION33 - {e}")
             sys.exit()
-     
+
     if pdB.get_key("SESSION34") or Var.STRING_SESSION34 and Database.BOT_TOKEN:
         try:
             PandaBot34.connect()
             config = PandaBot34(functions.help.GetConfigRequest())
             for option in config.dc_options:
                 if option.ip_address == PandaBot34.session.server_address:
-                    if PandaBot3.session.dc_id != option.id:
+                    if PandaBot34.session.dc_id != option.id:
                         LOGS.warning(
                             f"Fixed DC ID in session from {PandaBot34.session.dc_id}"
                             f" to {option.id}"
@@ -932,6 +932,422 @@ def Telethon():
                 pdB.set_key("OWNER_ID", PandaBot34.uid)
         except Exception as e:
             LOGS.error(f"STRING_SESSION34 - {e}")
+            sys.exit()
+
+    if pdB.get_key("SESSION35") or Var.STRING_SESSION35 and Database.BOT_TOKEN:
+        try:
+            PandaBot35.connect()
+            config = PandaBot35(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot35.session.server_address:
+                    if PandaBot35.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot35.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot35.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot35.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot35.me = PandaBot35.get_me()
+            PandaBot35.uid = tgbot.uid = utils.get_peer_id(PandaBot35.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot35.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot35.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION35 - {e}")
+            sys.exit()
+
+    if pdB.get_key("SESSION36") or Var.STRING_SESSION36 and Database.BOT_TOKEN:
+        try:
+            PandaBot36.connect()
+            config = PandaBot36(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot36.session.server_address:
+                    if PandaBot36.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot36.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot36.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot36.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot36.me = PandaBot36.get_me()
+            PandaBo36.uid = tgbot.uid = utils.get_peer_id(PandaBot36.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot36.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot36.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION36 - {e}")
+            sys.exit()
+     
+    if pdB.get_key("SESSION37") or Var.STRING_SESSION37 and Database.BOT_TOKEN:
+        try:
+            PandaBot37.connect()
+            config = PandaBot37(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot37.session.server_address:
+                    if PandaBot37.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot37.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot37.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot37.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot37.me = PandaBot37.get_me()
+            PandaBot37.uid = tgbot.uid = utils.get_peer_id(PandaBot37.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot37.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot37.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION37 - {e}")
+            sys.exit()
+
+    if pdB.get_key("SESSION38") or Var.STRING_SESSION38 and Database.BOT_TOKEN:
+        try:
+            PandaBot38.connect()
+            config = PandaBot38(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot38.session.server_address:
+                    if PandaBot2.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot38.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot38.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot38.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot38.me = PandaBot38.get_me()
+            PandaBot38.uid = tgbot.uid = utils.get_peer_id(PandaBot38.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot38.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot38.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION38 - {e}")
+            sys.exit()
+
+    if pdB.get_key("SESSION39") or Var.STRING_SESSION39 and Database.BOT_TOKEN:
+        try:
+            PandaBot39.connect()
+            config = PandaBot39(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot39.session.server_address:
+                    if PandaBot39.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot39.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot39.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot39.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot39.me = PandaBot39.get_me()
+            PandaBot39.uid = tgbot.uid = utils.get_peer_id(PandaBot39.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot39.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot39.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION39 - {e}")
+            sys.exit()
+
+    if pdB.get_key("SESSION40") or Var.STRING_SESSION40 and Database.BOT_TOKEN:
+        try:
+            PandaBot40.connect()
+            config = PandaBot40(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot40.session.server_address:
+                    if PandaBot40.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot40.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot40.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot40.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot40.me = PandaBot40.get_me()
+            PandaBo40.uid = tgbot.uid = utils.get_peer_id(PandaBot40.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot40.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot40.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION40 - {e}")
+            sys.exit()
+     
+    if pdB.get_key("SESSION41") or Var.STRING_SESSION41 and Database.BOT_TOKEN:
+        try:
+            PandaBot41.connect()
+            config = PandaBot41(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot41.session.server_address:
+                    if PandaBot41.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot41.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot41.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot41.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot41.me = PandaBot41.get_me()
+            PandaBot41.uid = tgbot.uid = utils.get_peer_id(PandaBot41.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot41.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot41.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION41 - {e}")
+            sys.exit()
+
+    if pdB.get_key("SESSION42") or Var.STRING_SESSION42 and Database.BOT_TOKEN:
+        try:
+            PandaBot42.connect()
+            config = PandaBot42(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot42.session.server_address:
+                    if PandaBot42.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot42.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot42.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot42.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot42.me = PandaBot42.get_me()
+            PandaBot42.uid = tgbot.uid = utils.get_peer_id(PandaBot42.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot42.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot42.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION42 - {e}")
+            sys.exit()
+
+    if pdB.get_key("SESSION43") or Var.STRING_SESSION43 and Database.BOT_TOKEN:
+        try:
+            PandaBot43.connect()
+            config = PandaBot43(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot43.session.server_address:
+                    if PandaBot43.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot43.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot43.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot43.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot43.me = PandaBot43.get_me()
+            PandaBot43.uid = tgbot.uid = utils.get_peer_id(PandaBot43.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot43.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot43.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION43 - {e}")
+            sys.exit()
+
+    if pdB.get_key("SESSION44") or Var.STRING_SESSION44 and Database.BOT_TOKEN:
+        try:
+            PandaBot44.connect()
+            config = PandaBot44(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot44.session.server_address:
+                    if PandaBot44.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot44.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot44.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot44.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot44.me = PandaBot44.get_me()
+            PandaBot44.uid = tgbot.uid = utils.get_peer_id(PandaBot44.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot44.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot44.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION44 - {e}")
+            sys.exit()
+     
+    if pdB.get_key("SESSION45") or Var.STRING_SESSION45 and Database.BOT_TOKEN:
+        try:
+            PandaBot45.connect()
+            config = PandaBot45(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot45.session.server_address:
+                    if PandaBot45.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot45.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot45.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot45.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot45.me = PandaBot45.get_me()
+            PandaBot45.uid = tgbot.uid = utils.get_peer_id(PandaBot45.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot45.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot45.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION45 - {e}")
+            sys.exit()
+
+    if pdB.get_key("SESSION46") or Var.STRING_SESSION46 and Database.BOT_TOKEN:
+        try:
+            PandaBot46.connect()
+            config = PandaBot46(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot46.session.server_address:
+                    if PandaBot46.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot46.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot46.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot46.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot46.me = PandaBot46.get_me()
+            PandaBot46.uid = tgbot.uid = utils.get_peer_id(PandaBot46.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot46.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot46.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION46 - {e}")
+            sys.exit()
+
+    if pdB.get_key("SESSION47") or Var.STRING_SESSION47 and Database.BOT_TOKEN:
+        try:
+            PandaBot47.connect()
+            config = PandaBot47(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot47.session.server_address:
+                    if PandaBot47.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot47.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot47.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot47.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot47.me = PandaBot47.get_me()
+            PandaBot47.uid = tgbot.uid = utils.get_peer_id(PandaBot47.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot47.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot47.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION47 - {e}")
+            sys.exit()
+
+    if pdB.get_key("SESSION33") or Var.STRING_SESSION33 and Database.BOT_TOKEN:
+        try:
+            PandaBot48.connect()
+            config = PandaBot48(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot48.session.server_address:
+                    if PandaBot48.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot48.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot48.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot48.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot48.me = PandaBot48.get_me()
+            PandaBot48.uid = tgbot.uid = utils.get_peer_id(PandaBot48.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot48.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot48.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION48 - {e}")
+            sys.exit()
+     
+    if pdB.get_key("SESSION49") or Var.STRING_SESSION49 and Database.BOT_TOKEN:
+        try:
+            PandaBot49.connect()
+            config = PandaBot49(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot49.session.server_address:
+                    if PandaBot49.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot49.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot49.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot49.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot49.me = PandaBot49.get_me()
+            PandaBot49.uid = tgbot.uid = utils.get_peer_id(PandaBot49.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot49.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot49.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION49 - {e}")
+            sys.exit()
+
+    if pdB.get_key("SESSION50") or Var.STRING_SESSION50 and Database.BOT_TOKEN:
+        try:
+            PandaBot50.connect()
+            config = PandaBot50(functions.help.GetConfigRequest())
+            for option in config.dc_options:
+                if option.ip_address == PandaBot50.session.server_address:
+                    if PandaBot50.session.dc_id != option.id:
+                        LOGS.warning(
+                            f"Fixed DC ID in session from {PandaBot50.session.dc_id}"
+                            f" to {option.id}"
+                    )
+                    PandaBot50.session.set_dc(option.id, option.ip_address, option.port)
+                    PandaBot50.session.save()
+                    break
+            tgbot.get_me()
+            PandaBot50.me = PandaBot50.get_me()
+            PandaBot50.uid = tgbot.uid = utils.get_peer_id(PandaBot50.me)
+            if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
+                Var.OWNER_ID = utils.get_peer_id(PandaBot50.me)
+                pdB.set_key("OWNER_ID", Var.OWNER_ID)
+            else:
+                pdB.set_key("OWNER_ID", PandaBot50.uid)
+        except Exception as e:
+            LOGS.error(f"STRING_SESSION50 - {e}")
             sys.exit()
 
 
