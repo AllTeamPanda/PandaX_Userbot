@@ -433,6 +433,16 @@ class PandaUserbotSession(TelegramClient):
                     )
                 if PandaBot21:
                     if edited:
+                        PandaBot21.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot21.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot22:
+                    if edited:
                         PandaBot22.add_event_handler(
                             wrapper,
                             MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
