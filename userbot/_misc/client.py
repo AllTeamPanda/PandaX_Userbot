@@ -219,7 +219,7 @@ class PandaUserbotSession(TelegramClient):
                             Config.PRIVATE_GROUP_BOT_API_ID, text, link_preview=False
                         )
 
-            from .session import PandaBot, PandaBot2, PandaBot3, tgbot
+            from .session import *
           
             if not func.__doc__ is None:
                 CMD_INFO[command[0]].append((func.__doc__).strip())
@@ -258,6 +258,466 @@ class PandaUserbotSession(TelegramClient):
                             MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                         )
                     PandaBot3.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot4:
+                    if edited:
+                        PandaBot4.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot4.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot5:
+                    if edited:
+                        PandaBot5.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot5.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot6:
+                    if edited:
+                        PandaBot6.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot6.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot7:
+                    if edited:
+                        PandaBot7.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot7.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot8:
+                    if edited:
+                        PandaBot8.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot8.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot9:
+                    if edited:
+                        PandaBot9.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot9.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot10:
+                    if edited:
+                        PandaBot10.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot10.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot11:
+                    if edited:
+                        PandaBot11.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot11.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot12:
+                    if edited:
+                        PandaBot12.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot12.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot13:
+                    if edited:
+                        PandaBot13.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot13.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot14:
+                    if edited:
+                        PandaBot14.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot14.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot15:
+                    if edited:
+                        PandaBot15.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot15.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot16:
+                    if edited:
+                        PandaBot16.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot16.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot17:
+                    if edited:
+                        PandaBot17.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot17.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot18:
+                    if edited:
+                        PandaBot18.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot18.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot19:
+                    if edited:
+                        PandaBot19.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot19.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot20:
+                    if edited:
+                        PandaBot20.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot20.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot21:
+                    if edited:
+                        PandaBot22.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot22.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot23:
+                    if edited:
+                        PandaBot23.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot23.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot24:
+                    if edited:
+                        PandaBot24.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot24.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot25:
+                    if edited:
+                        PandaBot25.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot25.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot26:
+                    if edited:
+                        PandaBot26.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot26.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot27:
+                    if edited:
+                        PandaBot27.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot27.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot28:
+                    if edited:
+                        PandaBot28.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot28.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot29:
+                    if edited:
+                        PandaBot29.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot29.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot30:
+                    if edited:
+                        PandaBot30.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot30.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot31:
+                    if edited:
+                        PandaBot31.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot31.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot32:
+                    if edited:
+                        PandaBot32.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot32.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot33:
+                    if edited:
+                        PandaBot33.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot33.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot34:
+                    if edited:
+                        PandaBot34.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot34.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot35:
+                    if edited:
+                        PandaBot35.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot35.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot36:
+                    if edited:
+                        PandaBot36.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot36.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot37:
+                    if edited:
+                        PandaBot37.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot37.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot38:
+                    if edited:
+                        PandaBot38.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot38.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot39:
+                    if edited:
+                        PandaBot39.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot39.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot40:
+                    if edited:
+                        PandaBot40.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot40.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot41:
+                    if edited:
+                        PandaBot41.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot41.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot42:
+                    if edited:
+                        PandaBot42.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot42.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot43:
+                    if edited:
+                        PandaBot43.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot43.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot44:
+                    if edited:
+                        PandaBot44.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot44.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot45:
+                    if edited:
+                        PandaBot45.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot45.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot46:
+                    if edited:
+                        PandaBot46.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot46.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot47:
+                    if edited:
+                        PandaBot47.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot47.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot48:
+                    if edited:
+                        PandaBot48.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot48.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot49:
+                    if edited:
+                        PandaBot49.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot49.add_event_handler(
+                        wrapper,
+                        NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                    )
+                if PandaBot50:
+                    if edited:
+                        PandaBot50.add_event_handler(
+                            wrapper,
+                            MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
+                        )
+                    PandaBot50.add_event_handler(
                         wrapper,
                         NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                     )
