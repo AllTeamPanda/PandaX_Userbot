@@ -784,7 +784,7 @@ def Telethon():
             config = PandaBot29(functions.help.GetConfigRequest())
             for option in config.dc_options:
                 if option.ip_address == PandaBot29.session.server_address:
-                    if PandaBot2.session.dc_id != option.id:
+                    if PandaBot29.session.dc_id != option.id:
                         LOGS.warning(
                             f"Fixed DC ID in session from {PandaBot29.session.dc_id}"
                             f" to {option.id}"
@@ -794,7 +794,7 @@ def Telethon():
                     break
             tgbot.get_me()
             PandaBot29.me = PandaBot29.get_me()
-            PandaBot2.uid = tgbot.uid = utils.get_peer_id(PandaBot29.me)
+            PandaBot29.uid = tgbot.uid = utils.get_peer_id(PandaBot29.me)
             if pdB.get_key("OWNER_ID") or Var.OWNER_ID == 0:
                 Var.OWNER_ID = utils.get_peer_id(PandaBot29.me)
                 pdB.set_key("OWNER_ID", Var.OWNER_ID)
@@ -1018,7 +1018,7 @@ def Telethon():
             config = PandaBot38(functions.help.GetConfigRequest())
             for option in config.dc_options:
                 if option.ip_address == PandaBot38.session.server_address:
-                    if PandaBot2.session.dc_id != option.id:
+                    if PandaBot38.session.dc_id != option.id:
                         LOGS.warning(
                             f"Fixed DC ID in session from {PandaBot38.session.dc_id}"
                             f" to {option.id}"
