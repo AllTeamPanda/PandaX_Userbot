@@ -1468,7 +1468,7 @@ class PandaUserbotSession(TelegramClient):
                                 wrapper,
                                 MessageEdited(
                                     pattern=REGEX_.regex2,
-                                    from_uPandaBot43dousers_list(),
+                                    from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
