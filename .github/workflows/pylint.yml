@@ -23,6 +23,6 @@ jobs:
           commit_message: 'PandaX_Userbot: auto fixes'
           commit_options: '--no-verify --signoff'
           repository: .
-          commit_user_name: ilham77mansiz
-          commit_user_email: imansiez7@gmail.com
-          commit_author: ilham77mansiz <imansiez7@gmail.com>
+          commit_user_name: ilhammansiz
+          commit_user_email: ilhammansiz188@gmail.com
+          commit_author: ilhammansiz <ilhammansiz188@gmail.com>
