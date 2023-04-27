@@ -80,7 +80,7 @@ class WELCOME():
             return pdB.set_key("WELCOME", ok)
         return
 
-    def get_welcome_ids(self):
+    def get_welcome_ids(self, chat_id):
         chat_ids = []
         all_welcome = pdB.get_key("WELCOME") or {}
         for x in all_welcome:
