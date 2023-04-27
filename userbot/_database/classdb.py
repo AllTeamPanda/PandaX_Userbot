@@ -59,33 +59,33 @@ class WELCOME():
     except BaseException:
         pdB.set_key("WELCOME", "{}")
 
-    def set_welcome(self, chat_id, file_id, text=None):
+    def set_welcome(self, chat, file_id, text=None):
         ok = pdB.get_key("WELCOME")
-        ok.update({chat_id: {"file_id": file_id, "caption": text}})
+        ok.update({chat: {"file_id": file_id, "caption": text}})
         return pdB.set_key("WELCOME", ok)
 
-    def get_welcome(self, chat_id):
+    def get_welcome(self, chat):
         ok = pdB.get_key("WELCOME")
-        wl = ok.get(chat_id)
+        wl = ok.get(chat)
         if wl:
             return wl
         return
 
 
-    def del_welcome(self, chat_id):
+    def del_welcome(self, chat):
         ok = pdB.get_key("WELCOME")
-        wl = ok.get(chat_id)
+        wl = ok.get(chat)
         if wl:
-            ok.pop(chat_id)
+            ok.pop(chat)
             return pdB.set_key("WELCOME", ok)
         return
 
-    def get_welcome_ids(self, chat_id):
+    def get_welcome_ids(self):
         chat_ids = []
         all_welcome = pdB.get_key("WELCOME") or {}
         for x in all_welcome:
-            if not (int(x.chat_id) in chat_ids):
-                chat_ids.append(int(x.chat_id))
+            if not (int(x.chat) in chat_ids):
+                chat_ids.append(int(x.chat))
         return chat_ids
 
 
