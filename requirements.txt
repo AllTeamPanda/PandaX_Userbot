@@ -118,7 +118,7 @@ spamwatch
 speedtest-cli==2.1.3
 
 # T
-https://github.com/ilhammansiz/Telethon/archive/palestine.zip
+telethon==1.24.0
 telegraph
 TgCrypto
 tswift
