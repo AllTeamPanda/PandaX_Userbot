@@ -84,8 +84,8 @@ class WELCOME():
         chat_ids = []
         all_welcome = pdB.get_key("WELCOME") or {}
         for x in all_welcome:
-            if not (x.chat_id in chat_ids):
-                chat_ids.append(x.chat_id)
+            if not (int(x.chat_id) in chat_ids):
+                chat_ids.append(int(x.chat_id))
         return chat_ids
 
 
