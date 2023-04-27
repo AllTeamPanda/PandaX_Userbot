@@ -37,7 +37,7 @@ def start():
 
 
 if __name__ == "__main__":
-    if Database.SESSION:
+    if pdB.get_key("SESSION") or Database.SESSION:
         Telethon()
         resources.ClientMultiTelethon()
         start()
