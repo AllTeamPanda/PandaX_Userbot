@@ -41,7 +41,7 @@ if __name__ == "__main__":
         Telethon()
         resources.ClientMultiTelethon()
         start()
-    if Database.PyroSESSION:
+    if pdB.get_key("PyroSESSION") or Database.PyroSESSION:
         Pyrogram()
         
     
