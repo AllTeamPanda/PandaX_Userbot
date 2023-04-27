@@ -46,7 +46,7 @@ THON_ON = """
 
 
 def Telethon():
-    if Var.STRING_SESSION and Database.BOT_TOKEN:
+    if pdB.get_key("SESSION") or Var.STRING_SESSION and Database.BOT_TOKEN:
         try:
             PandaBot.connect()
             tgbot.start(bot_token=Database.BOT_TOKEN)
@@ -1352,7 +1352,7 @@ def Telethon():
 
 
 def Pyrogram():
-    if Database.PyroSESSION and Database.BOT_TOKEN:
+    if pdB.get_key("PyroSESSION") or Database.PyroSESSION and Database.BOT_TOKEN:
         if app.bot:
             print("Activating assistant.\n")
             app.bot.start()
