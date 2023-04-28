@@ -28,19 +28,21 @@ def start():
     userbot.LOOP.run_until_complete(resources.join())
     LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{userbot.__version__} [TELAH DIAKTIFKAN]")
     if PandaBot:
-        PandaBot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, userbot.__version__, cmdhr))
+        PandaBot.send_message(PRIVATE, THON_ON.format(PandaBot.me.username, userbot.__version__, cmdhr, total))
     if PandaBot2:
-        PandaBot2.send_message(PRIVATE, THON_ON.format(PandaBot2.me.username, userbot.__version__, cmdhr))
+        PandaBot2.send_message(PRIVATE, THON_ON.format(PandaBot2.me.username, userbot.__version__, cmdhr, total))
     if PandaBot3:
-        PandaBot3.send_message(PRIVATE, THON_ON.format(PandaBot3.me.username, userbot.__version__, cmdhr))
+        PandaBot3.send_message(PRIVATE, THON_ON.format(PandaBot3.me.username, userbot.__version__, cmdhr, total))
              
 
 
 if __name__ == "__main__":
     if pdB.get_key("SESSION") or Database.SESSION:
-        Telethon()
+        usersss = Telethon()
+        total = 50 - usersss
         resources.ClientMultiTelethon()
         start()
+        LOGS.info(f"Total Clients = {total} Users")
     if pdB.get_key("PyroSESSION") or Database.PyroSESSION:
         Pyrogram()
         
