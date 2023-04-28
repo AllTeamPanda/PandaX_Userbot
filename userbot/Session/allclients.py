@@ -12,7 +12,7 @@ from .._database import pdB
 LOGS = getLogger(__name__)
 
 try:
-    if pdB.get_key("SESSION2") or Var.STRING_SESSION2 and Database.BOT_TOKEN:
+    if not pdB.get_key("SESSION2") or Var.STRING_SESSION2 and Database.BOT_TOKEN:
         PandaBot = PandaBot2
     if not pdB.get_key("SESSION3") or Var.STRING_SESSION3 and Database.BOT_TOKEN:
         PandaBot = PandaBot3
