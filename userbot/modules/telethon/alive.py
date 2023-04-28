@@ -36,7 +36,7 @@ def SUDO():
         if SqL.get_key("sudoenable") is not None:        
             return "SudoUsers"
         else:
-            "No SudoUsers"
+            return "No SudoUsers"
     except Exception as e:
         print(f"{str(e)}")
         sys.exit()
