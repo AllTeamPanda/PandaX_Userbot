@@ -53,6 +53,7 @@ alive_logo = [
         "f504013cebca7d54f65e3",
         "7f2507df4e94cc2d53968",
         "5d5c6e7c33046a14c0fea",
+        "0473bd52b7942bfb157d8",
     ]
 ]
 
