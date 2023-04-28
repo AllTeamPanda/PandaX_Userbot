@@ -25,10 +25,10 @@ app.CMD_HELP.update(
 )
 
 
-IgnoreChat = app.get_welcome_ids()
 
 
-@app.on_message(filters.new_chat_members & filters.group & filters.chat(IgnoreChat))
+
+@app.on_message(filters.new_chat_members & filters.group)
 async def sendwelcome_handler(_, m: Message):
     chat = app.get_welcome(str(m.chat.id))
     if bool(chat) is True:
