@@ -817,856 +817,906 @@ class PandaUserbotSession(TelegramClient):
                         )
                 if allow_sudo and pdB.get_key("sudoenable") is not None:
                     if command is None or command[0] in sudo_enabledcmds:
-                        if edited:
+                        if PandaBot:
+                            if edited:
+                                PandaBot.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot2:
+                            if edited:
+                                PandaBot2.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot2.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot2.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot3:
+                            if edited:
+                                PandaBot3.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot3.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot3.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot4:
+                            if edited:
+                                PandaBot4.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot4.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot4.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot5:
+                            if edited:
+                                PandaBot5.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot5.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot5.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot6:
+                            if edited:
+                                PandaBot6.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot6.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot6.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot7:
+                            if edited:
+                                PandaBot7.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot7.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot7.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot8:
+                            if edited:
+                                PandaBot8.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot8.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot8.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot9:
+                            if edited:
+                                PandaBot9.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot9.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot9.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot10:
+                            if edited:
+                                PandaBot10.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot10.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot10.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot11:
+                            if edited:
+                                PandaBot11.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot11.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot11.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot12:
+                            if edited:
+                                PandaBot12.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot12.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot12.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot13:
+                            if edited:
+                                PandaBot13.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot13.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot13.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot14:
+                            if edited:
+                                PandaBot14.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot14.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot14.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot15:
+                            if edited:
+                                PandaBot15.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot15.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot15.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot16:
+                            if edited:
+                                PandaBot16.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot16.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot16.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot17:
+                            if edited:
+                                PandaBot17.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot17.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot17.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot18:
+                            if edited:
+                                PandaBot18.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot18.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot18.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot19:
+                            if edited:
+                                PandaBot19.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot19.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot19.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot20:
+                            if edited:
+                                PandaBot20.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot20.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot20.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot21:
+                            if edited:
+                                PandaBot21.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot21.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot21.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot22:
+                            if edited:
+                                PandaBot22.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot22.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot22.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot23:
+                            if edited:
+                                PandaBot23.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot23.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot23.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot24:
+                            if edited:
+                                PandaBot24.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot24.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot24.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot25:
+                            if edited:
+                                PandaBot25.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot25.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot25.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot26:
+                            if edited:
+                                PandaBot26.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot26.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot26.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot27:
+                            if edited:
+                                PandaBot27.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot27.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot27.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot28:
+                            if edited:
+                                PandaBot28.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot28.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot28.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot29:
+                            if edited:
+                                PandaBot29.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot29.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot29.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot30:
+                            if edited:
+                                PandaBot30.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot30.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot30.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot31:
+                            if edited:
+                                PandaBot31.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot31.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot31.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot32:
+                            if edited:
+                                PandaBot32.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot32.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot32.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot33:
+                            if edited:
+                                PandaBot33.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot33.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
-                            )
-                        PandaBot33.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+     PandaBot4               )
+                        if PandaBot34:
+                            if edited:
+                                PandaBot34.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot34.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot34.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot35:
+                            if edited:
+                                PandaBot35.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot35.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot35.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot36:
+                            if edited:
+                                PandaBot36.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot36.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot36.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot37:
+                            if edited:
+                                PandaBot37.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot37.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot37.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot38:
+                            if edited:
+                                PandaBot38.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot38.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot38.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot39:
+                            if edited:
+                                PandaBot39.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot39.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot39.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot40:
+                            if edited:
+                                PandaBot40.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot40.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot40.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot41:
+                            if edited:
+                                PandaBot41.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot41.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot41.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot42:
+                            if edited:
+                                PandaBot42.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot42.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot42.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot43:
+                            if edited:
+                                PandaBot43.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot43.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot43.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot44:
+                            if edited:
+                                PandaBot44.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot44.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot44.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot45:
+                            if edited:
+                                PandaBot45.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot45.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot45.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot46:
+                            if edited:
+                                PandaBot46.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot46.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot46.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot47:
+                            if edited:
+                                PandaBot47.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot47.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot47.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot48:
+                            if edited:
+                                PandaBot48.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot48.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot48.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot49:
+                            if edited:
+                                PandaBot49.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot49.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot49.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
-                        if edited:
+                        if PandaBot50:
+                            if edited:
+                                PandaBot50.add_event_handler(
+                                    wrapper,
+                                    MessageEdited(
+                                        pattern=REGEX_.regex2,
+                                        from_users=_sudousers_list(),
+                                        **kwargs,
+                                    ),
+                                )
                             PandaBot50.add_event_handler(
                                 wrapper,
-                                MessageEdited(
+                                NewMessage(
                                     pattern=REGEX_.regex2,
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
                             )
-                        PandaBot50.add_event_handler(
-                            wrapper,
-                            NewMessage(
-                                pattern=REGEX_.regex2,
-                                from_users=_sudousers_list(),
-                                **kwargs,
-                            ),
-                        )
             else:
                 if file_test in LOADED_CMDS and func in LOADED_CMDS[file_test]:
                     return None
