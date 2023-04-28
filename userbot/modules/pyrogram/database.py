@@ -8,7 +8,7 @@ app.CMD_HELP.update(
             "database",
             {
                 "setdb [varname] [value]": "Set any database vars, for ex: .setdv [USER_NAME] [RYOISHIN]",
-                "getdv [varname]": "Get a existing database vars value.",
+                "getdb [varname]": "Get a existing database vars value.",
                 "deldb [varname]": "Delete a existing database var with its value.",
                 "alldb": "Get all existing database vars.",
                 "listdb": "Get all available dv vars which you set.",
