@@ -1410,7 +1410,7 @@ class PandaUserbotSession(TelegramClient):
                                     from_users=_sudousers_list(),
                                     **kwargs,
                                 ),
-     PandaBot4               )
+                            )
                         if PandaBot34:
                             if edited:
                                 PandaBot34.add_event_handler(
