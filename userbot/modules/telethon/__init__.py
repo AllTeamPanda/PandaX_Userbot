@@ -58,7 +58,7 @@ USERID = pandaub.uid if Config.OWNER_ID == 0 else Config.OWNER_ID
 # mention user
 mention = f"[{ALIVE_NAME}](tg://user?id={USERID})"
 hmention = f"<a href = tg://user?id={USERID}>{Config.ALIVE_NAME}</a>"
-OWNER_NAME = mention
+OWNER_NAME = ALIVE_NAME
 PM_START = []
 PMMESSAGE_CACHE = {}
 PMMENU = "pmpermit_menu" not in Config.NO_LOAD
