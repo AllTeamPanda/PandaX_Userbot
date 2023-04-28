@@ -16,7 +16,7 @@ from exportir.RawUtilities import get_chatbot_reply, inline_mention
 from ..._misc.tools import create_tl_btn
 from telethon import types, events
 from ... import udB
-
+from ...Session.allclients import PandaBot
 try:
     from ProfanityDetector import detector
 except ImportError:
