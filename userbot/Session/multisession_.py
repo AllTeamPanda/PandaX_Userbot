@@ -42,6 +42,7 @@ THON_ON = """
 ⚙️ Version - `{}'
 `[TELAH DIAKTIFKAN]`
 °Ketik `{}alive` untuk Mengecheck Bot
+🤖 Total Client - {}
 """
 
 
