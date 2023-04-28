@@ -108,6 +108,5 @@ try:
         PandaBot = PandaBot49
     if not pdB.get_key("SESSION50") or Var.STRING_SESSION50 and Database.BOT_TOKEN:
         PandaBot = PandaBot50
-    return PandaBot
 except Exception as e:
     LOGS.error(f"PandaBot - {e}")
