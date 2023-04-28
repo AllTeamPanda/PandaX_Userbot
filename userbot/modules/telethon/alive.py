@@ -79,9 +79,7 @@ usernames = Config.TG_BOT_USERNAME
     },
 )
 async def redis(alive):
-    a_user = await alive.get_user()
-    chat = await alive.get_chat()
-    me = await alive.client.get_me()
+    a_user = await alive.client.get_me()
     mentions = f"[{a_user.first_name}](tg://user?id={a_user.id})"
     await get_readable_time((time.time() - StartTime))
     await alive.edit("꧁༺ Panda Userbot ༻꧂")
