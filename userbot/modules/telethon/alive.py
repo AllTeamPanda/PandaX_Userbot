@@ -33,12 +33,10 @@ SUDO = SqL.get_key("sudoenable")
 
 def SUDO():
     try:
-        if SqL.get_key("sudoenable") is not None:
-            SudoActive = SqL.set_key("sudoenable", "True")
-            return SudoActive
+        if SqL.get_key("sudoenable") is not None:        
+            return "SudoUsers"
         else:
-            SudoActive = SqL.set_key("sudoenable", "False")
-            return SudoActive
+            "No SudoUsers"
     except Exception as e:
         print(f"{str(e)}")
         sys.exit()
@@ -80,7 +78,10 @@ usernames = Config.TG_BOT_USERNAME
     },
 )
 async def redis(alive):
-    PandaBot.me = await PandaBot.get_me()
+    a_user = await alive.get_user()
+    chat = await alive.get_chat()
+    me = await alive.client.get_me()
+    mention = f"[{a_user.first_name}](tg://user?id={a_user.id})"
     await get_readable_time((time.time() - StartTime))
     await alive.edit("꧁༺ Panda Userbot ༻꧂")
     await alive.edit("꧁༺ Userbot ༻꧂")
@@ -110,7 +111,7 @@ async def redis(alive):
 aliveess = f"""
 {CUSTOM_ALIVE_TEXT}
 
-☉ 𝗢𝘄𝗻𝗲𝗿: @{PandaBot.me.username}
+☉ 𝗢𝘄𝗻𝗲𝗿: {mention}
 ☉ 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: `𝚅{pandaversion}`
 ☉ 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
 ☉ 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`\n
