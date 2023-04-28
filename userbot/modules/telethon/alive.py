@@ -79,7 +79,6 @@ usernames = Config.TG_BOT_USERNAME
     },
 )
 async def redis(alive):
-    a_user = await alive.client.get_me()
     await get_readable_time((time.time() - StartTime))
     await alive.edit("꧁༺ Panda Userbot ༻꧂")
     await alive.edit("꧁༺ Userbot ༻꧂")
@@ -109,7 +108,7 @@ async def redis(alive):
 aliveess = f"""
 {CUSTOM_ALIVE_TEXT}
 
-☉ 𝗢𝘄𝗻𝗲𝗿: {a_user.first_name}
+☉ 𝗢𝘄𝗻𝗲𝗿: {NAME}
 ☉ 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: `𝚅{pandaversion}`
 ☉ 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻: `𝚅{version.__version__}`
 ☉ 𝗣𝘆𝘁𝗵𝗼𝗻: `𝚅{python_version()}`\n
