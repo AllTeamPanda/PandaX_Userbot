@@ -17,7 +17,7 @@
 Panda_Userbot is a modular Telegram userbot runs on Python3 with the following databases!, better use MongoDb or Redis databases:
 -  `For SQLDB` 
 Value °DATABASE_URL - Get it from
- <p align="center"><a href="https://elephantsql.com/"><img src="https://img.shields.io/badge/🐘postgres%20elephantsql-white?style=for-the-badge&logo=postgressql" width="200"" /></a></p> 
+ <p align="center"><a href="https://elephantsql.com/"><img src="https://img.shields.io/badge/🐘postgres%20elephantsql-white?style=for-the-badge&logo=postgresql" width="200"" /></a></p> 
 
 -  `For Redis` 
 Value °REDIS_URI - Redis endpoint URL, and Value °REDIS_PASSWORD - Redis endpoint Password from
