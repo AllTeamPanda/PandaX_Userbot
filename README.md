@@ -27,7 +27,7 @@ Value °REDIS_URI - Redis endpoint URL, and Value °REDIS_PASSWORD - Redis endpo
 
 -  `For MONGODB`
  Value °MONGO_URI - Get it from
-<p align="center"><a href="https://mongodb.com/atlas"><img src="https://img.shields.io/badge/MongoDB-green?style=for-the-badge&logo=MongoDB" width="100"" /></a></p>
+<p align="center"><a href="https://mongodb.com/atlas"><img src="https://img.shields.io/badge/MongoDB-black?style=for-the-badge&logo=MongoDB" width="100"" /></a></p>
 
 
 ## Disclaimer
