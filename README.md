@@ -21,7 +21,7 @@ Value °DATABASE_URL - Get it from
 
 -  `For Redis` 
 Value °REDIS_URI - Redis endpoint URL, and Value °REDIS_PASSWORD - Redis endpoint Password from
-<p align="center"><a href="http://redislabs.com/"><img src="https://img.shields.io/badge/Redis-blue?style=for-the-badge&logo=redis" width="100"" /></a></p>
+<p align="center"><a href="http://redislabs.com/"><img src="https://img.shields.io/badge/Redis-white?style=for-the-badge&logo=redis" width="100"" /></a></p>
  
 
 
