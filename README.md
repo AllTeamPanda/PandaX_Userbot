@@ -11,7 +11,7 @@
     <a href="https://github.com/TeamXPanda/Panda"> <img src="https://img.shields.io/github/repo-size/TeamXPanda/Panda?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/pyrogram/"> <img src="https://img.shields.io/pypi/v/pyrogram?label=pyrogram&logo=pypi&logoColor=white&style=for-the-badge" /></a>
-    <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.10.4-blue?style=for-the-badge&logo=appveyor"/>
+    <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.10.4-yellow?style=for-the-badge&logo=python"/>
    </p>
 
 Panda_Userbot is a modular Telegram userbot runs on Python3 with the following databases!, better use MongoDb or Redis databases:
