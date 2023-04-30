@@ -19,7 +19,7 @@ Panda_Userbot is a modular Telegram userbot runs on Python3 with the following d
 - Value DATABASE_URL - Get it from
  <p align="center"><a href="https://elephantsql.com/"><img src="https://img.shields.io/badge/postgres%20elephantsql-black?style=for-the-badge&logo=postgresql" width="200"" /></a></p> 
 
-- Value REDIS_URI and Value REDIS_PASSWORD - from
+- Value REDIS_URI and Value REDIS_PASSWORD - Get it from
 <p align="center"><a href="http://redislabs.com/"><img src="https://img.shields.io/badge/Redis-black?style=for-the-badge&logo=redis" width="100"" /></a></p>
  
 - Value MONGO_URI - Get it from
