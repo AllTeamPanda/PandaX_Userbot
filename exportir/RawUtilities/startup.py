@@ -18,7 +18,8 @@ from userbot import *
 
 from userbot.config import Config, Var, Database
 from userbot._misc.logger import logging
-from userbot._misc.session import PandaBot, PandaBot2, PandaBot3, tgbot
+
+from userbot._misc.session import PandaBot, PandaBot2, PandaBot3, PandaBot4, PandaBot5, PandaBot6, PandaBot7, PandaBot8, PandaBot9, PandaBot10, PandaBot11, PandaBot12, PandaBot13, PandaBot14, PandaBot15, PandaBot16, PandaBot17, PandaBot18, PandaBot19, PandaBot10, PandaBot20, PandaBot21, PandaBot22, PandaBot23, PandaBot24, PandaBot25, PandaBot26, PandaBot27, PandaBot28, PandaBot29, PandaBot30, PandaBot31, PandaBot32, PandaBot33, PandaBot34, PandaBot35, PandaBot36, PandaBot37, PandaBot38, PandaBot39, PandaBot40, PandaBot41, PandaBot42, PandaBot43, PandaBot44, PandaBot45, PandaBot46, PandaBot47, PandaBot48, PandaBot49, PandaBot50, tgbot
 from userbot.helpers.utils import install_pip
 from userbot._database import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
@@ -369,6 +370,104 @@ def ClientMultiTelethon():
                         LOGS.info(
                              "Failed to promote 'Assistant Bot' in 'Log Channel' due to 'Admin Privileges'"
                         )
+        if PandaBot2:
+            await PandaBot2(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot3:
+            await PandaBot3(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot4:
+            await PandaBot4(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot5:
+            await PandaBot5(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot6:
+            await PandaBot6(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot7:
+            await PandaBot7(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot8:
+            await PandaBot8(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot9:
+            await PandaBot9(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot10:
+            await PandaBot10(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot11:
+            await PandaBot1(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot12:
+            await PandaBot12(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot13:
+            await PandaBot13(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot14:
+            await PandaBot14(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot15:
+            await PandaBot15(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot16:
+            await PandaBot16(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot17:
+            await PandaBot17(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot18:
+            await PandaBot18(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot19:
+            await PandaBot19(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot20:
+            await PandaBot20(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot21:
+            await PandaBot21(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot22:
+            await PandaBot22(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot23:
+            await PandaBot23(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot24:
+            await PandaBot24(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot25:
+            await PandaBot25(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot26:
+            await PandaBot26(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot27:
+            await PandaBot27(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot28:
+            await PandaBot28(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot29:
+            await PandaBot29(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot30:
+            await PandaBot30(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot31:
+            await PandaBot31(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot32:
+            await PandaBot32(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot33:
+            await PandaBot33(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot34:
+            await PandaBot34(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot35:
+            await PandaBot35(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot36:
+            await PandaBot36(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot37:
+            await PandaBot37(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot38:
+            await PandaBot38(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot39:
+            await PandaBot39(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot40:
+            await PandaBot40(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot41:
+            await PandaBot41(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot42:
+            await PandaBot42(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot43:
+            await PandaBot43(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot44:
+            await PandaBot44(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot45:
+            await PandaBot45(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot46:
+            await PandaBot46(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot47:
+            await PandaBot47(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot48:
+            await PandaBot48(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot49:
+            await PandaBot49(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+        if PandaBot50:
+            await PandaBot50(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
         
         if tgbot:
             tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Memeriksa Database {DB.name}...")
