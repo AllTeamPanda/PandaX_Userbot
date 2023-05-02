@@ -70,7 +70,7 @@ Use this bot at your own risk, and use it wisely.
 - `sudo apt install postgresql-client`
 - `pip3 install av -q --no-binary av`
 - `wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`
-- `git clone https://github.com/TeamXPanda/Panda`
+- `git clone https://github.com/TeamXPandaUserbot/Panda`
 - `cd Panda`
 - `pip3 install --no-cache-dir -r requirements.txt`
 - `python3 exportir/start.py`
@@ -82,7 +82,7 @@ Use this bot at your own risk, and use it wisely.
 <details>
     <summary> <b>🔗 Deploy Heroku Panda Userbot</b></summary><br/>
 
-<p align="center"><a href="https://github.com/ilhammansiz/deploy"><img src="https://img.shields.io/badge/Deploy%20Lewat%20Web%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"" /></a></p>
+<p align="center"><a href="https://github.com/teanxpandauserbot/deploy"><img src="https://img.shields.io/badge/Deploy%20Lewat%20Web%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"" /></a></p>
 
 <p align="center"><a href="https://t.me/yoiiiiibnv_bot"><img src="https://img.shields.io/badge/Deploy%20Lewat%20Bot%20Telegram%3F-Heroku-blueviolet?&style=flat-square?&logo=telegram" width="200"" /></a></p>
 </details>
@@ -96,7 +96,7 @@ Use this bot at your own risk, and use it wisely.
    <a href="https://t.me/PandaUserbot"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
 
 
-#### Thanks To [Everyone](https://github.com/ilhammansiz/PandaX_Userbot/graphs/contributors) Who Has Helped Make This Userbot Awesome!
+#### Thanks To [Everyone](https://github.com/TeamXPandaUserbot/Panda/graphs/contributors) Who Has Helped Make This Userbot Awesome!
 *   [TeamUltroid](https://github.com/TeamUltroid/Ultroid) :  UltroidUserbot
 *   [TeamUserge](https://github.com/TeamUserge/Userge) : Userge
 *   [CatUserbot](https://github.com/TgCatUB/catuserbot) : CatUserbot
@@ -105,7 +105,7 @@ Use this bot at your own risk, and use it wisely.
 * [MarshalX](https://github.com/MarshalX) for [PyTgcalls](https://github.com/MarshalX/tgcalls)
 * [Lonamiwebs](https://github.com/LonamiWebs) for [Telethon](https://github.com/LonamiWebs/Telethon)
 * [Dan](https://github.com/pyrogram) for [Pyrogram](https://github.com/pyrogram/pyrogram)
-* [Ilham Mansiz](https://github.com/ilhammansiz) for [PandaX_Userbot](https://github.com/TeamXPanda/Panda)
+* [Ilham Mansiz](https://github.com/ilhammansiz) for [PandaX_Userbot](https://github.com/TeamXPandaUserbot/Panda)
 
 ## License
 [![License](https://www.gnu.org/graphics/gplv3-with-text-136x68.png)](LICENSE)   
