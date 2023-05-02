@@ -1,14 +1,14 @@
 
-<p align="center"><a href="https://github.com/TeamXPanda/Panda"><img src="https://img.shields.io/badge/Panda Userbot-blue?style=for-the-badge&logo=github" width="1000"" /></a></p>
+<p align="center"><a href="https://github.com/TeamXPandaUserbot/Panda"><img src="https://img.shields.io/badge/Panda Userbot-blue?style=for-the-badge&logo=github" width="1000"" /></a></p>
 <img src="https://media.giphy.com/media/sY6DRXWTn9a2k/giphy.gif">
 
 `Telethon and Pyrogram` Editor & create by [@pandac0de](https://t.me/pandauserbot)
 
 
 <p align="center">
-               <a href="https://travis-ci.com/TeamXPanda/Panda.svg?branch=main" /></a>
-    <a href="https://github.com/TeamXPanda/Panda/network/members"> <img src="https://img.shields.io/github/forks/TeamXPanda/Panda?logo=github&style=for-the-badge" /></a>
-    <a href="https://github.com/TeamXPanda/Panda"> <img src="https://img.shields.io/github/repo-size/TeamXPanda/Panda?logo=github&style=for-the-badge" /></a>
+               <a href="https://travis-ci.com/TeamXPandaUserbot/Panda.svg?branch=main" /></a>
+    <a href="https://github.com/TeamXPandaUserbot/Panda/network/members"> <img src="https://img.shields.io/github/forks/TeamXPandaUserbot/Panda?logo=github&style=for-the-badge" /></a>
+    <a href="https://github.com/TeamXPandaUserbot/Panda"> <img src="https://img.shields.io/github/repo-size/TeamXPandaUserbot/Panda?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/pyrogram/"> <img src="https://img.shields.io/pypi/v/pyrogram?label=pyrogram&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <a href="https://www.python.org/"> <img src="https://img.shields.io/badge/PYTHON-v3.10.4-yellow?style=for-the-badge&logo=python" /></a>
