@@ -11,7 +11,7 @@
     <a href="https://github.com/TeamXPandaUserbot/Panda/graphs/commit-activity"> <img src="https://img.shields.io/github/commit-activity/m/TeamXPandaUserbot/Panda?&style=flat-square&logo=github" /></a>
     <a href="https://GitHub.com/TeamXPandaUserbot/Panda/graphs/contributors/"> <img src="https://img.shields.io/github/contributors/TeamXPandaUserbot/Panda?&style=flat-square&logo=github" /></a>
     <a href="https://github.com/TeamXPandaUserbot/Panda/actions/workflows/pylint.yml"> <img src="https://github.com/TeamXPandaUserbot/Panda/actions/workflows/pylint.yml/badge.svg?branch=main" /></a>
-    <a img="https://img.shields.io/github/repo-size/TeamXPandaUserbot/Panda?&style=flat-square&logo=github" /></a>
+    <a href="https://img.shields.io/github/repo-size/TeamXPandaUserbot/Panda?&style=flat-square&logo=github"> <img src="https://img.shields.io/github/repo-size/TeamXPandaUserbot/Panda?&style=flat-square&logo=github" /></a>
     <a href="https://github.com/TeamXPandaUserbot/Panda/network/members"> <img src="https://img.shields.io/github/forks/TeamXPandaUserbot/Panda?&style=flat-square&logo=github" /></a>
     <a href="https://github.com/TeamXPandaUserbot/Panda"> <img src="https://img.shields.io/github/repo-size/TeamXPandaUserbot/Panda?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
