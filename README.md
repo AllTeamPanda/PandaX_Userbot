@@ -8,7 +8,7 @@
 <p align="center">
     <a href="https://github.com/TeamXPandaUserbot/Panda/actions/workflows/pylint.yml"> <img src="https://github.com/TeamXPandaUserbot/Panda/actions/workflows/pylint.yml/badge.svg?branch=main" /></a>
     <a href="https://travis-ci.com/TeamXPandaUserbot/Panda.svg?branch=main" /></a>
-    <a href="https://github.com/TeamXPandaUserbot/Panda/network/members"> <img src="https://img.shields.io/github/forks/TeamXPandaUserbot/Panda?logo=github&style=for-the-badge" /></a>
+    <a href="https://github.com/TeamXPandaUserbot/Panda/network/members"> <img src="https://github.com/TeamXPandaUserbot/Panda/network/member/badge.svg?branch=main" /></a>
     <a href="https://github.com/TeamXPandaUserbot/Panda"> <img src="https://img.shields.io/github/repo-size/TeamXPandaUserbot/Panda?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/pyrogram/"> <img src="https://img.shields.io/pypi/v/pyrogram?label=pyrogram&logo=pypi&logoColor=white&style=for-the-badge" /></a>
