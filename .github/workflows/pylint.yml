@@ -31,5 +31,5 @@ jobs:
                   commit_options: "--no-verify"
                   repository: .
                   commit_user_name: userbotpanda
-                  commit_user_email: 132319106+userbotpanda@users.noreply.githu132319106+userbotpanda@users.noreply.github.comb.com
+                  commit_user_email: 1319106+userbotpanda@users.noreply.github.comb.com
                   commit_author: userbotpanda <132319106+userbotpanda@users.noreply.github.com>
