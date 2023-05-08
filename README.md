@@ -1,5 +1,5 @@
 
-<p align="center"><a href="https://github.com/TeamXPandaUserbot/Panda"><img src="https://img.shields.io/badge/Panda%20Userbot-white?&style=flat-square&logo=github" width="1000"" /></a></p>
+<p align="center"><a href="https://github.com/TeamXPandaUserbot/Panda"><img src="https://img.shields.io/badge/Panda%20Userbot-white?&style=flat-square&logo=github" /></a></p>
 <img src="https://media.giphy.com/media/sY6DRXWTn9a2k/giphy.gif">
 
 `Telethon and Pyrogram` Editor & create by [@pandac0de](https://t.me/pandauserbot)
