@@ -29,7 +29,7 @@ jobs:
               with:
                   commit_message: "pylint: auto fixes"
                   commit_options: "--no-verify"
-                  repository: .
+                  repository: https://github.com/TeamXPandaUserbot/Panda
                   commit_user_name: TeamXPandaUserbotIndo
                   commit_user_email: 132319106+TeamXPandaUserbotIndo@users.noreply.github.com
                   commit_author: TeamXPandaUserbotIndo <132319106+TeamXPandaUserbotIndo@users.noreply.github.com>
