@@ -30,6 +30,6 @@ jobs:
                   commit_message: "pylint: auto fixes"
                   commit_options: "--no-verify"
                   repository: .
-                  commit_user_name: TeamXPandaUserbot
-                  commit_user_email: teamxpandauserbotindo@gmail.com
-                  commit_author: TeamXPandaUserbot <teamxpandauserbotindo@gmail.com>
+                  commit_user_name: TeamXPandaUserbotIndo
+                  commit_user_email: 132319106+TeamXPandaUserbotIndo@users.noreply.github.com
+                  commit_author: TeamXPandaUserbotIndo <132319106+TeamXPandaUserbotIndo@users.noreply.github.com>
