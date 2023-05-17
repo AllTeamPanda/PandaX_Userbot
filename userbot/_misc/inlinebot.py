@@ -60,12 +60,6 @@ def ibuild_keyboard(buttons):
             keyb.append([Button.url(btn[0], btn[1])])
     return keyb
 
-
-import re
-import time
-
-
-
 CUSTOM_HELP_TEXT = SqL.get_key("HELP_TEXT_INLINE") or  f"INLINE MENU {HOSTED_ON}"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "🎴"
 
