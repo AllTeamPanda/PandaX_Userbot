@@ -333,18 +333,18 @@ async def memulai():
     await buka(f"telethon")
     await bukabot(f"assistant")
 
-def ClientMultiTelethon():
+async def ClientMultiTelethon():
     if Var.STRING_SESSION and Database.BOT_TOKEN:
         if PandaBot:
             try:
-                tgbot.me = tgbot.get_me()
-                PandaBot(InviteToChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID, [tgbot.me.username]))
+                await tgbot.me = await tgbot.get_me()
+                await await PandaBot(InviteToChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID, [tgbot.me.username]))
             except BaseException as er:
                 LOGS.info("Error while Adding Assistant to Log Channel")
                 LOGS.exception(er)
             if Config.PRIVATE_GROUP_BOT_API_ID:
                 try:
-                    achat = tgbot.get_entity(Config.PRIVATE_GROUP_BOT_API_ID)
+                    achat = await tgbot.get_entity(Config.PRIVATE_GROUP_BOT_API_ID)
                 except BaseException as er:
                     achat = None
                     LOGS.info("Error while getting Log channel from Assistant")
@@ -361,7 +361,7 @@ def ClientMultiTelethon():
                         manage_call=True,
                     )
                     try:
-                        PandaBot(
+                        await PandaBot(
                             EditAdminRequest(
                                 Config.PRIVATE_GROUP_BOT_API_ID, tgbot.me.username, rights, "Assistant"
                             )
@@ -470,7 +470,7 @@ def ClientMultiTelethon():
             await PandaBot50(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
         
         if tgbot:
-            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Memeriksa Database {DB.name}...")
-            tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Terkoneksi Database {DB.name} Successfully")
+            await tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Memeriksa Database {DB.name}...")
+            await tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Terkoneksi Database {DB.name} Successfully")
             
 
