@@ -24,6 +24,7 @@ async def memulai():
 """
 
 def start():
+    userbot.LOOP.run_until_complete(resources.ClientMultiTelethon())
     userbot.LOOP.run_until_complete(resources.memulai())
     userbot.LOOP.run_until_complete(resources.join())
     LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{userbot.__version__} [TELAH DIAKTIFKAN]")
@@ -40,7 +41,6 @@ if __name__ == "__main__":
     if pdB.get_key("SESSION") or Database.SESSION:
         usersss = Telethon()
         total = 50 - usersss
-        resources.ClientMultiTelethon()
         start()
         LOGS.info(f"Total Clients = {total} Users")
     if pdB.get_key("PyroSESSION") or Database.PyroSESSION:
