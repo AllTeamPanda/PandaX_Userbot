@@ -81,7 +81,7 @@ usernames = Config.TG_BOT_USERNAME
 async def redis(alive):
     usersss = Telethon()
     total = 50 - usersss
-    uptime = await get_readable_time((time.time() - StartTime))
+    await get_readable_time((time.time() - StartTime))
     await alive.edit("꧁༺ Panda Userbot ༻꧂")
     await alive.edit("꧁༺ Userbot ༻꧂")
     await asyncio.sleep(1)
@@ -113,8 +113,7 @@ aliveess = f"""
 ☉ 𝐎𝐖𝐍𝐄𝐑: {NAME}
 ☉ 𝗩𝗘𝗥𝗦𝗜𝗢𝗡: `𝚅{pandaversion}`
 ☉ 𝐓𝐄𝐋𝐄𝐓𝐇𝐎𝐍: `𝚅{version.__version__}`
-☉ 𝐏𝐘𝐓𝐇𝐎𝐍: `𝚅{python_version()}`
-☉ 𝐏𝐈𝐍𝐆 : `{uptime}`\n
+☉ 𝐏𝐘𝐓𝐇𝐎𝐍: `𝚅{python_version()}`\n
 ༻༺༻༺༻༺༻༺
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
 ╭━─━─━─━─━─━─━─━─━╮
