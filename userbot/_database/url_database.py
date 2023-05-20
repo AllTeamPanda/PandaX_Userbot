@@ -326,7 +326,10 @@ class LocalDB(_BaseDatabase):
     @property
     def name(self):
         return "LocalDB"
-
+    
+    def ping(self):
+        return "Active"
+    
     def keys(self):
         return self._cache.keys()
 
