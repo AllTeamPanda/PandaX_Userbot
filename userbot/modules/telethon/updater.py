@@ -11,7 +11,7 @@ from . import edit_delete, edit_or_reply, PandaBot
 plugin_category = "modules"
 cmd = Config.COMMAND_HAND_LER
 
-REPO_URL = b64decode("aHR0cHM6Ly9naXRodWIuY29tL2lsaGFtbWFuc2l6L1BhbmRhWF9Vc2VyYm90").decode("utf-8")
+REPO_URL = b64decode("aHR0cHM6Ly9naXRodWIuY29tL0FsbFRlYW1QYW5kYS9QYW5kYVhfVXNlcmJvdA==").decode("utf-8")
 
 
 async def gen_chlog(repo, diff):
