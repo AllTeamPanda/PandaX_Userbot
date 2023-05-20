@@ -79,8 +79,6 @@ usernames = Config.TG_BOT_USERNAME
     },
 )
 async def redis(alive):
-    usersss = Telethon()
-    total = 50 - usersss
     await get_readable_time((time.time() - StartTime))
     await alive.edit("꧁༺ Panda Userbot ༻꧂")
     await alive.edit("꧁༺ Userbot ༻꧂")
@@ -122,7 +120,6 @@ aliveess = f"""
 ☉ 𝐃𝐀𝐓𝐀𝐁𝐀𝐒𝐄: `{SqL.name} {SqL.ping()}` 
 ☉ 𝐇𝐎𝐒𝐓𝐄𝐃_𝐎𝐍: [ {HOSTED_ON} ]
 ☉ 𝐒𝐔𝐃𝐎: {SUDO()}
-☉ 𝐓𝐎𝐓𝐀𝐋 𝐂𝐋𝐈𝐄𝐍𝐓𝐒: {total} USER'S
 ╰━─━─━─━─━─━─━─━─━╯
 ⟣✧✧✧✧✧✧✧✧✧✧✧✧✧✧⟢
 ༻༺༻༺༻༺༻༺
