@@ -86,7 +86,7 @@ Use this bot at your own risk, and use it wisely.
 <details>
     <summary> <b>🔗 Deploy Heroku Panda Userbot</b></summary><br/>
 
-<p align="center"><a href="https://github.com/teanxpandauserbot/deploy"><img src="https://img.shields.io/badge/Deploy%20Lewat%20Web%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"" /></a></p>
+<p align="center"><a href="https://github.com/allteampanda/deployssh"><img src="https://img.shields.io/badge/Deploy%20Lewat%20Web%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"" /></a></p>
 
 <p align="center"><a href="https://t.me/yoiiiiibnv_bot"><img src="https://img.shields.io/badge/Deploy%20Lewat%20Bot%20Telegram%3F-Heroku-blueviolet?&style=flat-square?&logo=telegram" width="200"" /></a></p>
 </details>
