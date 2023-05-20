@@ -338,7 +338,7 @@ async def ClientMultiTelethon():
         if PandaBot:
             try:
                 await tgbot.me = await tgbot.get_me()
-                await await PandaBot(InviteToChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID, [tgbot.me.username]))
+                await PandaBot(InviteToChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID, [tgbot.me.username]))
             except BaseException as er:
                 LOGS.info("Error while Adding Assistant to Log Channel")
                 LOGS.exception(er)
