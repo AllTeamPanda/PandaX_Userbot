@@ -118,7 +118,7 @@ spamwatch
 speedtest-cli==2.1.3
 
 # T
-telethon==1.24.0
+telethon
 telegraph
 TgCrypto
 tswift
