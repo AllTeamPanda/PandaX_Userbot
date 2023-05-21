@@ -33,7 +33,7 @@ except ImportError:
 
 from youtubesearchpython import VideosSearch
 
-from userbot.Session.allclients import PandaBot
+from userbot.Session import PandaBot
 from exportir.RawUtilities.owner import admin_check
 from exportir.RawUtilities.rawfunctions import *
 from userbot import LOGS, tgbot, Config
