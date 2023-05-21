@@ -81,7 +81,6 @@ async def edit_or_reply(
                 event.chat_id,
                 text,
                 link_preview=link_preview,
-                reply_to=reply_toot,
                 **args
             )
         else:
