@@ -90,7 +90,7 @@ async def edit_or_reply(
                 ok = event
     else:
         ok = await event.client.send_message(
-            event.chat_id, text, link_preview=link_preview, reply_to=reply_toot, **args
+            event.chat_id, text, link_preview=link_preview, **args
         )
 
     if time:
