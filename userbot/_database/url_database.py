@@ -362,4 +362,14 @@ def pyDatabase():
         )
     if HOSTED_ON == "vps":
         return LocalDB()
+    if HOSTED_ON == "qovery | kubernetes":
+        return LocalDB()
+    if HOSTED_ON == "railway":
+        return LocalDB()
+    if HOSTED_ON == "okteto":
+        return LocalDB()
+    if HOSTED_ON == "termux":
+        return LocalDB()
+    if HOSTED_ON == "github actions":
+        return LocalDB()
     exit()
