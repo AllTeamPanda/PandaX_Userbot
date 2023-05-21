@@ -39,7 +39,7 @@ async def _(event):
     except Exception as e:
         LOGS.error(e)
     try:
-        await PandaBot.disconnect()
+        await event.client.reload(msg)
     except CancelledError:
         pass
     except Exception as e:
