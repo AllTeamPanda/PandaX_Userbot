@@ -29,7 +29,7 @@ class check_owner:
             c_q = args[0]
             if c_q.query.user_id and (
                 c_q.query.user_id == Config.OWNER_ID
-                or c_q.query.user_id in _sudousers_list() or c_q.query.user_id
+                or c_q.query.user_id in _sudousers_list() or Config.OWNER_ID
             ):
                 try:
                     await self.func(c_q)
