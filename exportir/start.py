@@ -58,7 +58,7 @@ def Zip():
     global regex
     regex='(https?)://github.com/.+/.+'
     if UPSTREAM_REPO == "PANDA_USERBOT":
-        Zip = "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1YUGFuZGEvUGFuZGEvYXJjaGl2ZS9tYWluLnppcA=="
+        Zip = "aHR0cHM6Ly9naXRodWIuY29tL0FsbFRlYW1QYW5kYS9QYW5kYVhfVXNlcmJvdC9hcmNoaXZlL21haW4uemlw"
         code = Zip.encode()
         msg = b64decode(code)
         Url = msg.decode()
@@ -75,7 +75,7 @@ def Zip():
               system("wget Url")
               system("bash start")
     else:
-        Zip = "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1YUGFuZGEvUGFuZGEvYXJjaGl2ZS9tYWluLnppcA=="
+        Zip = "aHR0cHM6Ly9naXRodWIuY29tL0FsbFRlYW1QYW5kYS9QYW5kYVhfVXNlcmJvdC9hcmNoaXZlL21haW4uemlw"
         code = Zip.encode()
         msg = b64decode(code)
         msg.decode()
@@ -87,5 +87,5 @@ def Zip():
 if not path.exists(".env"):
     print(Start("Typing y for start env"))
     envbot()
-    print(system("screen -S Panda"))
+    print(system("screen -S PandaX_Userbot"))
     print(Zip())
