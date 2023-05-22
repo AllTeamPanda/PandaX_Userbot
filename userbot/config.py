@@ -337,7 +337,7 @@ class Config(object):
     # progress bar progress
     FINISHED_PROGRESS_STR = os.environ.get("FINISHED_PROGRESS_STR", "▰")
     UNFINISHED_PROGRESS_STR = os.environ.get("UNFINISHED_PROGRESS_STR", "▱")
-    DEVS = os.environ.get("DEVS", "*")
+    DEVS = os.environ.get("DEVS", "$")
     SUDO_ENABLED = False
     # API VARS FOR USERBOT
     # Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture for screen shot
@@ -397,7 +397,7 @@ class Config(object):
     LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
     FBAN_GROUP = int(os.environ.get("FBAN_GROUP", False))
     UPSTREAM_REPO = os.environ.get(
-        "UPSTREAM_REPO", "https://github.com/TeamXPanda/Panda"
+        "UPSTREAM_REPO", "https://github.com/AllTeamPanda/PandaX_Userbot"
     )
     ALIVE_IMG = os.environ.get(
         "ALIVE_IMG", "https://telegra.ph/file/8f0e9e25427f9da09e08a.jpg"
