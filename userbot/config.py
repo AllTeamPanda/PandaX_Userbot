@@ -278,8 +278,8 @@ class Config(object):
     )
     TG_BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
     TZ = SqL.get_key("TZ") or os.environ.get("TZ", "Asia/Jakarta") 
-    UPSTREAM_REPO = os.environ.get(
-        "UPSTREAM_REPO", "https://github.com/ilhammansiz/PandaX_Userbot.git"
+    UPSTREAM_REPO = SqL.get_key("UPSTREAM_REPO") or os.environ.get(
+        "UPSTREAM_REPO", "https://github.com/AllTeamPanda/PandaX_Userbot.git"
     ) 
     BOT_TOKEN = SqL.get_key("BOT_TOKEN") or TG_BOT_TOKEN 
     BOT_USERNAME = SqL.get_key("BOT_USERNAME") or TG_BOT_USERNAME
