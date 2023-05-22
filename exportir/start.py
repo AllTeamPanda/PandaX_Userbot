@@ -1,11 +1,13 @@
 # /usr/bin/python3
 # Panda - UserBot
 # Copyright (C) 2022-2023 Panda Userbot
-
+import os
 from base64 import b64decode
 from time import sleep
 from os import system, path
-from userbot import Config
+
+UPSTREAM_REPO = os.environ.get("UPSTREAM_REPO") or None
+U_BRANCH = os.environ.get("U_BRANCH") or None
 
 PANDA = "★ PANDA USERBOT DEPLOY★"
 
@@ -55,7 +57,7 @@ def envbot():
 def Zip():
     global regex
     regex='(https?)://github.com/.+/.+'
-    if Config.UPSTREAM_REPO == "PANDA_USERBOT":
+    if UPSTREAM_REPO == "PANDA_USERBOT":
         Zip = "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1YUGFuZGEvUGFuZGEvYXJjaGl2ZS9tYWluLnppcA=="
         code = Zip.encode()
         msg = b64decode(code)
@@ -63,13 +65,13 @@ def Zip():
         system("wget Url")
         system("bash start")
 
-    elif Config.UPSTREAM_REPO == regex:
-          if Config.U_BRANCH:
-              Url = f"{Config.UPSTREAM_REPO}/archive/{Config.U_BRANCH}.zip"
+    elif UPSTREAM_REPO == regex:
+          if U_BRANCH:
+              Url = f"UPSTREAM_REPO}/archive/{U_BRANCH}.zip"
               system("wget Url")
               system("bash start")      
           else:
-              Url = f"{Config.UPSTREAM_REPO}/archive/main.zip"
+              Url = f"{UPSTREAM_REPO}/archive/main.zip"
               system("wget Url")
               system("bash start")
     else:
