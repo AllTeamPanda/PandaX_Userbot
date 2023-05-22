@@ -22,7 +22,9 @@
 PandaX_Userbot is a modular Telegram userbot running on Python3 with the following databases, better use MongoDb or Redis databases or don't use these three databases:
 
 - LocalDB - Get it from
- <p align="center"><a href="(https://github.com/AllTeamPanda/PandaX_Userbot/blob/main/sample_config.py)"><img src="https://img.shields.io/badge/Local%20DB-white?&style=flat-square&logo=github" /></a></p>
+ <p align="center"><a 
+href="https://github.com/AllTeamPanda/PandaX_Userbot/blob/main/sample_config.py">
+<img src="https://img.shields.io/badge/Local%20DB-white?&style=flat-square&logo=github" /></a></p>
  
 - Value DATABASE_URL - Get it from
  <p align="center"><a href="https://elephantsql.com/"><img src="https://img.shields.io/badge/Postgres%20Elephantsql-white?&style=flat-square&logo=postgresql" /></a></p> 
