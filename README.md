@@ -23,7 +23,7 @@ PandaX_Userbot is a modular Telegram userbot running on Python3 with the followi
 
 - LocalDB - Get it from
  <p align="center"><a 
-href="https://github.com/AllTeamPanda/PandaX_Userbot/blob/main/sample_config.py">
+href="https://github.com/AllTeamPanda/PandaX_Userbot/blob/main/userbot/config.py">
 <img src="https://img.shields.io/badge/Local%20DB-white?&style=flat-square&logo=github" /></a></p>
  
 - Value DATABASE_URL - Get it from
