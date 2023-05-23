@@ -226,7 +226,7 @@ async def externalrepo(repo, branch, cfolder):
         )
     if os.path.exists(rpath):
         await runcmd(f"pip3 install --no-cache-dir -r {rpath}")
-    success, failure = await buka(folder="userbot", extfolder=cfolder)
+    success, failure = await buka(folder="plugins", extfolder=cfolder)
     return repourl, cfolder, success, failure
 
 async def verifyLoggerGroup():
@@ -376,7 +376,7 @@ from telethon.tl.types import (
 async def memulai():
     string = "<b>Your external repo plugins have imported.<b>\n\n"
     if Config.PLUGINS_REPO:
-        data = await install_externalrepo(
+        data = await externalrepo(
             Config.PLUGINS_REPO, Config.U_BRANCH, "plugins"
         )
         string += f"<b>➜ Repo:  </b><a href='{data[0]}'><b>{data[1]}</b></a>\n<b>     • Imported Plugins:</b>  <code>{data[2]}</code>\n<b>     • Failed to Import:</b>  <code>{', '.join(data[3])}</code>\n\n"
