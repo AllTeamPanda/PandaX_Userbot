@@ -402,6 +402,18 @@ class Config(object):
     ALIVE_IMG = os.environ.get(
         "ALIVE_IMG", "https://telegra.ph/file/8f0e9e25427f9da09e08a.jpg"
     )
+    PLUGINS_REPO = os.environ.get("EXTERNAL_REPO", None)
+    if bool(PLUGINS_REPO and (PLUGINS_REPO.lower() != "false")):
+        if not url(PLUGINS_REPO):
+            PLUGINS_REPO = "https://github.com/AllTeamPanda/Plugins"
+    else:
+        PLUGINS_REPO = None
+    EXTRA_REPO = os.environ.get("EXTERNAL_REPO", None)
+    if bool(EXTRA_REPO and (EXTRA_REPO.lower() != "false")):
+        if not url(EXTRA_REPO):
+            EXTRA_REPO = "https://github.com/AllTeamPanda/Extra"
+    else:
+        EXTRA_REPO = None   
     U_BRANCH = "main"
     HEROKU_URL = fetch_heroku_git_url(HEROKU_API_KEY, HEROKU_APP_NAME)
     V_T_KEY = os.environ.get("VIRUSTOTAL_API_KEY", None)
