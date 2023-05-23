@@ -120,7 +120,7 @@ async def buka(folder, extfolder=None):
     To load plugins from the mentioned folder
     """
     if extfolder:
-        path = f"{extfolder}/{folder}/*.py"
+        path = f"{extfolder}/*.py"
         
     path = f"userbot/modules/{folder}/*.py"
     files = glob.glob(path)
@@ -226,7 +226,7 @@ async def externalrepo(repo, branch, cfolder):
         )
     if os.path.exists(rpath):
         await runcmd(f"pip3 install --no-cache-dir -r {rpath}")
-    success, failure = await buka(folder="plugins", xtfolder="plugins")
+    success, failure = await buka(xtfolder="plugins")
     return repourl, cfolder, success, failure
 
 async def verifyLoggerGroup():
