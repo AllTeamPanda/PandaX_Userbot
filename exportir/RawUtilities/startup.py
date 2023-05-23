@@ -374,8 +374,16 @@ from telethon.tl.types import (
 
 
 async def memulai():
+    string = "<b>Your external repo plugins have imported.<b>\n\n"
+    if Config.PLUGINS_REPO:
+        data = await install_externalrepo(
+            Config.PLUGINS_REPO, Config.U_BRANCH, "plugins"
+        )
+        string += f"<b>➜ Repo:  </b><a href='{data[0]}'><b>{data[1]}</b></a>\n<b>     • Imported Plugins:</b>  <code>{data[2]}</code>\n<b>     • Failed to Import:</b>  <code>{', '.join(data[3])}</code>\n\n"
     await buka(f"telethon")
     await bukabot(f"assistant")
+    if "Imported Plugins" in string:
+        await tgbot.send_message(BOTLOG_CHATID, string, parse_mode="html")
 
 async def ClientMultiTelethon():
     if Var.STRING_SESSION and Database.BOT_TOKEN:
