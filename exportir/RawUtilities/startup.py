@@ -124,7 +124,7 @@ async def buka(folder, extfolder=None):
         plugin_path = extfolder
     else:
         path = f"userbot/modules/{folder}/*.py"
-        plugin_path = f"userbot/modules/{folder}/*.py"
+        plugin_path = f"userbot/modules/{folder}"
     files = glob.glob(path)
     files.sort()
     success = 0
