@@ -155,12 +155,12 @@ async def buka(folder, extfolder=None):
                             if check > 5:
                                 break
                 else:
-                    os.remove(Path({plugin_path}/{shortname}.py"))
+                    os.remove(Path(f"{plugin_path}/{shortname}.py"))
                     
             except Exception as e:
                 if shortname not in failure:
                     failure.append(shortname)
-                os.remove(Path({plugin_path}/{shortname}.py"))
+                os.remove(Path(f"{plugin_path}/{shortname}.py"))
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
     if extfolder:
         if not failure:
