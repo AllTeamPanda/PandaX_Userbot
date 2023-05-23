@@ -114,13 +114,18 @@ async def loads(folder):
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
 
 
-async def buka(folder):
+async def buka(folder, extrafolder=None):
     """
     To load plugins from the mentioned folder
     """
+    if extfolder:
+        path = f"{extfolder}/{folder}/*.py"
+        
     path = f"userbot/modules/{folder}/*.py"
     files = glob.glob(path)
     files.sort()
+    success = 0
+    failure = []
     for name in files:
         with open(name) as f:
             path1 = Path(f.name)
@@ -135,18 +140,29 @@ async def buka(folder):
                                 shortname.replace(".py", ""),
                                 plugin_path=f"userbot/modules/{folder}",
                             )
+                            if shortname in failure:
+                                failure.remove(shortname)
+                            success += 1
                             break
                         except ModuleNotFoundError as e:
                             install_pip(e.name)
                             check += 1
+                            if shortname not in failure:
+                                failure.append(shortname)
                             if check > 5:
                                 break
                 else:
                     os.remove(Path(f"userbot/modules/{folder}/{shortname}.py"))
                     
             except Exception as e:
+                if shortname not in failure:
+                    failure.append(shortname)
                 os.remove(Path(f"userbot/modules/{folder}/{shortname}.py"))
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
+    if extfolder:
+        if not failure:
+            failure.append("None")
+        return success, failure
 
 async def bukabot(folder):
     """
@@ -183,7 +199,34 @@ async def bukabot(folder):
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
 
 
-
+async def externalrepo(repo, branch, cfolder):
+    EXTERNALREPO = repo
+    rpath = os.path.join(cfolder, "requirements.txt")
+    if BRANCH := branch:
+        repourl = os.path.join(EXTERNALREPO, f"tree/{BRANCH}")
+        gcmd = f"git clone -b {BRANCH} {EXTERNALREPO} {cfolder}"
+        errtext = f"There is no branch with name `{BRANCH}` in your external repo {EXTERNALREPO}. Recheck branch name and correct it in vars(`EXTERNAL_REPO_BRANCH`)"
+    else:
+        repourl = EXTERNALREPO
+        gcmd = f"git clone {EXTERNALREPO} {cfolder}"
+        errtext = f"The link({EXTERNALREPO}) you provided for `EXTERNAL_REPO` in vars is invalid. please recheck that link"
+    response = urllib.request.urlopen(repourl)
+    if response.code != 200:
+        LOGS.error(errtext)
+        return await tgbot.send_message(BOTLOG_CHATID, errtext)
+    await runcmd(gcmd)
+    if not os.path.exists(cfolder):
+        LOGS.error(
+            "There was a problem in cloning the external repo. please recheck external repo link"
+        )
+        return await tgbot.send_message(
+            BOTLOG_CHATID,
+            "There was a problem in cloning the external repo. please recheck external repo link",
+        )
+    if os.path.exists(rpath):
+        await runcmd(f"pip3 install --no-cache-dir -r {rpath}")
+    success, failure = await buka(folder="userbot", extfolder=cfolder)
+    return repourl, cfolder, success, failure
 
 async def verifyLoggerGroup():
     """
