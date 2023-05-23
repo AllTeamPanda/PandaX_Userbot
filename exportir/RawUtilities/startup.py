@@ -14,7 +14,7 @@ from telethon.tl.functions.channels import JoinChannelRequest
 import requests
 from telethon import functions, types, utils
 from userbot.helpers.utils.utils import runcmd
-
+import urllib.request
 from userbot import *
 
 from userbot.config import Config, Var, Database
