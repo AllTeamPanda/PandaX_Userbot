@@ -87,5 +87,4 @@ def Zip():
 if not path.exists(".env"):
     print(Start("Typing y for start env"))
     envbot()
-    print(system("screen -S PandaX_Userbot"))
-    print(Zip())
+    Zip()
