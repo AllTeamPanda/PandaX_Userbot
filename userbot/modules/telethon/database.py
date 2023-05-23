@@ -324,6 +324,11 @@ async def panda(event):  # sourcery no-metrics
                 return await edit_delete(
                     event, f"Berhasil Mengubah {vname}"
                 )
+            msg = await edit_delete(
+                    event, f"Berhasil Mengubah {vname}"
+                )
+            await msg.delete()
+            await event.client.reload(msg)
             check = vinfo.split(" ")
             for i in check:
                 if "PIC" in vname and not url(i):
