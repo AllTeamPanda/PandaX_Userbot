@@ -115,7 +115,7 @@ async def loads(folder):
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
 
 
-async def buka(folder, extrafolder=None):
+async def buka(folder, extfolder=None):
     """
     To load plugins from the mentioned folder
     """
