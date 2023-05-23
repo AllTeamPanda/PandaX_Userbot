@@ -5,7 +5,7 @@
 
 
 
-## Untuk basis Telethon
+# Untuk basis Telethon
 API_ID=
 API_HASH=
 SESSION=
