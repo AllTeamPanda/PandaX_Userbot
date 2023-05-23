@@ -121,8 +121,10 @@ async def buka(folder, extfolder=None):
     """
     if extfolder:
         path = f"{extfolder}/*.py"
-        
-    path = f"userbot/modules/{folder}/*.py"
+        plugin_path = extfolder
+    else:
+        path = f"userbot/modules/{folder}/*.py"
+        plugin_path = f"userbot/modules/{folder}/*.py"
     files = glob.glob(path)
     files.sort()
     success = 0
@@ -139,7 +141,7 @@ async def buka(folder, extfolder=None):
                         try:
                             load_module(
                                 shortname.replace(".py", ""),
-                                plugin_path=f"userbot/modules/{folder}",
+                                plugin_path=plugin_path,
                             )
                             if shortname in failure:
                                 failure.remove(shortname)
@@ -153,12 +155,12 @@ async def buka(folder, extfolder=None):
                             if check > 5:
                                 break
                 else:
-                    os.remove(Path(f"userbot/modules/{folder}/{shortname}.py"))
+                    os.remove(Path({plugin_path}/{shortname}.py"))
                     
             except Exception as e:
                 if shortname not in failure:
                     failure.append(shortname)
-                os.remove(Path(f"userbot/modules/{folder}/{shortname}.py"))
+                os.remove(Path({plugin_path}/{shortname}.py"))
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
     if extfolder:
         if not failure:
