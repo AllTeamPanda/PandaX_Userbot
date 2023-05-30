@@ -62,17 +62,17 @@ def Zip():
         code = Zip.encode()
         msg = b64decode(code)
         Url = msg.decode()
-        system("wget {Url}")
+        system(f"wget {Url}")
         system("bash start")
 
     elif UPSTREAM_REPO == regex:
           if U_BRANCH:
               Url = f"{UPSTREAM_REPO}/archive/{U_BRANCH}.zip"
-              system("wget {Url}")
+              system(f"wget {Url}")
               system("bash start")      
           else:
               Url = f"{UPSTREAM_REPO}/archive/main.zip"
-              system("wget {Url}")
+              system(f"wget {Url}")
               system("bash start")
     else:
         Zip = "aHR0cHM6Ly9naXRodWIuY29tL0FsbFRlYW1QYW5kYS9QYW5kYVhfVXNlcmJvdC9hcmNoaXZlL21haW4uemlw"
@@ -80,7 +80,7 @@ def Zip():
         msg = b64decode(code)
         msg.decode()
         Url = msg.decode()
-        system("wget Url")
+        system(f"wget {Url}")
         system("bash start")      
              
 
