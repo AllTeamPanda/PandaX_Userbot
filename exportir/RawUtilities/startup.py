@@ -229,7 +229,7 @@ async def externalrepo(repo, branch, cfolder):
     if os.path.exists(rpath):
         await runcmd(f"pip3 install --no-cache-dir -r {rpath}")
     success, failure = await buka(folder="plugins", extfolder="plugins")
-    return repourl, cfolder, xfolder, success, failure
+    return repourl, cfolder, success, failure
 
 async def verifyLoggerGroup():
     """
