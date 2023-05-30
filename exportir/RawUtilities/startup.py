@@ -120,8 +120,8 @@ async def buka(folder, extfolder=None):
     To load plugins from the mentioned folder
     """
     if extfolder:
-        path = f"{extfolder}/*.py"
-        plugin_path = extfolder
+        path = f"{extfolder}/plugins/*.py"
+        plugin_path = f"{extfolder}/plugins"
     else:
         path = f"userbot/modules/{folder}/*.py"
         plugin_path = f"userbot/modules/{folder}"
