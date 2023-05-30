@@ -391,8 +391,7 @@ async def memulai():
     
 async def ClientMultiTelethon():
     if Var.STRING_SESSION and Database.BOT_TOKEN:
-        X = base64.b64decode("QFBhbmRhVXNlcmJvdA==")
-        L = base64.b64decode("QFRlYW1TcXVhZFVzZXJib3RTdXBwb3J0")
+        
         if PandaBot:
             try:
                 tgbot.me = await tgbot.get_me()
