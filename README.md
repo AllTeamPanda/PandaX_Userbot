@@ -59,6 +59,8 @@ Use this bot at your own risk, and use it wisely.
     <summary> <b>🔗 Deploy Vps Panda Userbot</b></summary><br/>
 
 ### Tutorial Deploy di Vps
+- `sudo apt update && upgrade -y`
+- `sudo apt install curl`
 - `bash <(curl -L https://raw.githubusercontent.com/AllTeamPanda/DeploySSH/master/vps.sh)`
 </details>
 
