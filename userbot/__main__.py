@@ -26,6 +26,7 @@ async def memulai():
 def start():
     userbot.LOOP.run_until_complete(resources.ClientMultiTelethon())
     userbot.LOOP.run_until_complete(resources.memulai())
+    userbot.LOOP.run_until_complete(resources.cloneplugins())
     userbot.LOOP.run_until_complete(resources.join())
     LOGS.info(f"꧁༺ Panda Userbot ༻꧂\n⚙️ Version:{userbot.__version__} [TELAH DIAKTIFKAN]")
     if PandaBot:
