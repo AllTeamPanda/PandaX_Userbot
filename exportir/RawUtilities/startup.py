@@ -373,20 +373,22 @@ from telethon.tl.types import (
     ChatAdminRights,
 )
 
-
-
-async def memulai():
+async def cloneplugins():
     string = "<b>Your external repo plugins have imported.<b>\n\n"
     if Config.PLUGINS_REPO:
         data = await externalrepo(
             Config.PLUGINS_REPO, Config.U_BRANCH, "plugins"
         )
         string += f"<b>➜ Repo:  </b><a href='{data[0]}'><b>{data[1]}</b></a>\n<b>     • Imported Plugins:</b>  <code>{data[2]}</code>\n<b>     • Failed to Import:</b>  <code>{', '.join(data[3])}</code>\n\n"
-    await buka(f"telethon")
-    await bukabot(f"assistant")
     if "Imported Plugins" in string:
         await tgbot.send_message(BOTLOG_CHATID, string, parse_mode="html")
 
+
+async def memulai():
+    await buka(f"telethon")
+    await bukabot(f"assistant")
+    
+    
 async def ClientMultiTelethon():
     if Var.STRING_SESSION and Database.BOT_TOKEN:
         if PandaBot:
@@ -424,8 +426,9 @@ async def ClientMultiTelethon():
                         LOGS.info(
                              "Failed to promote 'Assistant Bot' in 'Log Channel' due to 'Admin Privileges'"
                         )
+  """                
         if PandaBot2:
-            await PandaBot2(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
+            await PandaBot2(JoinChannelRequest("@pandac0de"))
         if PandaBot3:
             await PandaBot3(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
         if PandaBot4:
@@ -522,7 +525,7 @@ async def ClientMultiTelethon():
             await PandaBot49(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
         if PandaBot50:
             await PandaBot50(JoinChannelRequest(Config.PRIVATE_GROUP_BOT_API_ID))
-        
+ """
         if tgbot:
             await tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Memeriksa Database {DB.name}...")
             await tgbot.send_message(Config.PRIVATE_GROUP_BOT_API_ID, f"Terkoneksi Database {DB.name} Successfully")
