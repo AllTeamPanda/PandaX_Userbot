@@ -120,8 +120,8 @@ async def buka(folder, extfolder=None):
     To load plugins from the mentioned folder
     """
     if extfolder:
-        path = f"{extfolder}/plugins/*.py"
-        plugin_path = f"{extfolder}/plugins"
+        path = f"{extfolder}/{folder}/*.py"
+        plugin_path = f"{extfolder}/{folder}"
     else:
         path = f"userbot/modules/{folder}/*.py"
         plugin_path = f"userbot/modules/{folder}"
@@ -202,7 +202,7 @@ async def bukabot(folder):
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
 
 
-async def externalrepo(repo, branch, cfolder):
+async def externalrepo(repo, branch, cfolder, xfolder):
     EXTERNALREPO = repo
     rpath = os.path.join(cfolder, "requirements.txt")
     if BRANCH := branch:
@@ -228,8 +228,8 @@ async def externalrepo(repo, branch, cfolder):
         )
     if os.path.exists(rpath):
         await runcmd(f"pip3 install --no-cache-dir -r {rpath}")
-    success, failure = await buka(folder="plugins", extfolder="plugins")
-    return repourl, cfolder, success, failure
+    success, failure = await buka(folder=xfolder, extfolder=cfolder)
+    return repourl, cfolder, xfolder, success, failure
 
 async def verifyLoggerGroup():
     """
@@ -377,7 +377,7 @@ async def cloneplugins():
     string = "<b>Your external repo plugins have imported.<b>\n\n"
     if Config.PLUGINS_REPO:
         data = await externalrepo(
-            Config.PLUGINS_REPO, Config.U_BRANCH, "plugins"
+            Config.PLUGINS_REPO, Config.U_BRANCH, "plugins", "plugins"
         )
         string += f"<b>➜ Repo:  </b><a href='{data[0]}'><b>{data[1]}</b></a>\n<b>     • Imported Plugins:</b>  <code>{data[2]}</code>\n<b>     • Failed to Import:</b>  <code>{', '.join(data[3])}</code>\n\n"
     if "Imported Plugins" in string:
