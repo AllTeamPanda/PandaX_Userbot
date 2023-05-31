@@ -23,7 +23,7 @@ async def gen_chlog(repo, diff):
 
 
 async def print_changelogs(xx, ac_br, changelog):
-    changelog_str = f"PandaUserbot {__version__} Tersedia Pembaruan Untuk Panda Userbot\n {changelog}"
+    changelog_str = f"🌀 Cek Pembaruan {__version__}\nTersedia Pembaruan Untuk Panda Userbot\n {changelog}"
     if len(changelog_str) > 4096:
         await edit_or_reply(xx, "**Changelog terlalu besar, dikirim sebagai file.**")
         with open("output.txt", "w+") as file:
@@ -104,7 +104,7 @@ async def update(xx, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await edit_or_reply(
-        xx, "`Panda Userbot Berhasil Diupdate! Userbot bisa di Gunakan Lagi.`"
+        xx, "`Panda Userbot Berhasil Diupdate! Mohon bersabarr...`"
     )
 
     try:
