@@ -27,20 +27,19 @@ class check_owner:
 
         async def wrapper(*args, **kwargs):
             c_q = args[0]
-            if c_q.query.sender_id and (
-                c_q.query.sender_id == Config.OWNER_ID
-                or c_q.query.sender_id in _sudousers_list() or Config.OWNER_ID
+            if c_q.query.user_id and (
+                c_q.query.user_id == Config.OWNER_ID
+                or c_q.query.user_id in _sudousers_list() or Config.OWNER_ID
             ):
+                return await c_q.answer(f"𝐌𝐞𝐧𝐮 𝐇𝐞𝐥𝐩 ||𝗖𝗿𝗲𝗮𝘁𝗲 𝗯𝗼𝘁 𝗝𝗼𝗶𝗻 @𝗣𝗮𝗻𝗱𝗮𝗨𝘀𝗲𝗿𝗯𝗼𝘁", alert=True)
+            
+
                 try:
                     await self.func(c_q)
                 except FloodWaitError as e:
                     await asyncio.sleep(e.seconds + 5)
                 except MessageNotModifiedError:
                     pass
-            else:
-                await c_q.answer(
-                    f"𝐌𝐞𝐧𝐮 𝐇𝐞𝐥𝐩 ||𝗖𝗿𝗲𝗮𝘁𝗲 𝗯𝗼𝘁 𝗝𝗼𝗶𝗻 @𝗣𝗮𝗻𝗱𝗮𝗨𝘀𝗲𝗿𝗯𝗼𝘁",
-                    alert=True,
-                )
+            
 
         return wrapper(*args, **kwargs)
