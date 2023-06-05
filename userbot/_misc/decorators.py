@@ -27,9 +27,9 @@ class check_owner:
 
         async def wrapper(*args, **kwargs):
             c_q = args[0]
-            if c_q.query.user_id and (
-                c_q.query.user_id == Config.OWNER_ID
-                or c_q.query.user_id in _sudousers_list() or Config.OWNER_ID
+            if c_q.query.sender_id and (
+                c_q.query.sender_id == Config.OWNER_ID
+                or c_q.query.sender_id in _sudousers_list() or Config.OWNER_ID
             ):
                 try:
                     await self.func(c_q)
