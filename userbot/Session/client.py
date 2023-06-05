@@ -100,16 +100,8 @@ except Exception as e:
     print(f"BOT-TOKEN- {str(e)}")
     sys.exit()
 
-CEKBOT = "5293882146:AAFQIjmaC9ObBu98PAvctLu0QxkckfOJrz4"
 
-if CEKBOT:
-    cekbot = TelegramClient(
-        "MyAssistant",
-        api_id=Database.APP_ID,
-        api_hash=Database.API_HASH,
-    )
-else:
-    cekbot = None
+
 
 
 ## SESSION MUTLTI 50
