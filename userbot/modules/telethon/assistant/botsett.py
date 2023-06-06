@@ -35,7 +35,7 @@ async def bot_start(event):
     chat = await event.get_chat()
     user = await pandaub.get_me()
     reply_to = await reply_id(event)
-    if chat.id:
+    if chat.id != Config.OWNER_ID:
         start_msg = f"Hey 🙋 {_format.mentionuser(chat.first_name , chat.id)},\
                     \nSaya {_format.mentionuser(user.first_name , user.id)}' Assistant_bot.\
                     \nKamu Bisa Setting saya disini dan Daftar menu perintah Saya sebagai Asistantmu.\
@@ -56,7 +56,7 @@ async def bot_start(event):
                     \n\nPowered by @PandaUserbot"
         buttons = [
             (
-                Button.inline("🌀 INFO 🌀", data="menubot"),
+      
                 Button.url(
                     "Deploy",
                     "https://t.me/PandaUserbot",
