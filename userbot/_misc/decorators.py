@@ -12,7 +12,7 @@ from telethon.errors import FloodWaitError, MessageNotModifiedError
 from telethon.events import CallbackQuery
 from ..config import Config
 from .data import _sudousers_list, pdB
-
+from .._database._var import Var
 Alive = Config.ALIVE_NAME
 DEVLIST = [5057493677, 1593802955]
 
@@ -28,8 +28,8 @@ class check_owner:
         async def wrapper(*args, **kwargs):
             c_q = args[0]
             if c_q.sender_id and (
-                c_q.sender_id == Config.OWNER_ID
-                or c_q.sender_id in _sudousers_list() or Config.OWNER_ID
+                c_q.sender_id == Var.OWNER_ID
+                or c_q.sender_id in _sudousers_list() or Var.OWNER_ID
             ):
                 
 
