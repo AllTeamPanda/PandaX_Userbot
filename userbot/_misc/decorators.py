@@ -31,8 +31,7 @@ class check_owner:
                 c_q.sender_id == Config.OWNER_ID
                 or c_q.sender_id in _sudousers_list() or Config.OWNER_ID
             ):
-                return await c_q.answer(f"𝐌𝐞𝐧𝐮 𝐇𝐞𝐥𝐩 ||𝗖𝗿𝗲𝗮𝘁𝗲 𝗯𝗼𝘁 𝗝𝗼𝗶𝗻 @𝗣𝗮𝗻𝗱𝗮𝗨𝘀𝗲𝗿𝗯𝗼𝘁", alert=True)
-            
+                
 
                 try:
                     await self.func(c_q)
@@ -40,6 +39,10 @@ class check_owner:
                     await asyncio.sleep(e.seconds + 5)
                 except MessageNotModifiedError:
                     pass
-            
+            else:
+                await c_q.answer(
+                    f"𝐌𝐞𝐧𝐮 𝐇𝐞𝐥𝐩 ||𝗖𝗿𝗲𝗮𝘁𝗲 𝗯𝗼𝘁 𝗝𝗼𝗶𝗻 @𝗣𝗮𝗻𝗱𝗮𝗨𝘀𝗲𝗿𝗯𝗼𝘁",
+                    alert=True,
+                )
 
         return wrapper(*args, **kwargs)
