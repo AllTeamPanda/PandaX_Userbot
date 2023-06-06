@@ -29,7 +29,7 @@ class check_owner:
             c_q = args[0]
             if c_q.sender_id and (
                 c_q.sender_id == Var.OWNER_ID
-                or c_q.sender_id in _sudousers_list() or Var.OWNER_ID
+                or c_q.sender_id in _sudousers_list()
             ):
                 
 
