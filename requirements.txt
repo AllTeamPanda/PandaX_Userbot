@@ -98,7 +98,7 @@ pybase64
 pyDownload
 pytube
 pysimplelog
-
+py-tgcalls==0.9.7
 
 # Q 
 qrcode
