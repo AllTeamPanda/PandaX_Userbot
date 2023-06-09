@@ -73,6 +73,57 @@ class Var(object):
     STRING_SESSION48 = os.environ.get("SESSION48") or None
     STRING_SESSION49 = os.environ.get("SESSION49") or None
     STRING_SESSION50 = os.environ.get("SESSION50") or None
+    VC_STRING_SESSION3 = os.environ.get("VC_SESSION3") or None
+    VC_STRING_SESSION2 = os.environ.get("VC_SESSION2") or None
+    VC_STRING_SESSION = os.environ.get("VC_SESSION") or None
+    
+    VC_STRING_SESSION4 = os.environ.get("VC_SESSION4") or None
+    VC_STRING_SESSION5 = os.environ.get("VC_SESSION5") or None
+    VC_STRING_SESSION6 = os.environ.get("VC_SESSION6") or None
+    VC_STRING_SESSION7 = os.environ.get("VC_SESSION7") or None
+    VC_STRING_SESSION8 = os.environ.get("VC_SESSION8") or None
+    VC_STRING_SESSION9 = os.environ.get("VC_SESSION9") or None
+    VC_STRING_SESSION10 = os.environ.get("VC_SESSION10") or None
+    VC_STRING_SESSION11 = os.environ.get("VC_SESSION11") or None
+    VC_STRING_SESSION12 = os.environ.get("VC_SESSION12") or None
+    VC_STRING_SESSION13 = os.environ.get("VC_SESSION13") or None
+    VC_STRING_SESSION14 = os.environ.get("VC_SESSION14") or None
+    VC_STRING_SESSION15 = os.environ.get("VC_SESSION15") or None
+    VC_STRING_SESSION16 = os.environ.get("VC_SESSION16") or None
+    VC_STRING_SESSION17 = os.environ.get("VC_SESSION17") or None
+    VC_STRING_SESSION18 = os.environ.get("VC_SESSION18") or None
+    VC_STRING_SESSION19 = os.environ.get("VC_SESSION19") or None
+    VC_STRING_SESSION20 = os.environ.get("VC_SESSION20") or None
+    VC_STRING_SESSION21 = os.environ.get("VC_SESSION21") or None
+    VC_STRING_SESSION22 = os.environ.get("VC_SESSION22") or None
+    VC_STRING_SESSION23 = os.environ.get("VC_SESSION23") or None
+    VC_STRING_SESSION24 = os.environ.get("VC_SESSION24") or None
+    VC_STRING_SESSION25 = os.environ.get("VC_SESSION25") or None
+    VC_STRING_SESSION26 = os.environ.get("VC_SESSION26") or None
+    VC_STRING_SESSION27 = os.environ.get("VC_SESSION27") or None
+    VC_STRING_SESSION28 = os.environ.get("VC_SESSION28") or None
+    VC_STRING_SESSION29 = os.environ.get("VC_SESSION29") or None
+    VC_STRING_SESSION30 = os.environ.get("VC_SESSION30") or None
+    VC_STRING_SESSION31 = os.environ.get("VC_SESSION31") or None
+    VC_STRING_SESSION32 = os.environ.get("VC_SESSION32") or None
+    VC_STRING_SESSION33 = os.environ.get("VC_SESSION33") or None
+    VC_STRING_SESSION34 = os.environ.get("VC_SESSION34") or None
+    VC_STRING_SESSION35 = os.environ.get("VC_SESSION35") or None
+    VC_STRING_SESSION36 = os.environ.get("VC_SESSION36") or None
+    VC_STRING_SESSION37 = os.environ.get("VC_SESSION37") or None
+    VC_STRING_SESSION38 = os.environ.get("VC_SESSION38") or None
+    VC_STRING_SESSION39 = os.environ.get("VC_SESSION39") or None
+    VC_STRING_SESSION40 = os.environ.get("VC_SESSION40") or None
+    VC_STRING_SESSION41 = os.environ.get("VC_SESSION41") or None
+    VC_STRING_SESSION42 = os.environ.get("VC_SESSION42") or None
+    VC_STRING_SESSION43 = os.environ.get("VC_SESSION43") or None
+    VC_STRING_SESSION44 = os.environ.get("VC_SESSION44") or None
+    VC_STRING_SESSION45 = os.environ.get("VC_SESSION45") or None
+    VC_STRING_SESSION46 = os.environ.get("VC_SESSION46") or None
+    VC_STRING_SESSION47 = os.environ.get("VC_SESSION47") or None
+    VC_STRING_SESSION48 = os.environ.get("VC_SESSION48") or None
+    VC_STRING_SESSION49 = os.environ.get("VC_SESSION49") or None
+    VC_STRING_SESSION50 = os.environ.get("VC_SESSION50") or None
     
 
 
