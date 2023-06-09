@@ -1232,10 +1232,264 @@ class VCTools:
         # log chat name
         if not self.PLAYLIST:
             if self.PLAYING:
-                await self.app.change_stream(
-                    self.CHAT_ID,
-                    AudioPiped("catvc/resources/Silence01s.mp3"),
-                )
+                                        
+                if vclient:
+                    await self.app.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient2:
+                    await self.app2.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient3:
+                    await self.app3.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient4:
+                    await self.app4.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient5:
+                    await self.app5.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    ) 
+                if vclient6:
+                    await self.app6.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient7:
+                    await self.app7.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient8:
+                    await self.app8.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient9:
+                    await self.app9.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient10:
+                    await self.app10.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient11:
+                    await self.app11.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient12:
+                    await self.app12.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient13:
+                    await self.app13.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient14:
+                    await self.app114.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient15:
+                    await self.app15.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient16:
+                    await self.app16.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient17:
+                    await self.app17.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient18:
+                    await self.app18.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient19:
+                    await self.app19.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient20:
+                    await self.app20.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                                        
+                    
+                if vclient21:
+                    await self.app21.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient22:
+                    await self.app22.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient23:
+                    await self.app23.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient24:
+                    await self.app24.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient25:
+                    await self.app25.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                                        
+                    
+                if vclient26:
+                    await self.app26.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient27:
+                    await self.app27.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient28:
+                    await self.app28.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient29:
+                    await self.app29.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient30:
+                    await self.app30.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                                                            
+                if vclient31:
+                    await self.app31.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient32:
+                    await self.app32.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient33:
+                    await self.app33.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient34:
+                    await self.app34.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient35:
+                    await self.app35.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient36:
+                    await self.app36.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient37:
+                    await self.app37.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient38:
+                    await self.app38.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient39:
+                    await self.app39.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient40:
+                    await self.app40.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                
+                if vclient41:
+                    await self.app41.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient42:
+                    await self.app42.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient43:
+                    await self.app43.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient44:
+                    await self.app44.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient45:
+                    await self.app45.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient46:
+                    await self.app46.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient47:
+                    await self.app47.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient48:
+                    await self.app48.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient49:
+                    await self.app49.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                if vclient50:
+                    await self.app50.change_stream(
+                        self.CHAT_ID,
+                        AudioPiped("userbot/resources/literasi.mp3"),
+                    )
+                
             self.PLAYING = False
             return "**Skipped Stream\nEmpty Playlist**"
 
@@ -1247,97 +1501,105 @@ class VCTools:
         try:
             if vclient:
                 await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
-            if vclient:
-                await self.app.change_stream(self.CHAT_ID, streamable)
+            if vclient2:
+                await self.app2.change_stream(self.CHAT_ID, streamable)
+            if vclient3:
+                await self.app3.change_stream(self.CHAT_ID, streamable)
+            if vclient4:
+                await self.app4.change_stream(self.CHAT_ID, streamable)
+            if vclient5:
+                await self.app5.change_stream(self.CHAT_ID, streamable)
+            if vclient6:
+                await self.app6.change_stream(self.CHAT_ID, streamable)
+            if vclient7:
+                await self.app7.change_stream(self.CHAT_ID, streamable)
+            if vclient8:
+                await self.app8.change_stream(self.CHAT_ID, streamable)
+            if vclient9:
+                await self.app9.change_stream(self.CHAT_ID, streamable)
+            if vclient10:
+                await self.app10.change_stream(self.CHAT_ID, streamable)
+            if vclient11:
+                await self.app11.change_stream(self.CHAT_ID, streamable)
+            if vclient12:
+                await self.app12.change_stream(self.CHAT_ID, streamable)
+            if vclient13:
+                await self.app13.change_stream(self.CHAT_ID, streamable)
+            if vclient14:
+                await self.app14.change_stream(self.CHAT_ID, streamable)
+            if vclient15:
+                await self.app15.change_stream(self.CHAT_ID, streamable)
+            if vclient16:
+                await self.app16.change_stream(self.CHAT_ID, streamable)
+            if vclient17:
+                await self.app17.change_stream(self.CHAT_ID, streamable)
+            if vclient18:
+                await self.app18.change_stream(self.CHAT_ID, streamable)
+            if vclient19:
+                await self.app19.change_stream(self.CHAT_ID, streamable)
+            if vclient20:
+                await self.app20.change_stream(self.CHAT_ID, streamable)
+            if vclient21:
+                await self.app21.change_stream(self.CHAT_ID, streamable)
+            if vclient22:
+                await self.app22.change_stream(self.CHAT_ID, streamable)
+            if vclient23:
+                await self.app23.change_stream(self.CHAT_ID, streamable)
+            if vclient24:
+                await self.app24.change_stream(self.CHAT_ID, streamable)
+            if vclient25:
+                await self.app25.change_stream(self.CHAT_ID, streamable)
+            if vclient26:
+                await self.app26.change_stream(self.CHAT_ID, streamable)
+            if vclient27:
+                await self.app27.change_stream(self.CHAT_ID, streamable)
+            if vclient28:
+                await self.app28.change_stream(self.CHAT_ID, streamable)
+                
+            if vclient29:
+                await self.app29.change_stream(self.CHAT_ID, streamable)
+            if vclient30:
+                await self.app30.change_stream(self.CHAT_ID, streamable)
+            if vclient31:
+                await self.app31.change_stream(self.CHAT_ID, streamable)
+            if vclient32:
+                await self.app32.change_stream(self.CHAT_ID, streamable)
+            if vclient33:
+                await self.app33.change_stream(self.CHAT_ID, streamable)
+            if vclient34:
+                await self.app34.change_stream(self.CHAT_ID, streamable)
+            if vclient35:
+                await self.app35.change_stream(self.CHAT_ID, streamable)
+            if vclient36:
+                await self.app36.change_stream(self.CHAT_ID, streamable)
+            if vclient37:
+                await self.app37.change_stream(self.CHAT_ID, streamable)
+            if vclient38:
+                await self.app38.change_stream(self.CHAT_ID, streamable)
+            if vclient39:
+                await self.app39.change_stream(self.CHAT_ID, streamable)
+            if vclient40:
+                await self.app40.change_stream(self.CHAT_ID, streamable)
+            if vclient41:
+                await self.app41.change_stream(self.CHAT_ID, streamable)
+            if vclient42:
+                await self.app42.change_stream(self.CHAT_ID, streamable)
+            if vclient43:
+                await self.app43.change_stream(self.CHAT_ID, streamable)
+            if vclient44:
+                await self.app44.change_stream(self.CHAT_ID, streamable)
+            if vclient45:
+                await self.app45.change_stream(self.CHAT_ID, streamable)
+            if vclient46:
+                await self.app46.change_stream(self.CHAT_ID, streamable)
+            if vclient47:
+                await self.app47.change_stream(self.CHAT_ID, streamable)
+            if vclient48:
+                await self.app48.change_stream(self.CHAT_ID, streamable)
+            if vclient49:
+                await self.app49.change_stream(self.CHAT_ID, streamable)
+            if vclient50:
+                await self.app50.change_stream(self.CHAT_ID, streamable)
        
         except Exception:
             await self.skip()
@@ -1357,104 +1619,104 @@ class VCTools:
             try:
                 if vclient:
                     await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
-                if vclient:
-                    await self.app.change_stream(self.CHAT_ID, streamable)
+                if vclient2:
+                    await self.app2.change_stream(self.CHAT_ID, streamable)
+                if vclient3:
+                    await self.app3.change_stream(self.CHAT_ID, streamable)
+                if vclient4:
+                    await self.app4.change_stream(self.CHAT_ID, streamable)
+                if vclient5:
+                    await self.app5.change_stream(self.CHAT_ID, streamable)
+                if vclient6:
+                    await self.app6.change_stream(self.CHAT_ID, streamable)
+                if vclient7:
+                    await self.app7.change_stream(self.CHAT_ID, streamable)
+                if vclient8:
+                    await self.app8.change_stream(self.CHAT_ID, streamable)
+                if vclient9:
+                    await self.app9.change_stream(self.CHAT_ID, streamable)
+                if vclient10:
+                    await self.app10.change_stream(self.CHAT_ID, streamable)
+                if vclient11:
+                    await self.app11.change_stream(self.CHAT_ID, streamable)
+                if vclient12:
+                    await self.app12.change_stream(self.CHAT_ID, streamable)
+                if vclient13:
+                    await self.app13.change_stream(self.CHAT_ID, streamable)
+                if vclient14:
+                    await self.app14.change_stream(self.CHAT_ID, streamable)
+                if vclient15:
+                    await self.app15.change_stream(self.CHAT_ID, streamable)
+                if vclient16:
+                    await self.app16.change_stream(self.CHAT_ID, streamable)
+                if vclient17:
+                    await self.app17.change_stream(self.CHAT_ID, streamable)
+                if vclient18:
+                    await self.app18.change_stream(self.CHAT_ID, streamable)
+                if vclient19:
+                    await self.app19.change_stream(self.CHAT_ID, streamable)
+                if vclient20:
+                    await self.app20.change_stream(self.CHAT_ID, streamable)
+                if vclient21:
+                    await self.app2.change_stream(self.CHAT_ID, streamable)
+                if vclient22:
+                    await self.app22.change_stream(self.CHAT_ID, streamable)
+                if vclient23:
+                    await self.app23.change_stream(self.CHAT_ID, streamable)
+                if vclient24:
+                    await self.app24.change_stream(self.CHAT_ID, streamable)
+                if vclient25:
+                    await self.app25.change_stream(self.CHAT_ID, streamable)
+                if vclient26:
+                    await self.app26.change_stream(self.CHAT_ID, streamable)
+                if vclient27:
+                    await self.app27.change_stream(self.CHAT_ID, streamable)
+                if vclient28:
+                    await self.app28.change_stream(self.CHAT_ID, streamable)
+                if vclient29:
+                    await self.app29.change_stream(self.CHAT_ID, streamable)
+                if vclient30:
+                    await self.app30.change_stream(self.CHAT_ID, streamable)
+                if vclient31:
+                    await self.app31.change_stream(self.CHAT_ID, streamable)
+                if vclient32:
+                    await self.app32.change_stream(self.CHAT_ID, streamable)
+                if vclient33:
+                    await self.app33.change_stream(self.CHAT_ID, streamable)
+                if vclient34:
+                    await self.app34.change_stream(self.CHAT_ID, streamable)
+                if vclient35:
+                    await self.app35.change_stream(self.CHAT_ID, streamable)
+                if vclient36:
+                    await self.app36.change_stream(self.CHAT_ID, streamable)
+                if vclient37:
+                    await self.app37.change_stream(self.CHAT_ID, streamable)
+                if vclient38:
+                    await self.app38.change_stream(self.CHAT_ID, streamable)
+                if vclient39:
+                    await self.app39.change_stream(self.CHAT_ID, streamable)
+                if vclient40:
+                    await self.app40.change_stream(self.CHAT_ID, streamable)
+                if vclient41:
+                    await self.app41.change_stream(self.CHAT_ID, streamable)
+                if vclient42:
+                    await self.app42.change_stream(self.CHAT_ID, streamable)
+                if vclient43:
+                    await self.app43.change_stream(self.CHAT_ID, streamable)
+                if vclient44:
+                    await self.app44.change_stream(self.CHAT_ID, streamable)
+                if vclient45:
+                    await self.app45.change_stream(self.CHAT_ID, streamable)
+                if vclient46:
+                    await self.app46.change_stream(self.CHAT_ID, streamable)
+                if vclient47:
+                    await self.app47.change_stream(self.CHAT_ID, streamable)
+                if vclient48:
+                    await self.app48.change_stream(self.CHAT_ID, streamable)
+                if vclient49:
+                    await self.app49.change_stream(self.CHAT_ID, streamable)
+                if vclient50:
+                    await self.app50.change_stream(self.CHAT_ID, streamable)
        
             except Exception:
                 await self.skip()
