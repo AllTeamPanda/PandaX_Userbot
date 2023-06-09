@@ -20,7 +20,7 @@ from userbot._misc.logger import logging
 from userbot.helpers import _pandautils, fileinfo
 from userbot.helpers.functions import get_ytthumb, yt_search
 from yt_dlp import YoutubeDL
-from .client import *
+
 from .stream_helper import Stream, check_url, video_dl, yt_regex
 
 LOGS = logging.getLogger(__name__)
