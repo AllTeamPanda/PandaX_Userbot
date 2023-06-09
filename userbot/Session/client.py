@@ -1094,9 +1094,9 @@ except Exception as e:
     sys.exit()
     
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION11:
+        vclient11 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION11, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1105,15 +1105,15 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient11 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION11- {str(e)}")
     sys.exit()
  
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION12:
+        vclient12 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION12, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1122,14 +1122,30 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient12 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION12- {str(e)}")
+    sys.exit()
+try:
+    if Var.VC_STRING_SESSION13:
+        vclient13 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION13, LOGS),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+            app_version=__version__,
+        )
+    else:
+        vclient13 = None
+except Exception as e:
+    print(f"VC_STRING_SESSION13- {str(e)}")
     sys.exit()
 try:
     if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+        vclient14 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION14, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1138,48 +1154,15 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient14 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
-    sys.exit()
-try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
-            api_id=Var.APP_ID,
-            api_hash=Var.API_HASH,
-            connection=ConnectionTcpAbridged,
-            auto_reconnect=True,
-            connection_retries=None,
-            app_version=__version__,
-        )
-    else:
-        vclient = None
-except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
-    sys.exit()
-    
-try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
-            api_id=Var.APP_ID,
-            api_hash=Var.API_HASH,
-            connection=ConnectionTcpAbridged,
-            auto_reconnect=True,
-            connection_retries=None,
-            app_version=__version__,
-        )
-    else:
-        vclient = None
-except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION14- {str(e)}")
     sys.exit()
     
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION15:
+        vclient15 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION15, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1188,15 +1171,32 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient1y5 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION15- {str(e)}")
+    sys.exit()
+    
+try:
+    if Var.VC_STRING_SESSION16:
+        vclient16 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION16, LOGS),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+            app_version=__version__,
+        )
+    else:
+        vclient16 = None
+except Exception as e:
+    print(f"VC_STRING_SESSION16- {str(e)}")
     sys.exit()
  
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION17:
+        vclient17 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION17, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1205,14 +1205,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient17 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION17- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION18:
+        vclient18 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION18, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1221,14 +1221,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient18 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION18- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION19:
+        vclient19 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION19, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1237,32 +1237,15 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient19 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
-    sys.exit()
-    
-try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
-            api_id=Var.APP_ID,
-            api_hash=Var.API_HASH,
-            connection=ConnectionTcpAbridged,
-            auto_reconnect=True,
-            connection_retries=None,
-            app_version=__version__,
-        )
-    else:
-        vclient = None
-except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION19- {str(e)}")
     sys.exit()
     
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION20:
+        vclient20 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION20, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1271,14 +1254,31 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient20 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION20- {str(e)}")
+    sys.exit()
+    
+try:
+    if Var.VC_STRING_SESSION21:
+        vclient21 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION21, LOGS),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+            app_version=__version__,
+        )
+    else:
+        vclient21 = None
+except Exception as e:
+    print(f"VC_STRING_SESSION21- {str(e)}")
     sys.exit()
  
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
+    if Var.VC_STRING_SESSION22:
+        vclient22 = TelegramClient(
             PandaSession(Var.VC_STRING_SESSION, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
@@ -1288,14 +1288,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient22 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION22- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION23:
+        vclient23 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION23, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1304,14 +1304,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient23 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION23- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION24:
+        vclient24 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION24, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1320,32 +1320,15 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient24 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
-    sys.exit()
-    
-try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
-            api_id=Var.APP_ID,
-            api_hash=Var.API_HASH,
-            connection=ConnectionTcpAbridged,
-            auto_reconnect=True,
-            connection_retries=None,
-            app_version=__version__,
-        )
-    else:
-        vclient = None
-except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION24- {str(e)}")
     sys.exit()
     
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION25:
+        vclient25 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION25, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1354,15 +1337,32 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient25 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION25- {str(e)}")
+    sys.exit()
+    
+try:
+    if Var.VC_STRING_SESSION26:
+        vclient26 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION26, LOGS),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+            app_version=__version__,
+        )
+    else:
+        vclient26 = None
+except Exception as e:
+    print(f"VC_STRING_SESSION26- {str(e)}")
     sys.exit()
  
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION27:
+        vclient27 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION27, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1371,14 +1371,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient27 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION27- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
+    if Var.VC_STRING_SESSION28:
         vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+            PandaSession(Var.VC_STRING_SESSION28, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1387,14 +1387,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient28 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION28- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION29:
+        vclient29 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION29, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1403,32 +1403,15 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient29 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
-    sys.exit()
-    
-try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
-            api_id=Var.APP_ID,
-            api_hash=Var.API_HASH,
-            connection=ConnectionTcpAbridged,
-            auto_reconnect=True,
-            connection_retries=None,
-            app_version=__version__,
-        )
-    else:
-        vclient = None
-except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION29- {str(e)}")
     sys.exit()
     
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION30:
+        vclient30 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION30, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1437,15 +1420,32 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient30 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION30- {str(e)}")
+    sys.exit()
+    
+try:
+    if Var.VC_STRING_SESSION31:
+        vclient31 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION31, LOGS),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+            app_version=__version__,
+        )
+    else:
+        vclient31 = None
+except Exception as e:
+    print(f"VC_STRING_SESSION31- {str(e)}")
     sys.exit()
  
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION32:
+        vclient32 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION32, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1454,14 +1454,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient32 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION32- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION33:
+        vclient33 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION33, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1470,14 +1470,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient33 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION33- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION34:
+        vclient34 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION34, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1486,32 +1486,15 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient34 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
-    sys.exit()
-    
-try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
-            api_id=Var.APP_ID,
-            api_hash=Var.API_HASH,
-            connection=ConnectionTcpAbridged,
-            auto_reconnect=True,
-            connection_retries=None,
-            app_version=__version__,
-        )
-    else:
-        vclient = None
-except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION34- {str(e)}")
     sys.exit()
     
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION35:
+        vclient35 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION35, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1520,15 +1503,32 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient35 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION35- {str(e)}")
+    sys.exit()
+    
+try:
+    if Var.VC_STRING_SESSION36:
+        vclient36 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION36, LOGS),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+            app_version=__version__,
+        )
+    else:
+        vclient36 = None
+except Exception as e:
+    print(f"VC_STRING_SESSION36- {str(e)}")
     sys.exit()
  
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION37:
+        vclient37 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION37, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1537,14 +1537,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient37 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION37- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION38:
+        vclient38 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION38, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1553,14 +1553,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient38 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION38- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION39:
+        vclient39 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION39, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1569,32 +1569,15 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient39 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
-    sys.exit()
-    
-try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
-            api_id=Var.APP_ID,
-            api_hash=Var.API_HASH,
-            connection=ConnectionTcpAbridged,
-            auto_reconnect=True,
-            connection_retries=None,
-            app_version=__version__,
-        )
-    else:
-        vclient = None
-except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION39- {str(e)}")
     sys.exit()
     
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION40:
+        vclient40 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION40, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1603,15 +1586,32 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient40 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION40- {str(e)}")
+    sys.exit()
+    
+try:
+    if Var.VC_STRING_SESSION41:
+        vclient41 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION41, LOGS),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+            app_version=__version__,
+        )
+    else:
+        vclient41 = None
+except Exception as e:
+    print(f"VC_STRING_SESSION41- {str(e)}")
     sys.exit()
  
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION42:
+        vclient42 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION42, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1620,14 +1620,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient42 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION42- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION43:
+        vclient43 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION43, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1636,14 +1636,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient43 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION43- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION44:
+        vclient44 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION44, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1652,32 +1652,15 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient44 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
-    sys.exit()
-    
-try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
-            api_id=Var.APP_ID,
-            api_hash=Var.API_HASH,
-            connection=ConnectionTcpAbridged,
-            auto_reconnect=True,
-            connection_retries=None,
-            app_version=__version__,
-        )
-    else:
-        vclient = None
-except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION44- {str(e)}")
     sys.exit()
     
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION45:
+        vclient45 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION45, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1686,15 +1669,32 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient45 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION45- {str(e)}")
+    sys.exit()
+    
+try:
+    if Var.VC_STRING_SESSION46:
+        vclient46 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION46, LOGS),
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH,
+            connection=ConnectionTcpAbridged,
+            auto_reconnect=True,
+            connection_retries=None,
+            app_version=__version__,
+        )
+    else:
+        vclient46 = None
+except Exception as e:
+    print(f"VC_STRING_SESSION46- {str(e)}")
     sys.exit()
  
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION47:
+        vclient47 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION47, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1703,14 +1703,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient47 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION47- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION48:
+        vclient48 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION48, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1719,14 +1719,14 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient48 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION48- {str(e)}")
     sys.exit()
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION49:
+        vclient49 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION49, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1735,16 +1735,16 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient49 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION49- {str(e)}")
     sys.exit()
     
 
 try:
-    if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
-            PandaSession(Var.VC_STRING_SESSION, LOGS),
+    if Var.VC_STRING_SESSION50:
+        vclient50 = TelegramClient(
+            PandaSession(Var.VC_STRING_SESSION50, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
             connection=ConnectionTcpAbridged,
@@ -1753,9 +1753,9 @@ try:
             app_version=__version__,
         )
     else:
-        vclient = None
+        vclient50 = None
 except Exception as e:
-    print(f"VC_STRING_SESSION- {str(e)}")
+    print(f"VC_STRING_SESSION50- {str(e)}")
     sys.exit()
     
     
