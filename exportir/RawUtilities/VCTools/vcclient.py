@@ -632,11 +632,7 @@ class VCTools:
                                 title="Panda VC 🎶",
                             )
                         )
-                      functions.phone.CreateGroupCallRequest(
-                                peer=chat,
-                                title="Panda VC 🎶",
-                            )
-                        )
+                      
                     if PandaBot6:
                         await PandaBot6(
                             functions.phone.CreateGroupCallRequest(
@@ -665,11 +661,7 @@ class VCTools:
                                 title="Panda VC 🎶",
                             )
                         )
-                      functions.phone.CreateGroupCallRequest(
-                                peer=chat,
-                                title="Panda VC 🎶",
-                            )
-                        )
+                      
                     if PandaBot10:
                         await PandaBot10(
                             functions.phone.CreateGroupCallRequest(
@@ -698,11 +690,7 @@ class VCTools:
                                 title="Panda VC 🎶",
                             )
                         )
-                      functions.phone.CreateGroupCallRequest(
-                                peer=chat,
-                                title="Panda VC 🎶",
-                            )
-                        )
+                      
                     if PandaBot14:
                         await PandaBot14(
                             functions.phone.CreateGroupCallRequest(
@@ -731,11 +719,7 @@ class VCTools:
                                 title="Panda VC 🎶",
                             )
                         )
-                      functions.phone.CreateGroupCallRequest(
-                                peer=chat,
-                                title="Panda VC 🎶",
-                            )
-                        )
+                      
                     if PandaBot18:
                         await PandaBot18(
                             functions.phone.CreateGroupCallRequest(
@@ -797,11 +781,7 @@ class VCTools:
                                 title="Panda VC 🎶",
                             )
                         )
-                      functions.phone.CreateGroupCallRequest(
-                                peer=chat,
-                                title="Panda VC 🎶",
-                            )
-                        )
+                      
                     if PandaBot26:
                         await PandaBot26(
                             functions.phone.CreateGroupCallRequest(
@@ -830,11 +810,7 @@ class VCTools:
                                 title="Panda VC 🎶",
                             )
                         )
-                      functions.phone.CreateGroupCallRequest(
-                                peer=chat,
-                                title="Panda VC 🎶",
-                            )
-                        )
+                      
                     if PandaBot30:
                         await PandaBot30(
                             functions.phone.CreateGroupCallRequest(
@@ -863,11 +839,7 @@ class VCTools:
                                 title="Panda VC 🎶",
                             )
                         )
-                      functions.phone.CreateGroupCallRequest(
-                                peer=chat,
-                                title="Panda VC 🎶",
-                            )
-                        )
+                      
                     if PandaBot34:
                         await PandaBot34(
                             functions.phone.CreateGroupCallRequest(
@@ -896,11 +868,7 @@ class VCTools:
                                 title="Panda VC 🎶",
                             )
                         )
-                      functions.phone.CreateGroupCallRequest(
-                                peer=chat,
-                                title="Panda VC 🎶",
-                            )
-                        )
+                      
                     if PandaBot38:
                         await PandaBot38(
                             functions.phone.CreateGroupCallRequest(
