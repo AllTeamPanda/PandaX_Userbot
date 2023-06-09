@@ -1171,7 +1171,7 @@ try:
             app_version=__version__,
         )
     else:
-        vclient1y5 = None
+        vclient15 = None
 except Exception as e:
     print(f"VC_STRING_SESSION15- {str(e)}")
     sys.exit()
