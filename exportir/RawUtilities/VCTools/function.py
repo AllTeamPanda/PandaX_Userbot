@@ -17,72 +17,209 @@ from .vcclient import VCTools
 LOGS = logging.getLogger(__name__)
 logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 
-if vc_session := Var.VC_STRING_SESSION:
-    vc_client = TelegramClient(
-        StringSession(vc_session), Config.APP_ID, Config.API_HASH
-    )
+if Var.VC_STRING_SESSION:
+    vc_client = vclient
 else:
     vc_client = PandaBot
-if vc_session := Var.VC_STRING_SESSION:
-    vc_client = TelegramClient(
-        StringSession(vc_session), Config.APP_ID, Config.API_HASH
-    )
+if Var.VC_STRING_SESSION2:
+    vc_client2 = vclient2
 else:
-    vc_client = PandaBot
-if vc_session := Var.VC_STRING_SESSION:
-    vc_client = TelegramClient(
-        StringSession(vc_session), Config.APP_ID, Config.API_HASH
-    )
+    vc_client2 = PandaBot2
+if Var.VC_STRING_SESSION3:
+    vc_client3 = vclient3
 else:
-    vc_client = PandaBot
-if vc_session := Var.VC_STRING_SESSION:
-    vc_client = TelegramClient(
-        StringSession(vc_session), Config.APP_ID, Config.API_HASH
-    )
+    vc_client3 = PandaBot3
+if Var.VC_STRING_SESSION4:
+    vc_client4 = vclient4
 else:
-    vc_client = PandaBot
-if vc_session := Var.VC_STRING_SESSION:
-    vc_client = TelegramClient(
-        StringSession(vc_session), Config.APP_ID, Config.API_HASH
-    )
+    vc_client4 = PandaBot4
+if Var.VC_STRING_SESSION5:
+    vc_client5 = vclient5
 else:
-    vc_client = PandaBot
-if vc_session := Var.VC_STRING_SESSION:
-    vc_client = TelegramClient(
-        StringSession(vc_session), Config.APP_ID, Config.API_HASH
-    )
+    vc_client5 = PandaBot5
+if Var.VC_STRING_SESSION6:
+    vc_client6 = vclient6
 else:
-    vc_client = PandaBot
-if vc_session := Var.VC_STRING_SESSION:
-    vc_client = TelegramClient(
-        StringSession(vc_session), Config.APP_ID, Config.API_HASH
-    )
+    vc_client6 = PandaBot6
+if Var.VC_STRING_SESSION7:
+    vc_client7 = vclient7
 else:
-    vc_client = PandaBot
-if vc_session := Var.VC_STRING_SESSION:
-    vc_client = TelegramClient(
-        StringSession(vc_session), Config.APP_ID, Config.API_HASH
-    )
+    vc_client7 = PandaBot7
+if Var.VC_STRING_SESSION8:
+    vc_client8 = vclient8
 else:
-    vc_client = PandaBot
-if vc_session := Var.VC_STRING_SESSION:
-    vc_client = TelegramClient(
-        StringSession(vc_session), Config.APP_ID, Config.API_HASH
-    )
+    vc_client8 = PandaBot8
+if Var.VC_STRING_SESSION9:
+    vc_client9 = vclient9
 else:
-    vc_client = PandaBot
-if vc_session := Var.VC_STRING_SESSION:
-    vc_client = TelegramClient(
-        StringSession(vc_session), Config.APP_ID, Config.API_HASH
-    )
+    vc_client9 = PandaBot9
+if Var.VC_STRING_SESSION10:
+    vc_client10 = vclient10
 else:
-    vc_client = PandaBot
-if vc_session := Var.VC_STRING_SESSION:
-    vc_client = TelegramClient(
-        StringSession(vc_session), Config.APP_ID, Config.API_HASH
-    )
+    vc_client10 = PandaBot10
+if Var.VC_STRING_SESSION11:
+    vc_client11 = vclient11
 else:
-    vc_client = PandaBot
+    vc_client11 = PandaBot11
+if Var.VC_STRING_SESSION12:
+    vc_client12 = vclient12
+else:
+    vc_client12 = PandaBot12
+if Var.VC_STRING_SESSION13:
+    vc_client13 = vclient13
+else:
+    vc_client13 = PandaBot13
+if Var.VC_STRING_SESSION14:
+    vc_client14 = vclient14
+else:
+    vc_client14 = PandaBot14
+if Var.VC_STRING_SESSION15:
+    vc_client15 = vclient15
+else:
+    vc_client15 = PandaBot15
+if Var.VC_STRING_SESSION16:
+    vc_client16 = vclient16
+else:
+    vc_client16 = PandaBot16
+if Var.VC_STRING_SESSION17:
+    vc_client17 = vclient17
+else:
+    vc_client17 = PandaBot17
+if Var.VC_STRING_SESSION18:
+    vc_client18 = vclient18
+else:
+    vc_client18 = PandaBot18
+if Var.VC_STRING_SESSION19:
+    vc_client19 = vclient19
+else:
+    vc_client19 = PandaBot19
+if Var.VC_STRING_SESSION20:
+    vc_client20 = vclient20
+else:
+    vc_client20 = PandaBot20
+if Var.VC_STRING_SESSION21:
+    vc_client21 = vclient21
+else:
+    vc_client21 = PandaBot21
+if Var.VC_STRING_SESSION22:
+    vc_client22 = vclient22
+else:
+    vc_client22 = PandaBot22
+if Var.VC_STRING_SESSION23:
+    vc_client23 = vclient23
+else:
+    vc_client23 = PandaBot23
+if Var.VC_STRING_SESSION24:
+    vc_client24 = vclient24
+else:
+    vc_client24 = PandaBot24
+if Var.VC_STRING_SESSION25:
+    vc_client25 = vclient25
+else:
+    vc_client25 = PandaBot25
+if Var.VC_STRING_SESSION26:
+    vc_client26 = vclient26
+else:
+    vc_client26 = PandaBot26
+if Var.VC_STRING_SESSION27:
+    vc_client27 = vclient27
+else:
+    vc_client27 = PandaBot27
+if Var.VC_STRING_SESSION28:
+    vc_client28 = vclient28
+else:
+    vc_client28 = PandaBot28
+if Var.VC_STRING_SESSION29:
+    vc_client29 = vclient29
+else:
+    vc_client29 = PandaBot29
+if Var.VC_STRING_SESSION30:
+    vc_client30 = vclient30
+else:
+    vc_client30 = PandaBot30
+if Var.VC_STRING_SESSION31:
+    vc_client31 = vclient31
+else:
+    vc_client31 = PandaBot31
+if Var.VC_STRING_SESSION32:
+    vc_client32 = vclient32
+else:
+    vc_client32 = PandaBot32
+if Var.VC_STRING_SESSION33:
+    vc_client34 = vclient34
+else:
+    vc_client34 = PandaBot34
+if Var.VC_STRING_SESSION35:
+    vc_client35 = vclient35
+else:
+    vc_client35 = PandaBot35
+if Var.VC_STRING_SESSION36:
+    vc_client36 = vclient36
+else:
+    vc_client36 = PandaBot36
+if Var.VC_STRING_SESSION37:
+    vc_client37 = vclient37
+else:
+    vc_client37 = PandaBot37
+if Var.VC_STRING_SESSION38:
+    vc_client38 = vclient38
+else:
+    vc_client38 = PandaBot38
+if Var.VC_STRING_SESSION39:
+    vc_client39 = vclient39
+else:
+    vc_client39 = PandaBot39
+if Var.VC_STRING_SESSION40:
+    vc_client40 = vclient40
+else:
+    vc_client40 = PandaBot40
+if Var.VC_STRING_SESSION41:
+    vc_client41 = vclient41
+else:
+    vc_client41 = PandaBot41
+if Var.VC_STRING_SESSION42:
+    vc_client42 = vclient42
+else:
+    vc_client42 = PandaBot42
+if Var.VC_STRING_SESSION43:
+    vc_client43 = vclient43
+else:
+    vc_client42 = PandaBot42
+if Var.VC_STRING_SESSION43:
+    vc_client43 = vclient43
+else:
+    vc_client43 = PandaBot43
+if Var.VC_STRING_SESSION44:
+    vc_client44 = vclient44
+else:
+    vc_client44 = PandaBot44
+if Var.VC_STRING_SESSION45:
+    vc_client45 = vclient45
+else:
+    vc_client45 = PandaBot45
+if Var.VC_STRING_SESSION26:
+    vc_client46 = vclient46
+else:
+    vc_client46 = PandaBot46
+if Var.VC_STRING_SESSION47:
+    vc_client47 = vclient47
+else:
+    vc_client47 = PandaBot47
+if Var.VC_STRING_SESSION48:
+    vc_client48 = vclient48
+else:
+    vc_client48 = PandaBot48
+if Var.VC_STRING_SESSION49:
+    vc_client49 = vclient49
+else:
+    vc_client49 = PandaBot49
+if Var.VC_STRING_SESSION50:
+    vc_client50 = vclient50
+else:
+    vc_client50 = PandaBot50
+    
+
+    
     
     
 vc_client.__class__.__module__ = "telethon.client.telegramclient"
