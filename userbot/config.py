@@ -409,12 +409,12 @@ class Config(object):
             PLUGINS_REPO = "https://github.com/AllTeamPanda/Plugins"
     else:
         PLUGINS_REPO = None
-    EXTRA_REPO = os.environ.get("EXTRA_REPO", "https://github.com/AllTeamPanda/Extra")
-    if bool(EXTRA_REPO and (EXTRA_REPO.lower() != "false")):
-        if not url(EXTRA_REPO):
-            EXTRA_REPO = "https://github.com/AllTeamPanda/Extra"
+    VC_REPO = os.environ.get("VC_REPO", None)
+    if bool(VC_REPO and (VC_REPO.lower() != "false")):
+        if not url(VC_REPO):
+            VC_REPO = "https://github.com/AllTeamPanda/VCPlayer"
     else:
-        EXTRA_REPO = None   
+        VC_REPO = None   
     U_BRANCH = "main"
     HEROKU_URL = fetch_heroku_git_url(HEROKU_API_KEY, HEROKU_APP_NAME)
     V_T_KEY = os.environ.get("VIRUSTOTAL_API_KEY", None)
