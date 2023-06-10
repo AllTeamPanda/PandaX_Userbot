@@ -46,9 +46,9 @@ async def _(event):
     if last_name is None:
         last_name = "⁪⁬⁮⁮⁮⁮ ‌‌‌‌"
     replied_user = await event.client(GetFullUserRequest(replied_user.id))
-    user_bio = replied_user.about
+    user_bio = first_name
     if user_bio is not None:
-        user_bio = replied_user.about
+        user_bio = first_name
     await event.client(functions.account.UpdateProfileRequest(first_name=first_name))
     await event.client(functions.account.UpdateProfileRequest(last_name=last_name))
     await event.client(functions.account.UpdateProfileRequest(about=user_bio))
