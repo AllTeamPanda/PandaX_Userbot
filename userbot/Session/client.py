@@ -933,10 +933,6 @@ try:
             PandaSession(Var.VC_STRING_SESSION, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
-            connection=ConnectionTcpAbridged,
-            auto_reconnect=True,
-            connection_retries=None,
-            app_version=__version__,
         )
     else:
         vclient = None
