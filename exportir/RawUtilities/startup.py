@@ -115,13 +115,16 @@ async def loads(folder):
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
 
 
-async def buka(folder, extfolder=None):
+async def buka(folder, extfolder=None, vcfolder=None):
     """
     To load plugins from the mentioned folder
     """
     if extfolder:
         path = f"{extfolder}/plugins/*.py"
         plugin_path = f"{extfolder}/plugins"
+    elif vcfolder:
+        path = f"{vcfolder}/VCTools/*.py"
+        plugin_path = f"{vcfolder}/VCTools"
     else:
         path = f"userbot/modules/{folder}/*.py"
         plugin_path = f"userbot/modules/{folder}"
@@ -163,6 +166,10 @@ async def buka(folder, extfolder=None):
                 os.remove(Path(f"{plugin_path}/{shortname}.py"))
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
     if extfolder:
+        if not failure:
+            failure.append("None")
+        return success, failure
+    if vcfolder:
         if not failure:
             failure.append("None")
         return success, failure
