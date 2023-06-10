@@ -422,11 +422,11 @@ async def cloneplugins():
         
 async def clonevc():
     string = "<b>Your external repo plugins have imported.<b>\n\n"
-    if Config.VCREPO:
+    if Config.VC_REPO:
         data = await vcrepo(
-            Config.VCREPO, Config.U_BRANCH, "VCTools"
+            Config.VC_REPO, Config.U_BRANCH, "VCTools"
         )
-        string += f"<b>➜ Repo:  </b><a href='{data[0]}'><b>{data[1]}</b></a>\n<b>     • Imported Plugins:</b>  <code>{data[2]}</code>\n<b>     • Failed to Import:</b>  <code>{', '.join(data[3])}</code>\n\n"
+        string += f"<b>➜ Repo:  </b><a href='{data[0]}'><b>{data[1]}</b></a>\n<b>     • Imported VCPlugins:</b>  <code>{data[2]}</code>\n<b>     • Failed to Import:</b>  <code>{', '.join(data[3])}</code>\n\n"
     if "Imported Plugins" in string:
         await tgbot.send_message(BOTLOG_CHATID, string, parse_mode="html")
 
