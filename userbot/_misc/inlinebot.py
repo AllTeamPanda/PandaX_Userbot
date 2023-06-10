@@ -288,7 +288,7 @@ async def inline_handler(event):  # sourcery no-metrics
             buttons = [
                 (
                     Button.inline("Stats", data="stats"),
-                    Button.url("Repo", "https://github.com/ilhammansiz/PandaX_Userbot"),
+                    Button.url("Repo", "https://github.com/AllTeamPanda/PandaX_Userbot"),
                 )
             ]
             PANDA_IMG = Config.ALIVE_PIC or None
@@ -532,7 +532,7 @@ async def inline_handler(event):  # sourcery no-metrics
             type="photo",
             title="𝗕𝗼𝘁",
             description="Deploy yourself",
-            url="https://github.com/ilhamMansiz/PandaX_Userbot",
+            url="https://github.com/AllTeamPanda/PandaX_Userbot",
             thumb=photo,
             content=photo,
             send_message=types.InputBotInlineMessageMediaAuto(
