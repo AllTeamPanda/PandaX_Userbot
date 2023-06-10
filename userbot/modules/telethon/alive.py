@@ -141,7 +141,7 @@ def menu():
         (
             Button.url(
                 "❓Source Code❓",
-                "https://github.com/ilhammansiz/PandaX_Userbot",
+                "https://github.com/AllTeamPanda/PandaX_Userbot",
             ),
             Button.url(
                 "#⃣Deploy#⃣",
