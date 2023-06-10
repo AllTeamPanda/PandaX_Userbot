@@ -6,7 +6,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.tl.functions.account import UpdateProfileRequest
 from telethon.tl.functions.photos import DeletePhotosRequest, UploadProfilePhotoRequest
-
+from ... import udB
 from ...config import Config
 from . import (
     ALIVE_NAME,
@@ -33,31 +33,42 @@ DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else ""
     },
 )
 async def _(event):
-    "To clone account of mentiond user or replied user"
+    eve = await edit_or_reply(event, "`Processing...`")
+    reply_message = await event.get_reply_message()
+    iyelatuh = await get_user_from_event(event)
+    whoiam = await event.client(GetFullUserRequest(iyelatuh.id)).full_user
+    if whoiam.full_user.about:
+        mybio = "" + "01"
+        udB.set_key(f"{mybio}", whoiam.full_user.about)  # saving bio for revert
+    udB.set_key(f"{mybio}02", whoiam.users[0].first_name)
+    if whoiam.users[0].last_name:
+        udB.set_key(f"{mybio}03", whoiam.users[0].last_name)
     replied_user, error_i_a = await get_full_user(event)
     if replied_user is None:
+        await eve.edit(str(error_i_a))
         return
-    user_id = replied_user.id
-    profile_pic = await event.client.download_profile_photo(user_id, Config.TEMP_DIR)
-    first_name = html.escape(replied_user.first_name)
+    user_id = replied_user.users[0].id
+    profile_pic = await event.client.download_profile_photo(user_id)
+    first_name = html.escape(replied_user.users[0].first_name)
     if first_name is not None:
         first_name = first_name.replace("\u2060", "")
-    last_name = replied_user.last_name
+    last_name = replied_user.users[0].last_name
     if last_name is not None:
         last_name = html.escape(last_name)
         last_name = last_name.replace("\u2060", "")
     if last_name is None:
-        last_name = "⁪⁬⁮⁮⁮⁮ ‌‌‌‌"
-    replied_user = await event.client(GetFullUserRequest(replied_user.id))
+        last_name = "⁪⁬⁮⁮⁮"
     user_bio = replied_user.full_user.about
-    if user_bio is not None:
-        user_bio = replied_user.full_user.about
-    await event.client(functions.account.UpdateProfileRequest(first_name=first_name))
-    await event.client(functions.account.UpdateProfileRequest(last_name=last_name))
-    await event.client(functions.account.UpdateProfileRequest(about=user_bio))
-    pfile = await event.client.upload_file(profile_pic)
-    await event.client(functions.photos.UploadProfilePhotoRequest(pfile))
-    await edit_delete(event, "**LET US BE AS ONE**")
+    await event.client(UpdateProfileRequest(first_name=first_name))
+    await event.client(UpdateProfileRequest(last_name=last_name))
+    await event.client(UpdateProfileRequest(about=user_bio))
+    if profile_pic:
+        pfile = await event.client.upload_file(profile_pic)
+        await event.client(UploadProfilePhotoRequest(pfile))
+    await eve.delete()
+    await event.client.send_message(
+        event.chat_id, f"**I am `{first_name}` from now...**", reply_to=reply_message
+    )
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
