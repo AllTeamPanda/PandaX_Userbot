@@ -75,7 +75,7 @@ def main_menu():
         (
             Button.url(
                 "⚙️ Settings",
-                f"t.me/{Config.BOT_USERNAME}?start=",
+                f"@{Config.BOT_USERNAME}",
             ),
             Button.inline(
                 f"⚙️ Info",
@@ -113,7 +113,7 @@ def Helpeororr():
         (
             Button.url(
                 "⚙️ Settings",
-                f"t.me/{Config.BOT_USERNAME}?start=",
+                f"@{Config.BOT_USERNAME}",
             ),
             Button.inline(
                 f"💎 𝙸𝚗𝚏𝚘",
