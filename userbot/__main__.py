@@ -7,7 +7,7 @@
 import sys
 import userbot
 from userbot import LOGS, Database, Config
-
+import contextlib
 from .Session.multisession_ import *
 
 cmdhr = Config.COMMAND_HAND_LER
@@ -51,500 +51,535 @@ if __name__ == "__main__":
     
 if PandaBot:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot.run_until_disconnected()
         else:
-            PandaBot.run_until_disconnected()
+            PandaBot.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot2:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot2.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot2.run_until_disconnected()
         else:
-            PandaBot2.run_until_disconnected()    
+            PandaBot2.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot3:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot3.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot3.run_until_disconnected()
         else:
-            PandaBot3.run_until_disconnected()
+            PandaBot3.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot4:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot4.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot4.run_until_disconnected()
         else:
-            PandaBot4.run_until_disconnected()
+            PandaBot4.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot5:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot5.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot5.run_until_disconnected()
         else:
-            PandaBot5.run_until_disconnected()
+            PandaBot5.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot6:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot6.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot6.run_until_disconnected()
         else:
-            PandaBot6.run_until_disconnected()
+            PandaBot6.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
-if PandaBot6:
-    try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot6.disconnect()
-        else:
-            PandaBot6.run_until_disconnected()
-    except Exception as e:
-        LOGS.info(str(e), exc_info=True)
-        sys.exit(1)
+
 
 if PandaBot7:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot7.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot7.run_until_disconnected()
         else:
-            PandaBot7.run_until_disconnected()
+            PandaBot7.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
-if PandaBot7:
-    try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot7.disconnect()
-        else:
-            PandaBot7.run_until_disconnected()
-    except Exception as e:
-        LOGS.info(str(e), exc_info=True)
-        sys.exit(1)
+
+
 if PandaBot8:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot8.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot8.run_until_disconnected()
         else:
-            PandaBot8.run_until_disconnected()
-    except Exception as e:
-        LOGS.info(str(e), exc_info=True)
-        sys.exit(1)
-if PandaBot8:
-    try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot8.disconnect()
-        else:
-            PandaBot8.run_until_disconnected()
+            PandaBot8.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot9:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot9.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot9.run_until_disconnected()
         else:
-            PandaBot9.run_until_disconnected()
+            PandaBot9.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot10:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot10.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot10.run_until_disconnected()
         else:
-            PandaBot10.run_until_disconnected()
+            PandaBot10.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot11:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot11.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot11.run_until_disconnected()
         else:
-            PandaBot11.run_until_disconnected()
+            PandaBot11.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot12:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot12.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot12.run_until_disconnected()
         else:
-            PandaBot12.run_until_disconnected()
+            PandaBot12.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot13:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot13.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot13.run_until_disconnected()
         else:
-            PandaBot13.run_until_disconnected()
+            PandaBot13.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot14:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot14.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot14.run_until_disconnected()
         else:
-            PandaBot14.run_until_disconnected()
+            PandaBot14.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot15:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot15.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot15.run_until_disconnected()
         else:
-            PandaBot15.run_until_disconnected()
+            PandaBot15.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot16:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot16.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot16.run_until_disconnected()
         else:
-            PandaBot16.run_until_disconnected()
+            PandaBot16.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot17:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot17.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot17.run_until_disconnected()
         else:
-            PandaBot17.run_until_disconnected()
+            PandaBot17.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot18:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot18.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot18.run_until_disconnected()
         else:
-            PandaBot18.run_until_disconnected()
+            PandaBot18disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot19:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot19.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot19.run_until_disconnected()
         else:
-            PandaBot19.run_until_disconnected()
+            PandaBot19.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot20:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot20.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot21.run_until_disconnected()
         else:
-            PandaBot20.run_until_disconnected()
+            PandaBot21.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot21:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot21.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot21.run_until_disconnected()
         else:
-            PandaBot21.run_until_disconnected()
+            PandaBot21.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot22:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot22.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot22.run_until_disconnected()
         else:
-            PandaBot22.run_until_disconnected()
+            PandaBot22.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot23:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot23.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot23.run_until_disconnected()
         else:
-            PandaBot23.run_until_disconnected()
+            PandaBot23.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot24:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot24.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot24.run_until_disconnected()
         else:
-            PandaBot24.run_until_disconnected()
+            PandaBot24.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot25:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot25.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot25.run_until_disconnected()
         else:
-            PandaBot25.run_until_disconnected()
+            PandaBot25.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot26:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot26.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot26.run_until_disconnected()
         else:
-            PandaBot26.run_until_disconnected()
+            PandaBot26.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot27:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot27.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot27.run_until_disconnected()
         else:
-            PandaBot27.run_until_disconnected()
+            PandaBot27.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot28:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot28.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot28.run_until_disconnected()
         else:
-            PandaBot28.run_until_disconnected()
+            PandaBot28.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot29:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot29.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot29.run_until_disconnected()
         else:
-            PandaBot29.run_until_disconnected()
+            PandaBot29.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot30:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot30.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot30.run_until_disconnected()
         else:
-            PandaBot30.run_until_disconnected()
+            PandaBot30.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot31:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot31.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot31.run_until_disconnected()
         else:
-            PandaBot31.run_until_disconnected()
+            PandaBot31.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot32:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot32.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot32.run_until_disconnected()
         else:
-            PandaBot32.run_until_disconnected()
+            PandaBot32.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot33:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot33.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot33.run_until_disconnected()
         else:
-            PandaBot33.run_until_disconnected()
+            PandaBot33.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot34:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot35.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot34.run_until_disconnected()
         else:
-            PandaBot35.run_until_disconnected()
+            PandaBot34.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot36:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot36.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot36.run_until_disconnected()
         else:
-            PandaBot36.run_until_disconnected()
+            PandaBot36.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot37:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot37.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot37.run_until_disconnected()
         else:
-            PandaBot37.run_until_disconnected()
+            PandaBot37.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot38:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot38.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot38.run_until_disconnected()
         else:
-            PandaBot38.run_until_disconnected()
+            PandaBot38.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot39:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot39.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot39.run_until_disconnected()
         else:
-            PandaBot39.run_until_disconnected()
+            PandaBot39.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot40:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot40.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot40.run_until_disconnected()
         else:
-            PandaBot40.run_until_disconnected()
+            PandaBot40.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot41:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot41.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot41.run_until_disconnected()
         else:
-            PandaBot41.run_until_disconnected()
+            PandaBot41.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot42:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot42.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot42.run_until_disconnected()
         else:
-            PandaBot42.run_until_disconnected()
+            PandaBot42.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot43:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot43.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot43.run_until_disconnected()
         else:
-            PandaBot43.run_until_disconnected()
+            PandaBot43.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 if PandaBot44:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot44.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot44.run_until_disconnected()
         else:
-            PandaBot44.run_until_disconnected()
+            PandaBot44.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot45:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot45.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot45.run_until_disconnected()
         else:
-            PandaBot45.run_until_disconnected()
+            PandaBot45.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot46:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot46.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot46.run_until_disconnected()
         else:
-            PandaBot46.run_until_disconnected()
+            PandaBot46.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot47:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot47.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot47.run_until_disconnected()
         else:
-            PandaBot47.run_until_disconnected()
+            PandaBot47.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot48:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot48.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot48.run_until_disconnected()
         else:
-            PandaBot48.run_until_disconnected()
+            PandaBot48.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
 
 if PandaBot49:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot49.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot49.run_until_disconnected()
         else:
-            PandaBot49.run_until_disconnected()
+            PandaBot49.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
-
+if PandaBot35:
+    try:
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot35.run_until_disconnected()
+        else:
+            PandaBot35.disconnect()    
+    except Exception as e:
+        LOGS.info(str(e), exc_info=True)
+        sys.exit(1)
+        
 if PandaBot50:
     try:
-        if len(sys.argv) not in (1, 3, 4):
-            PandaBot50.disconnect()
+        if len(sys.argv) in {1, 3, 4}:
+            with contextlib.suppress(ConnectionError):
+                PandaBot50.run_until_disconnected()
         else:
-            PandaBot50.run_until_disconnected()
+            PandaBot50.disconnect()    
     except Exception as e:
         LOGS.info(str(e), exc_info=True)
         sys.exit(1)
