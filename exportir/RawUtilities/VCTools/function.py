@@ -222,7 +222,6 @@ else:
     
     
     
-vc_client.__class__.__module__ = "telethon.client.telegramclient"
 
 vc_player = VCTools(vc_client)
 vc_player2 = VCTools(vc_client2)
