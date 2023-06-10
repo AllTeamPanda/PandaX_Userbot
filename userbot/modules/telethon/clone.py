@@ -33,7 +33,7 @@ DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else ""
     },
 )
 async def _(event):
-    eve = await edit_or_reply(event, "`Processing...`")
+    eve = await edit_delete(event, "`Processing...`")
     reply_message = await event.get_reply_message()
     iyelatuh = await get_user_from_event(event)
     whoiam = await event.client(GetFullUserRequest(iyelatuh.id)).full_user
