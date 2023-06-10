@@ -209,6 +209,36 @@ async def bukabot(folder):
                 LOGS.info(f"Gagal membuka file {shortname} dikarenakan error {e}")
 
 
+async def vcrepo(repo, branch, cfolder):
+    VCREPO = repo
+    rpath = os.path.join(cfolder, "requirements.txt")
+    if BRANCH := branch:
+        repourl = os.path.join(VCREPO, f"tree/{BRANCH}")
+        gcmd = f"git clone -b {BRANCH} {VCREPO} {cfolder}"
+        errtext = f"There is no branch with name `{BRANCH}` in your external repo {VCREPO}. Recheck branch name and correct it in vars(`EXTERNAL_REPO_BRANCH`)"
+    else:
+        repourl = VCREPO
+        gcmd = f"git clone {VCREPO} {cfolder}"
+        errtext = f"The link({VCREPO}) you provided for `VCREPO` in vars is invalid. please recheck that link"
+    response = urllib.request.urlopen(repourl)
+    if response.code != 200:
+        LOGS.error(errtext)
+        return await tgbot.send_message(BOTLOG_CHATID, errtext)
+    await runcmd(gcmd)
+    if not os.path.exists(cfolder):
+        LOGS.error(
+            "There was a problem in cloning the external repo. please recheck external repo link"
+        )
+        return await tgbot.send_message(
+            BOTLOG_CHATID,
+            "There was a problem in cloning the external repo. please recheck external repo link",
+        )
+    if os.path.exists(rpath):
+        await runcmd(f"pip3 install --no-cache-dir -r {rpath}")
+    success, failure = await buka(folder="VCTools", vcfolder="VCTools")
+    return repourl, cfolder, success, failure
+           
+                
 async def externalrepo(repo, branch, cfolder):
     EXTERNALREPO = repo
     rpath = os.path.join(cfolder, "requirements.txt")
