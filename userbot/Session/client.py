@@ -32,7 +32,7 @@ DUAL_MODE = DB.get_key("DUAL_MODE")
 
 try:
     if Var.STRING_SESSION:
-        PandaBot = TelegramClient(
+        PandaBot = PandaUserbotSession(
             PandaSession(Var.STRING_SESSION, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
