@@ -119,7 +119,28 @@ can_4: "∆ #UsernameUpdate\n\n{}'s new username --> @{}"
 
 
 
-
+vcbot_1: "`Left the voice chat.`"
+vcbot_2: "**ERROR:**\n{}"
+vcbot_3: "• Volume Changed to `{}%` •"
+vcbot_4: "`Please specify a volume from 1 to 200!`"
+vcbot_5: "`Re-joining this voice chat.`"
+vcbot_6: "You haven't connected to a voice chat!"
+vcbot_7: "`Keep patience... It'll take some time.`"
+vcbot_8: "Give only youtube playlist"
+vcbot_9: "Are You Kidding Me?\nWhat to Play?"
+vcbot_10: "Removed Chat from Vc AUTH Groups!"
+vcbot_11: "`Getting Voice Chat Bot Users List...`"
+vcbot_12: "`Muted playback in this chat.`"
+vcbot_13: "`Resumed playback in this chat.`"
+vcbot_14: "`Paused playback in this chat.`"
+vcbot_15: "Please specify a song name or reply to a video file !"
+vcbot_16: "Chat is Not in Vc Auth list..."
+vcbot_17: "`Reply to user's msg or add it's id/username...`"
+vcbot_18: "• Vc Auth List is Empty.."
+vcbot_19: "Already Authed This Chat!"
+vcbot_20: "`Downloading and converting...`"
+vcbot_21: "• Nothing in queue!"
+vcbot_22: "`Cleaned All Queues In Chat`"
 
 
 
