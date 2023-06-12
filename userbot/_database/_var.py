@@ -74,7 +74,7 @@ class Var(object):
     STRING_SESSION50 = os.environ.get("SESSION50") or None
     VC_STRING_SESSION3 = os.environ.get("VC_SESSION3") or None
     VC_STRING_SESSION2 = os.environ.get("VC_SESSION2") or None
-    VC_STRING_SESSION = os.environ.get("VC_SESSION") or STRING_SESSION
+    VC_STRING_SESSION = os.environ.get("VC_SESSION") or None
     
     VC_STRING_SESSION4 = os.environ.get("VC_SESSION4") or None
     VC_STRING_SESSION5 = os.environ.get("VC_SESSION5") or None
