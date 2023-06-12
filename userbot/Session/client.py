@@ -926,10 +926,11 @@ except Exception as e:
 
     
  ## VC SESSION
-
+vclient = PandaBot
+"""
 try:
     if Var.VC_STRING_SESSION:
-        vclient = PandaUserbotSession(
+        vclient = TelegramClient(
             PandaSession(Var.VC_STRING_SESSION, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
@@ -956,7 +957,8 @@ try:
 except Exception as e:
     print(f"VC_STRING_SESSION2- {str(e)}")
     sys.exit()
- 
+"""
+
 try:
     if Var.VC_STRING_SESSION3:
         vclient3 = TelegramClient(
