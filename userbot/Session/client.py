@@ -940,7 +940,7 @@ try:
 except Exception as e:
     print(f"VC_STRING_SESSION- {str(e)}")
     sys.exit()
-    
+"""    
 try:
     if Var.VC_STRING_SESSION2:
         vclient2 = TelegramClient(
@@ -957,7 +957,7 @@ try:
 except Exception as e:
     print(f"VC_STRING_SESSION2- {str(e)}")
     sys.exit()
-"""
+
 
 try:
     if Var.VC_STRING_SESSION3:
