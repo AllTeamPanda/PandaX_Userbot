@@ -32,7 +32,7 @@ DUAL_MODE = DB.get_key("DUAL_MODE")
 
 try:
     if Var.STRING_SESSION:
-        PandaBot = TelegramClient(
+        PandaBot = PandaUserbotSession(
             PandaSession(Var.STRING_SESSION, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
@@ -929,7 +929,7 @@ except Exception as e:
 
 try:
     if Var.VC_STRING_SESSION:
-        vclient = TelegramClient(
+        vclient = PandaUserbotSession(
             PandaSession(Var.VC_STRING_SESSION, LOGS),
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH,
