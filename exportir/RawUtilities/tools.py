@@ -314,13 +314,19 @@ def mediainfo(media):
         m = "web"
     return m
 
-def inline_mention(user):
-    full_name = user_full_name(user)
-    if not isinstance(user, types.User):
-        return full_name
-    return f"[{full_name}](tg://user?id={user.id})"
 
-
+def inline_mention(user, custom=None, html=False):
+    mention_text = get_display_name(user) or "Deleted Account" if not custom else custom
+    if isinstance(user, types.User):
+        if html:
+            return f"<a href=tg://user?id={user.id}>{mention_text}</a>"
+        return f"[{mention_text}](tg://user?id={user.id})"
+    if isinstance(user, types.Channel) and user.username:
+        if html:
+            return f"<a href=https://t.me/{user.username}>{mention_text}</a>"
+        return f"[{mention_text}](https://t.me/{user.username})"
+    return mention_text
+    
 user_full_name = get_display_name
 
 async def get_videos_link(url):
