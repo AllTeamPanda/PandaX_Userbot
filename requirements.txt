@@ -142,6 +142,6 @@ wikipedia
 wikipedia-api
 
 # Y
-yt-dlp==2021.11.10.1
-youtube-search-python==1.4.9
+yt-dlp
+youtube-search-python
 youtube_dl==2021.6.6
