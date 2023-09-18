@@ -43,7 +43,7 @@ Total Clients - {}
 
 def Telethon():
     failed = 0
-    if pdB.get_key("SESSION") or Var.STRING_SESSION and Database.BOT_TOKEN:
+    if pdB.get_key("SESSION") or Var.STRING_SESSION:
         try:
             PandaBot.connect()
             tgbot.start(bot_token=Database.BOT_TOKEN)
