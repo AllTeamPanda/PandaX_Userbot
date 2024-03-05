@@ -118,7 +118,7 @@ spamwatch
 speedtest-cli==2.1.3
 
 # T
-https://github.com/DevTeamPanda/Telethon/archive/platy.zip
+git+https://github.com/iiMansiz/Telethon@test
 telegraph
 TgCrypto
 tswift
