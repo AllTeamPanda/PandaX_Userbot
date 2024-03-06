@@ -12,13 +12,14 @@ import ipaddress
 import struct
 import sys
 import logging
-LOGS = logging.getLogger("PandaUserbot")
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions.string import _STRUCT_PREFORMAT, CURRENT_VERSION, StringSession
-
 from ..versions import __version__
+
+LOGS = logging.getLogger("PandaUserbot")
 _PYRO_FORM = {351: ">B?256sI?", 356: ">B?256sQ?", 362: ">BI?256sQ?"}
 SESSION_STRING_FORMAT = ">B?256sI?"
+
 # https://github.com/pyrogram/pyrogram/blob/master/docs/source/faq/what-are-the-ip-addresses-of-telegram-data-centers.rst
 
 DC_IPV4 = {
@@ -74,9 +75,12 @@ def PandaSession(session, logger=LOGS, _exit=True):
 def PyroSession(session_name, logger=LOGS, _exit=True):
     if session_name:
         # Pyrogram Session
-        if session_name:
+        if len(session_name) in _PYRO_FORM.keys():
+            logger.exception("Wrong string session. Copy paste correctly!")
+            sys.exit()
             return session_name
-    
+            
+    """
         elif session_name:
             if session_name[0] != CURRENT_VERSION:
                 session_name = session_name[1:]
@@ -90,7 +94,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                 is_bot = False
                 session_name = base64.urlsafe_b64encode(struct.pack(SESSION_STRING_FORMAT, dc_id, test_mode, auth_key, user_id, is_bot)).decode().rstrip("=")
                 return session_name
-
+"""
         else:
             logger.exception("Wrong string session. Copy paste correctly!")
             if _exit:
