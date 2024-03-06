@@ -80,8 +80,8 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
             sys.exit()
             return session_name
             
-    """
-        elif session_name:
+    
+        elif session_name.startswith(CURRENT_VERSION):
             if session_name[0] != CURRENT_VERSION:
                 session_name = session_name[1:]
                 ip_len = 4 if len(session_name) == 352 else 16
@@ -94,7 +94,7 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                 is_bot = False
                 session_name = base64.urlsafe_b64encode(struct.pack(SESSION_STRING_FORMAT, dc_id, test_mode, auth_key, user_id, is_bot)).decode().rstrip("=")
                 return session_name
-"""
+
         else:
             logger.exception("Wrong string session. Copy paste correctly!")
             if _exit:
