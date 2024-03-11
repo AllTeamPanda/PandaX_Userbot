@@ -72,23 +72,21 @@ def PandaSession(session, logger=LOGS, _exit=True):
         sys.exit()
 
 
-def PyroSession(session_name, logger=LOGS, _exit=True):
-    if session_name:
+def PyroSession(session_string, logger=LOGS, _exit=True):
+    if session_string:
         # Pyrogram Session
-        if len(session_name) in _PYRO_FORM.keys():
-            logger.exception("Wrong string session. Copy paste correctly!")
-            sys.exit()
-            return session_name
+        if session_string:
+            return session_string
             
     
-        elif session_name.startswith(CURRENT_VERSION):
-            if len(session_name):
-                if session_name[0] != CURRENT_VERSION:
+        elif session_string.startswith(CURRENT_VERSION):
+            if len(session_string):
+                if session_string[0] != CURRENT_VERSION:
                     raise ValueError("Not a valid string")
-                session_name = session_name[1:]
-                ip_len = 4 if len(session_name) == 352 else 16
+                session_string = session_string[1:]
+                ip_len = 4 if len(session_string) == 352 else 16
                 data_ = struct.unpack(
-                       _STRUCT_PREFORMAT.format(ip_len), StringSession.decode(session_name)
+                       _STRUCT_PREFORMAT.format(ip_len), StringSession.decode(session_string)
                    )
                 dc_id, auth_key = data_[0], data_[3]
                 test_mode = False
