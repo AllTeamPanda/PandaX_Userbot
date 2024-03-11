@@ -74,7 +74,7 @@ nekos.py
 NoteShrinker>=0.2.0
 
 # P
-pyrogram==1.4.16
+Pyrogram==2.0.106
 pymongo[srv]
 psycopg2-binary
 Pillow
