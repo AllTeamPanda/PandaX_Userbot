@@ -93,18 +93,8 @@ def PyroSession(session_string, logger=LOGS, _exit=True):
                 user_id = Var.OWNER_ID
                 is_bot = False
                 api_id = Var.API_ID
-                return base64.urlsafe_b64encode(
-                        struct.pack(
-                            SESSION_STRING_FORMAT,
-                            dc_id,
-                            api_id,
-                            test_mode,
-                            auth_key,
-                            user_id,
-                            is_bot
-                        )
-                    ).decode().rstrip("=")    
-
+                session_string = base64.urlsafe_b64encode(struct.pack(SESSION_STRING_FORMAT, dc_id, api_id, test_mode, auth_key, user_id, is_bot )).decode().rstrip("=")    
+            return session_string
         else:
             logger.exception("Wrong string session. Copy paste correctly!")
             if _exit:
