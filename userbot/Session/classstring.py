@@ -18,7 +18,7 @@ from ..versions import __version__
 
 LOGS = logging.getLogger("PandaUserbot")
 _PYRO_FORM = {351: ">B?256sI?", 356: ">B?256sQ?", 362: ">BI?256sQ?"}
-SESSION_STRING_FORMAT = ">B?256sI?"
+SESSION_STRING_FORMAT = ">BI?256sQ?"
 
 # https://github.com/pyrogram/pyrogram/blob/master/docs/source/faq/what-are-the-ip-addresses-of-telegram-data-centers.rst
 
@@ -94,10 +94,12 @@ def PyroSession(session_name, logger=LOGS, _exit=True):
                 test_mode = False
                 user_id = Var.OWNER_ID
                 is_bot = False
+                api_id = Var.API_ID
                 return base64.urlsafe_b64encode(
                         struct.pack(
                             SESSION_STRING_FORMAT,
                             dc_id,
+                            api_id,
                             test_mode,
                             auth_key,
                             user_id,
