@@ -8,10 +8,9 @@ from typing import Callable
 
 import pyrogram
 from pyrogram.filters import Filter
-from pyrogram.scaffold import Scaffold
 
 
-class OnMessage(Scaffold):
+class OnMessage():
     def on_message(self=None, filters=None, group: int = 0) -> callable:
         """Decorator for handling messages : (user defined method)."""
 
