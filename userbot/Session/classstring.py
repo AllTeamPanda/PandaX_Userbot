@@ -76,10 +76,6 @@ def PyroSession(session_string, logger=LOGS, _exit=True):
     if session_string:
         # Pyrogram Session
         if len(session_string) in _PYRO_FORM.keys():
-            data_ = struct.unpack(
-                _PYRO_FORM[len(session)],
-                base64.urlsafe_b64decode(session + "=" * (-len(session) % 4)),
-            )
             return session_string
             
     
