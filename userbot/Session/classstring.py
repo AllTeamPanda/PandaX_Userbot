@@ -80,7 +80,7 @@ def PyroSession(session_string, logger=LOGS, _exit=True):
                 _PYRO_FORM[len(session)],
                 base64.urlsafe_b64decode(session + "=" * (-len(session) % 4)),
             )
-        return session_string
+            return session_string
             
     
         elif session_string.startswith(CURRENT_VERSION):
