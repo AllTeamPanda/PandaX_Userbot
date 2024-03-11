@@ -1,6 +1,5 @@
-# Ultroid - UserBot
-# Copyright (C) 2021-2022 TeamUltroid
-#for session
+# Panda - UserBot
+# Copyright (C) 2023-2024 Panda Userbot
 
 # Panda Userbot <https://github.com/ilhammansiz/PandaX_Userbot>
 # Recode by Ilham Mansiz
@@ -74,11 +73,11 @@ def PandaSession(session, logger=LOGS, _exit=True):
 
 def PyroSession(session_string, logger=LOGS, _exit=True):
     if session_string:
-        # Pyrogram Session
+        # For Pyrogram Session
         if len(session_string) in _PYRO_FORM.keys():
             return session_string
             
-    
+        # For Telethon Session
         elif session_string.startswith(CURRENT_VERSION):
             if len(session_string):
                 if session_string[0] != CURRENT_VERSION:
