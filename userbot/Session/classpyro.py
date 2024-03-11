@@ -47,7 +47,7 @@ class PyroClient(Utils, Client):
 
         def __init__(self):
             super().__init__(
-                session_name="Panda",
+                name="bot",
                 api_id=self.API_ID,
                 api_hash=self.API_HASH,
                 bot_token=self.TOKEN,
