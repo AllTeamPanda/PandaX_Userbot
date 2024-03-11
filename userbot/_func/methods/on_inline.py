@@ -8,10 +8,9 @@ from typing import Callable
 
 import pyrogram
 from pyrogram.filters import Filter
-from pyrogram.scaffold import Scaffold
 
 
-class OnInlineQuery(Scaffold):
+class OnInlineQuery():
     def on_inline(self=None, filters=None, group: int = 0) -> callable:
         def decorator(func: Callable) -> Callable:
             if isinstance(self, pyrogram.Client):
