@@ -66,7 +66,7 @@ app.CMD_HELP.update(
 
 
 
-@listen(filters.incoming & filters.private & ~filters.edited & ~filters.me & ~filters.service)
+@listen(filters.incoming & filters.private & ~filters.me)
 async def pmPermit(client, message):
     if not Config.PM_PSW:
         return
