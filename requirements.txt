@@ -83,7 +83,7 @@ prsaw
 psutil
 pyfiglet
 PyGithub
-pygments
+#pygments
 pylast
 pymediainfo
 pySmartDL
