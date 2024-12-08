@@ -93,7 +93,6 @@ pytz
 python-decouple==3.3
 Pyyaml
 pyshorteners>=1.0.1
-pyshorteners>=1.0.1
 pybase64
 pyDownload
 pytube
